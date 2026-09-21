@@ -1,0 +1,502 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-28",
+    "number": 8,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "internet_edge",
+    "faultIds": [
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.17.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Office",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.17.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "203.0.113.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-internet1": {
+                "id": "dev-internet1",
+                "type": "INTERNET",
+                "name": "example.com",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-internet1-p0",
+                        "index": 0,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "203.0.113.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p1",
+                        "index": 1,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p2",
+                        "index": 2,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p3",
+                        "index": 3,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": [],
+                    "domainName": "example.com"
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-internet1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-internet1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-internet1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-internet1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "No Route Out of the Office",
+            "story": "A staffer on PC-Design says the new office PC can't open the company site, example.com, at all since it was set up this morning. Every attempt just hangs with no response.",
+            "objective": "PC-Design must successfully load example.com over HTTP.",
+            "hints": [
+                "The packet never leaves PC-Design at all — it doesn't even reach Switch-Office.",
+                "PC-Design has no default gateway configured, so it has no idea how to send traffic to anything outside its own local network.",
+                "On PC-Design, set the default gateway to 10.0.17.254 (Router-Main's local address)."
+            ],
+            "explanation": "A client that wants to reach an address outside its own subnet needs a default gateway pointing at its local router. Without one, the packet is dropped before it even leaves the device, since there is no known path to anywhere off-network."
+        },
+        "ja": {
+            "title": "オフィスから抜け出せない通信",
+            "story": "PC-Designを使うスタッフから、今朝セットアップしたばかりのオフィスPCが会社のサイトexample.comをまったく開けないという相談がありました。何度試しても応答がなく固まってしまいます。",
+            "objective": "PC-DesignからHTTPでexample.comを正常に読み込めるようにする。",
+            "hints": [
+                "パケットはPC-Designから一歩も出ておらず、Switch-Officeにすら届いていません。",
+                "PC-Designにデフォルトゲートウェイが設定されていないため、自分のローカルネットワークの外へどうやって通信を送ればよいか分からない状態です。",
+                "PC-Designで、デフォルトゲートウェイを10.0.17.254(Router-Mainのローカルアドレス)に設定してください。"
+            ],
+            "explanation": "自分のサブネットの外にあるアドレスに到達したいクライアントには、ローカルルーターを指すデフォルトゲートウェイが必要です。これが設定されていないと、ネットワーク外への経路が分からないため、パケットはデバイスを出る前に破棄されてしまいます。"
+        },
+        "zh-CN": {
+            "title": "办公室无外界路由",
+            "story": "PC-Design 上的一名员工说新的办公室电脑自上午设置以来就无法打开公司网站 example.com。每次尝试都会挂起，没有任何响应。",
+            "objective": "PC-Design 必须能够成功通过 HTTP 加载 example.com。",
+            "hints": [
+                "数据包根本没有离开 PC-Design——甚至没有到达 Switch-Office。",
+                "PC-Design 没有配置默认网关，所以它不知道如何向自己的本地网络以外的任何地方发送流量。",
+                "在 PC-Design 上，将默认网关设置为 10.0.17.254（Router-Main 的本地地址）。"
+            ],
+            "explanation": "一个想要到达自己子网以外地址的客户端需要一个指向其本地路由器的默认网关。没有它，数据包会在离开设备之前被丢弃，因为没有已知的路径可以到达网络外的任何地方。"
+        },
+        "zh-TW": {
+            "title": "辦公室無外界路由",
+            "story": "PC-Design 上的一名員工說新的辦公室電腦自上午設置以來就無法打開公司網站 example.com。每次嘗試都會掛起，沒有任何響應。",
+            "objective": "PC-Design 必須能夠成功透過 HTTP 載入 example.com。",
+            "hints": [
+                "資料封包根本沒有離開 PC-Design——甚至沒有到達 Switch-Office。",
+                "PC-Design 沒有設定預設閘道，所以它不知道如何向自己的本地網路以外的任何地方傳送流量。",
+                "在 PC-Design 上，將預設閘道設定為 10.0.17.254（Router-Main 的本地位址）。"
+            ],
+            "explanation": "一個想要到達自己子網以外位址的用戶端需要一個指向其本地路由器的預設閘道。沒有它，資料封包會在離開設備之前被捨棄，因為沒有已知的路徑可以到達網路外的任何地方。"
+        },
+        "ko": {
+            "title": "사무실의 외부 경로 없음",
+            "story": "PC-Design의 한 직원이 오늘 아침 설정된 새로운 사무실 PC가 회사 사이트 example.com을 전혀 열 수 없다고 말합니다. 매번 시도할 때마다 응답 없이 멈춥니다.",
+            "objective": "PC-Design이 HTTP를 통해 example.com을 성공적으로 로드해야 합니다.",
+            "hints": [
+                "패킷이 PC-Design을 떠나지 않습니다——Switch-Office에도 도달하지 않습니다.",
+                "PC-Design에는 기본 게이트웨이가 구성되지 않았으므로 자신의 로컬 네트워크 외부로 트래픽을 보낼 방법을 알 수 없습니다.",
+                "PC-Design에서 기본 게이트웨이를 10.0.17.254(Router-Main의 로컬 주소)로 설정합니다."
+            ],
+            "explanation": "자신의 서브넷 외부 주소에 도달하려는 Client는 로컬 Router를 가리키는 기본 게이트웨이가 필요합니다. 없으면 네트워크 외부로 가는 알려진 경로가 없으므로 패킷이 장치를 떠나기 전에 삭제됩니다."
+        },
+        "es": {
+            "title": "Sin ruta hacia el exterior de la oficina",
+            "story": "Un empleado en PC-Design dice que la nueva PC de la oficina no puede abrir el sitio de la empresa, example.com, desde que se configuró esta mañana. Cada intento simplemente se congela sin respuesta.",
+            "objective": "PC-Design debe cargar correctamente example.com por HTTP.",
+            "hints": [
+                "El paquete nunca sale de PC-Design—ni siquiera llega a Switch-Office.",
+                "PC-Design no tiene Gateway predeterminado configurado, por lo que no sabe cómo enviar tráfico a nada fuera de su propia red local.",
+                "En PC-Design, configure el Gateway predeterminado a 10.0.17.254 (la dirección local de Router-Main)."
+            ],
+            "explanation": "Un Client que quiere llegar a una dirección fuera de su propia subred necesita un Gateway predeterminado que apunte a su Router local. Sin uno, el paquete se descarta antes de salir del dispositivo, ya que no hay una ruta conocida hacia ningún lugar fuera de la red."
+        },
+        "pt-BR": {
+            "title": "Sem rota para sair do escritório",
+            "story": "Um funcionário em PC-Design diz que o novo PC do escritório não consegue abrir o site da empresa, example.com, desde que foi configurado esta manhã. Cada tentativa apenas congela sem resposta.",
+            "objective": "PC-Design deve carregar com sucesso example.com por HTTP.",
+            "hints": [
+                "O pacote nunca sai de PC-Design — nem mesmo chega a Switch-Office.",
+                "PC-Design não tem Gateway padrão configurado, então não sabe como enviar tráfego para nada fora de sua própria rede local.",
+                "Em PC-Design, defina o Gateway padrão para 10.0.17.254 (o endereço local de Router-Main)."
+            ],
+            "explanation": "Um Client que quer alcançar um endereço fora de sua própria sub-rede precisa de um Gateway padrão apontando para seu Router local. Sem um, o pacote é descartado antes de sair do dispositivo, já que não há caminho conhecido para nenhum lugar fora da rede."
+        },
+        "de": {
+            "title": "Keine Route aus dem Büro",
+            "story": "Eine Mitarbeiterin auf PC-Design sagt, dass das neue Büro-PC die Unternehmensseite example.com überhaupt nicht öffnen kann, seit es heute Morgen eingerichtet wurde. Jeder Versuch hängt ohne Antwort.",
+            "objective": "PC-Design muss example.com erfolgreich über HTTP laden.",
+            "hints": [
+                "Das Paket verlässt PC-Design überhaupt nicht – es erreicht nicht einmal Switch-Office.",
+                "PC-Design hat kein Standard-Gateway konfiguriert, daher weiß es nicht, wie es Traffic zu etwas außerhalb seines eigenen lokalen Netzwerks senden soll.",
+                "Stellen Sie auf PC-Design das Standard-Gateway auf 10.0.17.254 (lokale Adresse von Router-Main) ein."
+            ],
+            "explanation": "Ein Client, der eine Adresse außerhalb seines eigenen Subnetzes erreichen möchte, benötigt ein Standard-Gateway, das auf seinen lokalen Router zeigt. Ohne diesen wird das Paket gelöscht, bevor es überhaupt das Gerät verlässt, da kein bekannter Pfad zu irgendetwas außerhalb des Netzwerks existiert."
+        },
+        "fr": {
+            "title": "Pas de route en dehors du bureau",
+            "story": "Une employée sur PC-Design dit que le nouveau PC de bureau ne peut pas ouvrir du tout le site de l'entreprise, example.com, depuis sa configuration ce matin. Chaque tentative se fige sans réponse.",
+            "objective": "PC-Design doit charger avec succès example.com en HTTP.",
+            "hints": [
+                "Le paquet ne quitte jamais PC-Design – il n'atteint même pas Switch-Office.",
+                "PC-Design n'a pas de passerelle par défaut configurée, il ne sait donc pas comment envoyer du trafic vers quoi que ce soit en dehors de son propre réseau local.",
+                "Sur PC-Design, définissez la passerelle par défaut sur 10.0.17.254 (adresse locale de Router-Main)."
+            ],
+            "explanation": "Un Client qui veut atteindre une adresse en dehors de son propre sous-réseau a besoin d'une passerelle par défaut pointant vers son routeur local. Sans elle, le paquet est supprimé avant même de quitter l'appareil, car il n'existe pas de chemin connu vers quoi que ce soit hors du réseau."
+        },
+        "hi": {
+            "title": "कार्यालय से कोई रूट नहीं",
+            "story": "PC-Design पर एक कर्मचारी कहती है कि नया कार्यालय PC कंपनी साइट example.com को बिल्कुल नहीं खोल सकता है क्योंकि इसे आज सुबह सेट अप किया गया था। हर प्रयास बिना किसी प्रतिक्रिया के लटका रहता है।",
+            "objective": "PC-Design को HTTP पर example.com को सफलतापूर्वक लोड करना चाहिए।",
+            "hints": [
+                "पैकेट PC-Design को बिल्कुल भी छोड़ता नहीं है – यह Switch-Office तक भी नहीं पहुंचता।",
+                "PC-Design के पास कोई डिफ़ॉल्ट गेटवे कॉन्फ़िगर नहीं है, इसलिए इसे पता नहीं है कि अपने स्वयं के स्थानीय नेटवर्क के बाहर कुछ भी ट्रैफिक कैसे भेजना है।",
+                "PC-Design पर, डिफ़ॉल्ट गेटवे को 10.0.17.254 (Router-Main का स्थानीय पता) पर सेट करें।"
+            ],
+            "explanation": "एक Client जो अपनी स्वयं की सबनेट के बाहर किसी पते तक पहुंचना चाहता है, को अपने स्थानीय Router की ओर इशारा करने वाली डिफ़ॉल्ट गेटवे की आवश्यकता है। इसके बिना, पैकेट को डिवाइस को छोड़ने से पहले ही गिरा दिया जाता है, क्योंकि नेटवर्क के बाहर कहीं भी कोई ज्ञात पथ नहीं है।"
+        },
+        "id": {
+            "title": "Tidak Ada Rute Keluar dari Kantor",
+            "story": "Seorang staf di PC-Design mengatakan bahwa PC kantor baru tidak dapat membuka situs perusahaan, example.com, sama sekali sejak diatur pagi ini. Setiap percobaan hanya tergantung tanpa respons.",
+            "objective": "PC-Design harus berhasil memuat example.com melalui HTTP.",
+            "hints": [
+                "Paket tidak pernah meninggalkan PC-Design sama sekali – paket itu bahkan tidak mencapai Switch-Office.",
+                "PC-Design tidak memiliki Gateway Default yang dikonfigurasi, jadi tidak tahu cara mengirim lalu lintas ke apa pun di luar jaringan lokal miliknya sendiri.",
+                "Pada PC-Design, atur Gateway Default menjadi 10.0.17.254 (alamat lokal Router-Main)."
+            ],
+            "explanation": "Sebuah Client yang ingin mencapai alamat di luar subnet-nya sendiri memerlukan Gateway Default yang menunjuk ke router lokal-nya. Tanpanya, paket dijatuhkan sebelum bahkan meninggalkan perangkat, karena tidak ada jalur yang diketahui ke mana pun di luar jaringan."
+        },
+        "ru": {
+            "title": "Нет маршрута из офиса",
+            "story": "Сотрудник на PC-Design говорит, что новый офисный PC вообще не может открыть корпоративный сайт example.com с момента его настройки этим утром. Каждая попытка зависает без ответа.",
+            "objective": "PC-Design должен успешно загружать example.com по протоколу HTTP.",
+            "hints": [
+                "Пакет вообще не покидает PC-Design – он даже не достигает Switch-Office.",
+                "На PC-Design не настроен Шлюз по умолчанию, поэтому он не знает, как отправлять трафик к чему-либо вне собственной локальной сети.",
+                "На PC-Design установите Шлюз по умолчанию на 10.0.17.254 (локальный адрес Router-Main)."
+            ],
+            "explanation": "Client, который хочет достичь адреса вне своей собственной подсети, нуждается в Шлюзе по умолчанию, указывающем на его локальный маршрутизатор. Без него пакет отбрасывается, прежде чем даже покидает устройство, так как нет известного маршрута к чему-либо вне сети."
+        },
+        "it": {
+            "title": "Nessuna rotta in uscita dall'ufficio",
+            "story": "Un membro dello staff su PC-Design dice che il nuovo PC dell'ufficio non riesce ad aprire il sito aziendale, example.com, da quando è stato configurato stamattina. Ogni tentativo rimane bloccato senza risposta.",
+            "objective": "PC-Design deve caricare con successo example.com via HTTP.",
+            "hints": [
+                "Il pacchetto non esce mai da PC-Design — non raggiunge nemmeno Switch-Office.",
+                "PC-Design non ha un Gateway predefinito configurato, quindi non sa come inviare traffico al di fuori della propria rete locale.",
+                "Su PC-Design, imposta il Gateway predefinito a 10.0.17.254 (indirizzo locale di Router-Main)."
+            ],
+            "explanation": "Un Client che vuole raggiungere un indirizzo al di fuori della propria subnet ha bisogno di un Gateway predefinito che punti al router locale. Senza uno, il pacchetto viene scartato prima ancora di lasciare il dispositivo, poiché non esiste alcun percorso noto verso l'esterno della rete."
+        },
+        "tr": {
+            "title": "Ofisten Çıkış Rotası Yok",
+            "story": "PC-Design'da çalışan birisi, yeni ofis PC'sinin bu sabah ayarlandığından beri şirket sitesi example.com'u hiç açamadığını söylüyor. Her deneme yanıt olmadan asılı kalıyor.",
+            "objective": "PC-Design, example.com'u HTTP üzerinden başarıyla yükleyebilmeli.",
+            "hints": [
+                "Paket PC-Design'dan hiç çıkmıyor — Switch-Office'e bile ulaşmıyor.",
+                "PC-Design'da Varsayılan ağ geçidi yapılandırılmamış, bu nedenle trafiği kendi yerel ağının dışına nasıl göndereceğini bilmiyor.",
+                "PC-Design'da, Varsayılan ağ geçidini 10.0.17.254 (Router-Main'in yerel adresi) olarak ayarla."
+            ],
+            "explanation": "Kendi alt ağının dışındaki bir adrese ulaşmak isteyen bir Client'in yerel yönlendiricisine işaret eden bir Varsayılan ağ geçidine ihtiyacı vardır. Biri olmadan paket cihazdan çıkmadan silinir, çünkü ağın dışına giden bilinen bir yol yoktur."
+        },
+        "th": {
+            "title": "ไม่มีเส้นทางออกจากสำนักงาน",
+            "story": "พนักงานบนพีซี-ดีไซน์ (PC-Design) บอกว่าพีซีสำนักงานเครื่องใหม่ไม่สามารถเปิดเว็บไซต์บริษัท example.com ได้เลยตั้งแต่ติดตั้งเมื่อเช้านี้ ทุกครั้งที่พยายามแขวนติดค้างโดยไม่มีการตอบสนอง",
+            "objective": "PC-Design ต้องโหลด example.com ผ่าน HTTP ได้สำเร็จ",
+            "hints": [
+                "แพ็กเก็ตไม่เคยออกจาก PC-Design เลย — ไม่ถึง Switch-Office ด้วยซ้ำ",
+                "PC-Design ไม่มีเกตเวย์เริ่มต้นที่ตั้งค่าไว้ ดังนั้นจึงไม่รู้วิธีส่งข้อมูลไปที่ใดนอกเครือข่ายท้องถิ่นของตัวเอง",
+                "บน PC-Design ให้ตั้งเกตเวย์เริ่มต้นเป็น 10.0.17.254 (ที่อยู่ท้องถิ่นของ Router-Main)"
+            ],
+            "explanation": "Client ที่ต้องการเข้าถึงที่อยู่นอกเซอร์เวิร์นเตอร์ของตนเองต้องมีเกตเวย์เริ่มต้นที่ชี้ไปยังเราเตอร์ท้องถิ่น หากไม่มี แพ็กเก็ตจะถูกลบออกก่อนที่จะออกจากอุปกรณ์ เนื่องจากไม่มีเส้นทางที่ทราบไปยังที่ใดนอกเครือข่าย"
+        },
+        "vi": {
+            "title": "Không có tuyến đường ra khỏi văn phòng",
+            "story": "Một nhân viên trên PC-Design nói rằng PC văn phòng mới không thể mở trang web công ty example.com chút nào kể từ khi nó được thiết lập sáng nay. Mỗi lần cố gắng đều bị treo không có phản hồi.",
+            "objective": "PC-Design phải tải thành công example.com qua HTTP.",
+            "hints": [
+                "Gói tin không bao giờ rời khỏi PC-Design — nó thậm chí không tới Switch-Office.",
+                "PC-Design không có Cổng mặc định được cấu hình, vì vậy nó không biết cách gửi lưu lượng truy cập tới bất kỳ thứ gì bên ngoài mạng cục bộ của nó.",
+                "Trên PC-Design, hãy đặt Cổng mặc định thành 10.0.17.254 (địa chỉ cục bộ của Router-Main)."
+            ],
+            "explanation": "Một Client muốn truy cập một địa chỉ bên ngoài subnet của nó cần một Cổng mặc định chỉ tới bộ định tuyến cục bộ của nó. Nếu không có, gói tin sẽ bị hủy trước khi rời khỏi thiết bị, vì không có tuyến đường nào được biết đến bên ngoài mạng."
+        }
+    }
+}

@@ -1,9 +1,12 @@
-# Cloudflare Workers static assets (public/_headers). Later rules override earlier ones for the same header.
+# Cloudflare Workers static assets (public/_headers). A request matching several rules inherits all of
+# their headers and a header set twice is joined, so the specific rule detaches the general value first ("! Header").
+# /index.html is served as "/" (static assets redirect the explicit file name), hence the "/" rule.
 /missions/*.json
   Cache-Control: public, max-age=3600
 /missions/index.json
+  ! Cache-Control
   Cache-Control: public, max-age=300
 /m/*
   Cache-Control: public, max-age=3600
-/index.html
+/
   Cache-Control: public, max-age=3600
