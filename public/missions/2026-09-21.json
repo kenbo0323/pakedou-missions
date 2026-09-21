@@ -1,0 +1,561 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-21",
+    "number": 1,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "cable_unplugged"
+    ],
+    "concepts": [
+        "physical-link"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.12.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.12.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Core",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.12.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.4.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.4.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Wiki Server Unreachable",
+            "story": "The receptionist reports the office wiki page won't load this morning. Staff on PC-Lab and PC-Finance both say the same page just hangs and never comes back.",
+            "objective": "Get an HTTP request from PC-Lab and a ping from PC-Finance to both reach Wiki-01 successfully.",
+            "hints": [
+                "Both PCs never even get a reply while trying to find the gateway's hardware address at 10.0.12.254 — the packets aren't leaving the local segment through Switch-Core.",
+                "Switch-Core has no working link over to Router-Edge, so the gateway address can never be resolved and traffic to the other subnet has nowhere to go.",
+                "Connect a cable between Switch-Core and Router-Edge to restore the link between the two."
+            ],
+            "explanation": "When a switch and router are physically disconnected, devices on the LAN can never resolve the gateway's MAC address, so nothing bound for another subnet can leave the segment. Always check physical links first when ARP resolution to a gateway times out."
+        },
+        "ja": {
+            "title": "Wikiサーバーに到達できない",
+            "story": "受付担当者から、今朝オフィスのWikiページが表示されないという報告がありました。PC-LabとPC-Financeのスタッフも同じページが固まったまま戻ってこないと言っています。",
+            "objective": "PC-LabからのHTTPリクエストとPC-Financeからのpingが、両方ともWiki-01に正常に到達できるようにしてください。",
+            "hints": [
+                "両方のPCとも、10.0.12.254のゲートウェイのハードウェアアドレスを調べる段階で応答が返ってきていません。パケットがSwitch-Coreを通ってローカルセグメントから出ていけていないのです。",
+                "Switch-CoreからRouter-Edgeへの有効なリンクがないため、ゲートウェイアドレスを解決できず、他のサブネット宛ての通信が行き場を失っています。",
+                "Switch-CoreとRouter-Edgeの間にケーブルを接続して、両者のリンクを復旧させてください。"
+            ],
+            "explanation": "スイッチとルーターが物理的に切断されていると、LAN上のデバイスはゲートウェイのMACアドレスを解決できなくなり、他のサブネット宛ての通信がそのセグメントから出られなくなります。ゲートウェイへのARP解決がタイムアウトする場合は、まず物理的な接続を確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "Wiki 服务器无法访问",
+            "story": "前台报告办公室 wiki 页面今早无法加载。PC-Lab 和 PC-Finance 上的员工都说同一个页面只是停止响应，永远不会返回。",
+            "objective": "让来自 PC-Lab 的 HTTP 请求和来自 PC-Finance 的 ping 都成功到达 Wiki-01。",
+            "hints": [
+                "两台 PC 在尝试在 10.0.12.254 处查找网关的硬件地址时都没有收到回复 — 数据包未通过 Switch-Core 离开本地网段。",
+                "Switch-Core 与 Router-Edge 之间没有工作链接，所以网关地址永远无法解析，发往其他子网的流量无处可去。",
+                "在 Switch-Core 和 Router-Edge 之间连接一根网线以恢复两者之间的链接。"
+            ],
+            "explanation": "当交换机和路由器物理断开连接时，LAN 上的设备永远无法解析网关的 MAC 地址，因此绑定到另一个子网的流量无法离开网段。当 ARP 解析到网关超时时，始终首先检查物理链接。"
+        },
+        "zh-TW": {
+            "title": "Wiki 伺服器無法連線",
+            "story": "前台回報辦公室 wiki 頁面今早無法載入。PC-Lab 和 PC-Finance 上的員工都說同一個頁面只是停止響應，永遠不會返回。",
+            "objective": "讓來自 PC-Lab 的 HTTP 請求和來自 PC-Finance 的 ping 都成功到達 Wiki-01。",
+            "hints": [
+                "兩台 PC 在嘗試在 10.0.12.254 處尋找網關的硬體位址時都沒有收到回覆 — 資料包未通過 Switch-Core 離開本地網段。",
+                "Switch-Core 與 Router-Edge 之間沒有運作的連結，所以網關位址永遠無法解析，發往其他子網的流量無處可去。",
+                "在 Switch-Core 和 Router-Edge 之間連接一條網路線以恢復兩者之間的連結。"
+            ],
+            "explanation": "當交換機和路由器實體斷開連線時，LAN 上的裝置永遠無法解析網關的 MAC 位址，因此綁定到另一個子網的流量無法離開網段。當 ARP 解析到網關逾時時，始終優先檢查實體連結。"
+        },
+        "ko": {
+            "title": "Wiki 서버에 연결할 수 없음",
+            "story": "접수담당자가 오늘 아침 사무실 wiki 페이지가 로드되지 않는다고 보고했습니다. PC-Lab과 PC-Finance의 직원들도 같은 페이지가 응답하지 않고 돌아오지 않는다고 말합니다.",
+            "objective": "PC-Lab의 HTTP 요청과 PC-Finance의 ping이 모두 Wiki-01에 성공적으로 도달하도록 합니다.",
+            "hints": [
+                "두 PC 모두 10.0.12.254에서 게이트웨이의 하드웨어 주소를 찾으려고 할 때 응답을 받지 못합니다 — 패킷이 Switch-Core를 통해 로컬 세그먼트에서 나가지 않습니다.",
+                "Switch-Core와 Router-Edge 사이에 작동하는 링크가 없어서 게이트웨이 주소를 해석할 수 없고, 다른 서브넷으로 향하는 트래픽이 갈 곳이 없습니다.",
+                "Switch-Core와 Router-Edge 사이에 케이블을 연결하여 두 장치 간의 링크를 복구합니다."
+            ],
+            "explanation": "스위치와 라우터가 물리적으로 연결 해제되면 LAN의 장치는 게이트웨이의 MAC 주소를 해석할 수 없어 다른 서브넷으로 향하는 트래픽이 세그먼트를 떠날 수 없습니다. 게이트웨이에 대한 ARP 해석 시간이 초과되면 항상 물리적 링크를 먼저 확인하십시오."
+        },
+        "es": {
+            "title": "Servidor Wiki No Disponible",
+            "story": "La recepcionista reporta que la página wiki de la oficina no carga esta mañana. El personal en PC-Lab y PC-Finance ambos dicen que la misma página simplemente se detiene y nunca regresa.",
+            "objective": "Consigue que una solicitud HTTP de PC-Lab y un ping de PC-Finance lleguen exitosamente a Wiki-01.",
+            "hints": [
+                "Ambas PC nunca reciben respuesta al intentar encontrar la dirección de hardware del gateway en 10.0.12.254 — los paquetes no salen del segmento local a través de Switch-Core.",
+                "Switch-Core no tiene un enlace de trabajo hacia Router-Edge, por lo que la dirección del gateway nunca puede resolverse y el tráfico a la otra subred no tiene a dónde ir.",
+                "Conecta un cable entre Switch-Core y Router-Edge para restaurar el enlace entre los dos."
+            ],
+            "explanation": "Cuando un switch y un router están físicamente desconectados, los dispositivos en la LAN nunca pueden resolver la dirección MAC del gateway, por lo que nada destinado a otra subred puede dejar el segmento. Siempre verifica primero los enlaces físicos cuando la resolución ARP al gateway agota el tiempo de espera."
+        },
+        "pt-BR": {
+            "title": "Servidor Wiki Inacessível",
+            "story": "A recepcionista relata que a página wiki do escritório não carrega esta manhã. Funcionários em PC-Lab e PC-Finance ambos dizem que a mesma página simplesmente trava e nunca volta.",
+            "objective": "Faça com que uma solicitação HTTP do PC-Lab e um ping do PC-Finance cheguem com sucesso até Wiki-01.",
+            "hints": [
+                "Ambos os PCs nunca recebem resposta ao tentar encontrar o endereço de hardware do gateway em 10.0.12.254 — os pacotes não saem do segmento local através de Switch-Core.",
+                "Switch-Core não tem um link ativo para Router-Edge, portanto o endereço do gateway nunca pode ser resolvido e o tráfego para a outra sub-rede não tem para onde ir.",
+                "Conecte um cabo entre Switch-Core e Router-Edge para restaurar o link entre os dois."
+            ],
+            "explanation": "Quando um switch e um router estão fisicamente desconectados, os dispositivos na LAN nunca conseguem resolver o endereço MAC do gateway, portanto nada destinado a outra sub-rede pode sair do segmento. Sempre verifique primeiro os links físicos quando a resolução ARP para o gateway expira o tempo limite."
+        },
+        "de": {
+            "title": "Wiki-Server nicht erreichbar",
+            "story": "Die Rezeptionistin meldet, dass die Wiki-Seite des Büros heute Morgen nicht geladen werden kann. Mitarbeiter auf PC-Lab und PC-Finance sagen, dass die Seite einfach hängt und nie antwortet.",
+            "objective": "Eine HTTP-Anfrage von PC-Lab und ein Ping von PC-Finance müssen beide erfolgreich Wiki-01 erreichen.",
+            "hints": [
+                "Beide PCs erhalten niemals eine Antwort beim Versuch, die Hardware-Adresse des Standard-Gateway unter 10.0.12.254 zu finden – die Pakete verlassen das lokale Segment durch Switch-Core nicht.",
+                "Switch-Core hat keine funktionierende Verbindung zu Router-Edge, daher kann die Gateway-Adresse nie aufgelöst werden und Traffic in das andere Subnetz hat keinen Weg.",
+                "Verbinden Sie Switch-Core und Router-Edge mit einem Kabel, um die Verbindung zwischen den beiden wiederherzustellen."
+            ],
+            "explanation": "Wenn ein Switch und ein Router physisch getrennt sind, können Geräte im LAN die MAC-Adresse des Standard-Gateway nie auflösen, sodass nichts für ein anderes Subnetz das Segment verlassen kann. Überprüfen Sie immer physische Verbindungen zuerst, wenn die ARP-Auflösung zum Standard-Gateway ausfällt."
+        },
+        "fr": {
+            "title": "Serveur Wiki inaccessible",
+            "story": "La réceptionniste signale que la page wiki du bureau ne se charge pas ce matin. Le personnel sur PC-Lab et PC-Finance rapporte que la page se fige simplement et ne revient jamais.",
+            "objective": "Une requête HTTP de PC-Lab et un ping de PC-Finance doivent tous deux atteindre Wiki-01 avec succès.",
+            "hints": [
+                "Les deux PC ne reçoivent jamais de réponse en essayant de trouver l'adresse matérielle de la passerelle par défaut à 10.0.12.254 — les paquets ne quittent pas le segment local via Switch-Core.",
+                "Switch-Core n'a pas de lien fonctionnel vers Router-Edge, donc l'adresse de la passerelle ne peut jamais être résolue et le trafic vers l'autre sous-réseau n'a nulle part où aller.",
+                "Connectez un câble entre Switch-Core et Router-Edge pour rétablir le lien entre les deux."
+            ],
+            "explanation": "Lorsqu'un commutateur et un routeur sont physiquement déconnectés, les appareils du LAN ne peuvent jamais résoudre l'adresse MAC de la passerelle par défaut, donc rien destiné à un autre sous-réseau ne peut quitter le segment. Vérifiez toujours les liens physiques en premier lorsque la résolution ARP vers une passerelle expire."
+        },
+        "hi": {
+            "title": "Wiki सर्वर अनुपलब्ध",
+            "story": "रिसेप्शनिस्ट ने बताया कि कार्यालय का wiki पेज आज सुबह लोड नहीं हो रहा है। PC-Lab और PC-Finance पर स्टाफ कहता है कि पेज बस हैंग हो जाता है और कभी जवाब नहीं देता।",
+            "objective": "PC-Lab से एक HTTP अनुरोध और PC-Finance से एक ping दोनों को Wiki-01 तक सफलतापूर्वक पहुंचना चाहिए।",
+            "hints": [
+                "दोनों PCs को 10.0.12.254 पर डिफ़ॉल्ट गेटवे का हार्डवेयर पता खोजते समय कभी भी कोई जवाब नहीं मिलता है — पैकेट Switch-Core के माध्यम से स्थानीय सेगमेंट को नहीं छोड़ रहे हैं।",
+                "Switch-Core के पास Router-Edge तक कोई कार्यशील लिंक नहीं है, इसलिए गेटवे पता कभी भी हल नहीं हो सकता है और दूसरे सबनेट पर ट्रैफिक के पास कहीं नहीं जाना है।",
+                "Switch-Core और Router-Edge के बीच एक केबल कनेक्ट करें दोनों के बीच लिंक को पुनः स्थापित करने के लिए।"
+            ],
+            "explanation": "जब एक स्विच और राउटर भौतिक रूप से डिस्कनेक्ट होते हैं, तो LAN पर डिवाइसेस डिफ़ॉल्ट गेटवे के MAC पते को कभी भी हल नहीं कर सकते हैं, इसलिए कोई भी दूसरे सबनेट के लिए बाउंड सेगमेंट को नहीं छोड़ सकता है। डिफ़ॉल्ट गेटवे के लिए ARP रिजोल्यूशन समय समाप्त होने पर हमेशा पहले भौतिक लिंक की जांच करें।"
+        },
+        "id": {
+            "title": "Server Wiki Tidak Dapat Dijangkau",
+            "story": "Resepsionis melaporkan halaman wiki kantor tidak dapat dimuat pagi ini. Staf di PC-Lab dan PC-Finance mengatakan halaman tersebut hanya macet dan tidak pernah merespons.",
+            "objective": "Permintaan HTTP dari PC-Lab dan ping dari PC-Finance harus kedua-duanya berhasil menjangkau Wiki-01.",
+            "hints": [
+                "Kedua PC tidak pernah mendapatkan balasan saat mencoba menemukan alamat perangkat keras Gateway Default di 10.0.12.254 — paket tidak meninggalkan segmen lokal melalui Switch-Core.",
+                "Switch-Core tidak memiliki tautan yang berfungsi ke Router-Edge, sehingga alamat gateway tidak dapat pernah diselesaikan dan lalu lintas ke subnet lain tidak memiliki tempat untuk pergi.",
+                "Hubungkan kabel antara Switch-Core dan Router-Edge untuk memulihkan tautan antara keduanya."
+            ],
+            "explanation": "Ketika switch dan router terputus secara fisik, perangkat di LAN tidak dapat pernah menyelesaikan alamat MAC dari Gateway Default, jadi tidak ada yang ditujukan untuk subnet lain dapat meninggalkan segmen. Selalu periksa tautan fisik terlebih dahulu ketika resolusi ARP ke gateway mencapai waktu tunggu."
+        },
+        "ru": {
+            "title": "Wiki-сервер недоступен",
+            "story": "Администратор сообщает, что страница вики офиса не загружается с утра. Сотрудники на PC-Lab и PC-Finance говорят, что страница просто зависает и никогда не отвечает.",
+            "objective": "HTTP-запрос с PC-Lab и ping с PC-Finance должны оба успешно достичь Wiki-01.",
+            "hints": [
+                "Оба PC никогда не получают ответ при попытке найти MAC-адрес шлюза по умолчанию с адресом 10.0.12.254 — пакеты не покидают локальный сегмент через Switch-Core.",
+                "Switch-Core не имеет рабочей связи с Router-Edge, поэтому адрес шлюза никогда не может быть разрешен, а трафик в другую подсеть некуда идти.",
+                "Подключите кабель между Switch-Core и Router-Edge, чтобы восстановить связь между ними."
+            ],
+            "explanation": "Когда коммутатор и маршрутизатор физически отключены, устройства в локальной сети никогда не смогут разрешить MAC-адрес шлюза по умолчанию, поэтому ничто, предназначенное для другой подсети, не может покинуть сегмент. Всегда проверяйте физические соединения в первую очередь, когда разрешение ARP на шлюз истекает."
+        },
+        "it": {
+            "title": "Server Wiki irraggiungibile",
+            "story": "La receptionist segnala che la pagina wiki dell'ufficio non si carica questa mattina. Gli staff su PC-Lab e PC-Finance dicono che la pagina rimane bloccata e non ritorna mai.",
+            "objective": "Far sì che una richiesta HTTP da PC-Lab e un ping da PC-Finance raggiungano entrambi Wiki-01 con successo.",
+            "hints": [
+                "Entrambi i PC non ricevono mai una risposta mentre cercano l'indirizzo hardware del gateway su 10.0.12.254 — i pacchetti non escono dal segmento locale attraverso Switch-Core.",
+                "Switch-Core non ha un collegamento funzionante verso Router-Edge, quindi l'indirizzo del gateway non può mai essere risolto e il traffico verso l'altra subnet non ha alcun percorso.",
+                "Collegare un cavo tra Switch-Core e Router-Edge per ripristinare il collegamento tra i due."
+            ],
+            "explanation": "Quando uno switch e un router sono fisicamente scollegati, i dispositivi sulla LAN non possono mai risolvere l'indirizzo MAC del gateway, quindi nulla destinato a un'altra subnet può lasciare il segmento. Controllare sempre i collegamenti fisici quando la risoluzione ARP al gateway scade."
+        },
+        "tr": {
+            "title": "Wiki Sunucusu Ulaşılamıyor",
+            "story": "Resepsiyonist, ofis wiki sayfasının bu sabah yüklenmediğini rapor ediyor. PC-Lab ve PC-Finance'teki personel de aynı sayfanın takılı kaldığını ve asla geri dönmediğini söylüyor.",
+            "objective": "PC-Lab'dan bir HTTP isteği ve PC-Finance'ten bir ping'in her ikisinin de Wiki-01'e başarıyla ulaşmasını sağlayın.",
+            "hints": [
+                "Her iki PC de Sonraki sıçrama 10.0.12.254'te ağ geçidinin donanım adresini bulmaya çalışırken asla yanıt almıyor — paketler Switch-Core üzerinden yerel segmenti terk etmiyor.",
+                "Switch-Core'un Router-Edge'e çalışan bir bağlantısı yok, bu nedenle ağ geçidi adresi asla çözümlenemiyor ve diğer alt ağa giden trafik gidecek yer bulamıyor.",
+                "Switch-Core ile Router-Edge arasında bir kablo bağlayarak ikisi arasındaki bağlantıyı geri yükleyin."
+            ],
+            "explanation": "Bir switch ve router fiziksel olarak bağlantısı kesildiğinde, LAN üzerindeki cihazlar ağ geçidinin MAC adresini asla çözemez, bu nedenle başka bir alt ağa giden hiçbir şey segmenti terk edemez. ARP çözümleme ağ geçidine zaman aşımına uğradığında her zaman önce fiziksel bağlantıları kontrol edin."
+        },
+        "vi": {
+            "title": "Máy chủ Wiki không thể truy cập",
+            "story": "Lễ tân báo cáo rằng trang wiki của văn phòng không tải sáng nay. Nhân viên trên PC-Lab và PC-Finance đều nói rằng trang đó chỉ bị treo và không bao giờ quay lại.",
+            "objective": "Đảm bảo một yêu cầu HTTP từ PC-Lab và một ping từ PC-Finance đều thành công trong việc truy cập Wiki-01.",
+            "hints": [
+                "Cả hai PC không bao giờ nhận được phản hồi khi cố gắng tìm địa chỉ phần cứng của cổng mặc định ở 10.0.12.254 — các gói không rời khỏi phân đoạn cục bộ thông qua Switch-Core.",
+                "Switch-Core không có đường liên kết hoạt động tới Router-Edge, do đó địa chỉ cổng mặc định không bao giờ có thể được phân giải và lưu lượng đến subnet khác không có nơi để đi.",
+                "Kết nối cáp giữa Switch-Core và Router-Edge để khôi phục liên kết giữa hai thiết bị."
+            ],
+            "explanation": "Khi một switch và router bị ngắt kết nối vật lý, các thiết bị trên LAN không bao giờ có thể phân giải địa chỉ MAC của cổng mặc định, vì vậy không có gì dành cho subnet khác có thể rời khỏi phân đoạn. Luôn kiểm tra các liên kết vật lý trước khi phân giải ARP tới cổng mặc định hết thời gian chờ."
+        },
+        "th": {
+            "title": "เซิร์ฟเวอร์ Wiki ไม่สามารถเข้าถึงได้",
+            "story": "เลขานุการรายงานว่าเพจ wiki ของสำนักงานจะไม่โหลดเมื่อเช้านี้ พนักงานบน PC-Lab และ PC-Finance ทั้งคู่บอกว่าเพจเดียวกันค้างอยู่และไม่เคยกลับมา",
+            "objective": "ให้คำขอ HTTP จาก PC-Lab และ ping จาก PC-Finance ไปยัง Wiki-01 สำเร็จทั้งคู่",
+            "hints": [
+                "PC ทั้งสองไม่ได้รับการตอบสนองในขณะที่พยายามค้นหาที่อยู่ฮาร์ดแวร์ของเกตเวย์ที่ 10.0.12.254 — แพ็กเก็ตไม่ออกจากส่วนท้องถิ่นผ่าน Switch-Core",
+                "Switch-Core ไม่มีลิงก์ที่ใช้งานได้ไปยัง Router-Edge ดังนั้นที่อยู่เกตเวย์จึงไม่สามารถแก้ไขได้และการจราจรไปยังเซ็บเน็ตอื่นไม่มีที่ไป",
+                "เชื่อมต่อสายเคเบิลระหว่าง Switch-Core และ Router-Edge เพื่อฟื้นฟูลิงก์ระหว่างทั้งสอง"
+            ],
+            "explanation": "เมื่อสวิตช์และเราเตอร์ถูกตัดการเชื่อมต่อทางกายภาพ อุปกรณ์บน LAN ไม่สามารถแก้ไขที่อยู่ MAC ของเกตเวย์ได้ ดังนั้นไม่มีอะไรที่มีผ่านไปยังเซ็บเน็ตอื่นสามารถออกจากส่วนได้ เสมอตรวจสอบลิงก์ทางกายภาพก่อนเมื่อ ARP resolution ไปยังเกตเวย์หมดเวลา"
+        }
+    }
+}

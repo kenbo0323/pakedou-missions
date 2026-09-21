@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-25",
+    "number": 5,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.16.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.16.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Tokyo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Tokyo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.16.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.3.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.17.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.3.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Osaka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.3.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.17.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.16.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.3.1",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Osaka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.17.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.17.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Orders Never Reach the Warehouse Server",
+            "story": "The warehouse team reports that orders sent from PC-Sales never show up on the central inventory server, Portal-01. Every attempt just hangs and never completes.",
+            "objective": "Get an HTTP GET from PC-Sales to Portal-01 to succeed.",
+            "hints": [
+                "The request reaches Portal-01, but the reply gets stuck and dropped at Router-Osaka before it can head back toward PC-Sales.",
+                "Router-Osaka has a route toward PC-Sales's network, but it points to the wrong next hop, so return traffic is sent nowhere useful and gets dropped.",
+                "On Router-Osaka, remove the existing route to 10.0.16.0/255.255.255.0 and add one to 10.0.16.0/255.255.255.0 via 10.0.3.1 on port 0."
+            ],
+            "explanation": "A static route needs the correct next hop, not just the correct destination network. When the next hop is wrong, return traffic gets misdirected and dropped, so the TCP handshake never finishes even though the original request arrived fine."
+        },
+        "ja": {
+            "title": "注文が倉庫サーバーに届かない",
+            "story": "倉庫チームからの報告によると、PC-Salesから送信した注文が中央在庫サーバーであるPortal-01に届かないとのことです。試行しても応答がなく、いつまでも完了しません。",
+            "objective": "PC-SalesからPortal-01へのHTTP GETを成功させること。",
+            "hints": [
+                "リクエストはPortal-01まで届いていますが、その返信がRouter-Osakaで詰まってしまい、PC-Salesに戻る前に破棄されています。",
+                "Router-OsakaにはPC-Salesのネットワーク宛てのルートがありますが、中継先(ネクストホップ)が間違っているため、戻りの通信がどこにも届かず破棄されてしまいます。",
+                "Router-Osakaで、10.0.16.0/255.255.255.0への既存のルートを削除し、10.0.16.0/255.255.255.0宛てのルートを中継先(ネクストホップ)10.0.3.1、ポート0で追加してください。"
+            ],
+            "explanation": "スタティックルートには、正しい宛先ネットワークだけでなく、正しい中継先(ネクストホップ)も必要です。中継先が間違っていると戻りの通信が誤った方向に送られて破棄されてしまうため、最初のリクエストは無事届いていてもTCPのハンドシェイクが完了しません。"
+        },
+        "zh-CN": {
+            "title": "订单无法到达仓库服务器",
+            "story": "仓库团队报告说从 PC-Sales 发送的订单从未显示在中央库存服务器 Portal-01 上。每次尝试都会挂起并且从不完成。",
+            "objective": "使来自 PC-Sales 到 Portal-01 的 HTTP GET 请求成功。",
+            "hints": [
+                "请求到达 Portal-01，但返回的数据在 Router-Osaka 被卡住并被丢弃，无法返回到 PC-Sales。",
+                "Router-Osaka 有一条指向 PC-Sales 网络的路由，但它指向了错误的下一跳，所以返回流量被发送到无用的地方并被丢弃。",
+                "在 Router-Osaka 上，删除现有的到 10.0.16.0/255.255.255.0 的路由，并添加一条到 10.0.16.0/255.255.255.0，下一跳为 10.0.3.1，端口号 0。"
+            ],
+            "explanation": "静态路由需要正确的下一跳，不仅仅是正确的目标网络。当下一跳错误时，返回流量被误导且被丢弃，所以即使原始请求到达也无法完成 TCP 握手。"
+        },
+        "zh-TW": {
+            "title": "訂單無法到達倉庫伺服器",
+            "story": "倉庫團隊報告說從 PC-Sales 發送的訂單從未顯示在中央庫存伺服器 Portal-01 上。每次嘗試都會掛起並且從不完成。",
+            "objective": "使來自 PC-Sales 到 Portal-01 的 HTTP GET 請求成功。",
+            "hints": [
+                "請求到達 Portal-01，但返回的資料在 Router-Osaka 被卡住並被丟棄，無法返回到 PC-Sales。",
+                "Router-Osaka 有一條指向 PC-Sales 網路的路由，但它指向了錯誤的下一跳，所以返回流量被發送到無用的地方並被丟棄。",
+                "在 Router-Osaka 上，刪除現有的到 10.0.16.0/255.255.255.0 的路由，並新增一條到 10.0.16.0/255.255.255.0，下一跳為 10.0.3.1，連接埠號 0。"
+            ],
+            "explanation": "靜態路由需要正確的下一跳，不僅僅是正確的目的網路。當下一跳錯誤時，返回流量被誤導且被丟棄，所以即使原始請求到達也無法完成 TCP 握手。"
+        },
+        "ko": {
+            "title": "주문이 창고 서버에 도달하지 않음",
+            "story": "창고 팀은 PC-Sales에서 보낸 주문이 중앙 재고 서버 Portal-01에 나타나지 않는다고 보고합니다. 모든 시도가 멈춰 있고 완료되지 않습니다.",
+            "objective": "PC-Sales에서 Portal-01로의 HTTP GET 요청이 성공하도록 합니다.",
+            "hints": [
+                "요청이 Portal-01에 도달하지만 응답이 Router-Osaka에서 멈춰 PC-Sales로 돌아갈 수 없으므로 버려집니다.",
+                "Router-Osaka는 PC-Sales의 네트워크를 향한 경로를 가지고 있지만 잘못된 다음 홉을 가리키므로 반환 트래픽이 쓸모없는 곳으로 전송되어 버려집니다.",
+                "Router-Osaka에서 10.0.16.0/255.255.255.0으로의 기존 경로를 제거하고 10.0.16.0/255.255.255.0으로 가는 경로를 다음 홉 10.0.3.1, 포트 번호 0으로 추가합니다."
+            ],
+            "explanation": "정적 경로에는 올바른 목적지 네트워크뿐만 아니라 올바른 다음 홉이 필요합니다. 다음 홉이 잘못되면 반환 트래픽이 잘못된 방향으로 전송되어 버려지므로 원본 요청이 도달했더라도 TCP 핸드셰이크가 완료되지 않습니다."
+        },
+        "es": {
+            "title": "Los pedidos nunca llegan al servidor del almacén",
+            "story": "El equipo de almacén reporta que los pedidos enviados desde PC-Sales nunca aparecen en el servidor central de inventario, Portal-01. Cada intento se queda colgado y nunca se completa.",
+            "objective": "Lograr que una solicitud HTTP GET de PC-Sales a Portal-01 tenga éxito.",
+            "hints": [
+                "La solicitud llega a Portal-01, pero la respuesta se queda atrapada y se descarta en Router-Osaka antes de poder volver hacia PC-Sales.",
+                "Router-Osaka tiene una ruta hacia la red de PC-Sales, pero apunta a un siguiente salto incorrecto, por lo que el tráfico de retorno se envía a un lugar inútil y se descarta.",
+                "En Router-Osaka, elimina la ruta existente a 10.0.16.0/255.255.255.0 y añade una nueva a 10.0.16.0/255.255.255.0 vía 10.0.3.1 en puerto 0."
+            ],
+            "explanation": "Una ruta estática necesita el siguiente salto correcto, no solo la red destino correcta. Cuando el siguiente salto es incorrecto, el tráfico de retorno se redirecciona incorrectamente y se descarta, por lo que el establecimiento de conexión TCP nunca finaliza aunque la solicitud original haya llegado."
+        },
+        "pt-BR": {
+            "title": "Pedidos nunca chegam ao servidor do armazém",
+            "story": "A equipe do armazém relata que pedidos enviados de PC-Sales nunca aparecem no servidor central de inventário, Portal-01. Toda tentativa fica pendurada e nunca é concluída.",
+            "objective": "Fazer com que uma solicitação HTTP GET de PC-Sales para Portal-01 tenha sucesso.",
+            "hints": [
+                "A solicitação chega a Portal-01, mas a resposta fica presa e é descartada em Router-Osaka antes de poder voltar para PC-Sales.",
+                "Router-Osaka tem uma rota em direção à rede de PC-Sales, mas aponta para um próximo salto incorreto, então o tráfego de retorno é enviado para um lugar inútil e descartado.",
+                "Em Router-Osaka, remova a rota existente para 10.0.16.0/255.255.255.0 e adicione uma para 10.0.16.0/255.255.255.0 via 10.0.3.1 na porta 0."
+            ],
+            "explanation": "Uma rota estática precisa do próximo salto correto, não apenas da rede destino correta. Quando o próximo salto está incorreto, o tráfego de retorno é desviado e descartado, então o aperto de mão TCP nunca é concluído mesmo que a solicitação original tenha chegado."
+        },
+        "de": {
+            "title": "Bestellungen erreichen den Warehouse-Server nie",
+            "story": "Das Warehouse-Team meldet, dass Bestellungen von PC-Sales nie auf dem zentralen Inventory-Server Portal-01 ankommen. Jeder Versuch hängt fest und wird nie abgeschlossen.",
+            "objective": "Ein HTTP GET von PC-Sales zu Portal-01 soll erfolgreich sein.",
+            "hints": [
+                "Die Anfrage erreicht Portal-01, aber die Antwort bleibt bei Router-Osaka stecken und wird abgeworfen, bevor sie zu PC-Sales zurück kann.",
+                "Router-Osaka hat eine Route zum Netzwerk von PC-Sales, zeigt aber auf den falschen Nächsten Hop, sodass Rückverkehr ins Nichts geht und abgeworfen wird.",
+                "Entfernen Sie auf Router-Osaka die vorhandene Route zu 10.0.16.0/255.255.255.0 und fügen Sie eine zu 10.0.16.0/255.255.255.0 mit Nächster Hop 10.0.3.1, Portnummer 0 hinzu."
+            ],
+            "explanation": "Eine statische Route benötigt den korrekten Nächsten Hop, nicht nur das richtige Zielnetzwerk. Wenn der Nächste Hop falsch ist, wird Rückverkehr umgeleitet und abgeworfen, sodass der TCP-Handshake nie beendet wird, obwohl die ursprüngliche Anfrage ankam."
+        },
+        "fr": {
+            "title": "Les commandes ne parviennent jamais au serveur d'entrepôt",
+            "story": "L'équipe d'entrepôt signale que les commandes envoyées depuis PC-Sales n'arrivent jamais au serveur d'inventaire central Portal-01. Chaque tentative se bloque et n'aboutit jamais.",
+            "objective": "Un HTTP GET de PC-Sales vers Portal-01 doit réussir.",
+            "hints": [
+                "La requête parvient à Portal-01, mais la réponse reste bloquée et est rejetée au Router-Osaka avant de pouvoir revenir vers PC-Sales.",
+                "Router-Osaka a une route vers le réseau de PC-Sales, mais elle pointe vers le mauvais Saut suivant, donc le trafic de retour est envoyé nulle part et est rejeté.",
+                "Sur Router-Osaka, supprimez la route existante vers 10.0.16.0/255.255.255.0 et ajoutez-en une vers 10.0.16.0/255.255.255.0 via Saut suivant 10.0.3.1, Numéro de port 0."
+            ],
+            "explanation": "Une route statique a besoin du bon Saut suivant, pas seulement du bon Réseau de destination. Quand le Saut suivant est mauvais, le trafic de retour est mal acheminé et rejeté, donc la négociation TCP ne se termine jamais bien que la requête originale soit arrivée."
+        },
+        "hi": {
+            "title": "ऑर्डर गोदाम सर्वर तक कभी नहीं पहुंचते",
+            "story": "गोदाम टीम बताती है कि PC-Sales से भेजे गए ऑर्डर कभी केंद्रीय सूची सर्वर Portal-01 पर नहीं दिखाई देते। हर प्रयास अटक जाता है और कभी पूरा नहीं होता।",
+            "objective": "PC-Sales से Portal-01 को HTTP GET सफल होना चाहिए।",
+            "hints": [
+                "अनुरोध Portal-01 तक पहुंचता है, लेकिन जवाब Router-Osaka पर अटक जाता है और वापस PC-Sales की ओर जाने से पहले हटा दिया जाता है।",
+                "Router-Osaka के पास PC-Sales के नेटवर्क का एक रूट है, लेकिन यह गलत अगला हॉप की ओर इशारा करता है, इसलिए रिटर्न ट्रैफिक कहीं नहीं जाता और हटा दिया जाता है।",
+                "Router-Osaka पर, 10.0.16.0/255.255.255.0 के लिए मौजूदा रूट हटाएं और 10.0.16.0/255.255.255.0 के लिए एक नया अगला हॉप 10.0.3.1, पोर्ट नंबर 0 के साथ जोड़ें।"
+            ],
+            "explanation": "एक स्थिर रूट को सही गंतव्य नेटवर्क के अलावा सही अगला हॉप भी चाहिए। जब अगला हॉप गलत हो, तो रिटर्न ट्रैफिक गलत दिशा में जाता है और हटा दिया जाता है, इसलिए TCP हैंडशेक कभी पूरी नहीं होती भले ही मूल अनुरोध पहुंचा हो।"
+        },
+        "id": {
+            "title": "Pesanan Tidak Pernah Sampai ke Server Gudang",
+            "story": "Tim gudang melaporkan bahwa pesanan yang dikirim dari PC-Sales tidak pernah muncul di server inventaris pusat Portal-01. Setiap upaya macet dan tidak pernah selesai.",
+            "objective": "HTTP GET dari PC-Sales ke Portal-01 harus berhasil.",
+            "hints": [
+                "Permintaan mencapai Portal-01, tetapi balasan tersangkut dan ditolak di Router-Osaka sebelum dapat kembali ke PC-Sales.",
+                "Router-Osaka memiliki rute ke jaringan PC-Sales, tetapi menunjuk ke Hop berikutnya yang salah, sehingga lalu lintas kembali dikirim ke tempat yang tidak berguna dan ditolak.",
+                "Di Router-Osaka, hapus rute yang ada ke 10.0.16.0/255.255.255.0 dan tambahkan satu ke 10.0.16.0/255.255.255.0 melalui Hop berikutnya 10.0.3.1 pada Nomor port 0."
+            ],
+            "explanation": "Rute statis memerlukan Hop berikutnya yang benar, bukan hanya Jaringan tujuan yang benar. Ketika Hop berikutnya salah, lalu lintas kembali dialihkan dan ditolak, sehingga handshake TCP tidak pernah selesai meskipun permintaan asli tiba."
+        },
+        "ru": {
+            "title": "Заказы никогда не доходят до серверов склада",
+            "story": "Команда склада сообщает, что заказы, отправленные с PC-Sales, никогда не появляются на центральном сервере инвентаря Portal-01. Каждая попытка зависает и никогда не завершается.",
+            "objective": "HTTP GET с PC-Sales на Portal-01 должен выполниться успешно.",
+            "hints": [
+                "Запрос достигает Portal-01, но ответ застревает и отбрасывается на Router-Osaka перед тем, как вернуться к PC-Sales.",
+                "Router-Osaka имеет маршрут к сети PC-Sales, но указывает на неправильный Следующий узел, поэтому обратный трафик отправляется в никуда и отбрасывается.",
+                "На Router-Osaka удалите существующий маршрут к 10.0.16.0/255.255.255.0 и добавьте маршрут к 10.0.16.0/255.255.255.0 с Следующим узлом 10.0.3.1 на Номер порта 0."
+            ],
+            "explanation": "Статический маршрут требует правильный Следующий узел, а не только правильную Целевую сеть. Когда Следующий узел неправильный, обратный трафик перенаправляется и отбрасывается, поэтому рукопожатие TCP никогда не завершается, даже если исходный запрос прибыл."
+        },
+        "it": {
+            "title": "Gli ordini non raggiungono il Server del magazzino",
+            "story": "Il team del magazzino segnala che gli ordini inviati da PC-Sales non compaiono mai sul server inventario centrale, Portal-01. Ogni tentativo rimane bloccato e non si completa mai.",
+            "objective": "Far riuscire una richiesta HTTP GET da PC-Sales a Portal-01.",
+            "hints": [
+                "La richiesta raggiunge Portal-01, ma la risposta rimane bloccata e viene scartata a Router-Osaka prima di poter tornare verso PC-Sales.",
+                "Router-Osaka ha un percorso verso la rete di PC-Sales, ma punta al gateway successivo sbagliato, quindi il traffico di ritorno viene inviato da nessuna parte utile e viene scartato.",
+                "Su Router-Osaka, rimuovi il percorso esistente verso 10.0.16.0/255.255.255.0 e aggiungi uno verso 10.0.16.0/255.255.255.0 via 10.0.3.1 sulla porta 0."
+            ],
+            "explanation": "Un percorso statico ha bisogno del gateway successivo corretto, non solo della rete di destinazione corretta. Quando il gateway successivo è sbagliato, il traffico di ritorno viene indirizzato male e scartato, quindi l'handshake TCP non si completa mai anche se la richiesta originale è arrivata correttamente."
+        },
+        "tr": {
+            "title": "Siparişler Depo Sunucusuna Hiçbir Zaman Ulaşmıyor",
+            "story": "Depo ekibi, PC-Sales'ten gönderilen siparişlerin merkezi envanter sunucusu Portal-01'de hiçbir zaman görünmediğini bildiriyor. Her deneme askıda kalıyor ve asla tamamlanmıyor.",
+            "objective": "PC-Sales'ten Portal-01'e yapılan HTTP GET isteğini başarılı hale getir.",
+            "hints": [
+                "İstek Portal-01'e ulaşıyor, ancak yanıt Router-Osaka'da takılıp bırakılıyor ve PC-Sales'e geri dönmeden önce bırakılıyor.",
+                "Router-Osaka'nın PC-Sales'in ağına doğru bir yönlendirmesi var, ancak yanlış sonraki sıçramaya işaret ediyor, bu nedenle dönüş trafiği hiçbir yere gönderiliyor ve bırakılıyor.",
+                "Router-Osaka'da, 10.0.16.0/255.255.255.0 adresine varolan yönlendirmeyi kaldır ve 10.0.3.1 sonraki sıçrama ile port 0 üzerinde 10.0.16.0/255.255.255.0 adresine yeni bir yönlendirme ekle."
+            ],
+            "explanation": "Statik bir yönlendirme, yalnızca doğru hedef ağ değil, aynı zamanda doğru sonraki sıçramaya ihtiyaç duyar. Sonraki sıçrama yanlış olduğunda, dönüş trafiği yanlış yönlendirilir ve bırakılır, bu nedenle orijinal istek düzgün şekilde ulaşmış olsa bile TCP el sıkışması asla tamamlanmaz."
+        },
+        "th": {
+            "title": "คำสั่งซื้อไม่เคยถึงเซิร์ฟเวอร์คลังสินค้า",
+            "story": "ทีมคลังสินค้ารายงานว่าคำสั่งซื้อที่ส่งจาก PC-Sales ไม่เคยปรากฏบน Portal-01 เซิร์ฟเวอร์สินค้าคงคลังกลาง ทุกครั้งที่พยายามค้างอยู่และไม่เคยเสร็จสิ้น",
+            "objective": "ให้คำขอ HTTP GET จาก PC-Sales ไปยัง Portal-01 สำเร็จ",
+            "hints": [
+                "คำขอถึง Portal-01 แต่คำตอบติดอยู่และถูกปล่อยออกที่ Router-Osaka ก่อนที่จะกลับไปยัง PC-Sales",
+                "Router-Osaka มีเส้นทางไปยังเครือข่าย PC-Sales แต่ชี้ไปยังฮ็อปถัดไปที่ผิด ดังนั้นการรับส่งข้อมูลกลับจึงถูกส่งไปที่ไหนที่มีประโยชน์และถูกปล่อย",
+                "บน Router-Osaka ให้ลบเส้นทางที่มีอยู่ไปยัง 10.0.16.0/255.255.255.0 และเพิ่มเส้นทางไปยัง 10.0.16.0/255.255.255.0 โดยมี ฮ็อปถัดไป 10.0.3.1 ที่พอร์ต 0"
+            ],
+            "explanation": "เส้นทางแบบคงที่ต้องการฮ็อปถัดไปที่ถูกต้อง ไม่ใช่แค่เครือข่ายปลายทางที่ถูกต้องเท่านั้น เมื่อฮ็อปถัดไปผิด การรับส่งข้อมูลกลับจะถูกเปลี่ยนเส้นทางผิดและถูกปล่อย ดังนั้นการจับมือ TCP จึงไม่เคยเสร็จสิ้นแม้ว่าคำขอเดิมมาถึงอย่างดี"
+        },
+        "vi": {
+            "title": "Đơn hàng Không Bao Giờ Đến Được Máy Chủ Kho",
+            "story": "Nhóm kho báo cáo rằng các đơn hàng được gửi từ PC-Sales không bao giờ xuất hiện trên máy chủ Portal-01 quản lý hàng tồn kho trung tâm. Mỗi lần cố gắng đều bị treo và không bao giờ hoàn thành.",
+            "objective": "Làm cho yêu cầu HTTP GET từ PC-Sales đến Portal-01 thành công.",
+            "hints": [
+                "Yêu cầu đến Portal-01, nhưng phản hồi bị kẹt và bị loại bỏ tại Router-Osaka trước khi có thể quay trở lại PC-Sales.",
+                "Router-Osaka có một tuyến đường đến mạng PC-Sales, nhưng nó chỉ đến hop tiếp theo sai, do đó lưu lượng trả về được gửi đến chỗ vô dụng và bị loại bỏ.",
+                "Trên Router-Osaka, xóa tuyến đường hiện có đến 10.0.16.0/255.255.255.0 và thêm tuyến đường đến 10.0.16.0/255.255.255.0 qua hop tiếp theo 10.0.3.1 trên cổng 0."
+            ],
+            "explanation": "Tuyến đường tĩnh cần hop tiếp theo chính xác, không chỉ mạng đích chính xác. Khi hop tiếp theo sai, lưu lượng trả về bị định tuyến sai và bị loại bỏ, vì vậy bắt tay TCP không bao giờ hoàn thành ngay cả khi yêu cầu ban đầu đã đến thành công."
+        }
+    }
+}

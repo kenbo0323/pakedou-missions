@@ -1,0 +1,7 @@
+{
+  "name": "pakedou-missions",
+  "private": true,
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

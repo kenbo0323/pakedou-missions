@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-23",
+    "number": 3,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.12.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.12.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-2F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.12.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.6.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.6.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Wiki Unreachable After the Desk Move",
+            "story": "Since the sales desks were rearranged, PC-Admin can no longer open the Wiki-01 page, while PC-Support seems to manage fine. The admin wants the wiki reachable again from their desk.",
+            "objective": "Get an HTTP GET from PC-Admin to Wiki-01 to succeed, and a ping from PC-Support to Wiki-01 to succeed.",
+            "hints": [
+                "The packet from PC-Admin never makes it past PC-Admin itself toward Wiki-01.",
+                "PC-Admin's default gateway points at Wiki-01's own address instead of a router, so PC-Admin can't hand off traffic to leave its subnet.",
+                "On PC-Admin, set the default gateway to 10.0.12.254 (Router-Edge's port 0 address)."
+            ],
+            "explanation": "A default gateway must be a router interface on the same subnet as the host, not the address of the remote server you're trying to reach. Otherwise the host has no way to route packets off its local network."
+        },
+        "ja": {
+            "title": "デスク移動後にWikiへ接続できない",
+            "story": "営業デスクの配置換え以降、PC-AdminからWiki-01のページを開けなくなりました。一方PC-Supportは問題なく閲覧できているようです。管理者は自分のデスクから再びウィキにアクセスできるようにしたいと考えています。",
+            "objective": "PC-AdminからWiki-01へのHTTP GETを成功させ、PC-SupportからWiki-01へのpingも成功させてください。",
+            "hints": [
+                "PC-Adminから送られたパケットは、Wiki-01に向かう途中、PC-Admin自身から先へ進めていません。",
+                "PC-AdminのデフォルトゲートウェイがルーターではなくWiki-01自身のアドレスを指しているため、PC-Adminはサブネットの外へトラフィックを送り出せません。",
+                "PC-Adminで、デフォルトゲートウェイを10.0.12.254(Router-Edgeのポート0のアドレス)に設定してください。"
+            ],
+            "explanation": "デフォルトゲートウェイには、接続したい遠隔サーバーのアドレスではなく、ホストと同じサブネット上にあるルーターのインターフェースを指定する必要があります。そうしないと、ホストはパケットをローカルネットワークの外へ送り出す経路を持てません。"
+        },
+        "zh-CN": {
+            "title": "Wiki 办公室搬迁后无法访问",
+            "story": "自从销售部门的办公桌重新布置后，PC-Admin 无法再打开 Wiki-01 页面，而 PC-Support 似乎运行正常。管理员希望从他们的办公桌能访问 Wiki。",
+            "objective": "使 PC-Admin 向 Wiki-01 发起的 HTTP GET 请求成功，以及 PC-Support 向 Wiki-01 的 ping 请求成功。",
+            "hints": [
+                "来自 PC-Admin 的数据包从未离开 PC-Admin 本身，无法到达 Wiki-01。",
+                "PC-Admin 的默认网关指向 Wiki-01 的地址而不是路由器，所以 PC-Admin 无法将流量转发离开其子网。",
+                "在 PC-Admin 上，将默认网关设置为 10.0.12.254（Router-Edge 的端口 0 地址）。"
+            ],
+            "explanation": "默认网关必须是与主机在同一子网的路由器接口，而不是你要访问的远程服务器的地址。否则主机没有办法将数据包路由到本地网络外。"
+        },
+        "zh-TW": {
+            "title": "Wiki 辦公室搬遷後無法訪問",
+            "story": "自從銷售部門的辦公桌重新安排後，PC-Admin 無法再開啟 Wiki-01 頁面，而 PC-Support 似乎運行正常。管理員希望從他們的辦公桌能訪問 Wiki。",
+            "objective": "使 PC-Admin 向 Wiki-01 發起的 HTTP GET 請求成功，以及 PC-Support 向 Wiki-01 的 ping 請求成功。",
+            "hints": [
+                "來自 PC-Admin 的封包從未離開 PC-Admin 本身，無法到達 Wiki-01。",
+                "PC-Admin 的預設閘道指向 Wiki-01 的位址而不是路由器，所以 PC-Admin 無法將流量轉發離開其子網。",
+                "在 PC-Admin 上，將預設閘道設定為 10.0.12.254（Router-Edge 的連接埠 0 位址）。"
+            ],
+            "explanation": "預設閘道必須是與主機在同一子網的路由器介面，而不是你要訪問的遠端伺服器的位址。否則主機沒有辦法將封包路由到本機網路外。"
+        },
+        "ko": {
+            "title": "사무실 이동 후 Wiki 접속 불가",
+            "story": "영업팀 책상을 재배치한 이후 PC-Admin에서 Wiki-01 페이지를 더 이상 열 수 없지만, PC-Support는 정상 작동합니다. 관리자는 자신의 책상에서 Wiki에 접속하기를 원합니다.",
+            "objective": "PC-Admin에서 Wiki-01로의 HTTP GET 요청 성공 및 PC-Support에서 Wiki-01로의 ping 성공을 확인합니다.",
+            "hints": [
+                "PC-Admin에서 보낸 패킷이 PC-Admin 자체를 떠나지 못하고 Wiki-01에 도달하지 못합니다.",
+                "PC-Admin의 기본 게이트웨이가 라우터 대신 Wiki-01 자체 주소를 가리키므로, PC-Admin은 트래픽을 서브넷 밖으로 전달할 수 없습니다.",
+                "PC-Admin에서 기본 게이트웨이를 10.0.12.254(Router-Edge의 포트 0 주소)로 설정합니다."
+            ],
+            "explanation": "기본 게이트웨이는 호스트와 같은 서브넷에 있는 라우터 인터페이스여야 하며, 접근하려는 원격 서버의 주소가 아니어야 합니다. 그렇지 않으면 호스트가 패킷을 로컬 네트워크 외부로 라우팅할 방법이 없습니다."
+        },
+        "es": {
+            "title": "Wiki Inaccesible Después del Traslado de Escritorio",
+            "story": "Desde que los escritorios de ventas fueron reacomodados, PC-Admin ya no puede abrir la página de Wiki-01, mientras que PC-Support funciona correctamente. El administrador quiere que el wiki sea accesible desde su escritorio nuevamente.",
+            "objective": "Lograr que una solicitud HTTP GET de PC-Admin a Wiki-01 tenga éxito y un ping de PC-Support a Wiki-01 tenga éxito.",
+            "hints": [
+                "El paquete de PC-Admin nunca sale de PC-Admin mismo hacia Wiki-01.",
+                "El gateway predeterminado de PC-Admin apunta a la dirección de Wiki-01 en lugar de un router, por lo que PC-Admin no puede entregar tráfico fuera de su subred.",
+                "En PC-Admin, establece el gateway predeterminado a 10.0.12.254 (dirección del puerto 0 de Router-Edge)."
+            ],
+            "explanation": "Un gateway predeterminado debe ser una interfaz de router en la misma subred que el host, no la dirección del servidor remoto al que intentas acceder. De lo contrario, el host no tiene forma de enrutar paquetes fuera de su red local."
+        },
+        "pt-BR": {
+            "title": "Wiki Inacessível Após Mudança de Escritório",
+            "story": "Desde que as mesas de vendas foram reorganizadas, PC-Admin não consegue mais abrir a página Wiki-01, enquanto PC-Support funciona normalmente. O administrador quer que o wiki seja acessível novamente da sua mesa.",
+            "objective": "Obter um HTTP GET bem-sucedido de PC-Admin para Wiki-01 e um ping bem-sucedido de PC-Support para Wiki-01.",
+            "hints": [
+                "O pacote de PC-Admin nunca sai do próprio PC-Admin em direção a Wiki-01.",
+                "O gateway padrão de PC-Admin aponta para o endereço do Wiki-01 em vez de um router, então PC-Admin não consegue enviar tráfego para fora de sua subrede.",
+                "Em PC-Admin, configure o gateway padrão para 10.0.12.254 (endereço da porta 0 do Router-Edge)."
+            ],
+            "explanation": "Um gateway padrão deve ser uma interface de router na mesma subrede do host, não o endereço do servidor remoto que você está tentando acessar. Caso contrário, o host não tem como rotear pacotes para fora de sua rede local."
+        },
+        "de": {
+            "title": "Wiki unerreichbar nach dem Schreibtischwechsel",
+            "story": "Seit die Verkaufsschreibtische umgestellt wurden, kann PC-Admin die Wiki-01-Seite nicht mehr öffnen, während PC-Support problemlos funktioniert. Der Admin möchte das Wiki wieder von seinem Schreibtisch aus erreichbar haben.",
+            "objective": "Erreichen Sie, dass ein HTTP GET von PC-Admin zu Wiki-01 erfolgreich ist und ein Ping von PC-Support zu Wiki-01 erfolgreich ist.",
+            "hints": [
+                "Das Paket von PC-Admin kommt nicht über PC-Admin selbst hinaus in Richtung Wiki-01.",
+                "Der Standard-Gateway von PC-Admin verweist auf die eigene Adresse von Wiki-01 statt auf einen Router, daher kann PC-Admin Verkehr nicht an sein Subnetz übertragen.",
+                "Setzen Sie auf PC-Admin den Standard-Gateway auf 10.0.12.254 (Portnummer 0 von Router-Edge)."
+            ],
+            "explanation": "Ein Standard-Gateway muss eine Router-Schnittstelle im gleichen Subnetz wie der Host sein, nicht die Adresse des Remote-Servers, den Sie erreichen möchten. Andernfalls hat der Host keine Möglichkeit, Pakete aus seinem lokalen Netzwerk zu leiten."
+        },
+        "fr": {
+            "title": "Wiki inaccessible après le déménagement du bureau",
+            "story": "Depuis que les bureaux des ventes ont été réaménagés, PC-Admin ne peut plus accéder à la page Wiki-01, tandis que PC-Support fonctionne correctement. L'administrateur veut que le wiki soit à nouveau accessible depuis son bureau.",
+            "objective": "Un HTTP GET de PC-Admin vers Wiki-01 doit réussir, et un ping de PC-Support vers Wiki-01 doit réussir.",
+            "hints": [
+                "Le paquet de PC-Admin n'arrive jamais à sortir de PC-Admin lui-même en direction de Wiki-01.",
+                "La passerelle par défaut de PC-Admin pointe vers l'adresse propre de Wiki-01 au lieu d'un routeur, donc PC-Admin ne peut pas transmettre le trafic en dehors de son sous-réseau.",
+                "Sur PC-Admin, définissez la passerelle par défaut sur 10.0.12.254 (adresse du port 0 de Router-Edge)."
+            ],
+            "explanation": "Une passerelle par défaut doit être une interface routeur du même sous-réseau que l'hôte, non l'adresse du serveur distant auquel vous essayez d'accéder. Sinon, l'hôte n'a aucun moyen d'acheminer les paquets en dehors de son réseau local."
+        },
+        "hi": {
+            "title": "डेस्क स्थानांतरण के बाद विकी अनुपलब्ध",
+            "story": "बिक्रय डेस्क के पुनर्व्यवस्था के बाद से, PC-Admin अब Wiki-01 पृष्ठ खोल नहीं सकता, जबकि PC-Support ठीक काम कर रहा है। प्रशासक चाहता है कि विकी उनकी डेस्क से फिर से पहुंचयोग्य हो।",
+            "objective": "PC-Admin से Wiki-01 में HTTP GET सफल हो और PC-Support से Wiki-01 में ping सफल हो।",
+            "hints": [
+                "PC-Admin से पैकेट कभी PC-Admin को छोड़कर Wiki-01 की ओर नहीं जाता।",
+                "PC-Admin का डिफ़ॉल्ट गेटवे Wiki-01 के अपने पते की ओर संकेत करता है, राउटर की ओर नहीं, इसलिए PC-Admin ट्रैफ़िक को अपने सबनेट से बाहर नहीं भेज सकता।",
+                "PC-Admin पर, डिफ़ॉल्ट गेटवे को 10.0.12.254 पर सेट करें (Router-Edge का पोर्ट नंबर 0 पता)।"
+            ],
+            "explanation": "एक डिफ़ॉल्ट गेटवे एक राउटर इंटरफेस होना चाहिए जो होस्ट के समान सबनेट पर हो, न कि उस दूरस्थ सर्वर का पता जिस तक आप पहुंचना चाहते हैं। अन्यथा होस्ट के पास अपने स्थानीय नेटवर्क से पैकेट भेजने का कोई तरीका नहीं है।"
+        },
+        "id": {
+            "title": "Wiki Tidak Dapat Diakses Setelah Pemindahan Meja",
+            "story": "Sejak meja penjualan disusun ulang, PC-Admin tidak lagi dapat membuka halaman Wiki-01, sementara PC-Support tampak berfungsi baik. Admin menginginkan wiki dapat diakses kembali dari mejanya.",
+            "objective": "Pastikan HTTP GET dari PC-Admin ke Wiki-01 berhasil dan ping dari PC-Support ke Wiki-01 berhasil.",
+            "hints": [
+                "Paket dari PC-Admin tidak pernah melewati PC-Admin sendiri menuju Wiki-01.",
+                "Gateway default PC-Admin menunjuk ke alamat Wiki-01 itu sendiri bukan ke router, jadi PC-Admin tidak dapat mengirim lalu lintas keluar dari subnetnya.",
+                "Pada PC-Admin, atur gateway default ke 10.0.12.254 (alamat port 0 Router-Edge)."
+            ],
+            "explanation": "Gateway default harus berupa antarmuka router di subnet yang sama dengan host, bukan alamat server jauh yang ingin Anda jangkau. Jika tidak, host tidak memiliki cara untuk merutekan paket keluar dari jaringan lokalnya."
+        },
+        "it": {
+            "title": "Wiki non raggiungibile dopo lo spostamento dei banchi",
+            "story": "Dopo che i banchi vendite sono stati riorganizzati, PC-Admin non riesce più ad aprire la pagina Wiki-01, mentre PC-Support sembra riuscirvi senza problemi. L'admin vuole che il wiki sia raggiungibile di nuovo dal proprio banco.",
+            "objective": "Far riuscire una richiesta HTTP GET da PC-Admin a Wiki-01 e un ping da PC-Support a Wiki-01.",
+            "hints": [
+                "Il pacchetto da PC-Admin non riesce nemmeno ad uscire da PC-Admin stesso in direzione di Wiki-01.",
+                "Il Gateway predefinito di PC-Admin punta all'indirizzo dello stesso Wiki-01 anziché a un router, quindi PC-Admin non può trasferire il traffico verso l'esterno della sua subnet.",
+                "Su PC-Admin, impostare il Gateway predefinito a 10.0.12.254 (indirizzo della Porta 0 di Router-Edge)."
+            ],
+            "explanation": "Un Gateway predefinito deve essere un'interfaccia router sulla stessa subnet dell'host, non l'indirizzo del server remoto che stai cercando di raggiungere. Altrimenti l'host non ha modo di instradare pacchetti fuori dalla sua rete locale."
+        },
+        "tr": {
+            "title": "Desk Taşınması Sonrası Wiki Erişilemiyor",
+            "story": "Satış masaları yeniden düzenlendiğinden beri, PC-Admin artık Wiki-01 sayfasını açamıyor, oysa PC-Support sorunsuz bir şekilde başarılı oluyor. Yönetici wiki'nin masasından yeniden erişilebilir olmasını istiyor.",
+            "objective": "PC-Admin'den Wiki-01'e HTTP GET isteğinin başarılı olmasını ve PC-Support'dan Wiki-01'e ping'in başarılı olmasını sağla.",
+            "hints": [
+                "PC-Admin'den gelen paket PC-Admin'in kendisinden daha öteye geçemiyor ve Wiki-01'e doğru gidemiyor.",
+                "PC-Admin'in Varsayılan ağ geçidi, bir router yerine Wiki-01'in kendi adresine işaret ediyor, bu nedenle PC-Admin trafiği subnet'inden çıkaramıyor.",
+                "PC-Admin'de, Varsayılan ağ geçidini 10.0.12.254 olarak ayarla (Router-Edge'in port 0 adresi)."
+            ],
+            "explanation": "Bir Varsayılan ağ geçidi, host ile aynı subnet'teki bir router arayüzü olmalıdır, ulaşmaya çalıştığın uzak sunucunun adresi değil. Aksi halde host'un paketleri yerel ağından çıkarması için hiçbir yolu yoktur."
+        },
+        "th": {
+            "title": "Wiki ไม่สามารถเข้าถึงได้หลังย้ายเดสก์",
+            "story": "หลังจากที่เดสก์ขายหนึ่งถูกจัดเรียงใหม่ แล้ว PC-Admin ไม่สามารถเปิดหน้า Wiki-01 ได้อีกต่อไป ในขณะที่ PC-Support ดูเหมือนจะจัดการได้อย่างสมบูรณ์ ผู้ดูแลต้องการให้ wiki สามารถเข้าถึงได้อีกครั้งจากเดสก์ของพวกเขา",
+            "objective": "ทำให้ HTTP GET จาก PC-Admin ถึง Wiki-01 สำเร็จ และ ping จาก PC-Support ถึง Wiki-01 สำเร็จ",
+            "hints": [
+                "แพ็กเก็ตจาก PC-Admin ไม่สามารถผ่าน PC-Admin เองไปยัง Wiki-01 ได้",
+                "เกตเวย์เริ่มต้นของ PC-Admin ชี้ไปที่ที่อยู่ของ Wiki-01 เอง ไม่ใช่เราเตอร์ ดังนั้น PC-Admin จึงไม่สามารถส่งต่อการจราจรออกจากเซ็บเน็ต",
+                "ที่ PC-Admin ตั้งค่าเกตเวย์เริ่มต้นเป็น 10.0.12.254 (ที่อยู่พอร์ต 0 ของ Router-Edge)"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นต้องเป็นอินเทอร์เฟซเราเตอร์บนเซ็บเน็ตเดียวกับโฮสต์ ไม่ใช่ที่อยู่ของเซิร์ฟเวอร์ระยะไกลที่คุณพยายามเข้าถึง มิฉะนั้น โฮสต์จะไม่มีวิธีในการกำหนดเส้นทางแพ็กเก็ตออกจากเครือข่ายท้องถิ่นของมัน"
+        },
+        "vi": {
+            "title": "Wiki Không Thể Truy Cập Sau Khi Di Chuyển Bàn",
+            "story": "Kể từ khi các bàn bán hàng được sắp xếp lại, PC-Admin không còn có thể mở trang Wiki-01, trong khi PC-Support dường như vẫn quản lý được tốt. Người quản trị muốn wiki có thể truy cập lại từ bàn của họ.",
+            "objective": "Làm cho HTTP GET từ PC-Admin đến Wiki-01 thành công và ping từ PC-Support đến Wiki-01 thành công.",
+            "hints": [
+                "Gói tin từ PC-Admin không thể vượt qua chính PC-Admin để hướng tới Wiki-01.",
+                "Cổng mặc định của PC-Admin trỏ đến địa chỉ của chính Wiki-01 thay vì một router, vì vậy PC-Admin không thể chuyển tiếp lưu lượng truy cập ra khỏi subnet của nó.",
+                "Trên PC-Admin, đặt cổng mặc định thành 10.0.12.254 (địa chỉ cổng 0 của Router-Edge)."
+            ],
+            "explanation": "Cổng mặc định phải là một giao diện router trên cùng subnet với máy chủ, không phải địa chỉ của máy chủ từ xa mà bạn đang cố gắng truy cập. Nếu không, máy chủ không có cách nào để định tuyến các gói tin ra khỏi mạng cục bộ của nó."
+        },
+        "ru": {
+            "title": "Wiki недоступна после перестановки столов",
+            "story": "После перестановки столов отдела продаж PC-Admin больше не может открыть страницу Wiki-01, а PC-Support работает нормально. Администратор хочет, чтобы вики была доступна снова со своего стола.",
+            "objective": "Успешно отправить HTTP GET от PC-Admin к Wiki-01 и успешно отправить ping от PC-Support к Wiki-01.",
+            "hints": [
+                "Пакет от PC-Admin не проходит дальше самого PC-Admin в направлении Wiki-01.",
+                "Шлюз по умолчанию PC-Admin указывает на собственный адрес Wiki-01 вместо маршрутизатора, поэтому PC-Admin не может передать трафик за пределы своей подсети.",
+                "На PC-Admin установите шлюз по умолчанию на 10.0.12.254 (адрес порта 0 Router-Edge)."
+            ],
+            "explanation": "Шлюз по умолчанию должен быть интерфейсом маршрутизатора в той же подсети, что и хост, а не адресом удаленного сервера, к которому вы пытаетесь получить доступ. В противном случае хост не имеет способа маршрутизировать пакеты за пределы своей локальной сети."
+        }
+    }
+}

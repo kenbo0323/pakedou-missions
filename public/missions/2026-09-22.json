@@ -1,0 +1,684 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-22",
+    "number": 2,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.19.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.19.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.13.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.23.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.13.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Branch",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.13.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.23.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.19.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.13.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Branch",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.23.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.23.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "No Route to the Intranet",
+            "story": "Sales staff report that PC-Sales can no longer open the head office intranet page hosted on File-Server. It worked fine before this morning.",
+            "objective": "Get an HTTP GET from PC-Sales to File-Server to succeed.",
+            "hints": [
+                "The packet never even leaves PC-Sales — it stops right there before reaching Switch-HQ.",
+                "PC-Sales has no default gateway set, so it has no idea how to reach an address outside its own subnet.",
+                "On PC-Sales, set the default gateway to 10.0.19.254 (Router-HQ's port 0 address)."
+            ],
+            "explanation": "Any device must know its default gateway to send traffic outside its own subnet. Without one, packets destined for remote networks are dropped immediately, even if the rest of the path is fine."
+        },
+        "ja": {
+            "title": "社内ネットワークへのルートがありません",
+            "story": "営業担当者から、PC-SalesがFile-Server上の本社イントラネットページを開けなくなったと報告がありました。今朝までは問題なく動作していました。",
+            "objective": "PC-SalesからFile-ServerへのHTTP GETを成功させてください。",
+            "hints": [
+                "パケットはPC-Salesから出ていくことすらできず、Switch-HQに届く前にそこで止まっています。",
+                "PC-Salesにデフォルトゲートウェイが設定されていないため、自分のサブネット外のアドレスへの行き方が分かりません。",
+                "PC-Salesで、デフォルトゲートウェイを10.0.19.254(Router-HQのポート0のアドレス)に設定してください。"
+            ],
+            "explanation": "どの機器も、自分のサブネットの外にトラフィックを送るにはデフォルトゲートウェイを知っている必要があります。設定されていないと、他の経路に問題がなくても、遠隔ネットワーク宛のパケットはその場で破棄されてしまいます。"
+        },
+        "zh-CN": {
+            "title": "无法路由到内网",
+            "story": "销售部员工反映 PC-Sales 无法再打开托管在 File-Server 上的总公司内网页面。早上之前还能正常使用。",
+            "objective": "使 PC-Sales 向 File-Server 发送的 HTTP GET 请求成功。",
+            "hints": [
+                "数据包根本没有离开 PC-Sales——它停留在那里，甚至没有到达 Switch-HQ。",
+                "PC-Sales 未设置默认网关，所以不知道如何访问自己子网以外的地址。",
+                "在 PC-Sales 上，设置默认网关为 10.0.19.254（Router-HQ 的端口 0 地址）。"
+            ],
+            "explanation": "任何设备都必须配置默认网关才能向自己的子网外发送流量。如果没有配置，即使路径的其余部分没有问题，发往远程网络的数据包也会被立即丢弃。"
+        },
+        "zh-TW": {
+            "title": "無法路由到內網",
+            "story": "銷售部員工反映 PC-Sales 無法再打開託管在 File-Server 上的總公司內網頁面。早上之前還能正常使用。",
+            "objective": "使 PC-Sales 向 File-Server 發送的 HTTP GET 請求成功。",
+            "hints": [
+                "資料包根本沒有離開 PC-Sales——它停留在那裡，甚至沒有到達 Switch-HQ。",
+                "PC-Sales 未設置預設閘道，所以不知道如何訪問自己子網以外的位址。",
+                "在 PC-Sales 上，設置預設閘道為 10.0.19.254（Router-HQ 的連接埠 0 位址）。"
+            ],
+            "explanation": "任何裝置都必須設定預設閘道才能向自己的子網外發送流量。如果沒有設定，即使路徑的其餘部分沒有問題，發往遠端網路的資料包也會被立即捨棄。"
+        },
+        "ko": {
+            "title": "인트라넷으로의 경로 없음",
+            "story": "판매팀 직원들이 PC-Sales에서 File-Server에 호스팅된 본사 인트라넷 페이지를 더 이상 열 수 없다고 보고했습니다. 오늘 아침 전까지는 잘 작동했습니다.",
+            "objective": "PC-Sales에서 File-Server로의 HTTP GET 요청이 성공하도록 합니다.",
+            "hints": [
+                "패킷이 PC-Sales를 전혀 떠나지 않습니다——Switch-HQ에 도달하기 전에 그 자리에 멈춥니다.",
+                "PC-Sales에 기본 게이트웨이가 설정되어 있지 않아서 자신의 서브넷 외부 주소에 도달하는 방법을 모릅니다.",
+                "PC-Sales에서 기본 게이트웨이를 10.0.19.254(Router-HQ의 포트 0 주소)로 설정합니다."
+            ],
+            "explanation": "모든 장치는 자신의 서브넷 외부로 트래픽을 전송하려면 기본 게이트웨이를 알아야 합니다. 기본 게이트웨이가 없으면 경로의 나머지 부분이 문제없어도 원격 네트워크로 향하는 패킷은 즉시 버려집니다."
+        },
+        "es": {
+            "title": "Sin ruta a la intranet",
+            "story": "El personal de ventas reporta que PC-Sales no puede abrir la página de intranet de la oficina central alojada en File-Server. Funcionaba perfectamente esta mañana.",
+            "objective": "Lograr que una solicitud HTTP GET de PC-Sales a File-Server tenga éxito.",
+            "hints": [
+                "El paquete nunca sale de PC-Sales, se detiene allí antes de alcanzar Switch-HQ.",
+                "PC-Sales no tiene configurado un gateway predeterminado, así que no sabe cómo alcanzar direcciones fuera de su propia subred.",
+                "En PC-Sales, establece el gateway predeterminado a 10.0.19.254 (dirección del puerto 0 de Router-HQ)."
+            ],
+            "explanation": "Cualquier dispositivo debe conocer su gateway predeterminado para enviar tráfico fuera de su propia subred. Sin uno, los paquetes destinados a redes remotas se descartan inmediatamente, incluso si el resto del camino está bien."
+        },
+        "pt-BR": {
+            "title": "Sem rota para a intranet",
+            "story": "A equipe de vendas relata que PC-Sales não consegue mais abrir a página da intranet da matriz hospedada em File-Server. Funcionava perfeitamente até esta manhã.",
+            "objective": "Fazer com que uma solicitação HTTP GET de PC-Sales para File-Server tenha sucesso.",
+            "hints": [
+                "O pacote nunca sai de PC-Sales — ele para ali mesmo antes de chegar a Switch-HQ.",
+                "PC-Sales não tem um gateway padrão configurado, então não sabe como alcançar endereços fora de sua própria subrede.",
+                "Em PC-Sales, defina o gateway padrão para 10.0.19.254 (endereço da porta 0 do Router-HQ)."
+            ],
+            "explanation": "Qualquer dispositivo precisa conhecer seu gateway padrão para enviar tráfego fora de sua própria subrede. Sem um, os pacotes destinados a redes remotas são descartados imediatamente, mesmo que o resto do caminho esteja funcionando bem."
+        },
+        "de": {
+            "title": "Keine Route zum Intranet",
+            "story": "Mitarbeiter aus dem Vertrieb berichten, dass PC-Sales nicht mehr auf die Intranet-Seite des Hauptbüros zugreifen kann, die auf File-Server gehostet wird. Es funktionierte bis heute Morgen noch einwandfrei.",
+            "objective": "Ein HTTP GET von PC-Sales zu File-Server muss erfolgreich sein.",
+            "hints": [
+                "Das Paket verlässt PC-Sales nicht einmal – es bleibt genau dort, bevor es Switch-HQ erreicht.",
+                "PC-Sales hat kein Standard-Gateway gesetzt, also weiß es nicht, wie es eine Adresse außerhalb seines eigenen Subnetzes erreicht.",
+                "Setzen Sie auf PC-Sales das Standard-Gateway auf 10.0.19.254 (Adresse von Router-HQ's Portnummer 0)."
+            ],
+            "explanation": "Jedes Gerät muss sein Standard-Gateway kennen, um Datenverkehr außerhalb des eigenen Subnetzes zu senden. Ohne eines werden Pakete für Remote-Netzwerke sofort verworfen, selbst wenn der Rest des Pfads in Ordnung ist."
+        },
+        "fr": {
+            "title": "Aucune route vers l'intranet",
+            "story": "Le personnel des ventes signale que PC-Sales ne peut plus accéder à la page intranet du siège social hébergée sur File-Server. Cela fonctionnait parfaitement ce matin.",
+            "objective": "Une requête HTTP GET de PC-Sales à File-Server doit réussir.",
+            "hints": [
+                "Le paquet ne quitte même pas PC-Sales – il s'arrête là avant d'atteindre Switch-HQ.",
+                "PC-Sales n'a pas de passerelle par défaut définie, donc il ne sait pas comment atteindre une adresse en dehors de son propre sous-réseau.",
+                "Sur PC-Sales, réglez la passerelle par défaut sur 10.0.19.254 (adresse du numéro de port 0 de Router-HQ)."
+            ],
+            "explanation": "Tout appareil doit connaître sa passerelle par défaut pour envoyer du trafic en dehors de son propre sous-réseau. Sans celle-ci, les paquets destinés aux réseaux distants sont immédiatement supprimés, même si le reste du chemin fonctionne correctement."
+        },
+        "hi": {
+            "title": "इंट्रानेट के लिए कोई रूट नहीं",
+            "story": "बिक्रय कर्मचारी बताते हैं कि PC-Sales अब File-Server पर होस्ट किए गए हेड ऑफिस इंट्रानेट पृष्ठ को नहीं खोल सकते। यह आज सुबह तक ठीक काम कर रहा था।",
+            "objective": "PC-Sales से File-Server तक HTTP GET सफल होना चाहिए।",
+            "hints": [
+                "पैकेट PC-Sales को छोड़ता ही नहीं – यह Switch-HQ तक पहुंचने से पहले ठीक वहीं रुक जाता है।",
+                "PC-Sales के पास डिफ़ॉल्ट गेटवे सेट नहीं है, इसलिए इसे पता नहीं है कि अपने सबनेट के बाहर किसी पते तक कैसे पहुंचें।",
+                "PC-Sales पर डिफ़ॉल्ट गेटवे को 10.0.19.254 पर सेट करें (Router-HQ के पोर्ट 0 का पता)।"
+            ],
+            "explanation": "किसी भी डिवाइस को अपने सबनेट के बाहर ट्रैफ़िक भेजने के लिए अपना डिफ़ॉल्ट गेटवे जानना चाहिए। इसके बिना, दूरस्थ नेटवर्क के लिए नियत पैकेट तुरंत छोड़ दिए जाते हैं, भले ही बाकी पथ ठीक हो।"
+        },
+        "id": {
+            "title": "Tidak Ada Rute ke Intranet",
+            "story": "Staf penjualan melaporkan bahwa PC-Sales tidak lagi dapat membuka halaman intranet kantor pusat yang dihosting di File-Server. Ini berfungsi dengan baik sampai pagi hari.",
+            "objective": "HTTP GET dari PC-Sales ke File-Server harus berhasil.",
+            "hints": [
+                "Paket bahkan tidak meninggalkan PC-Sales – paket berhenti di sana sebelum mencapai Switch-HQ.",
+                "PC-Sales tidak memiliki gateway default yang ditetapkan, jadi tidak tahu cara menjangkau alamat di luar subnet-nya sendiri.",
+                "Di PC-Sales, atur Gateway Default ke 10.0.19.254 (alamat port 0 Router-HQ)."
+            ],
+            "explanation": "Setiap perangkat harus mengetahui gateway default-nya untuk mengirim lalu lintas di luar subnet-nya sendiri. Tanpa ini, paket yang ditujukan untuk jaringan jarak jauh langsung dijatuhkan, meskipun sisa jalur berfungsi dengan baik."
+        },
+        "ru": {
+            "title": "Маршрут в интранет отсутствует",
+            "story": "Сотрудники отдела продаж сообщают, что PC-Sales больше не может открыть страницу интранета головного офиса, размещённую на File-Server. Это работало нормально до этого утра.",
+            "objective": "HTTP GET от PC-Sales к File-Server должен выполниться успешно.",
+            "hints": [
+                "Пакет не покидает даже PC-Sales – он останавливается там, прежде чем достичь Switch-HQ.",
+                "На PC-Sales не установлен шлюз по умолчанию, поэтому он не знает, как достичь адрес вне своей собственной подсети.",
+                "На PC-Sales установите шлюз по умолчанию на 10.0.19.254 (адрес порта 0 маршрутизатора Router-HQ)."
+            ],
+            "explanation": "Любое устройство должно знать свой шлюз по умолчанию для отправки трафика вне своей собственной подсети. Без него пакеты, предназначенные для удаленных сетей, сразу же отбрасываются, даже если остальная часть пути работает нормально."
+        },
+        "it": {
+            "title": "Nessun percorso verso la Intranet",
+            "story": "Lo staff di vendita segnala che PC-Sales non riesce più ad aprire la pagina intranet della sede principale ospitata su File-Server. Funzionava perfettamente questa mattina.",
+            "objective": "Far funzionare una richiesta HTTP GET da PC-Sales a File-Server.",
+            "hints": [
+                "Il pacchetto non esce nemmeno da PC-Sales — si ferma proprio lì prima di raggiungere Switch-HQ.",
+                "PC-Sales non ha un Gateway predefinito impostato, quindi non sa come raggiungere un indirizzo al di fuori della sua subnet.",
+                "Su PC-Sales, impostare il Gateway predefinito a 10.0.19.254 (indirizzo della porta 0 di Router-HQ)."
+            ],
+            "explanation": "Qualsiasi dispositivo deve conoscere il suo gateway predefinito per inviare traffico al di fuori della sua subnet. Senza uno, i pacchetti destinati a reti remote vengono scartati immediatamente, anche se il resto del percorso è a posto."
+        },
+        "tr": {
+            "title": "İç Ağa Gidiş Yok",
+            "story": "Satış personeli, PC-Sales'in artık File-Server'da barındırılan genel merkez intranet sayfasını açamadığını bildiriyor. Bu sabah kadar sorunsuz çalışıyordu.",
+            "objective": "PC-Sales'ten File-Server'a yapılan bir HTTP GET isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "Paket PC-Sales'i terk etmiyor — Switch-HQ'ye ulaşmadan tam orada duruyor.",
+                "PC-Sales'in varsayılan ağ geçidi ayarlanmamıştır, bu nedenle kendi alt ağı dışındaki bir adrese nasıl ulaşacağını bilmez.",
+                "PC-Sales'te varsayılan ağ geçidini 10.0.19.254 (Router-HQ'nin port 0 adresi) olarak ayarlayın."
+            ],
+            "explanation": "Herhangi bir cihaz, kendi alt ağının dışına trafik göndermek için varsayılan ağ geçidini bilmelidir. Bunun olmadığı durumda, uzak ağlara giden paketler, yol geri kalanı iyi olsa bile, hemen atılır."
+        },
+        "th": {
+            "title": "ไม่มีเส้นทางไปยังเครือข่ายภายใน",
+            "story": "พนักงานฝ่ายขายรายงานว่า PC-Sales ไม่สามารถเปิดหน้าอินทราเน็ตสำนักงานใหญ่ที่โฮสต์บน File-Server ได้อีกต่อไป มันทำงานได้ดีตั้งแต่เช้านี้",
+            "objective": "ทำให้คำขอ HTTP GET จาก PC-Sales ไปยัง File-Server สำเร็จ",
+            "hints": [
+                "แพ็กเก็ต PC-Sales ออกไปไม่ได้เลย — มันหยุดตรงนั้นก่อนถึง Switch-HQ",
+                "PC-Sales ไม่มีการตั้งค่าเกตเวย์เริ่มต้น จึงไม่รู้วิธีเข้าถึงที่อยู่นอกเครือข่ายของตัวเอง",
+                "ใน PC-Sales ตั้งค่าเกตเวย์เริ่มต้นเป็น 10.0.19.254 (ที่อยู่พอร์ต 0 ของ Router-HQ)"
+            ],
+            "explanation": "อุปกรณ์ใดๆ ต้องรู้เกตเวย์เริ่มต้นของตัวเองเพื่อส่งข้อมูลไปนอกเครือข่ายของตัวเอง หากไม่มี แพ็กเก็ตที่ส่งไปยังเครือข่ายระยะไกลจะถูกลบทิ้งไปทันที แม้ว่าเส้นทางอื่นจะดีขึ้นก็ตาม"
+        },
+        "vi": {
+            "title": "Không có tuyến đường đến Intranet",
+            "story": "Nhân viên bán hàng báo cáo rằng PC-Sales không thể mở trang intranet trụ sở chính được lưu trữ trên File-Server nữa. Nó hoạt động tốt trước sáng nay.",
+            "objective": "Làm cho yêu cầu HTTP GET từ PC-Sales đến File-Server thành công.",
+            "hints": [
+                "Gói tin không bao giờ rời khỏi PC-Sales — nó dừng ngay tại đó trước khi đến Switch-HQ.",
+                "PC-Sales không có cổng mặc định được đặt, vì vậy nó không biết cách tiếp cận một địa chỉ bên ngoài mạng con của nó.",
+                "Trên PC-Sales, đặt cổng mặc định thành 10.0.19.254 (địa chỉ cổng 0 của Router-HQ)."
+            ],
+            "explanation": "Bất kỳ thiết bị nào cũng phải biết cổng mặc định của nó để gửi lưu lượng truy cập bên ngoài mạng con của nó. Nếu không có, các gói tin dành cho mạng từ xa sẽ bị loại bỏ ngay, ngay cả khi phần còn lại của đường dẫn hoạt động tốt."
+        }
+    }
+}

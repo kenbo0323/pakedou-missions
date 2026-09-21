@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-26",
+    "number": 6,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.12.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.12.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-2F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.12.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.22.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.24.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.22.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The File Server Nobody Can Find",
+            "story": "Finance and Lab staff both report that File-Server has gone silent since this morning. PC-Finance can't open its usual reports over HTTP, and PC-Lab can't even get a ping reply from it.",
+            "objective": "Get PC-Finance's HTTP request and PC-Lab's ping to File-Server both succeeding.",
+            "hints": [
+                "Watch the log at Router-HQ: packets from both PC-Finance and PC-Lab toward File-Server are being dropped right there.",
+                "Router-HQ has no route to reach File-Server's network because File-Server's own address doesn't actually belong to the 10.0.22.0 subnet behind it.",
+                "On File-Server, set port 0's address to 10.0.22.1 with mask 255.255.255.0 so it matches Router-HQ's port 1 subnet."
+            ],
+            "explanation": "A host's IP address must fall inside the subnet of the router port that serves its segment. File-Server was configured with an address outside that range, so Router-HQ had no matching route and dropped every packet meant for it. Matching the address and mask to the local subnet restored routing."
+        },
+        "ja": {
+            "title": "誰も見つけられないファイルサーバー",
+            "story": "FinanceチームとLabチームの両方から、File-Serverが今朝から応答しないという報告がありました。PC-FinanceはいつものレポートをHTTPで開けず、PC-LabはPingの応答すら得られません。",
+            "objective": "PC-FinanceのHTTPリクエストとPC-LabのPingが、どちらもFile-Serverに対して成功するようにします。",
+            "hints": [
+                "Router-HQのログを確認してください。PC-FinanceとPC-Labの両方からFile-Serverへのパケットが、そこで破棄されています。",
+                "File-Server自体のアドレスが、その先にある10.0.22.0のサブネットに実際には属していないため、Router-HQはFile-Serverのネットワークへのルートを持っていません。",
+                "File-Serverのポート0のアドレスを10.0.22.1、マスクを255.255.255.0に設定し、Router-HQのポート1側のサブネットと一致させてください。"
+            ],
+            "explanation": "ホストのIPアドレスは、そのセグメントを担当するルーターのポートのサブネットの範囲内に収まっている必要があります。File-Serverにはその範囲外のアドレスが設定されていたため、Router-HQには一致するルートがなく、File-Server宛のパケットはすべて破棄されていました。アドレスとマスクをローカルのサブネットに合わせたことで、ルーティングが正常に戻りました。"
+        },
+        "zh-CN": {
+            "title": "无法找到的文件服务器",
+            "story": "财务部和实验室的员工都报告，File-Server 从今天早上就没有响应了。PC-Finance 无法通过 HTTP 打开其常规报表，PC-Lab 甚至无法获得来自它的 ping 回复。",
+            "objective": "使 PC-Finance 向 File-Server 发送的 HTTP 请求和 PC-Lab 的 ping 都成功。",
+            "hints": [
+                "查看 Router-HQ 的日志：来自 PC-Finance 和 PC-Lab 向 File-Server 的数据包在那里被丢弃了。",
+                "Router-HQ 没有路由到达 File-Server 的网络，因为 File-Server 的地址实际上不属于其后面的 10.0.22.0 子网。",
+                "在 File-Server 上，将端口 0 的地址设为 10.0.22.1，掩码为 255.255.255.0，使其与 Router-HQ 的端口 1 子网匹配。"
+            ],
+            "explanation": "主机的 IP 地址必须落在为其网段服务的路由器端口的子网内。File-Server 配置的地址超出了该范围，所以 Router-HQ 没有匹配的路由，丢弃了所有发往它的数据包。将地址和掩码与本地子网匹配后，路由恢复了。"
+        },
+        "zh-TW": {
+            "title": "無法找到的檔案伺服器",
+            "story": "財務部和實驗室的員工都回報，File-Server 從今天早上就沒有回應了。PC-Finance 無法透過 HTTP 開啟其常規報表，PC-Lab 甚至無法收到來自它的 ping 回覆。",
+            "objective": "使 PC-Finance 向 File-Server 發送的 HTTP 要求和 PC-Lab 的 ping 都成功。",
+            "hints": [
+                "查看 Router-HQ 的日誌：來自 PC-Finance 和 PC-Lab 向 File-Server 的封包在那裡被丟棄了。",
+                "Router-HQ 沒有路由可以到達 File-Server 的網路，因為 File-Server 的位址實際上不屬於其後面的 10.0.22.0 子網。",
+                "在 File-Server 上，將連接埠 0 的位址設為 10.0.22.1，遮罩為 255.255.255.0，使其與 Router-HQ 的連接埠 1 子網相符。"
+            ],
+            "explanation": "主機的 IP 位址必須落在為其網段服務的路由器連接埠的子網內。File-Server 設定的位址超出了該範圍，所以 Router-HQ 沒有符合的路由，丟棄了所有發往它的封包。將位址和遮罩與本機子網相符後，路由恢復了。"
+        },
+        "ko": {
+            "title": "찾을 수 없는 파일 서버",
+            "story": "재무팀과 실험실 직원들이 File-Server가 오늘 아침부터 응답하지 않는다고 보고했습니다. PC-Finance는 HTTP를 통해 평소 보고서를 열 수 없고, PC-Lab은 File-Server로부터 ping 응답을 받을 수도 없습니다.",
+            "objective": "PC-Finance의 File-Server에 대한 HTTP 요청과 PC-Lab의 ping이 모두 성공하도록 만듭니다.",
+            "hints": [
+                "Router-HQ의 로그를 확인하면 PC-Finance와 PC-Lab에서 File-Server로 향하는 패킷이 그곳에서 드롭되고 있습니다.",
+                "Router-HQ에는 File-Server 네트워크에 도달할 경로가 없습니다. File-Server 주소가 실제로 그 뒤의 10.0.22.0 서브넷에 속하지 않기 때문입니다.",
+                "File-Server에서 포트 0의 주소를 10.0.22.1로, 마스크를 255.255.255.0으로 설정하여 Router-HQ의 포트 1 서브넷과 일치하게 합니다."
+            ],
+            "explanation": "호스트의 IP 주소는 자신의 네트워크 세그먼트에 서비스하는 라우터 포트의 서브넷 내에 있어야 합니다. File-Server는 해당 범위 외의 주소로 구성되었으므로 Router-HQ는 일치하는 경로가 없어 모든 패킷을 드롭했습니다. 주소와 마스크를 로컬 서브넷과 일치하게 설정하면 라우팅이 복구됩니다."
+        },
+        "es": {
+            "title": "El Servidor de Archivos Imposible de Encontrar",
+            "story": "El personal de Finanzas y Laboratorio reportan que File-Server ha dejado de responder desde esta mañana. PC-Finance no puede abrir sus reportes habituales sobre HTTP, y PC-Lab ni siquiera obtiene respuesta de ping desde File-Server.",
+            "objective": "Lograr que la solicitud HTTP de PC-Finance y el ping de PC-Lab hacia File-Server tengan éxito.",
+            "hints": [
+                "Revisa el registro en Router-HQ: los paquetes de PC-Finance y PC-Lab hacia File-Server están siendo descartados allí.",
+                "Router-HQ no tiene ruta hacia la red de File-Server porque la dirección de File-Server no pertenece realmente a la subred 10.0.22.0 detrás de él.",
+                "En File-Server, establece la dirección del puerto 0 a 10.0.22.1 con máscara 255.255.255.0 para que coincida con la subred del puerto 1 de Router-HQ."
+            ],
+            "explanation": "La dirección IP de un host debe estar dentro de la subred del puerto del router que sirve su segmento. File-Server fue configurado con una dirección fuera de ese rango, por lo que Router-HQ no tenía ruta coincidente y descartó todos los paquetes destinados a él. Al hacer coincidir la dirección y máscara con la subred local, se restauró el enrutamiento."
+        },
+        "pt-BR": {
+            "title": "O Servidor de Arquivos Impossível de Encontrar",
+            "story": "Funcionários de Finanças e Laboratório informam que File-Server parou de responder desde esta manhã. PC-Finance não consegue abrir seus relatórios habituais via HTTP, e PC-Lab nem consegue obter resposta de ping de File-Server.",
+            "objective": "Fazer com que a solicitação HTTP de PC-Finance e o ping de PC-Lab para File-Server funcionem com êxito.",
+            "hints": [
+                "Verifique o log em Router-HQ: pacotes de PC-Finance e PC-Lab para File-Server estão sendo descartados lá.",
+                "Router-HQ não tem rota para alcançar a rede de File-Server porque o endereço de File-Server não pertence realmente à subrede 10.0.22.0 atrás dele.",
+                "Em File-Server, defina o endereço da porta 0 como 10.0.22.1 com máscara 255.255.255.0 para corresponder à subrede da porta 1 de Router-HQ."
+            ],
+            "explanation": "O endereço IP de um host deve estar dentro da subrede da porta do roteador que atende seu segmento. File-Server foi configurado com um endereço fora desse intervalo, então Router-HQ não tinha rota correspondente e descartou todos os pacotes destinados a ele. Ao fazer corresponder o endereço e a máscara à subrede local, o roteamento foi restaurado."
+        },
+        "de": {
+            "title": "Der Dateiserver, den niemand findet",
+            "story": "Mitarbeiter aus Finance und Lab berichten, dass File-Server seit heute Morgen stumm ist. PC-Finance kann seine üblichen Berichte über HTTP nicht öffnen, und PC-Lab erhält nicht einmal eine Ping-Antwort von File-Server.",
+            "objective": "Dafür sorgen, dass sowohl die HTTP-Anfrage von PC-Finance als auch das Ping von PC-Lab an File-Server erfolgreich sind.",
+            "hints": [
+                "Schau dir das Protokoll am Router-HQ an: Pakete von PC-Finance und PC-Lab in Richtung File-Server werden dort direkt verworfen.",
+                "Router-HQ hat keine Route zu File-Servers Netzwerk, weil File-Servers Adresse nicht wirklich zum 10.0.22.0-Subnetz dahinter gehört.",
+                "Stelle auf File-Server die Adresse von Port 0 auf 10.0.22.1 mit Maske 255.255.255.0 ein, damit sie Router-HQs Port-1-Subnetz entspricht."
+            ],
+            "explanation": "Die IP-Adresse eines Hosts muss im Subnetz des Router-Ports liegen, der sein Segment bedient. File-Server war mit einer Adresse außerhalb dieses Bereichs konfiguriert, daher hatte Router-HQ keine passende Route und verwarf alle Pakete, die dafür bestimmt waren. Das Anpassen von Adresse und Maske an das lokale Subnetz stellte die Weiterleitung wieder her."
+        },
+        "fr": {
+            "title": "Le serveur de fichiers introuvable",
+            "story": "Les équipes Finance et Lab signalent toutes deux que File-Server est silencieux depuis ce matin. PC-Finance ne peut pas ouvrir ses rapports habituels en HTTP, et PC-Lab n'obtient même pas de réponse ping de File-Server.",
+            "objective": "Réussir à ce que la requête HTTP de PC-Finance et le ping de PC-Lab vers File-Server fonctionnent tous les deux.",
+            "hints": [
+                "Regardez le journal au Router-HQ : les paquets de PC-Finance et PC-Lab en direction de File-Server y sont rejetés immédiatement.",
+                "Router-HQ n'a pas de route vers le réseau de File-Server car l'adresse de File-Server n'appartient pas au sous-réseau 10.0.22.0 qui le dessert.",
+                "Sur File-Server, définissez l'adresse du port 0 à 10.0.22.1 avec le masque 255.255.255.0 pour qu'elle corresponde au sous-réseau du port 1 de Router-HQ."
+            ],
+            "explanation": "L'adresse IP d'un hôte doit se trouver dans le sous-réseau du port du routeur qui dessert son segment. File-Server était configuré avec une adresse en dehors de cette plage, donc Router-HQ n'avait aucune route correspondante et rejetait chaque paquet qui lui était destiné. L'ajustement de l'adresse et du masque au sous-réseau local a restauré le routage."
+        },
+        "hi": {
+            "title": "वह फ़ाइल सर्वर जिसे कोई नहीं ढूंढ सकता",
+            "story": "Finance और Lab दोनों के कर्मचारी बताते हैं कि File-Server आज सुबह से खामोश है। PC-Finance अपनी सामान्य रिपोर्टें HTTP पर नहीं खोल सकता, और PC-Lab को File-Server से पिंग का जवाब भी नहीं मिल रहा।",
+            "objective": "PC-Finance का HTTP अनुरोध और PC-Lab का पिंग दोनों File-Server को सफलतापूर्वक काम करना चाहिए।",
+            "hints": [
+                "Router-HQ पर लॉग देखें: PC-Finance और PC-Lab से File-Server की ओर जाने वाले पैकेट वहीं छोड़ दिए जा रहे हैं।",
+                "Router-HQ के पास File-Server के नेटवर्क तक पहुंचने के लिए कोई रूट नहीं है क्योंकि File-Server का पता वास्तव में 10.0.22.0 सबनेट में नहीं है।",
+                "File-Server पर, पोर्ट 0 का पता 10.0.22.1 पर मास्क 255.255.255.0 के साथ सेट करें ताकि यह Router-HQ के पोर्ट 1 सबनेट से मेल खाए।"
+            ],
+            "explanation": "एक होस्ट का IP पता उस रूटर पोर्ट के सबनेट के भीतर होना चाहिए जो इसके सेगमेंट को सेवा देता है। File-Server को इस सीमा के बाहर एक पते के साथ कॉन्फ़िगर किया गया था, इसलिए Router-HQ के पास कोई मेल खाने वाला रूट नहीं था और इसके लिए हर पैकेट को छोड़ दिया। पता और मास्क को स्थानीय सबनेट से मेल खाने के लिए समायोजित करने से रूटिंग बहाल हुई।"
+        },
+        "id": {
+            "title": "Server File yang Tidak Bisa Ditemukan",
+            "story": "Staf Finance dan Lab melaporkan bahwa File-Server telah diam sejak pagi ini. PC-Finance tidak dapat membuka laporannya yang biasa melalui HTTP, dan PC-Lab bahkan tidak mendapat balasan ping dari File-Server.",
+            "objective": "Pastikan permintaan HTTP PC-Finance dan ping PC-Lab ke File-Server keduanya berhasil.",
+            "hints": [
+                "Lihat log di Router-HQ: paket dari PC-Finance dan PC-Lab menuju File-Server sedang dijatuhkan di sana.",
+                "Router-HQ tidak memiliki rute untuk mencapai jaringan File-Server karena alamat File-Server tidak berada di subnet 10.0.22.0.",
+                "Di File-Server, atur alamat port 0 ke 10.0.22.1 dengan maska 255.255.255.0 agar sesuai dengan subnet port 1 Router-HQ."
+            ],
+            "explanation": "Alamat IP sebuah host harus berada dalam subnet port router yang melayani segmennya. File-Server dikonfigurasi dengan alamat di luar rentang itu, jadi Router-HQ tidak memiliki rute yang cocok dan menjatuhkan setiap paket yang ditujukan kepadanya. Menyesuaikan alamat dan maska dengan subnet lokal mengembalikan perutean."
+        },
+        "ru": {
+            "title": "Файл-сервер, который никто не может найти",
+            "story": "Сотрудники Finance и Lab сообщают, что File-Server молчит с этого утра. PC-Finance не может открыть свои обычные отчеты по HTTP, а PC-Lab даже не получает ответ на ping от File-Server.",
+            "objective": "Обеспечить успешную работу как HTTP-запроса PC-Finance, так и ping PC-Lab на File-Server.",
+            "hints": [
+                "Посмотрите журнал на Router-HQ: пакеты от PC-Finance и PC-Lab в сторону File-Server отбрасываются прямо там.",
+                "Router-HQ не имеет маршрута к сети File-Server, так как адрес File-Server не принадлежит подсети 10.0.22.0.",
+                "На File-Server установите адрес порта 0 на 10.0.22.1 с маской 255.255.255.0, чтобы он совпадал с подсетью порта 1 Router-HQ."
+            ],
+            "explanation": "IP-адрес хоста должен находиться внутри подсети порта маршрутизатора, который обслуживает его сегмент. File-Server был сконфигурирован с адресом вне этого диапазона, поэтому Router-HQ не имел соответствующего маршрута и отбрасывал каждый пакет, предназначенный для него. Согласование адреса и маски с локальной подсетью восстановило маршрутизацию."
+        },
+        "it": {
+            "title": "Il Server File che Nessuno Trova",
+            "story": "Lo staff di Finance e Lab segnalano che File-Server è silenzioso da stamattina. PC-Finance non riesce ad aprire i soliti report via HTTP, e PC-Lab non riceve nemmeno una risposta ping da esso.",
+            "objective": "Fare in modo che la richiesta HTTP di PC-Finance e il ping di PC-Lab verso File-Server abbiano entrambi successo.",
+            "hints": [
+                "Guarda il log su Router-HQ: i pacchetti da PC-Finance e PC-Lab verso File-Server vengono scartati proprio lì.",
+                "Router-HQ non ha alcun percorso verso la rete di File-Server perché l'indirizzo di File-Server non appartiene al subnet 10.0.22.0 dietro di esso.",
+                "Su File-Server, imposta l'indirizzo della porta 0 a 10.0.22.1 con Maschera 255.255.255.0 affinché corrisponda al subnet della porta 1 di Router-HQ."
+            ],
+            "explanation": "L'indirizzo IP di un host deve rientrare nel subnet della porta del router che serve il suo segmento. File-Server è stato configurato con un indirizzo fuori da questo intervallo, quindi Router-HQ non aveva alcun percorso corrispondente e ha scartato ogni pacchetto destinato ad esso. Abbinare l'indirizzo e la Maschera al subnet locale ha ripristinato il routing."
+        },
+        "tr": {
+            "title": "Kimse Bulamadığı File Server",
+            "story": "Finance ve Lab personeli, File-Server'ın bu sabahtan beri sessiz olduğunu bildiriyor. PC-Finance, HTTP üzerinden olağan raporlarını açamıyor ve PC-Lab, File-Server'dan ping yanıtı bile alamıyor.",
+            "objective": "PC-Finance'in HTTP isteği ve PC-Lab'in File-Server'a ping göndermesinin her ikisinin de başarılı olmasını sağlayın.",
+            "hints": [
+                "Router-HQ'daki günlüğü izleyin: PC-Finance ve PC-Lab'den File-Server'a gelen paketler orada hemen düşürülüyor.",
+                "Router-HQ'nun File-Server'ın ağına ulaşmak için bir yönlendirilmesi yok, çünkü File-Server'ın adresi aslında arkasındaki 10.0.22.0 Maske'sine ait değil.",
+                "File-Server'da, port 0'ın adresini 10.0.22.1 olarak ayarlayın ve Maske 255.255.255.0 ile Router-HQ'nun port 1 Maske'si ile eşleşecek şekilde yapın."
+            ],
+            "explanation": "Bir hostun IP adresi, segmentine hizmet eden router portunun Maske'inin içinde yer almalıdır. File-Server bu aralığın dışında bir adresle yapılandırılmıştı, bu nedenle Router-HQ eşleşen bir yönlendirmeye sahip değildi ve ona yönelik her paketi düşürdü. Adresi ve Maske'i yerel Maske ile eşleştirmek yönlendirmeyi geri yükledi."
+        },
+        "th": {
+            "title": "เซิร์ฟเวอร์ไฟล์ที่ไม่มีใครหา",
+            "story": "บุคลากร Finance และ Lab รายงานว่า File-Server เงียบนิ่งตั้งแต่เช้านี้ PC-Finance ไม่สามารถเปิดรายงานตามปกติผ่าน HTTP ได้ และ PC-Lab ไม่ได้รับการตอบ ping จาก File-Server เลย",
+            "objective": "ให้คำขอ HTTP ของ PC-Finance และ ping ของ PC-Lab ไปยัง File-Server สำเร็จทั้งคู่",
+            "hints": [
+                "ดูบันทึกที่ Router-HQ: แพ็กเก็ตจาก PC-Finance และ PC-Lab ไปยัง File-Server ถูกปล่อยทิ้งตรงนั้น",
+                "Router-HQ ไม่มีเส้นทางไปยังเครือข่ายของ File-Server เพราะที่อยู่ของ File-Server ไม่ได้อยู่ในมาสก์ 10.0.22.0 ที่อยู่เบื้องหลัง",
+                "บน File-Server ให้ตั้งค่าที่อยู่ของพอร์ต 0 เป็น 10.0.22.1 โดยมีมาสก์ 255.255.255.0 เพื่อให้ตรงกับมาสก์พอร์ต 1 ของ Router-HQ"
+            ],
+            "explanation": "ที่อยู่ IP ของโฮสต์ต้องอยู่ในมาสก์ของพอร์ต Router ที่ให้บริการส่วนของมัน File-Server ถูกกำหนดค่าด้วยที่อยู่นอกช่วงนั้น ดังนั้น Router-HQ จึงไม่มีเส้นทางที่ตรงกัน และปล่อยทิ้งแพ็กเก็ตทุกชุดที่มุ่งหมายเพื่อให้ มาตรฐานที่อยู่และมาสก์กับมาสก์ท้องถิ่นคืนการกำหนดเส้นทาง"
+        },
+        "vi": {
+            "title": "Máy chủ Tệp Mà Không Ai Tìm Thấy",
+            "story": "Nhân viên Finance và Lab báo cáo rằng File-Server im lặng kể từ sáng nay. PC-Finance không thể mở các báo cáo thông thường qua HTTP và PC-Lab thậm chí không nhận được phản hồi ping từ File-Server.",
+            "objective": "Làm cho yêu cầu HTTP của PC-Finance và ping của PC-Lab tới File-Server đều thành công.",
+            "hints": [
+                "Xem nhật ký tại Router-HQ: các gói từ PC-Finance và PC-Lab hướng tới File-Server bị loại bỏ ngay tại đó.",
+                "Router-HQ không có tuyến đường để tiếp cận mạng của File-Server vì địa chỉ của File-Server không thực sự thuộc mạng con 10.0.22.0 phía sau nó.",
+                "Trên File-Server, đặt địa chỉ cổng 0 thành 10.0.22.1 với mạn 255.255.255.0 để khớp với mạn cổng 1 của Router-HQ."
+            ],
+            "explanation": "Địa chỉ IP của máy chủ phải nằm trong mạn của cổng Router phục vụ phân đoạn của nó. File-Server được cấu hình với địa chỉ nằm ngoài phạm vi đó, vì vậy Router-HQ không có tuyến đường phù hợp và đã loại bỏ mọi gói được gửi đến nó. Khớp địa chỉ và mạn với mạn cục bộ đã khôi phục định tuyến."
+        }
+    }
+}

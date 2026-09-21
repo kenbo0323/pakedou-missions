@@ -1,0 +1,692 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-27",
+    "number": 7,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "ttl_loop"
+    ],
+    "concepts": [
+        "routing-loop",
+        "ttl"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.15.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.15.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.15.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.6.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.3.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.6.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.6.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.3.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.15.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.6.1",
+                            "portIndex": 0
+                        },
+                        {
+                            "network": "10.0.3.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.6.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.3.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.3.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Packets Going in Circles",
+            "story": "The weekend on-call engineer got paged: PC-Finance can't reach File-Server across the site link. Since this morning, every request from Finance just times out, never getting a reply.",
+            "objective": "Get an HTTP GET from PC-Finance to File-Server to succeed.",
+            "hints": [
+                "The log shows the packet from PC-Finance never arrives; it keeps getting stuck going back and forth at Router-East.",
+                "Router-East and Router-West each hold a route pointing at the other for the File-Server's network, so packets bounce endlessly until their TTL runs out.",
+                "On Router-West, delete the static route to network 10.0.3.0 / 255.255.255.0 via 10.0.6.1."
+            ],
+            "explanation": "A routing loop happens when two routers each think the other is the way to reach a network. Packets bounce back and forth until their TTL expires and they're dropped. The fix is to remove the redundant, incorrect route so only one correct path to the destination remains."
+        },
+        "ja": {
+            "title": "パケットがぐるぐる回る問題",
+            "story": "週末の当番エンジニアが呼び出されました。PC-FinanceからFile-Serverへ拠点間リンク経由で接続できないというのです。今朝から、Financeからのリクエストはすべてタイムアウトし、応答が一切返ってきません。",
+            "objective": "PC-FinanceからFile-ServerへのHTTP GETを成功させること。",
+            "hints": [
+                "ログを見ると、PC-Financeからのパケットは一度も到達しておらず、Router-Eastのところで行ったり来たりを繰り返しています。",
+                "Router-EastとRouter-Westは、それぞれFile-Serverのネットワーク宛てのルートとしてお互いを指しているため、パケットはTTLが尽きるまで永遠に往復してしまいます。",
+                "Router-Westで、10.0.3.0 / 255.255.255.0 宛て、中継先(ネクストホップ) 10.0.6.1 の静的ルートを削除してください。"
+            ],
+            "explanation": "ルーティングループは、2台のルーターがそれぞれ相手を経由すれば目的のネットワークに到達できると思い込んでいるときに発生します。パケットはTTLが尽きて破棄されるまで、行ったり来たりを繰り返します。解決するには、余分で誤った方のルートを削除し、宛先への正しい経路が1つだけ残るようにします。"
+        },
+        "zh-CN": {
+            "title": "数据包循环转发",
+            "story": "周末值班工程师接到告警：PC-Finance 无法通过站点链路到达 File-Server。从今早开始，Finance 发来的每个请求都超时了，一直得不到回复。",
+            "objective": "让 PC-Finance 能够成功发送 HTTP GET 请求到 File-Server。",
+            "hints": [
+                "日志显示 PC-Finance 的数据包从未到达；它在 Router-East 被卡住，不断来回转发。",
+                "Router-East 和 Router-West 各自持有一条指向对方的路由用来到达 File-Server 的网络，数据包在两者间无限反弹直到 TTL 耗尽。",
+                "在 Router-West 上，删除指向网络 10.0.3.0 / 255.255.255.0 via 10.0.6.1 的静态路由。"
+            ],
+            "explanation": "当两台路由器互相认为对方是到达某个网络的路径时，就会形成路由环。数据包在两者间来回反弹直到 TTL 过期被丢弃。解决方法是删除那条冗余且错误的路由，这样只有一条正确的路径到达目的地。"
+        },
+        "zh-TW": {
+            "title": "封包循環轉發",
+            "story": "周末值班工程師接到告警：PC-Finance 無法通過站點連結到達 File-Server。從今早開始，Finance 發來的每個請求都逾時了，一直得不到回覆。",
+            "objective": "讓 PC-Finance 能夠成功發送 HTTP GET 請求到 File-Server。",
+            "hints": [
+                "日誌顯示 PC-Finance 的封包從未到達；它在 Router-East 被卡住，不斷來回轉發。",
+                "Router-East 和 Router-West 各自持有一條指向對方的路由以到達 File-Server 的網路，封包在兩者間無限反彈直到 TTL 耗盡。",
+                "在 Router-West 上，刪除指向網路 10.0.3.0 / 255.255.255.0 via 10.0.6.1 的靜態路由。"
+            ],
+            "explanation": "當兩台路由器互相認為對方是到達某個網路的路徑時，就會形成路由迴圈。封包在兩者間來回反彈直到 TTL 過期被丟棄。解決方法是刪除那條冗餘且錯誤的路由，這樣只有一條正確的路徑到達目的地。"
+        },
+        "ko": {
+            "title": "패킷 순환 전송",
+            "story": "주말 당직 엔지니어가 호출되었습니다: PC-Finance가 사이트 링크를 통해 File-Server에 연결할 수 없습니다. 오늘 아침부터 Finance에서 보낸 모든 요청이 타임아웃되어 응답을 받지 못하고 있습니다.",
+            "objective": "PC-Finance에서 File-Server로의 HTTP GET 요청이 성공하도록 만들기.",
+            "hints": [
+                "로그에 따르면 PC-Finance의 패킷이 도달하지 않았습니다. Router-East에서 계속 앞뒤로 갇혀 있습니다.",
+                "Router-East와 Router-West는 각각 File-Server 네트워크에 도달하기 위해 상대방을 가리키는 경로를 가지고 있어서 패킷이 TTL이 소진될 때까지 끝없이 왕복합니다.",
+                "Router-West에서 네트워크 10.0.3.0 / 255.255.255.0 via 10.0.6.1로의 정적 경로를 삭제합니다."
+            ],
+            "explanation": "라우팅 루프는 두 라우터가 서로를 네트워크에 도달하는 경로로 생각할 때 발생합니다. 패킷은 TTL이 만료될 때까지 두 라우터 사이를 왕복하다가 폐기됩니다. 해결 방법은 중복되고 잘못된 경로를 제거하여 목적지로의 올바른 경로만 남겨두는 것입니다."
+        },
+        "es": {
+            "title": "Paquetes Girando en Círculo",
+            "story": "El ingeniero de guardia del fin de semana recibió una alerta: PC-Finance no puede llegar a File-Server a través del enlace del sitio. Desde esta mañana, cada solicitud desde Finance agota el tiempo de espera sin obtener respuesta.",
+            "objective": "Conseguir que una solicitud HTTP GET de PC-Finance a File-Server sea exitosa.",
+            "hints": [
+                "El registro muestra que el paquete de PC-Finance nunca llega; sigue atrapado yendo y viniendo en Router-East.",
+                "Router-East y Router-West tienen una ruta estática cada uno que apunta al otro para alcanzar la red de File-Server, haciendo que los paquetes reboten infinitamente hasta que su TTL se agota.",
+                "En Router-West, elimina la ruta estática hacia la red 10.0.3.0 / 255.255.255.0 via 10.0.6.1."
+            ],
+            "explanation": "Un bucle de enrutamiento ocurre cuando dos routers creen que el otro es el camino para alcanzar una red. Los paquetes rebotan entre sí hasta que su TTL expira y son descartados. La solución es eliminar la ruta redundante e incorrecta para que solo quede un camino correcto hacia el destino."
+        },
+        "pt-BR": {
+            "title": "Pacotes em Círculos",
+            "story": "O engenheiro de plantão do fim de semana foi chamado: PC-Finance não consegue alcançar File-Server através do link de site. Desde esta manhã, toda solicitação do Finance está expirando sem obter resposta.",
+            "objective": "Fazer com que uma solicitação HTTP GET de PC-Finance para File-Server seja bem-sucedida.",
+            "hints": [
+                "O registro mostra que o pacote de PC-Finance nunca chega; fica preso indo e vindo em Router-East.",
+                "Router-East e Router-West cada um têm uma rota apontando para o outro para alcançar a rede de File-Server, então os pacotes ricocheteiam infinitamente até seu TTL expirar.",
+                "Em Router-West, exclua a rota estática para a rede 10.0.3.0 / 255.255.255.0 via 10.0.6.1."
+            ],
+            "explanation": "Um loop de roteamento acontece quando dois roteadores acham que o outro é o caminho para alcançar uma rede. Os pacotes ricocheteiam entre eles até seu TTL expirar e serem descartados. A solução é remover a rota redundante e incorreta para que apenas um caminho correto para o destino permaneça."
+        },
+        "de": {
+            "title": "Pakete im Kreis",
+            "story": "Der Wochenendbereitschaftsingenieur wurde aufgefordert: PC-Finance kann File-Server über die Standortverbindung nicht erreichen. Seit heute Morgen hat jede Anfrage von Finance eine Zeitüberschreitung, ohne eine Antwort zu erhalten.",
+            "objective": "Ein HTTP GET von PC-Finance zu File-Server zum Erfolg führen.",
+            "hints": [
+                "Das Protokoll zeigt, dass das Paket von PC-Finance nie ankommt; es bleibt ständig hin und her bei Router-East stecken.",
+                "Router-East und Router-West halten jeweils eine Route, die auf die andere für das Netzwerk von File-Server verweist, sodass Pakete endlos hin und her springen, bis ihre TTL abläuft.",
+                "Löschen Sie auf Router-West die statische Route zum Zielnetzwerk 10.0.3.0 / 255.255.255.0 via Nächster Hop 10.0.6.1."
+            ],
+            "explanation": "Eine Routing-Schleife tritt auf, wenn zwei Router jeweils denken, dass der andere der Weg ist, um ein Netzwerk zu erreichen. Pakete springen hin und her, bis ihre TTL abläuft und sie gelöscht werden. Die Lösung besteht darin, die redundante, inkorrekte Route zu entfernen, damit nur ein korrekter Pfad zum Ziel verbleibt."
+        },
+        "fr": {
+            "title": "Paquets en Boucle",
+            "story": "L'ingénieur de garde du week-end a reçu une alerte : PC-Finance ne peut pas atteindre File-Server à travers la liaison de site. Depuis ce matin, chaque demande en provenance de Finance expire, sans jamais recevoir de réponse.",
+            "objective": "Réussir une requête HTTP GET de PC-Finance vers File-Server.",
+            "hints": [
+                "Le journal montre que le paquet de PC-Finance n'arrive jamais ; il reste coincé en boucle entre Router-East et Router-West.",
+                "Router-East et Router-West détiennent chacun une route pointant vers l'autre pour le réseau de File-Server, si bien que les paquets rebondissent sans fin jusqu'à épuisement de leur TTL.",
+                "Sur Router-West, supprimez la route statique vers le réseau de destination 10.0.3.0 / 255.255.255.0 via saut suivant 10.0.6.1."
+            ],
+            "explanation": "Une boucle de routage se produit quand deux routeurs pensent chacun que l'autre est le chemin pour atteindre un réseau. Les paquets rebondissent d'avant en arrière jusqu'à épuisement de leur TTL, puis sont supprimés. La solution consiste à supprimer la route redondante et incorrecte pour que seul un chemin correct vers la destination subsiste."
+        },
+        "hi": {
+            "title": "पैकेट घूम रहे हैं",
+            "story": "सप्ताहांत ड्यूटी इंजीनियर को अलर्ट मिला: PC-Finance साइट लिंक के माध्यम से File-Server तक नहीं पहुंच सकता। आज सुबह से, Finance से प्रत्येक अनुरोध टाइमआउट हो रहा है, कभी जवाब नहीं मिल रहा।",
+            "objective": "PC-Finance से File-Server तक HTTP GET सफल करें।",
+            "hints": [
+                "लॉग दिखाता है कि PC-Finance का पैकेट कभी नहीं पहुंचता; यह Router-East पर लगातार आगे-पीछे फंसा रहता है।",
+                "Router-East और Router-West प्रत्येक के पास File-Server के नेटवर्क के लिए एक-दूसरे की ओर इशारा करने वाला रूट है, इसलिए पैकेट TTL समाप्त होने तक लगातार उछलते रहते हैं।",
+                "Router-West पर, गंतव्य नेटवर्क 10.0.3.0 / 255.255.255.0 को अगला हॉप 10.0.6.1 के माध्यम से स्थिर रूट हटाएं।"
+            ],
+            "explanation": "एक रूटिंग लूप तब होता है जब दो राउटर सोचते हैं कि दूसरा नेटवर्क तक पहुंचने का रास्ता है। पैकेट आगे-पीछे उछलते हैं जब तक उनका TTL समाप्त न हो जाए और वे छोड़ दिए जाएं। समाधान यह है कि अनावश्यक, गलत रूट को हटाएं ताकि केवल गंतव्य तक एक सही पथ रहे।"
+        },
+        "id": {
+            "title": "Paket Berputar-putar",
+            "story": "Insinyur on-call akhir pekan mendapat panggilan: PC-Finance tidak dapat menjangkau File-Server melalui tautan situs. Sejak pagi ini, setiap permintaan dari Finance mengalami timeout, tidak pernah mendapat balasan.",
+            "objective": "Buat permintaan HTTP GET dari PC-Finance ke File-Server berhasil.",
+            "hints": [
+                "Log menunjukkan paket dari PC-Finance tidak pernah tiba; terus terjebak bolak-balik di Router-East.",
+                "Router-East dan Router-West masing-masing menahan rute yang menunjuk ke yang lain untuk jaringan File-Server, sehingga paket memantul tanpa henti hingga TTL mereka habis.",
+                "Di Router-West, hapus rute statis ke jaringan tujuan 10.0.3.0 / 255.255.255.0 via hop berikutnya 10.0.6.1."
+            ],
+            "explanation": "Pengulangan routing terjadi ketika dua router masing-masing menganggap yang lain sebagai cara untuk menjangkau jaringan. Paket memantul bolak-balik sampai TTL mereka habis dan mereka dijatuhkan. Perbaikannya adalah menghapus rute yang berlebihan dan salah sehingga hanya satu jalur yang benar ke tujuan yang tersisa."
+        },
+        "ru": {
+            "title": "Пакеты в Кольце",
+            "story": "Дежурный инженер выходного дня получил вызов: PC-Finance не может достичь File-Server через линию между площадками. С этого утра каждый запрос от Finance истекает по времени, так и не получив ответ.",
+            "objective": "Получить успешный HTTP GET от PC-Finance к File-Server.",
+            "hints": [
+                "В журнале видно, что пакет от PC-Finance никогда не поступает; он постоянно застревает, передаваясь туда-сюда на Router-East.",
+                "Router-East и Router-West каждый содержат маршрут, указывающий на другой для сети File-Server, поэтому пакеты бесконечно отскакивают, пока не истечет их TTL.",
+                "На Router-West удалите статический маршрут к целевой сети 10.0.3.0 / 255.255.255.0 со следующим узлом 10.0.6.1."
+            ],
+            "explanation": "循环маршрутизации возникает, когда два маршрутизатора каждый считают, что другой — это путь к сети. Пакеты отскакивают туда-сюда, пока не истечет их TTL и они не будут отброшены. Решение заключается в удалении избыточного неправильного маршрута, чтобы остался только один корректный путь к пункту назначения."
+        },
+        "it": {
+            "title": "Pacchetti in Cerchio",
+            "story": "L'ingegnere di turno nel weekend ha ricevuto una segnalazione: PC-Finance non riesce a raggiungere File-Server attraverso il collegamento del sito. Da questa mattina, ogni richiesta da Finance scade sempre, senza ricevere risposta.",
+            "objective": "Far funzionare un HTTP GET da PC-Finance a File-Server.",
+            "hints": [
+                "Il log mostra che il pacchetto da PC-Finance non arriva mai; rimane bloccato rimbalzando avanti e indietro su Router-East.",
+                "Router-East e Router-West hanno ciascuno una rotta che punta all'altra per la rete di File-Server, quindi i pacchetti rimbalzano all'infinito finché il loro TTL si esaurisce.",
+                "Su Router-West, elimina la rotta statica verso la rete 10.0.3.0 / 255.255.255.0 via 10.0.6.1."
+            ],
+            "explanation": "Un loop di routing si verifica quando due Router pensano ciascuno che l'altro sia il percorso per raggiungere una rete. I pacchetti rimbalzano avanti e indietro finché il loro TTL scade e vengono scartati. La soluzione è rimuovere la rotta ridondante e scorretta in modo che rimanga solo un percorso corretto verso la destinazione."
+        },
+        "tr": {
+            "title": "Paketler Dönüşte",
+            "story": "Hafta sonu nöbet görevli mühendis çağrıldı: PC-Finance, site bağlantısı üzerinden File-Server'a ulaşamıyor. Bu sabahtan beri Finance'dan gelen her istek zaman aşımına uğruyor, hiç yanıt almıyor.",
+            "objective": "PC-Finance'dan File-Server'a bir HTTP GET başarılı hale getir.",
+            "hints": [
+                "Log, PC-Finance'dan gelen paketin hiç gelmediğini gösteriyor; Router-East'ta ileri geri gidip gelmeye takılı kalıyor.",
+                "Router-East ve Router-West'in her biri File-Server'ın ağı için birbirine işaret eden bir yolu var, bu nedenle paketler TTL bitene kadar sonsuz gidip geliyor.",
+                "Router-West'te, 10.0.3.0 / 255.255.255.0 ağına 10.0.6.1 üzerinden giden statik yolu sil."
+            ],
+            "explanation": "Yönlendirme döngüsü, iki Router'ın her biri diğerinin bir ağa ulaşmanın yolu olduğunu düşündüğünde oluşur. Paketler TTL'leri bitene kadar ileri geri gidip gelir ve sonra bırakılır. Çözüm, fazlalık ve yanlış yolu kaldırmak, böylece hedefe yalnızca bir doğru yol kalır."
+        },
+        "th": {
+            "title": "แพ็กเก็ตวนเป็นวงกลม",
+            "story": "วิศวกรนอกเวลาการทำงานได้รับการเรียก: PC-Finance ไม่สามารถเข้าถึง File-Server ผ่านลิงก์ไซต์ได้ ตั้งแต่เช้านี้ คำขอทั้งหมดจาก Finance หมดเวลา ไม่ได้รับคำตอบ",
+            "objective": "ทำให้ HTTP GET จาก PC-Finance ไป File-Server สำเร็จ",
+            "hints": [
+                "บันทึกแสดงว่าแพ็กเก็ตจาก PC-Finance ไม่เคยมาถึง มันติดอยู่ที่วนไปมาที่ Router-East",
+                "Router-East และ Router-West มีเส้นทางชี้ไปที่อีกเส้นทางหนึ่งสำหรับเครือข่าย File-Server ดังนั้นแพ็กเก็ตจึงเด้งไปมาจนกว่า TTL จะหมด",
+                "ใน Router-West ให้ลบเส้นทางคงที่ไปยังเครือข่าย 10.0.3.0 / 255.255.255.0 ผ่าน 10.0.6.1"
+            ],
+            "explanation": "ลูปเส้นทางเกิดขึ้นเมื่อ Router สองตัวคิดว่าตัวอื่นเป็นวิธีการเข้าถึงเครือข่าย แพ็กเก็ตจะวนไปมาจนกว่า TTL หมดลงและถูกทิ้ง วิธีแก้ไขคือการลบเส้นทางซ้ำซ้อนและไม่ถูกต้องเพื่อให้เหลือเพียงเส้นทางที่ถูกต้องเพียงเส้นทางเดียวไปยังปลายทาง"
+        },
+        "vi": {
+            "title": "Gói tin Đi Vòng tròn",
+            "story": "Kỹ sư trực chủ nhật được gọi: PC-Finance không thể đến được File-Server qua liên kết trang web. Kể từ sáng nay, mọi yêu cầu từ Finance đều hết thời gian chờ, không bao giờ nhận được phản hồi.",
+            "objective": "Thực hiện HTTP GET từ PC-Finance đến File-Server thành công.",
+            "hints": [
+                "Nhật ký cho thấy gói tin từ PC-Finance không bao giờ đến; nó bị kẹt đi lại qua lại tại Router-East.",
+                "Router-East và Router-West mỗi cái đều có một tuyến đường chỉ đến cái kia cho mạng của File-Server, vì vậy gói tin lòng vòng cho đến khi TTL hết.",
+                "Trên Router-West, hãy xóa tuyến đường tĩnh đến mạng 10.0.3.0 / 255.255.255.0 qua 10.0.6.1."
+            ],
+            "explanation": "Vòng lặp định tuyến xảy ra khi hai Router mỗi cái đều nghĩ cái kia là cách để đến mạng. Gói tin đi lại cho đến khi TTL hết và bị bỏ. Cách khắc phục là xóa tuyến đường dự phòng và không chính xác để chỉ còn một đường dẫn đúng đến đích."
+        }
+    }
+}

@@ -1,0 +1,678 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-24",
+    "number": 4,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "missing_route"
+    ],
+    "concepts": [
+        "static-route"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.26.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.12.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.27.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.12.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.12.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.27.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.27.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Wiki Requests Vanish on the Way Back",
+            "story": "Dev at Site A reports that Wiki-01 never loads. He can see the page start to load then it just hangs and times out, ever since the two offices got connected over the WAN link.",
+            "objective": "Get an HTTP GET from PC-Dev to Wiki-01 to succeed and receive a response.",
+            "hints": [
+                "The request reaches Wiki-01 fine, but the reply gets stuck at Router-West and never continues on its way back to PC-Dev.",
+                "Router-West has no routing entry for PC-Dev's network (10.0.26.0/255.255.255.0), so it has no idea where to send the reply.",
+                "On Router-West, add a static route: destination 10.0.26.0 / mask 255.255.255.0, next hop 10.0.12.1, out port 0."
+            ],
+            "explanation": "Routers only forward packets for networks they know about. Site B's router knew how to reach the WAN link but had no route back to Site A's LAN, so replies from Wiki-01 were silently dropped. Adding the missing static route lets Router-West find the way home."
+        },
+        "ja": {
+            "title": "Wikiへの応答が戻ってこない",
+            "story": "サイトAのDevさんから、Wiki-01が全く表示されないと報告がありました。ページの読み込みが始まるものの、そのまま止まってタイムアウトしてしまうとのことです。両オフィスがWANリンクで接続されてからずっとこの状態です。",
+            "objective": "PC-DevからWiki-01へのHTTP GETを成功させ、応答を受信できるようにします。",
+            "hints": [
+                "リクエストはWiki-01まで問題なく届いていますが、その応答はRouter-Westで止まってしまい、PC-Devへの返り道を先に進めません。",
+                "Router-WestにはPC-Devのネットワーク(10.0.26.0/255.255.255.0)へのルーティングエントリがないため、応答をどこへ送ればよいか分かりません。",
+                "Router-Westに静的ルートを追加してください。宛先ネットワーク 10.0.26.0 / マスク 255.255.255.0、中継先(ネクストホップ) 10.0.12.1、出力ポート 0 です。"
+            ],
+            "explanation": "ルーターは自分が知っているネットワーク宛のパケットしか転送できません。サイトBのルーターはWANリンクへの行き方は知っていましたが、サイトAのLANへ戻るルートを持っていなかったため、Wiki-01からの応答は静かに破棄されていました。不足していた静的ルートを追加することで、Router-Westが戻り道を見つけられるようになります。"
+        },
+        "zh-CN": {
+            "title": "Wiki 请求在返回途中消失",
+            "story": "Site A 的开发人员报告 Wiki-01 无法加载。他看到页面开始加载，但随后就卡住并超时了，这是自从两个办公室通过 WAN 链接连接以来就开始出现的问题。",
+            "objective": "使来自 PC-Dev 的 HTTP GET 请求成功到达 Wiki-01 并获得响应。",
+            "hints": [
+                "请求成功到达 Wiki-01，但回复卡在 Router-West 处，无法继续返回给 PC-Dev。",
+                "Router-West 中没有针对 PC-Dev 网络 (10.0.26.0/255.255.255.0) 的 Routing Table 条目，它不知道将回复发送到哪里。",
+                "在 Router-West 上添加静态路由：Destination network 10.0.26.0 / 掩码 255.255.255.0，下一跳 10.0.12.1，出端口 0。"
+            ],
+            "explanation": "路由器只转发它知道的网络的数据包。Site B 的路由器知道如何到达 WAN 链接，但没有返回 Site A 局域网的路由，所以来自 Wiki-01 的回复被无声丢弃。添加缺失的静态路由后，Router-West 就能找到回家的路。"
+        },
+        "zh-TW": {
+            "title": "Wiki 請求在返回途中消失",
+            "story": "Site A 的開發人員報告 Wiki-01 無法載入。他看到頁面開始載入，但隨後就卡住並逾時了，這是自從兩個辦公室透過 WAN 連結連接以來就開始出現的問題。",
+            "objective": "使來自 PC-Dev 的 HTTP GET 請求成功到達 Wiki-01 並取得回應。",
+            "hints": [
+                "請求成功到達 Wiki-01，但回覆卡在 Router-West 處，無法繼續返回給 PC-Dev。",
+                "Router-West 中沒有針對 PC-Dev 網路 (10.0.26.0/255.255.255.0) 的 路由表 項目，它不知道將回覆傳送到哪裡。",
+                "在 Router-West 上新增靜態路由：目的網路 10.0.26.0 / 遮罩 255.255.255.0，下一跳 10.0.12.1，出 連接埠號 0。"
+            ],
+            "explanation": "路由器只轉送它知道的網路的資料包。Site B 的路由器知道如何到達 WAN 連結，但沒有返回 Site A 區域網路的路由，所以來自 Wiki-01 的回覆被無聲丟棄。新增缺失的靜態路由後，Router-West 就能找到回家的路。"
+        },
+        "ko": {
+            "title": "Wiki 요청이 반환 중에 사라짐",
+            "story": "Site A의 개발자가 Wiki-01이 로드되지 않는다고 보고합니다. 페이지가 로드되기 시작하는 것을 볼 수 있지만 그 후 멈추고 시간 초과되는데, 이는 두 사무실이 WAN 링크로 연결된 이후부터 시작되었습니다.",
+            "objective": "PC-Dev에서 Wiki-01로의 HTTP GET 요청이 성공하고 응답을 수신하도록 합니다.",
+            "hints": [
+                "요청은 Wiki-01에 정상적으로 도달하지만 응답이 Router-West에서 멈춰 PC-Dev로 돌아오지 않습니다.",
+                "Router-West에는 PC-Dev의 네트워크 (10.0.26.0/255.255.255.0)에 대한 라우팅 테이블 항목이 없어서 응답을 어디로 보낼지 알 수 없습니다.",
+                "Router-West에서 정적 라우트를 추가합니다: 목적지 네트워크 10.0.26.0 / 마스크 255.255.255.0, 다음 홉 10.0.12.1, 포트 0 아웃."
+            ],
+            "explanation": "라우터는 알고 있는 네트워크의 패킷만 전달합니다. Site B의 라우터는 WAN 링크에 도달하는 방법을 알았지만 Site A의 LAN으로 돌아가는 경로가 없어서 Wiki-01의 응답이 무음으로 버려졌습니다. 누락된 정적 라우트를 추가하면 Router-West가 집으로 돌아가는 경로를 찾을 수 있습니다."
+        },
+        "es": {
+            "title": "Solicitudes de Wiki desaparecen en el retorno",
+            "story": "El desarrollador del Site A reporta que Wiki-01 nunca carga. Puede ver la página empezar a cargar pero simplemente se congela y agota el tiempo de espera, desde que las dos oficinas se conectaron a través del enlace WAN.",
+            "objective": "Lograr que una solicitud HTTP GET desde PC-Dev a Wiki-01 se realice correctamente y reciba una respuesta.",
+            "hints": [
+                "La solicitud llega bien a Wiki-01, pero la respuesta se queda atrapada en Router-West y nunca continúa su camino de regreso a PC-Dev.",
+                "Router-West no tiene entrada en la Tabla de rutas para la red de PC-Dev (10.0.26.0/255.255.255.0), así que no sabe a dónde enviar la respuesta.",
+                "En Router-West, agrega una ruta estática: Red destino 10.0.26.0 / Máscara 255.255.255.0, Siguiente salto 10.0.12.1, puerto salida 0."
+            ],
+            "explanation": "Los routers solo reenvían paquetes para redes que conocen. El router de Site B sabía cómo llegar al enlace WAN pero no tenía ruta de regreso a la LAN de Site A, así que las respuestas de Wiki-01 fueron descartadas silenciosamente. Agregar la ruta estática que falta permite que Router-West encuentre el camino a casa."
+        },
+        "pt-BR": {
+            "title": "Requisições Wiki desaparecem no caminho de volta",
+            "story": "O desenvolvedor no Site A relata que Wiki-01 nunca carrega. Ele consegue ver a página começar a carregar, mas ela simplesmente trava e expira, desde que os dois escritórios se conectaram pelo link WAN.",
+            "objective": "Fazer uma solicitação HTTP GET de PC-Dev para Wiki-01 funcionar corretamente e receber uma resposta.",
+            "hints": [
+                "A solicitação chega bem a Wiki-01, mas a resposta fica presa em Router-West e nunca continua seu caminho de volta para PC-Dev.",
+                "Router-West não tem uma entrada na Tabela de roteamento para a rede de PC-Dev (10.0.26.0/255.255.255.0), então não sabe para onde enviar a resposta.",
+                "Em Router-West, adicione uma rota estática: Rede destino 10.0.26.0 / Máscara 255.255.255.0, Próximo salto 10.0.12.1, porta saída 0."
+            ],
+            "explanation": "Roteadores só reenviam pacotes para redes que conhecem. O roteador do Site B sabia como chegar ao link WAN, mas não tinha uma rota de volta para a LAN do Site A, então as respostas de Wiki-01 foram silenciosamente descartadas. Adicionar a rota estática que faltava permite que Router-West encontre o caminho de volta."
+        },
+        "de": {
+            "title": "Wiki-Anfragen verschwinden auf dem Rückweg",
+            "story": "Der Entwickler an Standort A meldet, dass Wiki-01 nicht lädt. Die Seite beginnt zu laden, bleibt dann hängen und läuft ab Zeitüberschreitung aus, seit die beiden Büros über die WAN-Verbindung verbunden sind.",
+            "objective": "Erreichen Sie, dass ein HTTP GET von PC-Dev zu Wiki-01 erfolgreich durchgeführt wird und eine Antwort empfangen wird.",
+            "hints": [
+                "Die Anfrage erreicht Wiki-01 einwandfrei, aber die Antwort bleibt bei Router-West stecken und geht nicht weiter zu PC-Dev.",
+                "Router-West hat keinen Routing-Eintrag für PC-Devs Netzwerk (10.0.26.0/255.255.255.0), daher weiß es nicht, wohin die Antwort gesendet werden soll.",
+                "Fügen Sie auf Router-West eine statische Route hinzu: Zielnetzwerk 10.0.26.0 / Maske 255.255.255.0, Nächster Hop 10.0.12.1, Port 0."
+            ],
+            "explanation": "Router leiten Pakete nur für Netzwerke weiter, die sie kennen. Der Router von Standort B kannte den Weg zur WAN-Verbindung, hatte aber keine Route zurück zum LAN von Standort A, sodass Antworten von Wiki-01 stillschweigend verworfen wurden. Das Hinzufügen der fehlenden statischen Route ermöglicht es Router-West, den Heimweg zu finden."
+        },
+        "fr": {
+            "title": "Les demandes Wiki disparaissent au retour",
+            "story": "Le développeur du site A signale que Wiki-01 ne se charge jamais. La page commence à se charger, puis elle se bloque et expire depuis que les deux bureaux sont connectés via la liaison WAN.",
+            "objective": "Faire en sorte qu'une requête HTTP GET de PC-Dev vers Wiki-01 réussisse et reçoive une réponse.",
+            "hints": [
+                "La requête atteint Wiki-01 sans problème, mais la réponse reste bloquée à Router-West et ne continue pas vers PC-Dev.",
+                "Router-West n'a pas d'entrée de routage pour le réseau de PC-Dev (10.0.26.0/255.255.255.0), il ne sait donc pas où envoyer la réponse.",
+                "Sur Router-West, ajoutez une route statique : réseau de destination 10.0.26.0 / masque 255.255.255.0, saut suivant 10.0.12.1, port 0."
+            ],
+            "explanation": "Les routeurs ne transmettent les paquets que pour les réseaux qu'ils connaissent. Le routeur du site B connaissait le chemin vers la liaison WAN mais n'avait pas de route de retour vers le réseau local du site A, donc les réponses de Wiki-01 ont été silencieusement supprimées. L'ajout de la route statique manquante permet à Router-West de trouver le chemin du retour."
+        },
+        "hi": {
+            "title": "Wiki अनुरोध वापसी में गायब हो जाते हैं",
+            "story": "साइट A के डेवलपर की रिपोर्ट है कि Wiki-01 कभी लोड नहीं होता। पृष्ठ लोड होने लगता है फिर हैंग हो जाता है और टाइम आउट हो जाता है, क्योंकि दोनों ऑफिस WAN लिंक पर कनेक्ट हो गए हैं।",
+            "objective": "PC-Dev से Wiki-01 तक एक HTTP GET सफलतापूर्वक प्राप्त करें और एक प्रतिक्रिया प्राप्त करें।",
+            "hints": [
+                "अनुरोध Wiki-01 तक ठीक पहुंचता है, लेकिन प्रतिक्रिया Router-West पर अटक जाती है और PC-Dev तक आगे नहीं बढ़ती।",
+                "Router-West के पास PC-Dev के नेटवर्क (10.0.26.0/255.255.255.0) के लिए कोई रूटिंग प्रविष्टि नहीं है, इसलिए इसे पता नहीं है कि प्रतिक्रिया कहां भेजनी है।",
+                "Router-West पर एक स्थिर मार्ग जोड़ें: गंतव्य नेटवर्क 10.0.26.0 / मास्क 255.255.255.0, अगला हॉप 10.0.12.1, पोर्ट 0."
+            ],
+            "explanation": "राउटर केवल उन नेटवर्क के लिए पैकेट अग्रेषित करते हैं जिन्हें वे जानते हैं। साइट B का राउटर WAN लिंक तक पहुंचने का रास्ता जानता था लेकिन साइट A की LAN के लिए वापसी का कोई मार्ग नहीं था, इसलिए Wiki-01 से प्रतिक्रियाएं चुपचाप छोड़ दी गईं। अनुपलब्ध स्थिर मार्ग जोड़ने से Router-West को घर का रास्ता खोजने में मदद मिलती है।"
+        },
+        "id": {
+            "title": "Permintaan Wiki Hilang di Jalan Kembali",
+            "story": "Pengembang di Situs A melaporkan bahwa Wiki-01 tidak pernah memuat. Halaman mulai memuat lalu tergantung dan habis waktu, sejak dua kantor terhubung melalui link WAN.",
+            "objective": "Buat permintaan HTTP GET dari PC-Dev ke Wiki-01 berhasil dan menerima respons.",
+            "hints": [
+                "Permintaan mencapai Wiki-01 dengan baik, tetapi respons macet di Router-West dan tidak melanjutkan perjalanan kembali ke PC-Dev.",
+                "Router-West tidak memiliki entri perutean untuk jaringan PC-Dev (10.0.26.0/255.255.255.0), jadi tidak tahu ke mana mengirim respons.",
+                "Di Router-West, tambahkan rute statis: jaringan tujuan 10.0.26.0 / mask 255.255.255.0, hop berikutnya 10.0.12.1, port 0."
+            ],
+            "explanation": "Router hanya meneruskan paket untuk jaringan yang mereka kenal. Router Situs B tahu cara mencapai link WAN tetapi tidak memiliki rute kembali ke LAN Situs A, jadi respons dari Wiki-01 diam-diam dijatuhkan. Menambahkan rute statis yang hilang memungkinkan Router-West menemukan jalan pulang."
+        },
+        "ru": {
+            "title": "Запросы Wiki теряются на обратном пути",
+            "story": "Разработчик на сайте A сообщает, что Wiki-01 никогда не загружается. Страница начинает загружаться, затем зависает и истекает время ожидания, с тех пор как оба офиса подключены через WAN-канал.",
+            "objective": "Убедитесь, что HTTP GET запрос от PC-Dev к Wiki-01 успешен и получена ответ.",
+            "hints": [
+                "Запрос успешно доходит до Wiki-01, но ответ застревает на Router-West и не продолжает путь обратно к PC-Dev.",
+                "Router-West не имеет записи маршрутизации для сети PC-Dev (10.0.26.0/255.255.255.0), поэтому не знает, куда отправить ответ.",
+                "На Router-West добавьте статический маршрут: целевая сеть 10.0.26.0 / маска 255.255.255.0, следующий узел 10.0.12.1, порт 0."
+            ],
+            "explanation": "Маршрутизаторы пересылают пакеты только для известных им сетей. Маршрутизатор сайта B знал путь к WAN-каналу, но не имел маршрута обратно к локальной сети сайта A, поэтому ответы от Wiki-01 молча отбрасывались. Добавление отсутствующего статического маршрута позволяет Router-West найти обратный путь."
+        },
+        "it": {
+            "title": "Le richieste Wiki scompaiono al ritorno",
+            "story": "Lo sviluppatore del Sito A segnala che Wiki-01 non si carica mai. Riesce a vedere l'inizio del caricamento della pagina ma si blocca e va in timeout, da quando i due uffici sono stati collegati tramite il collegamento WAN.",
+            "objective": "Riuscire a inviare una richiesta HTTP GET da PC-Dev a Wiki-01 e ricevere una risposta.",
+            "hints": [
+                "La richiesta raggiunge Wiki-01 senza problemi, ma la risposta si blocca a Router-West e non prosegue verso PC-Dev.",
+                "Router-West non ha una voce di routing per la rete di PC-Dev (10.0.26.0/255.255.255.0), quindi non sa dove inviare la risposta.",
+                "Su Router-West, aggiungi un percorso statico: rete di destinazione 10.0.26.0 / maschera 255.255.255.0, Gateway predefinito 10.0.12.1, porta 0."
+            ],
+            "explanation": "I router inoltrano i pacchetti solo per le reti che conoscono. Il router del Sito B sapeva come raggiungere il collegamento WAN ma non aveva un percorso di ritorno alla LAN del Sito A, quindi le risposte da Wiki-01 venivano silenziosamente scartate. L'aggiunta del percorso statico mancante consente a Router-West di trovare la strada per tornare a casa."
+        },
+        "tr": {
+            "title": "Wiki İstekleri Geri Dönüşte Kayboldu",
+            "story": "Site A'daki geliştirici, Wiki-01'in asla yüklenmediğini bildiriyor. Sayfanın yüklemeye başladığını görebiliyor ama sonra takılıp zaman aşımına uğruyor. Bu durum, iki ofis WAN bağlantısı üzerinden bağlanmaya başladığından beri yaşanıyor.",
+            "objective": "PC-Dev'den Wiki-01'e başarılı bir HTTP GET isteği gönderin ve yanıt alın.",
+            "hints": [
+                "İstek, Wiki-01'e sorunsuz ulaşıyor ama yanıt, Router-West'te takılıp PC-Dev'e geri dönemiyor.",
+                "Router-West'te PC-Dev'in ağı (10.0.26.0/255.255.255.0) için yönlendirme girdisi yok, bu yüzden yanıtı nereye göndereceğini bilmiyor.",
+                "Router-West'te statik yol ekleyin: hedef ağ 10.0.26.0 / maske 255.255.255.0, sonraki sıçrama 10.0.12.1, port 0."
+            ],
+            "explanation": "Yönlendiriciler yalnızca bildikleri ağlar için paketleri iletir. Site B'nin yönlendiricisi WAN bağlantısına nasıl ulaşacağını biliyordu ama Site A'nın LAN'ına geri dönüş yolu yoktu, bu nedenle Wiki-01'den gelen yanıtlar sessizce atıldı. Eksik statik yolu eklemek, Router-West'in eve giden yolu bulmasını sağlar."
+        },
+        "vi": {
+            "title": " Yêu cầu Wiki biến mất trong quá trình quay trở lại",
+            "story": "Nhà phát triển tại Trang A báo cáo rằng Wiki-01 không bao giờ tải được. Anh ấy có thể thấy trang bắt đầu tải nhưng sau đó nó lại bị treo và hết thời gian chờ, kể từ khi hai văn phòng được kết nối qua liên kết WAN.",
+            "objective": "Gửi thành công một yêu cầu HTTP GET từ PC-Dev đến Wiki-01 và nhận được phản hồi.",
+            "hints": [
+                "Yêu cầu đến Wiki-01 được tốt, nhưng phản hồi bị kẹt tại Router-West và không tiếp tục quay lại PC-Dev.",
+                "Router-West không có mục định tuyến cho mạng của PC-Dev (10.0.26.0/255.255.255.0), vì vậy nó không biết nên gửi phản hồi đến đâu.",
+                "Trên Router-West, thêm một tuyến tĩnh: mạng đích 10.0.26.0 / mặt nạ 255.255.255.0, hop tiếp theo 10.0.12.1, cổng 0."
+            ],
+            "explanation": "Bộ định tuyến chỉ chuyển tiếp các gói cho các mạng mà chúng biết. Bộ định tuyến của Trang B biết cách tiếp cận liên kết WAN nhưng không có tuyến trở lại LAN của Trang A, vì vậy các phản hồi từ Wiki-01 đã bị thả im lặng. Thêm tuyến tĩnh bị thiếu cho phép Router-West tìm đường về nhà."
+        },
+        "th": {
+            "title": "คำขอ Wiki หายไปในการกลับมา",
+            "story": "Dev ที่ Site A รายงานว่า Wiki-01 ไม่เคยโหลด เขาเห็นหน้าเว็บเริ่มโหลดแล้วก็ค้างและหมดเวลา ตั้งแต่สำนักงานทั้งสองแห่งเชื่อมต่อกันผ่านลิงค์ WAN",
+            "objective": "ทำให้การส่ง HTTP GET จาก PC-Dev ไปยัง Wiki-01 สำเร็จและได้รับการตอบสนอง",
+            "hints": [
+                "คำขอไปถึง Wiki-01 ได้ดี แต่การตอบสนองติดขัดที่ Router-West และไม่ดำเนินต่อในการกลับมาถึง PC-Dev",
+                "Router-West ไม่มีรายการเส้นทางสำหรับเครือข่ายของ PC-Dev (10.0.26.0/255.255.255.0) จึงไม่รู้ว่าจะส่งการตอบสนองไปที่ไหน",
+                "บน Router-West เพิ่มเส้นทางแบบ static: เครือข่ายปลายทาง 10.0.26.0 / มาสก์ 255.255.255.0, ฮ็อปถัดไป 10.0.12.1, พอร์ตออก 0"
+            ],
+            "explanation": "Router ส่งต่อแพ็กเก็ตได้เฉพาะเครือข่ายที่รู้จักเท่านั้น Router ของ Site B รู้วิธีเข้าถึงลิงค์ WAN แต่ไม่มีเส้นทางกลับไปยัง LAN ของ Site A จึงการตอบสนองจาก Wiki-01 ถูกทิ้ง การเพิ่มเส้นทาง static ที่ขาดหายไปช่วยให้ Router-West หาทางกลับบ้านได้"
+        }
+    }
+}

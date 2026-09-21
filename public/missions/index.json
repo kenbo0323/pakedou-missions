@@ -1,0 +1,55 @@
+{
+    "schemaVersion": 1,
+    "latest": "2026-09-27",
+    "missions": [
+        {
+            "id": "2026-09-21",
+            "number": 1,
+            "difficulty": 2,
+            "requiresProDevices": false,
+            "track": "basic"
+        },
+        {
+            "id": "2026-09-22",
+            "number": 2,
+            "difficulty": 2,
+            "requiresProDevices": false,
+            "track": "basic"
+        },
+        {
+            "id": "2026-09-23",
+            "number": 3,
+            "difficulty": 3,
+            "requiresProDevices": false,
+            "track": "basic"
+        },
+        {
+            "id": "2026-09-24",
+            "number": 4,
+            "difficulty": 3,
+            "requiresProDevices": false,
+            "track": "basic"
+        },
+        {
+            "id": "2026-09-25",
+            "number": 5,
+            "difficulty": 4,
+            "requiresProDevices": false,
+            "track": "basic"
+        },
+        {
+            "id": "2026-09-26",
+            "number": 6,
+            "difficulty": 4,
+            "requiresProDevices": false,
+            "track": "basic"
+        },
+        {
+            "id": "2026-09-27",
+            "number": 7,
+            "difficulty": 4,
+            "requiresProDevices": false,
+            "track": "basic"
+        }
+    ]
+}
