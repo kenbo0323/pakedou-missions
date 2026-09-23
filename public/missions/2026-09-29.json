@@ -1,0 +1,555 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-29",
+    "number": 9,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "cable_unplugged"
+    ],
+    "concepts": [
+        "physical-link"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.28.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.28.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.27.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "FW-DMZ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.27.1",
+                            "dstPort": 80
+                        },
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.27.1"
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Front",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.27.1",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-waf1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-waf1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Sales Can't Load the Website",
+            "story": "The sales team reports that the company website has stopped loading on PC-Sales since this morning. They suspect a broken connection somewhere along the way.",
+            "objective": "Restore an HTTP request from PC-Sales to Intranet-01 so it gets a response.",
+            "hints": [
+                "The request from PC-Sales reaches WAF-Front but goes no further from there toward Intranet-01.",
+                "WAF-Front has no working link onward to Intranet-01, so nothing can be forwarded between them.",
+                "Connect a cable between WAF-Front and Intranet-01 to restore the physical link."
+            ],
+            "explanation": "A missing physical link between the WAF and the server blocked all traffic to it, even legitimate requests, since forwarding requires a working cable at every hop. Security filtering (ACLs, WAF inspection) only applies to traffic that actually passes through the device."
+        },
+        "ja": {
+            "title": "営業担当がウェブサイトを閲覧できない",
+            "story": "営業チームから、今朝からPC-Salesで会社のウェブサイトが表示されなくなったと報告がありました。途中のどこかで接続が切れている可能性があります。",
+            "objective": "PC-SalesからIntranet-01へのHTTPリクエストが応答を受け取れるように復旧してください。",
+            "hints": [
+                "PC-Salesからのリクエストは WAF-Front までは届きますが、そこから先の Intranet-01 へは進みません。",
+                "WAF-Front から Intranet-01 への通信経路が機能しておらず、両者の間で転送ができない状態です。",
+                "WAF-Front と Intranet-01 の間にケーブルを接続し、物理的な接続を復旧してください。"
+            ],
+            "explanation": "WAFとサーバーの間の物理的な接続が失われていたため、正当なリクエストを含むすべての通信がブロックされていました。転送を行うには、経由するすべての区間でケーブルが正しく接続されている必要があります。ACLルールやWAFの検査といったセキュリティフィルタリングは、実際に機器を通過する通信に対してのみ適用されます。"
+        },
+        "zh-CN": {
+            "title": "销售人员无法访问网站",
+            "story": "销售团队报告公司网站自今天上午开始无法在 PC-Sales 上加载。他们怀疑连接在某个环节中断了。",
+            "objective": "恢复 PC-Sales 到 Intranet-01 的 HTTP 请求，使其获得响应。",
+            "hints": [
+                "来自 PC-Sales 的请求到达了 WAF-Front，但从那里无法继续转发到 Intranet-01。",
+                "WAF-Front 没有工作中的链路连接到 Intranet-01，所以无法在它们之间转发任何数据。",
+                "在 WAF-Front 和 Intranet-01 之间连接一条网线，以恢复物理链路。"
+            ],
+            "explanation": "WAF 和服务器之间缺少物理链路阻止了所有流量到达它，即使是合法请求也无法通过，因为转发需要每一跳都有工作中的网线。安全过滤（ACL 规则、WAF 检查）仅适用于实际通过设备的流量。"
+        },
+        "zh-TW": {
+            "title": "銷售人員無法存取網站",
+            "story": "銷售團隊回報公司網站自今天上午開始無法在 PC-Sales 上載入。他們懷疑連線在某個環節中斷了。",
+            "objective": "恢復 PC-Sales 到 Intranet-01 的 HTTP 請求，使其獲得回應。",
+            "hints": [
+                "來自 PC-Sales 的請求到達了 WAF-Front，但從那裡無法繼續轉發到 Intranet-01。",
+                "WAF-Front 沒有工作中的連結連接到 Intranet-01，所以無法在它們之間轉發任何資料。",
+                "在 WAF-Front 和 Intranet-01 之間連接一條網線，以恢復實體連結。"
+            ],
+            "explanation": "WAF 和伺服器之間缺少實體連結阻止了所有流量到達它，即使是合法請求也無法通過，因為轉發需要每一跳都有工作中的網線。安全過濾（ACL 規則、WAF 檢查）僅適用於實際通過設備的流量。"
+        },
+        "ko": {
+            "title": "판매팀이 웹사이트를 로드할 수 없음",
+            "story": "판매팀이 오늘 아침부터 PC-Sales에서 회사 웹사이트를 로드할 수 없다고 보고했습니다. 연결이 어딘가에서 끊어진 것으로 의심하고 있습니다.",
+            "objective": "PC-Sales에서 Intranet-01로의 HTTP 요청을 복구하여 응답을 받을 수 있도록 합니다.",
+            "hints": [
+                "PC-Sales의 요청이 WAF-Front에 도달하지만, 거기서 Intranet-01으로 더 이상 전달되지 않습니다.",
+                "WAF-Front은 Intranet-01로 향하는 작동 중인 링크가 없어서 둘 사이에 트래픽을 전달할 수 없습니다.",
+                "WAF-Front과 Intranet-01 사이에 케이블을 연결하여 물리적 링크를 복구합니다."
+            ],
+            "explanation": "WAF과 서버 사이의 물리적 링크 부재로 인해 정당한 요청을 포함한 모든 트래픽이 차단되었습니다. 전달에는 각 홉에서 작동하는 케이블이 필요하기 때문입니다. 보안 필터링(ACL 규칙, WAF 검사)은 실제로 장비를 통과하는 트래픽에만 적용됩니다."
+        },
+        "es": {
+            "title": "El equipo de ventas no puede cargar el sitio web",
+            "story": "El equipo de ventas reporta que el sitio web de la empresa ha dejado de cargar en PC-Sales desde esta mañana. Sospechan que hay una conexión rota en algún lugar del camino.",
+            "objective": "Restaurar una solicitud HTTP desde PC-Sales hacia Intranet-01 para que reciba una respuesta.",
+            "hints": [
+                "La solicitud de PC-Sales llega a WAF-Front pero no avanza más hacia Intranet-01.",
+                "WAF-Front no tiene un enlace funcional hacia Intranet-01, por lo que nada se puede reenviar entre ellos.",
+                "Conecta un cable entre WAF-Front e Intranet-01 para restaurar el enlace físico."
+            ],
+            "explanation": "Un enlace físico faltante entre el WAF y el Servidor bloqueó todo el tráfico hacia él, incluso las solicitudes legítimas, ya que el reenvío requiere un cable funcional en cada salto. El filtrado de seguridad (reglas ACL, inspección de WAF) solo se aplica al tráfico que realmente pasa a través del dispositivo."
+        },
+        "pt-BR": {
+            "title": "Vendas não consegue carregar o site",
+            "story": "O time de vendas relata que o site da empresa deixou de carregar em PC-Sales desde a manhã. Eles suspeitam que há uma conexão quebrada em algum lugar do caminho.",
+            "objective": "Restaurar uma solicitação HTTP de PC-Sales para Intranet-01 para que receba uma resposta.",
+            "hints": [
+                "A solicitação de PC-Sales chega a WAF-Front mas não avança mais em direção a Intranet-01.",
+                "WAF-Front não tem um link funcional para Intranet-01, então nada pode ser encaminhado entre eles.",
+                "Conecte um cabo entre WAF-Front e Intranet-01 para restaurar o link físico."
+            ],
+            "explanation": "Uma ligação física ausente entre o WAF e o Servidor bloqueou todo o tráfego para ele, mesmo solicitações legítimas, pois o encaminhamento requer um cabo funcional em cada salto. A filtragem de segurança (regras ACL, inspeção WAF) só se aplica ao tráfego que realmente passa pelo dispositivo."
+        },
+        "de": {
+            "title": "Verkauft kann Website nicht laden",
+            "story": "Das Verkaufsteam meldet, dass die Unternehmenswebsite seit heute Morgen auf PC-Sales nicht mehr lädt. Sie vermuten einen unterbrochenen Weg irgendwo auf der Strecke.",
+            "objective": "Stellen Sie sicher, dass eine HTTP-Anfrage von PC-Sales zu Intranet-01 eine Antwort erhält.",
+            "hints": [
+                "Die Anfrage von PC-Sales erreicht WAF-Front, wird aber von dort nicht weiter zu Intranet-01 geleitet.",
+                "WAF-Front hat keine funktionierende Verbindung weiter zu Intranet-01, daher kann nichts zwischen ihnen weitergeleitet werden.",
+                "Verbinden Sie ein Kabel zwischen WAF-Front und Intranet-01, um die physische Verbindung wiederherzustellen."
+            ],
+            "explanation": "Eine fehlende physische Verbindung zwischen dem WAF und dem Server blockierte den gesamten Datenverkehr, auch legitime Anfragen, da für die Weiterleitung an jedem Hop ein funktionierendes Kabel erforderlich ist. Security-Filterung (ACL-Regeln, WAF-Inspektion) gilt nur für Datenverkehr, der tatsächlich das Gerät durchläuft."
+        },
+        "fr": {
+            "title": "Le site Web ne se charge pas",
+            "story": "L'équipe commerciale signale que le site Web de l'entreprise ne se charge plus sur PC-Sales depuis ce matin. Ils soupçonnent une connexion interrompue quelque part.",
+            "objective": "Restaurez une requête HTTP de PC-Sales vers Intranet-01 afin qu'elle reçoive une réponse.",
+            "hints": [
+                "La requête de PC-Sales atteint WAF-Front mais ne va pas plus loin vers Intranet-01.",
+                "WAF-Front n'a pas de lien fonctionnel vers Intranet-01, donc rien ne peut être transféré entre eux.",
+                "Connectez un câble entre WAF-Front et Intranet-01 pour restaurer le lien physique."
+            ],
+            "explanation": "Un lien physique manquant entre le WAF et le serveur a bloqué tout le trafic vers celui-ci, même les requêtes légitimes, car le transfert nécessite un câble fonctionnel à chaque saut. Le filtrage de sécurité (Règles ACL, inspection WAF) ne s'applique qu'au trafic qui traverse réellement le dispositif."
+        },
+        "hi": {
+            "title": "बिक्रय वेबसाइट लोड नहीं कर सकते",
+            "story": "बिक्रय टीम की रिपोर्ट है कि कंपनी की वेबसाइट आज सुबह से PC-Sales पर लोड नहीं हो रही है। उन्हें संदेह है कि रास्ते में कहीं कनेक्शन टूटा है।",
+            "objective": "PC-Sales से Intranet-01 तक एक HTTP अनुरोध को पुनः स्थापित करें ताकि उसे प्रतिक्रिया मिले।",
+            "hints": [
+                "PC-Sales से अनुरोध WAF-Front तक पहुंचता है लेकिन Intranet-01 की ओर आगे नहीं जाता।",
+                "WAF-Front के पास Intranet-01 तक कोई कार्यशील लिंक नहीं है, इसलिए उनके बीच कुछ भी नहीं भेजा जा सकता।",
+                "WAF-Front और Intranet-01 के बीच भौतिक लिंक पुनः स्थापित करने के लिए एक केबल जोड़ें।"
+            ],
+            "explanation": "WAF और सर्वर के बीच एक अनुपस्थित भौतिक लिंक ने सभी ट्रैफिक को ब्लॉक कर दिया, यहां तक कि वैध अनुरोध भी, क्योंकि फॉरवर्डिंग के लिए हर हॉप पर एक कार्यशील केबल आवश्यक है। सुरक्षा फ़िल्टरिंग (ACL नियम, WAF निरीक्षण) केवल उस ट्रैफिक पर लागू होती है जो वास्तव में डिवाइस से गुजरती है।"
+        },
+        "id": {
+            "title": "Penjualan Tidak Dapat Memuat Situs Web",
+            "story": "Tim penjualan melaporkan bahwa situs web perusahaan telah berhenti dimuat di PC-Sales sejak pagi ini. Mereka mencurigai koneksi yang putus di suatu tempat.",
+            "objective": "Pulihkan permintaan HTTP dari PC-Sales ke Intranet-01 sehingga menerima respons.",
+            "hints": [
+                "Permintaan dari PC-Sales mencapai WAF-Front tetapi tidak berlanjut dari sana menuju Intranet-01.",
+                "WAF-Front tidak memiliki tautan yang berfungsi ke Intranet-01, jadi tidak ada yang dapat diteruskan di antara keduanya.",
+                "Hubungkan kabel antara WAF-Front dan Intranet-01 untuk memulihkan tautan fisik."
+            ],
+            "explanation": "Tautan fisik yang hilang antara WAF dan server memblokir semua lalu lintas ke sana, bahkan permintaan yang sah, karena penerusan memerlukan kabel yang berfungsi di setiap hop. Penyaringan keamanan (Aturan ACL, inspeksi WAF) hanya berlaku untuk lalu lintas yang benar-benar melewati perangkat."
+        },
+        "ru": {
+            "title": "Отдел продаж не может загрузить веб-сайт",
+            "story": "Отдел продаж сообщил, что корпоративный веб-сайт не загружается на PC-Sales с этого утра. Они подозревают разорванное соединение где-то на маршруте.",
+            "objective": "Восстановите HTTP-запрос от PC-Sales к Intranet-01, чтобы получить ответ.",
+            "hints": [
+                "Запрос от PC-Sales достигает WAF-Front, но не идет дальше к Intranet-01.",
+                "WAF-Front не имеет рабочего соединения к Intranet-01, поэтому ничего не может быть передано между ними.",
+                "Подключите кабель между WAF-Front и Intranet-01, чтобы восстановить физическое соединение."
+            ],
+            "explanation": "Отсутствие физического соединения между WAF и сервером блокировало весь трафик, включая легитимные запросы, так как маршрутизация требует рабочего кабеля на каждом узле. Фильтрация безопасности (Правила ACL, проверка WAF) применяется только к трафику, который действительно проходит через устройство."
+        },
+        "it": {
+            "title": "Sales non riesce a caricare il sito web",
+            "story": "Il team di vendita segnala che il sito web aziendale ha smesso di caricarsi su PC-Sales da questa mattina. Sospettano una connessione interrotta da qualche parte nel percorso.",
+            "objective": "Ripristina una richiesta HTTP da PC-Sales a Intranet-01 affinché riceva una risposta.",
+            "hints": [
+                "La richiesta da PC-Sales raggiunge WAF-Front ma non prosegue verso Intranet-01.",
+                "WAF-Front non ha un collegamento funzionante verso Intranet-01, quindi nulla può essere inoltrato tra loro.",
+                "Collega un cavo tra WAF-Front e Intranet-01 per ripristinare il collegamento fisico."
+            ],
+            "explanation": "Un collegamento fisico mancante tra il WAF e il server ha bloccato tutto il traffico verso di esso, anche le richieste legittime, poiché l'inoltro richiede un cavo funzionante a ogni hop. I filtri di sicurezza (Regole ACL, ispezione WAF) si applicano solo al traffico che effettivamente passa attraverso il dispositivo."
+        },
+        "tr": {
+            "title": "Satış Ekibi Web Sitesini Yükleyemiyor",
+            "story": "Satış ekibi, şirket web sitesinin PC-Sales üzerinde bu sabahtan itibaren yüklenmediğini bildirmektedir. Yol boyunca bir yerde bozuk bir bağlantı olduğunu düşünmektedirler.",
+            "objective": "PC-Sales'ten Intranet-01'e giden HTTP isteğini geri yükle, böylece yanıt alsın.",
+            "hints": [
+                "PC-Sales'teki istek WAF-Front'a ulaşır ancak oradan Intranet-01 yönünde ilerleme göstermez.",
+                "WAF-Front, Intranet-01'e doğru çalışan bir bağlantıya sahip değildir, bu nedenle aralarında hiçbir şey iletilemez.",
+                "WAF-Front ile Intranet-01 arasına bir kablo bağlayarak fiziksel bağlantıyı geri yükleyin."
+            ],
+            "explanation": "WAF ile sunucu arasındaki eksik fiziksel bağlantı, meşru istekler de dahil olmak üzere tüm trafiği engellemiştir, çünkü her sıçrama noktasında çalışan bir kablo gereklidir. Güvenlik filtrelemesi (ACL Kuralları, WAF incelemesi) yalnızca cihazdan geçen trafiğe uygulanır."
+        },
+        "th": {
+            "title": "ฝ่ายขายไม่สามารถโหลดเว็บไซต์",
+            "story": "ทีมขายรายงานว่าเว็บไซต์บริษัทหยุดโหลดบน PC-Sales ตั้งแต่เช้านี้ พวกเขาสงสัยว่ามีการเชื่อมต่อที่ขาดหายไปที่ไหนสักแห่งตามเส้นทาง",
+            "objective": "คืนค่าคำขอ HTTP จาก PC-Sales ไปยัง Intranet-01 เพื่อให้ได้รับการตอบสนอง",
+            "hints": [
+                "คำขอจาก PC-Sales ไปถึง WAF-Front แต่ไม่ดำเนินต่อไปจากที่นั่นไปยัง Intranet-01",
+                "WAF-Front ไม่มีลิงก์ที่ใช้งานได้ไปยัง Intranet-01 ดังนั้นจึงไม่สามารถส่งต่ออะไรได้ระหว่างพวกเขา",
+                "เชื่อมต่อสายเคเบิลระหว่าง WAF-Front และ Intranet-01 เพื่อคืนค่าลิงก์ทางกายภาพ"
+            ],
+            "explanation": "ลิงก์ทางกายภาพที่ขาดหายไประหว่าง WAF และเซิร์ฟเวอร์ได้บล็อกการรับส่งข้อมูลทั้งหมด แม้ว่าจะเป็นคำขออย่างถูกต้อง เนื่องจากการส่งต่อต้องมีสายเคเบิลที่ใช้งานได้ในแต่ละฮ็อป การกรองความปลอดภัย (กฎ ACL การตรวจสอบ WAF) ใช้เฉพาะกับการรับส่งข้อมูลที่ผ่านอุปกรณ์เท่านั้น"
+        },
+        "vi": {
+            "title": "Bộ phận Bán hàng không thể tải trang web",
+            "story": "Nhóm bán hàng báo cáo rằng trang web công ty đã ngừng tải trên PC-Sales kể từ sáng nay. Họ nghi ngờ rằng có một kết nối bị gãy ở đâu đó trên đường đi.",
+            "objective": "Khôi phục yêu cầu HTTP từ PC-Sales đến Intranet-01 để nhận được phản hồi.",
+            "hints": [
+                "Yêu cầu từ PC-Sales đến WAF-Front nhưng không tiếp tục từ đó về phía Intranet-01.",
+                "WAF-Front không có liên kết hoạt động nào đến Intranet-01, do đó không có gì có thể được chuyển tiếp giữa chúng.",
+                "Kết nối một cáp giữa WAF-Front và Intranet-01 để khôi phục liên kết vật lý."
+            ],
+            "explanation": "Một liên kết vật lý bị mất giữa WAF và máy chủ đã chặn tất cả lưu lượng truy cập vào nó, thậm chí cả các yêu cầu hợp pháp, vì việc chuyển tiếp yêu cầu có cáp hoạt động tại mỗi bước nhảy. Lọc bảo mật (Quy tắc ACL, kiểm tra WAF) chỉ áp dụng cho lưu lượng truy cập thực sự đi qua thiết bị."
+        }
+    }
+}

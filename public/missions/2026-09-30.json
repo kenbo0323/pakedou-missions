@@ -1,0 +1,645 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-09-30",
+    "number": 10,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "dns_office",
+    "faultIds": [
+        "dns_record_missing"
+    ],
+    "concepts": [
+        "dns",
+        "a-record"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.18.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.254",
+                    "dnsServer": "10.0.7.53",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Office",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.18.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Rack",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-dns1": {
+                "id": "dev-dns1",
+                "type": "DNS_SERVER",
+                "name": "DNS-Internal",
+                "x": 80.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-dns1-p0",
+                        "index": 0,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.7.53",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p1",
+                        "index": 1,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p2",
+                        "index": 2,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p3",
+                        "index": 3,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 320.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.7.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-dns1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-dns1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "domain_http",
+                "method": "GET",
+                "path": "/",
+                "body": "",
+                "domain": "files.example.net"
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Intranet Site Not Found",
+            "story": "An employee at PC-Lab reports that the intranet site files.example.net cannot be found in the browser, though colleagues say the server itself seems fine. The problem started this morning.",
+            "objective": "Make an HTTP GET from PC-Lab to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Lab never leaves the name-lookup stage; it stops right at DNS-Internal before any connection to the web server is attempted.",
+                "DNS-Internal has no entry telling it which address corresponds to files.example.net, so it cannot answer the lookup at all.",
+                "On DNS-Internal, add an A record mapping files.example.net to 10.0.7.1."
+            ],
+            "explanation": "A domain name only works if the DNS server holds an A record pointing it to an IP address. Without that record, clients cannot translate the name into an address and every request fails before it even reaches the target server."
+        },
+        "ja": {
+            "title": "社内サイトが見つかりません",
+            "story": "PC-Labの社員から、ブラウザで社内サイト files.example.net が見つからないと報告がありました。同僚によるとサーバー自体は問題なさそうですが、今朝から発生している問題です。",
+            "objective": "PC-Labからfiles.example.netへのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Labからのリクエストは名前解決の段階から先に進んでいません。Webサーバーへの接続を試みる前に、DNS-Internalで止まっています。",
+                "DNS-Internalには files.example.net がどのアドレスに対応するかを示す情報がなく、そのため問い合わせに全く応答できません。",
+                "DNS-Internalで、files.example.net を 10.0.7.1 に対応させるAレコードを追加してください。"
+            ],
+            "explanation": "ドメイン名は、DNSサーバーがそれをIPアドレスに結びつけるAレコードを保持している場合にのみ機能します。そのレコードがないと、クライアントは名前をアドレスに変換できず、リクエストは対象のサーバーに到達する前にすべて失敗してしまいます。"
+        },
+        "zh-CN": {
+            "title": "内网站点无法找到",
+            "story": "PC-Lab 上的一名员工报告称，浏览器中无法找到内网站点 files.example.net，但同事说服务器本身似乎运行正常。这个问题从今早开始出现。",
+            "objective": "使从 PC-Lab 到 files.example.net 的 HTTP GET 请求成功。",
+            "hints": [
+                "PC-Lab 的请求在名称查询阶段就停止了；它在 DNS-Internal 处停止，在尝试连接到网络服务器之前就没有继续。",
+                "DNS-Internal 没有条目告诉它 files.example.net 对应的地址是什么，所以它根本无法应答查询。",
+                "在 DNS-Internal 上，添加一条 A 记录，将 files.example.net 映射到 10.0.7.1。"
+            ],
+            "explanation": "域名只有在 DNS 服务器保存了指向 IP 地址的 A 记录时才能工作。没有那条记录，客户端无法将名称转换为地址，每次请求都会在到达目标服务器之前失败。"
+        },
+        "zh-TW": {
+            "title": "內網站點無法找到",
+            "story": "PC-Lab 上的一名員工回報，瀏覽器中無法找到內網站點 files.example.net，但同事說伺服器本身似乎運作正常。這個問題從今早開始出現。",
+            "objective": "使從 PC-Lab 到 files.example.net 的 HTTP GET 請求成功。",
+            "hints": [
+                "PC-Lab 的請求在名稱查詢階段就停止了；它在 DNS-Internal 處停止，在嘗試連線到網站伺服器之前就沒有繼續。",
+                "DNS-Internal 沒有項目告訴它 files.example.net 對應的位址是什麼，所以它根本無法回應查詢。",
+                "在 DNS-Internal 上，新增一筆 A 記錄，將 files.example.net 對應到 10.0.7.1。"
+            ],
+            "explanation": "網域名稱只有在 DNS 伺服器保存了指向 IP 位址的 A 記錄時才能工作。沒有那筆記錄，用戶端無法將名稱轉換為位址，每次請求都會在到達目的伺服器之前失敗。"
+        },
+        "ko": {
+            "title": "인트라넷 사이트를 찾을 수 없음",
+            "story": "PC-Lab의 한 직원이 브라우저에서 인트라넷 사이트 files.example.net을 찾을 수 없다고 보고했습니다. 동료들은 서버 자체는 정상이라고 말합니다. 이 문제는 오늘 아침에 시작되었습니다.",
+            "objective": "PC-Lab에서 files.example.net으로의 HTTP GET 요청을 성공시킵니다.",
+            "hints": [
+                "PC-Lab의 요청이 이름 조회 단계에서 멈춤; DNS-Internal에서 중단되어 웹 서버로의 연결 시도도 이루어지지 않습니다.",
+                "DNS-Internal에는 files.example.net에 해당하는 주소를 알려주는 항목이 없어서 조회에 답할 수 없습니다.",
+                "DNS-Internal에서 files.example.net을 10.0.7.1에 매핑하는 A 레코드를 추가합니다."
+            ],
+            "explanation": "도메인명은 DNS 서버에 IP 주소를 가리키는 A 레코드가 있을 때만 작동합니다. 그 레코드가 없으면 클라이언트가 이름을 주소로 변환할 수 없으며, 모든 요청이 대상 서버에 도달하기 전에 실패합니다."
+        },
+        "es": {
+            "title": "Sitio de intranet no encontrado",
+            "story": "Un empleado en PC-Lab informa que no puede encontrar el sitio de intranet files.example.net en el navegador, aunque los compañeros dicen que el servidor en sí parece estar bien. El problema comenzó esta mañana.",
+            "objective": "Hacer que una solicitud HTTP GET desde PC-Lab a files.example.net tenga éxito.",
+            "hints": [
+                "La solicitud desde PC-Lab nunca sale de la etapa de búsqueda de nombres; se detiene justo en DNS-Internal antes de que se intente ninguna conexión al servidor web.",
+                "DNS-Internal no tiene una entrada que le indique qué dirección corresponde a files.example.net, por lo que no puede responder a la búsqueda.",
+                "En DNS-Internal, agregue un registro A que asigne files.example.net a 10.0.7.1."
+            ],
+            "explanation": "Un nombre de dominio solo funciona si el servidor DNS contiene un registro A que lo señale a una dirección IP. Sin ese registro, los clientes no pueden traducir el nombre en una dirección y cada solicitud falla antes de llegar al servidor destino."
+        },
+        "pt-BR": {
+            "title": "Site da intranet não encontrado",
+            "story": "Um funcionário em PC-Lab relata que o site da intranet files.example.net não pode ser encontrado no navegador, embora colegas digam que o servidor em si parece estar funcionando bem. O problema começou esta manhã.",
+            "objective": "Fazer com que uma solicitação HTTP GET de PC-Lab para files.example.net funcione.",
+            "hints": [
+                "A solicitação de PC-Lab nunca sai do estágio de pesquisa de nomes; ela para logo em DNS-Internal antes de qualquer tentativa de conexão ao servidor web.",
+                "DNS-Internal não possui uma entrada informando qual endereço corresponde a files.example.net, portanto não consegue responder à pesquisa.",
+                "Em DNS-Internal, adicione um registro A mapeando files.example.net para 10.0.7.1."
+            ],
+            "explanation": "Um nome de domínio só funciona se o servidor DNS contiver um registro A apontando para um endereço IP. Sem esse registro, os clientes não conseguem traduzir o nome em um endereço e cada solicitação falha antes de chegar ao servidor destino."
+        },
+        "de": {
+            "title": "Intranet-Website nicht gefunden",
+            "story": "Ein Mitarbeiter bei PC-Lab meldet, dass die Intranetwebsite files.example.net im Browser nicht gefunden wird, obwohl Kollegen sagen, dass der Server selbst in Ordnung ist. Das Problem begann heute Morgen.",
+            "objective": "Eine HTTP GET-Anfrage von PC-Lab an files.example.net zum Erfolg führen.",
+            "hints": [
+                "Die Anfrage von PC-Lab verlässt nie die Namenauflosungsstufe; sie stoppt direkt bei DNS-Internal, bevor irgendeine Verbindung zum Webserver versucht wird.",
+                "DNS-Internal hat keinen Eintrag, der angibt, welche Adresse files.example.net entspricht, sodass es die Suche überhaupt nicht beantworten kann.",
+                "Fügen Sie auf DNS-Internal einen A-Datensatz hinzu, der files.example.net auf 10.0.7.1 abbildet."
+            ],
+            "explanation": "Ein Domainname funktioniert nur, wenn der DNS-Server einen A-Datensatz enthält, der ihn auf eine IP-Adresse verweist. Ohne diesen Datensatz können Clients den Namen nicht in eine Adresse übersetzen und jede Anfrage schlägt fehl, bevor sie auch nur den Zielserver erreicht."
+        },
+        "fr": {
+            "title": "Site intranet introuvable",
+            "story": "Un employé chez PC-Lab signale que le site intranet files.example.net ne peut pas être trouvé dans le navigateur, bien que les collègues disent que le serveur lui-même semble fonctionner. Le problème a commencé ce matin.",
+            "objective": "Faire réussir une demande HTTP GET de PC-Lab vers files.example.net.",
+            "hints": [
+                "La requête de PC-Lab n'a jamais quitté l'étape de résolution de nom ; elle s'arrête juste sur DNS-Internal avant toute tentative de connexion au serveur web.",
+                "DNS-Internal n'a pas d'enregistrement indiquant quelle adresse correspond à files.example.net, il ne peut donc pas répondre à la requête.",
+                "Sur DNS-Internal, ajoutez un enregistrement A associant files.example.net à 10.0.7.1."
+            ],
+            "explanation": "Un Nom de domaine ne fonctionne que si le Serveur DNS contient un enregistrement A le pointant vers une adresse IP. Sans cet enregistrement, les clients ne peuvent pas traduire le nom en adresse et chaque requête échoue avant même d'atteindre le serveur cible."
+        },
+        "hi": {
+            "title": "इंट्रानेट साइट नहीं मिली",
+            "story": "PC-Lab पर एक कर्मचारी रिपोर्ट करता है कि इंट्रानेट साइट files.example.net ब्राउज़र में नहीं मिल सकती, हालांकि सहकर्मी कहते हैं कि सर्वर ही ठीक लगता है। समस्या आज सुबह शुरू हुई।",
+            "objective": "PC-Lab से files.example.net तक HTTP GET को सफल बनाएं।",
+            "hints": [
+                "PC-Lab का अनुरोध नाम-लुकअप चरण को कभी नहीं छोड़ता; यह DNS-Internal पर ही रुक जाता है इससे पहले कि वेब सर्वर से कोई भी कनेक्शन का प्रयास किया जाए।",
+                "DNS-Internal के पास कोई प्रविष्टि नहीं है जो बताए कि कौन सा पता files.example.net से मेल खाता है, इसलिए यह लुकअप का जवाब ही नहीं दे सकता।",
+                "DNS-Internal पर, files.example.net को 10.0.7.1 से मैप करने वाला A रिकॉर्ड जोड़ें।"
+            ],
+            "explanation": "एक डोमेन नाम तभी काम करता है जब DNS सर्वर के पास A रिकॉर्ड हो जो इसे किसी IP पते की ओर इंगित करे। इस रिकॉर्ड के बिना, क्लाइंट नाम को पते में अनुवाद नहीं कर सकते और हर अनुरोध लक्ष्य सर्वर तक पहुंचने से पहले ही विफल हो जाता है।"
+        },
+        "id": {
+            "title": "Situs Intranet Tidak Ditemukan",
+            "story": "Seorang karyawan di PC-Lab melaporkan bahwa situs intranet files.example.net tidak dapat ditemukan di browser, meskipun rekan kerja mengatakan bahwa servernya sendiri baik-baik saja. Masalah dimulai pagi ini.",
+            "objective": "Buat permintaan HTTP GET dari PC-Lab ke files.example.net berhasil.",
+            "hints": [
+                "Permintaan dari PC-Lab tidak pernah meninggalkan tahap pencarian nama; permintaan berhenti tepat di DNS-Internal sebelum ada upaya koneksi ke server web.",
+                "DNS-Internal tidak memiliki entri yang menunjukkan alamat mana yang sesuai dengan files.example.net, jadi tidak dapat menjawab pencarian sama sekali.",
+                "Di DNS-Internal, tambahkan catatan A yang memetakan files.example.net ke 10.0.7.1."
+            ],
+            "explanation": "Sebuah Nama Domain hanya berfungsi jika Server DNS menyimpan catatan A yang mengarahkannya ke alamat IP. Tanpa catatan itu, klien tidak dapat menerjemahkan nama menjadi alamat dan setiap permintaan gagal sebelum mencapai server target."
+        },
+        "ru": {
+            "title": "Сайт интранета не найден",
+            "story": "Сотрудник компании PC-Lab сообщает, что сайт интранета files.example.net не может быть найден в браузере, хотя коллеги говорят, что сам сервер работает нормально. Проблема начялась сегодня утром.",
+            "objective": "Сделайте HTTP GET запрос от PC-Lab к files.example.net успешным.",
+            "hints": [
+                "Запрос от PC-Lab никогда не покидает этап разрешения имён; он останавливается прямо в DNS-Internal перед любой попыткой подключения к веб-серверу.",
+                "DNS-Internal не имеет записи, которая указывает, какой адрес соответствует files.example.net, поэтому он не может вообще ответить на запрос.",
+                "На DNS-Internal добавьте A-запись, которая отображает files.example.net на 10.0.7.1."
+            ],
+            "explanation": "Имя домена работает только если DNS-сервер содержит A-запись, указывающую его на IP-адрес. Без этой записи клиенты не могут перевести имя в адрес, и каждый запрос не удаётся ещё до того, как достигнет целевого сервера."
+        },
+        "it": {
+            "title": "Sito Intranet Non Trovato",
+            "story": "Un impiegato su PC-Lab segnala che il sito intranet files.example.net non può essere trovato nel browser, anche se i colleghi dicono che il server stesso sembra funzionare bene. Il problema è iniziato questa mattina.",
+            "objective": "Fare in modo che una richiesta HTTP GET da PC-Lab a files.example.net abbia successo.",
+            "hints": [
+                "La richiesta da PC-Lab non esce mai dalla fase di risoluzione dei nomi; si ferma proprio su DNS-Internal prima che venga tentata qualsiasi connessione al server web.",
+                "DNS-Internal non ha alcuna voce che dica quale indirizzo corrisponde a files.example.net, quindi non può rispondere alla risoluzione.",
+                "Su DNS-Internal, aggiungi un record A che mappa files.example.net a 10.0.7.1."
+            ],
+            "explanation": "Un nome di dominio funziona solo se il Server DNS contiene un record A che lo punta a un indirizzo IP. Senza quel record, i client non possono tradurre il nome in un indirizzo e ogni richiesta fallisce prima ancora di raggiungere il server di destinazione."
+        },
+        "tr": {
+            "title": "İntranet Sitesi Bulunamadı",
+            "story": "PC-Lab'deki bir çalışan, intranet sitesi files.example.net tarafından tarayıcıda bulunamadığını bildiriyor; ancak meslektaşları sunucunun kendisinin iyi olduğunu söylüyor. Sorun bu sabah başladı.",
+            "objective": "PC-Lab'dan files.example.net'e yapılan HTTP GET isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "PC-Lab'daki istek asla ad-çözümleme aşamasından çıkmaz; web sunucusuna bağlanma denemesinden önce DNS-Internal'de durur.",
+                "DNS-Internal'ün files.example.net'e karşılık gelen hangi adresi söyleyen bir kaydı yoktur, bu nedenle sorguyu hiç yanıtlayamaz.",
+                "DNS-Internal'de, files.example.net adını 10.0.7.1 adresine eşleştiren bir A kaydı ekleyin."
+            ],
+            "explanation": "Bir alan adı yalnızca DNS Sunucusu onu bir IP adresine işaret eden bir A kaydı içerirse çalışır. Bu kayıt olmadan, istemciler adı bir adrese çeviremez ve her istek hedef sunucuya ulaşmadan önce başarısız olur."
+        },
+        "th": {
+            "title": "ไม่พบไซต์อินทราเน็ต",
+            "story": "พนักงานที่ PC-Lab รายงานว่าไซต์อินทราเน็ต files.example.net ไม่พบในเบราวเซอร์ แม้ว่าเพื่อนร่วมงานบอกว่าเซิร์ฟเวอร์ดูเหมือนจะใช้ได้ดี ปัญหาเริ่มต้นเมื่อเช้านี้",
+            "objective": "ให้คำขอ HTTP GET จาก PC-Lab ไปยัง files.example.net สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Lab ไม่ออกจากขั้นตอนการค้นหาชื่อเลย หยุดที่ DNS-Internal ก่อนที่จะพยายามเชื่อมต่อกับเซิร์ฟเวอร์เว็บ",
+                "DNS-Internal ไม่มีบันทึกที่บอกว่าที่อยู่ใดตรงกับ files.example.net ดังนั้นจึงไม่สามารถตอบคำขอได้เลย",
+                "ที่ DNS-Internal ให้เพิ่มระเบียน A ที่แมป files.example.net ไปยัง 10.0.7.1"
+            ],
+            "explanation": "ชื่อโดเมนใช้ได้เฉพาะเมื่อเซิร์ฟเวอร์ DNS มีระเบียน A ที่ชี้ไปยังที่อยู่ IP เท่านั้น หากไม่มีระเบียนนั้น ไคลเอ็นต์จะไม่สามารถแปลชื่อเป็นที่อยู่ได้ และทุกคำขอจะล้มเหลวก่อนถึงเซิร์ฟเวอร์ปลายทาง"
+        },
+        "vi": {
+            "title": "Không Tìm Thấy Trang Intranet",
+            "story": "Một nhân viên tại PC-Lab báo cáo rằng trang intranet files.example.net không thể tìm thấy trong trình duyệt, mặc dù các đồng nghiệp nói rằng chính máy chủ dường như hoạt động tốt. Vấn đề bắt đầu sáng nay.",
+            "objective": "Thực hiện yêu cầu HTTP GET từ PC-Lab đến files.example.net thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Lab không bao giờ rời khỏi giai đoạn tra cứu tên; nó dừng lại ngay tại DNS-Internal trước khi có bất kỳ nỗ lực kết nối nào đến máy chủ web.",
+                "DNS-Internal không có mục nào cho biết địa chỉ nào tương ứng với files.example.net, vì vậy nó không thể trả lời tra cứu.",
+                "Trên DNS-Internal, hãy thêm một bản ghi A ánh xạ files.example.net tới 10.0.7.1."
+            ],
+            "explanation": "Tên miền chỉ hoạt động nếu Máy chủ DNS chứa bản ghi A trỏ đến một địa chỉ IP. Nếu không có bản ghi đó, khách hàng không thể dịch tên thành địa chỉ và mọi yêu cầu sẽ thất bại trước khi thậm chí tiếp cận máy chủ đích."
+        }
+    }
+}
