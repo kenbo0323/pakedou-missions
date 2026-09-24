@@ -1,0 +1,503 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-01",
+    "number": 11,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "internet_edge",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.14.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "203.0.113.10",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.14.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "203.0.113.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-internet1": {
+                "id": "dev-internet1",
+                "type": "INTERNET",
+                "name": "fujibit.com",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-internet1-p0",
+                        "index": 0,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "203.0.113.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p1",
+                        "index": 1,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p2",
+                        "index": 2,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p3",
+                        "index": 3,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": [],
+                    "domainName": "fujibit.com"
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-internet1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-internet1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-internet1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-internet1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Sales PC Can't Reach the Website",
+            "story": "The sales team says PC-Lab has been unable to load the company website, fujibit.com, since this morning. Other office activity hasn't been mentioned as a problem.",
+            "objective": "Get an HTTP request from PC-Lab to fujibit.com to succeed.",
+            "hints": [
+                "The packet from PC-Lab never even makes it onto the router's path toward the internet — it is dropped right at PC-Lab itself.",
+                "PC-Lab's default gateway is set to the internet host's own address instead of a router, so it has nowhere valid to hand off outgoing traffic.",
+                "On PC-Lab, set the default gateway to 10.0.14.254, which is Router-HQ's port on that local network."
+            ],
+            "explanation": "A default gateway must be a router on your own subnet, not the remote server you're trying to reach. PC-Lab was pointed at fujibit.com's address itself, so it had no way to route traffic off the local network. Setting the gateway to Router-HQ's local address restores the correct path."
+        },
+        "ja": {
+            "title": "営業部のPCがウェブサイトに接続できない",
+            "story": "営業チームによると、今朝から PC-Lab が会社のウェブサイト fujibit.com を読み込めなくなっているとのことです。オフィス内の他の通信については問題は報告されていません。",
+            "objective": "PC-Lab から fujibit.com への HTTP リクエストを成功させてください。",
+            "hints": [
+                "PC-Lab から送られたパケットは、ルーターを経由してインターネットへ向かう経路にすら乗っていません。PC-Lab 自体で破棄されています。",
+                "PC-Lab のデフォルトゲートウェイが、ルーターではなくインターネット上のホスト自身のアドレスに設定されているため、送信トラフィックを正しく引き渡す先がありません。",
+                "PC-Lab で、デフォルトゲートウェイを Router-HQ のそのローカルネットワーク上のポートである 10.0.14.254 に設定してください。"
+            ],
+            "explanation": "デフォルトゲートウェイには、接続先のリモートサーバーではなく、自分と同じサブネット上のルーターを指定する必要があります。PC-Lab は fujibit.com 自身のアドレスを指していたため、ローカルネットワークの外へトラフィックを送り出す経路がありませんでした。ゲートウェイを Router-HQ のローカルアドレスに設定することで、正しい経路が回復します。"
+        },
+        "zh-CN": {
+            "title": "销售PC无法访问网站",
+            "story": "销售团队反映，自今天上午以来，PC-Lab 无法加载公司网站 fujibit.com。办公室内其他活动未报告任何问题。",
+            "objective": "使 PC-Lab 发往 fujibit.com 的 HTTP 请求成功。",
+            "hints": [
+                "来自 PC-Lab 的数据包甚至没有进入 Router 通向互联网的路径——它在 PC-Lab 处就被直接丢弃了。",
+                "PC-Lab 的默认网关被设置为互联网主机自己的地址而不是 Router，所以它没有有效的地方来转发出站流量。",
+                "在 PC-Lab 上，将默认网关设置为 10.0.14.254，这是 Router-HQ 在该本地网络上的端口。"
+            ],
+            "explanation": "默认网关必须是你自己子网上的 Router，而不是你试图到达的远程 Server。PC-Lab 被指向了 fujibit.com 的地址本身，所以它没有办法将流量路由到本地网络之外。将网关设置为 Router-HQ 的本地地址可以恢复正确的路径。"
+        },
+        "zh-TW": {
+            "title": "銷售PC無法存取網站",
+            "story": "銷售團隊反映，自今天上午以來，PC-Lab 無法載入公司網站 fujibit.com。辦公室內其他活動未回報任何問題。",
+            "objective": "使 PC-Lab 發往 fujibit.com 的 HTTP 請求成功。",
+            "hints": [
+                "來自 PC-Lab 的資料包甚至沒有進入 Router 通向網際網路的路徑——它在 PC-Lab 處就被直接丟棄了。",
+                "PC-Lab 的預設閘道被設定為網際網路主機自己的地址而不是 Router，所以它沒有有效的地方來轉發出站流量。",
+                "在 PC-Lab 上，將預設閘道設定為 10.0.14.254，這是 Router-HQ 在該本地網路上的連接埠。"
+            ],
+            "explanation": "預設閘道必須是你自己子網上的 Router，而不是你試圖到達的遠端 Server。PC-Lab 被指向了 fujibit.com 的地址本身，所以它沒有辦法將流量路由到本地網路之外。將閘道設定為 Router-HQ 的本地地址可以恢復正確的路徑。"
+        },
+        "ko": {
+            "title": "영업 PC가 웹사이트에 연결할 수 없음",
+            "story": "영업팀이 오늘 아침부터 PC-Lab이 회사 웹사이트 fujibit.com을 로드할 수 없다고 보고했습니다. 사무실의 다른 활동에 대해서는 문제가 보고되지 않았습니다.",
+            "objective": "PC-Lab에서 fujibit.com으로의 HTTP 요청을 성공하도록 합니다.",
+            "hints": [
+                "PC-Lab의 패킷이 Router를 통해 인터넷으로 가는 경로에 진입하지도 못합니다 — PC-Lab에서 바로 삭제됩니다.",
+                "PC-Lab의 기본 게이트웨이가 Router가 아닌 인터넷 호스트 자신의 주소로 설정되어 있어서, 나가는 트래픽을 전달할 유효한 곳이 없습니다.",
+                "PC-Lab에서 기본 게이트웨이를 10.0.14.254로 설정하세요. 이는 그 로컬 네트워크에서 Router-HQ의 포트입니다."
+            ],
+            "explanation": "기본 게이트웨이는 도달하려는 원격 Server가 아니라 자신의 서브넷에 있는 Router여야 합니다. PC-Lab이 fujibit.com의 주소 자체를 가리키도록 설정되었기 때문에 로컬 네트워크 밖으로 트래픽을 라우팅할 방법이 없었습니다. 게이트웨이를 Router-HQ의 로컬 주소로 설정하면 올바른 경로가 복원됩니다."
+        },
+        "es": {
+            "title": "PC de Ventas No Puede Alcanzar el Sitio Web",
+            "story": "El equipo de ventas reporta que PC-Lab no ha podido cargar el sitio web de la empresa, fujibit.com, desde esta mañana. No se han reportado problemas con otras actividades de oficina.",
+            "objective": "Haz que una solicitud HTTP desde PC-Lab a fujibit.com tenga éxito.",
+            "hints": [
+                "El paquete de PC-Lab nunca llega a la ruta del Router hacia internet — se descarta directamente en PC-Lab.",
+                "El Gateway predeterminado de PC-Lab está configurado a la dirección del propio host de internet en lugar de un Router, por lo que no tiene un lugar válido para enviar el tráfico saliente.",
+                "En PC-Lab, establece el Gateway predeterminado a 10.0.14.254, que es el puerto de Router-HQ en esa red local."
+            ],
+            "explanation": "Un Gateway predeterminado debe ser un Router en tu propia subred, no el Servidor remoto al que intentas acceder. PC-Lab estaba apuntando a la dirección misma de fujibit.com, así que no tenía forma de enrutar tráfico fuera de la red local. Configurar el Gateway a la dirección local de Router-HQ restaura la ruta correcta."
+        },
+        "pt-BR": {
+            "title": "PC de Vendas Não Consegue Acessar o Site",
+            "story": "O time de vendas relata que PC-Lab não conseguiu carregar o site da empresa, fujibit.com, desde esta manhã. Nenhum outro problema foi reportado com as atividades do escritório.",
+            "objective": "Faça uma requisição HTTP do PC-Lab para fujibit.com ter sucesso.",
+            "hints": [
+                "O pacote do PC-Lab nunca chega à rota do Router em direção à internet — é descartado direto no PC-Lab.",
+                "O Gateway padrão do PC-Lab está configurado para o endereço do próprio host de internet em vez de um Router, então não tem um local válido para passar o tráfego de saída.",
+                "No PC-Lab, defina o Gateway padrão como 10.0.14.254, que é a porta de Router-HQ nessa rede local."
+            ],
+            "explanation": "Um Gateway padrão precisa ser um Router na sua própria sub-rede, não o Servidor remoto que você está tentando alcançar. PC-Lab estava apontando para o endereço de fujibit.com, então não tinha forma de rotear o tráfego para fora da rede local. Definir o Gateway para o endereço local de Router-HQ restaura o caminho correto."
+        },
+        "de": {
+            "title": "Sales PC kann Website nicht erreichen",
+            "story": "Das Verkaufsteam teilt mit, dass PC-Lab seit heute Morgen die Firmenwebsite fujibit.com nicht laden kann. Andere Büroaktivitäten werden nicht als Problem erwähnt.",
+            "objective": "Ein HTTP-Request von PC-Lab zu fujibit.com muss erfolgreich sein.",
+            "hints": [
+                "Das Paket von PC-Lab gelangt nie auf den Weg des Routers zum Internet — es wird direkt bei PC-Lab selbst verworfen.",
+                "Der Standard-Gateway von PC-Lab ist auf die Adresse des Remote-Hosts eingestellt, nicht auf einen Router, daher hat es keinen gültigen Weg für ausgehenden Verkehr.",
+                "Stellen Sie auf PC-Lab den Standard-Gateway auf 10.0.14.254, den Port von Router-HQ in diesem lokalen Netzwerk."
+            ],
+            "explanation": "Ein Standard-Gateway muss ein Router in Ihrem eigenen Subnetz sein, nicht der Remote-Server, den Sie erreichen möchten. PC-Lab zeigte auf die Adresse von fujibit.com selbst, daher hatte es keinen Weg, Traffic aus dem lokalen Netzwerk herauszuleiten. Das Setzen des Gateways auf die lokale Adresse von Router-HQ stellt den korrekten Pfad wieder her."
+        },
+        "fr": {
+            "title": "Le PC de ventes ne peut pas atteindre le site web",
+            "story": "L'équipe de ventes indique que PC-Lab ne peut pas charger le site web de l'entreprise, fujibit.com, depuis ce matin. Aucun autre problème d'activité de bureau n'a été mentionné.",
+            "objective": "Réussir une requête HTTP de PC-Lab vers fujibit.com.",
+            "hints": [
+                "Le paquet de PC-Lab ne parvient même pas sur le chemin du routeur vers Internet — il est rejeté directement sur PC-Lab.",
+                "La passerelle par défaut de PC-Lab est définie sur l'adresse du serveur distant lui-même plutôt que sur un routeur, elle n'a donc aucun moyen valide de diriger le trafic sortant.",
+                "Sur PC-Lab, définissez la passerelle par défaut sur 10.0.14.254, qui est le port de Router-HQ sur ce réseau local."
+            ],
+            "explanation": "Une passerelle par défaut doit être un routeur sur votre propre sous-réseau, pas le serveur distant que vous essayez d'atteindre. PC-Lab pointait vers l'adresse de fujibit.com elle-même, il n'avait donc aucun moyen de router le trafic hors du réseau local. Définir la passerelle sur l'adresse locale de Router-HQ restaure le chemin correct."
+        },
+        "hi": {
+            "title": "बिक्रय PC वेबसाइट तक नहीं पहुंच सकता",
+            "story": "बिक्रय टीम कहती है कि PC-Lab आज सुबह से कंपनी की वेबसाइट fujibit.com को लोड नहीं कर सका है। अन्य कार्यालय की गतिविधियों के बारे में कोई समस्या नहीं बताई गई है।",
+            "objective": "PC-Lab से fujibit.com को HTTP अनुरोध सफल बनाएं।",
+            "hints": [
+                "PC-Lab से पैकेट इंटरनेट की ओर रूटर के पथ पर कभी नहीं पहुंचता — यह PC-Lab पर ही हटा दिया जाता है।",
+                "PC-Lab का डिफ़ॉल्ट गेटवे रूटर की जगह दूरस्थ होस्ट के पते पर सेट है, इसलिए इसके पास आउटगोइंग ट्रैफिक के लिए कोई मान्य रास्ता नहीं है।",
+                "PC-Lab पर, डिफ़ॉल्ट गेटवे को 10.0.14.254 पर सेट करें, जो इस स्थानीय नेटवर्क पर Router-HQ का पोर्ट है।"
+            ],
+            "explanation": "डिफ़ॉल्ट गेटवे आपके अपने सबनेट पर एक रूटर होना चाहिए, दूरस्थ सर्वर नहीं जिसे आप हासिल करने का प्रयास कर रहे हैं। PC-Lab fujibit.com के पते की ओर इशारा कर रहा था, इसलिए इसके पास ट्रैफिक को स्थानीय नेटवर्क से बाहर भेजने का कोई तरीका नहीं था। गेटवे को Router-HQ के स्थानीय पते पर सेट करने से सही पथ बहाल होता है।"
+        },
+        "id": {
+            "title": "PC Penjualan Tidak Dapat Menjangkau Situs Web",
+            "story": "Tim penjualan melaporkan bahwa PC-Lab tidak dapat memuat situs web perusahaan, fujibit.com, sejak pagi ini. Aktivitas kantor lainnya tidak disebutkan sebagai masalah.",
+            "objective": "Buat permintaan HTTP dari PC-Lab ke fujibit.com berhasil.",
+            "hints": [
+                "Paket dari PC-Lab tidak pernah mencapai jalur Router menuju Internet — paket dijatuhkan langsung di PC-Lab.",
+                "Gateway Default PC-Lab diatur ke alamat host jarak jauh itu sendiri bukan Router, sehingga tidak memiliki cara sah untuk meneruskan lalu lintas keluar.",
+                "Pada PC-Lab, atur Gateway Default ke 10.0.14.254, yang merupakan port Router-HQ di jaringan lokal itu."
+            ],
+            "explanation": "Gateway Default harus berupa Router di subnet Anda sendiri, bukan server jarak jauh yang ingin Anda jangkau. PC-Lab menunjuk ke alamat fujibit.com itu sendiri, jadi tidak ada cara untuk merutekan lalu lintas dari jaringan lokal. Mengatur gateway ke alamat lokal Router-HQ memulihkan jalur yang benar."
+        },
+        "ru": {
+            "title": "ПК продаж не может достичь веб-сайта",
+            "story": "Команда продаж сообщает, что PC-Lab не может загрузить корпоративный веб-сайт fujibit.com с этого утра. О других проблемах в офисе не упоминается.",
+            "objective": "Сделать успешным HTTP-запрос от PC-Lab к fujibit.com.",
+            "hints": [
+                "Пакет от PC-Lab не попадает на путь маршрутизатора в Интернет — он отбрасывается прямо на PC-Lab.",
+                "Шлюз по умолчанию PC-Lab установлен на адрес самого удаленного хоста, а не на маршрутизатор, поэтому у него нет валидного способа передачи исходящего трафика.",
+                "На PC-Lab установите Шлюз по умолчанию на 10.0.14.254, что является портом Router-HQ в этой локальной сети."
+            ],
+            "explanation": "Шлюз по умолчанию должен быть маршрутизатором в вашей собственной подсети, а не удаленным сервером, который вы пытаетесь достичь. PC-Lab указывал на сам адрес fujibit.com, поэтому у него не было способа маршрутизировать трафик из локальной сети. Установка шлюза на локальный адрес Router-HQ восстанавливает правильный путь."
+        },
+        "it": {
+            "title": "PC Sales non può raggiungere il sito",
+            "story": "Il team di vendita segnala che PC-Lab non riesce a caricare il sito aziendale fujibit.com da questa mattina. Non sono state segnalate problematiche per altre attività in ufficio.",
+            "objective": "Far funzionare una richiesta HTTP da PC-Lab a fujibit.com.",
+            "hints": [
+                "Il pacchetto da PC-Lab non raggiunge nemmeno il percorso del router verso internet — viene scartato direttamente su PC-Lab.",
+                "Il Gateway predefinito di PC-Lab è impostato all'indirizzo dell'host internet stesso invece che a un router, quindi non ha un posto valido dove inviare il traffico in uscita.",
+                "Su PC-Lab, imposta il Gateway predefinito a 10.0.14.254, che è la porta di Router-HQ sulla rete locale."
+            ],
+            "explanation": "Un Gateway predefinito deve essere un router sulla tua subnet, non il server remoto che stai cercando di raggiungere. PC-Lab era puntato all'indirizzo stesso di fujibit.com, quindi non aveva modo di instradare il traffico fuori dalla rete locale. L'impostazione del gateway all'indirizzo locale di Router-HQ ripristina il percorso corretto."
+        },
+        "tr": {
+            "title": "Satış PC'si Web Sitesine Ulaşamıyor",
+            "story": "Satış ekibi, PC-Lab'ın bu sabahtan beri şirket web sitesi fujibit.com'u yükleyemediğini söylüyor. Diğer ofis faaliyetleri sorunlu olarak belirtilmemiştir.",
+            "objective": "PC-Lab'dan fujibit.com'a gelen bir HTTP isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "PC-Lab'daki paket yönlendiricinin internet yoluna hiç ulaşmamıştır — doğrudan PC-Lab'da bırakılmıştır.",
+                "PC-Lab'ın varsayılan ağ geçidi, bir yönlendiricinin yerine internet ana bilgisayarının kendi adresine ayarlanmıştır; bu nedenle giden trafiği iletmek için geçerli bir yer yoktur.",
+                "PC-Lab'da varsayılan ağ geçidini 10.0.14.254 olarak ayarlayın; bu, Router-HQ'nun o yerel ağdaki portudur."
+            ],
+            "explanation": "Varsayılan ağ geçidi, erişmeye çalıştığınız uzak sunucu değil, kendi alt ağınızdaki bir yönlendirici olmalıdır. PC-Lab, fujibit.com'un adresinin kendisine işaret ediyordu, bu nedenle trafiği yerel ağdan yönlendirmek için hiçbir yolu yoktu. Ağ geçidini Router-HQ'nun yerel adresine ayarlamak doğru yolu geri yükler."
+        },
+        "th": {
+            "title": "PC ฝ่ายขายไม่สามารถเข้าถึงเว็บไซต์",
+            "story": "ทีมฝ่ายขายรายงานว่า PC-Lab ไม่สามารถโหลดเว็บไซต์ของบริษัท fujibit.com ตั้งแต่เช้านี้ ไม่มีการรายงานปัญหาสำหรับกิจกรรมสำนักงานอื่น",
+            "objective": "ทำให้คำขอ HTTP จาก PC-Lab ไปยัง fujibit.com สำเร็จ",
+            "hints": [
+                "แพคเกตจาก PC-Lab ไม่ถึงเส้นทางของเราเตอร์ไปยังอินเทอร์เน็ต — ถูกปล่อยไว้ที่ PC-Lab เอง",
+                "เกตเวย์เริ่มต้นของ PC-Lab ตั้งเป็นที่อยู่ของโฮสต์อินเทอร์เน็ตแทนเราเตอร์ จึงไม่มีที่ที่ถูกต้องในการส่งต่อการจราจรขาออก",
+                "ที่ PC-Lab ตั้งเกตเวย์เริ่มต้นเป็น 10.0.14.254 ซึ่งเป็นพอร์ต Router-HQ บนเครือข่ายท้องถิ่นนั้น"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นต้องเป็นเราเตอร์บนซับเน็ตของคุณเอง ไม่ใช่เซิร์ฟเวอร์ระยะไกลที่คุณพยายามเข้าถึง PC-Lab ชี้ไปที่ที่อยู่ของ fujibit.com เอง จึงไม่มีวิธีในการกำหนดเส้นทางการจราจรออกจากเครือข่ายท้องถิ่น การตั้งเกตเวย์เป็นที่อยู่ท้องถิ่นของ Router-HQ จะคืนเส้นทางที่ถูกต้อง"
+        },
+        "vi": {
+            "title": "PC Bán hàng Không Thể Truy Cập Trang Web",
+            "story": "Đội bán hàng báo cáo rằng PC-Lab không thể tải trang web công ty fujibit.com kể từ sáng nay. Không có vấn đề được đề cập đối với các hoạt động văn phòng khác.",
+            "objective": "Thực hiện thành công yêu cầu HTTP từ PC-Lab tới fujibit.com.",
+            "hints": [
+                "Gói tin từ PC-Lab không bao giờ đến được đường dẫn của bộ định tuyến tới internet — nó bị loại bỏ ngay tại PC-Lab.",
+                "Cổng mặc định của PC-Lab được đặt thành địa chỉ của chính máy chủ internet thay vì bộ định tuyến, vì vậy nó không có nơi hợp lệ để chuyển tiếp lưu lượng truy cập đi.",
+                "Trên PC-Lab, đặt cổng mặc định thành 10.0.14.254, là cổng của Router-HQ trên mạng cục bộ đó."
+            ],
+            "explanation": "Cổng mặc định phải là bộ định tuyến trên mạng con của bạn, không phải máy chủ từ xa mà bạn đang cố gắng truy cập. PC-Lab được trỏ tới chính địa chỉ của fujibit.com, vì vậy nó không có cách nào để định tuyến lưu lượng truy cập ra khỏi mạng cục bộ. Đặt cổng thành địa chỉ cục bộ của Router-HQ sẽ khôi phục đúng đường dẫn."
+        }
+    }
+}
