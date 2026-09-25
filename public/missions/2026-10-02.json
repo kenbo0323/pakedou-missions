@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-02",
+    "number": 12,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.21.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.21.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.21.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.2.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.16.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.2.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.2.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.16.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.21.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.2.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.24.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.16.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1",
+            "dev-router2"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Files Unreachable After Subnet Change",
+            "story": "PC-Sales at the branch office reports the shared intranet files have been unreachable since the recent subnet change at the head office. The request never completes.",
+            "objective": "Restore an HTTP GET from PC-Sales to Intranet-01 so the shared files load again.",
+            "hints": [
+                "The packet from PC-Sales gets no further than Router-Sapporo, which cannot find a way to forward it toward Intranet-01.",
+                "Router-Sapporo has no route because Intranet-01 no longer sits in the 10.0.16.0/24 subnet its own address suggests it should.",
+                "On Intranet-01, set port 0 to address 10.0.16.1 with mask 255.255.255.0 so it belongs to the correct subnet again."
+            ],
+            "explanation": "Routers forward based on subnet membership, not just IP appearance. When a device's address falls outside the subnet its route entries expect, routers drop packets for it as unreachable. Always check that a host's IP and mask place it in the intended subnet before assuming a routing table is at fault."
+        },
+        "ja": {
+            "title": "サブネット変更後にファイルへ到達できない",
+            "story": "支社のPC-Salesから、本社での最近のサブネット変更以降、共有イントラネットファイルにアクセスできないと報告がありました。リクエストが完了しません。",
+            "objective": "PC-SalesからIntranet-01へのHTTP GETを復旧し、共有ファイルが再び読み込まれるようにします。",
+            "hints": [
+                "PC-Salesからのパケットは、Router-Sapporoまでしか届いておらず、Router-SapporoはIntranet-01への転送経路を見つけられません。",
+                "Router-Sapporoにルートがないのは、Intranet-01が自身のアドレスから想定される10.0.16.0/24のサブネットにもはや属していないためです。",
+                "Intranet-01で、ポート0のアドレスを10.0.16.1、マスクを255.255.255.0に設定し、正しいサブネットに戻します。"
+            ],
+            "explanation": "ルーターはIPアドレスの見た目だけでなく、サブネットへの所属に基づいて転送を行います。デバイスのアドレスが、ルーティングテーブルが想定するサブネットの範囲外になっていると、ルーターはそのパケットを到達不能として破棄します。ルーティングテーブルに問題があると決めつける前に、ホストのIPアドレスとマスクが意図したサブネットに一致しているかを必ず確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "子网变更后文件无法访问",
+            "story": "分支机构的 PC-Sales 报告称，自总部最近进行子网变更后，共享Intranet-01文件变得无法访问。请求一直没有完成。",
+            "objective": "恢复从 PC-Sales 向 Intranet-01 发起的 HTTP GET 请求，使共享文件能够正常加载。",
+            "hints": [
+                "来自 PC-Sales 的数据包无法越过 Router-Sapporo，Router-Sapporo 找不到转发该数据包到 Intranet-01 的路由。",
+                "Router-Sapporo 没有相应的路由，因为 Intranet-01 不再位于 10.0.16.0/24 子网中（该子网是根据其本身地址推导出来的）。",
+                "在 Intranet-01 上，设置端口 0 的地址为 10.0.16.1，掩码为 255.255.255.0，使其重新属于正确的子网。"
+            ],
+            "explanation": "路由器根据子网归属进行转发，而不仅仅根据 IP 地址外观。当设备的地址超出其路由表预期的子网范围时，路由器会将发往该设备的数据包视为不可达而丢弃。在怀疑路由表有问题前，始终要检查主机的 IP 地址和掩码是否将其放在预期的子网中。"
+        },
+        "zh-TW": {
+            "title": "子網變更後檔案無法存取",
+            "story": "分支機構的 PC-Sales 報告指出，自總部最近進行子網變更後，共享 Intranet-01 檔案變得無法存取。請求一直沒有完成。",
+            "objective": "恢復從 PC-Sales 到 Intranet-01 的 HTTP GET 請求，使共享檔案能夠正常載入。",
+            "hints": [
+                "來自 PC-Sales 的封包無法越過 Router-Sapporo，Router-Sapporo 找不到轉送該封包到 Intranet-01 的路由。",
+                "Router-Sapporo 沒有相應的路由，因為 Intranet-01 不再位於 10.0.16.0/24 子網內（該子網是根據其本身位址推導出來的）。",
+                "在 Intranet-01 上，設定連接埠 0 的位址為 10.0.16.1，遮罩為 255.255.255.0，使其重新屬於正確的子網。"
+            ],
+            "explanation": "路由器根據子網歸屬進行轉送，而不僅根據 IP 位址外觀。當裝置的位址超出其路由表預期的子網範圍時，路由器會將發往該裝置的封包視為無法連線而丟棄。在懷疑路由表有問題前，始終要檢查主機的 IP 位址和遮罩是否將其放在預期的子網內。"
+        },
+        "ko": {
+            "title": "서브넷 변경 후 파일에 접근할 수 없음",
+            "story": "지사의 PC-Sales에서 본사의 최근 서브넷 변경 후 공유되는 Intranet-01 파일에 접근할 수 없다고 보고했습니다. 요청이 완료되지 않습니다.",
+            "objective": "PC-Sales에서 Intranet-01로의 HTTP GET 요청을 복구하여 공유 파일이 다시 로드되도록 합니다.",
+            "hints": [
+                "PC-Sales에서 온 패킷이 Router-Sapporo를 넘어가지 못하며, Router-Sapporo는 Intranet-01으로 패킷을 전달할 경로를 찾을 수 없습니다.",
+                "Router-Sapporo에는 경로가 없습니다. Intranet-01이 더 이상 10.0.16.0/24 서브넷에 속하지 않기 때문입니다(이 서브넷은 자신의 주소로부터 유추됩니다).",
+                "Intranet-01에서 포트 0을 주소 10.0.16.1, 마스크 255.255.255.0으로 설정하여 올바른 서브넷에 다시 속하게 합니다."
+            ],
+            "explanation": "라우터는 단순히 IP 주소 외형이 아니라 서브넷 소속에 따라 전달합니다. 장치의 주소가 라우팅 테이블이 예상하는 서브넷 범위를 벗어나면 라우터는 그 장치로 가는 패킷을 도달 불가능으로 처리하여 버립니다. 라우팅 테이블에 문제가 있다고 가정하기 전에 항상 호스트의 IP 주소와 마스크가 의도한 서브넷에 속하는지 확인하세요."
+        },
+        "es": {
+            "title": "Archivos inaccesibles tras cambio de subred",
+            "story": "PC-Sales en la sucursal informa que los archivos compartidos de Intranet-01 son inaccesibles desde el cambio reciente de subred en la oficina principal. La solicitud nunca se completa.",
+            "objective": "Restaurar una solicitud HTTP GET desde PC-Sales a Intranet-01 para que los archivos compartidos se carguen nuevamente.",
+            "hints": [
+                "El paquete de PC-Sales no avanza más allá de Router-Sapporo, que no puede encontrar forma de reenviarlo hacia Intranet-01.",
+                "Router-Sapporo no tiene ruta porque Intranet-01 ya no se encuentra en la subred 10.0.16.0/24 que su propia dirección sugiere que debería.",
+                "En Intranet-01, configure el puerto 0 con dirección 10.0.16.1 y máscara 255.255.255.0 para que vuelva a pertenecer a la subred correcta."
+            ],
+            "explanation": "Los routers reenvían según la pertenencia a la subred, no solo por la apariencia de la dirección IP. Cuando la dirección de un dispositivo cae fuera de la subred que sus entradas de tabla de rutas esperan, los routers descartan los paquetes hacia él como no alcanzables. Siempre verifica que la IP y la máscara del host lo coloquen en la subred prevista antes de asumir que hay un problema en la tabla de rutas."
+        },
+        "pt-BR": {
+            "title": "Arquivos inacessíveis após mudança de sub-rede",
+            "story": "PC-Sales no escritório da filial relata que os arquivos compartilhados da Intranet-01 estão inacessíveis desde a mudança recente de sub-rede no escritório principal. A solicitação nunca é concluída.",
+            "objective": "Restaurar uma solicitação HTTP GET de PC-Sales para Intranet-01 para que os arquivos compartilhados carreguem novamente.",
+            "hints": [
+                "O pacote de PC-Sales não ultrapassa Router-Sapporo, que não consegue encontrar uma forma de encaminhá-lo para Intranet-01.",
+                "Router-Sapporo não possui uma rota porque Intranet-01 não está mais na sub-rede 10.0.16.0/24 que seu próprio endereço sugere que deveria estar.",
+                "Em Intranet-01, configure a porta 0 com endereço 10.0.16.1 e máscara 255.255.255.0 para que pertença novamente à sub-rede correta."
+            ],
+            "explanation": "Os roteadores encaminham com base na associação de sub-rede, não apenas na aparência do IP. Quando o endereço de um dispositivo fica fora da sub-rede que suas entradas de tabela de roteamento esperam, os roteadores descartam os pacotes para ele como inacessível. Sempre verifique se o IP e a máscara do host o colocam na sub-rede pretendida antes de assumir que há um problema na tabela de roteamento."
+        },
+        "de": {
+            "title": "Dateien nach Subnetzänderung nicht erreichbar",
+            "story": "PC-Sales in der Filiale meldet, dass die freigegebenen Intranet-Dateien seit der jüngsten Subnetzänderung in der Zentrale nicht mehr erreichbar sind. Die Anfrage wird nicht abgeschlossen.",
+            "objective": "Stellen Sie einen HTTP GET von PC-Sales zu Intranet-01 wieder her, damit die freigegebenen Dateien wieder geladen werden.",
+            "hints": [
+                "Das Paket von PC-Sales kommt nicht über Router-Sapporo hinaus, der keinen Weg findet, es zu Intranet-01 weiterzuleiten.",
+                "Router-Sapporo hat keine Route, weil Intranet-01 nicht mehr im Subnetz 10.0.16.0/24 sitzt, das seine eigene Adresse vorschlägt.",
+                "Legen Sie auf Intranet-01 Port 0 auf Adresse 10.0.16.1 mit Maske 255.255.255.0 fest, damit es wieder zum richtigen Subnetz gehört."
+            ],
+            "explanation": "Router leiten basierend auf Subnetzangehörigkeit weiter, nicht nur auf Grund des IP-Erscheinungsbildes. Wenn eine Geräteadresse außerhalb des Subnetzes liegt, das ihre Route-Einträge erwarten, werden Pakete dafür von Routern als unerreichbar verworfen. Überprüfen Sie immer, dass die IP und Maske eines Hosts es in das beabsichtigte Subnetz versetzen, bevor Sie eine Routing-Tabelle beschuldigen."
+        },
+        "fr": {
+            "title": "Fichiers inaccessibles après changement de sous-réseau",
+            "story": "PC-Sales à la succursale signale que les fichiers Intranet partagés sont inaccessibles depuis le changement de sous-réseau récent au siège. La requête ne se termine jamais.",
+            "objective": "Restaurez une requête HTTP GET de PC-Sales vers Intranet-01 pour que les fichiers partagés se chargent à nouveau.",
+            "hints": [
+                "Le paquet en provenance de PC-Sales ne peut pas aller au-delà de Router-Sapporo, qui ne trouve aucun moyen de le transférer vers Intranet-01.",
+                "Router-Sapporo n'a pas de route car Intranet-01 ne se trouve plus dans le sous-réseau 10.0.16.0/24 que son adresse propre suggère.",
+                "Sur Intranet-01, réglez le port 0 sur l'adresse 10.0.16.1 avec le Masque 255.255.255.0 pour qu'il appartienne à nouveau au bon sous-réseau."
+            ],
+            "explanation": "Les routeurs transfèrent en fonction de l'appartenance au sous-réseau, pas seulement de l'apparence IP. Lorsque l'adresse d'un appareil sort du sous-réseau que ses entrées de route attendent, les routeurs rejettent les paquets le concernant comme inaccessibles. Vérifiez toujours que l'adresse IP et le Masque d'un hôte le placent dans le sous-réseau prévu avant de supposer qu'une Table de routage est responsable."
+        },
+        "hi": {
+            "title": "सबनेट परिवर्तन के बाद फाइलें अनुपलब्ध",
+            "story": "शाखा कार्यालय में PC-Sales की रिपोर्ट है कि सभी साझा इंट्रानेट फाइलें हेड ऑफिस में हाल के सबनेट परिवर्तन के बाद से अनुपलब्ध हैं। अनुरोध कभी पूरा नहीं होता।",
+            "objective": "PC-Sales से Intranet-01 के लिए एक HTTP GET को बहाल करें ताकि साझा फाइलें फिर से लोड हों।",
+            "hints": [
+                "PC-Sales से पैकेट Router-Sapporo से आगे नहीं बढ़ता है, जो इसे Intranet-01 की ओर आगे भेजने का कोई तरीका नहीं खोज सकता।",
+                "Router-Sapporo के पास कोई मार्ग नहीं है क्योंकि Intranet-01 अब 10.0.16.0/24 गंतव्य नेटवर्क में नहीं रहता है जो इसका अपना पता सुझाता है।",
+                "Intranet-01 पर, पोर्ट 0 को 10.0.16.1 पते और मास्क 255.255.255.0 के साथ सेट करें ताकि यह फिर से सही गंतव्य नेटवर्क का हिस्सा हो।"
+            ],
+            "explanation": "राउटर सबनेट सदस्यता के आधार पर आगे भेजते हैं, केवल IP उपस्थिति के आधार पर नहीं। जब किसी डिवाइस का पता उस गंतव्य नेटवर्क के बाहर गिरता है जिसकी उसकी मार्ग प्रविष्टियां अपेक्षा करती हैं, तो राउटर इसके लिए पैकेट को अनुपलब्ध के रूप में छोड़ देते हैं। होस्ट के IP और मास्क को अभीष्ट गंतव्य नेटवर्क में रखने की जांच हमेशा करें, इससे पहले कि आप रूटिंग टेबल को दोषी मानें।"
+        },
+        "id": {
+            "title": "File Tidak Dapat Diakses Setelah Perubahan Subnet",
+            "story": "PC-Sales di kantor cabang melaporkan bahwa file Intranet bersama menjadi tidak dapat diakses sejak perubahan subnet baru-baru ini di kantor pusat. Permintaan tidak pernah selesai.",
+            "objective": "Pulihkan permintaan HTTP GET dari PC-Sales ke Intranet-01 agar file bersama dapat dimuat lagi.",
+            "hints": [
+                "Paket dari PC-Sales tidak dapat melampaui Router-Sapporo, yang tidak menemukan cara untuk meneruskannya ke Intranet-01.",
+                "Router-Sapporo tidak memiliki rute karena Intranet-01 tidak lagi berada di Jaringan tujuan 10.0.16.0/24 yang disarankan alamatnya sendiri.",
+                "Pada Intranet-01, atur Nomor port 0 ke alamat 10.0.16.1 dengan Masque 255.255.255.0 agar kembali ke Jaringan tujuan yang benar."
+            ],
+            "explanation": "Router meneruskan berdasarkan keanggotaan subnet, bukan hanya penampilan IP. Ketika alamat perangkat jatuh di luar Jaringan tujuan yang diharapkan entri rutnya, router menghapus paket untuknya sebagai tidak dapat diakses. Selalu periksa bahwa IP dan Masque host menempatkannya di Jaringan tujuan yang dituju sebelum mengasumsikan Tabel Routing adalah penyebabnya."
+        },
+        "ru": {
+            "title": "Файлы недоступны после изменения подсети",
+            "story": "PC-Sales в отделении сообщает, что общие файлы Интранета недоступны с момента недавнего изменения подсети в главном офисе. Запрос никогда не завершается.",
+            "objective": "Восстановите HTTP GET от PC-Sales к Intranet-01, чтобы общие файлы снова загружались.",
+            "hints": [
+                "Пакет от PC-Sales не проходит дальше Router-Sapporo, который не может найти способ переадресовать его на Intranet-01.",
+                "Router-Sapporo не имеет маршрута, потому что Intranet-01 больше не находится в целевой сети 10.0.16.0/24, которую предполагает его собственный адрес.",
+                "На Intranet-01 установите номер порта 0 на адрес 10.0.16.1 с Маской 255.255.255.0, чтобы она снова принадлежала правильной целевой сети."
+            ],
+            "explanation": "Маршрутизаторы пересылают на основе принадлежности подсети, а не только внешнего вида IP. Когда адрес устройства выходит за пределы целевой сети, которую ожидают его записи маршрутизации, маршрутизаторы отбрасывают для него пакеты как недостижимые. Всегда проверяйте, что IP-адрес и Маска хоста помещают его в предполагаемую целевую сеть, прежде чем предполагать, что виновата таблица маршрутизации."
+        },
+        "it": {
+            "title": "File Non Raggiungibili Dopo il Cambio di Subnet",
+            "story": "PC-Sales presso la filiale segnala che i file della intranet condivisa sono irraggiungibili dal recente cambio di subnet presso la sede centrale. La richiesta non si completa mai.",
+            "objective": "Ripristina una richiesta HTTP GET da PC-Sales a Intranet-01 per far caricare nuovamente i file condivisi.",
+            "hints": [
+                "Il pacchetto da PC-Sales non va oltre Router-Sapporo, che non riesce a trovare un modo per inoltarlo verso Intranet-01.",
+                "Router-Sapporo non ha alcuna route perché Intranet-01 non risiede più nella subnet 10.0.16.0/24 che il suo indirizzo suggerisce.",
+                "Su Intranet-01, imposta la porta 0 con indirizzo 10.0.16.1 e Maschera 255.255.255.0 affinché appartenga di nuovo alla subnet corretta."
+            ],
+            "explanation": "I router inoltrano i pacchetti in base all'appartenenza alla subnet, non solo in base all'aspetto dell'IP. Quando l'indirizzo di un dispositivo cade al di fuori della subnet che le sue voci di routing si aspettano, i router scartano i pacchetti come irraggiungibili. Verifica sempre che l'IP e la Maschera di un host lo colloghino nella subnet prevista prima di dare la colpa alla Tabella di routing."
+        },
+        "tr": {
+            "title": "Alt Ağ Değişikliğinden Sonra Dosyalara Erişilemiyor",
+            "story": "PC-Sales şubesinde bulunan bilgisayar, başka bir deyişle, paylaşılan intranet dosyalarına merkez ofiste gerçekleştirilen alt ağ değişikliğinden bu yana erişilemiyor rapor ediyor. İstek hiçbir zaman tamamlanmıyor.",
+            "objective": "PC-Sales'ten Intranet-01'e bir HTTP GET isteği gönder ve dosyalar yüklenebilsin.",
+            "hints": [
+                "PC-Sales'ten gelen paket Router-Sapporo'da durmuştur, cihaz Intranet-01'e yönelik bir yönlendirme yolu bulamamıştır.",
+                "Router-Sapporo'da rota yoktur çünkü Intranet-01 artık kendi adresi tarafından önerilen 10.0.16.0/24 alt ağında yer almamaktadır.",
+                "Intranet-01 üzerinde port 0'ı, 10.0.16.1 adresine ve 255.255.255.0 Maske'ye ayarlayın ki doğru alt ağa ait olsun."
+            ],
+            "explanation": "Yönlendiriciler sadece IP görünüşüne değil, alt ağ üyeliğine göre iletir. Bir cihazın adresi rota girdilerinin beklediği alt ağın dışında kaldığında, yönlendiriciler paketleri ulaşılamaz olarak bırakır. Her zaman, yönlendirme tablosundan şüphe etmeden önce konağın IP ve Maskesi'nin istenen alt ağa ait olduğunu doğrulayın."
+        },
+        "th": {
+            "title": "ไม่สามารถเข้าถึงไฟล์หลังการเปลี่ยนแปลง Subnet",
+            "story": "PC-Sales ที่สาขานำเสนอรายงานว่าไฟล์ intranet ที่แชร์นั้นไม่สามารถเข้าถึงได้นับตั้งแต่มีการเปลี่ยนแปลง subnet ล่าสุดที่สำนักงานใหญ่ คำขอไม่เสร็จสิ้นเลย",
+            "objective": "คืนค่าการส่งข้อมูล HTTP GET จาก PC-Sales ไปยัง Intranet-01 เพื่อให้ไฟล์ที่แชร์สามารถโหลดได้อีกครั้ง",
+            "hints": [
+                "แพ็กเก็ตจาก PC-Sales ไม่สามารถผ่าน Router-Sapporo ได้ เนื่องจากไม่มีวิธีในการส่งต่อไปยัง Intranet-01",
+                "Router-Sapporo ไม่มีเส้นทางเนื่องจาก Intranet-01 ไม่ได้อยู่ใน subnet 10.0.16.0/24 ที่ที่อยู่ของมันแนะนำ",
+                "บน Intranet-01 ให้ตั้งค่าพอร์ต 0 เป็นที่อยู่ 10.0.16.1 และมาสก์ 255.255.255.0 เพื่อให้มันอยู่ใน subnet ที่ถูกต้องอีกครั้ง"
+            ],
+            "explanation": "ระบบเราเตอร์ส่งต่อแพ็กเก็ตตามความเป็นสมาชิกของ subnet ไม่ใช่แค่การปรากฏตัวของ IP หากที่อยู่ของอุปกรณ์อยู่นอก subnet ที่รายการเส้นทางคาดหวัง ระบบเราเตอร์จะทิ้งแพ็กเก็ตเป็นไม่สามารถเข้าถึงได้ ตรวจสอบเสมอว่า IP และมาสก์ของโฮสต์วางไว้ใน subnet ที่ตั้งใจไว้ก่อนที่จะสรุปว่า ตารางเส้นทาง มีปัญหา"
+        },
+        "vi": {
+            "title": "Không Thể Truy Cập Tệp Sau Thay Đổi Subnet",
+            "story": "PC-Sales tại chi nhánh báo cáo rằng các tệp intranet được chia sẻ không thể truy cập được kể từ khi thay đổi subnet gần đây ở văn phòng chính. Yêu cầu không bao giờ hoàn thành.",
+            "objective": "Khôi phục yêu cầu HTTP GET từ PC-Sales tới Intranet-01 để các tệp được chia sẻ tải lại.",
+            "hints": [
+                "Gói tin từ PC-Sales không vượt qua được Router-Sapporo, cái này không thể tìm cách chuyển tiếp nó tới Intranet-01.",
+                "Router-Sapporo không có tuyến đường bởi vì Intranet-01 không còn nằm trong subnet 10.0.16.0/24 mà địa chỉ của nó gợi ý.",
+                "Trên Intranet-01, đặt cổng 0 thành địa chỉ 10.0.16.1 với số cổng 255.255.255.0 để nó thuộc subnet chính xác một lần nữa."
+            ],
+            "explanation": "Các bộ định tuyến chuyển tiếp dựa trên tư cách thành viên của subnet, không chỉ dựa trên diện mạo của IP. Khi địa chỉ của một thiết bị nằm ngoài subnet mà các mục nhập bảng định tuyến dự kiến, các bộ định tuyến sẽ loại bỏ các gói tin cho nó vì không thể truy cập. Luôn kiểm tra xem IP và số cổng của máy chủ có đặt nó vào subnet dự định trước khi giả định rằng Bảng định tuyến có vấn đề."
+        }
+    }
+}
