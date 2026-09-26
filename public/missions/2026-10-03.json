@@ -1,0 +1,701 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-03",
+    "number": 13,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "vlan_mismatch",
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "vlan",
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.30.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.30.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.29.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.29.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.29.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.29.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "Switch-Access",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 30
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.29.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.20.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.20.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.20.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-vlan1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Two Floors, No Wiki",
+            "story": "After the weekend network upgrade, Sales reports the shared wiki page just spins and never loads on PC-Sales. Meanwhile Dev says PC-Dev can't even get a ping reply from the wiki server anymore.",
+            "objective": "Get PC-Sales to load a page from Wiki-01 over HTTP, and get PC-Dev to receive ping replies from Wiki-01.",
+            "hints": [
+                "PC-Sales gives up before its request ever leaves the PC. PC-Dev's traffic dies right at Switch-Access, never reaching Router-HQ.",
+                "PC-Sales has no default gateway set, so it doesn't know where to send off-subnet traffic. PC-Dev's switch port has been placed in VLAN 30, which has no member ports leading toward the router.",
+                "On PC-Sales set the default gateway to 10.0.30.254. On Switch-Access set port 3 (PC-Dev's port) to VLAN 20."
+            ],
+            "explanation": "Every client needs a default gateway to reach other subnets, even if its own address is fine. And on a VLAN switch, a port only forwards to peers within the same VLAN — placing a port in the wrong VLAN isolates it from the router entirely, no matter how the cabling looks."
+        },
+        "ja": {
+            "title": "2つのフロア、消えたWiki",
+            "story": "週末のネットワーク更新後、営業部門から共有Wikiページが読み込み中のままになり、PC-Salesで表示できないと報告がありました。一方、開発部門もPC-DevからWikiサーバーへのpingの応答がまったく返ってこないと言っています。",
+            "objective": "PC-SalesからWiki-01のページをHTTPで表示できるようにし、PC-DevがWiki-01からのping応答を受信できるようにします。",
+            "hints": [
+                "PC-Salesはリクエストを送信する前に諦めてしまい、PC自体から出て行っていません。PC-Devの通信はSwitch-Accessでちょうど途絶えてしまい、Router-HQまで届いていません。",
+                "PC-Salesにはデフォルトゲートウェイが設定されていないため、サブネット外への通信の送信先が分かりません。PC-Devが接続されているスイッチポートはVLAN 30に属しており、このVLANにはルーターへ向かうメンバーポートがありません。",
+                "PC-Salesでデフォルトゲートウェイを10.0.30.254に設定してください。Switch-Accessでポート3(PC-Devのポート)をVLAN 20に設定してください。"
+            ],
+            "explanation": "どのクライアントも、自分自身のアドレス設定が正しくても、他のサブネットに到達するにはデフォルトゲートウェイが必要です。また、VLANスイッチでは、ポートは同じVLANに属する相手にしか転送を行いません。ポートを誤ったVLANに設定すると、配線が正しく見えていてもルーターから完全に孤立してしまいます。"
+        },
+        "zh-CN": {
+            "title": "两层楼，没有维基",
+            "story": "周末网络升级后，销售部报告在PC-Sales上无法加载共享维基页面，页面持续加载中。同时开发部说PC-Dev无法从维基服务器收到ping回复。",
+            "objective": "让PC-Sales能够通过HTTP从Wiki-01加载页面，让PC-Dev能够收到来自Wiki-01的ping回复。",
+            "hints": [
+                "PC-Sales放弃了请求，流量从未离开过PC。PC-Dev的流量在Switch-Access处停止，从未到达Router-HQ。",
+                "PC-Sales未设置默认网关，不知道如何发送跨子网流量。PC-Dev的交换机端口被放在VLAN 30中，该VLAN中没有连接到路由器的成员端口。",
+                "在PC-Sales上将默认网关设置为10.0.30.254。在Switch-Access上将端口3（PC-Dev的端口）设置为VLAN 20。"
+            ],
+            "explanation": "每个客户端都需要一个默认网关来访问其他子网，即使其自身地址没问题。在VLAN交换机上，端口只能转发给同一VLAN内的对等端口——将端口放在错误的VLAN中会使其与路由器完全隔离，无论电缆看起来如何。"
+        },
+        "zh-TW": {
+            "title": "兩樓沒有維基",
+            "story": "周末網路升級後，業務部報告在PC-Sales上無法加載共享維基頁面，頁面持續加載中。同時開發部說PC-Dev無法從維基伺服器收到ping回覆。",
+            "objective": "讓PC-Sales能透過HTTP從Wiki-01加載頁面，讓PC-Dev能收到來自Wiki-01的ping回覆。",
+            "hints": [
+                "PC-Sales放棄了請求，流量從未離開過PC。PC-Dev的流量在Switch-Access處停止，從未到達Router-HQ。",
+                "PC-Sales未設定預設閘道，不知道如何傳送跨子網流量。PC-Dev的交換機連接埠被放在VLAN 30中，該VLAN中沒有連接到路由器的成員連接埠。",
+                "在PC-Sales上將預設閘道設定為10.0.30.254。在Switch-Access上將連接埠3（PC-Dev的連接埠）設定為VLAN 20。"
+            ],
+            "explanation": "每個用戶端都需要一個預設閘道來存取其他子網，即使其自身位址沒問題。在VLAN交換機上，連接埠只能轉送給同一VLAN內的對等連接埠——將連接埠放在錯誤的VLAN中會使其與路由器完全隔離，無論電纜看起來如何。"
+        },
+        "ko": {
+            "title": "2층, 위키 없음",
+            "story": "주말 네트워크 업그레이드 후 영업팀에서 PC-Sales에서 공유 위키 페이지가 계속 로딩되지 않는다고 보고했습니다. 한편 개발팀은 PC-Dev에서 위키 서버로부터 ping 응답을 전혀 받을 수 없다고 합니다.",
+            "objective": "PC-Sales에서 Wiki-01으로부터 HTTP를 통해 페이지를 로드할 수 있게 하고, PC-Dev에서 Wiki-01으로부터 ping 응답을 받을 수 있게 해야 합니다.",
+            "hints": [
+                "PC-Sales에서 요청이 PC를 벗어나지 못하고 포기되었습니다. PC-Dev의 트래픽은 Switch-Access에서 중단되어 Router-HQ에 도달하지 못합니다.",
+                "PC-Sales에 기본 게이트웨이가 설정되지 않아 다른 서브넷으로의 트래픽을 보낼 위치를 모릅니다. PC-Dev의 스위치 포트가 라우터로 향하는 멤버 포트가 없는 VLAN 30에 배치되어 있습니다.",
+                "PC-Sales에서 기본 게이트웨이를 10.0.30.254로 설정합니다. Switch-Access에서 포트 3(PC-Dev의 포트)을 VLAN 20으로 설정합니다."
+            ],
+            "explanation": "모든 클라이언트는 다른 서브넷에 접근하기 위해 기본 게이트웨이가 필요합니다. 자신의 주소가 정상이어도 마찬가지입니다. VLAN 스위치에서 포트는 같은 VLAN 내의 피어에게만 트래픽을 전달합니다. 포트를 잘못된 VLAN에 배치하면 케이블이 제대로 연결되어 있어도 라우터로부터 완전히 격리됩니다."
+        },
+        "es": {
+            "title": "Dos Pisos, Sin Wiki",
+            "story": "Tras la actualización de red del fin de semana, Ventas reporta que la página wiki compartida simplemente carga sin fin en PC-Sales. Mientras tanto, Desarrollo dice que PC-Dev no puede recibir respuesta de ping del servidor wiki.",
+            "objective": "Lograr que PC-Sales cargue una página de Wiki-01 por HTTP y que PC-Dev reciba respuestas de ping de Wiki-01.",
+            "hints": [
+                "PC-Sales abandona antes de que su solicitud salga del PC. El tráfico de PC-Dev muere justo en Switch-Access, sin llegar nunca a Router-HQ.",
+                "PC-Sales no tiene gateway predeterminado configurado, así que no sabe dónde enviar tráfico fuera de la subred. El puerto del switch de PC-Dev se ha colocado en VLAN 30, que no tiene puertos miembro que conduzcan hacia el router.",
+                "En PC-Sales configura el gateway predeterminado a 10.0.30.254. En Switch-Access configura el puerto 3 (puerto de PC-Dev) a VLAN 20."
+            ],
+            "explanation": "Todo cliente necesita un gateway predeterminado para alcanzar otras subnets, incluso si su propia dirección está bien. En un switch VLAN, un puerto solo reenvía a pares dentro de la misma VLAN. Colocar un puerto en la VLAN incorrecta lo aísla completamente del router, sin importar cómo se vean los cables."
+        },
+        "pt-BR": {
+            "title": "Dois Andares, Sem Wiki",
+            "story": "Após a atualização de rede do fim de semana, Vendas reporta que a página wiki compartilhada só carrega indefinidamente em PC-Sales. Enquanto isso, Desenvolvimento diz que PC-Dev não consegue receber respostas de ping do servidor wiki.",
+            "objective": "Fazer com que PC-Sales carregue uma página de Wiki-01 via HTTP e que PC-Dev receba respostas de ping de Wiki-01.",
+            "hints": [
+                "PC-Sales desiste antes de sua solicitação sair do PC. O tráfico de PC-Dev morre logo em Switch-Access, nunca chegando a Router-HQ.",
+                "PC-Sales não tem gateway padrão configurado, então não sabe para onde enviar tráfico fora da subrede. A porta do switch de PC-Dev foi colocada em VLAN 30, que não tem portas membro conectadas ao roteador.",
+                "Em PC-Sales, defina o gateway padrão como 10.0.30.254. Em Switch-Access, defina a porta 3 (porta de PC-Dev) como VLAN 20."
+            ],
+            "explanation": "Todo cliente precisa de um gateway padrão para alcançar outras subredes, mesmo que seu próprio endereço esteja correto. Em um switch VLAN, uma porta só encaminha para pares dentro da mesma VLAN. Colocar uma porta na VLAN errada a isola completamente do roteador, não importa como os cabos parecem estar conectados."
+        },
+        "de": {
+            "title": "Zwei Etagen, kein Wiki",
+            "story": "Nach dem Netzwerk-Upgrade am Wochenende meldet Vertrieb, dass die gemeinsame Wiki-Seite auf PC-Sales einfach lädt und nicht lädt. Derweil sagt Entwicklung, dass PC-Dev nicht einmal mehr eine Ping-Antwort vom Wiki-Server erhält.",
+            "objective": "PC-Sales soll eine Seite von Wiki-01 über HTTP laden und PC-Dev soll Ping-Antworten von Wiki-01 erhalten.",
+            "hints": [
+                "PC-Sales gibt auf, bevor seine Anfrage PC-Sales verlässt. PC-Dev-Traffic stirbt direkt bei Switch-Access, erreicht Router-HQ nie.",
+                "PC-Sales hat kein Standard-Gateway gesetzt, daher weiß es nicht, wohin externe Subnet-Verkehr zu senden ist. PC-Dev's Switch-Port wurde in VLAN 30 platziert, das keine Member-Ports zum Router führt.",
+                "Bei PC-Sales setzen Sie das Standard-Gateway auf 10.0.30.254. Bei Switch-Access setzen Sie Port 3 (PC-Dev's Port) auf VLAN 20."
+            ],
+            "explanation": "Jeder Client benötigt ein Standard-Gateway, um andere Subnetze zu erreichen, auch wenn die eigene Adresse ok ist. Auf einem VLAN-Switch leitet ein Port nur zu Peers innerhalb desselben VLAN weiter — ein Port im falschen VLAN isoliert es komplett vom Router, egal wie die Verkabelung aussieht."
+        },
+        "fr": {
+            "title": "Deux étages, pas de Wiki",
+            "story": "Après la mise à niveau réseau du week-end, Ventes signale que la page wiki partagée tourne sans cesse et ne se charge jamais sur PC-Sales. Pendant ce temps, Développement dit que PC-Dev ne reçoit même plus de réponse ping du serveur wiki.",
+            "objective": "Faire charger une page de Wiki-01 sur PC-Sales via HTTP et faire recevoir des réponses ping de Wiki-01 à PC-Dev.",
+            "hints": [
+                "PC-Sales abandonne avant que sa requête ne quitte le PC. Le trafic de PC-Dev s'arrête immédiatement à Switch-Access, ne atteint jamais Router-HQ.",
+                "PC-Sales n'a pas de passerelle par défaut configurée, donc il ne sait pas où envoyer le trafic hors sous-réseau. Le port de commutateur de PC-Dev a été placé dans VLAN 30, qui n'a pas de ports membres menant vers le routeur.",
+                "Sur PC-Sales, définissez la passerelle par défaut sur 10.0.30.254. Sur Switch-Access, définissez le port 3 (port de PC-Dev) sur VLAN 20."
+            ],
+            "explanation": "Chaque Client a besoin d'une passerelle par défaut pour atteindre d'autres sous-réseaux, même si sa propre adresse est correcte. Sur un commutateur VLAN, un port ne transmet qu'aux pairs dans le même VLAN — placer un port dans le mauvais VLAN l'isole complètement du routeur, peu importe l'apparence du câblage."
+        },
+        "hi": {
+            "title": "दो मंजिलें, कोई विकी नहीं",
+            "story": "सप्ताहांत की नेटवर्क अपग्रेड के बाद, विक्रय रिपोर्ट करता है कि साझा विकी पृष्ठ PC-Sales पर बस घूमता रहता है और कभी लोड नहीं होता। इसी बीच, विकास कहता है कि PC-Dev को विकी सर्वर से पिंग प्रतिक्रिया भी नहीं मिल रही है।",
+            "objective": "PC-Sales को Wiki-01 से HTTP पर एक पृष्ठ लोड करना है और PC-Dev को Wiki-01 से पिंग प्रतिक्रिया प्राप्त करनी है।",
+            "hints": [
+                "PC-Sales हार मान जाता है इससे पहले कि उसका अनुरोध PC को छोड़े। PC-Dev की ट्रैफिक Switch-Access पर ही रुक जाती है, Router-HQ तक कभी नहीं पहुंचती।",
+                "PC-Sales के पास डिफ़ॉल्ट गेटवे सेट नहीं है, इसलिए यह नहीं जानता कि सबनेट के बाहर की ट्रैफिक कहां भेजे। PC-Dev के स्विच पोर्ट को VLAN 30 में रखा गया है, जिसमें राउटर की ओर कोई सदस्य पोर्ट नहीं है।",
+                "PC-Sales पर डिफ़ॉल्ट गेटवे को 10.0.30.254 पर सेट करें। Switch-Access पर पोर्ट 3 (PC-Dev का पोर्ट) को VLAN 20 पर सेट करें।"
+            ],
+            "explanation": "प्रत्येक क्लायंट को अन्य सबनेट तक पहुंचने के लिए एक डिफ़ॉल्ट गेटवे की जरूरत है, भले ही इसका अपना पता ठीक हो। VLAN स्विच पर, एक पोर्ट केवल उसी VLAN में समवर्ती लोगों को अग्रेषित करता है — एक पोर्ट को गलत VLAN में रखने से यह राउटर से पूरी तरह अलग हो जाता है, भले ही केबलिंग कैसी दिखे।"
+        },
+        "id": {
+            "title": "Dua Lantai, Tidak Ada Wiki",
+            "story": "Setelah upgrade jaringan akhir pekan, Penjualan melaporkan halaman wiki bersama hanya berputar dan tidak pernah dimuat di PC-Sales. Sementara itu, Pengembangan mengatakan PC-Dev bahkan tidak bisa mendapatkan respons ping dari server wiki lagi.",
+            "objective": "Dapatkan PC-Sales untuk memuat halaman dari Wiki-01 melalui HTTP, dan dapatkan PC-Dev untuk menerima respons ping dari Wiki-01.",
+            "hints": [
+                "PC-Sales menyerah sebelum permintaannya meninggalkan PC. Lalu lintas PC-Dev mati tepat di Switch-Access, tidak pernah mencapai Router-HQ.",
+                "PC-Sales tidak memiliki Gateway Default yang ditetapkan, jadi tidak tahu ke mana mengirim lalu lintas off-subnet. Port switch PC-Dev telah ditempatkan di VLAN 30, yang tidak memiliki port anggota menuju router.",
+                "Di PC-Sales, tetapkan Gateway Default ke 10.0.30.254. Di Switch-Access, tetapkan port 3 (port PC-Dev) ke VLAN 20."
+            ],
+            "explanation": "Setiap Client membutuhkan Gateway Default untuk menjangkau subnet lain, meskipun alamatnya sendiri sudah benar. Pada switch VLAN, port hanya meneruskan ke rekan di VLAN yang sama — menempatkan port di VLAN yang salah mengisolasinya sepenuhnya dari router, tidak peduli bagaimana kabelnya terlihat."
+        },
+        "ru": {
+            "title": "Два этажа, нет Вики",
+            "story": "После обновления сети в выходные продажи сообщают, что общая вики-страница просто крутится и не загружается на PC-Sales. Тем временем разработка говорит, что PC-Dev больше не получает ответ на пинг от вики-сервера.",
+            "objective": "Заставить PC-Sales загрузить страницу с Wiki-01 по HTTP и заставить PC-Dev получить ответы на пинги от Wiki-01.",
+            "hints": [
+                "PC-Sales сдается до того, как его запрос покинет ПК. Трафик PC-Dev умирает прямо на Switch-Access, никогда не достигая Router-HQ.",
+                "На PC-Sales не установлен шлюз по умолчанию, поэтому он не знает, куда отправлять трафик за пределы подсети. Порт коммутатора PC-Dev помещен в VLAN 30, который не имеет портов, ведущих к маршрутизатору.",
+                "На PC-Sales установите шлюз по умолчанию на 10.0.30.254. На Switch-Access установите порт 3 (порт PC-Dev) на VLAN 20."
+            ],
+            "explanation": "Каждому клиенту нужен шлюз по умолчанию для доступа к другим подсетям, даже если его собственный адрес правильный. На коммутаторе VLAN порт пересылает трафик только узлам в той же VLAN — размещение порта в неправильной VLAN полностью изолирует его от маршрутизатора, независимо от того, как выглядит кабель."
+        },
+        "it": {
+            "title": "Due Piani, Niente Wiki",
+            "story": "Dopo l'aggiornamento di rete del fine settimana, Sales segnala che la pagina wiki condivisa gira all'infinito e non si carica mai su PC-Sales. Nel frattempo Dev dice che PC-Dev non riesce nemmeno a ricevere una risposta ping dal server wiki.",
+            "objective": "Far caricare a PC-Sales una pagina da Wiki-01 tramite HTTP e far ricevere a PC-Dev risposte ping da Wiki-01.",
+            "hints": [
+                "PC-Sales rinuncia prima che la sua richiesta lasci il PC. Il traffico di PC-Dev muore direttamente su Switch-Access, senza mai raggiungere Router-HQ.",
+                "PC-Sales non ha un Gateway predefinito impostato, quindi non sa dove inviare il traffico fuori dalla subnet. La porta dello switch di PC-Dev è stata inserita nella VLAN 30, che non ha porte membro che portano verso il router.",
+                "Su PC-Sales imposta il Gateway predefinito su 10.0.30.254. Su Switch-Access imposta la porta 3 (porta di PC-Dev) su VLAN 20."
+            ],
+            "explanation": "Ogni Client ha bisogno di un Gateway predefinito per raggiungere altre subnet, anche se il suo indirizzo è corretto. Su uno switch VLAN, una porta inoltra il traffico solo ai peer nella stessa VLAN — posizionare una porta nella VLAN sbagliata la isola dal router completamente, indipendentemente dall'aspetto del cablaggio."
+        },
+        "tr": {
+            "title": "İki Kat, Wiki Yok",
+            "story": "Hafta sonu ağ yükseltmesinden sonra, Satış ekibi PC-Sales üzerindeki paylaşılan wiki sayfasının yüklenmediğini ve döndüğünü bildiriyor. Bu arada Geliştirme, PC-Dev'in wiki sunucusundan ping yanıtı alamadığını söylüyor.",
+            "objective": "PC-Sales'in Wiki-01'den HTTP üzerinden bir sayfa yüklemesini sağlayın ve PC-Dev'in Wiki-01'den ping yanıtları almasını sağlayın.",
+            "hints": [
+                "PC-Sales isteği PC'den çıkmadan önce pes ediyor. PC-Dev'in trafiği Switch-Access'te ölüyor, Router-HQ'ya hiç ulaşmıyor.",
+                "PC-Sales'in Varsayılan ağ geçidi ayarlanmamış, bu nedenle off-subnet trafiği nereye göndereceğini bilmiyor. PC-Dev'in switch portu, yönlendiriciye giden üye portları olmayan VLAN 30'a yerleştirilmiş.",
+                "PC-Sales'te Varsayılan ağ geçidini 10.0.30.254 olarak ayarlayın. Switch-Access'te port 3'ü (PC-Dev'in portu) VLAN 20'ye ayarlayın."
+            ],
+            "explanation": "Her Client diğer subnatlara ulaşmak için bir Varsayılan ağ geçidine ihtiyaç duyar; kendi adresi doğru olsa bile. Bir VLAN Switch'te, bir port trafiği yalnızca aynı VLAN içindeki eş cihazlara iletir — bir portu yanlış VLAN'a yerleştirmek, kablolama nasıl görünürse görsün, onu yönlendiriciden tamamen izole eder."
+        },
+        "th": {
+            "title": "สองชั้น ไม่มี Wiki",
+            "story": "หลังจากการอัพเกรดเน็ตเวิร์กในวันหยุดสุดสัปดาห์ Sales รายงานว่าหน้า wiki ร่วมกันบน PC-Sales หมุนตลอดและไม่โหลด ในขณะเดียวกัน Dev บอกว่า PC-Dev ไม่ได้รับการตอบ ping จากเซิร์ฟเวอร์ wiki เลย",
+            "objective": "ให้ PC-Sales โหลดหน้าจาก Wiki-01 ผ่าน HTTP และให้ PC-Dev ได้รับการตอบ ping จาก Wiki-01",
+            "hints": [
+                "PC-Sales ยอมแพ้ก่อนที่คำขอจะออกจาก PC Switch-Access ขัดขวางการรับส่งข้อมูลของ PC-Dev จึงไม่ถึง Router-HQ",
+                "PC-Sales ไม่มีเกตเวย์เริ่มต้นตั้งไว้ จึงไม่รู้ว่าจะส่งการรับส่งข้อมูล off-subnet ไปที่ไหน พอร์ต switch ของ PC-Dev ถูกวางใน VLAN 30 ซึ่งไม่มีพอร์ตสมาชิกนำไปยังเราเตอร์",
+                "บน PC-Sales ตั้งเกตเวย์เริ่มต้นเป็น 10.0.30.254 บน Switch-Access ตั้งพอร์ต 3 (พอร์ต PC-Dev) เป็น VLAN 20"
+            ],
+            "explanation": "ทุก Client ต้องมีเกตเวย์เริ่มต้นเพื่อเข้าถึง subnet อื่น แม้ว่าที่อยู่ของมันจะถูกต้องก็ตาม บน VLAN Switch พอร์ตจะส่งต่อเฉพาะไปยังเครื่องคู่ที่อยู่ใน VLAN เดียวกัน — การวางพอร์ตใน VLAN ที่ผิดจะแยก IP ออกจากเราเตอร์อย่างสมบูรณ์ ไม่ว่าการเดินสายจะมีลักษณะอย่างไร"
+        },
+        "vi": {
+            "title": "Hai Tầng, Không Wiki",
+            "story": "Sau khi nâng cấp mạng cuối tuần, Sales báo cáo trang wiki chia sẻ chỉ xoay vòng và không bao giờ tải được trên PC-Sales. Trong khi đó Dev nói rằng PC-Dev thậm chí không thể nhận được phản hồi ping từ máy chủ wiki nữa.",
+            "objective": "Làm cho PC-Sales tải trang từ Wiki-01 qua HTTP và làm cho PC-Dev nhận được phản hồi ping từ Wiki-01.",
+            "hints": [
+                "PC-Sales từ bỏ trước khi yêu cầu của nó rời khỏi PC. Lưu lượng của PC-Dev chết ngay tại Switch-Access, không bao giờ đạt tới Router-HQ.",
+                "PC-Sales không có Cổng mặc định được đặt, vì vậy nó không biết gửi lưu lượng off-subnet đến đâu. Cổng switch của PC-Dev đã được đặt vào VLAN 30, cái không có cổng thành viên dẫn tới bộ định tuyến.",
+                "Trên PC-Sales đặt Cổng mặc định thành 10.0.30.254. Trên Switch-Access đặt cổng 3 (cổng PC-Dev) thành VLAN 20."
+            ],
+            "explanation": "Mỗi Client cần một Cổng mặc định để đạt tới các subnet khác, ngay cả khi địa chỉ của nó đúng. Trên một L2 Switch VLAN, một cổng chỉ chuyển tiếp đến các ngang hàng trong cùng VLAN — đặt cổng vào VLAN sai sẽ cách ly nó khỏi bộ định tuyến hoàn toàn, bất kể cáp trông như thế nào."
+        }
+    }
+}
