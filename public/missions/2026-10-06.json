@@ -1,0 +1,575 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-06",
+    "number": 16,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "acl_deny"
+    ],
+    "concepts": [
+        "firewall",
+        "acl"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.6.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.6.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.16.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "FW-01",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.16.1",
+                            "protocol": "HTTP"
+                        },
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.16.1",
+                            "dstPort": 80
+                        },
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.16.1"
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Web",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.16.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.16.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-waf1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-waf1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-waf1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-waf1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-waf1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Sales Can't Reach the File Server",
+            "story": "PC-Sales staff report that since this morning they cannot open the File-Server web page at all, though other office traffic seems unaffected. IT has been asked to look into it.",
+            "objective": "Restore normal web access from PC-Sales to File-Server.",
+            "hints": [
+                "The web request from PC-Sales never gets past FW-01 on its way to File-Server.",
+                "FW-01's rule list has a rule that denies HTTP traffic to File-Server ahead of the rule meant to permit it, so the permit is never reached.",
+                "On FW-01, delete the ACL rule that denies HTTP from any source to 10.0.16.1, leaving the permit rule for port 80 in effect."
+            ],
+            "explanation": "Firewall ACLs are read top to bottom and the first match wins. A broad deny rule placed above a more specific permit rule will always win, blocking traffic the permit was meant to allow. Order and specificity of rules matter as much as their content."
+        },
+        "ja": {
+            "title": "営業部からファイルサーバーに接続できない",
+            "story": "PC-Salesの担当者から、今朝からFile-Serverのウェブページがまったく開けないという報告がありました。他のオフィス内通信には影響がないようです。IT部門が調査を依頼されました。",
+            "objective": "PC-SalesからFile-Serverへの通常のウェブアクセスを復旧させます。",
+            "hints": [
+                "PC-Salesからのウェブリクエストは、File-Serverに届く前にFW-01を通過できていません。",
+                "FW-01のルール一覧では、File-Serverへのアクセスを許可するルールよりも前に、HTTP通信を拒否するルールがあるため、許可ルールに到達できていません。",
+                "FW-01で、送信元を問わず10.0.16.1へのHTTPを拒否するACLルールを削除し、ポート80を許可するルールだけが有効な状態にしてください。"
+            ],
+            "explanation": "ファイアウォールのACLは上から順に評価され、最初に一致したルールが適用されます。範囲の広い拒否ルールが、より具体的な許可ルールより上にあると、常にそちらが優先され、本来許可されるはずの通信がブロックされてしまいます。ルールは内容だけでなく、順序と具体性も重要です。"
+        },
+        "zh-CN": {
+            "title": "销售部无法访问文件服务器",
+            "story": "PC-Sales 员工报告说，从今早开始他们无法打开 File-Server 网页，但办公室的其他网络流量似乎未受影响。IT 部门被要求调查此事。",
+            "objective": "恢复 PC-Sales 对 File-Server 的正常网页访问。",
+            "hints": [
+                "PC-Sales 的网页请求在前往 File-Server 的途中无法通过 FW-01。",
+                "FW-01 的规则列表中有一条拒绝规则在允许规则之前，该拒绝规则阻止了对 File-Server 的 HTTP 流量，导致允许规则永远无法生效。",
+                "在 FW-01 上，删除拒绝从任何源到 10.0.16.1 的 HTTP 流量的 ACL 规则，保留端口 80 的允许规则生效。"
+            ],
+            "explanation": "防火墙 ACL 规则从上到下逐条读取，首条匹配的规则生效。如果一条宽泛的拒绝规则位于更具体的允许规则之前，拒绝规则总会生效，从而阻止允许规则原本要允许的流量。规则的顺序和具体程度与规则的内容同样重要。"
+        },
+        "zh-TW": {
+            "title": "業務部無法存取檔案伺服器",
+            "story": "PC-Sales 員工回報自今早起無法打開 File-Server 網頁，但辦公室其他網路流量似乎未受影響。IT 部門被要求進行調查。",
+            "objective": "恢復 PC-Sales 對 File-Server 的正常網頁存取。",
+            "hints": [
+                "PC-Sales 的網頁請求在前往 File-Server 的途中無法通過 FW-01。",
+                "FW-01 的規則清單中有一條拒絕規則排在允許規則之前，該拒絕規則阻擋了對 File-Server 的 HTTP 流量，導致允許規則永遠無法生效。",
+                "在 FW-01 上，刪除拒絕從任何來源到 10.0.16.1 的 HTTP 流量的 ACL 規則，保留連接埠 80 的允許規則生效。"
+            ],
+            "explanation": "防火牆 ACL 規則由上而下逐條讀取，首次符合的規則生效。若一條範圍廣泛的拒絕規則排在更具體的允許規則之前，拒絕規則會永遠生效，從而阻擋允許規則原本要允許的流量。規則的順序和特異性與規則的內容同樣重要。"
+        },
+        "ko": {
+            "title": "판매팀이 파일 서버에 접속할 수 없음",
+            "story": "PC-Sales 직원들이 오늘 아침부터 File-Server 웹 페이지에 전혀 접속할 수 없다고 보고했습니다. 다른 사무실 트래픽은 영향을 받지 않는 것으로 보입니다. IT 부서가 이 문제를 조사해 달라는 요청을 받았습니다.",
+            "objective": "PC-Sales에서 File-Server로의 정상 웹 접속을 복구합니다.",
+            "hints": [
+                "PC-Sales의 웹 요청이 File-Server로 가는 도중 FW-01을 통과하지 못합니다.",
+                "FW-01의 규칙 목록에는 허용 규칙보다 앞에 있는 거부 규칙이 있으며, 이 거부 규칙이 File-Server로의 HTTP 트래픽을 차단하므로 허용 규칙에 도달하지 못합니다.",
+                "FW-01에서 10.0.16.1로의 모든 소스의 HTTP를 거부하는 ACL 규칙을 삭제하고, 포트 80에 대한 허용 규칙이 작동하도록 유지합니다."
+            ],
+            "explanation": "방화벽 ACL은 위에서 아래로 읽으며 첫 번째 일치 규칙이 우선합니다. 더 구체적인 허용 규칙 위에 놓인 광범위한 거부 규칙은 항상 우선되어 허용 규칙이 본래 허용하려던 트래픽을 차단합니다. 규칙의 순서와 특이성은 규칙의 내용만큼 중요합니다."
+        },
+        "es": {
+            "title": "Ventas no puede acceder al servidor de archivos",
+            "story": "El personal de PC-Sales reporta que desde esta mañana no pueden abrir la página web de File-Server, aunque el resto del tráfico de la oficina parece no verse afectado. IT ha sido contactado para investigar.",
+            "objective": "Restaurar el acceso web normal desde PC-Sales a File-Server.",
+            "hints": [
+                "La solicitud web de PC-Sales nunca pasa a través de FW-01 camino a File-Server.",
+                "La lista de reglas de FW-01 tiene una regla que deniega el tráfico HTTP a File-Server antes de la regla que lo permite, por lo que la permisión nunca se alcanza.",
+                "En FW-01, elimine la regla ACL que deniega HTTP desde cualquier origen a 10.0.16.1, dejando activa la regla de permiso para el puerto 80."
+            ],
+            "explanation": "Los ACLs de firewall se leen de arriba a abajo y la primera coincidencia gana. Una regla de negación amplia colocada encima de una regla de permiso más específica siempre ganará, bloqueando el tráfico que se pretendía permitir. El orden y la especificidad de las reglas importan tanto como su contenido."
+        },
+        "pt-BR": {
+            "title": "Vendas não consegue acessar o servidor de arquivos",
+            "story": "Funcionários da PC-Sales relatam que desde esta manhã não conseguem abrir a página web do File-Server, embora outro tráfego do escritório pareça não ser afetado. O TI foi solicitado a investigar.",
+            "objective": "Restaurar o acesso web normal do PC-Sales para o File-Server.",
+            "hints": [
+                "A solicitação web do PC-Sales nunca ultrapassa o FW-01 a caminho do File-Server.",
+                "A lista de regras do FW-01 tem uma regra que nega tráfego HTTP para o File-Server antes da regra que o permite, então a permissão nunca é alcançada.",
+                "No FW-01, exclua a regra ACL que nega HTTP de qualquer origem para 10.0.16.1, deixando a regra de permissão ativa para a porta 80."
+            ],
+            "explanation": "Os ACLs do firewall são lidos de cima para baixo e a primeira correspondência vence. Uma regra de negação ampla colocada acima de uma regra de permissão mais específica sempre vencerá, bloqueando o tráfego que a permissão se destinava a permitir. A ordem e a especificidade das regras importam tanto quanto seu conteúdo."
+        },
+        "de": {
+            "title": "Sales kann den File-Server nicht erreichen",
+            "story": "Das PC-Sales-Team berichtet, dass es seit heute Morgen nicht möglich ist, die Webseite des File-Server zu öffnen, obwohl der übrige Büroverkehr unbetroffen zu sein scheint. Die IT wurde gebeten, sich der Sache anzunehmen.",
+            "objective": "Stellen Sie normalen Webzugriff von PC-Sales zu File-Server wieder her.",
+            "hints": [
+                "Die Webanfrage von PC-Sales kommt bei FW-01 nicht vorbei auf dem Weg zu File-Server.",
+                "FW-01s Regelliste hat eine Regel, die HTTP-Verkehr zu File-Server blockiert, und diese steht vor der Regel, die ihn erlauben soll – daher wird die Erlaubnis-Regel nie erreicht.",
+                "Löschen Sie auf FW-01 die ACL-Regel, die HTTP von jeder Quelle zu 10.0.16.1 ablehnt, und behalten Sie die Permit-Regel für Port 80 bei."
+            ],
+            "explanation": "Firewall-ACLs werden von oben nach unten gelesen, und der erste Match gewinnt. Eine breite Deny-Regel, die über einer spezifischeren Permit-Regel platziert wird, gewinnt immer und blockiert Verkehr, den die Permit-Regel erlauben sollte. Reihenfolge und Spezifität der Regeln sind genauso wichtig wie ihr Inhalt."
+        },
+        "fr": {
+            "title": "Les ventes ne peuvent pas accéder au serveur de fichiers",
+            "story": "Le personnel de PC-Sales signale qu'il ne peut pas du tout ouvrir la page web du File-Server depuis ce matin, bien que les autres trafics du bureau semblent inaffectés. L'informatique a été invitée à enquêter.",
+            "objective": "Restaurer l'accès web normal de PC-Sales au File-Server.",
+            "hints": [
+                "La requête web de PC-Sales ne dépasse jamais FW-01 en chemin vers File-Server.",
+                "La liste des règles de FW-01 contient une règle qui refuse le trafic HTTP à File-Server avant la règle censée le permettre, donc l'autorisation ne sera jamais atteinte.",
+                "Sur FW-01, supprimez la règle ACL qui refuse HTTP de toute source à 10.0.16.1, en laissant la règle de permission pour le port 80 en vigueur."
+            ],
+            "explanation": "Les ACL des pare-feu se lisent de haut en bas, et la première correspondance l'emporte. Une règle de refus large placée avant une règle de permission plus spécifique gagnera toujours, bloquant le trafic que la permission devrait autoriser. L'ordre et la spécificité des règles importent autant que leur contenu."
+        },
+        "hi": {
+            "title": "Sales File-Server तक नहीं पहुंच सकते",
+            "story": "PC-Sales कर्मचारी रिपोर्ट करते हैं कि आज सुबह से वे File-Server के वेब पेज को खोल नहीं सकते, हालांकि अन्य कार्यालय ट्रैफिक प्रभावित नहीं लगता। IT से इसकी जांच करने के लिए कहा गया है।",
+            "objective": "PC-Sales से File-Server तक सामान्य वेब एक्सेस बहाल करें।",
+            "hints": [
+                "PC-Sales का वेब अनुरोध File-Server की ओर जाते समय FW-01 को पार नहीं कर पाता।",
+                "FW-01 की नियम सूची में एक नियम है जो File-Server को HTTP ट्रैफिक को अस्वीकार करता है, और यह नियम जो इसे अनुमति देने वाला है उससे पहले आता है।",
+                "FW-01 पर, उस ACL नियम को हटाएं जो किसी भी स्रोत से 10.0.16.1 को HTTP अस्वीकार करता है, पोर्ट 80 के लिए अनुमति नियम को प्रभावी रखते हुए।"
+            ],
+            "explanation": "फायरवॉल ACL ऊपर से नीचे पढ़े जाते हैं और पहला मेल जीत जाता है। एक विस्तृत अस्वीकार नियम जो अधिक विशिष्ट अनुमति नियम से पहले रखा जाता है, हमेशा जीतेगा और ट्रैफिक को ब्लॉक करेगा जिसे अनुमति देने वाला नियम अनुमति देना चाहता है। नियमों का क्रम और विशिष्टता उनकी सामग्री जितनी ही महत्वपूर्ण है।"
+        },
+        "id": {
+            "title": "Sales Tidak Dapat Menjangkau File-Server",
+            "story": "Staf PC-Sales melaporkan bahwa sejak pagi ini mereka tidak dapat membuka halaman web File-Server sama sekali, meskipun lalu lintas kantor lainnya tampak tidak terpengaruh. IT diminta untuk menyelidikinya.",
+            "objective": "Pulihkan akses web normal dari PC-Sales ke File-Server.",
+            "hints": [
+                "Permintaan web dari PC-Sales tidak pernah melewati FW-01 dalam perjalanan ke File-Server.",
+                "Daftar aturan FW-01 memiliki aturan yang menolak lalu lintas HTTP ke File-Server sebelum aturan yang seharusnya mengizinkannya, sehingga izin tidak pernah tercapai.",
+                "Pada FW-01, hapus Aturan ACL yang menolak HTTP dari sumber mana pun ke 10.0.16.1, membiarkan aturan izin untuk port 80 tetap berlaku."
+            ],
+            "explanation": "ACL Firewall dibaca dari atas ke bawah dan kecocokan pertama menang. Aturan penolakan luas yang ditempatkan di atas aturan izin yang lebih spesifik akan selalu menang, memblokir lalu lintas yang seharusnya diizinkan oleh izin. Urutan dan spesifisitas aturan sama pentingnya dengan isinya."
+        },
+        "ru": {
+            "title": "Sales не может достичь File-Server",
+            "story": "Персонал PC-Sales сообщает, что с этого утра они вообще не могут открыть веб-страницу File-Server, хотя остальной офисный трафик, похоже, не затронут. IT попросили разобраться.",
+            "objective": "Восстановите нормальный веб-доступ с PC-Sales к File-Server.",
+            "hints": [
+                "Веб-запрос от PC-Sales никогда не проходит мимо FW-01 по пути к File-Server.",
+                "Список Правила ACL FW-01 содержит правило, которое блокирует трафик HTTP к File-Server перед правилом, которое его разрешает, поэтому разрешение никогда не достигается.",
+                "На FW-01 удалите Правило ACL, которое блокирует HTTP из любого источника к 10.0.16.1, оставляя правило разрешения для порта 80 в силе."
+            ],
+            "explanation": "ACL брандмауэра читаются сверху вниз, и первое совпадение побеждает. Широкое правило блокирования, размещённое перед более специфичным правилом разрешения, всегда победит, блокируя трафик, который правило разрешения должно было разрешить. Порядок и специфичность правил столь же важны, как и их содержание."
+        },
+        "it": {
+            "title": "I dipendenti Sales non raggiungono il File Server",
+            "story": "Lo staff di PC-Sales segnala che da questa mattina non riescono ad aprire la pagina web di File-Server, anche se il resto del traffico di ufficio sembra funzionare normalmente. È stato chiesto a IT di indagare.",
+            "objective": "Ripristinare l'accesso web normale da PC-Sales a File-Server.",
+            "hints": [
+                "La richiesta web da PC-Sales non supera mai FW-01 sulla strada verso File-Server.",
+                "L'elenco di regole di FW-01 contiene una regola che nega il traffico HTTP a File-Server prima della regola destinata a consentirlo, quindi il permesso non viene mai raggiunto.",
+                "Su FW-01, elimina la regola ACL che nega HTTP da qualsiasi origine a 10.0.16.1, lasciando in vigore la regola di permesso per la porta 80."
+            ],
+            "explanation": "Le ACL dei Firewall vengono lette dall'alto verso il basso e la prima corrispondenza vince. Una regola di negazione ampia collocata sopra una regola di permesso più specifica vincerà sempre, bloccando il traffico che la regola di permesso era destinata a consentire. L'ordine e la specificità delle regole sono importanti quanto il loro contenuto."
+        },
+        "tr": {
+            "title": "Satış Ekibi File Server'a Ulaşamıyor",
+            "story": "PC-Sales personeli, bugün sabahtan beri File-Server'ın web sayfasına hiç erişemediklerini bildiriyor, ancak diğer ofis trafiği etkilenmemiş gibi görünüyor. IT sorunu araştırması için görevlendirildi.",
+            "objective": "PC-Sales'ten File-Server'a normal web erişimini geri yükleyin.",
+            "hints": [
+                "PC-Sales'ten gelen web isteği File-Server'a giderken FW-01'i asla geçemiyor.",
+                "FW-01'in kural listesi, File-Server'a HTTP trafiğini reddeden bir kural içeriyor ve izin verme kuralından önce geliyor, bu nedenle izin hiçbir zaman ulaşamıyor.",
+                "FW-01'de, herhangi bir kaynaktan 10.0.16.1'e HTTP trafiğini reddeden ACL kuralını silin ve port 80 için izin kuralını yürürlükte tutun."
+            ],
+            "explanation": "Firewall ACL'leri yukarıdan aşağıya doğru okunur ve ilk eşleşme kazanır. Daha spesifik bir izin kuralının üzerine yerleştirilen geniş bir reddetme kuralı her zaman kazanır ve izin kuralının izin vermeyi amaçladığı trafiği engeller. Kuralların sırası ve spesifiklikleri içeriği kadar önemlidir."
+        },
+        "th": {
+            "title": "ทีม Sales ไม่สามารถเข้าถึง File Server",
+            "story": "พนักงาน PC-Sales รายงานว่าตั้งแต่เช้านี้พวกเขาไม่สามารถเปิดหน้าเว็บ File-Server ได้เลย แม้ว่าการจราจรสำนักงานอื่น ๆ ดูเหมือนจะไม่ได้รับผลกระทบ IT ได้รับมอบหมายให้ตรวจสอบเรื่องนี้",
+            "objective": "คืนการเข้าถึงเว็บปกติจาก PC-Sales ไปยัง File-Server",
+            "hints": [
+                "คำขอเว็บจาก PC-Sales ไม่เคยผ่าน FW-01 ในเส้นทางไปยัง File-Server",
+                "รายการกฎของ FW-01 มีกฎที่ปฏิเสธการจราจร HTTP ไปยัง File-Server ก่อนกฎที่มีจุดประสงค์เพื่ออนุญาต ดังนั้นการอนุญาตจึงไม่เคยถูกเข้าถึง",
+                "บน FW-01 ให้ลบกฎ ACL ที่ปฏิเสธ HTTP จากแหล่งใด ๆ ไปยัง 10.0.16.1 และปล่อยให้กฎอนุญาตสำหรับพอร์ต 80 มีผล"
+            ],
+            "explanation": "Firewall ACL อ่านจากบนลงล่าง และครั้งแรกที่ตรงกันจะชนะ กฎปฏิเสธกว้าง ๆ ที่วางไว้เหนือกฎอนุญาตที่เฉพาะเจาะจงมากขึ้นจะชนะเสมอ ปิดกั้นการจราจรที่กฎอนุญาตมีจุดประสงค์ที่จะอนุญาต ลำดับและความเฉพาะเจาะจงของกฎมีความสำคัญเท่าที่สำคัญของเนื้อหา"
+        },
+        "vi": {
+            "title": "Nhân viên Sales Không Thể Truy Cập File Server",
+            "story": "Nhân viên PC-Sales báo cáo rằng kể từ sáng nay họ không thể mở trang web File-Server, mặc dù lưu lượng văn phòng khác dường như không bị ảnh hưởng. IT đã được yêu cầu điều tra vấn đề này.",
+            "objective": "Khôi phục quyền truy cập web bình thường từ PC-Sales tới File-Server.",
+            "hints": [
+                "Yêu cầu web từ PC-Sales không bao giờ vượt qua FW-01 trên đường tới File-Server.",
+                "Danh sách quy tắc của FW-01 có một quy tắc từ chối lưu lượng HTTP tới File-Server trước quy tắc được dự định cho phép, vì vậy quyền cho phép không bao giờ được đạt tới.",
+                "Trên FW-01, hãy xóa quy tắc ACL từ chối HTTP từ bất kỳ nguồn nào tới 10.0.16.1, để lại quy tắc cho phép cho cổng 80 có hiệu lực."
+            ],
+            "explanation": "Các ACL Firewall được đọc từ trên xuống dưới và kết quả phù hợp đầu tiên sẽ thắng. Một quy tắc từ chối rộng được đặt trên một quy tắc cho phép cụ thể hơn sẽ luôn thắng, chặn lưu lượng mà quy tắc cho phép dự định cho phép. Thứ tự và tính cụ thể của các quy tắc cũng quan trọng như nội dung của chúng."
+        }
+    }
+}
