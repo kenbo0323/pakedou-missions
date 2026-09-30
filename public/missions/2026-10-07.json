@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-07",
+    "number": 17,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.7.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.2.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.7.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-2F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.2.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.2.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.2.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Accounting Portal Unreachable from PC-Dev",
+            "story": "After the weekend network change, the accounting user at PC-Dev reports the Portal-01 web page won't load in the browser. PC-Reception seems unaffected.",
+            "objective": "Get an HTTP GET from PC-Dev to Portal-01 to succeed.",
+            "hints": [
+                "The packet from PC-Dev never gets forwarded past PC-Dev itself — it stops right there before reaching Switch-2F.",
+                "PC-Dev's default gateway is set to an address on Portal-01's subnet, not to Router-Main, so it isn't pointing at an actual router.",
+                "On PC-Dev, set the default gateway to 10.0.7.254 (Router-Main's address on that subnet)."
+            ],
+            "explanation": "A client's default gateway must be a router's own interface on its local subnet, not a remote server's address. PC-Dev was pointed at Portal-01 (10.0.2.1) instead of Router-Main (10.0.7.254), so PC-Dev could never send traffic beyond its own subnet, causing the HTTP request to fail while ICMP from PC-Reception, whose gateway was correct, still worked fine."
+        },
+        "ja": {
+            "title": "PC-DevからAccounting Portalに接続できない",
+            "story": "週末のネットワーク変更後、PC-Devの経理担当ユーザーから、ブラウザでPortal-01のWebページが表示されないという報告がありました。PC-Receptionには影響がないようです。",
+            "objective": "PC-DevからPortal-01へのHTTP GETを成功させます。",
+            "hints": [
+                "PC-Devからのパケットは、PC-Dev自身から先へ転送されていません。Switch-2Fに届く前に、その場で止まっています。",
+                "PC-Devのデフォルトゲートウェイが、Router-Mainではなく、Portal-01と同じサブネット上のアドレスに設定されているため、実際のルーターを指していません。",
+                "PC-Devで、デフォルトゲートウェイを10.0.7.254(そのサブネット上のRouter-Mainのアドレス)に設定してください。"
+            ],
+            "explanation": "クライアントのデフォルトゲートウェイには、リモートのサーバーのアドレスではなく、そのローカルサブネット上にあるルーター自身のインターフェースを設定する必要があります。PC-Devは、Router-Main(10.0.7.254)ではなくPortal-01(10.0.2.1)を指すように設定されていたため、PC-Devは自身のサブネットの外にトラフィックを送信できず、HTTPリクエストが失敗しました。一方、ゲートウェイの設定が正しかったPC-ReceptionからのICMPは問題なく動作していました。"
+        },
+        "zh-CN": {
+            "title": "会计门户网站无法从PC-Dev访问",
+            "story": "周末网络变更后，PC-Dev上的会计用户报告浏览器无法加载Portal-01网页。PC-Reception似乎不受影响。",
+            "objective": "使PC-Dev向Portal-01的HTTP GET请求成功。",
+            "hints": [
+                "来自PC-Dev的数据包从未被转发到PC-Dev之外——它停留在那里，甚至没有到达Switch-2F。",
+                "PC-Dev的默认网关设置为Portal-01子网上的地址，而不是Router-Main，所以它未指向实际的Router。",
+                "在PC-Dev上，将默认网关设置为10.0.7.254（Router-Main在该子网上的地址）。"
+            ],
+            "explanation": "Client的默认网关必须是Router在其本地子网上的接口，而不是远程Server的地址。PC-Dev指向了Portal-01（10.0.2.1）而不是Router-Main（10.0.7.254），所以PC-Dev无法向其子网外发送流量，导致HTTP请求失败，而PC-Reception的ICMP请求因为其网关设置正确所以仍然有效。"
+        },
+        "zh-TW": {
+            "title": "會計入口網站無法從PC-Dev存取",
+            "story": "週末網路變更後，PC-Dev上的會計使用者報告瀏覽器無法載入Portal-01網頁。PC-Reception似乎不受影響。",
+            "objective": "使PC-Dev向Portal-01的HTTP GET請求成功。",
+            "hints": [
+                "來自PC-Dev的封包從未被轉發到PC-Dev之外——它停留在那裡，甚至沒有到達Switch-2F。",
+                "PC-Dev的預設閘道設定為Portal-01子網上的位址，而不是Router-Main，所以它未指向實際的Router。",
+                "在PC-Dev上，將預設閘道設定為10.0.7.254（Router-Main在該子網上的位址）。"
+            ],
+            "explanation": "Client的預設閘道必須是Router在其本機子網上的介面，而不是遠端Server的位址。PC-Dev指向了Portal-01（10.0.2.1）而不是Router-Main（10.0.7.254），所以PC-Dev無法向其子網外傳送流量，導致HTTP請求失敗，而PC-Reception的ICMP請求因為其閘道設定正確所以仍然有效。"
+        },
+        "ko": {
+            "title": "회계 포털에서 PC-Dev로 접근 불가",
+            "story": "주말 네트워크 변경 후, PC-Dev의 회계 사용자가 브라우저에서 Portal-01 웹 페이지를 로드할 수 없다고 보고했습니다. PC-Reception은 영향을 받지 않는 것으로 보입니다.",
+            "objective": "PC-Dev에서 Portal-01로의 HTTP GET 요청을 성공하게 합니다.",
+            "hints": [
+                "PC-Dev에서 온 패킷이 PC-Dev를 벗어나 전달되지 않습니다 — Switch-2F에 도달하기 전에 거기서 멈춥니다.",
+                "PC-Dev의 기본 게이트웨이가 Router-Main이 아닌 Portal-01의 서브넷 주소로 설정되어 있어서 실제 Router를 가리키지 않습니다.",
+                "PC-Dev에서 기본 게이트웨이를 10.0.7.254(그 서브넷의 Router-Main 주소)로 설정합니다."
+            ],
+            "explanation": "Client의 기본 게이트웨이는 원격 Server의 주소가 아닌 해당 로컬 서브넷의 Router 인터페이스여야 합니다. PC-Dev가 Router-Main(10.0.7.254) 대신 Portal-01(10.0.2.1)을 가리켰으므로, PC-Dev는 자신의 서브넷을 벗어나 트래픽을 보낼 수 없어 HTTP 요청이 실패했습니다. 반면 게이트웨이 설정이 정확한 PC-Reception의 ICMP는 여전히 작동합니다."
+        },
+        "es": {
+            "title": "Portal de Contabilidad Inaccesible desde PC-Dev",
+            "story": "Después del cambio de red del fin de semana, el usuario de contabilidad en PC-Dev reporta que la página web Portal-01 no carga en el navegador. PC-Reception parece no estar afectada.",
+            "objective": "Lograr que una solicitud HTTP GET desde PC-Dev a Portal-01 tenga éxito.",
+            "hints": [
+                "El paquete desde PC-Dev nunca se reenvía más allá de PC-Dev — se detiene ahí antes de llegar a Switch-2F.",
+                "El gateway predeterminado de PC-Dev está configurado a una dirección en la subred de Portal-01, no a Router-Main, así que no está apuntando a un Router real.",
+                "En PC-Dev, configure el gateway predeterminado a 10.0.7.254 (la dirección de Router-Main en esa subred)."
+            ],
+            "explanation": "El gateway predeterminado de un Client debe ser una interfaz del Router en su subred local, no la dirección de un Server remoto. PC-Dev estaba apuntado a Portal-01 (10.0.2.1) en lugar de Router-Main (10.0.7.254), así que PC-Dev nunca podría enviar tráfico más allá de su propia subred, causando que la solicitud HTTP fallara mientras que ICMP desde PC-Reception, cuya puerta de enlace era correcta, seguía funcionando bien."
+        },
+        "pt-BR": {
+            "title": "Portal de Contabilidade Inacessível a partir de PC-Dev",
+            "story": "Após a mudança de rede do fim de semana, o usuário de contabilidade em PC-Dev relata que a página web Portal-01 não carrega no navegador. PC-Reception parece não ser afetada.",
+            "objective": "Fazer com que uma solicitação HTTP GET de PC-Dev para Portal-01 tenha sucesso.",
+            "hints": [
+                "O pacote de PC-Dev nunca é encaminhado além de PC-Dev — ele para ali antes de chegar ao Switch-2F.",
+                "O gateway padrão de PC-Dev está configurado para um endereço na subrede de Portal-01, não para Router-Main, então não está apontando para um Router real.",
+                "Em PC-Dev, defina o gateway padrão para 10.0.7.254 (endereço de Router-Main naquela subrede)."
+            ],
+            "explanation": "O gateway padrão de um Client deve ser uma interface do Router em sua subrede local, não o endereço de um Server remoto. PC-Dev apontava para Portal-01 (10.0.2.1) em vez de Router-Main (10.0.7.254), então PC-Dev nunca conseguiria enviar tráfego além de sua própria subrede, causando falha na solicitação HTTP enquanto ICMP de PC-Reception, cujo gateway estava correto, continuava funcionando bem."
+        },
+        "fr": {
+            "title": "Portail de comptabilité inaccessible depuis PC-Dev",
+            "story": "Après le changement réseau du week-end, l'utilisateur de comptabilité à PC-Dev signale que la page web Portal-01 ne se charge pas dans le navigateur. PC-Reception ne semble pas affectée.",
+            "objective": "Un HTTP GET de PC-Dev vers Portal-01 doit réussir.",
+            "hints": [
+                "Le paquet de PC-Dev n'est jamais transféré au-delà de PC-Dev lui-même — il s'arrête juste là avant d'atteindre Switch-2F.",
+                "La Passerelle par défaut de PC-Dev est définie sur une adresse du sous-réseau de Portal-01, pas sur Router-Main, donc elle ne pointe pas vers un routeur réel.",
+                "Sur PC-Dev, définissez la Passerelle par défaut sur 10.0.7.254 (adresse de Router-Main sur ce sous-réseau)."
+            ],
+            "explanation": "La Passerelle par défaut d'un Client doit être l'interface d'un routeur sur son sous-réseau local, pas l'adresse d'un serveur distant. PC-Dev pointait vers Portal-01 (10.0.2.1) au lieu de Router-Main (10.0.7.254), donc PC-Dev ne pouvait jamais envoyer du trafic au-delà de son propre sous-réseau, causant l'échec de la requête HTTP tandis que l'ICMP de PC-Reception, dont la passerelle était correcte, fonctionnait toujours."
+        },
+        "hi": {
+            "title": "PC-Dev से अकाउंटिंग पोर्टल अप्राप्य",
+            "story": "सप्ताहांत के नेटवर्क परिवर्तन के बाद, PC-Dev पर अकाउंटिंग उपयोगकर्ता की रिपोर्ट है कि Portal-01 वेब पेज ब्राउज़र में लोड नहीं हो रहा है। PC-Reception अप्रभावित प्रतीत होता है।",
+            "objective": "PC-Dev से Portal-01 तक एक HTTP GET सफल होना चाहिए।",
+            "hints": [
+                "PC-Dev से पैकेट PC-Dev के पास ही आगे नहीं बढ़ता — यह Switch-2F तक पहुँचने से पहले वहीं रुक जाता है।",
+                "PC-Dev की डिफ़ॉल्ट गेटवे Portal-01 की सबनेट पर एक पते पर सेट है, Router-Main पर नहीं, इसलिए यह किसी वास्तविक राउटर की ओर इशारा नहीं कर रहा है।",
+                "PC-Dev पर, डिफ़ॉल्ट गेटवे को 10.0.7.254 (इस सबनेट पर Router-Main का पता) पर सेट करें।"
+            ],
+            "explanation": "किसी Client की डिफ़ॉल्ट गेटवे उसकी स्थानीय सबनेट पर राउटर का इंटरफेस होना चाहिए, दूरस्थ सर्वर का पता नहीं। PC-Dev को Router-Main (10.0.7.254) के बजाय Portal-01 (10.0.2.1) की ओर इशारा किया गया था, इसलिए PC-Dev कभी अपनी सबनेट के परे ट्रैफिक नहीं भेज सकता था, जिससे HTTP अनुरोध विफल हो गया जबकि PC-Reception से ICMP, जिसकी गेटवे सही थी, अभी भी काम करती थी।"
+        },
+        "id": {
+            "title": "Portal Akuntansi Tidak Dapat Diakses dari PC-Dev",
+            "story": "Setelah perubahan jaringan akhir pekan, pengguna akuntansi di PC-Dev melaporkan halaman web Portal-01 tidak dimuat di browser. PC-Reception tampaknya tidak terpengaruh.",
+            "objective": "HTTP GET dari PC-Dev ke Portal-01 harus berhasil.",
+            "hints": [
+                "Paket dari PC-Dev tidak pernah diteruskan melampaui PC-Dev — ia berhenti di sana sebelum mencapai Switch-2F.",
+                "Gateway Default PC-Dev diatur ke alamat di subnet Portal-01, bukan ke Router-Main, jadi tidak menunjuk ke router yang sebenarnya.",
+                "Di PC-Dev, atur Gateway Default ke 10.0.7.254 (alamat Router-Main di subnet itu)."
+            ],
+            "explanation": "Gateway Default klien harus berupa antarmuka router di subnet lokal, bukan alamat server jauh. PC-Dev menunjuk ke Portal-01 (10.0.2.1) alih-alih Router-Main (10.0.7.254), sehingga PC-Dev tidak pernah dapat mengirim lalu lintas melampaui subnet sendiri, menyebabkan permintaan HTTP gagal sementara ICMP dari PC-Reception, yang gatewaynya benar, masih berfungsi dengan baik."
+        },
+        "ru": {
+            "title": "Портал бухгалтерии недоступен с PC-Dev",
+            "story": "После изменения сети в выходные дни пользователь бухгалтерии на PC-Dev сообщает, что веб-страница Portal-01 не загружается в браузер. PC-Reception, похоже, не затронута.",
+            "objective": "HTTP GET с PC-Dev на Portal-01 должен быть успешным.",
+            "hints": [
+                "Пакет с PC-Dev никогда не передается дальше самого PC-Dev — он останавливается там, прежде чем достичь Switch-2F.",
+                "Шлюз по умолчанию PC-Dev установлен на адрес в подсети Portal-01, а не на Router-Main, поэтому он не указывает на настоящий маршрутизатор.",
+                "На PC-Dev установите Шлюз по умолчанию на 10.0.7.254 (адрес Router-Main в этой подсети)."
+            ],
+            "explanation": "Шлюз по умолчанию клиента должен быть интерфейсом маршрутизатора в его локальной подсети, а не адресом удаленного сервера. PC-Dev был направлен на Portal-01 (10.0.2.1) вместо Router-Main (10.0.7.254), поэтому PC-Dev не мог никогда отправлять трафик за пределы своей собственной подсети, что привело к сбою HTTP-запроса, в то время как ICMP с PC-Reception, чей шлюз был правильным, продолжал работать нормально."
+        },
+        "it": {
+            "title": "Portale contabilità non raggiungibile da PC-Dev",
+            "story": "Dopo la modifica della rete nel fine settimana, l'utente della contabilità presso PC-Dev segnala che la pagina web di Portal-01 non si carica nel browser. PC-Reception sembra non essere interessato.",
+            "objective": "Far funzionare una richiesta HTTP GET da PC-Dev a Portal-01.",
+            "hints": [
+                "Il pacchetto da PC-Dev non viene mai inoltrato oltre PC-Dev stesso — si ferma lì prima di raggiungere Switch-2F.",
+                "Il Gateway predefinito di PC-Dev è impostato su un indirizzo sulla subnet di Portal-01, non su Router-Main, quindi non sta puntando a un router vero.",
+                "Su PC-Dev, impostare il Gateway predefinito su 10.0.7.254 (l'indirizzo di Router-Main su quella subnet)."
+            ],
+            "explanation": "Il Gateway predefinito di un Client deve essere un'interfaccia di un Router sulla sua subnet locale, non l'indirizzo di un Server remoto. PC-Dev era puntato a Portal-01 (10.0.2.1) invece di Router-Main (10.0.7.254), quindi PC-Dev non poteva mai inviare traffico oltre la propria subnet, causando il fallimento della richiesta HTTP mentre l'ICMP da PC-Reception, il cui gateway era corretto, continuava a funzionare."
+        },
+        "tr": {
+            "title": "Muhasebe Portalı PC-Dev'den Erişilemiyor",
+            "story": "Hafta sonu ağ değişikliğinden sonra, PC-Dev'de muhasebe kullanıcısı Portal-01 web sayfasının tarayıcıda yüklenmediğini bildiriyor. PC-Reception etkilenmiş görünmüyor.",
+            "objective": "PC-Dev'den Portal-01'e bir HTTP GET isteğini başarılı hale getirmek.",
+            "hints": [
+                "PC-Dev'den gelen paket PC-Dev'in kendisinin ötesine asla iletilmez — Switch-2F'ye ulaşmadan orada durur.",
+                "PC-Dev'in Varsayılan ağ geçidi, Router-Main'e değil, Portal-01'in subnet'indeki bir adrese ayarlanmıştır, bu nedenle gerçek bir ağ geçidini göstermez.",
+                "PC-Dev'de, Varsayılan ağ geçidini 10.0.7.254 (Router-Main'in bu subnet'teki adresi) olarak ayarlayın."
+            ],
+            "explanation": "Bir Client'in Varsayılan ağ geçidi, yerel subnet'indeki bir Router'ın arayüzü olmalıdır, uzak bir Server'ın adresi değil. PC-Dev, Router-Main (10.0.7.254) yerine Portal-01 (10.0.2.1) gösterecek şekilde ayarlanmıştır, bu nedenle PC-Dev asla kendi subnet'inin ötesine trafik gönderemez, HTTP isteğinin başarısız olmasına neden olur. Bu arada gateway'i doğru olan PC-Reception'dan gelen ICMP normal çalışmaya devam eder."
+        },
+        "th": {
+            "title": "พอร์ทัลบัญชีไม่สามารถเข้าถึงได้จาก PC-Dev",
+            "story": "หลังจากการเปลี่ยนแปลงเครือข่ายในช่วงสุดสัปดาห์ ผู้ใช้งานบัญชีที่ PC-Dev รายงานว่าหน้าเว็บ Portal-01 ไม่สามารถโหลดในเบราว์เซอร์ได้ PC-Reception ดูเหมือนว่าไม่ได้รับผลกระทบ",
+            "objective": "ทำให้ HTTP GET จาก PC-Dev ไป Portal-01 ทำงานได้สำเร็จ",
+            "hints": [
+                "แพกเก็ตจาก PC-Dev ไม่เคยถูกส่งต่อเกิน PC-Dev เอง — มันหยุดตรงนั้นก่อนถึง Switch-2F",
+                "เกตเวย์เริ่มต้นของ PC-Dev ตั้งค่าไปยังที่อยู่บน subnet ของ Portal-01 ไม่ใช่ Router-Main ดังนั้นจึงไม่ชี้ไปยังเราเตอร์จริง",
+                "บน PC-Dev ตั้งเกตเวย์เริ่มต้นเป็น 10.0.7.254 (ที่อยู่ของ Router-Main บน subnet นั้น)"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นของ Client ต้องเป็นอินเทอร์เฟซของ Router บน subnet ในพื้นที่ของมัน ไม่ใช่ที่อยู่ของ Server ระยะไกล PC-Dev ชี้ไปยัง Portal-01 (10.0.2.1) แทนที่จะเป็น Router-Main (10.0.7.254) ดังนั้น PC-Dev จึงไม่สามารถส่งข้อมูลเกิน subnet ของตัวเองได้ ทำให้คำขอ HTTP ล้มเหลว ในขณะที่ ICMP จาก PC-Reception ซึ่งมีเกตเวย์ที่ถูกต้อง ยังคงทำงานได้ดี"
+        },
+        "vi": {
+            "title": "Cổng thông tin kế toán không thể truy cập từ PC-Dev",
+            "story": "Sau khi thay đổi mạng vào cuối tuần, người dùng kế toán tại PC-Dev báo cáo rằng trang web Portal-01 không tải được trong trình duyệt. PC-Reception dường như không bị ảnh hưởng.",
+            "objective": "Làm cho yêu cầu HTTP GET từ PC-Dev đến Portal-01 thành công.",
+            "hints": [
+                "Gói tin từ PC-Dev không bao giờ được chuyển tiếp vượt quá PC-Dev — nó dừng lại ở đó trước khi đến Switch-2F.",
+                "Cổng mặc định của PC-Dev được đặt thành một địa chỉ trên subnet của Portal-01, không phải Router-Main, vì vậy nó không chỉ đến một bộ định tuyến thực sự.",
+                "Trên PC-Dev, đặt cổng mặc định thành 10.0.7.254 (địa chỉ của Router-Main trên subnet đó)."
+            ],
+            "explanation": "Cổng mặc định của một Client phải là một giao diện của Router trên subnet cục bộ của nó, không phải địa chỉ của một Server từ xa. PC-Dev đã được chỉ đến Portal-01 (10.0.2.1) thay vì Router-Main (10.0.7.254), vì vậy PC-Dev không bao giờ có thể gửi lưu lượng truy cập vượt quá subnet của riêng nó, gây ra thất bại yêu cầu HTTP, trong khi ICMP từ PC-Reception có cổng được cấu hình chính xác vẫn hoạt động bình thường."
+        },
+        "de": {
+            "title": "Accounting Portal von PC-Dev nicht erreichbar",
+            "story": "Nach der Netzwerkänderung am Wochenende meldet der Accounting-Benutzer an PC-Dev, dass die Portal-01-Webseite im Browser nicht lädt. PC-Reception scheint nicht betroffen zu sein.",
+            "objective": "Ein HTTP GET von PC-Dev zu Portal-01 muss erfolgreich sein.",
+            "hints": [
+                "Das Paket von PC-Dev wird überhaupt nicht weitergeleitet – es bleibt bei PC-Dev stecken und erreicht Switch-2F nie.",
+                "Das Standard-Gateway von PC-Dev ist auf eine Adresse im Subnetz von Portal-01 gesetzt, nicht auf Router-Main. Es zeigt also nicht auf einen echten Router.",
+                "Stellen Sie auf PC-Dev das Standard-Gateway auf 10.0.7.254 (die Adresse von Router-Main in diesem Subnetz) ein."
+            ],
+            "explanation": "Das Standard-Gateway eines Clients muss eine Schnittstelle eines Routers im lokalen Subnetz sein, nicht die Adresse eines entfernten Servers. PC-Dev zeigte auf Portal-01 (10.0.2.1) statt auf Router-Main (10.0.7.254), sodass PC-Dev keinen Datenverkehr über sein eigenes Subnetz hinaus versenden konnte. Dies führte zum Fehler der HTTP-Anfrage, während ICMP von PC-Reception, dessen Gateway korrekt eingestellt war, noch funktionierte."
+        }
+    }
+}
