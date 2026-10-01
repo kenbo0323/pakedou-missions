@@ -1,0 +1,557 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-08",
+    "number": 18,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "waf_attack_passes"
+    ],
+    "concepts": [
+        "waf",
+        "sql-injection"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.18.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.18.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.23.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "FW-DMZ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-92d6344d",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.23.1",
+                            "dstPort": 80
+                        },
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.23.1"
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Front",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.23.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-92d6344d",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.23.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-92d6344d": {
+                "id": "link-92d6344d",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-firewall1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 3
+    },
+    "text": {
+        "en": {
+            "title": "Unfiltered Traffic to Wiki-01",
+            "story": "PC-Admin notices that someone probing Wiki-01 with malicious query strings is getting answers instead of being stopped. Normal browsing to Wiki-01 still works fine.",
+            "objective": "An injection attempt from PC-Admin to Wiki-01 must be blocked, while normal HTTP access to Wiki-01 keeps working.",
+            "hints": [
+                "Trace the malicious request from PC-Admin: it reaches Wiki-01 having only passed through FW-DMZ, never touching WAF-Front at all.",
+                "WAF-Front is the device that inspects HTTP for injection patterns, but it sits off the direct path, so FW-DMZ forwards traffic straight to Wiki-01 without any inspection.",
+                "Unplug the cable between FW-DMZ and Wiki-01, then connect FW-DMZ to WAF-Front and WAF-Front to Wiki-01 so every request is inspected before reaching the server."
+            ],
+            "explanation": "A firewall only filters by address and port; it cannot see inside HTTP requests. The WAF performs that deep inspection, but only for traffic that physically passes through it. Wiring must force all traffic through the WAF on its way to the server."
+        },
+        "ja": {
+            "title": "Wiki-01への未フィルタ通信",
+            "story": "PC-Adminは、Wiki-01に対して悪意のあるクエリ文字列で探りを入れている通信が、阻止されずに応答を受け取ってしまっていることに気づきました。Wiki-01への通常のブラウジングは問題なく動作しています。",
+            "objective": "PC-AdminからWiki-01へのインジェクション攻撃の試みを遮断しつつ、Wiki-01への通常のHTTPアクセスは引き続き動作するようにしてください。",
+            "hints": [
+                "PC-Adminからの悪意あるリクエストをたどると、FW-DMZだけを通過してWiki-01に到達しており、WAF-Frontをまったく経由していません。",
+                "WAF-Frontは、HTTPの中身をインジェクションパターンについて検査する装置ですが、直接の通信経路から外れているため、FW-DMZは検査なしで通信をそのままWiki-01へ転送してしまっています。",
+                "FW-DMZとWiki-01の間のケーブルを抜き、FW-DMZをWAF-Frontに接続し、さらにWAF-FrontをWiki-01に接続することで、すべてのリクエストがサーバーに届く前に検査されるようにしてください。"
+            ],
+            "explanation": "ファイアウォールはアドレスとポート番号でしか通信をフィルタできず、HTTPリクエストの中身までは見ることができません。深い中身の検査を行うのはWAFですが、それは物理的にWAFを通過する通信に対してのみ有効です。配線を変更して、すべての通信がサーバーに届く前に必ずWAFを通過するようにする必要があります。"
+        },
+        "zh-CN": {
+            "title": "未过滤的流量到Wiki-01",
+            "story": "PC-Admin 注意到有人用恶意查询字符串探测 Wiki-01，却得到了响应而不是被阻止。对 Wiki-01 的正常浏览仍然正常工作。",
+            "objective": "来自 PC-Admin 到 Wiki-01 的注入攻击必须被阻止，同时 Wiki-01 的正常 HTTP 访问保持工作。",
+            "hints": [
+                "追踪来自 PC-Admin 的恶意请求：它到达 Wiki-01 时只经过了 FW-DMZ，从未接触 WAF-Front。",
+                "WAF-Front 是检查 HTTP 注入模式的设备，但它不在直接路径上，所以 FW-DMZ 将流量直接转发给 Wiki-01 而不进行检查。",
+                "断开 FW-DMZ 和 Wiki-01 之间的电缆，然后将 FW-DMZ 连接到 WAF-Front，再将 WAF-Front 连接到 Wiki-01，这样每个请求都在到达服务器前被检查。"
+            ],
+            "explanation": "Firewall 只能按地址和端口过滤；它无法看到 HTTP 请求内部。WAF 执行深度检查，但仅对物理经过它的流量有效。网络布线必须强制所有流量在到达服务器前都经过 WAF。"
+        },
+        "zh-TW": {
+            "title": "未過濾的流量到Wiki-01",
+            "story": "PC-Admin 注意到有人用惡意查詢字符串探測 Wiki-01，卻得到了回應而不是被阻止。對 Wiki-01 的正常瀏覽仍然正常工作。",
+            "objective": "來自 PC-Admin 到 Wiki-01 的注入攻擊必須被阻止，同時 Wiki-01 的正常 HTTP 存取保持工作。",
+            "hints": [
+                "追蹤來自 PC-Admin 的惡意請求：它到達 Wiki-01 時只經過了 FW-DMZ，從未接觸 WAF-Front。",
+                "WAF-Front 是檢查 HTTP 注入模式的設備，但它不在直接路徑上，所以 FW-DMZ 將流量直接轉發給 Wiki-01 而不進行檢查。",
+                "斷開 FW-DMZ 和 Wiki-01 之間的電纜，然後將 FW-DMZ 連接到 WAF-Front，再將 WAF-Front 連接到 Wiki-01，這樣每個請求都在到達伺服器前被檢查。"
+            ],
+            "explanation": "Firewall 只能按地址和連接埠過濾；它無法看到 HTTP 請求內部。WAF 執行深度檢查，但僅對物理經過它的流量有效。網路佈線必須強制所有流量在到達伺服器前都經過 WAF。"
+        },
+        "ko": {
+            "title": "Wiki-01으로 가는 필터링되지 않은 트래픽",
+            "story": "PC-Admin이 악의적인 쿼리 문자열로 Wiki-01을 탐색하는 누군가가 차단되지 않고 응답을 받고 있음을 알아챕니다. Wiki-01에 대한 정상적인 브라우징은 여전히 정상 작동합니다.",
+            "objective": "PC-Admin에서 Wiki-01으로의 주입 시도는 반드시 차단되어야 하며, Wiki-01에 대한 정상적인 HTTP 접근은 계속 작동해야 합니다.",
+            "hints": [
+                "PC-Admin에서의 악의적인 요청을 추적하세요: Wiki-01에 도달할 때 FW-DMZ만 통과했으며 WAF-Front은 전혀 거치지 않았습니다.",
+                "WAF-Front은 HTTP 주입 패턴을 검사하는 장치이지만, 직접 경로에 있지 않아서 FW-DMZ가 트래픽을 검사 없이 Wiki-01로 바로 전달합니다.",
+                "FW-DMZ와 Wiki-01 사이의 케이블을 분리한 다음 FW-DMZ를 WAF-Front에 연결하고 WAF-Front를 Wiki-01에 연결하여 모든 요청이 서버에 도달하기 전에 검사되도록 하세요."
+            ],
+            "explanation": "Firewall은 주소와 포트로만 필터링할 수 있으며 HTTP 요청 내부를 볼 수 없습니다. WAF는 깊이 있는 검사를 수행하지만 물리적으로 통과하는 트래픽에만 작동합니다. 네트워크 배선은 서버에 도달하기 전에 모든 트래픽이 WAF를 통과하도록 강제해야 합니다."
+        },
+        "es": {
+            "title": "Tráfico sin filtrar a Wiki-01",
+            "story": "PC-Admin nota que alguien que prueba Wiki-01 con cadenas de consulta maliciosas está obteniendo respuestas en lugar de ser bloqueado. La navegación normal a Wiki-01 sigue funcionando correctamente.",
+            "objective": "Un intento de inyección desde PC-Admin a Wiki-01 debe ser bloqueado, mientras que el acceso HTTP normal a Wiki-01 sigue funcionando.",
+            "hints": [
+                "Rastrear la solicitud maliciosa desde PC-Admin: llega a Wiki-01 habiendo pasado solo por FW-DMZ, nunca tocando WAF-Front en absoluto.",
+                "WAF-Front es el dispositivo que inspecciona HTTP en busca de patrones de inyección, pero se encuentra fuera de la ruta directa, por lo que FW-DMZ reenvía el tráfico directamente a Wiki-01 sin inspección.",
+                "Desconecta el cable entre FW-DMZ y Wiki-01, luego conecta FW-DMZ a WAF-Front y WAF-Front a Wiki-01 para que cada solicitud sea inspeccionada antes de llegar al servidor."
+            ],
+            "explanation": "Un Firewall solo filtra por dirección y puerto; no puede ver dentro de las solicitudes HTTP. El WAF realiza esa inspección profunda, pero solo para el tráfico que físicamente pasa a través de él. El cableado debe forzar que todo el tráfico pase por el WAF en su camino al servidor."
+        },
+        "pt-BR": {
+            "title": "Tráfego não filtrado para Wiki-01",
+            "story": "PC-Admin nota que alguém sondando Wiki-01 com cadeias de consulta maliciosas está recebendo respostas em vez de ser bloqueado. A navegação normal para Wiki-01 continua funcionando perfeitamente.",
+            "objective": "Uma tentativa de injeção de PC-Admin para Wiki-01 deve ser bloqueada, enquanto o acesso HTTP normal a Wiki-01 continua funcionando.",
+            "hints": [
+                "Rastreie a solicitação maliciosa de PC-Admin: ela chega a Wiki-01 tendo passado apenas por FW-DMZ, nunca tocando WAF-Front.",
+                "WAF-Front é o dispositivo que inspeciona HTTP em busca de padrões de injeção, mas fica fora do caminho direto, então FW-DMZ encaminha o tráfego diretamente para Wiki-01 sem inspeção.",
+                "Desconecte o cabo entre FW-DMZ e Wiki-01, depois conecte FW-DMZ a WAF-Front e WAF-Front a Wiki-01 para que cada solicitação seja inspecionada antes de chegar ao servidor."
+            ],
+            "explanation": "Um Firewall filtra apenas por endereço e porta; não consegue ver dentro das solicitações HTTP. O WAF realiza essa inspeção profunda, mas apenas para o tráfego que passa fisicamente por ele. A fiação deve forçar todo o tráfego a passar pelo WAF no caminho para o servidor."
+        },
+        "de": {
+            "title": "Ungefilterte Traffic zu Wiki-01",
+            "story": "PC-Admin bemerkt, dass jemand Wiki-01 mit bösen Query Strings prüft und Antworten erhält, anstatt blockiert zu werden. Normales Browsing zu Wiki-01 funktioniert einwandfrei.",
+            "objective": "Ein Injections-Versuch von PC-Admin zu Wiki-01 muss blockiert werden, während normaler HTTP-Zugang zu Wiki-01 erhalten bleibt.",
+            "hints": [
+                "Verfolge die böse Anfrage von PC-Admin: Sie erreicht Wiki-01 nachdem sie nur durch FW-DMZ ging und WAF-Front überhaupt nicht berührte.",
+                "WAF-Front ist das Gerät, das HTTP auf Injektionsmuster inspiziert, aber es sitzt außerhalb des direkten Pfads, daher leitet FW-DMZ Traffic direkt zu Wiki-01 ohne Inspizierung weiter.",
+                "Trenne das Kabel zwischen FW-DMZ und Wiki-01, verbinde dann FW-DMZ mit WAF-Front und WAF-Front mit Wiki-01, damit jede Anfrage vor dem Server inspiziert wird."
+            ],
+            "explanation": "Eine Firewall filtert nur nach Adresse und Port; sie kann nicht in HTTP-Anfragen schauen. Die WAF führt diese tiefe Inspizierung durch, aber nur für Traffic, der physisch durch sie hindurchgeht. Die Verdrahtung muss den gesamten Traffic durch die WAF auf dem Weg zum Server zwingen."
+        },
+        "fr": {
+            "title": "Trafic non filtré vers Wiki-01",
+            "story": "PC-Admin remarque que quelqu'un sondant Wiki-01 avec des chaînes de requête malveillantes reçoit des réponses au lieu d'être arrêté. La navigation normale vers Wiki-01 fonctionne toujours correctement.",
+            "objective": "Une tentative d'injection de PC-Admin vers Wiki-01 doit être bloquée, tandis que l'accès HTTP normal vers Wiki-01 continue de fonctionner.",
+            "hints": [
+                "Tracez la requête malveillante de PC-Admin : elle atteint Wiki-01 n'ayant traversé que FW-DMZ et ne touchant jamais WAF-Front.",
+                "WAF-Front est l'appareil qui inspecte les requêtes HTTP pour les motifs d'injection, mais il est situé en dehors du chemin direct, donc FW-DMZ transmet le trafic directement à Wiki-01 sans inspection.",
+                "Débranchez le câble entre FW-DMZ et Wiki-01, puis connectez FW-DMZ à WAF-Front et WAF-Front à Wiki-01 afin que chaque requête soit inspectée avant d'atteindre le serveur."
+            ],
+            "explanation": "Un pare-feu ne filtre que par adresse et port ; il ne peut pas voir l'intérieur des requêtes HTTP. Le WAF effectue cette inspection approfondie, mais uniquement pour le trafic qui le traverse physiquement. Le câblage doit forcer tout le trafic à passer par le WAF sur son chemin vers le serveur."
+        },
+        "hi": {
+            "title": "Wiki-01 के लिए अनफ़िल्टर्ड ट्रैफ़िक",
+            "story": "PC-Admin को ध्यान देता है कि कोई Wiki-01 को दुर्भावनापूर्ण क्वेरी स्ट्रिंग्स के साथ जांचता है और जवाब पाता है। Wiki-01 के लिए सामान्य ब्राउज़िंग ठीक काम करती है।",
+            "objective": "PC-Admin से Wiki-01 तक का इंजेक्शन प्रयास अवरुद्ध किया जाना चाहिए, जबकि Wiki-01 तक सामान्य HTTP पहुंच काम करती रहे।",
+            "hints": [
+                "PC-Admin से दुर्भावनापूर्ण अनुरोध को ट्रेस करें: यह Wiki-01 तक पहुंचता है केवल FW-DMZ के माध्यम से जाकर, WAF-Front को कभी नहीं छूता।",
+                "WAF-Front वह डिवाइस है जो HTTP को इंजेक्शन पैटर्न के लिए जांचता है, लेकिन यह सीधी पथ से बाहर बैठता है, इसलिए FW-DMZ ट्रैफ़िक को Wiki-01 तक सीधे बिना निरीक्षण के भेजता है।",
+                "FW-DMZ और Wiki-01 के बीच केबल को अनप्लग करें, फिर FW-DMZ को WAF-Front से और WAF-Front को Wiki-01 से जोड़ें ताकि हर अनुरोध सर्वर तक पहुंचने से पहले निरीक्षण किया जाए।"
+            ],
+            "explanation": "एक फायरवॉल केवल पते और पोर्ट द्वारा फ़िल्टर करता है; यह HTTP अनुरोधों के अंदर नहीं देख सकता। WAF वह गहरा निरीक्षण करता है, लेकिन केवल ट्रैफ़िक के लिए जो शारीरिक रूप से इसके माध्यम से गुजरता है। वायरिंग को सर्वर तक अपने रास्ते पर WAF के माध्यम से सभी ट्रैफ़िक को बाध्य करना चाहिए।"
+        },
+        "id": {
+            "title": "Lalu Lintas Tidak Terfilter ke Wiki-01",
+            "story": "PC-Admin melihat bahwa seseorang menguji Wiki-01 dengan string kueri berbahaya mendapat jawaban, bukan diblokir. Browsing normal ke Wiki-01 masih berfungsi dengan baik.",
+            "objective": "Upaya injeksi dari PC-Admin ke Wiki-01 harus diblokir, sementara akses HTTP normal ke Wiki-01 tetap berfungsi.",
+            "hints": [
+                "Lacak permintaan berbahaya dari PC-Admin: mencapai Wiki-01 hanya melewati FW-DMZ, tidak pernah menyentuh WAF-Front sama sekali.",
+                "WAF-Front adalah perangkat yang memeriksa HTTP untuk pola injeksi, tetapi berada di luar jalur langsung, jadi FW-DMZ meneruskan lalu lintas langsung ke Wiki-01 tanpa inspeksi.",
+                "Lepas kabel antara FW-DMZ dan Wiki-01, kemudian hubungkan FW-DMZ ke WAF-Front dan WAF-Front ke Wiki-01 sehingga setiap permintaan diperiksa sebelum mencapai server."
+            ],
+            "explanation": "Firewall hanya memfilter berdasarkan alamat dan port; tidak dapat melihat ke dalam permintaan HTTP. WAF melakukan inspeksi mendalam itu, tetapi hanya untuk lalu lintas yang secara fisik melewatinya. Kabel harus memaksa semua lalu lintas melalui WAF dalam perjalanannya ke server."
+        },
+        "ru": {
+            "title": "Нефильтруемый трафик на Wiki-01",
+            "story": "PC-Admin замечает, что кто-то сканирует Wiki-01 со злобными строками запроса и получает ответы вместо блокировки. Обычный просмотр Wiki-01 работает нормально.",
+            "objective": "Попытка инъекции с PC-Admin на Wiki-01 должна быть заблокирована, при этом обычный HTTP-доступ к Wiki-01 остается рабочим.",
+            "hints": [
+                "Проследите злобный запрос с PC-Admin: он достигает Wiki-01, пройдя только через FW-DMZ и не коснувшись WAF-Front вообще.",
+                "WAF-Front — это устройство, которое проверяет HTTP на предмет паттернов инъекции, но оно находится вне прямого пути, поэтому FW-DMZ пересылает трафик напрямую на Wiki-01 без проверки.",
+                "Отключите кабель между FW-DMZ и Wiki-01, затем подключите FW-DMZ к WAF-Front и WAF-Front к Wiki-01, чтобы каждый запрос проверялся перед достижением сервера."
+            ],
+            "explanation": "Брандмауэр фильтрует только по адресу и порту; он не может видеть содержимое HTTP-запросов. WAF выполняет глубокую проверку, но только для трафика, который физически проходит через него. Проводка должна принудить весь трафик проходить через WAF на пути к серверу."
+        },
+        "it": {
+            "title": "Traffico non filtrato verso Wiki-01",
+            "story": "PC-Admin si accorge che qualcuno sta sondando Wiki-01 con stringhe di query dannose e riceve risposte invece di essere bloccato. La navigazione normale verso Wiki-01 funziona ancora bene.",
+            "objective": "Un tentativo di injection da PC-Admin verso Wiki-01 deve essere bloccato, mentre l'accesso HTTP normale a Wiki-01 continua a funzionare.",
+            "hints": [
+                "Traccia la richiesta dannosa da PC-Admin: raggiunge Wiki-01 avendo passato solo FW-DMZ, senza mai toccare WAF-Front.",
+                "WAF-Front è il dispositivo che ispeziona l'HTTP per pattern di injection, ma si trova fuori dal percorso diretto, quindi FW-DMZ inoltra il traffico direttamente a Wiki-01 senza alcuna ispezione.",
+                "Scollega il cavo tra FW-DMZ e Wiki-01, quindi connetti FW-DMZ a WAF-Front e WAF-Front a Wiki-01 affinché ogni richiesta sia ispezionata prima di raggiungere il server."
+            ],
+            "explanation": "Un Firewall filtra solo per indirizzo e porta; non può guardare dentro le richieste HTTP. Il WAF esegue l'ispezione profonda, ma solo per il traffico che fisicamente lo attraversa. Il cablaggio deve forzare tutto il traffico attraverso il WAF prima di raggiungere il server."
+        },
+        "tr": {
+            "title": "Wiki-01'e Filtrelenmemiş Trafik",
+            "story": "PC-Admin, Wiki-01'i kötü amaçlı sorgu dizgeleriyle sondalayanın yanıt alması gerektiğini ancak durdurulması gerektiğini fark ediyor. Wiki-01'e normal tarama hâlâ sorunsuz çalışıyor.",
+            "objective": "PC-Admin'den Wiki-01'e yapılan bir injection girişimi bloke edilmeli, Wiki-01'e normal HTTP erişimi çalışmaya devam etmelidir.",
+            "hints": [
+                "Kötü amaçlı isteği PC-Admin'den takip edin: yalnızca FW-DMZ'den geçerek Wiki-01'e ulaşır, WAF-Front'a hiç dokunmaz.",
+                "WAF-Front, HTTP'yi injection desenleri için inceleyen cihazdır, ancak doğrudan yolun dışında yer aldığından FW-DMZ trafiği hiçbir inceleme olmadan doğrudan Wiki-01'e iletir.",
+                "FW-DMZ ile Wiki-01 arasındaki kabloyu çıkarın, sonra FW-DMZ'yi WAF-Front'a ve WAF-Front'u Wiki-01'e bağlayın; bu şekilde her istek sunucuya ulaşmadan önce incelenir."
+            ],
+            "explanation": "Bir Firewall yalnızca adres ve porta göre filtreler; HTTP istekleri içini göremez. WAF derin inceleme gerçekleştirir, ancak yalnızca fiziksel olarak geçen trafik için. Kablolama, sunucuya ulaşmadan önce tüm trafiği WAF'tan geçmeye zorlamalıdır."
+        },
+        "th": {
+            "title": "ปล่อยปลายน้ำไปยัง Wiki-01",
+            "story": "PC-Admin สังเกตว่าผู้ที่สอบสวน Wiki-01 ด้วยสตริงคิวรีที่เป็นอันตรายได้รับคำตอบแทนที่จะถูกหยุด การท่องเบราวเซอร์ปกติไปยัง Wiki-01 ยังทำงานได้ดี",
+            "objective": "ความพยายามฉีดข้อมูลจาก PC-Admin ไปยัง Wiki-01 จะต้องถูกบล็อก ขณะที่การเข้าถึง HTTP ปกติไปยัง Wiki-01 จะยังคงทำงาน",
+            "hints": [
+                "ติดตามคำขอที่เป็นอันตรายจาก PC-Admin: ถึง Wiki-01 หลังจากผ่าน FW-DMZ เท่านั้น ไม่เคยสัมผัส WAF-Front เลย",
+                "WAF-Front คือตัวอุปกรณ์ที่ตรวจสอบ HTTP สำหรับรูปแบบการฉีดข้อมูล แต่มันอยู่นอกเส้นทางโดยตรง ดังนั้น FW-DMZ จึงส่งต่อปล่อยปลายน้ำไปยัง Wiki-01 โดยไม่มีการตรวจสอบใดๆ",
+                "ถอดสายเคเบิลระหว่าง FW-DMZ และ Wiki-01 จากนั้นเชื่อมต่อ FW-DMZ กับ WAF-Front และ WAF-Front กับ Wiki-01 เพื่อให้คำขอทุกคำขอได้รับการตรวจสอบก่อนถึงเซิร์ฟเวอร์"
+            ],
+            "explanation": "Firewall กรองเฉพาะที่อยู่และพอร์ต ไม่สามารถมองข้างในคำขอ HTTP ได้ WAF ทำการตรวจสอบเชิงลึก แต่เฉพาะสำหรับปล่อยปลายน้ำที่ผ่านทางกายภาพเท่านั้น การเชื่อมสายเคเบิลจะต้องบังคับให้ปล่อยปลายน้ำทั้งหมดผ่าน WAF ก่อนที่จะถึงเซิร์ฟเวอร์"
+        },
+        "vi": {
+            "title": "Lưu lượng chưa lọc tới Wiki-01",
+            "story": "PC-Admin nhận thấy rằng người nào đó đang khiêu khích Wiki-01 bằng các chuỗi truy vấn độc hại nhưng nhận được phản hồi thay vì bị chặn. Duyệt web bình thường tới Wiki-01 vẫn hoạt động tốt.",
+            "objective": "Một lần thử injection từ PC-Admin tới Wiki-01 phải bị chặn, trong khi truy cập HTTP bình thường tới Wiki-01 tiếp tục hoạt động.",
+            "hints": [
+                "Theo dõi yêu cầu độc hại từ PC-Admin: nó đến Wiki-01 sau khi chỉ vượt qua FW-DMZ, không bao giờ chạm WAF-Front.",
+                "WAF-Front là thiết bị kiểm tra HTTP tìm kiếm các mẫu injection, nhưng nó nằm ngoài đường dẫn trực tiếp, vì vậy FW-DMZ chuyển tiếp lưu lượng trực tiếp tới Wiki-01 mà không kiểm tra.",
+                "Rút cáp giữa FW-DMZ và Wiki-01, sau đó kết nối FW-DMZ với WAF-Front và WAF-Front với Wiki-01 để mọi yêu cầu được kiểm tra trước khi đến máy chủ."
+            ],
+            "explanation": "Tường lửa chỉ lọc theo địa chỉ và cổng; nó không thể nhìn vào bên trong các yêu cầu HTTP. WAF thực hiện kiểm tra sâu, nhưng chỉ cho lưu lượng vật lý đi qua nó. Cabling phải buộc tất cả lưu lượng đi qua WAF trước khi đến máy chủ."
+        }
+    }
+}
