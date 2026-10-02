@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-09",
+    "number": 19,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.29.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.29.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.29.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.15.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.30.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.15.2",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.15.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.29.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.15.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.30.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Branch Office Can't Reach Ordering System",
+            "story": "The branch office sales team reports that PC-Dev cannot load the main site's ordering system hosted on Web-Server. They say it has not worked at all today.",
+            "objective": "Get an HTTP GET from PC-Dev to Web-Server to succeed.",
+            "hints": [
+                "The request from PC-Dev never gets past Router-East on its way toward the main site.",
+                "Router-East has a static route toward Web-Server's network, but it sends traffic out through the wrong local interface instead of the link that actually leads to Router-West.",
+                "On Router-East, remove the existing route to 10.0.30.0/255.255.255.0, then add it back as 10.0.30.0/255.255.255.0 via 10.0.15.2 on port 1."
+            ],
+            "explanation": "A static route needs a correct next-hop reachable through the right outgoing port. Here the route pointed at the right next hop but was bound to the wrong port, so Router-East had no usable path to Web-Server's subnet and dropped every packet addressed there."
+        },
+        "ja": {
+            "title": "支社から発注システムに接続できない",
+            "story": "支社の営業チームから、PC-DevがWeb-Serverでホストされている本社の発注システムを読み込めないと報告がありました。今日は一度も動作していないとのことです。",
+            "objective": "PC-DevからWeb-ServerへのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Devからのリクエストは、本社に向かう途中のRouter-Eastを通過できていません。",
+                "Router-EastにはWeb-Serverのネットワーク宛ての静的ルートがありますが、実際にRouter-Westへつながるリンクではなく、誤ったローカルインターフェースにトラフィックを送っています。",
+                "Router-Eastで、10.0.30.0/255.255.255.0への既存のルートを削除し、改めて10.0.30.0/255.255.255.0を、中継先(ネクストホップ)10.0.15.2、ポート1で追加してください。"
+            ],
+            "explanation": "静的ルートには、正しい出力ポートを通じて到達できる正しい中継先(ネクストホップ)が必要です。この場合、ルートは正しい中継先を指していましたが、誤ったポートに結び付けられていたため、Router-EastにはWeb-Serverのサブネットへの使えるパスがなく、宛先のパケットがすべて破棄されていました。"
+        },
+        "zh-CN": {
+            "title": "分支机构无法连接订单系统",
+            "story": "分支机构销售团队报告 PC-Dev 无法加载位于 Web-Server 的主站订单系统。他们说该系统今天完全无法工作。",
+            "objective": "使 PC-Dev 到 Web-Server 的 HTTP GET 请求成功。",
+            "hints": [
+                "从 PC-Dev 发出的请求在 Router-East 处就被阻止了，无法继续传向主站。",
+                "Router-East 有到 Web-Server 网络的静态路由，但它通过错误的本地接口发送流量，而不是通过实际连接到 Router-West 的链接。",
+                "在 Router-East 上，删除现有的到 10.0.30.0/255.255.255.0 的路由，然后通过 10.0.15.2 在端口 1 上重新添加该路由到 10.0.30.0/255.255.255.0。"
+            ],
+            "explanation": "静态路由需要通过正确的出站端口可以到达的正确下一跳。这里的路由指向了正确的下一跳，但被绑定到了错误的端口，所以 Router-East 没有到达 Web-Server 子网的可用路径，从而丢弃了所有发往那里的数据包。"
+        },
+        "zh-TW": {
+            "title": "分支機構無法連接訂單系統",
+            "story": "分支機構銷售團隊報告 PC-Dev 無法載入位於 Web-Server 的主站訂單系統。他們說該系統今天完全無法工作。",
+            "objective": "使 PC-Dev 到 Web-Server 的 HTTP GET 請求成功。",
+            "hints": [
+                "從 PC-Dev 發出的請求在 Router-East 處就被阻止了，無法繼續傳向主站。",
+                "Router-East 有到 Web-Server 網路的靜態路由，但它透過錯誤的本機介面發送流量，而不是透過實際連接到 Router-West 的連結。",
+                "在 Router-East 上，刪除現有的到 10.0.30.0/255.255.255.0 的路由，然後透過 10.0.15.2 在連接埠 1 上重新新增該路由到 10.0.30.0/255.255.255.0。"
+            ],
+            "explanation": "靜態路由需要透過正確的出站連接埠可以到達的正確下一跳。這裡的路由指向了正確的下一跳，但被繫結到了錯誤的連接埠，所以 Router-East 沒有到達 Web-Server 子網的可用路徑，從而捨棄了所有發往那裡的資料封包。"
+        },
+        "ko": {
+            "title": "지사에서 주문 시스템에 접속할 수 없음",
+            "story": "지사 판매팀이 PC-Dev에서 Web-Server에 호스팅된 본사 주문 시스템을 로드할 수 없다고 보고했습니다. 오늘 하루 종일 작동하지 않았다고 합니다.",
+            "objective": "PC-Dev에서 Web-Server로 가는 HTTP GET 요청이 성공하도록 합니다.",
+            "hints": [
+                "PC-Dev에서 보낸 요청이 Router-East에서 멈춰 본사 방향으로 계속 전달되지 않습니다.",
+                "Router-East에는 Web-Server 네트워크로 가는 정적 경로가 있지만, Router-West로 실제로 연결되는 링크 대신 잘못된 로컬 인터페이스를 통해 트래픽을 전송합니다.",
+                "Router-East에서 기존 10.0.30.0/255.255.255.0 경로를 제거한 후, 10.0.15.2를 통해 포트 1에서 10.0.30.0/255.255.255.0로 다시 추가합니다."
+            ],
+            "explanation": "정적 경로는 올바른 아웃바운드 포트를 통해 도달 가능한 올바른 다음 홉이 필요합니다. 여기서는 경로가 올바른 다음 홉을 가리키고 있었지만 잘못된 포트에 바인딩되어 있어서 Router-East가 Web-Server 서브넷으로의 사용 가능한 경로가 없었고 그곳으로 향하는 모든 패킷을 버렸습니다."
+        },
+        "es": {
+            "title": "Sucursal no puede alcanzar sistema de pedidos",
+            "story": "El equipo de ventas de la sucursal informa que PC-Dev no puede cargar el sistema de pedidos del sitio principal alojado en Web-Server. Dicen que no ha funcionado en absoluto hoy.",
+            "objective": "Lograr que una solicitud HTTP GET de PC-Dev a Web-Server tenga éxito.",
+            "hints": [
+                "La solicitud de PC-Dev nunca avanza más allá de Router-East en su camino hacia el sitio principal.",
+                "Router-East tiene una ruta estática hacia la red de Web-Server, pero envía el tráfico por la interfaz local incorrecta en lugar del enlace que realmente conecta con Router-West.",
+                "En Router-East, elimine la ruta existente a 10.0.30.0/255.255.255.0 y luego agréguela nuevamente como 10.0.30.0/255.255.255.0 vía 10.0.15.2 en puerto 1."
+            ],
+            "explanation": "Una ruta estática necesita un siguiente salto correcto accesible a través del puerto de salida correcto. Aquí la ruta apuntaba al siguiente salto correcto pero estaba vinculada al puerto incorrecto, por lo que Router-East no tenía una ruta disponible hacia la subred de Web-Server y descartaba cada paquete dirigido allí."
+        },
+        "pt-BR": {
+            "title": "Filial não consegue acessar sistema de pedidos",
+            "story": "O time de vendas da filial relata que o PC-Dev não consegue carregar o sistema de pedidos do site principal hospedado em Web-Server. Dizem que não funcionou em absoluto hoje.",
+            "objective": "Fazer com que uma solicitação HTTP GET de PC-Dev para Web-Server seja bem-sucedida.",
+            "hints": [
+                "A solicitação de PC-Dev nunca passa por Router-East a caminho do site principal.",
+                "Router-East tem uma rota estática para a rede de Web-Server, mas envia o tráfego pela interface local errada em vez do link que realmente leva a Router-West.",
+                "Em Router-East, remova a rota existente para 10.0.30.0/255.255.255.0 e, em seguida, adicione-a novamente como 10.0.30.0/255.255.255.0 via 10.0.15.2 na porta 1."
+            ],
+            "explanation": "Uma rota estática precisa de um próximo salto correto acessível por meio da porta de saída correta. Aqui a rota apontava para o próximo salto correto, mas estava vinculada à porta errada, então Router-East não tinha um caminho utilizável para a sub-rede de Web-Server e descartava cada pacote destinado a ela."
+        },
+        "de": {
+            "title": "Zweigstelle kann Bestellsystem nicht erreichen",
+            "story": "Das Verkaufsteam der Zweigstelle meldet, dass PC-Dev die Bestellseite des Hauptstandorts auf Web-Server nicht laden kann. Sie sagen, dass es heute überhaupt nicht funktioniert.",
+            "objective": "Ein HTTP-GET von PC-Dev zu Web-Server muss erfolgreich sein.",
+            "hints": [
+                "Die Anfrage von PC-Dev kommt nicht über Router-East hinaus, wenn sie zum Hauptstandort führt.",
+                "Router-East hat eine statische Route zum Netzwerk von Web-Server, sendet Datenverkehr aber über die falsche lokale Schnittstelle statt über den Link, der tatsächlich zu Router-West führt.",
+                "Entfernen Sie auf Router-East die bestehende Route zu 10.0.30.0/255.255.255.0, und fügen Sie sie dann als 10.0.30.0/255.255.255.0 via 10.0.15.2 auf Portnummer 1 erneut hinzu."
+            ],
+            "explanation": "Eine statische Route benötigt einen korrekten Nächster Hop, der über den richtigen ausgehenden Port erreichbar ist. Hier wies die Route auf den richtigen Nächster Hop, war aber an die falsche Portnummer gebunden. Daher hatte Router-East keinen verwendbaren Pfad zum Subnetz von Web-Server und verwarf jedes dort adressierte Paket."
+        },
+        "fr": {
+            "title": "La succursale ne peut pas accéder au système de commande",
+            "story": "L'équipe commerciale de la succursale signale que PC-Dev ne peut pas charger le système de commande du site principal hébergé sur Web-Server. Elle dit que cela ne fonctionne pas du tout aujourd'hui.",
+            "objective": "Une requête HTTP GET de PC-Dev vers Web-Server doit réussir.",
+            "hints": [
+                "La requête en provenance de PC-Dev ne dépasse pas Router-East en se dirigeant vers le site principal.",
+                "Router-East dispose d'une route statique vers le réseau de Web-Server, mais elle envoie le trafic par la mauvaise interface locale au lieu du lien qui mène réellement à Router-West.",
+                "Sur Router-East, supprimez la route existante vers 10.0.30.0/255.255.255.0, puis rajoutez-la comme 10.0.30.0/255.255.255.0 via 10.0.15.2 sur le Numéro de port 1."
+            ],
+            "explanation": "Une route statique a besoin d'un Saut suivant correct atteignable via le bon port sortant. Ici, la route indiquait le bon Saut suivant mais était associée au mauvais port. Par conséquent, Router-East n'avait pas de chemin utilisable vers le réseau de Web-Server et supprimait chaque paquet qui y était adressé."
+        },
+        "hi": {
+            "title": "शाखा कार्यालय आदेश प्रणाली तक नहीं पहुँच सकता",
+            "story": "शाखा कार्यालय की बिक्रय टीम रिपोर्ट करती है कि PC-Dev मुख्य साइट की आदेश प्रणाली को Web-Server पर लोड नहीं कर सकता। वे कहते हैं कि यह आज बिल्कुल काम नहीं कर रहा।",
+            "objective": "PC-Dev से Web-Server तक HTTP GET सफल होना चाहिए।",
+            "hints": [
+                "PC-Dev का अनुरोध Router-East से आगे नहीं बढ़ता, जब यह मुख्य साइट की ओर जाता है।",
+                "Router-East के पास Web-Server के नेटवर्क के लिए एक स्थिर मार्ग है, लेकिन वह ट्रैफ़िक को गलत स्थानीय इंटरफ़ेस से भेजता है, न कि उस लिंक से जो वास्तव में Router-West तक जाता है।",
+                "Router-East पर, 10.0.30.0/255.255.255.0 के मौजूदा मार्ग को हटाएँ, फिर इसे 10.0.30.0/255.255.255.0 पोर्ट नंबर 1 पर अगला हॉप 10.0.15.2 के रूप में जोड़ें।"
+            ],
+            "explanation": "एक स्थिर मार्ग के लिए एक सही अगला हॉप चाहिए जो सही आउटगोइंग पोर्ट के माध्यम से पहुँचा जा सके। यहाँ मार्ग सही अगले हॉप की ओर इशारा करता था, लेकिन गलत पोर्ट से जुड़ा था। इसलिए Router-East के पास Web-Server के सबनेट के लिए कोई उपयोगी पथ नहीं था और वह वहाँ पते वाले हर पैकेट को हटा देता था।"
+        },
+        "id": {
+            "title": "Kantor Cabang Tidak Dapat Menjangkau Sistem Pemesanan",
+            "story": "Tim penjualan kantor cabang melaporkan bahwa PC-Dev tidak dapat memuat sistem pemesanan situs utama yang dihosting di Web-Server. Mereka mengatakan bahwa itu sama sekali tidak berfungsi hari ini.",
+            "objective": "Permintaan HTTP GET dari PC-Dev ke Web-Server harus berhasil.",
+            "hints": [
+                "Permintaan dari PC-Dev tidak pernah melampaui Router-East dalam perjalanan menuju situs utama.",
+                "Router-East memiliki rute statis menuju Jaringan tujuan Web-Server, namun mengirimkan lalu lintas melalui Antarmuka lokal yang salah alih-alih tautan yang benar-benar mengarah ke Router-West.",
+                "Di Router-East, hapus rute yang ada ke 10.0.30.0/255.255.255.0, kemudian tambahkan kembali sebagai 10.0.30.0/255.255.255.0 via 10.0.15.2 pada Nomor port 1."
+            ],
+            "explanation": "Rute statis memerlukan Hop berikutnya yang benar dan dapat dijangkau melalui Port keluar yang tepat. Di sini rute menunjuk ke Hop berikutnya yang benar tetapi terikat pada Port yang salah, sehingga Router-East tidak memiliki jalur yang dapat digunakan ke subnet Web-Server dan menghapus setiap paket yang ditujukan ke sana."
+        },
+        "ru": {
+            "title": "Филиал не может получить доступ к системе заказов",
+            "story": "Торговая команда филиала сообщает, что PC-Dev не может загрузить систему заказов главного сайта, размещённую на Web-Server. Она говорит, что она совсем не работает сегодня.",
+            "objective": "HTTP GET запрос от PC-Dev к Web-Server должен быть успешным.",
+            "hints": [
+                "Запрос от PC-Dev не проходит дальше Router-East на пути к главному сайту.",
+                "Router-East имеет статический маршрут к сети Web-Server, но отправляет трафик через неправильный локальный интерфейс вместо канала, который реально ведёт на Router-West.",
+                "На Router-East удалите существующий маршрут к 10.0.30.0/255.255.255.0, затем добавьте его обратно как 10.0.30.0/255.255.255.0 через 10.0.15.2 на Номер порта 1."
+            ],
+            "explanation": "Статический маршрут требует правильного Следующего узла, достижимого через нужный исходящий порт. Здесь маршрут указывал на правильный Следующий узел, но был привязан к неправильному порту. Поэтому Router-East не имел пригодного пути к подсети Web-Server и отбрасывал каждый пакет, адресованный туда."
+        },
+        "it": {
+            "title": "Ufficio succursale non raggiunge il sistema di ordini",
+            "story": "Il team di vendita dell'ufficio succursale segnala che PC-Dev non riesce a caricare il sistema di ordini del sito principale ospitato su Web-Server. Dicono che non ha funzionato affatto oggi.",
+            "objective": "Fare in modo che un GET HTTP da PC-Dev a Web-Server abbia successo.",
+            "hints": [
+                "La richiesta da PC-Dev non passa mai oltre Router-East sulla strada verso il sito principale.",
+                "Router-East ha una rotta statica verso la rete di Web-Server, ma invia il traffico attraverso la porta locale sbagliata invece del collegamento che effettivamente conduce a Router-West.",
+                "Su Router-East, rimuovi la rotta esistente verso 10.0.30.0/255.255.255.0, quindi aggiungila di nuovo come 10.0.30.0/255.255.255.0 via 10.0.15.2 sulla porta 1."
+            ],
+            "explanation": "Una rotta statica necessita di un rete hop successiva raggiungibile attraverso la porta in uscita corretta. Qui la rotta puntava al rete hop corretto ma era associata alla porta sbagliata, quindi Router-East non aveva nessun percorso utilizzabile verso la subnet di Web-Server e ha scartato ogni pacchetto indirizzato lì."
+        },
+        "tr": {
+            "title": "Şube Ofisi Sipariş Sistemine Erişemiyor",
+            "story": "Şube ofisinin satış ekibi, PC-Dev'in ana sitenin Web-Server üzerinde barındırılan sipariş sistemini yükleyemediğini bildiriyor. Bugün hiç çalışmadığını söylüyorlar.",
+            "objective": "PC-Dev'den Web-Server'a bir HTTP GET isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "PC-Dev'den gelen istek, ana siteye doğru giderken hiçbir zaman Router-East'i geçemiyor.",
+                "Router-East, Web-Server'ın ağına doğru statik bir yönlendirmeye sahiptir, ancak trafiği gerçekten Router-West'e yönelen bağlantı yerine yanlış yerel arabirim aracılığıyla gönderir.",
+                "Router-East üzerinde, 10.0.30.0/255.255.255.0 adresine giden mevcut yönlendirmeyi kaldırın, ardından 10.0.15.2 sonraki sıçrama ile port 1 üzerinden 10.0.30.0/255.255.255.0 olarak tekrar ekleyin."
+            ],
+            "explanation": "Statik bir yönlendirme, doğru giden port üzerinden ulaşılabilir bir sonraki sıçrama gerektirir. Burada yönlendirme doğru sonraki sıçramayı gösteriyordu ancak yanlış porta bağlıydı, bu nedenle Router-East'in Web-Server'ın ağına kullanılabilir bir yolu yoktu ve orada adresli her paketi bıraktı."
+        },
+        "th": {
+            "title": "สาขาไม่สามารถเข้าถึงระบบสั่งซื้อได้",
+            "story": "ทีมขายสาขาที่สนใจ รายงานว่า PC-Dev ไม่สามารถโหลดระบบสั่งซื้อของเว็บไซต์หลักที่โฮสต์อยู่บน Web-Server ได้ พวกเขากล่าวว่าวันนี้ไม่มีการทำงานเลย",
+            "objective": "ทำให้ HTTP GET จาก PC-Dev ไปยัง Web-Server สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Dev ไม่เคยผ่าน Router-East ในเส้นทางไปยังเว็บไซต์หลัก",
+                "Router-East มีเส้นทางคงที่ไปยังเครือข่ายของ Web-Server แต่ส่งการจราจรผ่านอินเทอร์เฟสท้องถิ่นที่ผิด แทนที่จะเป็นลิงก์ที่นำไปยัง Router-West จริงๆ",
+                "บน Router-East ให้นำเส้นทางที่มีอยู่ไปยัง 10.0.30.0/255.255.255.0 ออก จากนั้นเพิ่มกลับเป็น 10.0.30.0/255.255.255.0 ด้วย ฮ็อปถัดไป 10.0.15.2 บนพอร์ต 1"
+            ],
+            "explanation": "เส้นทางคงที่ต้องการฮ็อปถัดไปที่สามารถเข้าถึงได้ผ่านพอร์ตขาออกที่ถูกต้อง ที่นี่เส้นทางชี้ไปยังฮ็อปถัดไปที่ถูกต้อง แต่ถูกผูกไว้กับพอร์ตที่ผิด ดังนั้น Router-East จึงไม่มีเส้นทางที่สามารถใช้ได้ไปยังเซ็บเน็ตของ Web-Server และทิ้งแพ็กเก็ตทุกตัวที่อยู่ที่นั่น"
+        },
+        "vi": {
+            "title": "Chi nhánh không thể truy cập hệ thống đặt hàng",
+            "story": "Nhóm bán hàng của chi nhánh báo cáo rằng PC-Dev không thể tải hệ thống đặt hàng của trang web chính được lưu trữ trên Web-Server. Họ nói rằng nó chẳng hoạt động chút nào hôm nay.",
+            "objective": "Tạo điều kiện để HTTP GET từ PC-Dev tới Web-Server thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Dev không bao giờ vượt qua Router-East trên đường tới trang web chính.",
+                "Router-East có một tuyến tĩnh tới mạng của Web-Server, nhưng nó gửi lưu lượng qua giao diện cục bộ sai thay vì liên kết thực sự dẫn tới Router-West.",
+                "Trên Router-East, xóa tuyến hiện có tới 10.0.30.0/255.255.255.0, sau đó thêm lại với hop tiếp theo 10.0.15.2 trên cổng 1."
+            ],
+            "explanation": "Một tuyến tĩnh cần một hop tiếp theo có thể truy cập được thông qua cổng gửi đi đúng. Ở đây tuyến chỉ đến hop tiếp theo đúng nhưng bị ràng buộc với cổng sai, vì vậy Router-East không có đường dẫn sử dụng được tới mạng con của Web-Server và đã loại bỏ mọi gói tin được gửi đến đó."
+        }
+    }
+}
