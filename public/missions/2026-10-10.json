@@ -1,0 +1,692 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-10",
+    "number": 20,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "ttl_loop"
+    ],
+    "concepts": [
+        "routing-loop",
+        "ttl"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.23.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.23.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.23.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.8.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.3.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.8.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.8.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.3.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.23.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.8.1",
+                            "portIndex": 0
+                        },
+                        {
+                            "network": "10.0.3.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.8.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.3.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.3.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Support Request Stuck in Transit",
+            "story": "PC-Support has been trying to open a page on Intranet-01 since this morning, but no response ever comes back. The request just seems to vanish somewhere on the way.",
+            "objective": "Restore HTTP access from PC-Support to Intranet-01.",
+            "hints": [
+                "The packet from PC-Support bounces endlessly and gets reported as stuck at Router-East before it ever reaches Intranet-01.",
+                "Router-West holds a static route back toward 10.0.3.0 that sends traffic out again instead of delivering it locally, so the two routers keep forwarding the packet to each other until it expires.",
+                "On Router-West, delete the static route to network 10.0.3.0 (mask 255.255.255.0) via 10.0.8.1 so Router-West delivers directly to its own local segment instead."
+            ],
+            "explanation": "A router should only have a route pointing elsewhere for networks that are not directly attached to it. Here Router-West had a route sending traffic for its own local network back out toward Router-East, creating a loop that burned through the packet's TTL before delivery. Removing the unnecessary route let Router-West deliver directly."
+        },
+        "ja": {
+            "title": "サポート依頼が途中で止まっています",
+            "story": "PC-Support は今朝から Intranet-01 のページを開こうとしていますが、応答がまったく返ってきません。リクエストは途中のどこかで消えてしまっているようです。",
+            "objective": "PC-Support から Intranet-01 への HTTP アクセスを復旧させる。",
+            "hints": [
+                "PC-Support からのパケットは何度も行き来した末、Intranet-01 に届く前に Router-East で止まっていると報告されます。",
+                "Router-West には 10.0.3.0 宛てのスタティックルートがあり、そのトラフィックをローカルに届けずに再び外へ送り出してしまうため、2台のルーターが互いにパケットを転送し合い続けています。",
+                "Router-West 上で、ネットワーク 10.0.3.0(マスク 255.255.255.0)宛て、中継先(ネクストホップ) 10.0.8.1 のスタティックルートを削除し、Router-West が自身のローカルセグメントへ直接配送できるようにします。"
+            ],
+            "explanation": "ルーターは、自身に直接接続されていないネットワーク宛てにのみ、他へ向けるルートを持つべきです。今回は Router-West に、自身のローカルネットワーク宛てのトラフィックを再び Router-East へ送り返すルートが存在していたため、ループが発生し、配送前にパケットの TTL を使い果たしていました。不要なルートを削除したことで、Router-West が直接配送できるようになりました。"
+        },
+        "zh-CN": {
+            "title": "支持请求在传输中卡住",
+            "story": "PC-Support 从今天早上开始一直在尝试打开 Intranet-01 上的页面，但从未得到回复。该请求似乎在传输过程中某个地方消失了。",
+            "objective": "恢复从 PC-Support 到 Intranet-01 的 HTTP 访问。",
+            "hints": [
+                "来自 PC-Support 的数据包在 Router-East 处无限反弹，在到达 Intranet-01 之前被报告为卡住。",
+                "Router-West 拥有一条指向 10.0.3.0 的静态路由，它将流量再次发送出去，而不是在本地传送，因此两个路由器不断互相转发该数据包直到其过期。",
+                "在 Router-West 上，删除指向网络 10.0.3.0（掩码 255.255.255.0）的静态路由，下一跳为 10.0.8.1，以便 Router-West 直接传送到其自己的本地网段。"
+            ],
+            "explanation": "路由器应该只对未直接连接到它的网络设置指向其他地方的路由。这里 Router-West 有一条将自己本地网络的流量发送回 Router-East 的路由，造成了一个循环，消耗了数据包的 TTL 直到无法传送。删除不必要的路由使 Router-West 能够直接传送。"
+        },
+        "zh-TW": {
+            "title": "支援要求在傳輸中卡住",
+            "story": "PC-Support 從今天早上開始一直在嘗試開啟 Intranet-01 上的頁面，但始終未收到回覆。該要求似乎在傳輸過程中某處消失了。",
+            "objective": "恢復從 PC-Support 到 Intranet-01 的 HTTP 存取。",
+            "hints": [
+                "來自 PC-Support 的封包在 Router-East 處無限反彈，在到達 Intranet-01 之前被報告為卡住。",
+                "Router-West 擁有一條指向 10.0.3.0 的靜態路由，它將流量再次發送出去，而不是在本地傳送，因此兩個路由器不斷互相轉發該封包直到其過期。",
+                "在 Router-West 上，刪除指向網路 10.0.3.0（遮罩 255.255.255.0）的靜態路由，下一跳為 10.0.8.1，以便 Router-West 直接傳送到其自己的本地網段。"
+            ],
+            "explanation": "路由器應該只對未直接連接到它的網路設置指向其他地方的路由。這裡 Router-West 有一條將自己本地網路的流量發送回 Router-East 的路由，造成了一個循環，消耗了封包的 TTL 直到無法傳送。刪除不必要的路由使 Router-West 能夠直接傳送。"
+        },
+        "ko": {
+            "title": "지원 요청이 전송 중 멈춤",
+            "story": "PC-Support가 오늘 아침부터 Intranet-01의 페이지를 열려고 시도하고 있지만 응답이 오지 않습니다. 요청이 전송 경로 어딘가에서 사라져 보입니다.",
+            "objective": "PC-Support에서 Intranet-01로의 HTTP 접속을 복구합니다.",
+            "hints": [
+                "PC-Support의 패킷이 Router-East에서 무한정 반사되고, Intranet-01에 도달하기 전에 멈춰 있는 것으로 보고됩니다.",
+                "Router-West는 10.0.3.0을 향한 정적 라우트를 보유하고 있으며, 이 라우트는 로컬로 전달하지 않고 트래픽을 다시 보내므로, 두 라우터는 패킷이 만료될 때까지 계속 서로에게 전달합니다.",
+                "Router-West에서 네트워크 10.0.3.0(마스크 255.255.255.0)으로의 정적 라우트를 다음 홉 10.0.8.1에서 삭제하여 Router-West가 자신의 로컬 세그먼트로 직접 전달하도록 합니다."
+            ],
+            "explanation": "라우터는 자신에게 직접 연결되지 않은 네트워크에 대해서만 다른 곳을 가리키는 라우트를 가져야 합니다. 이 경우 Router-West는 자신의 로컬 네트워크 트래픽을 Router-East로 다시 보내는 라우트를 가지고 있어 무한 루프를 만들어 패킷의 TTL을 소진했습니다. 불필요한 라우트를 제거하면 Router-West가 직접 전달할 수 있게 됩니다."
+        },
+        "es": {
+            "title": "Solicitud de soporte atrapada en tránsito",
+            "story": "PC-Support ha estado intentando abrir una página en Intranet-01 desde esta mañana, pero nunca recibe respuesta. La solicitud simplemente desaparece en algún lugar del camino.",
+            "objective": "Restaurar el acceso HTTP desde PC-Support a Intranet-01.",
+            "hints": [
+                "El paquete de PC-Support rebota infinitamente y se reporta como atrapado en Router-East antes de llegar a Intranet-01.",
+                "Router-West tiene una ruta estática hacia 10.0.3.0 que envía el tráfico nuevamente en lugar de entregarlo localmente, por lo que los dos enrutadores siguen reenviando el paquete uno al otro hasta que expira.",
+                "En Router-West, elimina la ruta estática a la red destino 10.0.3.0 (máscara 255.255.255.0) vía siguiente salto 10.0.8.1 para que Router-West entregue directamente a su propio segmento local."
+            ],
+            "explanation": "Un enrutador solo debe tener una ruta apuntando a otro lugar para redes que no estén directamente conectadas a él. Aquí Router-West tenía una ruta que enviaba el tráfico para su propia red local nuevamente hacia Router-East, creando un bucle que consumía el TTL del paquete antes de su entrega. Eliminar la ruta innecesaria permitió a Router-West entregar directamente."
+        },
+        "pt-BR": {
+            "title": "Solicitação de suporte travada em trânsito",
+            "story": "PC-Support tem tentado abrir uma página em Intranet-01 desde esta manhã, mas nunca recebe resposta. A solicitação simplesmente desaparece em algum lugar do caminho.",
+            "objective": "Restaurar o acesso HTTP de PC-Support para Intranet-01.",
+            "hints": [
+                "O pacote de PC-Support rebate infinitamente e é reportado como preso em Router-East antes de chegar a Intranet-01.",
+                "Router-West tem uma rota estática para 10.0.3.0 que envia o tráfego novamente em vez de entregá-lo localmente, então os dois roteadores continuam reenviando o pacote um para o outro até expirar.",
+                "Em Router-West, exclua a rota estática para a rede destino 10.0.3.0 (máscara 255.255.255.0) próximo salto 10.0.8.1 para que Router-West entregue diretamente ao seu próprio segmento local."
+            ],
+            "explanation": "Um roteador deve ter uma rota apontando para outro lugar apenas para redes que não estão diretamente conectadas a ele. Aqui Router-West tinha uma rota enviando tráfego da sua própria rede local novamente para Router-East, criando um loop que consumia o TTL do pacote antes da entrega. Remover a rota desnecessária permitiu que Router-West entregasse diretamente."
+        },
+        "de": {
+            "title": "Supportanfrage bleibt unterwegs stecken",
+            "story": "PC-Support versucht seit heute Morgen, eine Seite auf Intranet-01 zu öffnen, aber es kommt nie eine Antwort zurück. Die Anfrage scheint einfach irgendwo auf dem Weg zu verschwinden.",
+            "objective": "HTTP-Zugriff von PC-Support auf Intranet-01 wiederherstellen.",
+            "hints": [
+                "Das Paket von PC-Support springt endlos hin und her und wird als in Router-East steckengeblieben gemeldet, bevor es Intranet-01 je erreicht.",
+                "Router-West hat eine statische Route zurück zum Netzwerk 10.0.3.0, die den Verkehr erneut hinausleitet, anstatt ihn lokal zuzustellen. Die beiden Router leiten das Paket so lange hin und her, bis die TTL abläuft.",
+                "Auf Router-West die statische Route zum Netzwerk 10.0.3.0 (Maske 255.255.255.0) via 10.0.8.1 löschen, damit Router-West direkt an sein eigenes lokales Segment zustellt."
+            ],
+            "explanation": "Ein Router sollte nur für Netzwerke, die nicht direkt an ihm angebunden sind, eine Route zu woanders hin haben. Hier hatte Router-West eine Route, die Verkehr für sein eigenes lokales Netzwerk wieder zurück zu Router-East schickte und so eine Schleife erzeugte, die die TTL des Pakets aufbrauchte. Das Entfernen der unnötigen Route ermöglichte es Router-West, direkt zuzustellen."
+        },
+        "fr": {
+            "title": "Demande d'assistance bloquée en transit",
+            "story": "PC-Support essaie depuis ce matin d'ouvrir une page sur Intranet-01, mais aucune réponse n'arrive jamais. La demande semble disparaître quelque part sur le chemin.",
+            "objective": "Restaurer l'accès HTTP depuis PC-Support vers Intranet-01.",
+            "hints": [
+                "Le paquet en provenance de PC-Support rebondit sans cesse et est signalé comme bloqué à Router-East avant d'atteindre Intranet-01.",
+                "Router-West possède une route statique vers le réseau 10.0.3.0 qui renvoie le trafic vers l'extérieur au lieu de le livrer localement, si bien que les deux routeurs se renvoient le paquet jusqu'à l'expiration du TTL.",
+                "Sur Router-West, supprimer la route statique vers le réseau de destination 10.0.3.0 (masque 255.255.255.0) via le saut suivant 10.0.8.1 pour que Router-West livre directement sur son propre segment local."
+            ],
+            "explanation": "Un routeur ne doit avoir une route vers un autre endroit que pour les réseaux qui ne lui sont pas directement connectés. Ici, Router-West avait une route qui renvoyait le trafic destiné à son propre réseau local vers Router-East, créant une boucle qui épuisait le TTL du paquet avant sa livraison. La suppression de la route inutile a permis à Router-West de livrer directement."
+        },
+        "hi": {
+            "title": "सपोर्ट अनुरोध संचरण में फंसा है",
+            "story": "PC-Support सुबह से Intranet-01 पर एक पेज खोलने का प्रयास कर रहा है, लेकिन कोई प्रतिक्रिया कभी नहीं आती। अनुरोध रास्ते में कहीं गायब हो जाता प्रतीत होता है।",
+            "objective": "PC-Support से Intranet-01 तक HTTP एक्सेस को पुनः स्थापित करें।",
+            "hints": [
+                "PC-Support से आने वाली पैकेट अंतहीन रूप से उछलती है और Intranet-01 तक पहुँचने से पहले Router-East पर फंसी हुई बताई जाती है।",
+                "Router-West में 10.0.3.0 नेटवर्क के लिए एक स्टेटिक रूट है जो ट्रैफिक को वापस बाहर भेजता है, इसलिए दोनों राउटर पैकेट को तब तक आगे भेजते रहते हैं जब तक TTL समाप्त न हो जाए।",
+                "Router-West पर, गंतव्य नेटवर्क 10.0.3.0 (मास्क 255.255.255.0) के लिए अगला हॉप 10.0.8.1 वाला स्टेटिक रूट हटाएं ताकि Router-West सीधे अपने स्वयं के स्थानीय सेगमेंट को डिलीवर कर सके।"
+            ],
+            "explanation": "एक राउटर को केवल उन नेटवर्क के लिए दूसरी जगह की ओर इशारा करने वाला रूट होना चाहिए जो सीधे उससे जुड़े नहीं हैं। यहाँ Router-West के पास एक रूट था जो अपने स्वयं के स्थानीय नेटवर्क के लिए ट्रैफिक को Router-East की ओर वापस भेजता था, जिससे एक लूप बनता था जो डिलीवरी से पहले पैकेट का TTL समाप्त कर देता था। अनावश्यक रूट को हटाने से Router-West सीधे डिलीवर कर सकता था।"
+        },
+        "id": {
+            "title": "Permintaan Dukungan Tersangkut dalam Pengiriman",
+            "story": "PC-Support telah mencoba membuka halaman di Intranet-01 sejak pagi ini, tetapi tidak ada respons yang pernah kembali. Permintaan tersebut sepertinya hilang di suatu tempat di tengah perjalanan.",
+            "objective": "Pulihkan akses HTTP dari PC-Support ke Intranet-01.",
+            "hints": [
+                "Paket dari PC-Support memantul tanpa henti dan dilaporkan tersangkut di Router-East sebelum pernah mencapai Intranet-01.",
+                "Router-West memegang rute statis kembali ke jaringan 10.0.3.0 yang mengirim lalu lintas keluar lagi daripada mengirimkannya secara lokal, jadi kedua router terus meneruskan paket satu sama lain sampai TTL habis.",
+                "Di Router-West, hapus rute statis ke jaringan tujuan 10.0.3.0 (masker 255.255.255.0) via hop berikutnya 10.0.8.1 agar Router-West mengirimkan langsung ke segmen lokal miliknya sendiri."
+            ],
+            "explanation": "Router hanya seharusnya memiliki rute menunjuk ke tempat lain untuk jaringan yang tidak terhubung langsung dengannya. Di sini Router-West memiliki rute yang mengirim lalu lintas untuk jaringan lokalnya sendiri kembali ke Router-East, menciptakan loop yang menghabiskan TTL paket sebelum pengiriman. Menghapus rute yang tidak perlu memungkinkan Router-West mengirimkan secara langsung."
+        },
+        "ru": {
+            "title": "Запрос поддержки застрял в пути",
+            "story": "PC-Support пытается с утра открыть страницу на Intranet-01, но ответ никогда не приходит. Запрос как будто теряется где-то в пути.",
+            "objective": "Восстановить HTTP-доступ от PC-Support к Intranet-01.",
+            "hints": [
+                "Пакет от PC-Support бесконечно циркулирует и сообщается как застрявший в Router-East, прежде чем когда-либо достичь Intranet-01.",
+                "Router-West имеет статический маршрут к сети 10.0.3.0, который отправляет трафик обратно наружу вместо локальной доставки, поэтому оба маршрутизатора продолжают переправлять пакет друг другу, пока TTL не истечет.",
+                "На Router-West удалите статический маршрут к целевой сети 10.0.3.0 (маска 255.255.255.0) через следующий узел 10.0.8.1, чтобы Router-West доставлял прямо на свой локальный сегмент."
+            ],
+            "explanation": "Маршрутизатор должен иметь маршрут, указывающий в другое место, только для сетей, которые не подключены к нему напрямую. Здесь Router-West имел маршрут, отправляющий трафик для его собственной локальной сети обратно к Router-East, создав цикл, который исчерпывал TTL пакета до доставки. Удаление ненужного маршрута позволило Router-West доставлять напрямую."
+        },
+        "it": {
+            "title": "Richiesta di supporto bloccata in transito",
+            "story": "PC-Support sta cercando di aprire una pagina su Intranet-01 da questa mattina, ma non arriva mai una risposta. La richiesta sembra svanire da qualche parte nel percorso.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Support a Intranet-01.",
+            "hints": [
+                "Il pacchetto da PC-Support rimbalza continuamente e viene segnalato bloccato presso Router-East prima ancora di raggiungere Intranet-01.",
+                "Router-West contiene una rotta statica verso 10.0.3.0 che reindirizza il traffico in uscita invece di consegnarlo localmente, quindi i due router continuano a inoltrarsi il pacchetto finché non scade.",
+                "Su Router-West, elimina la rotta statica verso la rete 10.0.3.0 (maschera 255.255.255.0) via 10.0.8.1 affinché Router-West consegni direttamente al suo segmento locale."
+            ],
+            "explanation": "Un router dovrebbe avere una rotta verso altri network solo per le reti non direttamente collegate. Qui Router-West aveva una rotta che inviava il traffico per la sua stessa rete locale verso Router-East, creando un ciclo che consumava il TTL del pacchetto prima della consegna. Rimuovendo la rotta non necessaria, Router-West può consegnare direttamente."
+        },
+        "tr": {
+            "title": "Destek İsteği Transit Sırasında Takılı Kaldı",
+            "story": "PC-Support, bu sabahtan beri Intranet-01 üzerinde bir sayfayı açmaya çalışıyor, ancak hiçbir zaman geri dönüş gelmez. İstek yol boyunca bir yerlerde kaybolmuş gibi görünüyor.",
+            "objective": "PC-Support'tan Intranet-01'e HTTP erişimini geri yükleyin.",
+            "hints": [
+                "PC-Support'tan gelen paket sürekli sıçrayıp Intranet-01'e ulaşmadan önce Router-East'te takılı olarak raporlanır.",
+                "Router-West, 10.0.3.0 adresine giden ve trafiği yerel olarak teslim etmek yerine tekrar gönderyeien bir statik rota tutuyor; bu nedenle iki Router paket sona erene kadar paket birbirine iletiyor.",
+                "Router-West üzerinde, 10.0.3.0 ağına (maske 255.255.255.0) giden statik rotayı 10.0.8.1 üzerinden silin; böylece Router-West doğrudan kendi yerel ağ segmentine teslim eder."
+            ],
+            "explanation": "Bir router, doğrudan bağlı olmayan ağlar için başka yerlere işaret eden bir rota olmalıdır. Burada Router-West, kendi yerel ağı için trafiği Router-East'e geri gönderen bir rota içeriyordu ve bu da paketin TTL'si teslim edilmeden önce tükenene kadar bir döngü oluşturuyordu. Gereksiz rotayı kaldırmak Router-West'in doğrudan teslim etmesine izin verdi."
+        },
+        "th": {
+            "title": "คำขอสนับสนุนติดขัดในการส่ง",
+            "story": "PC-Support พยายามเปิดหน้าเว็บบน Intranet-01 ตั้งแต่เช้านี้ แต่ไม่มีการตอบกลับเลย คำขอดูเหมือนหายไปที่ไหนสักแห่งในเส้นทาง",
+            "objective": "คืนการเข้าถึง HTTP จาก PC-Support ไป Intranet-01",
+            "hints": [
+                "แพกเก็ตจาก PC-Support ตีลังกาไปมาอย่างต่อเนื่องและรายงานติดขัดที่ Router-East ก่อนที่จะถึง Intranet-01",
+                "Router-West เก็บรักษาเส้นทางคงที่กลับไป 10.0.3.0 ซึ่งส่งปริมาณข้อมูลออกไปแทนที่จะส่งในท้องถิ่น ดังนั้น Router สองตัวจึงส่งแพกเก็ตไปยังกันและกันจนกว่าจะหมดอายุ",
+                "บน Router-West ลบเส้นทางคงที่ไปยังเครือข่าย 10.0.3.0 (มาสก์ 255.255.255.0) ผ่าน 10.0.8.1 เพื่อให้ Router-West ส่งโดยตรงไปยังเซกเมนต์ท้องถิ่นของมันแทน"
+            ],
+            "explanation": "Router ควรมีเส้นทางที่ชี้ไปที่ใดที่หนึ่งสำหรับเครือข่ายที่ไม่ได้เชื่อมต่อโดยตรง ที่นี่ Router-West มีเส้นทางที่ส่งปริมาณข้อมูลสำหรับเครือข่ายท้องถิ่นของตัวเองกลับไปยัง Router-East ซึ่งทำให้เกิดลูปที่หมดอายุ TTL ของแพกเก็ตก่อนการส่ง การลบเส้นทางที่ไม่จำเป็นทำให้ Router-West ส่งโดยตรง"
+        },
+        "vi": {
+            "title": "Yêu cầu Hỗ trợ Bị Kẹt Trong Quá trình Vận chuyển",
+            "story": "PC-Support đã cố gắng mở một trang trên Intranet-01 kể từ sáng nay, nhưng không bao giờ nhận được phản hồi. Yêu cầu dường như biến mất ở đâu đó trên đường đi.",
+            "objective": "Khôi phục truy cập HTTP từ PC-Support đến Intranet-01.",
+            "hints": [
+                "Gói tin từ PC-Support liên tục phản xạ và được báo cáo kẹt tại Router-East trước khi nó bao giờ tới Intranet-01.",
+                "Router-West giữ một tuyến đường tĩnh quay lại 10.0.3.0 gửi lưu lượng truy cập ra ngoài thay vì gửi nó cục bộ, do đó hai Router liên tục chuyển tiếp gói tin cho nhau cho đến khi hết hạn.",
+                "Trên Router-West, xóa tuyến đường tĩnh đến mạng 10.0.3.0 (mặt nạ 255.255.255.0) qua 10.0.8.1 để Router-West gửi trực tiếp đến phân đoạn cục bộ của riêng nó."
+            ],
+            "explanation": "Router chỉ nên có tuyến đường chỉ đến nơi khác cho các mạng không được kết nối trực tiếp. Ở đây Router-West có tuyến đường gửi lưu lượng truy cập cho mạng cục bộ của riêng nó quay lại Router-East, tạo ra một vòng lặp làm cạn kiệt TTL của gói tin trước khi gửi. Xóa tuyến đường không cần thiết cho phép Router-West gửi trực tiếp."
+        }
+    }
+}
