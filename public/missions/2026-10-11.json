@@ -1,0 +1,680 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-11",
+    "number": 21,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_default_gateway",
+        "missing_route"
+    ],
+    "concepts": [
+        "default-gateway",
+        "static-route"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.9.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.10.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.9.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.3.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.10.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.3.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.3.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.10.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.10.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.10.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "The Portal That Won't Load",
+            "story": "Right before a big client call, the branch office reports that PC-Dev can no longer reach Portal-01 at the other site. The team noticed it this morning and needs it fixed fast.",
+            "objective": "Restore a successful HTTP GET from PC-Dev to Portal-01.",
+            "hints": [
+                "The trail goes cold right at PC-Dev itself — its packets to Portal-01 never even make it onto the path toward Router-East.",
+                "PC-Dev is pointed at an address that belongs to the far server, not a router, so it has nowhere valid to send off-subnet traffic; also Router-West lacks an entry for returning traffic to PC-Dev's network.",
+                "Set PC-Dev's default gateway to 10.0.9.254, and add a static route on Router-West for 10.0.9.0/255.255.255.0 via 10.0.3.1 on port 0."
+            ],
+            "explanation": "Every device off your local subnet needs a default gateway pointing at an actual router, not at the destination server. And routers need explicit routes for networks they don't directly own — without one, return traffic has nowhere to go even if the first leg succeeds."
+        },
+        "ja": {
+            "title": "表示されないポータル",
+            "story": "大事なクライアントとの電話を控えたタイミングで、支社からPC-DevがPortal-01に接続できないとの報告がありました。今朝気づいたとのことで、早急な対応が必要です。",
+            "objective": "PC-DevからPortal-01へのHTTP GETが成功する状態に戻してください。",
+            "hints": [
+                "PC-Devの時点で経路が途切れています。Portal-01宛てのパケットがRouter-Eastへ向かう経路にすら乗っていません。",
+                "PC-Devのデフォルトゲートウェイがルーターではなく接続先のサーバー自身のアドレスに設定されているため、サブネット外への通信を送り出せません。また、Router-WestにはPC-Devのネットワークへ戻る経路の設定がありません。",
+                "PC-Devのデフォルトゲートウェイを10.0.9.254に設定してください。さらにRouter-Westに、10.0.9.0/255.255.255.0 を、ネクストホップ 10.0.3.1、ポート0で追加してください。"
+            ],
+            "explanation": "ローカルサブネットの外と通信する機器には、宛先サーバーではなく実際のルーターを指すデフォルトゲートウェイの設定が必要です。また、ルーターは自分が直接所有していないネットワークへの経路を明示的に持つ必要があります。これがないと、行きの通信が成功しても戻りの通信の行き先がなくなってしまいます。"
+        },
+        "zh-CN": {
+            "title": "无法加载的门户",
+            "story": "在重要客户电话会议开始前，分公司报告 PC-Dev 无法再连接到另一个站点的 Portal-01。团队今天早上发现了这个问题，需要立即修复。",
+            "objective": "恢复从 PC-Dev 到 Portal-01 的成功 HTTP GET 请求。",
+            "hints": [
+                "追踪在 PC-Dev 本身中断——它发往 Portal-01 的数据包甚至没有进入通向 Router-East 的路径。",
+                "PC-Dev 指向的地址属于远端 Server，而不是 Router，所以它没有有效的方式来发送站外流量；同时 Router-West 缺少返回流量到 PC-Dev 网络的条目。",
+                "设置 PC-Dev 的默认网关为 10.0.9.254，并在 Router-West 上添加静态路由：目标网络 10.0.9.0/255.255.255.0，下一跳 10.0.3.1，端口号 0。"
+            ],
+            "explanation": "您本地子网外的每个设备都需要一个指向实际 Router 的默认网关，而不是指向目标 Server。路由器需要为它们不直接拥有的网络设置明确的路由——没有这样的路由，即使第一段成功，返回流量也无处可去。"
+        },
+        "zh-TW": {
+            "title": "無法載入的入口網站",
+            "story": "在重要客戶電話會議開始前，分公司回報 PC-Dev 無法再連接到另一個站點的 Portal-01。團隊今天早上發現了這個問題，需要立即修復。",
+            "objective": "恢復從 PC-Dev 到 Portal-01 的成功 HTTP GET 請求。",
+            "hints": [
+                "追蹤在 PC-Dev 本身中斷——它發往 Portal-01 的封包甚至沒有進入通向 Router-East 的路徑。",
+                "PC-Dev 指向的位址屬於遠端 Server，而不是 Router，所以它沒有有效的方式來發送子網外流量；同時 Router-West 缺少返回流量到 PC-Dev 網路的條目。",
+                "設定 PC-Dev 的預設閘道為 10.0.9.254，並在 Router-West 上新增靜態路由：目的網路 10.0.9.0/255.255.255.0，下一跳 10.0.3.1，連接埠號 0。"
+            ],
+            "explanation": "您本地子網外的每個裝置都需要一個指向實際 Router 的預設閘道，而不是指向目的 Server。路由器需要為它們不直接擁有的網路設定明確的路由——沒有這樣的路由，即使第一段成功，返回流量也無處可去。"
+        },
+        "ko": {
+            "title": "로드되지 않는 포털",
+            "story": "중요한 고객 전화 회의 직전에 지사에서 PC-Dev가 다른 사이트의 Portal-01에 더 이상 도달할 수 없다고 보고했습니다. 팀이 오늘 아침에 이 문제를 발견했고 빠르게 해결해야 합니다.",
+            "objective": "PC-Dev에서 Portal-01으로의 HTTP GET 요청 복구",
+            "hints": [
+                "추적이 PC-Dev 자체에서 끝남 — Portal-01으로의 패킷이 Router-East로 향하는 경로에도 진입하지 않음.",
+                "PC-Dev가 라우터가 아닌 원격 Server의 주소를 가리키고 있어서 서브넷 외 트래픽을 보낼 유효한 경로가 없음; 또한 Router-West에는 PC-Dev 네트워크로 돌아오는 트래픽에 대한 항목이 없음.",
+                "PC-Dev의 기본 게이트웨이를 10.0.9.254로 설정하고, Router-West에 목적지 네트워크 10.0.9.0/255.255.255.0, 다음 홉 10.0.3.1, 포트 번호 0의 정적 경로를 추가."
+            ],
+            "explanation": "로컬 서브넷 외의 모든 장치는 목적지 Server가 아닌 실제 Router를 가리키는 기본 게이트웨이가 필요합니다. 라우터는 직접 관리하지 않는 네트워크에 대해 명시적인 경로가 필요함 — 이 경로가 없으면 첫 번째 구간이 성공해도 반환 트래픽이 갈 곳이 없습니다."
+        },
+        "es": {
+            "title": "El portal que no carga",
+            "story": "Justo antes de una importante llamada con el cliente, la sucursal reporta que PC-Dev ya no puede alcanzar Portal-01 en el otro sitio. El equipo lo notó esta mañana y necesita solucionarlo rápidamente.",
+            "objective": "Restaurar una solicitud HTTP GET exitosa desde PC-Dev a Portal-01.",
+            "hints": [
+                "El rastro se detiene en PC-Dev mismo — sus paquetes a Portal-01 ni siquiera llegan al camino hacia Router-East.",
+                "PC-Dev apunta a una dirección que pertenece al servidor remoto, no a un enrutador, por lo que no tiene forma válida de enviar tráfico fuera de su subred; además Router-West carece de una entrada para devolver tráfico a la red de PC-Dev.",
+                "Configura el Gateway predeterminado de PC-Dev a 10.0.9.254, y añade una ruta estática en Router-West para 10.0.9.0/255.255.255.0 con siguiente salto 10.0.3.1 en puerto 0."
+            ],
+            "explanation": "Cada dispositivo fuera de su subred local necesita un Gateway predeterminado apuntando a un Router real, no al servidor destino. Los enrutadores necesitan rutas explícitas para redes que no poseen directamente — sin una, el tráfico de retorno no tiene adónde ir aunque el primer tramo tenga éxito."
+        },
+        "pt-BR": {
+            "title": "O portal que não carrega",
+            "story": "Pouco antes de uma importante chamada com o cliente, a filial relata que PC-Dev não consegue mais alcançar Portal-01 no outro local. A equipe notou isto esta manhã e precisa resolver rapidamente.",
+            "objective": "Restaurar uma solicitação HTTP GET bem-sucedida de PC-Dev para Portal-01.",
+            "hints": [
+                "O rastro acaba no próprio PC-Dev — seus pacotes para Portal-01 nem mesmo chegam ao caminho em direção a Router-East.",
+                "PC-Dev aponta para um endereço que pertence ao Server remoto, não a um Router, então não tem forma válida de enviar tráfego fora da subrede; além disso Router-West não tem uma entrada para tráfego de retorno para a rede de PC-Dev.",
+                "Configure o Gateway padrão de PC-Dev para 10.0.9.254, e adicione uma rota estática em Router-West para 10.0.9.0/255.255.255.0 via 10.0.3.1 na porta 0."
+            ],
+            "explanation": "Todo dispositivo fora da sua subrede local precisa de um Gateway padrão apontando para um Router real, não para o servidor destino. Roteadores precisam de rotas explícitas para redes que não possuem diretamente — sem uma, o tráfego de retorno não tem para onde ir mesmo que o primeiro trecho tenha sucesso."
+        },
+        "de": {
+            "title": "Das Portal, das nicht lädt",
+            "story": "Kurz vor einem wichtigen Kundentermin berichtet die Filiale, dass PC-Dev Portal-01 in der anderen Niederlassung nicht mehr erreichen kann. Das Team hat es heute Morgen bemerkt und muss es schnell beheben.",
+            "objective": "Eine erfolgreiche HTTP GET-Anfrage von PC-Dev zu Portal-01 wiederherstellen.",
+            "hints": [
+                "Die Spur bricht direkt bei PC-Dev ab — seine Pakete zu Portal-01 schaffen es nicht einmal auf den Weg zu Router-East.",
+                "PC-Dev zeigt auf eine Adresse, die dem entfernten Server gehört, nicht auf einen Router, sodass es kein gültiges Ziel für Off-Subnet-Traffic hat; außerdem fehlt Router-West ein Eintrag für den Rückverkehr zu PC-Devs Netzwerk.",
+                "Setzen Sie den Standard-Gateway von PC-Dev auf 10.0.9.254 und fügen Sie auf Router-West eine statische Route für 10.0.9.0/255.255.255.0 via 10.0.3.1 auf Port 0 hinzu."
+            ],
+            "explanation": "Jedes Gerät außerhalb Ihres lokalen Subnetzes benötigt einen Standard-Gateway, der auf einen echten Router verweist, nicht auf den Zielserver. Und Router benötigen explizite Routen für Netzwerke, die sie nicht direkt besitzen — ohne eine solche Route hat der Rückverkehr nirgendwo hin, auch wenn die erste Etappe erfolgreich ist."
+        },
+        "fr": {
+            "title": "Le portail qui refuse de charger",
+            "story": "Juste avant un important appel client, la succursale signale que PC-Dev ne peut plus atteindre Portal-01 sur l'autre site. L'équipe l'a découvert ce matin et doit le corriger rapidement.",
+            "objective": "Rétablir une requête HTTP GET réussie de PC-Dev vers Portal-01.",
+            "hints": [
+                "La piste s'arrête net à PC-Dev lui-même — ses paquets vers Portal-01 n'atteignent même pas le chemin vers Router-East.",
+                "PC-Dev pointe vers une adresse appartenant au serveur distant, pas à un routeur, il n'a donc pas de destination valide pour le trafic hors-sous-réseau ; également Router-West n'a pas d'entrée pour le trafic retour vers le réseau de PC-Dev.",
+                "Définissez la Passerelle par défaut de PC-Dev sur 10.0.9.254 et ajoutez une route statique sur Router-West pour 10.0.9.0/255.255.255.0 via 10.0.3.1 sur le Numéro de port 0."
+            ],
+            "explanation": "Tout appareil hors de votre sous-réseau local a besoin d'une Passerelle par défaut pointant sur un vrai routeur, pas sur le serveur de destination. Les routeurs ont besoin de routes explicites pour les réseaux qu'ils ne possèdent pas directement — sans cela, le trafic retour n'a nulle part aller, même si la première étape réussit."
+        },
+        "hi": {
+            "title": "वह पोर्टल जो लोड नहीं हो रहा है",
+            "story": "एक महत्वपूर्ण क्लाइंट कॉल से ठीक पहले, शाखा कार्यालय की रिपोर्ट है कि PC-Dev दूसरी साइट पर Portal-01 तक नहीं पहुँच सकता। टीम को यह आज सुबह पता चला और इसे जल्दी ठीक करने की जरूरत है।",
+            "objective": "PC-Dev से Portal-01 के लिए एक सफल HTTP GET पुनः स्थापित करें।",
+            "hints": [
+                "ट्रेल PC-Dev पर ही रुक जाता है — Portal-01 के लिए इसके पैकेट Router-East की ओर के मार्ग पर भी नहीं जाते।",
+                "PC-Dev एक पते की ओर इशारा कर रहा है जो दूर सर्वर का है, राउटर का नहीं, इसलिए उसके पास सबनेट से बाहर ट्रैफिक के लिए कोई वैध गंतव्य नहीं है; साथ ही Router-West के पास PC-Dev के नेटवर्क में लौटने वाली ट्रैफिक के लिए कोई प्रविष्टि नहीं है।",
+                "PC-Dev का डिफ़ॉल्ट गेटवे 10.0.9.254 पर सेट करें, और Router-West पर 10.0.9.0/255.255.255.0 के लिए एक स्थैतिक मार्ग जोड़ें जो 10.0.3.1 के माध्यम से पोर्ट नंबर 0 पर हो।"
+            ],
+            "explanation": "आपके स्थानीय सबनेट के बाहर प्रत्येक डिवाइस को डिफ़ॉल्ट गेटवे की जरूरत है जो एक वास्तविक राउटर की ओर इशारा करे, गंतव्य सर्वर की नहीं। और राउटर को उन नेटवर्क के लिए स्पष्ट मार्गों की जरूरत है जिन्हें वे सीधे नहीं चलाते — इसके बिना, वापसी ट्रैफिक के पास कहीं नहीं जाना है भले ही पहला चरण सफल हो।"
+        },
+        "id": {
+            "title": "Portal yang Tidak Memuat",
+            "story": "Tepat sebelum panggilan klien penting, kantor cabang melaporkan bahwa PC-Dev tidak lagi dapat menjangkau Portal-01 di situs lain. Tim menyadarinya pagi ini dan perlu memperbaikinya dengan cepat.",
+            "objective": "Pulihkan permintaan HTTP GET yang berhasil dari PC-Dev ke Portal-01.",
+            "hints": [
+                "Jejaknya hilang tepat di PC-Dev sendiri — paket-paketnya ke Portal-01 bahkan tidak sampai ke jalan menuju Router-East.",
+                "PC-Dev menunjuk ke alamat yang milik server jauh, bukan router, jadi tidak memiliki tujuan yang valid untuk lalu lintas di luar subnet; juga Router-West tidak memiliki entri untuk lalu lintas kembali ke jaringan PC-Dev.",
+                "Atur Gateway Default PC-Dev ke 10.0.9.254, dan tambahkan rute statis pada Router-West untuk 10.0.9.0/255.255.255.0 via 10.0.3.1 pada Nomor port 0."
+            ],
+            "explanation": "Setiap perangkat di luar subnet lokal Anda memerlukan Gateway Default yang menunjuk ke router nyata, bukan server tujuan. Dan Router memerlukan rute eksplisit untuk jaringan yang tidak mereka miliki secara langsung — tanpa rute itu, lalu lintas kembali tidak memiliki tempat untuk pergi bahkan jika langkah pertama berhasil."
+        },
+        "ru": {
+            "title": "Портал, который не загружается",
+            "story": "Прямо перед важным звонком с клиентом филиал сообщает, что PC-Dev больше не может достичь Portal-01 на другом сайте. Команда заметила это утром и нуждается в быстром исправлении.",
+            "objective": "Восстановить успешный HTTP GET-запрос от PC-Dev к Portal-01.",
+            "hints": [
+                "След прерывается прямо на PC-Dev — его пакеты к Portal-01 даже не попадают на путь к Router-East.",
+                "PC-Dev указывает на адрес, принадлежащий удаленному серверу, а не маршрутизатору, поэтому у него нет действительного маршрута для трафика вне подсети; также Router-West не имеет записи для обратного трафика к сети PC-Dev.",
+                "Установите Шлюз по умолчанию PC-Dev на 10.0.9.254 и добавьте статический маршрут на Router-West для 10.0.9.0/255.255.255.0 через 10.0.3.1 на Номер порта 0."
+            ],
+            "explanation": "Каждое устройство вне вашей локальной подсети нуждается в Шлюзе по умолчанию, указывающем на реальный маршрутизатор, а не на целевой сервер. Маршрутизаторам нужны явные маршруты для сетей, которыми они не владеют напрямую — без них обратный трафик не имеет куда идти, даже если первый этап успешен."
+        },
+        "it": {
+            "title": "Il portale che non si carica",
+            "story": "Poco prima di una grande riunione con un cliente, l'ufficio filiale segnala che PC-Dev non riesce più a raggiungere Portal-01 dell'altro sito. Il team l'ha notato stamattina e ha bisogno di ripararlo subito.",
+            "objective": "Ripristinare un HTTP GET riuscito da PC-Dev a Portal-01.",
+            "hints": [
+                "La traccia si interrompe proprio a PC-Dev — i suoi pacchetti verso Portal-01 non raggiungono nemmeno il percorso verso Router-East.",
+                "PC-Dev è configurato su un indirizzo che appartiene al server remoto, non a un router, quindi non ha modo valido di inviare il traffico fuori dalla subnet; inoltre Router-West manca di una voce per il traffico di ritorno verso la rete di PC-Dev.",
+                "Imposta il Gateway predefinito di PC-Dev su 10.0.9.254 e aggiungi una route statica su Router-West per 10.0.9.0/255.255.255.0 via 10.0.3.1 sulla porta 0."
+            ],
+            "explanation": "Ogni dispositivo al di fuori della tua subnet locale ha bisogno di un Gateway predefinito che punta a un router vero, non al server di destinazione. E i router hanno bisogno di rotte esplicite per le reti che non possiedono direttamente — senza una, il traffico di ritorno non ha un percorso valido anche se la prima parte riesce."
+        },
+        "tr": {
+            "title": "Yüklenmeyenler Portalı",
+            "story": "Büyük bir müşteri toplantısından hemen önce, şube ofisi PC-Dev'in artık diğer sitedeki Portal-01'e ulaşamadığını bildiriyor. Ekip bunu bu sabah fark etti ve hızlıca düzeltmesi gerekiyor.",
+            "objective": "PC-Dev'den Portal-01'e başarılı bir HTTP GET gerçekleştirin.",
+            "hints": [
+                "İz tam PC-Dev'de soğuyor — Portal-01'e gönderilen paketleri Router-East yoluna bile ulaşmıyor.",
+                "PC-Dev, uzak sunucuya ait bir adrese işaret ediyor, bir yönlendiriciye değil, bu nedenle subnet dışı trafiği göndermek için geçerli bir yeri yok; ayrıca Router-West, PC-Dev'in ağına geri dönen trafiğe yönelik bir girişi eksik.",
+                "PC-Dev'in Varsayılan ağ geçidi olarak 10.0.9.254 ayarlayın ve Router-West üzerinde 10.0.9.0/255.255.255.0 için 10.0.3.1 Sonraki sıçrama port 0 ile statik bir rota ekleyin."
+            ],
+            "explanation": "Yerel ağınızın dışındaki her cihazın, hedef sunucuya değil gerçek bir yönlendiriciye işaret eden bir Varsayılan ağ geçidine ihtiyacı vardır. Ve yönlendiriciler doğrudan sahip olmadıkları ağlar için açık yönlendirmelere ihtiyaç duyar — birisi olmadan, ilk aşama başarılı olsa bile geri dönen trafiğin gidecek yeri yoktur."
+        },
+        "th": {
+            "title": "พอร์ทัลที่ไม่โหลด",
+            "story": "ก่อนการประชุมไคลเอนต์ขนาดใหญ่ เสียงจากสาขาทำการรายงานว่า PC-Dev ไม่สามารถเข้าถึง Portal-01 ที่ไซต์อื่นได้อีกต่อไป ทีมสังเกตเห็นเรื่องนี้เมื่อเช้านี้และต้องแก้ไขอย่างรวดเร็ว",
+            "objective": "คืนค่าการส่ง HTTP GET ที่สำเร็จจาก PC-Dev ไปยัง Portal-01",
+            "hints": [
+                "หลักฐานหยุดลงที่ PC-Dev เอง — แพกเก็ตของมันไปยัง Portal-01 ไม่ได้ลงจอดบนเส้นทางไปยัง Router-East",
+                "PC-Dev ชี้ไปที่ที่อยู่ที่เป็นของเซิร์ฟเวอร์ไกล ไม่ใช่เราเตอร์ ดังนั้นจึงไม่มีวิธีที่ถูกต้องในการส่งการจราจรนอกซับเน็ต นอกจากนี้ Router-West ยังขาดรายการสำหรับการจราจรกลับไปยังเครือข่าย PC-Dev",
+                "ตั้งเกตเวย์เริ่มต้นของ PC-Dev เป็น 10.0.9.254 และเพิ่มเส้นทางแบบคงที่บน Router-West สำหรับ 10.0.9.0/255.255.255.0 ผ่าน 10.0.3.1 ที่พอร์ต 0"
+            ],
+            "explanation": "ทุกอุปกรณ์นอกซับเน็ตท้องถิ่นของคุณต้องมีเกตเวย์เริ่มต้นที่ชี้ไปยังเราเตอร์จริง ไม่ใช่เซิร์ฟเวอร์ปลายทาง และเราเตอร์ต้องการเส้นทางที่ชัดเจนสำหรับเครือข่ายที่ไม่ได้เป็นเจ้าของโดยตรง — หากไม่มี การจราจรกลับจึงไม่มีที่ไป แม้ว่าขาแรกจะสำเร็จ"
+        },
+        "vi": {
+            "title": "Cổng thông tin không tải được",
+            "story": "Ngay trước cuộc gọi khách hàng lớn, chi nhánh báo cáo rằng PC-Dev không còn có thể truy cập Portal-01 ở trang web khác. Nhóm phát hiện ra điều này sáng nay và cần sửa chữa nhanh chóng.",
+            "objective": "Khôi phục HTTP GET thành công từ PC-Dev tới Portal-01.",
+            "hints": [
+                "Dấu vết dừng lại ngay tại PC-Dev — các gói tin của nó tới Portal-01 thậm chí không được gửi lên đường dẫn tới Router-East.",
+                "PC-Dev được chỉ tới một địa chỉ thuộc máy chủ ở xa, không phải bộ định tuyến, vì vậy nó không có cách hợp lệ để gửi lưu lượng ngoài mạng con; ngoài ra Router-West thiếu mục để trả lại lưu lượng tới mạng của PC-Dev.",
+                "Đặt Cổng mặc định của PC-Dev thành 10.0.9.254 và thêm tuyến tĩnh trên Router-West cho 10.0.9.0/255.255.255.0 qua 10.0.3.1 trên cổng 0."
+            ],
+            "explanation": "Mọi thiết bị ngoài mạng con cục bộ của bạn đều cần một Cổng mặc định trỏ tới một bộ định tuyến thực tế, không phải máy chủ đích. Và các bộ định tuyến cần các tuyến rõ ràng cho các mạng mà chúng không trực tiếp sở hữu — nếu không có, lưu lượng trả lại sẽ không có đường đi ngay cả khi chân đầu tiên thành công."
+        }
+    }
+}
