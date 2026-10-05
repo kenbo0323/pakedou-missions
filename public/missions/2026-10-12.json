@@ -1,0 +1,502 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-12",
+    "number": 22,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "internet_edge",
+    "faultIds": [
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.11.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.11.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "203.0.113.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-internet1": {
+                "id": "dev-internet1",
+                "type": "INTERNET",
+                "name": "shop.example.net",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-internet1-p0",
+                        "index": 0,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "203.0.113.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p1",
+                        "index": 1,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p2",
+                        "index": 2,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p3",
+                        "index": 3,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": [],
+                    "domainName": "shop.example.net"
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-internet1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-internet1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-internet1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-internet1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Sales Can't Reach the Shop Site",
+            "story": "A sales rep at PC-Support reports the company shop website won't load at all today, no matter how many times they try.",
+            "objective": "Get PC-Support to successfully load shop.example.net.",
+            "hints": [
+                "The packet never even leaves PC-Support — it stops right there before reaching Switch-1F.",
+                "PC-Support has no default gateway configured, so it has no way to send traffic beyond its own local network.",
+                "On PC-Support, set the default gateway to 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Any device that talks to addresses outside its own subnet needs a default gateway pointing to a router. Without one, the device has no idea where to send traffic destined for the Internet, so it drops the packet immediately instead of forwarding it anywhere."
+        },
+        "ja": {
+            "title": "営業担当がショップサイトに接続できない",
+            "story": "PC-Supportを使う営業担当者から、今日は何度試しても会社のショップウェブサイトがまったく読み込めないと報告がありました。",
+            "objective": "PC-Supportからshop.example.netを正常に読み込めるようにする。",
+            "hints": [
+                "パケットはPC-Supportから一歩も出ておらず、Switch-1Fに届く前にそこで止まっています。",
+                "PC-Supportにはデフォルトゲートウェイが設定されていないため、自分のローカルネットワークの外にトラフィックを送る方法がありません。",
+                "PC-Supportで、デフォルトゲートウェイを10.0.11.254(Router-HQ)に設定してください。"
+            ],
+            "explanation": "自分のサブネットの外にあるアドレスと通信する機器には、ルーターを指すデフォルトゲートウェイの設定が必要です。これが設定されていないと、機器はインターネット宛てのトラフィックをどこに送ればよいか分からず、転送されることなくすぐにパケットを破棄してしまいます。"
+        },
+        "zh-CN": {
+            "title": "销售人员无法访问店铺网站",
+            "story": "PC-Support 的销售代表报告说公司店铺网站今天完全无法加载，无论尝试多少次都不行。",
+            "objective": "让 PC-Support 成功加载 shop.example.net。",
+            "hints": [
+                "数据包根本没有离开 PC-Support — 在到达 Switch-1F 之前就停止了。",
+                "PC-Support 没有配置默认网关，所以无法将流量发送到本地网络以外的地方。",
+                "在 PC-Support 上，将默认网关设置为 10.0.11.254（Router-HQ）。"
+            ],
+            "explanation": "任何与其自身子网以外地址通信的设备都需要一个指向 Router 的默认网关。没有默认网关，设备就不知道如何发送目标为 Internet 的流量，所以会立即丢弃数据包，而不是转发到任何地方。"
+        },
+        "zh-TW": {
+            "title": "銷售人員無法存取店鋪網站",
+            "story": "PC-Support 的銷售代表回報說公司店鋪網站今天完全無法載入，無論嘗試多少次都不行。",
+            "objective": "讓 PC-Support 成功載入 shop.example.net。",
+            "hints": [
+                "封包根本沒有離開 PC-Support — 在抵達 Switch-1F 之前就停止了。",
+                "PC-Support 沒有設定預設閘道，所以無法將流量傳送到本機網路以外的地方。",
+                "在 PC-Support 上，將預設閘道設定為 10.0.11.254（Router-HQ）。"
+            ],
+            "explanation": "任何與其自身子網以外位址通訊的裝置都需要一個指向 Router 的預設閘道。沒有預設閘道，裝置就不知道如何傳送目的地為 Internet 的流量，所以會立即捨棄封包，而不是轉發到任何地方。"
+        },
+        "ko": {
+            "title": "판매사원이 매장 사이트에 접속할 수 없음",
+            "story": "PC-Support의 판매사원이 회사 매장 웹사이트가 오늘 전혀 로드되지 않는다고 보고했습니다. 몇 번을 시도해도 마찬가지입니다.",
+            "objective": "PC-Support에서 shop.example.net을 성공적으로 로드하도록 합니다.",
+            "hints": [
+                "패킷이 PC-Support에서 벗어나지 못했습니다 — Switch-1F에 도달하기 전에 멈췄습니다.",
+                "PC-Support에는 기본 게이트웨이가 설정되지 않아서 자신의 로컬 네트워크 밖으로 트래픽을 보낼 방법이 없습니다.",
+                "PC-Support에서 기본 게이트웨이를 10.0.11.254(Router-HQ)로 설정합니다."
+            ],
+            "explanation": "자신의 서브넷 외부 주소와 통신하는 모든 장치에는 Router를 가리키는 기본 게이트웨이가 필요합니다. 기본 게이트웨이가 없으면 장치는 Internet 목적지의 트래픽을 어디로 보낼지 알 수 없으므로 어디로도 포워드하지 않고 즉시 패킷을 버립니다."
+        },
+        "es": {
+            "title": "El Personal de Ventas No Puede Acceder al Sitio de la Tienda",
+            "story": "Un representante de ventas en PC-Support reporta que el sitio web de la tienda de la empresa no carga en absoluto hoy, sin importar cuántas veces lo intente.",
+            "objective": "Lograr que PC-Support cargue exitosamente shop.example.net.",
+            "hints": [
+                "El paquete nunca ni siquiera sale de PC-Support — se detiene antes de llegar a Switch-1F.",
+                "PC-Support no tiene configurado el Gateway predeterminado, por lo que no hay forma de enviar tráfico más allá de su red local.",
+                "En PC-Support, establezca el Gateway predeterminado en 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Cualquier dispositivo que se comunique con direcciones fuera de su propia subred necesita un Gateway predeterminado que apunte a un Router. Sin uno, el dispositivo no tiene idea de dónde enviar el tráfico destinado a Internet, así que descarta el paquete inmediatamente en lugar de reenviarlo a cualquier lugar."
+        },
+        "pt-BR": {
+            "title": "Vendedor Não Consegue Acessar o Site da Loja",
+            "story": "Um representante de vendas em PC-Support relata que o site da loja da empresa não carrega nada hoje, não importa quantas vezes tente.",
+            "objective": "Fazer com que PC-Support carregue com sucesso shop.example.net.",
+            "hints": [
+                "O pacote nunca sequer sai de PC-Support — ele para ali antes de chegar a Switch-1F.",
+                "PC-Support não tem um Gateway padrão configurado, então não há forma de enviar tráfego além da sua rede local.",
+                "Em PC-Support, defina o Gateway padrão para 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Qualquer dispositivo que se comunica com endereços fora de sua própria subnet precisa de um Gateway padrão apontando para um Router. Sem um, o dispositivo não sabe para onde enviar o tráfego destinado à Internet, então descarta o pacote imediatamente em vez de encaminhá-lo para qualquer lugar."
+        },
+        "de": {
+            "title": "Verkaufsabteilung kann die Shop-Website nicht erreichen",
+            "story": "Ein Mitarbeiter der Verkaufsabteilung bei PC-Support meldet, dass die Unternehmens-Shop-Website heute überhaupt nicht lädt, egal wie oft er es versucht.",
+            "objective": "PC-Support muss shop.example.net erfolgreich laden können.",
+            "hints": [
+                "Das Paket verlässt PC-Support nie — es bleibt dort stehen, bevor es Switch-1F erreicht.",
+                "PC-Support hat kein Standard-Gateway konfiguriert, daher kann es keinen Datenverkehr jenseits seines lokalen Netzwerks senden.",
+                "Stellen Sie auf PC-Support das Standard-Gateway auf 10.0.11.254 (Router-HQ) ein."
+            ],
+            "explanation": "Jedes Gerät, das mit Adressen außerhalb seines eigenen Subnetzes kommuniziert, benötigt ein Standard-Gateway, das auf einen Router zeigt. Ohne ein solches Gateway weiß das Gerät nicht, wohin es den Datenverkehr für das Internet senden soll, daher verwirft es das Paket sofort, statt es irgendwohin weiterzuleiten."
+        },
+        "fr": {
+            "title": "Les Ventes ne peuvent pas accéder au site de la boutique",
+            "story": "Un représentant des ventes à PC-Support signale que le site e-commerce de l'entreprise ne se charge pas du tout aujourd'hui, peu importe combien de fois il essaie.",
+            "objective": "PC-Support doit charger avec succès shop.example.net.",
+            "hints": [
+                "Le paquet ne quitte jamais PC-Support — il s'arrête là avant de rejoindre Switch-1F.",
+                "PC-Support n'a pas de passerelle par défaut configurée, il ne peut donc envoyer de trafic au-delà de son propre réseau local.",
+                "Sur PC-Support, réglez la passerelle par défaut sur 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Tout appareil qui communique avec des adresses en dehors de son propre sous-réseau a besoin d'une passerelle par défaut pointant vers un routeur. Sans elle, l'appareil ne sait pas où envoyer le trafic destiné à Internet, il abandonne donc le paquet immédiatement au lieu de le transférer ailleurs."
+        },
+        "hi": {
+            "title": "बिक्रय दल शॉप साइट तक नहीं पहुंच सकता",
+            "story": "PC-Support में एक बिक्रय प्रतिनिधि रिपोर्ट करता है कि कंपनी की शॉप वेबसाइट आज बिल्कुल नहीं लोड हो रही है, भले ही वह कितनी भी बार कोशिश करे।",
+            "objective": "PC-Support को shop.example.net को सफलतापूर्वक लोड करना चाहिए।",
+            "hints": [
+                "पैकेट PC-Support को कभी नहीं छोड़ता — यह Switch-1F तक पहुंचने से पहले वहीं रुक जाता है।",
+                "PC-Support के पास कोई डिफ़ॉल्ट गेटवे कॉन्फ़िगर नहीं है, इसलिए यह अपने स्थानीय नेटवर्क से परे ट्रैफ़िक नहीं भेज सकता।",
+                "PC-Support पर, डिफ़ॉल्ट गेटवे को 10.0.11.254 (Router-HQ) पर सेट करें।"
+            ],
+            "explanation": "कोई भी डिवाइस जो अपने स्वयं की सबनेट के बाहर के पते से संचार करता है, उसे एक डिफ़ॉल्ट गेटवे की आवश्यकता होती है जो एक राउटर की ओर इशारा करता है। इसके बिना, डिवाइस को पता नहीं होता कि इंटरनेट के लिए ट्रैफ़िक कहां भेजना है, इसलिए यह पैकेट को तुरंत छोड़ देता है और कहीं और भेजता नहीं है।"
+        },
+        "id": {
+            "title": "Penjualan Tidak Dapat Mengakses Situs Toko",
+            "story": "Seorang perwakilan penjualan di PC-Support melaporkan bahwa situs toko perusahaan tidak mau dimuat sama sekali hari ini, tidak peduli berapa kali mereka mencoba.",
+            "objective": "PC-Support harus berhasil memuat shop.example.net.",
+            "hints": [
+                "Paket tidak pernah meninggalkan PC-Support — paket berhenti di sana sebelum mencapai Switch-1F.",
+                "PC-Support tidak memiliki Gateway Default yang dikonfigurasi, jadi tidak dapat mengirim lalu lintas di luar jaringan lokalnya.",
+                "Di PC-Support, atur Gateway Default ke 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Setiap perangkat yang berkomunikasi dengan alamat di luar subnetnya sendiri memerlukan Gateway Default yang menunjuk ke router. Tanpa satu, perangkat tidak tahu ke mana mengirim lalu lintas yang ditujukan untuk Internet, sehingga langsung membuang paket daripada meneruskannya ke mana pun."
+        },
+        "ru": {
+            "title": "Отдел продаж не может получить доступ к сайту магазина",
+            "story": "Менеджер по продажам из PC-Support сообщает, что корпоративный интернет-магазин вообще не загружается сегодня, сколько бы раз ни пытались.",
+            "objective": "PC-Support должен успешно загружать shop.example.net.",
+            "hints": [
+                "Пакет никогда не покидает PC-Support — он остаётся там, не доходя до Switch-1F.",
+                "На PC-Support не настроен Шлюз по умолчанию, поэтому устройство не может отправлять трафик за пределы своей локальной сети.",
+                "На PC-Support установите Шлюз по умолчанию на 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Любому устройству, которое связывается с адресами вне своей собственной подсети, необходим Шлюз по умолчанию, указывающий на маршрутизатор. Без него устройство не знает, куда отправить трафик, предназначенный для Интернета, поэтому оно сразу отбрасывает пакет вместо того, чтобы перенаправить его куда-либо."
+        },
+        "it": {
+            "title": "Le Vendite Non Riescono a Raggiungere il Sito Shop",
+            "story": "Un agente di vendita di PC-Support segnala che il sito shop aziendale non carica affatto oggi, indipendentemente da quanti tentativi fa.",
+            "objective": "Far caricare a PC-Support shop.example.net con successo.",
+            "hints": [
+                "Il pacchetto non lascia nemmeno PC-Support — si ferma qui prima di raggiungere Switch-1F.",
+                "PC-Support non ha un Gateway predefinito configurato, quindi non ha modo di inviare traffico oltre la sua rete locale.",
+                "Su PC-Support, imposta il Gateway predefinito su 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Qualsiasi dispositivo che comunica con indirizzi al di fuori della propria subnet ha bisogno di un Gateway predefinito che punti a un router. Senza uno, il dispositivo non sa dove inviare il traffico destinato a Internet, quindi scarta immediatamente il pacchetto invece di inoltarlo da qualche parte."
+        },
+        "tr": {
+            "title": "Satış Ekibi Shop Site'ına Erişemiyor",
+            "story": "PC-Support adresindeki bir satış temsilcisi, şirket shop web sitesinin bugün hiç yüklenmediğini ve kaç kez denerse densin sorun devam ettiğini bildiriyor.",
+            "objective": "PC-Support'un shop.example.net sitesini başarıyla yüklemesini sağlayın.",
+            "hints": [
+                "Paket PC-Support'tan çıkmıyor bile — Switch-1F'e ulaşmadan orada duruyor.",
+                "PC-Support'un yapılandırılmış bir varsayılan ağ geçidi yok, bu nedenle trafiği kendi yerel ağının ötesine göndermenin bir yolu yok.",
+                "PC-Support'ta, varsayılan ağ geçidini 10.0.11.254 (Router-HQ) olarak ayarlayın."
+            ],
+            "explanation": "Kendi alt ağı dışındaki adreslerle iletişim kuran herhangi bir cihaz, bir yönlendiriciye işaret eden bir varsayılan ağ geçidine ihtiyaç duyar. Biri olmadan, cihaz İnternet'e giden trafiği nereye göndereceğini bilemez, bu nedenle paketi herhangi bir yere iletmek yerine hemen atar."
+        },
+        "th": {
+            "title": "ส่วนขายไม่สามารถเข้าไปยังเว็บไซต์ร้านค้าได้",
+            "story": "ตัวแทนขายจาก PC-Support รายงานว่าเว็บไซต์ร้านค้าของบริษัทไม่สามารถโหลดได้เลยวันนี้ ไม่ว่าจะพยายามกี่ครั้งก็ตาม",
+            "objective": "ให้ PC-Support โหลด shop.example.net ได้สำเร็จ",
+            "hints": [
+                "แพ็กเก็ตไม่ออกจาก PC-Support เลย — มันหยุดอยู่ตรงนี้ก่อนจะถึง Switch-1F",
+                "PC-Support ไม่มีการตั้งค่าเกตเวย์เริ่มต้น จึงไม่มีวิธีส่งปริมาณข้อมูลไปนอกเครือข่ายท้องถิ่น",
+                "ใน PC-Support ให้ตั้งค่าเกตเวย์เริ่มต้นเป็น 10.0.11.254 (Router-HQ)"
+            ],
+            "explanation": "อุปกรณ์ใดที่ติดต่อกับที่อยู่นอกสาบเครือข่ายของตัวเองต้องมีเกตเวย์เริ่มต้นที่ชี้ไปยังเราเตอร์ หากไม่มี อุปกรณ์จะไม่รู้ว่าจะส่งปริมาณข้อมูลที่มีปลายทางเป็นอินเทอร์เน็ตไปที่ใด จึงลบแพ็กเก็ตทันทีแทนการส่งต่อไปไหนสักแห่ง"
+        },
+        "vi": {
+            "title": "Bộ Phận Bán Hàng Không Thể Truy Cập Trang Web Shop",
+            "story": "Một đại diện bán hàng tại PC-Support báo cáo rằng trang web shop của công ty không tải được hôm nay, bất kể cố gắng bao nhiêu lần.",
+            "objective": "Giúp PC-Support tải shop.example.net thành công.",
+            "hints": [
+                "Gói tin không rời khỏi PC-Support — nó dừng ngay tại đây trước khi đến Switch-1F.",
+                "PC-Support không có Cổng mặc định được cấu hình, vì vậy nó không có cách nào để gửi lưu lượng truy cập ra ngoài mạng cục bộ của nó.",
+                "Trên PC-Support, hãy đặt cổng mặc định thành 10.0.11.254 (Router-HQ)."
+            ],
+            "explanation": "Bất kỳ thiết bị nào giao tiếp với các địa chỉ ngoài subnet của nó đều cần một cổng mặc định trỏ đến bộ định tuyến. Nếu không có, thiết bị không biết gửi lưu lượng truy cập dành cho Internet đến đâu, vì vậy nó sẽ loại bỏ gói tin ngay lập tức thay vì chuyển tiếp nó đến bất kỳ đâu."
+        }
+    }
+}
