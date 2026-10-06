@@ -1,0 +1,561 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-13",
+    "number": 23,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "cable_unplugged"
+    ],
+    "concepts": [
+        "physical-link"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.19.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.19.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.19.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.19.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.19.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.20.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.20.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.20.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "No Response from the Portal",
+            "story": "Staff at PC-Sales and PC-Lab report that the check-in portal has been completely unreachable all morning — no web page loads and no ping gets a response.",
+            "objective": "Restore HTTP access from PC-Sales to Portal-01 and ping replies from PC-Lab to Portal-01.",
+            "hints": [
+                "Both PCs' packets never leave the office switch — they stall at Switch-1F trying to reach the router.",
+                "Switch-1F can't find Router-HQ's address because the physical link between the switch and the router is down.",
+                "Connect a cable between Switch-1F and Router-HQ to restore the link."
+            ],
+            "explanation": "An ARP timeout for the gateway address usually points to a broken physical link to that gateway, not a wrong IP setting. Check cable connections between the switch and the router before touching routes or addresses."
+        },
+        "ja": {
+            "title": "ポータルから応答がありません",
+            "story": "PC-SalesとPC-Labのスタッフから、チェックインポータルが朝からずっとつながらないと報告がありました。Webページも開かず、pingにも応答がありません。",
+            "objective": "PC-SalesからPortal-01へのHTTPアクセスと、PC-LabからPortal-01へのping応答を復旧させてください。",
+            "hints": [
+                "両方のPCからのパケットは、オフィスのスイッチから先に進めていません。Switch-1Fでルーターへ向かおうとして止まっています。",
+                "Switch-1Fがスイッチとルーター間の物理リンクがダウンしているため、Router-HQのアドレスを見つけられません。",
+                "Switch-1FとRouter-HQの間にケーブルを接続して、リンクを復旧させてください。"
+            ],
+            "explanation": "ゲートウェイアドレスへのARPタイムアウトは、多くの場合IP設定の誤りではなく、そのゲートウェイへの物理リンクの断線を示しています。ルートやアドレスを変更する前に、スイッチとルーターの間のケーブル接続を確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "门户网站无响应",
+            "story": "PC-Sales 和 PC-Lab 的员工报告说，签到门户网站整个上午都无法访问——无法加载网页，也没有收到任何 ping 响应。",
+            "objective": "恢复从 PC-Sales 到 Portal-01 的 HTTP 访问，并恢复从 PC-Lab 到 Portal-01 的 ping 回复。",
+            "hints": [
+                "两台电脑的数据包永远无法离开办公室交换机——它们卡在 Switch-1F，试图到达 Router-HQ。",
+                "Switch-1F 无法找到 Router-HQ 的地址，因为交换机和路由器之间的物理链路已断开。",
+                "在 Switch-1F 和 Router-HQ 之间连接一条网线，以恢复链路。"
+            ],
+            "explanation": "网关地址的 ARP 超时通常表示到该网关的物理链路断裂，而不是 IP 设置错误。在修改路由或地址之前，先检查交换机和路由器之间的网线连接。"
+        },
+        "zh-TW": {
+            "title": "入口網站無法回應",
+            "story": "PC-Sales 和 PC-Lab 的員工回報簽到入口網站整個上午都無法訪問——無法載入網頁，也收不到任何 ping 回應。",
+            "objective": "恢復從 PC-Sales 到 Portal-01 的 HTTP 存取，並恢復從 PC-Lab 到 Portal-01 的 ping 回覆。",
+            "hints": [
+                "兩台電腦的封包永遠無法離開辦公室交換機——它們卡在 Switch-1F，試圖到達 Router-HQ。",
+                "Switch-1F 無法找到 Router-HQ 的位址，因為交換機和路由器之間的實體連結已中斷。",
+                "在 Switch-1F 和 Router-HQ 之間連接一條網線，以恢復連結。"
+            ],
+            "explanation": "閘道位址的 ARP 逾時通常表示到該閘道的實體連結中斷，而非 IP 設定錯誤。在修改路由或位址之前，先檢查交換機和路由器之間的網線連接。"
+        },
+        "ko": {
+            "title": "포탈 응답 없음",
+            "story": "PC-Sales 및 PC-Lab의 직원들이 체크인 포탈이 오전 내내 완전히 접근 불가능하다고 보고했습니다. 웹페이지가 로드되지 않고 ping 응답도 없습니다.",
+            "objective": "PC-Sales에서 Portal-01로의 HTTP 액세스를 복원하고 PC-Lab에서 Portal-01로의 ping 응답을 복원하세요.",
+            "hints": [
+                "두 PC의 패킷이 사무실 스위치를 떠나지 못합니다. Switch-1F에서 Router-HQ에 도달하려다가 멈춰 있습니다.",
+                "Switch-1F이 Router-HQ의 주소를 찾을 수 없습니다. 스위치와 라우터 사이의 물리적 링크가 단절되어 있기 때문입니다.",
+                "Switch-1F과 Router-HQ 사이에 케이블을 연결하여 링크를 복원하세요."
+            ],
+            "explanation": "게이트웨이 주소의 ARP 타임아웃은 보통 IP 설정 오류가 아닌 그 게이트웨이로의 물리적 링크 단절을 나타냅니다. 경로나 주소를 변경하기 전에 스위치와 라우터 사이의 케이블 연결을 먼저 확인하세요."
+        },
+        "es": {
+            "title": "Sin respuesta del portal",
+            "story": "El personal de PC-Sales y PC-Lab reporta que el portal de registro ha sido completamente inaccesible durante toda la mañana — no se carga ninguna página web y no se recibe respuesta a ningún ping.",
+            "objective": "Restaurar acceso HTTP desde PC-Sales a Portal-01 y respuestas ping desde PC-Lab a Portal-01.",
+            "hints": [
+                "Los paquetes de ambas PCs nunca salen del switch de oficina — se estancan en Switch-1F intentando llegar al Router-HQ.",
+                "Switch-1F no puede encontrar la dirección de Router-HQ porque el enlace físico entre el switch y el router está caído.",
+                "Conecta un cable entre Switch-1F y Router-HQ para restaurar el enlace."
+            ],
+            "explanation": "Un tiempo de espera ARP para la dirección del gateway usualmente indica un enlace físico roto a ese gateway, no una configuración de IP incorrecta. Verifica las conexiones de cable entre el switch y el router antes de cambiar rutas o direcciones."
+        },
+        "pt-BR": {
+            "title": "Nenhuma resposta do portal",
+            "story": "Funcionários de PC-Sales e PC-Lab relatam que o portal de check-in ficou completamente inacessível o tempo todo — nenhuma página web carrega e nenhum ping recebe resposta.",
+            "objective": "Restaurar acesso HTTP de PC-Sales para Portal-01 e respostas de ping de PC-Lab para Portal-01.",
+            "hints": [
+                "Os pacotes de ambos os PCs nunca saem do switch do escritório — eles travam em Switch-1F tentando alcançar o Router-HQ.",
+                "Switch-1F não consegue encontrar o endereço do Router-HQ porque o link físico entre o switch e o router está desconectado.",
+                "Conecte um cabo entre Switch-1F e Router-HQ para restaurar o link."
+            ],
+            "explanation": "Um tempo limite de ARP para o endereço do gateway geralmente indica um link físico quebrado para esse gateway, não uma configuração de IP incorreta. Verifique as conexões de cabo entre o switch e o router antes de alterar rotas ou endereços."
+        },
+        "de": {
+            "title": "Keine Antwort vom Portal",
+            "story": "Mitarbeiter bei PC-Sales und PC-Lab berichten, dass das Check-in-Portal den ganzen Morgen über völlig unerreichbar ist – es wird keine Webseite geladen und keine Ping-Anfrage erhält eine Antwort.",
+            "objective": "Stellen Sie HTTP-Zugriff von PC-Sales auf Portal-01 und Ping-Antworten von PC-Lab auf Portal-01 her.",
+            "hints": [
+                "Die Pakete beider PCs verlassen den Office-Switch nie – sie bleiben bei Switch-1F stecken und versuchen, Router-HQ zu erreichen.",
+                "Switch-1F kann die Adresse von Router-HQ nicht finden, weil die physische Verbindung zwischen Switch und Router unterbrochen ist.",
+                "Verbinden Sie ein Kabel zwischen Switch-1F und Router-HQ, um die Verbindung wiederherzustellen."
+            ],
+            "explanation": "Ein ARP-Timeout für die Standard-Gateway-Adresse deutet normalerweise auf eine unterbrochene physische Verbindung zu diesem Gateway hin, nicht auf eine falsche IP-Einstellung. Überprüfen Sie die Kabelverbindungen zwischen Switch und Router, bevor Sie Routen oder Adressen ändern."
+        },
+        "fr": {
+            "title": "Pas de réponse du portail",
+            "story": "Le personnel de PC-Sales et PC-Lab signale que le portail de check-in est complètement inaccessible toute la matinée – aucune page web ne se charge et aucun ping n'obtient de réponse.",
+            "objective": "Rétablir l'accès HTTP de PC-Sales à Portal-01 et les réponses de ping de PC-Lab à Portal-01.",
+            "hints": [
+                "Les paquets des deux PC ne quittent jamais le switch du bureau – ils restent bloqués à Switch-1F en essayant d'atteindre le routeur.",
+                "Switch-1F ne peut pas trouver l'adresse de Router-HQ car le lien physique entre le switch et le routeur est rompu.",
+                "Connectez un câble entre Switch-1F et Router-HQ pour rétablir le lien."
+            ],
+            "explanation": "Une expiration d'ARP pour l'adresse de Passerelle par défaut indique généralement une liaison physique interrompue vers cette passerelle, et non un paramètre d'adresse IP incorrect. Vérifiez les connexions par câble entre le switch et le routeur avant de modifier les routes ou les adresses."
+        },
+        "hi": {
+            "title": "पोर्टल से कोई प्रतिक्रिया नहीं",
+            "story": "PC-Sales और PC-Lab के कर्मचारियों ने सूचित किया कि चेक-इन पोर्टल पूरी सुबह पूरी तरह से अप्राप्य है – कोई वेब पेज लोड नहीं हो रहा है और कोई ping प्रतिक्रिया नहीं मिल रहा है।",
+            "objective": "PC-Sales से Portal-01 तक HTTP पहुंच और PC-Lab से Portal-01 तक ping प्रतिक्रियाएं बहाल करें।",
+            "hints": [
+                "दोनों PCs के पैकेट Office स्विच को कभी नहीं छोड़ते – वे Switch-1F पर रुक जाते हैं और Router-HQ तक पहुंचने की कोशिश करते हैं।",
+                "Switch-1F Router-HQ के पते को नहीं खोज सकता क्योंकि स्विच और Router के बीच भौतिक कड़ी टूट गई है।",
+                "Switch-1F और Router-HQ के बीच केबल को जोड़कर लिंक को बहाल करें।"
+            ],
+            "explanation": "डिफ़ॉल्ट गेटवे पते के लिए ARP टाइमआउट आमतौर पर उस गेटवे के लिए एक टूटी हुई भौतिक कड़ी को इंगित करता है, न कि गलत IP सेटिंग को। मार्गों या पतों को बदलने से पहले स्विच और Router के बीच केबल कनेक्शन को जांचें।"
+        },
+        "id": {
+            "title": "Tidak Ada Respons dari Portal",
+            "story": "Staf di PC-Sales dan PC-Lab melaporkan bahwa portal check-in sama sekali tidak dapat dijangkau sepanjang pagi – tidak ada halaman web yang muat dan tidak ada ping yang mendapat respons.",
+            "objective": "Pulihkan akses HTTP dari PC-Sales ke Portal-01 dan respons ping dari PC-Lab ke Portal-01.",
+            "hints": [
+                "Paket kedua PC tidak pernah meninggalkan switch kantor – mereka macet di Switch-1F mencoba menjangkau Router.",
+                "Switch-1F tidak dapat menemukan alamat Router-HQ karena tautan fisik antara Switch dan Router terputus.",
+                "Hubungkan kabel antara Switch-1F dan Router-HQ untuk memulihkan tautan."
+            ],
+            "explanation": "Batas waktu ARP untuk alamat Gateway Default biasanya menunjukkan tautan fisik yang rusak ke gateway tersebut, bukan pengaturan IP yang salah. Periksa koneksi kabel antara Switch dan Router sebelum menyentuh rute atau alamat."
+        },
+        "ru": {
+            "title": "Нет ответа от портала",
+            "story": "Сотрудники на PC-Sales и PC-Lab сообщают, что портал регистрации полностью недоступен все утро – ни одна веб-страница не загружается и ни один ping не получает ответ.",
+            "objective": "Восстановите HTTP-доступ от PC-Sales к Portal-01 и ответы ping от PC-Lab к Portal-01.",
+            "hints": [
+                "Пакеты обоих ПК никогда не покидают офисный Switch – они застревают на Switch-1F при попытке подключиться к Router.",
+                "Switch-1F не может найти адрес Router-HQ, потому что физическое соединение между Switch и Router разорвано.",
+                "Подключите кабель между Switch-1F и Router-HQ, чтобы восстановить соединение."
+            ],
+            "explanation": "Истечение времени ARP для адреса Шлюза по умолчанию обычно указывает на разорванное физическое соединение с этим шлюзом, а не на неправильную настройку IP. Проверьте кабельные соединения между Switch и Router перед внесением изменений в маршруты или адреса."
+        },
+        "it": {
+            "title": "Nessuna risposta dal portale",
+            "story": "Il personale di PC-Sales e PC-Lab segnala che il portale di check-in è completamente irraggiungibile da tutta la mattina — nessuna pagina web si carica e nessun ping riceve risposta.",
+            "objective": "Ripristina l'accesso HTTP da PC-Sales a Portal-01 e le risposte ai ping da PC-Lab a Portal-01.",
+            "hints": [
+                "I pacchetti di entrambi i PC non escono mai dallo switch dell'ufficio — si bloccano su Switch-1F cercando di raggiungere il router.",
+                "Switch-1F non riesce a trovare l'indirizzo di Router-HQ perché il collegamento fisico tra lo switch e il router è interrotto.",
+                "Collega un cavo tra Switch-1F e Router-HQ per ripristinare il collegamento."
+            ],
+            "explanation": "Un timeout ARP per l'indirizzo del Gateway predefinito di solito indica un collegamento fisico interrotto verso quel gateway, non un'impostazione IP errata. Controlla i collegamenti dei cavi tra lo switch e il router prima di modificare route o indirizzi."
+        },
+        "tr": {
+            "title": "Portaldan Yanıt Yok",
+            "story": "PC-Sales ve PC-Lab'daki personel, giriş portalının tüm sabah tamamen ulaşılamaz durumda olduğunu bildiriyor — hiçbir web sayfası yüklenmiyor ve hiçbir ping yanıt almıyor.",
+            "objective": "PC-Sales'ten Portal-01'e HTTP erişimini ve PC-Lab'dan Portal-01'e ping yanıtlarını geri yükle.",
+            "hints": [
+                "Her iki bilgisayarın paketleri ofis switçini hiçbir zaman bırakmıyor — Router-HQ'ya ulaşmaya çalışırken Switch-1F'de duruyorlar.",
+                "Switch-1F, switch ile router arasındaki fiziksel bağlantı bozuk olduğu için Router-HQ'nun adresini bulamıyor.",
+                "Switch-1F ile Router-HQ arasına bir kablo bağlayarak bağlantıyı geri yükle."
+            ],
+            "explanation": "Varsayılan ağ geçidi adresi için bir ARP zaman aşımı, genellikle o ağ geçidine giden fiziksel bağlantı bozukluğunu gösterir, yanlış bir IP ayarını değil. Rotalar veya adreslere dokunmadan önce switch ile router arasındaki kablo bağlantılarını kontrol et."
+        },
+        "th": {
+            "title": "ไม่มีการตอบสนองจากพอร์ทัล",
+            "story": "พนักงานที่ PC-Sales และ PC-Lab รายงานว่าพอร์ทัลเช็กอินไม่สามารถเข้าถึงได้ตั้งแต่เช้า — ไม่มีหน้าเว็บโหลดและ ping ไม่ได้รับการตอบสนอง",
+            "objective": "คืนสถานะการเข้าถึง HTTP จาก PC-Sales ไปยัง Portal-01 และการตอบสนอง ping จาก PC-Lab ไปยัง Portal-01",
+            "hints": [
+                "แพ็กเก็ตของคอมพิวเตอร์ทั้งสองเครื่องไม่ออกจากสวิตช์สำนักงาน — ติดอยู่ที่ Switch-1F ในขณะพยายามเข้าถึงเราเตอร์",
+                "Switch-1F ไม่สามารถค้นหาที่อยู่ของ Router-HQ เพราะการเชื่อมต่อทางกายภาพระหว่างสวิตช์และเราเตอร์ขาด",
+                "เชื่อมต่อสายเคเบิลระหว่าง Switch-1F และ Router-HQ เพื่อคืนสถานะการเชื่อมต่อ"
+            ],
+            "explanation": "การหมดเวลา ARP สำหรับที่อยู่เกตเวย์เริ่มต้นมักชี้ว่าการเชื่อมต่อทางกายภาพไปยังเกตเวย์นั้นขาด ไม่ใช่การตั้งค่า IP ที่ผิด ตรวจสอบการเชื่อมต่อสายเคเบิลระหว่างสวิตช์และเราเตอร์ก่อนแก้ไขเส้นทางหรือที่อยู่"
+        },
+        "vi": {
+            "title": "Không có phản hồi từ Cổng thông tin",
+            "story": "Nhân viên tại PC-Sales và PC-Lab báo cáo rằng cổng thông tin check-in hoàn toàn không thể truy cập suốt sáng nay — không có trang web nào tải được và không có ping nào nhận được phản hồi.",
+            "objective": "Khôi phục quyền truy cập HTTP từ PC-Sales đến Portal-01 và các phản hồi ping từ PC-Lab đến Portal-01.",
+            "hints": [
+                "Các gói tin của cả hai máy tính không bao giờ rời khỏi công tắc văn phòng — chúng bị kẹt ở Switch-1F khi cố gắng tiếp cận bộ định tuyến.",
+                "Switch-1F không thể tìm thấy địa chỉ của Router-HQ vì liên kết vật lý giữa công tắc và bộ định tuyến bị ngắt.",
+                "Kết nối cáp giữa Switch-1F và Router-HQ để khôi phục liên kết."
+            ],
+            "explanation": "Hết thời gian chờ ARP cho địa chỉ Cổng mặc định thường chỉ ra liên kết vật lý bị ngắt đến cổng đó, chứ không phải cài đặt IP sai. Kiểm tra các kết nối cáp giữa công tắc và bộ định tuyến trước khi sửa đổi bất kỳ tuyến đường hoặc địa chỉ nào."
+        }
+    }
+}
