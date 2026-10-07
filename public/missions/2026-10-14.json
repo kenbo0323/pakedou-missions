@@ -1,0 +1,570 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-14",
+    "number": 24,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "acl_order_trap"
+    ],
+    "concepts": [
+        "firewall",
+        "acl",
+        "rule-order"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.14.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.14.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.14.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "Firewall-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.26.1"
+                        },
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.26.1",
+                            "dstPort": 80
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Web",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.26.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-waf1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-waf1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-waf1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-waf1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-waf1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Blocked at the Front Door",
+            "story": "PC-Design in the design office cannot open the internal web page hosted on File-Server. Staff say the page loaded fine last week, but today every attempt to reach it fails outright.",
+            "objective": "Restore web access: an HTTP request from PC-Design to File-Server must get a response.",
+            "hints": [
+                "The request from PC-Design never gets past Firewall-Edge on its way to File-Server.",
+                "Firewall-Edge has a rule that denies everything to File-Server's address, and it sits above the rule that permits web traffic, so it catches the request first before the permit ever applies.",
+                "On Firewall-Edge, delete the ACL rule that denies all traffic to 10.0.26.1, then add a new rule denying all traffic to 10.0.26.1 at the very end of the list, after the web permit rule."
+            ],
+            "explanation": "Firewall rules are checked top to bottom and the first match wins. A broad deny rule placed above a narrower permit rule always wins, blocking traffic you meant to allow. Moving that same deny rule to the end keeps web traffic permitted while still catching everything else, like pings or attacks, after the specific permits have had their chance."
+        },
+        "ja": {
+            "title": "玄関先で遮断",
+            "story": "設計オフィスのPC-Designが、File-Server上の社内ウェブページを開けません。先週までは問題なく表示できていたのに、今日はアクセスしようとすると必ず失敗してしまいます。",
+            "objective": "ウェブアクセスを復旧させること:PC-DesignからFile-ServerへのHTTPリクエストが応答を受け取れるようにします。",
+            "hints": [
+                "PC-Designからのリクエストは、File-Serverへ向かう途中のFirewall-Edgeで止まってしまいます。",
+                "Firewall-EdgeにはFile-Serverのアドレス宛の通信をすべて拒否するルールがあり、それがウェブ通信を許可するルールより上にあるため、許可ルールが適用される前に先に拒否されてしまいます。",
+                "Firewall-Edgeで、10.0.26.1へのすべての通信を拒否するACLルールを削除し、同じ内容の拒否ルールをリストの一番最後、ウェブ許可ルールの後ろに追加します。"
+            ],
+            "explanation": "ファイアウォールのルールは上から順にチェックされ、最初に一致したものが適用されます。範囲の広い拒否ルールが、範囲の狭い許可ルールより上にあると、本来許可したい通信までブロックされてしまいます。同じ拒否ルールを一番下に移動すれば、ウェブ通信は許可されたまま、個別の許可ルールが適用された後で、ping や攻撃など他の通信はきちんと拒否されます。"
+        },
+        "zh-CN": {
+            "title": "前门被挡",
+            "story": "设计部的 PC-Design 无法打开托管在 File-Server 上的内部网页。员工说上周网页加载正常，但今天每次尝试访问都直接失败。",
+            "objective": "恢复网络访问：来自 PC-Design 到 File-Server 的 HTTP 请求必须获得响应。",
+            "hints": [
+                "来自 PC-Design 的请求在前往 File-Server 的途中从未越过 Firewall-Edge。",
+                "Firewall-Edge 有一条规则禁止所有发往 File-Server 地址的流量，该规则位于允许网络流量的规则之上，所以它在允许规则生效前就会捕获请求。",
+                "在 Firewall-Edge 上，删除禁止所有流量到 10.0.26.1 的 ACL 规则，然后在列表的最后（在网络允许规则之后）添加一条新的禁止所有流量到 10.0.26.1 的规则。"
+            ],
+            "explanation": "防火墙规则从上到下逐条检查，首次匹配即生效。一条放置在较具体允许规则之上的宽泛禁止规则总是会生效，阻止你想要允许的流量。将该禁止规则移到末尾可以保持网络流量被允许，同时在具体允许规则有机会生效后，仍能捕获所有其他流量，如 ping 或攻击。"
+        },
+        "zh-TW": {
+            "title": "前門被擋",
+            "story": "設計部的 PC-Design 無法打開託管在 File-Server 上的內部網頁。員工說上週網頁載入正常，但今天每次嘗試存取都直接失敗。",
+            "objective": "恢復網路存取：來自 PC-Design 到 File-Server 的 HTTP 要求必須獲得回應。",
+            "hints": [
+                "來自 PC-Design 的要求在前往 File-Server 的途中從未越過 Firewall-Edge。",
+                "Firewall-Edge 有一條規則禁止所有發往 File-Server 位址的流量，該規則位於允許網路流量的規則之上，所以它在允許規則生效前就會捕獲要求。",
+                "在 Firewall-Edge 上，刪除禁止所有流量到 10.0.26.1 的 ACL 規則，然後在列表的最後（在網路允許規則之後）新增一條新的禁止所有流量到 10.0.26.1 的規則。"
+            ],
+            "explanation": "防火牆規則從上到下逐條檢查，首次符合即生效。一條放置在較具體允許規則之上的寬泛禁止規則總是會生效，阻止你想要允許的流量。將該禁止規則移到末尾可以保持網路流量被允許，同時在具體允許規則有機會生效後，仍能捕獲所有其他流量，如 ping 或攻擊。"
+        },
+        "ko": {
+            "title": "전면 차단",
+            "story": "설계실의 PC-Design이 File-Server에서 호스팅하는 내부 웹 페이지를 열 수 없습니다. 직원들은 지난주에 페이지가 잘 로드되었다고 하지만, 오늘은 모든 접근 시도가 실패합니다.",
+            "objective": "웹 접근 복구: PC-Design에서 File-Server로의 HTTP 요청이 응답을 받아야 합니다.",
+            "hints": [
+                "PC-Design에서의 요청이 File-Server로 가는 길에 Firewall-Edge를 통과하지 못합니다.",
+                "Firewall-Edge에는 File-Server 주소로의 모든 트래픽을 거부하는 규칙이 있으며, 이 규칙은 웹 트래픽을 허용하는 규칙 위에 있어서 허용 규칙이 적용되기 전에 요청을 먼저 차단합니다.",
+                "Firewall-Edge에서 10.0.26.1로의 모든 트래픽을 거부하는 ACL 규칙을 삭제한 다음, 목록의 맨 끝(웹 허용 규칙 이후)에 10.0.26.1로의 모든 트래픽을 거부하는 새 규칙을 추가합니다."
+            ],
+            "explanation": "방화벽 규칙은 위에서 아래로 확인되며 첫 번째 일치가 우선합니다. 더 좁은 허용 규칙 위에 배치된 광범위한 거부 규칙은 항상 우선되어 의도한 트래픽을 차단합니다. 동일한 거부 규칙을 끝으로 이동시키면 웹 트래픽은 허용되지만 특정 허용 규칙이 적용된 후 ping이나 공격 같은 다른 모든 트래픽은 여전히 차단됩니다."
+        },
+        "es": {
+            "title": "Bloqueado en la Puerta",
+            "story": "PC-Design en la oficina de diseño no puede abrir la página web interna alojada en File-Server. El personal dice que la página se cargó bien la semana pasada, pero hoy todos los intentos de acceso fallan.",
+            "objective": "Restaurar acceso web: una solicitud HTTP de PC-Design a File-Server debe recibir una respuesta.",
+            "hints": [
+                "La solicitud desde PC-Design nunca pasa de Firewall-Edge en su camino hacia File-Server.",
+                "Firewall-Edge tiene una regla que deniega todo el tráfico hacia la dirección de File-Server, y se encuentra por encima de la regla que permite tráfico web, por lo que captura la solicitud antes de que se aplique el permiso.",
+                "En Firewall-Edge, elimina la regla ACL que deniega todo el tráfico a 10.0.26.1, luego añade una nueva regla que deniegue todo el tráfico a 10.0.26.1 al final de la lista, después de la regla de permiso web."
+            ],
+            "explanation": "Las reglas de firewall se verifican de arriba a abajo y la primera coincidencia gana. Una regla de denegación amplia colocada encima de una regla de permiso más específica siempre gana, bloqueando el tráfico que pretendías permitir. Mover esa misma regla de denegación al final mantiene el tráfico web permitido mientras sigue bloqueando todo lo demás, como ping o ataques, después de que se hayan aplicado los permisos específicos."
+        },
+        "pt-BR": {
+            "title": "Bloqueado na Entrada",
+            "story": "PC-Design no departamento de design não consegue abrir a página web interna hospedada em File-Server. A equipe diz que a página carregou perfeitamente semana passada, mas hoje todas as tentativas de acesso falham.",
+            "objective": "Restaurar o acesso web: uma solicitação HTTP de PC-Design para File-Server deve receber uma resposta.",
+            "hints": [
+                "A solicitação de PC-Design nunca passa de Firewall-Edge a caminho de File-Server.",
+                "Firewall-Edge tem uma regra que nega todo o tráfego para o endereço de File-Server, e fica acima da regra que permite tráfego web, então captura a solicitação antes do permissão ser aplicada.",
+                "Em Firewall-Edge, delete a regra ACL que nega todo o tráfego para 10.0.26.1 e, em seguida, adicione uma nova regra negando todo o tráfego para 10.0.26.1 no final da lista, após a regra de permissão web."
+            ],
+            "explanation": "As regras de firewall são verificadas de cima para baixo e a primeira correspondência vence. Uma regra de negação ampla colocada acima de uma regra de permissão mais específica sempre vence, bloqueando o tráfego que você pretendia permitir. Mover essa mesma regra de negação para o final mantém o tráfego web permitido enquanto ainda captura tudo mais, como pings ou ataques, depois que os permisos específicos tiveram a chance de ser aplicados."
+        },
+        "de": {
+            "title": "Blockiert vor der Eingangstür",
+            "story": "PC-Design im Designbüro kann die interne Webseite auf File-Server nicht öffnen. Das Personal berichtet, dass die Seite letzte Woche noch einwandfrei geladen wurde, aber heute schlägt jeder Versuch fehl.",
+            "objective": "Webbrowser-Zugang wiederherstellen: Eine HTTP-Anfrage von PC-Design an File-Server muss eine Antwort erhalten.",
+            "hints": [
+                "Die Anfrage von PC-Design kommt nicht über Firewall-Edge hinaus auf dem Weg zu File-Server.",
+                "Firewall-Edge hat eine Regel, die den gesamten Datenverkehr zu File-Servers Adresse ablehnt, und sie steht über der Regel, die Webtraffic erlaubt, sodass sie die Anfrage abfängt, bevor die Erlaubnisregel greift.",
+                "Löschen Sie auf Firewall-Edge die ACL-Regel, die den gesamten Datenverkehr zu 10.0.26.1 ablehnt, und fügen Sie dann eine neue Regel hinzu, die den gesamten Datenverkehr zu 10.0.26.1 ganz unten in der Liste nach der Web-Erlaubnisregel ablehnt."
+            ],
+            "explanation": "Firewall-Regeln werden von oben nach unten überprüft und die erste Übereinstimmung gewinnt. Eine breite Ablehnungsregel, die über einer engeren Erlaubnisregel platziert ist, gewinnt immer und blockiert den Datenverkehr, den Sie zulassen wollten. Wenn Sie diese Ablehnungsregel ans Ende verschieben, bleibt Webtraffic erlaubt, während Sie trotzdem alles andere wie Pings oder Angriffe nach den spezifischen Erlaubnissen abfangen."
+        },
+        "fr": {
+            "title": " Bloqué à la porte d'entrée",
+            "story": "PC-Design au bureau de design ne peut pas ouvrir la page web interne hébergée sur File-Server. Le personnel rapporte que la page se chargeait bien la semaine dernière, mais aujourd'hui chaque tentative d'y accéder échoue complètement.",
+            "objective": "Restaurer l'accès web : une requête HTTP de PC-Design vers File-Server doit recevoir une réponse.",
+            "hints": [
+                "La requête de PC-Design ne dépasse jamais Firewall-Edge sur le chemin vers File-Server.",
+                "Firewall-Edge possède une règle qui refuse tout le trafic vers l'adresse de File-Server, et elle est placée au-dessus de la règle qui permet le trafic web, elle intercepte donc la requête avant que la règle de permission ne s'applique.",
+                "Sur Firewall-Edge, supprimez la règle ACL qui refuse tout le trafic vers 10.0.26.1, puis ajoutez une nouvelle règle refusant tout le trafic vers 10.0.26.1 à la toute fin de la liste, après la règle de permission web."
+            ],
+            "explanation": "Les règles de Firewall sont vérifiées de haut en bas et la première correspondance gagne. Une règle de refus large placée au-dessus d'une règle de permission plus précise gagne toujours, bloquant le trafic que vous souhaitez autoriser. Déplacer cette même règle de refus à la fin maintient le trafic web autorisé tout en interceptant tout le reste, comme les pings ou les attaques, après que les permissions spécifiques aient eu leur chance."
+        },
+        "hi": {
+            "title": "सामने के दरवाजे पर अवरुद्ध",
+            "story": "डिज़ाइन कार्यालय में PC-Design File-Server पर होस्ट किए गए आंतरिक वेब पेज को नहीं खोल सकता। कर्मचारी कहते हैं कि पेज पिछले हफ्ते ठीक से लोड होता था, लेकिन आज इसे खोलने का हर प्रयास विफल हो जाता है।",
+            "objective": "वेब एक्सेस को पुनः स्थापित करें: PC-Design से File-Server तक एक HTTP अनुरोध को प्रतिक्रिया मिलनी चाहिए।",
+            "hints": [
+                "PC-Design से अनुरोध File-Server तक जाने के रास्ते में Firewall-Edge के पार कभी नहीं जाता।",
+                "Firewall-Edge के पास एक नियम है जो File-Server के पते पर सभी ट्रैफिक को अस्वीकार करता है, और यह उस नियम के ऊपर बैठता है जो वेब ट्रैफिक की अनुमति देता है, इसलिए यह अनुमति नियम लागू होने से पहले अनुरोध को पकड़ता है।",
+                "Firewall-Edge पर, उस ACL नियम को हटाएं जो 10.0.26.1 पर सभी ट्रैफिक को अस्वीकार करता है, फिर एक नया नियम जोड़ें जो 10.0.26.1 पर सभी ट्रैफिक को वेब अनुमति नियम के बाद सूची के बिल्कुल अंत में अस्वीकार करे।"
+            ],
+            "explanation": "फायरवॉल नियमों की जांच ऊपर से नीचे तक की जाती है और पहला मेल जीत जाता है। एक व्यापक अस्वीकार नियम जो एक संकीर्ण अनुमति नियम के ऊपर रखा जाता है, हमेशा जीतता है, यातायात को अवरुद्ध करता है जिसकी आप अनुमति देना चाहते थे। उसी अस्वीकार नियम को अंत में स्थानांतरित करने से वेब ट्रैफिक अनुमत रहता है जबकि यह पिंग या हमलों जैसी सब कुछ को अस्वीकार करता है, विशिष्ट अनुमतियों का अपना मौका मिलने के बाद।"
+        },
+        "id": {
+            "title": "Terblokir di Pintu Depan",
+            "story": "PC-Design di kantor desain tidak dapat membuka halaman web internal yang dihosting di File-Server. Staf mengatakan halaman dimuat dengan baik minggu lalu, tetapi hari ini setiap upaya untuk mengaksesnya gagal sepenuhnya.",
+            "objective": "Pemulihan akses web: permintaan HTTP dari PC-Design ke File-Server harus menerima respons.",
+            "hints": [
+                "Permintaan dari PC-Design tidak pernah melewati Firewall-Edge dalam perjalanan ke File-Server.",
+                "Firewall-Edge memiliki aturan yang menolak semua lalu lintas ke alamat File-Server, dan aturan tersebut berada di atas aturan yang mengizinkan lalu lintas web, sehingga menangkap permintaan sebelum aturan izin berlaku.",
+                "Di Firewall-Edge, hapus aturan ACL yang menolak semua lalu lintas ke 10.0.26.1, kemudian tambahkan aturan baru yang menolak semua lalu lintas ke 10.0.26.1 di bagian paling akhir daftar, setelah aturan izin web."
+            ],
+            "explanation": "Aturan Firewall diperiksa dari atas ke bawah dan kecocokan pertama menang. Aturan penolakan yang luas ditempatkan di atas aturan izin yang lebih sempit selalu menang, memblokir lalu lintas yang Anda ingin izinkan. Memindahkan aturan penolakan yang sama ke akhir menjaga lalu lintas web tetap diizinkan sambil tetap menangkap segalanya yang lain, seperti ping atau serangan, setelah izin spesifik memiliki kesempatan mereka."
+        },
+        "ru": {
+            "title": "Заблокирован у входной двери",
+            "story": "PC-Design в дизайн-офисе не может открыть внутреннюю веб-страницу, размещённую на File-Server. Сотрудники говорят, что страница хорошо загружалась на прошлой неделе, но сегодня любая попытка доступа полностью не удаётся.",
+            "objective": "Восстановить веб-доступ: HTTP-запрос от PC-Design к File-Server должен получить ответ.",
+            "hints": [
+                "Запрос от PC-Design никогда не проходит через Firewall-Edge на пути к File-Server.",
+                "На Firewall-Edge есть правило, которое отклоняет весь трафик на адрес File-Server, и оно расположено выше правила, разрешающего веб-трафик, поэтому оно перехватывает запрос до применения разрешающего правила.",
+                "На Firewall-Edge удалите правило ACL, которое отклоняет весь трафик на 10.0.26.1, а затем добавьте новое правило, отклоняющее весь трафик на 10.0.26.1 в самом конце списка после правила разрешения веб-трафика."
+            ],
+            "explanation": "Правила брандмауэра проверяются сверху вниз, и первое совпадение побеждает. Широкое правило отклонения, размещённое выше более узкого правила разрешения, всегда побеждает, блокируя трафик, который вы хотели разрешить. Перемещение этого же правила отклонения в конец сохраняет разрешение веб-трафика, одновременно перехватывая всё остальное, такое как ping или атаки, после того как специальные разрешения имели свой шанс."
+        },
+        "it": {
+            "title": "Bloccato alla porta principale",
+            "story": "PC-Design nell'ufficio di progettazione non riesce ad aprire la pagina web interna ospitata su File-Server. Il personale riferisce che la pagina si caricava bene la settimana scorsa, ma oggi ogni tentativo di raggiungerla fallisce completamente.",
+            "objective": "Ripristina l'accesso web: una richiesta HTTP da PC-Design a File-Server deve ricevere una risposta.",
+            "hints": [
+                "La richiesta da PC-Design non supera mai Firewall-Edge sulla strada verso File-Server.",
+                "Firewall-Edge ha una regola che nega tutto al traffico verso l'indirizzo di File-Server, e si trova sopra la regola che permette il traffico web, quindi cattura la richiesta prima che il permesso abbia mai effetto.",
+                "Su Firewall-Edge, elimina la regola ACL che nega tutto il traffico verso 10.0.26.1, poi aggiungi una nuova regola che nega tutto il traffico verso 10.0.26.1 alla fine dell'elenco, dopo la regola di permesso web."
+            ],
+            "explanation": "Le regole del Firewall vengono controllate da cima a fondo e vince la prima corrispondenza. Una regola di negazione ampia posizionata sopra una regola di permesso più specifica vince sempre, bloccando il traffico che intendevi consentire. Spostare quella stessa regola di negazione alla fine mantiene il traffico web permesso mentre continua a catturare tutto il resto, come ping o attacchi, dopo che i permessi specifici hanno avuto la loro opportunità."
+        },
+        "tr": {
+            "title": "Ön Kapıda Engellendi",
+            "story": "PC-Design, tasarım ofisindeki bilgisayar, File-Server üzerinde barındırılan dahili web sayfasını açamıyor. Personel, sayfanın geçen hafta iyi yüklendiğini söylüyor, ancak bugün bunu ulaşma girişimi tamamen başarısız oluyor.",
+            "objective": "Web erişimini geri yükle: PC-Design'dan File-Server'a yapılan HTTP isteği bir yanıt almalıdır.",
+            "hints": [
+                "PC-Design'dan gelen istek, File-Server'a giden yolda Firewall-Edge'i asla geçemiyor.",
+                "Firewall-Edge, File-Server adresine tüm trafiği reddeden bir kurala sahiptir ve web trafiğine izin veren kuralın üstünde yer alır, bu nedenle izinin uygulanmasından önce isteği yakalar.",
+                "Firewall-Edge üzerinde, 10.0.26.1'e tüm trafiği reddeden ACL kuralını silin, ardından web izin kuralından sonra listenin çok sonunda 10.0.26.1'e tüm trafiği reddeden yeni bir kural ekleyin."
+            ],
+            "explanation": "Güvenlik duvarı kuralları yukarıdan aşağıya kontrol edilir ve ilk eşleşme kazanır. Dar bir izin kuralının üstüne yerleştirilen geniş bir reddetme kuralı her zaman kazanır ve amaçladığınız trafiği engeller. Bu aynı reddetme kuralını sonun taşıması, web trafiğinin izinli kalmasını sağlarken, belirli izinlerin şansı olması gereken pingler veya saldırılar gibi diğer her şeyi yakalar."
+        },
+        "th": {
+            "title": "ถูกขัดกั้นที่ประตูหน้า",
+            "story": "PC-Design ในสำนักงานออกแบบไม่สามารถเปิดหน้าเว็บภายในที่โฮสต์บน File-Server ได้ พนักงานกล่าวว่าหน้าโหลดได้ดีเมื่อสัปดาห์ที่แล้ว แต่วันนี้ทุกความพยายามเข้าถึงจึงล้มเหลวอย่างสิ้นเชิง",
+            "objective": "เรียกคืนการเข้าถึงเว็บ: คำขอ HTTP จาก PC-Design ถึง File-Server ต้องได้รับการตอบสนอง",
+            "hints": [
+                "คำขอจาก PC-Design ไม่เคยผ่าน Firewall-Edge ไปยัง File-Server",
+                "Firewall-Edge มีกฎที่ปฏิเสธทราฟฟิกทั้งหมดไปยังที่อยู่ของ File-Server และอยู่เหนือกฎที่อนุญาตการรับส่งข้อมูลเว็บ ดังนั้นจึงดักจับคำขอก่อนที่อนุญาตจะมีผลใช้บังคับ",
+                "บน Firewall-Edge ให้ลบกฎ ACL ที่ปฏิเสธทราฟฟิกทั้งหมดไปยัง 10.0.26.1 จากนั้นเพิ่มกฎใหม่ที่ปฏิเสธทราฟฟิกทั้งหมดไปยัง 10.0.26.1 ที่ส่วนท้ายของรายการ หลังจากกฎอนุญาตเว็บ"
+            ],
+            "explanation": "กฎ Firewall ได้รับการตรวจสอบจากบนลงล่าง และความตรงกันครั้งแรกจะชนะ กฎปฏิเสธกว้างที่วางไว้เหนือกฎอนุญาตที่แคบกว่านั้นจะชนะเสมอ และขัดขวางการรับส่งข้อมูลที่คุณตั้งใจจะอนุญาต การย้ายกฎปฏิเสธนั้นไปที่ส่วนท้ายจะรักษาการรับส่งข้อมูลเว็บให้อนุญาตไว้ขณะยังคงดักจับทุกอย่างอื่น เช่น ping หรือการโจมตี หลังจากที่อนุญาตเฉพาะได้มีโอกาส"
+        },
+        "vi": {
+            "title": "Bị chặn ở cửa trước",
+            "story": "PC-Design ở văn phòng thiết kế không thể mở trang web nội bộ được lưu trữ trên File-Server. Nhân viên cho biết trang đã tải tốt vào tuần trước, nhưng hôm nay mọi lần cố gắng truy cập đều thất bại hoàn toàn.",
+            "objective": "Khôi phục quyền truy cập web: yêu cầu HTTP từ PC-Design đến File-Server phải nhận được phản hồi.",
+            "hints": [
+                "Yêu cầu từ PC-Design không bao giờ vượt qua Firewall-Edge trên đường đến File-Server.",
+                "Firewall-Edge có quy tắc từ chối tất cả lưu lượng đến địa chỉ của File-Server và nó nằm phía trên quy tắc cho phép lưu lượng web, vì vậy nó bắt yêu cầu trước khi cho phép có hiệu lực.",
+                "Trên Firewall-Edge, xóa quy tắc ACL từ chối tất cả lưu lượng đến 10.0.26.1, sau đó thêm quy tắc mới từ chối tất cả lưu lượng đến 10.0.26.1 ở cuối danh sách, sau quy tắc cho phép web."
+            ],
+            "explanation": "Quy tắc Firewall được kiểm tra từ trên xuống dưới và kết quả khớp đầu tiên sẽ thắng. Quy tắc từ chối rộng được đặt phía trên quy tắc cho phép hẹp hơn luôn thắng, chặn lưu lượng mà bạn dự định cho phép. Chuyển quy tắc từ chối đó xuống cuối sẽ giữ cho lưu lượng web được phép trong khi vẫn bắt mọi thứ khác, như ping hoặc tấn công, sau khi các quy tắc cho phép cụ thể đã có cơ hội."
+        }
+    }
+}
