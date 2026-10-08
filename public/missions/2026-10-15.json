@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-15",
+    "number": 25,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.24.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.8.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.24.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.24.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Core",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.24.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.8.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.8.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.8.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Intern's Desk Move Mishap",
+            "story": "After PC-Design was moved to a new desk for an intern, the accounting team reports it can no longer open the shared company portal in a browser.",
+            "objective": "Restore HTTP access from PC-Design to Portal-01.",
+            "hints": [
+                "The request from PC-Design never makes it past its own outgoing side — it stalls right at PC-Design before reaching Switch-Core.",
+                "PC-Design is pointed at the server's own address as its gateway, but a server is not a router and cannot forward traffic onward.",
+                "On PC-Design, set the default gateway to 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "A client's default gateway must be a router on its own subnet, not the address of the destination server. PC-Design was set to use Portal-01's address as its gateway, so outgoing packets had nowhere valid to go. Pointing the gateway back to Router-HQ restores the path."
+        },
+        "ja": {
+            "title": "インターンの机移動トラブル",
+            "story": "インターン用にPC-Designが新しい机に移動されたあと、経理チームがブラウザで社内共有ポータルを開けなくなったと報告しています。",
+            "objective": "PC-DesignからPortal-01へのHTTPアクセスを復旧させます。",
+            "hints": [
+                "PC-Designからのリクエストは、自分自身の送信側から先に進めていません。Switch-Coreに届く前にPC-Designの時点で止まっています。",
+                "PC-Designのデフォルトゲートウェイがサーバー自身のアドレスに設定されていますが、サーバーはルーターではないため通信を転送できません。",
+                "PC-Designで、デフォルトゲートウェイを10.0.24.254(Router-HQ)に設定してください。"
+            ],
+            "explanation": "クライアントのデフォルトゲートウェイは、自分と同じサブネット上のルーターである必要があり、宛先サーバーのアドレスを指定してはいけません。PC-DesignはPortal-01のアドレスをゲートウェイとして設定されていたため、送信パケットが正しく進む先がありませんでした。ゲートウェイをRouter-HQに戻すことで通信経路が復旧します。"
+        },
+        "zh-CN": {
+            "title": "实习生桌位移动失误",
+            "story": "PC-Design 被移至新桌位给一名实习生后，会计团队报告无法再在浏览器中打开共享的公司门户。",
+            "objective": "恢复从 PC-Design 到 Portal-01 的 HTTP 访问。",
+            "hints": [
+                "来自 PC-Design 的请求永远无法通过其自己的出站一侧——它在 PC-Design 处停滞，未能到达 Switch-Core。",
+                "PC-Design 指向服务器自身地址作为其网关，但服务器不是 Router，无法转发流量。",
+                "在 PC-Design 上，将默认网关设置为 10.0.24.254（Router-HQ）。"
+            ],
+            "explanation": "Client 的默认网关必须是其自身子网上的 Router，而不是目标服务器的地址。PC-Design 被设置为使用 Portal-01 的地址作为网关，导致出站数据包无处可去。将网关改回 Router-HQ 可恢复路径。"
+        },
+        "zh-TW": {
+            "title": "實習生桌位移動失誤",
+            "story": "PC-Design 被移至新桌位給一名實習生後，會計團隊報告無法再在瀏覽器中打開共享的公司入口網站。",
+            "objective": "恢復從 PC-Design 到 Portal-01 的 HTTP 存取。",
+            "hints": [
+                "來自 PC-Design 的請求永遠無法通過其自己的出站一側——它在 PC-Design 處停滯，未能到達 Switch-Core。",
+                "PC-Design 指向伺服器自身位址作為其預設閘道，但伺服器不是 Router，無法轉發流量。",
+                "在 PC-Design 上，將預設閘道設定為 10.0.24.254（Router-HQ）。"
+            ],
+            "explanation": "Client 的預設閘道必須是其自身子網上的 Router，而不是目標伺服器的位址。PC-Design 被設定為使用 Portal-01 的位址作為閘道，導致出站封包無處可去。將閘道改回 Router-HQ 可恢復路徑。"
+        },
+        "ko": {
+            "title": "실습생 책상 이동 실수",
+            "story": "PC-Design이 실습생을 위해 새로운 책상으로 옮겨진 후, 회계팀이 브라우저에서 공유 회사 포털을 더 이상 열 수 없다고 보고했습니다.",
+            "objective": "PC-Design에서 Portal-01로의 HTTP 접근을 복구합니다.",
+            "hints": [
+                "PC-Design의 요청이 자신의 발신 측을 통과하지 못합니다 — PC-Design에서 멈추어 Switch-Core에 도달하지 못합니다.",
+                "PC-Design이 서버 자신의 주소를 기본 게이트웨이로 지정하고 있지만, 서버는 Router가 아니므로 트래픽을 전달할 수 없습니다.",
+                "PC-Design에서 기본 게이트웨이를 10.0.24.254(Router-HQ)로 설정합니다."
+            ],
+            "explanation": "Client의 기본 게이트웨이는 목적지 서버의 주소가 아니라, 자신의 서브넷에 있는 Router이어야 합니다. PC-Design이 Portal-01의 주소를 게이트웨이로 사용하도록 설정되어 있었기 때문에 발신 패킷이 유효한 목적지를 찾을 수 없었습니다. 게이트웨이를 Router-HQ로 다시 지정하면 경로가 복구됩니다."
+        },
+        "es": {
+            "title": "Error en la Mudanza del Escritorio del Pasante",
+            "story": "Después de que PC-Design fue trasladado a un nuevo escritorio para una pasante, el equipo de contabilidad informa que ya no puede abrir el portal de la empresa compartido en un navegador.",
+            "objective": "Restaurar el acceso HTTP desde PC-Design a Portal-01.",
+            "hints": [
+                "La solicitud de PC-Design nunca pasa por su propio lado saliente — se detiene justo en PC-Design antes de llegar a Switch-Core.",
+                "PC-Design señala la dirección del servidor como su Gateway predeterminado, pero un servidor no es un Router y no puede reenviar tráfico.",
+                "En PC-Design, establece el Gateway predeterminado a 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "El Gateway predeterminado de un Client debe ser un Router en su propia subred, no la dirección del servidor destino. PC-Design fue configurado para usar la dirección de Portal-01 como su puerta de enlace, por lo que los paquetes salientes no tenían un destino válido. Reconfigurar la puerta de enlace a Router-HQ restaura la ruta."
+        },
+        "pt-BR": {
+            "title": "Falha na Mudança de Mesa do Estagiário",
+            "story": "Após PC-Design ser movido para uma nova mesa para um estagiário, o time de contabilidade relata que não consegue mais abrir o portal compartilhado da empresa em um navegador.",
+            "objective": "Restaurar o acesso HTTP de PC-Design para Portal-01.",
+            "hints": [
+                "A solicitação de PC-Design nunca passa pelo seu lado de saída — fica presa em PC-Design antes de chegar a Switch-Core.",
+                "PC-Design está apontando para o endereço do próprio servidor como seu Gateway padrão, mas um servidor não é um Router e não pode encaminhar tráfego.",
+                "Em PC-Design, defina o Gateway padrão como 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "O Gateway padrão de um Client deve ser um Router na sua própria sub-rede, não o endereço do servidor de destino. PC-Design foi configurado para usar o endereço de Portal-01 como seu gateway, portanto os pacotes de saída não tinham um destino válido. Apontar o gateway de volta para Router-HQ restaura o caminho."
+        },
+        "de": {
+            "title": "Missgeschick beim Umzug des Praktikantenschreibtisches",
+            "story": "Nachdem PC-Design an einen neuen Schreibtisch für einen Praktikanten verschoben wurde, meldet das Buchhaltungsteam, dass es das Portal-01 der Firma nicht mehr im Browser öffnen kann.",
+            "objective": "HTTP-Zugriff von PC-Design auf Portal-01 wiederherstellen.",
+            "hints": [
+                "Die Anfrage von PC-Design kommt nicht über die ausgehende Seite hinaus — sie stoppt direkt bei PC-Design, bevor sie Switch-Core erreicht.",
+                "PC-Design zeigt auf die eigene Adresse des Servers als Standard-Gateway, aber ein Server ist kein Router und kann den Verkehr nicht weiterleiten.",
+                "Stellen Sie auf PC-Design das Standard-Gateway auf 10.0.24.254 (Router-HQ) ein."
+            ],
+            "explanation": "Das Standard-Gateway eines Clients muss ein Router in seinem eigenen Subnetz sein, nicht die Adresse des Zielservers. PC-Design war so konfiguriert, dass es die Adresse von Portal-01 als Gateway verwendet, daher hatten ausgehende Pakete nirgends hin. Wenn Sie das Gateway auf Router-HQ zurückstellen, wird der Pfad wiederhergestellt."
+        },
+        "fr": {
+            "title": "Malheur lors du déménagement du bureau du stagiaire",
+            "story": "Après le déplacement de PC-Design vers un nouveau bureau pour un stagiaire, l'équipe comptable signale qu'elle ne peut plus ouvrir le portail d'entreprise partagé dans un navigateur.",
+            "objective": "Restaurer l'accès HTTP de PC-Design vers Portal-01.",
+            "hints": [
+                "La requête de PC-Design ne dépasse jamais le côté sortant — elle s'arrête directement à PC-Design avant d'atteindre Switch-Core.",
+                "PC-Design pointe vers l'adresse du serveur lui-même comme Passerelle par défaut, mais un serveur n'est pas un Router et ne peut pas relayer le trafic.",
+                "Sur PC-Design, définissez la Passerelle par défaut sur 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "La Passerelle par défaut d'un Client doit être un Router sur son propre Réseau, pas l'adresse du serveur de destination. PC-Design était configuré pour utiliser l'adresse de Portal-01 comme Passerelle par défaut, donc les paquets sortants n'avaient nulle part aller. Rediriger la Passerelle par défaut vers Router-HQ restaure le chemin."
+        },
+        "hi": {
+            "title": "इंटर्न की डेस्क मूव में गड़बड़",
+            "story": "PC-Design को एक इंटर्न के लिए नई डेस्क पर स्थानांतरित करने के बाद, लेखा टीम की रिपोर्ट है कि वह अब ब्राउज़र में साझा कंपनी Portal-01 नहीं खोल सकता।",
+            "objective": "PC-Design से Portal-01 तक HTTP एक्सेस को पुनः स्थापित करें।",
+            "hints": [
+                "PC-Design का अनुरोध अपने स्वयं के आउटगोइंग साइड को पार नहीं कर पाता — यह PC-Design पर ही रुक जाता है Switch-Core तक पहुंचने से पहले।",
+                "PC-Design सर्वर के अपने पते को इसके डिफ़ॉल्ट गेटवे के रूप में इंगित करता है, लेकिन सर्वर Router नहीं है और ट्रैफिक को आगे नहीं भेज सकता।",
+                "PC-Design पर, डिफ़ॉल्ट गेटवे को 10.0.24.254 (Router-HQ) पर सेट करें।"
+            ],
+            "explanation": "किसी Client का डिफ़ॉल्ट गेटवे अपनी सबनेट पर एक Router होना चाहिए, गंतव्य सर्वर का पता नहीं। PC-Design को Portal-01 के पते को अपने गेटवे के रूप में उपयोग करने के लिए सेट किया गया था, इसलिए आउटगोइंग पैकेट के पास कहीं नहीं जाना था। गेटवे को Router-HQ की ओर वापस इंगित करने से पथ पुनः स्थापित हो जाता है।"
+        },
+        "id": {
+            "title": "Kecelakaan Pemindahan Meja Magang",
+            "story": "Setelah PC-Design dipindahkan ke meja baru untuk seorang magang, tim akuntansi melaporkan bahwa mereka tidak lagi dapat membuka portal perusahaan bersama di browser.",
+            "objective": "Pulihkan akses HTTP dari PC-Design ke Portal-01.",
+            "hints": [
+                "Permintaan dari PC-Design tidak pernah melewati sisi keluar — berhenti tepat di PC-Design sebelum mencapai Switch-Core.",
+                "PC-Design menunjuk ke alamat server itu sendiri sebagai Gateway Default, tetapi Server bukan Router dan tidak dapat meneruskan lalu lintas.",
+                "Pada PC-Design, atur Gateway Default ke 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "Gateway Default dari Client harus Router di Jaringan miliknya sendiri, bukan alamat Server tujuan. PC-Design diatur untuk menggunakan alamat Portal-01 sebagai Gateway Default, sehingga paket keluar tidak memiliki tempat untuk pergi. Mengarahkan kembali Gateway Default ke Router-HQ memulihkan jalur."
+        },
+        "ru": {
+            "title": "Неудача при перемещении стола стажера",
+            "story": "После перемещения PC-Design на новый стол для стажера команда бухгалтерии сообщает, что она больше не может открыть общий корпоративный портал Portal-01 в браузере.",
+            "objective": "Восстановить HTTP доступ с PC-Design на Portal-01.",
+            "hints": [
+                "Запрос от PC-Design не выходит за пределы собственного исходящего канала — он останавливается прямо на PC-Design, не достигая Switch-Core.",
+                "PC-Design указывает на собственный адрес сервера как на Шлюз по умолчанию, но Server не является Router и не может перенаправлять трафик дальше.",
+                "На PC-Design установите Шлюз по умолчанию на 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "Шлюз по умолчанию клиента должен быть Router в его собственной сети, а не адресом целевого Server. PC-Design был настроен на использование адреса Portal-01 в качестве Шлюза по умолчанию, поэтому исходящие пакеты не имели куда идти. Переустановка Шлюза по умолчанию на Router-HQ восстанавливает маршрут."
+        },
+        "it": {
+            "title": "Errore nel trasloco della scrivania dello stagista",
+            "story": "Dopo che PC-Design è stato spostato in una nuova scrivania per uno stagista, il team di contabilità segnala che non riesce più ad aprire il portale aziendale condiviso nel browser.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Design a Portal-01.",
+            "hints": [
+                "La richiesta da PC-Design non supera mai il lato in uscita della stessa — si blocca proprio a PC-Design prima di raggiungere Switch-Core.",
+                "PC-Design è configurato con l'indirizzo del server stesso come Gateway predefinito, ma un server non è un router e non può inoltrare il traffico.",
+                "Su PC-Design, impostare il Gateway predefinito a 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "Il Gateway predefinito di un client deve essere un router sulla sua stessa subnet, non l'indirizzo del server di destinazione. PC-Design era configurato per usare l'indirizzo di Portal-01 come gateway, così i pacchetti in uscita non avevano alcun percorso valido. Puntando il gateway di nuovo a Router-HQ si ripristina il percorso."
+        },
+        "tr": {
+            "title": "Stajyerin Masası Taşıma Hatası",
+            "story": "PC-Design bir stajyer için yeni bir masaya taşındıktan sonra, muhasebe ekibi paylaşılan şirket portalını artık tarayıcıda açamadığını bildiriyor.",
+            "objective": "PC-Design'den Portal-01'e HTTP erişimini geri yükleyin.",
+            "hints": [
+                "PC-Design'den gelen istek asla kendi giden tarafını geçemez — PC-Design'de durur ve Switch-Core'a ulaşamaz.",
+                "PC-Design, sunucunun kendi adresini Varsayılan ağ geçidi olarak kullanacak şekilde ayarlanmıştır, ancak bir sunucu yönlendiricisi değildir ve trafiği iletmez.",
+                "PC-Design üzerinde, Varsayılan ağ geçidini 10.0.24.254 (Router-HQ) olarak ayarlayın."
+            ],
+            "explanation": "Bir istemcinin Varsayılan ağ geçidi, hedef sunucunun adresi değil, aynı subnet'te bulunan bir yönlendirici olmalıdır. PC-Design, Portal-01'in adresini ağ geçidi olarak kullanacak şekilde ayarlandı ve bu nedenle giden paketler geçerli bir yola sahip değildi. Ağ geçidini Router-HQ'ya geri yönlendirmek yolu geri yükler."
+        },
+        "th": {
+            "title": "ความผิดพลาดในการย้ายโต๊ะของนักศึกษาฝึกงาน",
+            "story": "หลังจากที่ PC-Design ถูกย้ายไปยังโต๊ะใหม่สำหรับนักศึกษาฝึกงาน ทีมบัญชีรายงานว่าไม่สามารถเปิดพอร์ทัลบริษัทที่แชร์กันได้ในเบราว์เซอร์อีกต่อไป",
+            "objective": "คืนค่าการเข้าถึง HTTP จาก PC-Design ไปยัง Portal-01",
+            "hints": [
+                "คำขอจาก PC-Design ไม่เคยผ่านด้านส่งออกของตัวเอง — หยุดอยู่ที่ PC-Design ก่อนถึง Switch-Core",
+                "PC-Design ชี้ไปที่ที่อยู่ของเซิร์ฟเวอร์เอง เป็นเกตเวย์เริ่มต้น แต่เซิร์ฟเวอร์ไม่ใช่เราเตอร์ และไม่สามารถส่งต่อการรับส่งข้อมูลต่อไปได้",
+                "บน PC-Design ตั้งค่าเกตเวย์เริ่มต้นเป็น 10.0.24.254 (Router-HQ)"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นของไคลเอนต์ต้องเป็นเราเตอร์บนเซ็บเน็ตของตัวเอง ไม่ใช่ที่อยู่ของเซิร์ฟเวอร์ปลายทาง PC-Design ถูกตั้งค่าให้ใช้ที่อยู่ของ Portal-01 เป็นเกตเวย์ ดังนั้นแพ็กเก็ตขาออกจึงไม่มีเส้นทางที่ถูกต้อง การชี้เกตเวย์กลับไปที่ Router-HQ จะคืนค่าเส้นทาง"
+        },
+        "vi": {
+            "title": "Sự cố di chuyển bàn của thực tập sinh",
+            "story": "Sau khi PC-Design được di chuyển đến bàn mới cho một thực tập sinh, nhóm kế toán báo cáo rằng nó không còn có thể mở cổng thông tin công ty được chia sẻ trong trình duyệt.",
+            "objective": "Khôi phục quyền truy cập HTTP từ PC-Design đến Portal-01.",
+            "hints": [
+                "Yêu cầu từ PC-Design không bao giờ vượt qua phía gửi đi của chính nó — nó bị dừng lại ngay tại PC-Design trước khi đến Switch-Core.",
+                "PC-Design được đặt để sử dụng địa chỉ của chính máy chủ làm Cổng mặc định, nhưng máy chủ không phải là định tuyến và không thể chuyển tiếp lưu lượng.",
+                "Trên PC-Design, đặt Cổng mặc định thành 10.0.24.254 (Router-HQ)."
+            ],
+            "explanation": "Cổng mặc định của máy khách phải là bộ định tuyến trên cùng một mạng con, không phải là địa chỉ của máy chủ đích. PC-Design được đặt để sử dụng địa chỉ của Portal-01 làm cổng mặc định, vì vậy các gói tin gửi đi không có đường đi hợp lệ. Đặt lại cổng mặc định về Router-HQ sẽ khôi phục đường đi."
+        }
+    }
+}
