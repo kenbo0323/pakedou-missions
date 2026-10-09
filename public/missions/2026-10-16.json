@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-16",
+    "number": 26,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.13.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.13.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.13.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.11.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.23.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.11.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.11.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.23.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.13.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.11.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.6.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.23.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1",
+            "dev-router2"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Unreachable Web Server",
+            "story": "The sales team at the branch office says the shared web portal has been unreachable from PC-Dev ever since a recent network change. No one has been able to load it since.",
+            "objective": "Restore HTTP access from PC-Dev to Web-Server.",
+            "hints": [
+                "The request from PC-Dev dies at Router-East, which reports it has no route forward for this traffic.",
+                "Router-East can't find a matching route because Web-Server is no longer sitting inside its proper 10.0.23.0 subnet.",
+                "On Web-Server, set port 0's address to 10.0.23.1 with mask 255.255.255.0."
+            ],
+            "explanation": "A device's IP address must fall within the subnet its router expects to forward traffic to. Web-Server had drifted to an address outside 10.0.23.0/24, so Router-East's static route no longer matched it, and every request was dropped before reaching the server."
+        },
+        "ja": {
+            "title": "つながらないWebサーバー",
+            "story": "支社の営業チームから、最近のネットワーク変更以来、共有Webポータルに PC-Dev からアクセスできないと報告がありました。それ以来、誰もポータルを開けていません。",
+            "objective": "PC-Dev から Web-Server への HTTP アクセスを復旧させる。",
+            "hints": [
+                "PC-Dev からのリクエストは Router-East で止まっており、この通信に対する転送ルートがないと報告されています。",
+                "Web-Server が本来の 10.0.23.0 サブネットの外に出てしまっているため、Router-East は一致するルートを見つけられません。",
+                "Web-Server で、ポート0のアドレスを 10.0.23.1、マスクを 255.255.255.0 に設定してください。"
+            ],
+            "explanation": "デバイスのIPアドレスは、そのルーターが転送先として想定しているサブネットの範囲内にある必要があります。Web-Server のアドレスが 10.0.23.0/24 の範囲外にずれてしまったため、Router-East の静的ルートが一致しなくなり、サーバーに届く前にすべてのリクエストが破棄されていました。"
+        },
+        "zh-CN": {
+            "title": "Web-Server 无法访问",
+            "story": "分公司销售团队报告说，自从最近进行网络更改后，从 PC-Dev 无法访问共享的 Web 门户。此后没有人能加载它。",
+            "objective": "从 PC-Dev 恢复到 Web-Server 的 HTTP 访问。",
+            "hints": [
+                "来自 PC-Dev 的请求在 Router-East 处中断，Router-East 报告它没有该流量的转发路由。",
+                "Router-East 找不到匹配的路由，因为 Web-Server 不在其应有的 10.0.23.0 子网中。",
+                "在 Web-Server 上，将端口 0 的地址设置为 10.0.23.1，掩码为 255.255.255.0。"
+            ],
+            "explanation": "设备的 IP 地址必须位于其路由器期望转发流量的子网范围内。Web-Server 已漂移到 10.0.23.0/24 外的地址，因此 Router-East 的静态路由不再匹配该地址，每个请求都在到达服务器前被丢弃。"
+        },
+        "zh-TW": {
+            "title": "Web-Server 無法存取",
+            "story": "分公司銷售團隊報告說，自從最近的網路變更後，從 PC-Dev 無法存取共享的 Web 入口網站。之後沒有人能夠載入它。",
+            "objective": "恢復從 PC-Dev 到 Web-Server 的 HTTP 存取。",
+            "hints": [
+                "來自 PC-Dev 的請求在 Router-East 中斷，Router-East 報告它沒有此流量的轉發路由。",
+                "Router-East 找不到相符的路由，因為 Web-Server 不在其應有的 10.0.23.0 子網內。",
+                "在 Web-Server 上，將連接埠 0 的位址設為 10.0.23.1，遮罩為 255.255.255.0。"
+            ],
+            "explanation": "裝置的 IP 位址必須落在其路由器預期轉發流量的子網範圍內。Web-Server 已漂移到 10.0.23.0/24 外的位址，因此 Router-East 的靜態路由不再相符，每個請求都在到達伺服器前被捨棄。"
+        },
+        "ko": {
+            "title": "Web-Server 도달 불가",
+            "story": "지사 영업팀이 최근 네트워크 변경 후 PC-Dev에서 공유 웹 포탈에 접근할 수 없다고 보고했습니다. 그 이후로 아무도 로드할 수 없습니다.",
+            "objective": "PC-Dev에서 Web-Server로의 HTTP 접근을 복구합니다.",
+            "hints": [
+                "PC-Dev의 요청이 Router-East에서 중단되었으며, Router-East는 이 트래픽에 대한 전달 경로가 없다고 보고합니다.",
+                "Router-East가 일치하는 경로를 찾을 수 없습니다. Web-Server가 10.0.23.0 서브넷 내에 있지 않기 때문입니다.",
+                "Web-Server에서 포트 0의 주소를 10.0.23.1로, 마스크를 255.255.255.0으로 설정합니다."
+            ],
+            "explanation": "디바이스의 IP 주소는 라우터가 트래픽을 전달할 것으로 예상하는 서브넷 범위 내에 있어야 합니다. Web-Server가 10.0.23.0/24 외부의 주소로 이동했으므로, Router-East의 정적 경로가 더 이상 일치하지 않아 모든 요청이 서버에 도달하기 전에 삭제되었습니다."
+        },
+        "es": {
+            "title": "Web-Server inaccesible",
+            "story": "El equipo de ventas de la sucursal informa que el portal web compartido ha sido inaccesible desde PC-Dev desde un cambio de red reciente. Nadie ha podido cargarlo desde entonces.",
+            "objective": "Restablecer el acceso HTTP desde PC-Dev a Web-Server.",
+            "hints": [
+                "La solicitud de PC-Dev se interrumpe en Router-East, que informa que no tiene una ruta hacia adelante para este tráfico.",
+                "Router-East no puede encontrar una ruta coincidente porque Web-Server ya no está en su correspondiente red 10.0.23.0.",
+                "En Web-Server, establece la dirección del puerto 0 a 10.0.23.1 con máscara 255.255.255.0."
+            ],
+            "explanation": "La dirección IP de un dispositivo debe estar dentro de la red que su router espera para reenviar el tráfico. Web-Server se había desplazado a una dirección fuera de 10.0.23.0/24, por lo que la ruta estática de Router-East ya no coincidía, y todas las solicitudes se descartaban antes de llegar al servidor."
+        },
+        "pt-BR": {
+            "title": "Web-Server inacessível",
+            "story": "O time de vendas do escritório filial relata que o portal web compartilhado está inacessível de PC-Dev desde uma mudança de rede recente. Ninguém consegue carregá-lo desde então.",
+            "objective": "Restaurar acesso HTTP de PC-Dev para Web-Server.",
+            "hints": [
+                "A solicitação de PC-Dev morre no Router-East, que relata não ter rota para frente para esse tráfego.",
+                "Router-East não consegue encontrar uma rota correspondente porque Web-Server não está mais na sua subrede 10.0.23.0 apropriada.",
+                "No Web-Server, defina o endereço da porta 0 para 10.0.23.1 com máscara 255.255.255.0."
+            ],
+            "explanation": "O endereço IP de um dispositivo deve estar dentro da subrede que seu roteador espera para encaminhar o tráfego. O Web-Server tinha se deslocado para um endereço fora de 10.0.23.0/24, portanto a rota estática do Router-East não correspondia mais, e toda solicitação era descartada antes de chegar ao servidor."
+        },
+        "de": {
+            "title": "Web-Server unerreichbar",
+            "story": "Das Verkaufsteam der Niederlassung teilt mit, dass das gemeinsame Web-Portal von PC-Dev aus seit einer kürzlichen Netzwerkänderung nicht mehr erreichbar ist. Seitdem kann es niemand aufrufen.",
+            "objective": "HTTP-Zugriff von PC-Dev auf Web-Server wiederherstellen.",
+            "hints": [
+                "Die Anfrage von PC-Dev endet bei Router-East, das meldet, dass es für diesen Verkehr keine Route vorwärts hat.",
+                "Router-East kann keine passende Route finden, da sich Web-Server nicht mehr im erwarteten Subnetz 10.0.23.0 befindet.",
+                "Setzen Sie auf Web-Server die Adresse von Port 0 auf 10.0.23.1 mit Maske 255.255.255.0."
+            ],
+            "explanation": "Die IP-Adresse eines Geräts muss innerhalb des Subnetzes liegen, zu dem sein Router Verkehr weiterleiten soll. Web-Server war auf eine Adresse außerhalb von 10.0.23.0/24 abgewichen, sodass die statische Route von Router-East nicht mehr passte und alle Anfragen wurden, bevor sie den Server erreichten, verworfen."
+        },
+        "fr": {
+            "title": "Serveur Web inaccessible",
+            "story": "L'équipe commerciale du bureau succursale signale que le portail Web partagé est inaccessible depuis PC-Dev depuis un changement réseau récent. Personne n'a pu le charger depuis.",
+            "objective": "Restaurer l'accès HTTP de PC-Dev vers Web-Server.",
+            "hints": [
+                "La requête de PC-Dev s'arrête à Router-East, qui signale qu'il n'a aucun itinéraire pour acheminer ce trafic.",
+                "Router-East ne peut pas trouver d'itinéraire correspondant car Web-Server ne se trouve plus dans son sous-réseau 10.0.23.0.",
+                "Sur Web-Server, définissez l'adresse du port 0 sur 10.0.23.1 avec le masque 255.255.255.0."
+            ],
+            "explanation": "L'adresse IP d'un appareil doit se trouver dans le sous-réseau vers lequel son routeur s'attend à acheminer le trafic. Web-Server avait dérivé vers une adresse en dehors de 10.0.23.0/24, la Route statique de Router-East ne correspondait plus, et chaque requête était rejetée avant d'atteindre le serveur."
+        },
+        "hi": {
+            "title": "वेब सर्वर अनुपलब्ध",
+            "story": "शाखा कार्यालय की बिक्रय टीम कहती है कि साझा किए गए वेब पोर्टल को PC-Dev से हाल के नेटवर्क परिवर्तन के बाद से पहुँचा नहीं जा सकता। तब से कोई भी इसे लोड नहीं कर सकता है।",
+            "objective": "PC-Dev से Web-Server तक HTTP एक्सेस को पुनः स्थापित करें।",
+            "hints": [
+                "PC-Dev से अनुरोध Router-East पर समाप्त हो जाता है, जो रिपोर्ट करता है कि इस ट्रैफ़िक के लिए उसके पास कोई मार्ग नहीं है।",
+                "Router-East को मेल खाता मार्ग नहीं मिल सकता क्योंकि Web-Server अब 10.0.23.0 सबनेट के अंदर नहीं है।",
+                "Web-Server पर, पोर्ट 0 के पते को 10.0.23.1 पर मास्क 255.255.255.0 के साथ सेट करें।"
+            ],
+            "explanation": "किसी डिवाइस का IP पता उस सबनेट के भीतर होना चाहिए जिसे उसका राउटर ट्रैफ़िक को आगे बढ़ाने की अपेक्षा करता है। Web-Server 10.0.23.0/24 के बाहर के पते पर चला गया था, इसलिए Router-East का स्टेटिक रूट अब मेल नहीं खाता था, और हर अनुरोध सर्वर तक पहुँचने से पहले छोड़ दिया जाता था।"
+        },
+        "id": {
+            "title": "Server Web Tidak Dapat Dijangkau",
+            "story": "Tim penjualan di kantor cabang mengatakan bahwa portal web bersama tidak dapat dijangkau dari PC-Dev sejak perubahan jaringan baru-baru ini. Tidak ada yang dapat memuatnya sejak saat itu.",
+            "objective": "Pulihkan akses HTTP dari PC-Dev ke Web-Server.",
+            "hints": [
+                "Permintaan dari PC-Dev berhenti di Router-East, yang melaporkan tidak memiliki rute untuk lalu lintas ini.",
+                "Router-East tidak dapat menemukan rute yang cocok karena Web-Server tidak lagi berada di Jaringan tujuan 10.0.23.0.",
+                "Di Web-Server, atur alamat port 0 menjadi 10.0.23.1 dengan Nomor port 255.255.255.0."
+            ],
+            "explanation": "Alamat IP sebuah perangkat harus berada dalam Jaringan tujuan yang diharapkan ruternya untuk meneruskan lalu lintas. Web-Server telah bergeser ke alamat di luar 10.0.23.0/24, jadi rute statis Router-East tidak lagi cocok, dan setiap permintaan dijatuhkan sebelum mencapai server."
+        },
+        "ru": {
+            "title": "Веб-сервер недоступен",
+            "story": "Команда продаж филиала сообщает, что общий веб-портал недоступен из PC-Dev с момента недавнего изменения сети. С тех пор никто не может его загрузить.",
+            "objective": "Восстановить доступ HTTP с PC-Dev на Web-Server.",
+            "hints": [
+                "Запрос с PC-Dev останавливается на Router-East, который сообщает, что у него нет маршрута для данного трафика.",
+                "Router-East не может найти соответствующий маршрут, потому что Web-Server больше не находится в подсети 10.0.23.0.",
+                "На Web-Server установите адрес порта 0 на 10.0.23.1 с Маской 255.255.255.0."
+            ],
+            "explanation": "IP-адрес устройства должен находиться в подсети, к которой его маршрутизатор ожидает отправлять трафик. Web-Server сместился на адрес вне 10.0.23.0/24, поэтому статический маршрут Router-East больше не совпадает, и каждый запрос отклоняется до достижения сервера."
+        },
+        "it": {
+            "title": "Server Web irraggiungibile",
+            "story": "Il team di vendita presso l'ufficio succursale dice che il portale web condiviso è irraggiungibile da PC-Dev da quando è stato effettuato un recente cambio di rete. Nessuno è riuscito a caricarlo da allora.",
+            "objective": "Ripristina l'accesso HTTP da PC-Dev a Web-Server.",
+            "hints": [
+                "La richiesta da PC-Dev si ferma a Router-East, che segnala di non avere una rotta disponibile per questo traffico.",
+                "Router-East non riesce a trovare una rotta corrispondente perché Web-Server non si trova più dentro la subnet 10.0.23.0 prevista.",
+                "Su Web-Server, imposta l'indirizzo della porta 0 a 10.0.23.1 con maschera 255.255.255.0."
+            ],
+            "explanation": "L'indirizzo IP di un dispositivo deve trovarsi all'interno della subnet che il suo router si aspetta di instradare il traffico. Web-Server si era spostato a un indirizzo al di fuori di 10.0.23.0/24, quindi la rotta statica di Router-East non corrispondeva più, e ogni richiesta è stata scartata prima di raggiungere il server."
+        },
+        "tr": {
+            "title": "Erişilemeyen Web Server",
+            "story": "Şube ofisindeki satış ekibi, son ağ değişikliğinden bu yana paylaşılan web portalının PC-Dev'den erişilemeyen durumda olduğunu söylüyor. O zamandan beri hiç kimse bunu yükleyememiştir.",
+            "objective": "PC-Dev'den Web-Server'a HTTP erişimini geri yükleyin.",
+            "hints": [
+                "PC-Dev'den gelen istek Router-East'te durur ve bu trafik için ileri bir rota olmadığını bildiri.",
+                "Router-East uyuşan bir rota bulamaz çünkü Web-Server artık beklenen 10.0.23.0 alt ağı içinde değildir.",
+                "Web-Server'da, port 0'ın adresini 10.0.23.1 olarak, maske 255.255.255.0 ile ayarlayın."
+            ],
+            "explanation": "Bir cihazın IP adresi, yönlendiricisinin trafiği ileteceğini beklediği alt ağın içinde yer almalıdır. Web-Server 10.0.23.0/24 dışındaki bir adrese kaymıştı, bu nedenle Router-East'in statik rotası artık eşleşmedi ve her istek sunucuya ulaşmadan düşürüldü."
+        },
+        "vi": {
+            "title": "Máy chủ Web không thể truy cập",
+            "story": "Đội bán hàng tại chi nhánh cho biết portal web dùng chung đã không thể truy cập từ PC-Dev kể từ khi có sự thay đổi mạng gần đây. Từ đó đến nay không ai có thể tải được nó.",
+            "objective": "Khôi phục truy cập HTTP từ PC-Dev tới Web-Server.",
+            "hints": [
+                "Yêu cầu từ PC-Dev dừng lại tại Router-East, yêu cầu này không có tuyến đường tiếp theo cho lưu lượng này.",
+                "Router-East không thể tìm thấy tuyến đường phù hợp vì Web-Server không còn nằm trong mạng con 10.0.23.0 như dự kiến.",
+                "Trên Web-Server, đặt địa chỉ của cổng 0 thành 10.0.23.1 với mặt nạ 255.255.255.0."
+            ],
+            "explanation": "Địa chỉ IP của một thiết bị phải nằm trong mạng con mà bộ định tuyến của nó dự kiến sẽ chuyển tiếp lưu lượng. Web-Server đã di chuyển đến một địa chỉ ngoài 10.0.23.0/24, do đó tuyến đường tĩnh của Router-East không còn khớp nữa, và mọi yêu cầu đều bị hủy trước khi đến máy chủ."
+        },
+        "th": {
+            "title": "เว็บเซิร์ฟเวอร์ไม่สามารถเข้าถึงได้",
+            "story": "ทีมขายที่สาขาอำเภอบอกว่า Web Portal ที่ใช้ร่วมกันไม่สามารถเข้าถึงได้จาก PC-Dev มาตั้งแต่มีการเปลี่ยนแปลงเครือข่ายเมื่อเร็ว ๆ นี้ ไม่มีใครสามารถโหลดได้ตั้งแต่นั้นมา",
+            "objective": "สืบค้นการเข้าถึง HTTP จาก PC-Dev ไปยัง Web-Server",
+            "hints": [
+                "คำขอจาก PC-Dev ติดขัดที่ Router-East ซึ่งรายงานว่าไม่มีเส้นทางไปข้างหน้าสำหรับการรับส่งข้อมูลนี้",
+                "Router-East ไม่สามารถค้นหาเส้นทางที่ตรงกันได้เพราะ Web-Server ไม่ได้อยู่ในสัญชาตญาณของเครือข่าย 10.0.23.0 อีกต่อไป",
+                "บน Web-Server ให้ตั้งค่าที่อยู่ของพอร์ต 0 เป็น 10.0.23.1 พร้อมมาสก์ 255.255.255.0"
+            ],
+            "explanation": "ที่อยู่ IP ของอุปกรณ์ต้องอยู่ในเครือข่ายย่อยที่เราเตอร์คาดว่าจะส่งต่อการรับส่งข้อมูล Web-Server ลอยเข้าไปในที่อยู่นอกเครือข่าย 10.0.23.0/24 ดังนั้นเส้นทางคงที่ของ Router-East จึงไม่ตรงกันอีกต่อไป และคำขอทุกรายการถูกลบทิ้งก่อนถึงเซิร์ฟเวอร์"
+        }
+    }
+}
