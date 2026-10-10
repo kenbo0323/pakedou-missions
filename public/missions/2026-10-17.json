@@ -1,0 +1,690 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-17",
+    "number": 27,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "cable_unplugged",
+        "vlan_mismatch"
+    ],
+    "concepts": [
+        "physical-link",
+        "vlan"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.4.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.4.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.28.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.28.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "Switch-Floor2",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 30
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.4.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.28.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.21.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.21.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.21.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "No Path to the File Server",
+            "story": "After the weekend office move, Lab staff and Reception both report they cannot open or reach File-Server at all. Finance and Sales haven't complained. IT needs this sorted before Monday.",
+            "objective": "Restore an HTTP GET from PC-Lab to File-Server and a ping from PC-Reception to File-Server.",
+            "hints": [
+                " PC-Lab's request stalls trying to reach Router-HQ, and PC-Reception's packet dies right at Switch-Floor2 before it even leaves toward Router-HQ.",
+                "Switch-Floor2 and Router-HQ have no physical link between them, so nothing can cross to the server subnet; separately, PC-Reception's switch port is sitting in the wrong VLAN, isolated from Router-HQ's VLAN 20 port.",
+                "On Switch-Floor2, connect a cable to Router-HQ, and set port 3 (PC-Reception's port) to VLAN 20 instead of VLAN 30."
+            ],
+            "explanation": "Two separate breaks blocked traffic: a missing cable between the switch and router cut off every route to the server's subnet, while PC-Reception's switch port was assigned to the wrong VLAN, keeping it from ever reaching the router's VLAN 20 interface. Both the physical link and the VLAN assignment had to match for traffic to flow end to end."
+        },
+        "ja": {
+            "title": "File-Serverへの経路がありません",
+            "story": "週末のオフィス移転後、Lab staffとReceptionの両方からFile-Serverに全く接続できないと報告がありました。FinanceとSalesからは苦情が出ていません。IT部門は月曜日までにこれを解決する必要があります。",
+            "objective": "PC-LabからFile-ServerへのHTTP GETと、PC-ReceptionからFile-Serverへのpingを復旧させます。",
+            "hints": [
+                "PC-Labのリクエストは Router-HQ に到達しようとして止まってしまい、PC-Reception のパケットは Router-HQ に向かう前に Switch-Floor2 の時点で途切れています。",
+                "Switch-Floor2 と Router-HQ の間に物理的な接続がないため、サーバーのサブネットへは何も届きません。それとは別に、PC-Reception のスイッチポートが誤ったVLANに設定されており、Router-HQ の VLAN 20 ポートから隔離されています。",
+                "Switch-Floor2で、Router-HQへケーブルを接続し、ポート3(PC-Receptionのポート)をVLAN 30ではなくVLAN 20に設定します。"
+            ],
+            "explanation": "2つの異なる問題が通信を妨げていました。1つはスイッチとルーター間のケーブルが欠落しており、サーバーのサブネットへのすべての経路が断たれていたことです。もう1つは、PC-Receptionのスイッチポートが誤ったVLANに割り当てられており、ルーターのVLAN 20インターフェースに到達できなかったことです。通信が正常に流れるには、物理的な接続とVLANの設定の両方が一致している必要がありました。"
+        },
+        "zh-CN": {
+            "title": "无法连接到文件服务器的路径",
+            "story": "周末办公室搬迁后，实验室和前台的员工报告无法打开或访问 File-Server。财务和销售部门没有投诉。IT 需要在周一之前解决这个问题。",
+            "objective": "恢复从 PC-Lab 到 File-Server 的 HTTP GET 请求，以及从 PC-Reception 到 File-Server 的 ping。",
+            "hints": [
+                "PC-Lab 的请求在尝试到达 Router-HQ 时停滞，PC-Reception 的数据包在 Switch-Floor2 处直接中断，甚至没有向 Router-HQ 转发。",
+                "Switch-Floor2 和 Router-HQ 之间没有物理连接，所以没有任何流量能跨越到服务器子网；另外，PC-Reception 的交换机端口位于错误的 VLAN，被隔离在 Router-HQ 的 VLAN 20 端口之外。",
+                "在 Switch-Floor2 上，连接一条网线到 Router-HQ，并将端口 3（PC-Reception 的端口）从 VLAN 30 改为 VLAN 20。"
+            ],
+            "explanation": "两个独立的问题阻断了流量：交换机和路由器之间的缺失网线切断了所有到达服务器子网的路由，而 PC-Reception 的交换机端口分配到了错误的 VLAN，使其无法到达路由器的 VLAN 20 接口。物理链接和 VLAN 分配都必须匹配，才能保证端到端的流量通畅。"
+        },
+        "zh-TW": {
+            "title": "無法連接到檔案伺服器的路徑",
+            "story": "周末辦公室搬遷後，實驗室和前台的員工報告無法開啟或存取 File-Server。財務和銷售部門沒有投訴。IT 需要在周一之前解決此問題。",
+            "objective": "恢復從 PC-Lab 到 File-Server 的 HTTP GET 要求，以及從 PC-Reception 到 File-Server 的 ping。",
+            "hints": [
+                "PC-Lab 的要求在嘗試到達 Router-HQ 時停滯，PC-Reception 的封包在 Switch-Floor2 處直接中斷，甚至沒有向 Router-HQ 轉發。",
+                "Switch-Floor2 和 Router-HQ 之間沒有實體連接，所以沒有任何流量能跨越到伺服器子網；另外，PC-Reception 的交換機連接埠位於錯誤的 VLAN，被隔離在 Router-HQ 的 VLAN 20 連接埠之外。",
+                "在 Switch-Floor2 上，連接一條網線到 Router-HQ，並將連接埠 3（PC-Reception 的連接埠）從 VLAN 30 改為 VLAN 20。"
+            ],
+            "explanation": "兩個獨立的問題阻斷了流量：交換機和路由器之間的缺失網線切斷了所有到達伺服器子網的路由，而 PC-Reception 的交換機連接埠分配到了錯誤的 VLAN，使其無法到達路由器的 VLAN 20 介面。實體連結和 VLAN 分配都必須相符，才能保證端到端的流量通暢。"
+        },
+        "ko": {
+            "title": "파일 서버로의 경로 없음",
+            "story": "주말 사무실 이전 후 실험실 직원과 접수원이 File-Server에 접근하거나 열 수 없다고 보고했습니다. 재무 및 영업 부서는 불평하지 않았습니다. IT가 월요일 전에 이 문제를 해결해야 합니다.",
+            "objective": "PC-Lab에서 File-Server로의 HTTP GET 복원 및 PC-Reception에서 File-Server로의 ping 복원.",
+            "hints": [
+                "PC-Lab의 요청이 Router-HQ에 도달하려다 중단되고, PC-Reception의 패킷이 Switch-Floor2에서 바로 끊겨 Router-HQ로도 나가지 못합니다.",
+                "Switch-Floor2와 Router-HQ 사이에 물리적 링크가 없어서 서버 서브넷으로 트래픽이 넘어갈 수 없고, 따로 PC-Reception의 스위치 포트가 잘못된 VLAN에 속하여 Router-HQ의 VLAN 20 포트에서 격리되어 있습니다.",
+                "Switch-Floor2에서 Router-HQ로 케이블을 연결하고, 포트 3(PC-Reception의 포트)을 VLAN 30에서 VLAN 20으로 변경합니다."
+            ],
+            "explanation": "두 가지 별개의 문제가 트래픽을 차단했습니다. 스위치와 라우터 사이의 케이블 부재가 서버 서브넷으로의 모든 경로를 끊었고, PC-Reception의 스위치 포트가 잘못된 VLAN에 할당되어 라우터의 VLAN 20 인터페이스에 절대 도달할 수 없었습니다. 물리적 링크와 VLAN 할당이 모두 일치해야 종단 간 트래픽이 흘러갈 수 있습니다."
+        },
+        "es": {
+            "title": "Sin ruta hacia el servidor de archivos",
+            "story": "Tras la mudanza de la oficina el fin de semana, el personal del laboratorio y recepción reportan que no pueden abrir ni acceder a File-Server. Finanzas y ventas no se han quejado. IT debe resolver esto antes del lunes.",
+            "objective": "Restaurar una solicitud HTTP GET de PC-Lab a File-Server y un ping de PC-Reception a File-Server.",
+            "hints": [
+                "La solicitud de PC-Lab se detiene intentando alcanzar Router-HQ, y el paquete de PC-Reception muere justo en Switch-Floor2 antes de salir hacia Router-HQ.",
+                "Switch-Floor2 y Router-HQ no tienen enlace físico entre ellos, por lo que nada puede cruzar hacia la subred del servidor; además, el puerto del Switch de PC-Reception está en la VLAN incorrecta, aislado del puerto VLAN 20 de Router-HQ.",
+                "En Switch-Floor2, conecta un cable a Router-HQ, y cambia el puerto 3 (puerto de PC-Reception) de VLAN 30 a VLAN 20."
+            ],
+            "explanation": "Dos problemas separados bloquearon el tráfico: un cable faltante entre el Switch y el Router cortó todas las rutas hacia la subred del servidor, mientras que el puerto del Switch de PC-Reception estaba asignado a la VLAN incorrecta, impidiéndole llegar a la interfaz VLAN 20 del Router. Tanto el enlace físico como la asignación de VLAN tenían que coincidir para que el tráfico fluyera de extremo a extremo."
+        },
+        "pt-BR": {
+            "title": "Sem caminho para o servidor de arquivos",
+            "story": "Após a mudança de escritório no fim de semana, a equipe do laboratório e recepção relatam que não conseguem abrir ou acessar File-Server. Financeiro e vendas não reclamaram. O departamento de TI precisa resolver isso antes de segunda-feira.",
+            "objective": "Restaurar uma requisição HTTP GET de PC-Lab para File-Server e um ping de PC-Reception para File-Server.",
+            "hints": [
+                "A requisição de PC-Lab trava tentando alcançar Router-HQ, e o pacote de PC-Reception morre logo em Switch-Floor2 antes de sair em direção a Router-HQ.",
+                "Switch-Floor2 e Router-HQ não possuem link físico entre si, então nenhum tráfego pode cruzar para a subrede do servidor; separadamente, a porta do Switch de PC-Reception está na VLAN errada, isolada da porta VLAN 20 de Router-HQ.",
+                "Em Switch-Floor2, conecte um cabo para Router-HQ e altere a porta 3 (porta de PC-Reception) de VLAN 30 para VLAN 20."
+            ],
+            "explanation": "Dois problemas separados bloquearam o tráfego: um cabo faltante entre o Switch e o Router cortou todas as rotas para a subrede do servidor, enquanto a porta do Switch de PC-Reception estava atribuída à VLAN incorreta, impedindo-a de alcançar a interface VLAN 20 do Router. Tanto o link físico quanto a atribuição de VLAN precisavam corresponder para que o tráfego fluisse de ponta a ponta."
+        },
+        "de": {
+            "title": "Kein Pfad zum File-Server",
+            "story": "Nach dem Büroumzug am Wochenende berichten sowohl die Lab-Mitarbeiter als auch der Empfang, dass sie File-Server überhaupt nicht öffnen oder erreichen können. Finanzen und Vertrieb haben sich nicht beschwert. IT muss das vor Montag klären.",
+            "objective": "Stellen Sie einen HTTP GET von PC-Lab zu File-Server und einen Ping von PC-Reception zu File-Server wieder her.",
+            "hints": [
+                "Die Anfrage von PC-Lab bleibt beim Versuch hängen, Router-HQ zu erreichen, und das Paket von PC-Reception endet direkt bei Switch-Floor2, bevor es überhaupt in Richtung Router-HQ geht.",
+                "Switch-Floor2 und Router-HQ haben keine physische Verbindung zwischen sich, daher kann nichts das Server-Subnetz kreuzen; zusätzlich sitzt der Switch-Port von PC-Reception im falschen VLAN und ist vom VLAN-20-Port von Router-HQ isoliert.",
+                "Verbinden Sie auf Switch-Floor2 ein Kabel mit Router-HQ, und setzen Sie Port 3 (PC-Reception's Port) auf VLAN 20 statt VLAN 30."
+            ],
+            "explanation": "Zwei separate Fehler blockierten den Verkehr: Ein fehlendes Kabel zwischen dem Switch und Router schnitt jede Route zum Server-Subnetz ab, während der Switch-Port von PC-Reception dem falschen VLAN zugewiesen war und es daran hinderte, die VLAN-20-Schnittstelle von Router-HQ zu erreichen. Sowohl die physische Verbindung als auch die VLAN-Zuordnung mussten übereinstimmen, damit der Verkehr end-to-end fließen konnte."
+        },
+        "fr": {
+            "title": "Aucun chemin vers le File-Server",
+            "story": "Après le déménagement du bureau le week-end, le personnel du Lab et la Réception signalent tous deux qu'ils ne peuvent pas ouvrir ni accéder à File-Server du tout. La Finance et les Ventes ne se sont pas plaints. L'IT doit résoudre cela avant lundi.",
+            "objective": "Restaurez une requête HTTP GET de PC-Lab vers File-Server et un ping de PC-Reception vers File-Server.",
+            "hints": [
+                "La demande de PC-Lab s'arrête en essayant d'atteindre Router-HQ, et le paquet de PC-Reception meurt directement à Switch-Floor2 avant même de partir vers Router-HQ.",
+                "Switch-Floor2 et Router-HQ n'ont aucune liaison physique entre eux, donc rien ne peut traverser vers le sous-réseau du serveur; séparément, le port du Switch de PC-Reception est dans le mauvais VLAN, isolé du port VLAN 20 de Router-HQ.",
+                "Sur Switch-Floor2, connectez un câble à Router-HQ, et placez le port 3 (port de PC-Reception) en VLAN 20 au lieu de VLAN 30."
+            ],
+            "explanation": "Deux défaillances séparées ont bloqué le trafic : un câble manquant entre le Switch et le Router a coupé chaque route vers le sous-réseau du serveur, tandis que le port du Switch de PC-Reception était assigné au mauvais VLAN, l'empêchant de jamais atteindre l'interface VLAN 20 de Router-HQ. Tant la liaison physique que l'assignation VLAN devaient correspondre pour que le trafic s'écoule bout en bout."
+        },
+        "hi": {
+            "title": "फाइल-सर्वर के लिए कोई पथ नहीं",
+            "story": "सप्ताहांत के कार्यालय स्थानांतरण के बाद, लैब कर्मचारी और रिसेप्शन दोनों की रिपोर्ट है कि वे File-Server को बिल्कुल भी नहीं खोल या reach नहीं कर सकते। Finance और Sales ने शिकायत नहीं की है। IT को यह सोमवार से पहले ठीक करना होगा।",
+            "objective": "PC-Lab से File-Server तक HTTP GET और PC-Reception से File-Server तक ping को पुनः स्थापित करें।",
+            "hints": [
+                "PC-Lab का अनुरोध Router-HQ तक पहुंचने का प्रयास करते समय रुक जाता है, और PC-Reception की पैकेट Switch-Floor2 पर ही समाप्त हो जाती है, इससे पहले कि वह Router-HQ की ओर जाए।",
+                "Switch-Floor2 और Router-HQ के बीच कोई भौतिक link नहीं है, इसलिए कोई भी server subnet तक नहीं जा सकता; अलग से, PC-Reception की switch port गलत VLAN में है, Router-HQ के VLAN 20 port से अलग-थलग है।",
+                "Switch-Floor2 पर, Router-HQ के लिए एक cable जोड़ें, और port 3 (PC-Reception का port) को VLAN 30 की जगह VLAN 20 में सेट करें।"
+            ],
+            "explanation": "दो अलग-अलग समस्याओं ने ट्रैफिक को रोका: switch और router के बीच एक missing cable ने server के subnet तक हर मार्ग को काट दिया, जबकि PC-Reception की switch port गलत VLAN को assign किया गया था, जिससे वह Router-HQ के VLAN 20 interface तक कभी नहीं पहुंच सका। end-to-end ट्रैफिक को flow करने के लिए भौतिक link और VLAN assignment दोनों को match करना पड़ा।"
+        },
+        "id": {
+            "title": "Tidak Ada Jalur ke File-Server",
+            "story": "Setelah pemindahan kantor akhir pekan, staf Lab dan Resepsi melaporkan bahwa mereka tidak dapat membuka atau menjangkau File-Server sama sekali. Keuangan dan Penjualan belum mengeluh. IT perlu menyelesaikan ini sebelum Senin.",
+            "objective": "Kembalikan HTTP GET dari PC-Lab ke File-Server dan ping dari PC-Reception ke File-Server.",
+            "hints": [
+                "Permintaan PC-Lab terhenti mencoba menjangkau Router-HQ, dan paket PC-Reception mati langsung di Switch-Floor2 sebelum bahkan meninggalkan Router-HQ.",
+                "Switch-Floor2 dan Router-HQ tidak memiliki link fisik di antara mereka, jadi apa pun tidak bisa melewati ke subnet server; terpisah, port switch PC-Reception berada di VLAN yang salah, terisolasi dari port VLAN 20 Router-HQ.",
+                "Di Switch-Floor2, sambungkan kabel ke Router-HQ, dan atur port 3 (port PC-Reception) ke VLAN 20 bukan VLAN 30."
+            ],
+            "explanation": "Dua kerusakan terpisah memblokir lalu lintas: kabel yang hilang antara Switch dan Router memutus setiap rute ke subnet server, sementara port Switch PC-Reception ditugaskan ke VLAN yang salah, menjaga agar tidak pernah mencapai interface VLAN 20 Router-HQ. Baik link fisik maupun penugasan VLAN harus cocok agar lalu lintas mengalir dari ujung ke ujung."
+        },
+        "ru": {
+            "title": "Нет пути к File-Server",
+            "story": "После переезда офиса в выходные дни сотрудники Lab и Reception сообщают, что они вообще не могут открыть или достичь File-Server. Finance и Sales не жаловались. IT должна решить это до понедельника.",
+            "objective": "Восстановите HTTP GET от PC-Lab к File-Server и ping от PC-Reception к File-Server.",
+            "hints": [
+                "Запрос PC-Lab зависает при попытке достичь Router-HQ, а пакет PC-Reception умирает прямо на Switch-Floor2, еще до того как покинуть Router-HQ.",
+                "Switch-Floor2 и Router-HQ не имеют физической связи между собой, поэтому ничто не может пересечь подсеть сервера; отдельно, порт Switch PC-Reception находится в неправильной VLAN, изолирован от порта VLAN 20 Router-HQ.",
+                "На Switch-Floor2 подключите кабель к Router-HQ и установите порт 3 (порт PC-Reception) на VLAN 20 вместо VLAN 30."
+            ],
+            "explanation": "Две отдельные проблемы заблокировали трафик: отсутствующий кабель между Switch и Router перекрыл все маршруты к подсети сервера, в то время как порт Switch PC-Reception был назначен неправильной VLAN, что помешало ему когда-либо достичь интерфейса VLAN 20 Router-HQ. Как физическая связь, так и назначение VLAN должны были совпадать, чтобы трафик мог течь от конца к концу."
+        },
+        "it": {
+            "title": "Nessun percorso verso File-Server",
+            "story": "Dopo il trasferimento in ufficio nel fine settimana, il personale di Lab e Reception segnalano che non riescono ad aprire o raggiungere File-Server. Finance e Sales non si sono lamentati. L'IT deve risolvere prima di lunedì.",
+            "objective": "Ripristinare un HTTP GET da PC-Lab a File-Server e un ping da PC-Reception a File-Server.",
+            "hints": [
+                "La richiesta di PC-Lab si blocca cercando di raggiungere Router-HQ, e il pacchetto di PC-Reception muore subito su Switch-Floor2 prima ancora di dirigersi verso Router-HQ.",
+                "Switch-Floor2 e Router-HQ non hanno un collegamento fisico tra loro, quindi nulla può raggiungere la subnet del server. Separatamente, la porta switch di PC-Reception si trova nella VLAN sbagliata, isolata dalla porta VLAN 20 di Router-HQ.",
+                "Su Switch-Floor2, collega un cavo a Router-HQ e imposta la porta 3 (porta di PC-Reception) su VLAN 20 anziché VLAN 30."
+            ],
+            "explanation": "Due interruzioni separate hanno bloccato il traffico: un cavo mancante tra lo switch e il router ha interrotto ogni percorso verso la subnet del server, mentre la porta switch di PC-Reception era assegnata alla VLAN sbagliata, impedendole di raggiungere l'interfaccia VLAN 20 del router. Sia il collegamento fisico che l'assegnazione VLAN dovevano corrispondere affinché il traffico fluisse da un'estremità all'altra."
+        },
+        "tr": {
+            "title": "Dosya Sunucusuna Giden Yol Yok",
+            "story": "Hafta sonu ofis taşınmasından sonra, Lab ve Reception personeli File-Server'a ulaşamadıklarını veya açamadıklarını bildirmiştir. Finance ve Sales şikayetçi olmamıştır. BT pazartesiden önce bunu çözmek zorundadır.",
+            "objective": "PC-Lab'dan File-Server'a bir HTTP GET ve PC-Reception'dan File-Server'a bir ping geri yükleyin.",
+            "hints": [
+                "PC-Lab'ın isteği Router-HQ'ya ulaşmaya çalışırken takılıp kalır ve PC-Reception'ın paketi Router-HQ'ya doğru gitmeden Switch-Floor2'de hemen ölür.",
+                "Switch-Floor2 ve Router-HQ arasında fiziksel bir bağlantı yoktur, bu nedenle sunucu subnet'ine hiçbir şey geçemez. Ayrıca, PC-Reception'ın switch portu yanlış VLAN'da bulunur ve Router-HQ'nun VLAN 20 portundan yalıtılmıştır.",
+                "Switch-Floor2 üzerinde, Router-HQ'ya bir kablo bağlayın ve 3 numaralı portu (PC-Reception'ın portu) VLAN 30 yerine VLAN 20 olarak ayarlayın."
+            ],
+            "explanation": "İki ayrı arıza trafiği engelledi: switch ile router arasındaki eksik kablo sunucu subnet'ine giden tüm yolları kesti, PC-Reception'ın switch portu yanlış VLAN'a atanmıştı ve bu da router'ın VLAN 20 arayüzüne ulaşmayı engelledi. Trafiğin uçtan uca akması için hem fiziksel bağlantı hem de VLAN ataması eşleşmeli olması gerekiyordu."
+        },
+        "th": {
+            "title": "ไม่มีเส้นทางไปยัง File-Server",
+            "story": "หลังจากย้ายสำนักงานในวันธรรมชาติ บุคลากรของ Lab และ Reception รายงานว่าไม่สามารถเปิดหรือเข้าถึง File-Server ได้เลย Finance และ Sales ไม่ได้บ่นเรื่องนี้ IT ต้องแก้ไขให้เรียบร้อยก่อนวันจันทร์",
+            "objective": "เรียกคืนการส่ง HTTP GET จาก PC-Lab ไปยัง File-Server และการ ping จาก PC-Reception ไปยัง File-Server",
+            "hints": [
+                "คำขอของ PC-Lab ติดขัดขณะพยายามเข้าถึง Router-HQ และแพ็กเก็ตของ PC-Reception หายไปที่ Switch-Floor2 ก่อนที่จะไปยัง Router-HQ",
+                "Switch-Floor2 และ Router-HQ ไม่มีการเชื่อมต่อทางกายภาพระหว่างกัน จึงไม่มีอะไรสามารถเข้าถึงเครือข่ายเซิร์ฟเวอร์ได้ นอกจากนี้ พอร์ต switch ของ PC-Reception อยู่ใน VLAN ที่ผิด แยกออกจากพอร์ต VLAN 20 ของ Router-HQ",
+                "บน Switch-Floor2 เชื่อมต่อสายเคเบิลไปยัง Router-HQ แล้วตั้งค่าพอร์ต 3 (พอร์ตของ PC-Reception) เป็น VLAN 20 แทน VLAN 30"
+            ],
+            "explanation": "การขัดขวางสองประการ ได้แก่ สายเคเบิลที่หายไประหว่าง switch และ router ตัดเส้นทางทั้งหมดไปยังเครือข่ายเซิร์ฟเวอร์ ขณะที่พอร์ต switch ของ PC-Reception ได้รับมอบหมายให้กับ VLAN ที่ผิด ทำให้เข้าถึงอินเทอร์เฟซ VLAN 20 ของ router ไม่ได้ ทั้งการเชื่อมต่อทางกายภาพและการมอบหมาย VLAN ต้องตรงกันเพื่อให้ทราฟฟิกไหลได้จากปลายเดียวไปยังปลายอีกเดียว"
+        },
+        "vi": {
+            "title": "Không Có Đường Dẫn Đến File-Server",
+            "story": "Sau khi di chuyển văn phòng vào cuối tuần, nhân viên Lab và Reception báo cáo rằng họ không thể mở hoặc truy cập File-Server. Finance và Sales chưa có phàn nàn. IT cần giải quyết trước thứ Hai.",
+            "objective": "Khôi phục HTTP GET từ PC-Lab đến File-Server và ping từ PC-Reception đến File-Server.",
+            "hints": [
+                "Yêu cầu của PC-Lab bị mắc kẹt khi cố gắng tiếp cận Router-HQ và gói của PC-Reception chết ngay tại Switch-Floor2 trước khi đi đến Router-HQ.",
+                "Switch-Floor2 và Router-HQ không có liên kết vật lý giữa chúng, vì vậy không gì có thể vào mạng con máy chủ. Riêng rẽ, cổng switch của PC-Reception nằm trong VLAN sai, bị cách ly khỏi cổng VLAN 20 của Router-HQ.",
+                "Trên Switch-Floor2, kết nối một cáp đến Router-HQ và đặt cổng 3 (cổng của PC-Reception) thành VLAN 20 thay vì VLAN 30."
+            ],
+            "explanation": "Hai lỗi riêng biệt đã chặn lưu lượng truy cập: cáp bị thiếu giữa switch và router đã cắt đứt mọi tuyến đến mạng con của máy chủ, trong khi cổng switch của PC-Reception được gán cho VLAN sai, khiến nó không thể tiếp cận giao diện VLAN 20 của router. Cả liên kết vật lý và phân gán VLAN phải khớp để lưu lượng truy cập chảy từ đầu đến cuối."
+        }
+    }
+}
