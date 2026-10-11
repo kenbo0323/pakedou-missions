@@ -1,0 +1,687 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-18",
+    "number": 28,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "missing_default_gateway",
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "default-gateway",
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.4.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.4.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.27.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.28.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.27.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.27.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.28.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.4.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.27.1",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.28.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 3
+    },
+    "text": {
+        "en": {
+            "title": "Portal Unreachable from Support Desk",
+            "story": "The support team at Site A reports that PC-Support cannot load the Portal-01 page at Site B. They say it has never worked today, even though the cable and switch lights all look normal.",
+            "objective": "Make an HTTP GET from PC-Support to Portal-01 succeed.",
+            "hints": [
+                "The request from PC-Support never leaves its own network segment — it stalls right at PC-Support before ever reaching Switch-East or Router-East.",
+                "PC-Support has no default gateway set, so it has nowhere to send traffic bound for another network; separately, Router-West routes PC-Support's network out the wrong port, so even a reply would misroute.",
+                "On PC-Support set the default gateway to 10.0.4.254. On Router-West fix the route to 10.0.4.0/255.255.255.0 so next hop 10.0.27.1 uses port 0, not the wrong port."
+            ],
+            "explanation": "A client needs a default gateway to reach any network outside its own subnet, and a router's static route must send traffic out the correct port toward its next hop, not an unrelated one. Both gaps had to be closed for the full path to work."
+        },
+        "ja": {
+            "title": "サポート窓口からポータルに接続できない",
+            "story": "拠点Aのサポートチームから、PC-Supportで拠点BのPortal-01のページが開けないと報告がありました。ケーブルやスイッチのランプは正常に見えるのに、今日は一度も繋がったことがないとのことです。",
+            "objective": "PC-SupportからPortal-01へのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Supportからのリクエストは、自分のネットワークセグメントから一歩も出られていません。Switch-EastやRouter-Eastに届く前に、PC-Supportの時点で止まっています。",
+                "PC-Supportにはデフォルトゲートウェイが設定されていないため、他のネットワーク宛ての通信を送り出す先がありません。さらにRouter-WestではPC-Supportのネットワーク宛てのルートが誤ったポートに向いているため、返信があっても正しく届きません。",
+                "PC-Supportでデフォルトゲートウェイを10.0.4.254に設定してください。Router-Westでは10.0.4.0/255.255.255.0へのルートを修正し、中継先(ネクストホップ)10.0.27.1がポート0を使うようにしてください（誤ったポートではなく）。"
+            ],
+            "explanation": "クライアントが自分のサブネット外のネットワークに到達するにはデフォルトゲートウェイの設定が必要です。また、ルーターの静的ルートは中継先(ネクストホップ)に向けて正しいポートから通信を送り出す必要があり、無関係なポートに送ってはいけません。今回はこの両方の問題を解消することで、通信経路全体が正しく機能するようになりました。"
+        },
+        "zh-CN": {
+            "title": "无法从支持台访问门户网站",
+            "story": "A站点的支持团队报告说PC-Support无法加载B站点的Portal-01页面。他们说今天从未能够打开，尽管网线和交换机指示灯看起来都很正常。",
+            "objective": "让PC-Support向Portal-01发送HTTP GET请求并成功。",
+            "hints": [
+                "来自PC-Support的请求永远不会离开其自身网络段——它在PC-Support处卡住，从未到达Switch-East或Router-East。",
+                "PC-Support没有设置默认网关，所以它无法将流量发送到其他网络；另外Router-West将PC-Support的网络从错误的端口路由出去，即使回复也会错误路由。",
+                "在PC-Support上将默认网关设置为10.0.4.254。在Router-West上修复到10.0.4.0/255.255.255.0的路由，使下一跳10.0.27.1使用端口0，而不是错误的端口。"
+            ],
+            "explanation": "客户端需要默认网关来访问其自身子网之外的任何网络，路由器的静态路由必须将流量发送到朝向其下一跳的正确端口，而不是无关的端口。两个问题都需要修复，完整路径才能工作。"
+        },
+        "zh-TW": {
+            "title": "無法從支援台存取入口網站",
+            "story": "A站點的支援小組報告說PC-Support無法載入B站點的Portal-01頁面。他們說今天從未能打開，雖然網路線和交換機指示燈看起來都很正常。",
+            "objective": "讓PC-Support向Portal-01發送HTTP GET請求並成功。",
+            "hints": [
+                "來自PC-Support的請求永遠不會離開其自身網路區段——它在PC-Support處停留，從未到達Switch-East或Router-East。",
+                "PC-Support沒有設定預設閘道，所以它無法將流量傳送到其他網路；另外Router-West將PC-Support的網路從錯誤的連接埠路由出去，即使回覆也會錯誤路由。",
+                "在PC-Support上將預設閘道設定為10.0.4.254。在Router-West上修復到10.0.4.0/255.255.255.0的路由，使下一跳10.0.27.1使用連接埠0，而不是錯誤的連接埠。"
+            ],
+            "explanation": "用戶端需要預設閘道來存取其自身子網之外的任何網路，路由器的靜態路由必須將流量傳送到朝向其下一跳的正確連接埠，而不是無關的連接埠。兩個問題都需要修復，完整路徑才能運作。"
+        },
+        "ko": {
+            "title": "지원팀에서 포털에 접근할 수 없음",
+            "story": "A사이트의 지원팀이 PC-Support가 B사이트의 Portal-01 페이지를 로드할 수 없다고 보고했습니다. 케이블과 스위치 표시등이 모두 정상으로 보이지만 오늘 전혀 작동하지 않았다고 합니다.",
+            "objective": "PC-Support에서 Portal-01로의 HTTP GET 요청을 성공시키세요.",
+            "hints": [
+                "PC-Support의 요청이 자신의 네트워크 세그먼트를 떠나지 않습니다. PC-Support에서 멈춰있고 Switch-East나 Router-East에 도달하지 않습니다.",
+                "PC-Support에 기본 게이트웨이가 설정되어 있지 않아서 다른 네트워크로 트래픽을 보낼 곳이 없습니다. 또한 Router-West는 PC-Support의 네트워크를 잘못된 포트로 라우팅하므로 응답도 잘못 라우팅됩니다.",
+                "PC-Support에서 기본 게이트웨이를 10.0.4.254로 설정하세요. Router-West에서 10.0.4.0/255.255.255.0로의 경로를 수정하여 다음 홉 10.0.27.1이 잘못된 포트가 아닌 포트 0을 사용하도록 하세요."
+            ],
+            "explanation": "클라이언트는 자신의 서브넷 외부의 네트워크에 접근하기 위해 기본 게이트웨이가 필요하며, 라우터의 정적 경로는 트래픽을 관련 없는 포트가 아닌 다음 홉 방향의 올바른 포트로 보내야 합니다. 전체 경로가 작동하려면 두 문제를 모두 해결해야 합니다."
+        },
+        "es": {
+            "title": "Portal inaccesible desde el escritorio de soporte",
+            "story": "El equipo de soporte del sitio A reporta que PC-Support no puede cargar la página Portal-01 del sitio B. Dicen que nunca ha funcionado hoy, aunque el cable e indicadores del switch se ven normales.",
+            "objective": "Lograr que una solicitud HTTP GET desde PC-Support a Portal-01 sea exitosa.",
+            "hints": [
+                "La solicitud de PC-Support nunca abandona su propio segmento de red: se detiene en PC-Support antes de llegar a Switch-East o Router-East.",
+                "PC-Support no tiene un Gateway predeterminado configurado, por lo que no tiene dónde enviar el tráfico destinado a otra red; además, Router-West enruta la red de PC-Support por el puerto incorrecto, por lo que incluso una respuesta se rutearía mal.",
+                "En PC-Support establece el Gateway predeterminado en 10.0.4.254. En Router-West corrige la ruta a 10.0.4.0/255.255.255.0 para que el siguiente salto 10.0.27.1 use puerto 0, no el puerto incorrecto."
+            ],
+            "explanation": "Un cliente necesita un Gateway predeterminado para alcanzar cualquier red fuera de su propia subred, y la ruta estática de un router debe enviar el tráfico por el puerto correcto hacia su siguiente salto, no por uno no relacionado. Ambas brechas debían cerrarse para que la ruta completa funcionara."
+        },
+        "pt-BR": {
+            "title": "Portal inacessível da mesa de suporte",
+            "story": "O time de suporte do Site A relata que PC-Support não consegue carregar a página Portal-01 do Site B. Dizem que nunca funcionou hoje, apesar dos cabos e luzes do switch parecerem normais.",
+            "objective": "Fazer uma requisição HTTP GET de PC-Support para Portal-01 ser bem-sucedida.",
+            "hints": [
+                "A requisição do PC-Support nunca sai de seu próprio segmento de rede — ela para no PC-Support antes de chegar ao Switch-East ou Router-East.",
+                "PC-Support não possui um Gateway padrão definido, então não tem para onde enviar tráfego destinado a outra rede; além disso, Router-West roteia a rede de PC-Support pela porta errada, então até uma resposta seria roteada incorretamente.",
+                "Em PC-Support defina o Gateway padrão como 10.0.4.254. Em Router-West corrija a rota para 10.0.4.0/255.255.255.0 para que o próximo salto 10.0.27.1 use a porta 0, não a porta errada."
+            ],
+            "explanation": "Um cliente precisa de um Gateway padrão para alcançar qualquer rede fora de sua própria sub-rede, e a rota estática de um router deve enviar tráfego pela porta correta em direção ao seu próximo salto, não por uma não relacionada. Ambas as lacunas precisavam ser fechadas para que o caminho completo funcionasse."
+        },
+        "de": {
+            "title": "Portal von Support-Schreibtisch nicht erreichbar",
+            "story": "Das Support-Team an Standort A meldet, dass PC-Support die Seite Portal-01 an Standort B nicht laden kann. Sie sagen, dass es heute noch nie funktioniert hat, obwohl das Kabel und die Switch-Lichter alle normal aussehen.",
+            "objective": "Machen Sie eine HTTP GET von PC-Support zu Portal-01 erfolgreich.",
+            "hints": [
+                "Die Anfrage von PC-Support verlässt sein eigenes Netzwerksegment nie – sie bleibt direkt bei PC-Support stehen, bevor sie Switch-East oder Router-East erreicht.",
+                "PC-Support hat keinen Standard-Gateway gesetzt, daher hat es nirgendwo hin, um Datenverkehr für ein anderes Netzwerk zu senden; zusätzlich leitet Router-West das Netzwerk von PC-Support über den falschen Port weiter, daher würde auch eine Antwort falsch geroutet.",
+                "Setzen Sie auf PC-Support das Standard-Gateway auf 10.0.4.254. Auf Router-West reparieren Sie die Route zu 10.0.4.0/255.255.255.0, sodass der Nächster Hop 10.0.27.1 Port 0 verwendet, nicht den falschen Port."
+            ],
+            "explanation": "Ein Client benötigt ein Standard-Gateway, um ein Netzwerk außerhalb seines eigenen Subnetzes zu erreichen, und die statische Route eines Routers muss den Datenverkehr über den richtigen Port zu seinem Nächsten Hop senden, nicht zu einem unabhängigen. Beide Lücken mussten geschlossen werden, damit der vollständige Pfad funktioniert."
+        },
+        "fr": {
+            "title": "Portail inaccessible depuis le bureau de support",
+            "story": "L'équipe de support du Site A signale que PC-Support ne peut pas charger la page Portal-01 du Site B. Ils disent que cela n'a jamais fonctionné aujourd'hui, même si le câble et les voyants du commutateur semblent tous normaux.",
+            "objective": "Réussissez à faire une requête HTTP GET de PC-Support vers Portal-01.",
+            "hints": [
+                "La requête de PC-Support ne quitte jamais son propre segment réseau — elle s'arrête directement à PC-Support avant d'atteindre Switch-East ou Router-East.",
+                "PC-Support n'a pas de Passerelle par défaut configurée, il n'a donc nulle part où envoyer le trafic destiné à un autre réseau ; de plus, Router-West achemine le réseau de PC-Support par le mauvais port, de sorte qu'une réponse serait également mal acheminée.",
+                "Sur PC-Support, définissez la Passerelle par défaut sur 10.0.4.254. Sur Router-West, corrigez la route vers 10.0.4.0/255.255.255.0 afin que le Saut suivant 10.0.27.1 utilise le port 0, et non le mauvais port."
+            ],
+            "explanation": "Un Client a besoin d'une Passerelle par défaut pour atteindre tout réseau en dehors de son propre sous-réseau, et la route statique d'un Router doit envoyer le trafic par le bon port vers son Saut suivant, pas vers un port sans rapport. Les deux lacunes ont dû être comblées pour que le chemin complet fonctionne."
+        },
+        "hi": {
+            "title": "पोर्टल सपोर्ट डेस्क से पहुंच योग्य नहीं",
+            "story": "साइट A की सपोर्ट टीम बताती है कि PC-Support साइट B पर Portal-01 पेज लोड नहीं कर सकता। वे कहते हैं कि आज यह कभी काम नहीं किया, भले ही केबल और स्विच की रोशनियां सभी सामान्य दिखती हैं।",
+            "objective": "PC-Support से Portal-01 तक HTTP GET सफल करें।",
+            "hints": [
+                "PC-Support से अनुरोध कभी अपने स्वयं के नेटवर्क सेगमेंट को नहीं छोड़ता — यह Switch-East या Router-East तक पहुंचने से पहले PC-Support पर ही अटक जाता है।",
+                "PC-Support में कोई डिफ़ॉल्ट गेटवे सेट नहीं है, इसलिए इसके पास किसी अन्य नेटवर्क के लिए ट्रैफिक भेजने के लिए कहीं नहीं है; अलग से, Router-West PC-Support के नेटवर्क को गलत पोर्ट से बाहर करता है, इसलिए जवाब भी गलत तरीके से रूट हो जाएगा।",
+                "PC-Support पर डिफ़ॉल्ट गेटवे को 10.0.4.254 पर सेट करें। Router-West पर 10.0.4.0/255.255.255.0 के लिए मार्ग को ठीक करें ताकि अगला हॉप 10.0.27.1 गलत पोर्ट नहीं बल्कि पोर्ट 0 का उपयोग करे।"
+            ],
+            "explanation": "एक Client को अपने स्वयं के सबनेट के बाहर किसी भी नेटवर्क तक पहुंचने के लिए एक डिफ़ॉल्ट गेटवे की आवश्यकता होती है, और एक Router का स्टैटिक मार्ग ट्रैफिक को सही पोर्ट से अपने अगले हॉप की ओर भेजना चाहिए, किसी असंबंधित पोर्ट को नहीं। पूर्ण पथ के काम करने के लिए दोनों अंतराल को बंद करना पड़ा।"
+        },
+        "id": {
+            "title": "Portal Tidak Dapat Diakses dari Meja Dukungan",
+            "story": "Tim dukungan di Situs A melaporkan bahwa PC-Support tidak dapat memuat halaman Portal-01 di Situs B. Mereka mengatakan hal itu tidak pernah berfungsi hari ini, meskipun kabel dan lampu switch semuanya terlihat normal.",
+            "objective": "Buat HTTP GET dari PC-Support ke Portal-01 berhasil.",
+            "hints": [
+                "Permintaan dari PC-Support tidak pernah meninggalkan segmen jaringannya sendiri — permintaan itu terhenti tepat di PC-Support sebelum pernah mencapai Switch-East atau Router-East.",
+                "PC-Support tidak memiliki Gateway Default yang diatur, jadi tidak memiliki tempat untuk mengirim lalu lintas yang ditujukan untuk jaringan lain; terpisah, Router-West merutekan jaringan PC-Support keluar dari port yang salah, jadi bahkan balasan akan disalahkan.",
+                "Pada PC-Support, atur Gateway Default ke 10.0.4.254. Pada Router-West, perbaiki rute ke 10.0.4.0/255.255.255.0 sehingga Hop berikutnya 10.0.27.1 menggunakan port 0, bukan port yang salah."
+            ],
+            "explanation": "Client memerlukan Gateway Default untuk menjangkau jaringan apa pun di luar subnet-nya sendiri, dan rute statis Router harus mengirim lalu lintas keluar port yang benar menuju Hop berikutnya, bukan yang tidak terkait. Kedua kesenjangan harus ditutup agar jalur lengkap berfungsi."
+        },
+        "ru": {
+            "title": "Портал недоступен с рабочего стола поддержки",
+            "story": "Команда поддержки сайта A сообщает, что PC-Support не может загрузить страницу Portal-01 на сайте B. Они говорят, что сегодня это никогда не работало, хотя кабель и индикаторы коммутатора выглядят нормально.",
+            "objective": "Выполнить HTTP GET от PC-Support к Portal-01.",
+            "hints": [
+                "Запрос от PC-Support никогда не покидает собственный сегмент сети — он зависает прямо в PC-Support, прежде чем когда-либо достичь Switch-East или Router-East.",
+                "PC-Support не имеет установленного Шлюза по умолчанию, поэтому ему некуда отправлять трафик, предназначенный для другой сети; кроме того, Router-West направляет сеть PC-Support через неправильный порт, поэтому даже ответ будет неправильно маршрутизирован.",
+                "На PC-Support установите Шлюз по умолчанию на 10.0.4.254. На Router-West исправьте маршрут к 10.0.4.0/255.255.255.0, чтобы Следующий узел 10.0.27.1 использовал порт 0, а не неправильный порт."
+            ],
+            "explanation": "Client нуждается в Шлюзе по умолчанию для доступа к любой сети за пределами своей собственной подсети, а статический маршрут Router должен отправлять трафик через правильный порт к своему Следующему узлу, а не к не связанному портуу. Обе пробелы должны быть закрыты, чтобы полный путь работал."
+        },
+        "it": {
+            "title": "Portal non raggiungibile dal Support Desk",
+            "story": "Il team di supporto del sito A segnala che PC-Support non riesce a caricare la pagina Portal-01 del sito B. Dicono che non ha mai funzionato oggi, anche se il cavo e i LED dello switch sembrano normali.",
+            "objective": "Effettuare un HTTP GET da PC-Support a Portal-01 con successo.",
+            "hints": [
+                "La richiesta da PC-Support non esce dal suo segmento di rete — si blocca proprio su PC-Support prima di raggiungere Switch-East o Router-East.",
+                "PC-Support non ha un Gateway predefinito configurato, quindi non sa dove inviare il traffico verso un'altra rete; inoltre, Router-West instrada la rete di PC-Support dalla porta sbagliata, quindi anche una risposta verrebbe indirizzata male.",
+                "Su PC-Support imposta il Gateway predefinito a 10.0.4.254. Su Router-West correggi il percorso verso 10.0.4.0/255.255.255.0 in modo che il next hop 10.0.27.1 usi la porta 0, non la porta sbagliata."
+            ],
+            "explanation": "Un Client ha bisogno di un Gateway predefinito per raggiungere qualsiasi rete al di fuori della propria subnet, e il percorso statico di un Router deve inviare il traffico dalla porta corretta verso il suo next hop, non da una porta non correlata. Entrambe le lacune dovevano essere colmate affinché il percorso completo funzionasse."
+        },
+        "tr": {
+            "title": "Portal Destek Masasından Erişilemiyor",
+            "story": "A Sitesindeki destek ekibi, PC-Support'un B Sitesindeki Portal-01 sayfasını yükleyemediğini bildiriyor. Kable ve anahtar ışıkları normal görünse de, bugün hiç çalışmadığını söylüyorlar.",
+            "objective": "PC-Support'tan Portal-01'e HTTP GET başarıyla gerçekleştirin.",
+            "hints": [
+                "PC-Support'tan gelen istek, kendi ağ segmentini hiç terk etmiyor — Switch-East veya Router-East'e ulaşmadan önce PC-Support'ta duruyor.",
+                "PC-Support'un Varsayılan ağ geçidi ayarlanmamış durumda, bu nedenle başka bir ağa giden trafiği gönderecek bir yeri yok; ayrıca, Router-West, PC-Support'un ağını yanlış porttan yönlendiriyor, bu nedenle bir yanıt bile yanlış yönlendirilir.",
+                "PC-Support'ta Varsayılan ağ geçidini 10.0.4.254 olarak ayarlayın. Router-West'te 10.0.4.0/255.255.255.0 yönlendirmesini düzeltin, böylece Sonraki sıçrama 10.0.27.1 port 0'ı kullanır, yanlış portu değil."
+            ],
+            "explanation": "Bir Client, kendi subnet'i dışında herhangi bir ağa ulaşmak için bir Varsayılan ağ geçidine ihtiyaç duyar ve bir Router'ın statik yolu, trafiği ilişkisiz bir porttan değil, Sonraki sıçramasına doğru portta göndermelidir. Tam yolun çalışması için her iki boşluğun da kapatılması gerekiyordu."
+        },
+        "th": {
+            "title": "Portal ไม่สามารถเข้าถึงได้จาก Support Desk",
+            "story": "ทีม support ที่ Site A รายงานว่า PC-Support ไม่สามารถโหลดหน้า Portal-01 ที่ Site B ได้ พวกเขาบอกว่าไม่เคยทำงานมาตั้งแต่วันนี้ แม้ว่าสายเคเบิล และไฟ switch ดูเหมือนปกติ",
+            "objective": "ดำเนิน HTTP GET จาก PC-Support ไปยัง Portal-01 ให้สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Support ไม่ออกจากเซกเมนต์เครือข่ายของตัวเอง — ติดขัดอยู่ที่ PC-Support ก่อนที่จะถึง Switch-East หรือ Router-East",
+                "PC-Support ไม่มีเกตเวย์เริ่มต้นตั้งไว้ จึงไม่มีที่จะส่งทราฟิกไปยังเครือข่ายอื่น นอกจากนี้ Router-West ยังส่งเครือข่ายของ PC-Support ออกจากพอร์ตที่ผิด แม้แต่การตอบกลับก็จะถูกส่งไปผิดทาง",
+                "ใน PC-Support ตั้งเกตเวย์เริ่มต้นเป็น 10.0.4.254 บน Router-West แก้ไขเส้นทางไปยัง 10.0.4.0/255.255.255.0 เพื่อให้ฮ็อปถัดไป 10.0.27.1 ใช้พอร์ต 0 ไม่ใช่พอร์ตที่ผิด"
+            ],
+            "explanation": "Client ต้องมีเกตเวย์เริ่มต้นเพื่อเข้าถึงเครือข่ายใดๆ นอกเหนือจากซับเน็ตของตัวเอง และเส้นทางคงที่ของ Router ต้องส่งทราฟิกออกจากพอร์ตที่ถูกต้องไปยังฮ็อปถัดไป ไม่ใช่จากพอร์ตที่ไม่เกี่ยวข้อง ช่องว่างทั้งสองต้องปิดเพื่อให้เส้นทางสมบูรณ์ทำงานได้"
+        },
+        "vi": {
+            "title": "Portal không thể truy cập từ Support Desk",
+            "story": "Nhóm hỗ trợ tại Site A báo cáo rằng PC-Support không thể tải trang Portal-01 tại Site B. Họ nói rằng nó chưa bao giờ hoạt động hôm nay, mặc dù cáp và đèn switch trông bình thường.",
+            "objective": "Thực hiện HTTP GET từ PC-Support tới Portal-01 thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Support không bao giờ rời khỏi phân đoạn mạng của riêng nó — nó bị kẹt ngay tại PC-Support trước khi đến Switch-East hoặc Router-East.",
+                "PC-Support không có Cổng mặc định được đặt, vì vậy nó không biết gửi lưu lượng truy cập tới mạng khác; ngoài ra, Router-West định tuyến mạng của PC-Support qua cổng sai, ngay cả lưu lượng phản hồi cũng sẽ bị định tuyến sai.",
+                "Trên PC-Support đặt Cổng mặc định thành 10.0.4.254. Trên Router-West sửa tuyến tới 10.0.4.0/255.255.255.0 sao cho Hop tiếp theo 10.0.27.1 sử dụng cổng 0, không phải cổng sai."
+            ],
+            "explanation": "Một Client cần có Cổng mặc định để truy cập bất kỳ mạng nào bên ngoài subnet của riêng nó, và tuyến tĩnh của Router phải gửi lưu lượng truy cập ra cổng chính xác hướng tới hop tiếp theo, không phải từ cổng không liên quan. Cả hai khoảng trống phải được đóng lại để toàn bộ đường dẫn hoạt động."
+        }
+    }
+}
