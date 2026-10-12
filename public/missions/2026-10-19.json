@@ -1,0 +1,645 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-19",
+    "number": 29,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dns_office",
+    "faultIds": [
+        "dns_record_missing"
+    ],
+    "concepts": [
+        "dns",
+        "a-record"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.19.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.19.254",
+                    "dnsServer": "10.0.24.53",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Office",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.19.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.24.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Server",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-dns1": {
+                "id": "dev-dns1",
+                "type": "DNS_SERVER",
+                "name": "DNS-01",
+                "x": 80.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-dns1-p0",
+                        "index": 0,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.24.53",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p1",
+                        "index": 1,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p2",
+                        "index": 2,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p3",
+                        "index": 3,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.24.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 320.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.24.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.24.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-dns1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-dns1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "domain_http",
+                "method": "GET",
+                "path": "/",
+                "body": "",
+                "domain": "wiki.example.com"
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Wiki Site Won't Load by Name",
+            "story": "PC-Admin can no longer open the intranet wiki by typing wiki.example.com. The office admin says this started today and nothing else seems to have changed.",
+            "objective": "Make an HTTP GET from PC-Admin to wiki.example.com succeed.",
+            "hints": [
+                "The request from PC-Admin never gets past DNS-01 — the name lookup for wiki.example.com dies right there.",
+                "DNS-01 has no entry mapping wiki.example.com to an address, so it cannot tell PC-Admin where the wiki lives.",
+                "On DNS-01, add an A record: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Browsing by name requires a working DNS lookup before any web traffic can be sent. Without an A record mapping the domain to the server's address, the client's request fails before it ever reaches the server. Adding the correct A record on the DNS server restores name resolution and the page loads."
+        },
+        "ja": {
+            "title": "Wikiサイトが名前で開けない",
+            "story": "PC-Adminでwiki.example.comと入力しても、社内Wikiが開けなくなりました。office管理者によると、今日からこの問題が起き、他には何も変更していないとのことです。",
+            "objective": "PC-Adminからwiki.example.comへのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Adminからのリクエストは、DNS-01を越えて先に進めていません。wiki.example.comの名前解決がそこで失敗しています。",
+                "DNS-01にはwiki.example.comをアドレスに対応付けるエントリがないため、Wikiの場所をPC-Adminに伝えられません。",
+                "DNS-01に、wiki.example.com → 10.0.24.1 というAレコードを追加してください。"
+            ],
+            "explanation": "名前でアクセスするには、Webトラフィックを送る前にDNS解決が正常に行われる必要があります。ドメインをサーバーのアドレスに対応付けるAレコードがないと、クライアントのリクエストはサーバーに届く前に失敗します。DNSサーバーに正しいAレコードを追加することで、名前解決が復旧し、ページが表示されるようになります。"
+        },
+        "zh-CN": {
+            "title": "Wiki 站点按名称加载失败",
+            "story": "PC-Admin 无法再通过输入 wiki.example.com 打开内网 wiki。办公室管理员说这是今天才开始的，其他似乎都没有变化。",
+            "objective": "从 PC-Admin 向 wiki.example.com 发送 HTTP GET 请求成功。",
+            "hints": [
+                "来自 PC-Admin 的请求从未越过 DNS-01 — wiki.example.com 的名称查询在那里停止了。",
+                "DNS-01 没有将 wiki.example.com 映射到地址的条目，所以它无法告诉 PC-Admin wiki 的位置。",
+                "在 DNS-01 上，添加一条 A 记录：wiki.example.com → 10.0.24.1。"
+            ],
+            "explanation": "按名称浏览需要在发送任何网络流量之前进行有效的 DNS 查询。如果没有将域名映射到服务器地址的 A 记录，客户端的请求会在到达服务器之前失败。在 DNS 服务器上添加正确的 A 记录可恢复名称解析，页面加载成功。"
+        },
+        "zh-TW": {
+            "title": "Wiki 網站無法按名稱載入",
+            "story": "PC-Admin 無法再通過輸入 wiki.example.com 打開內網 wiki。辦公室管理員表示這是今天才開始的，其他似乎都沒有變化。",
+            "objective": "從 PC-Admin 向 wiki.example.com 發送 HTTP GET 請求成功。",
+            "hints": [
+                "來自 PC-Admin 的請求從未通過 DNS-01 — wiki.example.com 的名稱查詢在那裡停止了。",
+                "DNS-01 沒有將 wiki.example.com 對應到位址的項目，所以它無法告訴 PC-Admin wiki 的位置。",
+                "在 DNS-01 上，新增 A 記錄：wiki.example.com → 10.0.24.1。"
+            ],
+            "explanation": "按名稱瀏覽需要在傳送任何網路流量之前進行有效的 DNS 查詢。如果沒有將網域名稱對應到伺服器位址的 A 記錄，用戶端的請求會在到達伺服器之前失敗。在 DNS 伺服器上新增正確的 A 記錄可恢復名稱解析，頁面載入成功。"
+        },
+        "ko": {
+            "title": "Wiki 사이트가 이름으로 로드되지 않음",
+            "story": "PC-Admin이 wiki.example.com을 입력하여 인트라넷 wiki를 더 이상 열 수 없습니다. 사무실 관리자는 이것이 오늘 시작되었다고 말하며 다른 것은 변경되지 않았습니다.",
+            "objective": "PC-Admin에서 wiki.example.com으로 HTTP GET 요청을 성공시킵니다.",
+            "hints": [
+                "PC-Admin의 요청이 DNS-01을 넘지 못합니다 — wiki.example.com의 이름 조회가 그곳에서 중단됩니다.",
+                "DNS-01에는 wiki.example.com을 주소로 매핑하는 항목이 없어서 PC-Admin에 wiki의 위치를 알려줄 수 없습니다.",
+                "DNS-01에서 A 레코드를 추가합니다: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "이름으로 탐색하려면 웹 트래픽을 보내기 전에 작동하는 DNS 조회가 필요합니다. 도메인을 서버 주소로 매핑하는 A 레코드가 없으면 클라이언트의 요청이 서버에 도달하기 전에 실패합니다. DNS 서버에 올바른 A 레코드를 추가하면 이름 해석이 복구되고 페이지가 로드됩니다."
+        },
+        "es": {
+            "title": "El Sitio Wiki No Carga por Nombre",
+            "story": "PC-Admin ya no puede abrir la wiki de intranet escribiendo wiki.example.com. El administrador de la oficina dice que esto comenzó hoy y nada más parece haber cambiado.",
+            "objective": "Hacer que una solicitud HTTP GET de PC-Admin a wiki.example.com tenga éxito.",
+            "hints": [
+                "La solicitud de PC-Admin nunca pasa de DNS-01 — la búsqueda de nombre para wiki.example.com falla ahí.",
+                "DNS-01 no tiene una entrada que asigne wiki.example.com a una dirección, por lo que no puede indicarle a PC-Admin dónde vive la wiki.",
+                "En DNS-01, agregue un registro A: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Navegar por nombre requiere una búsqueda DNS funcional antes de enviar cualquier tráfico web. Sin un registro A que asigne el dominio a la dirección del servidor, la solicitud del cliente falla antes de llegar al servidor. Al agregar el registro A correcto en el Servidor DNS, se restaura la resolución de nombres y la página se carga."
+        },
+        "pt-BR": {
+            "title": "Site Wiki Não Carrega por Nome",
+            "story": "PC-Admin não consegue mais abrir a wiki da intranet digitando wiki.example.com. O administrador do escritório diz que isso começou hoje e nada mais parece ter mudado.",
+            "objective": "Fazer uma solicitação HTTP GET de PC-Admin para wiki.example.com ter sucesso.",
+            "hints": [
+                "A solicitação de PC-Admin nunca passa de DNS-01 — a pesquisa de nome para wiki.example.com morre lá.",
+                "DNS-01 não tem uma entrada mapeando wiki.example.com para um endereço, então não consegue dizer ao PC-Admin onde a wiki fica.",
+                "Em DNS-01, adicione um registro A: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Navegação por nome requer uma pesquisa DNS funcionando antes de qualquer tráfego web ser enviado. Sem um registro A mapeando o domínio para o endereço do servidor, a solicitação do cliente falha antes de chegar ao servidor. Adicionar o registro A correto no Servidor DNS restaura a resolução de nomes e a página carrega."
+        },
+        "de": {
+            "title": "Wiki-Website lädt nicht unter ihrem Namen",
+            "story": "PC-Admin kann das Intranet-Wiki nicht mehr öffnen, indem er wiki.example.com eingibt. Der Büro-Admin sagt, das hat heute angefangen und sonst hat sich nichts geändert.",
+            "objective": "Eine HTTP GET-Anfrage von PC-Admin an wiki.example.com erfolgreich machen.",
+            "hints": [
+                "Die Anfrage von PC-Admin kommt nicht über DNS-01 hinaus — die Namensauflösung für wiki.example.com stoppt genau dort.",
+                "DNS-01 hat keinen Eintrag, der wiki.example.com einer Adresse zuordnet, daher kann es PC-Admin nicht sagen, wo das Wiki sich befindet.",
+                "Auf DNS-01 einen A-Datensatz hinzufügen: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Das Surfen nach Namen erfordert eine funktionierende DNS-Abfrage, bevor irgendwelche Web-Datenverkehr gesendet werden kann. Ohne einen A-Datensatz, der die Domain zur Adresse des Servers abbildet, schlägt die Anfrage des Clients fehl, bevor sie den Server überhaupt erreicht. Das Hinzufügen des richtigen A-Datensatzes auf dem DNS-Server stellt die Namensauflösung wieder her und die Seite lädt."
+        },
+        "fr": {
+            "title": "Le site Wiki ne charge pas par nom",
+            "story": "PC-Admin ne peut plus ouvrir le wiki intranet en tapant wiki.example.com. L'administrateur du bureau dit que cela a commencé aujourd'hui et rien d'autre ne semble avoir changé.",
+            "objective": "Réussir une requête HTTP GET de PC-Admin vers wiki.example.com.",
+            "hints": [
+                "La requête de PC-Admin ne dépasse jamais DNS-01 — la résolution de nom pour wiki.example.com s'arrête là.",
+                "DNS-01 n'a pas d'entrée mappant wiki.example.com à une adresse, donc il ne peut pas dire à PC-Admin où se trouve le wiki.",
+                "Sur DNS-01, ajouter un enregistrement A : wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "La navigation par nom nécessite une résolution DNS fonctionnelle avant que tout trafic Web puisse être envoyé. Sans un enregistrement A mappant le domaine à l'adresse du serveur, la requête du client échoue avant même d'atteindre le serveur. L'ajout du bon enregistrement A sur le serveur DNS restaure la résolution de nom et la page se charge."
+        },
+        "hi": {
+            "title": "विकी साइट नाम से लोड नहीं हो रही है",
+            "story": "PC-Admin अब wiki.example.com टाइप करके इंट्रानेट विकी नहीं खोल सकता। ऑफिस एडमिन कहते हैं कि यह आज शुरू हुआ और और कुछ भी नहीं बदला है।",
+            "objective": "PC-Admin से wiki.example.com को HTTP GET अनुरोध सफल बनाएं।",
+            "hints": [
+                "PC-Admin का अनुरोध DNS-01 से आगे नहीं जाता — wiki.example.com के लिए नाम लुकअप वहीं रुक जाता है।",
+                "DNS-01 के पास wiki.example.com को किसी पते से मैप करने की कोई प्रविष्टि नहीं है, इसलिए यह PC-Admin को यह नहीं बता सकता कि विकी कहां है।",
+                "DNS-01 पर, एक A रिकॉर्ड जोड़ें: wiki.example.com → 10.0.24.1।"
+            ],
+            "explanation": "नाम के आधार पर ब्राउज़ करने के लिए किसी भी वेब ट्रैफिक भेजने से पहले काम करने वाली DNS लुकअप की आवश्यकता होती है। डोमेन को सर्वर के पते से मैप करने वाले A रिकॉर्ड के बिना, क्लाइंट का अनुरोध सर्वर तक पहुंचने से पहले विफल हो जाता है। DNS सर्वर पर सही A रिकॉर्ड जोड़ने से नाम रिज़ॉल्यूशन बहाल होता है और पृष्ठ लोड होता है।"
+        },
+        "id": {
+            "title": "Situs Wiki Tidak Memuat Berdasarkan Nama",
+            "story": "PC-Admin tidak dapat lagi membuka wiki intranet dengan mengetik wiki.example.com. Admin kantor mengatakan ini dimulai hari ini dan tidak ada yang tampak berubah.",
+            "objective": "Buat permintaan HTTP GET dari PC-Admin ke wiki.example.com berhasil.",
+            "hints": [
+                "Permintaan dari PC-Admin tidak pernah melewati DNS-01 — pencarian nama untuk wiki.example.com mati di sana.",
+                "DNS-01 tidak memiliki entri yang memetakan wiki.example.com ke suatu alamat, sehingga tidak dapat memberi tahu PC-Admin di mana wiki berada.",
+                "Pada DNS-01, tambahkan catatan A: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Browsing berdasarkan nama memerlukan pencarian DNS yang berfungsi sebelum lalu lintas web apa pun dapat dikirim. Tanpa catatan A yang memetakan domain ke alamat server, permintaan klien gagal sebelum mencapai server. Menambahkan catatan A yang benar pada Server DNS mengembalikan resolusi nama dan halaman dimuat."
+        },
+        "ru": {
+            "title": "Вики-сайт не загружается по имени",
+            "story": "PC-Admin больше не может открыть внутренний вики, введя wiki.example.com. Администратор офиса говорит, что это началось сегодня, и больше ничего не изменилось.",
+            "objective": "Сделать HTTP GET запрос от PC-Admin к wiki.example.com успешным.",
+            "hints": [
+                "Запрос от PC-Admin не проходит дальше DNS-01 — поиск имени для wiki.example.com останавливается прямо там.",
+                "На DNS-01 нет записи, связывающей wiki.example.com с адресом, поэтому он не может сказать PC-Admin, где находится вики.",
+                "На DNS-01 добавьте A-запись: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Просмотр по имени требует работающего поиска DNS перед отправкой трафика. Без A-записи, связывающей домен с адресом сервера, запрос клиента не выполняется до того, как он достигнет сервера. Добавление правильной A-записи на DNS-сервер восстанавливает разрешение имен и страница загружается."
+        },
+        "it": {
+            "title": "Wiki Site Won't Load by Name",
+            "story": "PC-Admin non riesce più ad aprire il wiki intranet digitando wiki.example.com. L'amministratore dell'ufficio dice che il problema è iniziato oggi e nient'altro sembra essere cambiato.",
+            "objective": "Effettuare un HTTP GET da PC-Admin a wiki.example.com con successo.",
+            "hints": [
+                "La richiesta da PC-Admin non supera mai DNS-01 — la ricerca dei nomi per wiki.example.com si interrompe proprio lì.",
+                "DNS-01 non ha alcuna voce che mappi wiki.example.com a un indirizzo, quindi non può dire a PC-Admin dove si trova il wiki.",
+                "Su DNS-01, aggiungi un record A: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "La navigazione per nome richiede una ricerca DNS funzionante prima che qualsiasi traffico web possa essere inviato. Senza un record A che mappa il dominio all'indirizzo del server, la richiesta del client fallisce prima ancora di raggiungere il server. Aggiungere il record A corretto sul Server DNS ripristina la risoluzione dei nomi e la pagina viene caricata."
+        },
+        "tr": {
+            "title": "Wiki Sitesi Ada Açılmıyor",
+            "story": "PC-Admin, wiki.example.com yazarak intranet wiki'yi artık açamıyor. Ofis yöneticisi bunun bugün başladığını söylüyor ve başka hiçbir şey değişmiş görünmüyor.",
+            "objective": "PC-Admin'den wiki.example.com'a başarılı bir HTTP GET isteği gerçekleştirin.",
+            "hints": [
+                "PC-Admin'den gelen istek DNS-01'i hiçbir zaman aşamıyor — wiki.example.com için ad araması orada durdu.",
+                "DNS-01'in wiki.example.com'u bir adrese eşleyen girişi yok, bu nedenle PC-Admin'e wikinin nerede olduğunu söyleyemiyor.",
+                "DNS-01 üzerinde, bir A kaydı ekleyin: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Ada göre tarama, herhangi bir web trafiği gönderilebilmeden önce çalışan bir DNS araması gerektirir. Etki alanını sunucunun adresine eşleyen bir A kaydı olmadan, istemcinin isteği sunucuya ulaşmadan önce başarısız olur. DNS Sunucusu üzerinde doğru A kaydı eklemek, ad çözümlemesini geri yükler ve sayfa yüklenir."
+        },
+        "th": {
+            "title": "เว็บไซต์ Wiki ไม่โหลดด้วยชื่อ",
+            "story": "PC-Admin ไม่สามารถเปิด wiki intranet โดยพิมพ์ wiki.example.com ได้อีกต่อไป ผู้ดูแลระบบสำนักงานกล่าวว่านี่เริ่มต้นวันนี้และไม่มีสิ่งอื่นที่เปลี่ยนแปลง",
+            "objective": "ทำให้ HTTP GET จาก PC-Admin ไปยัง wiki.example.com สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Admin ไม่เคยผ่าน DNS-01 — การค้นหาชื่อสำหรับ wiki.example.com หยุดอยู่ที่นั่น",
+                "DNS-01 ไม่มีรายการแมป wiki.example.com กับที่อยู่ ดังนั้นจึงไม่สามารถบอก PC-Admin ว่า wiki อยู่ที่ไหน",
+                "บน DNS-01 เพิ่มระเบียน A: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "การเรียกดูตามชื่อต้องใช้การค้นหา DNS ที่ใช้งานได้ก่อนที่สามารถส่งทราฟิก web ใดๆ ได้ หากไม่มีระเบียน A ที่แมปโดเมนไปยังที่อยู่ของเซิร์ฟเวอร์ คำขอของไคลเอนต์จะล้มเหลวก่อนที่จะไปถึงเซิร์ฟเวอร์ การเพิ่มระเบียน A ที่ถูกต้องบน เซิร์ฟเวอร์ DNS จะคืนค่าการแก้ไขชื่อและหน้าจะโหลด"
+        },
+        "vi": {
+            "title": "Trang Wiki Không Tải Được Theo Tên",
+            "story": "PC-Admin không thể mở wiki nội bộ bằng cách nhập wiki.example.com nữa. Quản trị viên văn phòng cho biết điều này bắt đầu hôm nay và dường như không có gì khác thay đổi.",
+            "objective": "Thực hiện HTTP GET từ PC-Admin đến wiki.example.com thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Admin không bao giờ vượt qua DNS-01 — tra cứu tên cho wiki.example.com dừng lại ở đó.",
+                "DNS-01 không có bản ghi ánh xạ wiki.example.com tới địa chỉ nào, vì vậy nó không thể cho PC-Admin biết wiki ở đâu.",
+                "Trên DNS-01, thêm một bản ghi A: wiki.example.com → 10.0.24.1."
+            ],
+            "explanation": "Duyệt theo tên yêu cầu tra cứu DNS hoạt động trước khi bất kỳ lưu lượng web nào có thể được gửi. Nếu không có bản ghi A ánh xạ tên miền tới địa chỉ của máy chủ, yêu cầu của khách hàng sẽ thất bại trước khi nó bao giờ tiếp cận máy chủ. Thêm bản ghi A chính xác trên Máy chủ DNS khôi phục phân giải tên và trang tải được."
+        }
+    }
+}
