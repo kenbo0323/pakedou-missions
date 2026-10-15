@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-22",
+    "number": 32,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.19.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.19.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.19.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.19.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.26.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Sales Desk Can't Reach the Web Server",
+            "story": "Since the recent desk move, the Sales team's PC can no longer open the internal web server's page. Reception's PC nearby works fine for other checks. Sales needs this fixed to get back to work.",
+            "objective": "Make an HTTP GET from PC-Sales to Web-Server succeed.",
+            "hints": [
+                "The web request from PC-Sales never gets past PC-Sales itself — it's dropped before even reaching Switch-1F.",
+                "PC-Sales is sending its traffic toward a default gateway address that isn't actually Router-HQ, so the outbound path dead-ends at a device that isn't a router.",
+                "On PC-Sales, set the default gateway to 10.0.19.254, which is Router-HQ's address on that subnet."
+            ],
+            "explanation": "A client's default gateway must point to the router interface on its own subnet. PC-Sales was configured with the server's address instead, which is not a router, so outgoing traffic to other subnets had nowhere valid to go. Pointing the gateway back to Router-HQ restores the path."
+        },
+        "ja": {
+            "title": "営業デスクがWebサーバーに接続できない",
+            "story": "最近のデスク移動以降、営業チームのPCが社内Webサーバーのページを開けなくなりました。近くにある受付のPCは他の確認作業には問題なく使えています。営業チームが業務に戻れるよう、この問題を解決する必要があります。",
+            "objective": "PC-SalesからWeb-ServerへのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Salesからのwebリクエストは、PC-Sales自体から先に進んでいません。Switch-1Fに到達する前にドロップされています。",
+                "PC-Salesは、実際にはRouter-HQではないアドレスをデフォルトゲートウェイとして送信先にしているため、送信経路がルーターではない機器で行き止まりになっています。",
+                "PC-Salesで、デフォルトゲートウェイをそのサブネット上のRouter-HQのアドレスである10.0.19.254に設定してください。"
+            ],
+            "explanation": "クライアントのデフォルトゲートウェイは、自分と同じサブネット上にあるルーターのインターフェースを指している必要があります。PC-Salesにはルーターではなくサーバーのアドレスが設定されていたため、他のサブネットへの送信トラフィックが正しく進む経路がありませんでした。ゲートウェイをRouter-HQに戻すことで、経路が正常に復旧します。"
+        },
+        "zh-CN": {
+            "title": "销售部PC无法连接Web服务器",
+            "story": "最近销售部进行了办公位调整后，PC-Sales无法再打开内部Web服务器的页面。附近接待处的PC进行其他检查时工作正常。销售部需要修复这个问题以便继续工作。",
+            "objective": "使PC-Sales能够成功向Web-Server发送HTTP GET请求。",
+            "hints": [
+                "来自PC-Sales的Web请求从未离开PC-Sales本身——甚至还未到达Switch-1F就被丢弃了。",
+                "PC-Sales正在将流量发送到一个不是Router-HQ的默认网关地址，所以出站路径在一个不是Router的设备处断开。",
+                "在PC-Sales上，将默认网关设置为10.0.19.254，这是Router-HQ在该子网上的地址。"
+            ],
+            "explanation": "Client的默认网关必须指向其自身子网上的Router接口。PC-Sales被配置为指向Server的地址，而Server不是Router，所以到其他子网的流量无处可去。将网关改回指向Router-HQ即可恢复路径。"
+        },
+        "zh-TW": {
+            "title": "銷售部PC無法連接Web伺服器",
+            "story": "最近銷售部進行了辦公位調整後，PC-Sales無法再打開內部Web伺服器的頁面。附近接待處的PC進行其他檢查時工作正常。銷售部需要修復這個問題以便繼續工作。",
+            "objective": "使PC-Sales能夠成功向Web-Server發送HTTP GET請求。",
+            "hints": [
+                "來自PC-Sales的Web請求從未離開PC-Sales本身——甚至還未到達Switch-1F就被丟棄了。",
+                "PC-Sales正在將流量發送到一個不是Router-HQ的預設閘道地址，所以出站路徑在一個不是Router的設備處斷開。",
+                "在PC-Sales上，將預設閘道設定為10.0.19.254，這是Router-HQ在該子網上的地址。"
+            ],
+            "explanation": "Client的預設閘道必須指向其自身子網上的Router介面。PC-Sales被設定為指向Server的地址，而Server不是Router，所以到其他子網的流量無處可去。將閘道改回指向Router-HQ即可恢復路徑。"
+        },
+        "ko": {
+            "title": "판매팀 PC가 웹 서버에 접속할 수 없음",
+            "story": "최근 판매팀의 업무 위치가 변경된 후, PC-Sales에서 내부 웹 서버의 페이지를 더 이상 열 수 없습니다. 근처 접수처의 PC는 다른 점검에서 정상 작동합니다. 판매팀은 업무를 재개하기 위해 이 문제를 해결해야 합니다.",
+            "objective": "PC-Sales에서 Web-Server로의 HTTP GET 요청이 성공하도록 만듭니다.",
+            "hints": [
+                "PC-Sales에서 온 웹 요청이 PC-Sales 자체를 벗어나지 못합니다 — Switch-1F에 도달하기 전에 삭제됩니다.",
+                "PC-Sales가 실제로는 Router-HQ가 아닌 기본 게이트웨이 주소로 트래픽을 보내고 있으므로, 아웃바운드 경로가 Router가 아닌 장치에서 끝납니다.",
+                "PC-Sales에서 기본 게이트웨이를 10.0.19.254로 설정하십시오. 이는 해당 서브넷의 Router-HQ 주소입니다."
+            ],
+            "explanation": "Client의 기본 게이트웨이는 자신의 서브넷에 있는 Router 인터페이스를 가리켜야 합니다. PC-Sales가 Server의 주소로 구성되었는데 Server는 Router가 아니므로, 다른 서브넷으로의 아웃바운드 트래픽이 갈 곳이 없습니다. 게이트웨이를 Router-HQ로 다시 지정하면 경로가 복구됩니다."
+        },
+        "es": {
+            "title": "PC de Ventas no puede conectar al servidor web",
+            "story": "Después del traslado reciente de la oficina, PC-Sales ya no puede abrir la página del servidor web interno. La PC cercana de recepción funciona correctamente para otras pruebas. Ventas necesita arreglar esto para volver al trabajo.",
+            "objective": "Lograr que la solicitud HTTP GET desde PC-Sales hacia Web-Server sea exitosa.",
+            "hints": [
+                "La solicitud web desde PC-Sales nunca sale de PC-Sales mismo — se descarta antes de alcanzar Switch-1F.",
+                "PC-Sales está enviando su tráfico hacia una dirección de Gateway predeterminado que no es realmente Router-HQ, así que el camino de salida termina muerto en un dispositivo que no es un Router.",
+                "En PC-Sales, establece el Gateway predeterminado en 10.0.19.254, que es la dirección de Router-HQ en esa subred."
+            ],
+            "explanation": "El Gateway predeterminado de un Cliente debe apuntar a la interfaz del Router en su propia subred. PC-Sales fue configurado con la dirección del servidor, que no es un Router, por lo que el tráfico saliente hacia otras subredes no tenía camino válido. Establecer el Gateway de nuevo en Router-HQ restaura el camino."
+        },
+        "pt-BR": {
+            "title": "PC de Vendas não consegue alcançar o servidor web",
+            "story": "Após a mudança recente do escritório, o PC-Sales não consegue mais abrir a página do servidor web interno. O PC da recepção próximo funciona bem para outras verificações. Vendas precisa que isso seja corrigido para voltar ao trabalho.",
+            "objective": "Fazer com que a requisição HTTP GET de PC-Sales para Web-Server seja bem-sucedida.",
+            "hints": [
+                "A requisição web de PC-Sales nunca sai de PC-Sales — é descartada antes de chegar ao Switch-1F.",
+                "PC-Sales está enviando seu tráfego para um endereço de Gateway padrão que não é realmente o Router-HQ, então o caminho de saída termina em um dispositivo que não é um Router.",
+                "Em PC-Sales, defina o Gateway padrão como 10.0.19.254, que é o endereço do Router-HQ nessa sub-rede."
+            ],
+            "explanation": "O Gateway padrão de um Cliente deve apontar para a interface do Router em sua própria sub-rede. PC-Sales foi configurado com o endereço do servidor, que não é um Router, portanto o tráfego de saída para outras sub-redes não tinha um caminho válido. Apontar o Gateway de volta para o Router-HQ restaura o caminho."
+        },
+        "de": {
+            "title": "Der Verkaufstisch kann den Web-Server nicht erreichen",
+            "story": "Nach dem kürzlichen Umzug des Schreibtischs kann das PC-Sales des Verkaufsteams die Seite des internen Web-Servers nicht mehr öffnen. Der PC der Rezeption in der Nähe funktioniert für andere Überprüfungen einwandfrei. Das Verkaufsteam muss dies reparieren, um wieder arbeiten zu können.",
+            "objective": "Einen HTTP-GET-Request von PC-Sales zu Web-Server erfolgreich durchführen.",
+            "hints": [
+                "Die Web-Anfrage von PC-Sales kommt nie über PC-Sales selbst hinaus — sie wird gelöscht, bevor sie Switch-1F erreicht.",
+                "PC-Sales sendet seinen Datenverkehr an eine Standard-Gateway-Adresse, die nicht Router-HQ ist, daher endet der ausgehende Pfad an einem Gerät, das kein Router ist.",
+                "Legen Sie auf PC-Sales das Standard-Gateway auf 10.0.19.254 fest, welches die Adresse von Router-HQ in diesem Subnetz ist."
+            ],
+            "explanation": "Der Standard-Gateway eines Clients muss auf die Router-Schnittstelle in seinem eigenen Subnetz verweisen. PC-Sales war stattdessen mit der Adresse des Servers konfiguriert, die kein Router ist, daher hatte ausgehender Datenverkehr zu anderen Subnetzen keinen gültigen Weg. Die Umleitung des Gateways zurück zu Router-HQ stellt den Pfad wieder her."
+        },
+        "fr": {
+            "title": "Le poste de vente ne peut pas atteindre le serveur web",
+            "story": "Depuis le récent déménagement du bureau, le PC-Sales de l'équipe des ventes ne peut plus ouvrir la page du serveur web interne. Le PC de la réception à proximité fonctionne bien pour d'autres vérifications. Les ventes ont besoin que ce problème soit résolu pour reprendre le travail.",
+            "objective": "Réussir une requête HTTP GET de PC-Sales vers Web-Server.",
+            "hints": [
+                "La requête web de PC-Sales ne dépasse jamais PC-Sales lui-même — elle est supprimée avant même d'atteindre Switch-1F.",
+                "PC-Sales envoie son trafic vers une adresse de Passerelle par défaut qui n'est pas Router-HQ, donc le chemin sortant se termine à un appareil qui n'est pas un routeur.",
+                "Sur PC-Sales, définissez la Passerelle par défaut sur 10.0.19.254, qui est l'adresse de Router-HQ sur ce sous-réseau."
+            ],
+            "explanation": "La Passerelle par défaut d'un Client doit pointer vers l'interface routeur de son propre sous-réseau. PC-Sales était configuré avec l'adresse du serveur à la place, qui n'est pas un routeur, donc le trafic sortant vers d'autres sous-réseaux n'avait nulle part où aller de manière valide. Rediriger la passerelle vers Router-HQ rétablit le chemin."
+        },
+        "hi": {
+            "title": "बिक्रय डेस्क वेब-सर्वर तक नहीं पहुंच सकता",
+            "story": "हाल की डेस्क स्थानांतरण के बाद, बिक्रय टीम का PC-Sales आंतरिक वेब सर्वर का पृष्ठ अब नहीं खोल सकता। पास की रिसेप्शन की PC अन्य जांचों के लिए ठीक काम कर रही है। बिक्रय को काम पर लौटने के लिए इसे ठीक करने की आवश्यकता है।",
+            "objective": "PC-Sales से Web-Server तक सफल HTTP GET करें।",
+            "hints": [
+                "PC-Sales का वेब अनुरोध PC-Sales से आगे कभी नहीं जाता — यह Switch-1F तक पहुंचने से पहले ही हटा दिया जाता है।",
+                "PC-Sales अपनी ट्रैफ़िक एक डिफ़ॉल्ट गेटवे पते पर भेज रहा है जो वास्तव में Router-HQ नहीं है, इसलिए बाहरी पथ एक ऐसे डिवाइस पर समाप्त होता है जो राउटर नहीं है।",
+                "PC-Sales पर, डिफ़ॉल्ट गेटवे को 10.0.19.254 पर सेट करें, जो उस सबनेट पर Router-HQ का पता है।"
+            ],
+            "explanation": "Client का डिफ़ॉल्ट गेटवे अपनी सबनेट पर राउटर इंटरफ़ेस की ओर इशारा करना चाहिए। PC-Sales सर्वर के पते के साथ कॉन्फ़िगर किया गया था, जो एक राउटर नहीं है, इसलिए अन्य सबनेट की बाहरी ट्रैफ़िक के पास जाने के लिए कोई वैध जगह नहीं थी। गेटवे को वापस Router-HQ की ओर इशारा करने से पथ बहाल हो जाता है।"
+        },
+        "id": {
+            "title": "PC-Sales Tidak Dapat Mencapai Web-Server",
+            "story": "Sejak perpindahan meja baru-baru ini, PC-Sales dari tim Penjualan tidak lagi dapat membuka halaman server web internal. PC Resepsionis yang berada di dekat sana berfungsi dengan baik untuk pemeriksaan lainnya. Penjualan membutuhkan ini diperbaiki untuk kembali bekerja.",
+            "objective": "Buat HTTP GET dari PC-Sales ke Web-Server berhasil.",
+            "hints": [
+                "Permintaan web dari PC-Sales tidak pernah melampaui PC-Sales itu sendiri — permintaan ditolak sebelum mencapai Switch-1F.",
+                "PC-Sales mengirimkan lalu lintasnya ke alamat Gateway Default yang sebenarnya bukan Router-HQ, sehingga jalur keluar berakhir di perangkat yang bukan Router.",
+                "Di PC-Sales, atur Gateway Default ke 10.0.19.254, yaitu alamat Router-HQ di subnet tersebut."
+            ],
+            "explanation": "Gateway Default Client harus menunjuk ke antarmuka Router di subnet-nya sendiri. PC-Sales dikonfigurasi dengan alamat Server, yang bukan Router, jadi lalu lintas keluar ke subnet lain tidak memiliki jalan yang valid. Mengarahkan kembali Gateway ke Router-HQ memulihkan jalur tersebut."
+        },
+        "ru": {
+            "title": "PC-Sales не может связаться с Web-Server",
+            "story": "После недавнего переезда рабочего стола ПК-Sales группы продаж больше не может открыть страницу внутреннего веб-сервера. ПК ресепшена рядом хорошо работает для других проверок. Отделу продаж нужно это исправить, чтобы вернуться к работе.",
+            "objective": "Выполнить HTTP GET запрос с PC-Sales на Web-Server.",
+            "hints": [
+                "Веб-запрос с PC-Sales никогда не покидает сам PC-Sales — он удаляется до того, как достичь Switch-1F.",
+                "PC-Sales отправляет свой трафик на адрес Шлюза по умолчанию, который на самом деле не является Router-HQ, поэтому исходящий путь заканчивается на устройстве, которое не является маршрутизатором.",
+                "На PC-Sales установите Шлюз по умолчанию на 10.0.19.254, который является адресом Router-HQ в этой подсети."
+            ],
+            "explanation": "Шлюз по умолчанию Client должен указывать на интерфейс Router в своей подсети. PC-Sales был настроен с адресом Server, который не является маршрутизатором, поэтому исходящий трафик в другие подсети не имел допустимого пути. Переаправление шлюза обратно на Router-HQ восстанавливает путь."
+        },
+        "it": {
+            "title": "PC-Sales non riesce a raggiungere il Web-Server",
+            "story": "Dopo il recente trasferimento della scrivania, il PC del team Vendite non riesce più ad aprire la pagina del server web interno. Il PC della Reception vicino funziona correttamente per altri controlli. Le Vendite hanno bisogno che questo sia risolto per tornare al lavoro.",
+            "objective": "Fare in modo che una richiesta HTTP GET da PC-Sales a Web-Server abbia successo.",
+            "hints": [
+                "La richiesta web da PC-Sales non passa mai da PC-Sales stesso — viene eliminata prima ancora di raggiungere Switch-1F.",
+                "PC-Sales sta inviando il suo traffico verso un indirizzo di Gateway predefinito che non è effettivamente Router-HQ, quindi il percorso in uscita si interrompe in un dispositivo che non è un Router.",
+                "Su PC-Sales, impostare il Gateway predefinito a 10.0.19.254, che è l'indirizzo di Router-HQ su quella subnet."
+            ],
+            "explanation": "Il Gateway predefinito di un Client deve puntare all'interfaccia del Router sulla propria subnet. PC-Sales era configurato con l'indirizzo del Server, che non è un Router, quindi il traffico in uscita verso altre subnet non aveva alcun percorso valido. Puntando il Gateway di nuovo a Router-HQ viene ripristinato il percorso."
+        },
+        "tr": {
+            "title": "PC-Sales Web-Server'a Erişemiyor",
+            "story": "Son masa taşınmasından bu yana, Satış ekibinin PC'si artık dahili web sunucusunun sayfasını açamıyor. Yakındaki Resepsiyon PC'si diğer kontroller için normal çalışıyor. Satış işe geri dönebilmek için bunu düzeltmesi gerekiyor.",
+            "objective": "PC-Sales'ten Web-Server'e HTTP GET isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "PC-Sales'teki web isteği PC-Sales'i bile geçemiyor — Switch-1F'ye ulaşmadan önce bırakılıyor.",
+                "PC-Sales trafiğini aslında Router-HQ olmayan bir varsayılan ağ geçidi adresine gönderiyor, bu nedenle çıkış yolu bir Router olmayan bir cihazda sona eriyor.",
+                "PC-Sales'te, varsayılan ağ geçidini 10.0.19.254 olarak ayarlayın; bu, o alt ağdaki Router-HQ'nun adresidir."
+            ],
+            "explanation": "Bir Client'in varsayılan ağ geçidi, kendi alt ağındaki Router arayüzüne işaret etmelidir. PC-Sales, sunucunun adresiyle yapılandırılmıştı, bu bir Router değildir; bu nedenle diğer alt ağlara giden giden trafik geçerli bir yola sahip değildi. Ağ geçidini yeniden Router-HQ'ya yönlendirmek yolu geri yükler."
+        },
+        "th": {
+            "title": "PC-Sales ไม่สามารถเข้าถึง Web-Server",
+            "story": "หลังจากการย้ายโต๊ะล่าสุด PC ของทีมขายไม่สามารถเปิดหน้าเว็บเซิร์ฟเวอร์ภายในได้อีกต่อไป PC ของเสนห์แนนอยู่ใกล้เคียงทำงานได้ดีสำหรับการตรวจสอบอื่นๆ ทีมขายต้องแก้ไขปัญหานี้เพื่อกลับมาทำงาน",
+            "objective": "ทำให้คำขอ HTTP GET จาก PC-Sales ไปยัง Web-Server สำเร็จ",
+            "hints": [
+                "คำขอเว็บจาก PC-Sales ไม่เคยผ่าน PC-Sales เอง — ถูกลบก่อนแม้แต่ถึง Switch-1F",
+                "PC-Sales กำลังส่งการจราจรไปยังที่อยู่เกตเวย์เริ่มต้นที่ไม่ใช่ Router-HQ จริงๆ ดังนั้นเส้นทางขาออกจึงสิ้นสุดที่อุปกรณ์ที่ไม่ใช่ Router",
+                "บน PC-Sales ให้ตั้งค่าเกตเวย์เริ่มต้นเป็น 10.0.19.254 ซึ่งเป็นที่อยู่ของ Router-HQ บนสาบเน็ตนั้น"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นของ Client ต้องชี้ไปยังอินเตอร์เฟซ Router บนสาบเน็ตของมันเอง PC-Sales ถูกกำหนดค่าด้วยที่อยู่ของเซิร์ฟเวอร์แทน ซึ่งไม่ใช่ Router ดังนั้นการจราจรขาออกไปยังสาบเน็ตอื่นจึงไม่มีเส้นทางที่ถูกต้อง การชี้เกตเวย์กลับไปที่ Router-HQ จะคืนเส้นทาง"
+        },
+        "vi": {
+            "title": "PC-Sales Không Thể Kết Nối Tới Web-Server",
+            "story": "Kể từ khi chuyển chỗ bàn gần đây, PC của nhóm Bán hàng không còn mở được trang máy chủ web nội bộ. PC của Lễ tân gần đó vẫn hoạt động bình thường cho các kiểm tra khác. Bán hàng cần sửa lỗi này để quay lại làm việc.",
+            "objective": "Thực hiện yêu cầu HTTP GET từ PC-Sales tới Web-Server thành công.",
+            "hints": [
+                "Yêu cầu web từ PC-Sales không bao giờ vượt qua PC-Sales — nó bị loại bỏ trước khi đến Switch-1F.",
+                "PC-Sales đang gửi lưu lượng của nó tới địa chỉ Cổng mặc định không phải là Router-HQ, vì vậy đường đi ra ngoài chết tại một thiết bị không phải là Router.",
+                "Trên PC-Sales, đặt Cổng mặc định thành 10.0.19.254, đây là địa chỉ của Router-HQ trên subnet đó."
+            ],
+            "explanation": "Cổng mặc định của một Client phải trỏ tới giao diện Router trên Mạng con của nó. PC-Sales được cấu hình bằng địa chỉ của máy chủ thay vào đó, đây không phải là Router, vì vậy lưu lượng ra ngoài tới các Mạng con khác không có đường đi hợp lệ. Trỏ cổng mặc định trở lại Router-HQ sẽ khôi phục đường đi."
+        }
+    }
+}
