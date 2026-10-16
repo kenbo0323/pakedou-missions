@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-23",
+    "number": 33,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.14.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.14.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.14.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.16.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.27.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.16.2",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Branch",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.16.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.27.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.14.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.16.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Branch",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.27.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "The Portal That Won't Answer",
+            "story": "The IT intern at headquarters reports that PC-Admin can't open Portal-01 at the branch office, no matter how many times they retry. The issue has been going on since this morning.",
+            "objective": "Restore HTTP access from PC-Admin to Portal-01.",
+            "hints": [
+                "The packet from PC-Admin never makes it past Router-HQ on its way to Portal-01.",
+                "Router-HQ has a route to Portal-01's network that points out the wrong port instead of the link toward Router-Branch.",
+                "On Router-HQ, delete the route to 10.0.27.0/255.255.255.0 and add a new one to 10.0.27.0/255.255.255.0 via 10.0.16.2 using port 1."
+            ],
+            "explanation": "Static routes must name the correct outgoing interface, not just the right next-hop network. A route bound to the wrong port sends traffic nowhere useful, even if the destination and gateway look correct on paper. Always verify the port matches the actual link toward the next-hop router."
+        },
+        "ja": {
+            "title": "応答しないポータル",
+            "story": "本社のITインターンから、PC-Adminで何度試しても支社のPortal-01を開けないという報告がありました。この問題は今朝から続いています。",
+            "objective": "PC-AdminからPortal-01へのHTTPアクセスを復旧させる。",
+            "hints": [
+                "PC-Adminから送られたパケットは、Portal-01に向かう途中、Router-HQより先に進めていません。",
+                "Router-HQには、Portal-01のネットワーク宛のルートがありますが、Router-Branchへのリンクではなく、誤ったポートを指しています。",
+                "Router-HQで、10.0.27.0/255.255.255.0 へのルートを削除し、中継先 10.0.16.2、ポート 1 で新しいルートを追加してください。"
+            ],
+            "explanation": "静的ルートでは、正しい中継先ネットワークだけでなく、正しい発信インターフェースも指定する必要があります。誤ったポートに結び付けられたルートは、宛先とゲートウェイが一見正しく見えても、実際には通信をどこにも届けません。ポートが中継先ルーターへの実際のリンクと一致しているか、必ず確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "无法连接的门户",
+            "story": "总部的IT实习生报告说，PC-Admin无法打开分公司的Portal-01，无论重试多少次都无法成功。这个问题从今天早上开始。",
+            "objective": "恢复PC-Admin到Portal-01的HTTP访问。",
+            "hints": [
+                "PC-Admin发来的数据包在前往Portal-01的路上，从未能通过Router-HQ。",
+                "Router-HQ到Portal-01网络的路由指向了错误的端口，而不是指向Router-Branch的链接。",
+                "在Router-HQ上，删除到10.0.27.0/255.255.255.0的路由，然后添加一条新路由到10.0.27.0/255.255.255.0，下一跳为10.0.16.2，端口号为1。"
+            ],
+            "explanation": "静态路由必须指定正确的传出接口，而不仅仅是正确的下一跳网络。绑定到错误端口的路由会将流量发送到无用的地方，即使目标和网关在纸面上看起来正确。始终验证端口号与实际指向下一跳路由器的链接相匹配。"
+        },
+        "zh-TW": {
+            "title": "無法連接的入口網站",
+            "story": "總部的IT實習生回報PC-Admin無法打開分公司的Portal-01，無論重試多少次都失敗。此問題自今早開始。",
+            "objective": "復原PC-Admin到Portal-01的HTTP訪問。",
+            "hints": [
+                "PC-Admin送出的數據包在前往Portal-01的路上，從未通過Router-HQ。",
+                "Router-HQ到Portal-01網路的路由指向了錯誤的連接埠，而不是指向Router-Branch的連結。",
+                "在Router-HQ上，刪除到10.0.27.0/255.255.255.0的路由，然後新增一條到10.0.27.0/255.255.255.0的路由，下一跳為10.0.16.2，連接埠號為1。"
+            ],
+            "explanation": "靜態路由必須指定正確的傳出介面，不只是正確的下一跳網路。繫結到錯誤連接埠的路由會將流量傳送到無用之處，即使目的地和閘道在紙面上看起來正確。務必驗證連接埠號與實際指向下一跳路由器的連結相符。"
+        },
+        "ko": {
+            "title": "응답하지 않는 포털",
+            "story": "본사의 IT 인턴이 PC-Admin에서 지사의 Portal-01을 열 수 없다고 보고합니다. 아무리 많이 재시도해도 실패합니다. 이 문제는 오늘 아침부터 지속되고 있습니다.",
+            "objective": "PC-Admin에서 Portal-01으로의 HTTP 액세스를 복원합니다.",
+            "hints": [
+                "PC-Admin에서 보낸 패킷이 Portal-01으로 가는 길에 Router-HQ를 지나지 못합니다.",
+                "Router-HQ에서 Portal-01 네트워크로 가는 라우트가 Router-Branch 방향의 링크 대신 잘못된 포트를 가리킵니다.",
+                "Router-HQ에서 10.0.27.0/255.255.255.0으로의 라우트를 삭제하고, 다음 홉 10.0.16.2, 포트 번호 1을 사용하는 10.0.27.0/255.255.255.0으로의 새 라우트를 추가합니다."
+            ],
+            "explanation": "정적 라우트는 단순히 올바른 다음 홉 네트워크뿐만 아니라 올바른 발신 인터페이스를 지정해야 합니다. 잘못된 포트에 바인딩된 라우트는 목적지와 게이트웨이가 종이 위에서 올바르게 보이더라도 트래픽을 쓸모없는 곳으로 보냅니다. 포트 번호가 다음 홉 라우터를 향한 실제 링크와 일치하는지 항상 확인하세요."
+        },
+        "es": {
+            "title": "El Portal que no responde",
+            "story": "El becario de TI en la sede informa que PC-Admin no puede abrir Portal-01 en la sucursal, sin importar cuántas veces reintenté. El problema ocurre desde esta mañana.",
+            "objective": "Restaurar el acceso HTTP desde PC-Admin a Portal-01.",
+            "hints": [
+                "El paquete desde PC-Admin nunca pasa Router-HQ en su camino hacia Portal-01.",
+                "Router-HQ tiene una ruta a la red de Portal-01 que apunta al puerto incorrecto en lugar del enlace hacia Router-Branch.",
+                "En Router-HQ, elimina la ruta a 10.0.27.0/255.255.255.0 y añade una nueva a 10.0.27.0/255.255.255.0 via 10.0.16.2 usando puerto 1."
+            ],
+            "explanation": "Las rutas estáticas deben especificar la interfaz saliente correcta, no solo la red de siguiente salto correcta. Una ruta vinculada al puerto incorrecto envía tráfico a ningún lugar útil, incluso si el destino y el Gateway predeterminado se ven correctos en el papel. Siempre verifica que el Número de puerto coincida con el enlace real hacia el Router del siguiente salto."
+        },
+        "pt-BR": {
+            "title": "O Portal que Não Responde",
+            "story": "O estagiário de TI na sede relata que PC-Admin não consegue abrir Portal-01 na filial, não importa quantas vezes tente novamente. O problema começou esta manhã.",
+            "objective": "Restaurar o acesso HTTP de PC-Admin para Portal-01.",
+            "hints": [
+                "O pacote de PC-Admin nunca passa por Router-HQ a caminho de Portal-01.",
+                "Router-HQ possui uma rota para a rede de Portal-01 que aponta para a porta errada em vez do link em direção a Router-Branch.",
+                "Em Router-HQ, delete a rota para 10.0.27.0/255.255.255.0 e adicione uma nova para 10.0.27.0/255.255.255.0 via 10.0.16.2 usando porta 1."
+            ],
+            "explanation": "Rotas estáticas devem especificar a interface de saída correta, não apenas a rede de próximo salto correta. Uma rota vinculada à porta errada envia o tráfego para lugar nenhum útil, mesmo que o destino e o Gateway padrão pareçam corretos no papel. Sempre verifique se o Número da porta corresponde ao link real em direção ao Router do próximo salto."
+        },
+        "de": {
+            "title": "Das Portal, das nicht antwortet",
+            "story": "Der IT-Praktikant in der Zentrale berichtet, dass PC-Admin das Portal-01 in der Filiale nicht öffnen kann, egal wie oft sie es versuchen. Das Problem besteht seit heute Morgen.",
+            "objective": "HTTP-Zugriff von PC-Admin zu Portal-01 wiederherstellen.",
+            "hints": [
+                "Das Paket von PC-Admin kommt nicht über Router-HQ hinaus, um zu Portal-01 zu gelangen.",
+                "Router-HQ hat eine Route zum Netzwerk von Portal-01, die zu einer falschen Portnummer führt statt zur Verbindung zu Router-Branch.",
+                "Löschen Sie auf Router-HQ die Route zu 10.0.27.0/255.255.255.0 und erstellen Sie eine neue Route zu 10.0.27.0/255.255.255.0 über 10.0.16.2 mit Portnummer 1."
+            ],
+            "explanation": "Statische Routen müssen die korrekte ausgehende Schnittstelle angeben, nicht nur das richtige Next-Hop-Netzwerk. Eine Route, die an die falsche Portnummer gebunden ist, leitet den Datenverkehr ins Leere, auch wenn Ziel und Standard-Gateway auf dem Papier richtig aussehen. Überprüfen Sie immer, dass die Portnummer mit dem aktuellen Link zum nächsten Router übereinstimmt."
+        },
+        "fr": {
+            "title": "Le Portail qui ne répond pas",
+            "story": "Le stagiaire informatique au siège signale que PC-Admin ne peut pas ouvrir Portal-01 à la succursale, peu importe le nombre de tentatives. Le problème dure depuis ce matin.",
+            "objective": "Restaurer l'accès HTTP de PC-Admin vers Portal-01.",
+            "hints": [
+                "Le paquet en provenance de PC-Admin ne dépasse jamais Router-HQ en route vers Portal-01.",
+                "Router-HQ dispose d'une route vers le réseau de Portal-01 qui pointe vers le mauvais port au lieu du lien vers Router-Branch.",
+                "Sur Router-HQ, supprimez la route vers 10.0.27.0/255.255.255.0 et ajoutez-en une nouvelle vers 10.0.27.0/255.255.255.0 via 10.0.16.2 en utilisant le port 1."
+            ],
+            "explanation": "Les routes statiques doivent désigner la bonne interface de sortie, pas seulement le bon réseau du Saut suivant. Une route associée au mauvais port envoie le trafic nulle part d'utile, même si la destination et la Passerelle par défaut semblent correctes sur le papier. Vérifiez toujours que le numéro de port correspond au lien réel vers le routeur du Saut suivant."
+        },
+        "hi": {
+            "title": "वह पोर्टल जो जवाब नहीं देता",
+            "story": "मुख्यालय में आईटी इंटर्न की रिपोर्ट है कि PC-Admin शाखा कार्यालय में Portal-01 को खोल नहीं सकता, चाहे कितनी भी बार कोशिश की जाए। यह समस्या आज सुबह से चल रही है।",
+            "objective": "PC-Admin से Portal-01 तक HTTP प्रवेश को पुनः स्थापित करें।",
+            "hints": [
+                "PC-Admin से आने वाला पैकेट Portal-01 की ओर जाते समय Router-HQ से कभी आगे नहीं बढ़ता।",
+                "Router-HQ के पास Portal-01 के नेटवर्क का एक रूट है जो Router-Branch की ओर लिंक के बजाय गलत पोर्ट की ओर इशारा करता है।",
+                "Router-HQ पर, 10.0.27.0/255.255.255.0 के लिए रूट को हटाएं और अगले हॉप 10.0.16.2 के साथ पोर्ट नंबर 1 का उपयोग करके 10.0.27.0/255.255.255.0 का एक नया रूट जोड़ें।"
+            ],
+            "explanation": "स्टैटिक रूट को सही आउटगोइंग इंटरफेस का नाम देना चाहिए, केवल सही अगले हॉप नेटवर्क का नहीं। गलत पोर्ट से जुड़ा एक रूट ट्रैफिक को कहीं उपयोगी स्थान पर नहीं भेजता, भले ही गंतव्य और डिफ़ॉल्ट गेटवे कागज पर सही दिखें। हमेशा सत्यापित करें कि पोर्ट नंबर अगले हॉप राउटर के वास्तविक लिंक से मेल खाता है।"
+        },
+        "id": {
+            "title": "Portal yang Tidak Merespons",
+            "story": "Magang IT di kantor pusat melaporkan bahwa PC-Admin tidak dapat membuka Portal-01 di kantor cabang, berapa pun banyaknya percobaan. Masalah ini telah berlangsung sejak pagi ini.",
+            "objective": "Pulihkan akses HTTP dari PC-Admin ke Portal-01.",
+            "hints": [
+                "Paket dari PC-Admin tidak pernah melewati Router-HQ dalam perjalanannya ke Portal-01.",
+                "Router-HQ memiliki rute ke jaringan Portal-01 yang menunjuk ke port yang salah daripada tautan menuju Router-Branch.",
+                "Di Router-HQ, hapus rute ke 10.0.27.0/255.255.255.0 dan tambahkan rute baru ke 10.0.27.0/255.255.255.0 via 10.0.16.2 menggunakan port 1."
+            ],
+            "explanation": "Rute statis harus menyebutkan antarmuka keluar yang benar, bukan hanya jaringan Hop berikutnya yang benar. Rute yang terikat ke port yang salah mengirimkan lalu lintas ke tempat yang tidak berguna, meskipun tujuan dan Gateway Default terlihat benar di atas kertas. Selalu verifikasi bahwa Nomor port cocok dengan tautan aktual menuju Router Hop berikutnya."
+        },
+        "ru": {
+            "title": "Портал, который не отвечает",
+            "story": "Стажер отдела ИТ в главном офисе сообщает, что PC-Admin не может открыть Portal-01 в филиале, независимо от количества попыток. Проблема существует с этого утра.",
+            "objective": "Восстановить доступ HTTP от PC-Admin к Portal-01.",
+            "hints": [
+                "Пакет от PC-Admin никогда не проходит дальше Router-HQ на пути к Portal-01.",
+                "Router-HQ содержит маршрут к сети Portal-01, который указывает на неправильный порт вместо связи с Router-Branch.",
+                "На Router-HQ удалите маршрут к 10.0.27.0/255.255.255.0 и добавьте новый маршрут к 10.0.27.0/255.255.255.0 через 10.0.16.2 с использованием порта 1."
+            ],
+            "explanation": "Статические маршруты должны указывать правильный исходящий интерфейс, а не просто правильную сеть Следующего узла. Маршрут, привязанный к неправильному порту, направляет трафик в никуда, даже если пункт назначения и Шлюз по умолчанию выглядят правильно на бумаге. Всегда проверяйте соответствие Номера порта фактической связи с маршрутизатором Следующего узла."
+        },
+        "it": {
+            "title": "Il Portale che non Risponde",
+            "story": "L'apprendista IT della sede centrale segnala che PC-Admin non riesce ad aprire Portal-01 presso l'ufficio di ramo, non importa quante volte ritenta. Il problema persiste da questa mattina.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Admin a Portal-01.",
+            "hints": [
+                "Il pacchetto da PC-Admin non supera mai Router-HQ sulla via verso Portal-01.",
+                "Router-HQ ha un percorso verso la rete di Portal-01 che punta alla porta sbagliata invece del collegamento verso Router-Branch.",
+                "Su Router-HQ, elimina il percorso verso 10.0.27.0/255.255.255.0 e aggiungi un nuovo percorso verso 10.0.27.0/255.255.255.0 via 10.0.16.2 utilizzando porta 1."
+            ],
+            "explanation": "Le rotte statiche devono indicare l'interfaccia in uscita corretta, non solo la rete del prossimo hop giusta. Una rotta associata alla porta sbagliata instrada il traffico in un luogo inutile, anche se la destinazione e il Gateway predefinito sembrano corretti sulla carta. Verifica sempre che la porta corrisponda al collegamento effettivo verso il Router del prossimo hop."
+        },
+        "tr": {
+            "title": "Yanıt Vermeyen Portal",
+            "story": "Genel merkezin BT stajyeri, PC-Admin'in kaç kez yeniden denemesi fark etmeksizin şube ofisindeki Portal-01'i açamadığını bildiriyor. Sorun bu sabahtan beri devam ediyor.",
+            "objective": "PC-Admin'den Portal-01'e HTTP erişimini geri yükleyin.",
+            "hints": [
+                "PC-Admin'den gelen paket, Portal-01'e giderken hiçbir zaman Router-HQ'yu geçemiyor.",
+                "Router-HQ, Portal-01'in ağına yönelik bir rota içeriyor ve bu rota Router-Branch'e doğru olan bağlantı yerine yanlış port'a işaret ediyor.",
+                "Router-HQ üzerinde, 10.0.27.0/255.255.255.0 adresine giden rotayı silin ve 10.0.27.0/255.255.255.0 adresine 10.0.16.2 Sonraki sıçrama üzerinden port 1 kullanarak yeni bir rota ekleyin."
+            ],
+            "explanation": "Statik yönlendirmeler yalnızca doğru sonraki sıçrama ağını değil, doğru giden arayüzü de belirtmelidir. Yanlış port'a bağlanan bir rota, hedef ve Varsayılan ağ geçidi kağıt üzerinde doğru görünse bile trafiği hiçbir yere göndermez. Her zaman port'un sonraki sıçrama Router'ına doğru olan gerçek bağlantıyla eşleştiğini doğrulayın."
+        },
+        "th": {
+            "title": "พอร์ทัลที่ไม่ตอบสนอง",
+            "story": "IT นักศึกษาที่สำนักงานใหญ่รายงานว่า PC-Admin ไม่สามารถเปิด Portal-01 ที่สาขาได้ไม่ว่าจะลองกี่ครั้ง ปัญหานี้เกิดขึ้นตั้งแต่เช้านี้",
+            "objective": "เรียกคืนการเข้าถึง HTTP จาก PC-Admin ไปยัง Portal-01",
+            "hints": [
+                "แพกเก็ตจาก PC-Admin ไม่เคยผ่าน Router-HQ ไปยัง Portal-01",
+                "Router-HQ มีเส้นทางไปยังเครือข่าย Portal-01 ที่ชี้ไปยังพอร์ตที่ผิดแทนที่จะเป็นลิงก์ไปยัง Router-Branch",
+                "ที่ Router-HQ ให้ลบเส้นทางไปยัง 10.0.27.0/255.255.255.0 และเพิ่มเส้นทางใหม่ไปยัง 10.0.27.0/255.255.255.0 ผ่านฮ็อปถัดไป 10.0.16.2 โดยใช้พอร์ต 1"
+            ],
+            "explanation": "เส้นทางแบบคงที่ต้องระบุอินเทอร์เฟซขาออกที่ถูกต้องไม่ใช่แค่เครือข่ายฮ็อปถัดไปที่ถูกต้อง เส้นทางที่ผูกกับพอร์ตที่ผิดจะส่งข้อมูลไปในทิศทางที่ไม่มีประโยชน์ แม้ว่าเกตเวย์เริ่มต้นและปลายทางดูเหมือนถูกต้องบนกระดาษ ตรวจสอบเสมอว่าพอร์ตตรงกับลิงก์จริงไปยัง Router ฮ็อปถัดไป"
+        },
+        "vi": {
+            "title": "Cổng Thông Tin Không Phản Hồi",
+            "story": "Thực tập sinh IT tại trụ sở chính báo cáo rằng PC-Admin không thể mở Portal-01 tại chi nhánh, bất kể cố gắng bao nhiêu lần. Vấn đề này đã xảy ra kể từ sáng nay.",
+            "objective": "Khôi phục quyền truy cập HTTP từ PC-Admin đến Portal-01.",
+            "hints": [
+                "Gói từ PC-Admin không bao giờ vượt qua Router-HQ trên đường đến Portal-01.",
+                "Router-HQ có tuyến đường đến mạng của Portal-01 chỉ vào cổng sai thay vì liên kết hướng tới Router-Branch.",
+                "Trên Router-HQ, xóa tuyến đường đến 10.0.27.0/255.255.255.0 và thêm tuyến mới đến 10.0.27.0/255.255.255.0 qua hop tiếp theo 10.0.16.2 sử dụng cổng 1."
+            ],
+            "explanation": "Các tuyến tĩnh phải chỉ định giao diện ra đúng, không chỉ mạng hop tiếp theo đúng. Tuyến đường được liên kết với cổng sai sẽ gửi lưu lượng đến nơi không hữu ích, ngay cả khi cổng mặc định và đích có vẻ chính xác trên giấy. Luôn xác minh rằng cổng phù hợp với liên kết thực tế hướng tới Router hop tiếp theo."
+        }
+    }
+}
