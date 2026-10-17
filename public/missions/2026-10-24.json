@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-24",
+    "number": 34,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.22.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.22.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.22.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.4.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.9.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.4.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Branch",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.4.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.9.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.22.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.4.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Branch",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.2.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.9.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1",
+            "dev-router2"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Unreachable Branch Web Server",
+            "story": "Support staff at HQ report that PC-Support cannot load the page hosted on Web-Server at the branch office. The issue has been present since this morning and is blocking a scheduled check.",
+            "objective": "Restore an HTTP GET from PC-Support to Web-Server so it succeeds.",
+            "hints": [
+                "Trace the request from PC-Support: it reaches Router-HQ but gets dropped there, never making it onward to Web-Server.",
+                "Router-HQ has no route for the reply because Web-Server's address, 10.0.2.1, does not actually belong to the 10.0.9.0 subnet it sits on.",
+                "On Web-Server, change port 0's address to 10.0.9.1 with mask 255.255.255.0 so it matches the Router-Branch subnet."
+            ],
+            "explanation": "A host must use an address that belongs to the subnet of the router it connects through. Web-Server was configured outside that range, so routers upstream had no valid path back to it. Matching its address to the local subnet restores routing and lets the handshake complete."
+        },
+        "ja": {
+            "title": "到達できない支社のWeb-Server",
+            "story": "本社のサポート担当者から、PC-Supportが支社にあるWeb-Serverのページを読み込めないという報告がありました。この問題は今朝から発生しており、予定されている確認作業の妨げになっています。",
+            "objective": "PC-SupportからWeb-ServerへのHTTP GETが成功するように復旧してください。",
+            "hints": [
+                "PC-Supportからのリクエストをたどると、Router-HQまでは届きますが、そこで破棄されてしまい、Web-Serverまで届いていません。",
+                "Web-Serverのアドレス10.0.2.1は、実際には自分が属している10.0.9.0のサブネットに属していないため、Router-HQには応答を返すルートがありません。",
+                "Web-Serverで、ポート0のアドレスをRouter-Branchのサブネットに合うように、10.0.9.1、マスク255.255.255.0に変更してください。"
+            ],
+            "explanation": "ホストは、接続しているルーターのサブネットに属するアドレスを使用する必要があります。Web-Serverはその範囲外で設定されていたため、上流のルーターにはそこへ戻るための有効なルートがありませんでした。アドレスをローカルのサブネットに合わせることでルーティングが復旧し、通信が正常に完了するようになります。"
+        },
+        "zh-CN": {
+            "title": "分支机构 Web Server 无法访问",
+            "story": "总部支持人员报告 PC-Support 无法加载位于分支机构的 Web-Server 上托管的页面。此问题从今早开始出现，正在阻止计划的检查。",
+            "objective": "恢复 PC-Support 到 Web-Server 的 HTTP GET 请求，使其成功。",
+            "hints": [
+                "追踪来自 PC-Support 的请求：请求到达了 Router-HQ 但在那里被丢弃，无法继续转发到 Web-Server。",
+                "Router-HQ 没有回复的路由，因为 Web-Server 的地址 10.0.2.1 实际上不属于它所在的 10.0.9.0 子网。",
+                "在 Web-Server 上，将端口 0 的地址更改为 10.0.9.1，掩码为 255.255.255.0，使其与 Router-Branch 子网匹配。"
+            ],
+            "explanation": "主机必须使用属于其连接的路由器子网的地址。Web-Server 配置的地址超出了该范围，因此上游路由器没有返回该地址的有效路径。将其地址与本地子网匹配可恢复路由，让握手完成。"
+        },
+        "zh-TW": {
+            "title": "分支 Web Server 無法連線",
+            "story": "總部支援人員回報 PC-Support 無法載入位於分支機構的 Web-Server 上託管的頁面。此問題自今早開始出現，正在阻擋排定的檢查作業。",
+            "objective": "復原 PC-Support 到 Web-Server 的 HTTP GET 要求，使其成功。",
+            "hints": [
+                "追蹤來自 PC-Support 的要求：要求到達 Router-HQ 但在該處被捨棄，無法繼續轉送到 Web-Server。",
+                "Router-HQ 沒有回覆的路由，因為 Web-Server 的位址 10.0.2.1 實際上不屬於它所在的 10.0.9.0 子網。",
+                "在 Web-Server 上，將連接埠 0 的位址變更為 10.0.9.1，遮罩為 255.255.255.0，使其與 Router-Branch 子網相符。"
+            ],
+            "explanation": "主機必須使用屬於其連接路由器子網的位址。Web-Server 設定的位址超出該範圍，因此上游路由器沒有返回該位址的有效路徑。將其位址與本地子網相符可復原路由，讓握手完成。"
+        },
+        "ko": {
+            "title": "분기 Web Server에 연결할 수 없음",
+            "story": "본사 지원팀에서 PC-Support가 분기 사무실의 Web-Server에 호스팅된 페이지를 불러올 수 없다고 보고했습니다. 이 문제는 오늘 아침부터 발생했으며 예약된 검사를 방해하고 있습니다.",
+            "objective": "PC-Support에서 Web-Server로의 HTTP GET 요청을 복원하여 성공하도록 합니다.",
+            "hints": [
+                "PC-Support의 요청을 추적하면 Router-HQ에 도달하지만 거기서 차단되어 Web-Server로 진행되지 않습니다.",
+                "Router-HQ는 응답 경로가 없습니다. Web-Server의 주소 10.0.2.1이 실제로 위치한 10.0.9.0 서브넷에 속하지 않기 때문입니다.",
+                "Web-Server에서 포트 0의 주소를 10.0.9.1로 변경하고 마스크를 255.255.255.0으로 설정하여 Router-Branch 서브넷과 일치하게 합니다."
+            ],
+            "explanation": "호스트는 연결된 라우터의 서브넷에 속하는 주소를 사용해야 합니다. Web-Server가 해당 범위 외에 구성되어 있어서 상위 라우터가 이에 대한 유효한 반환 경로를 찾지 못했습니다. 해당 주소를 로컬 서브넷과 일치시키면 라우팅이 복원되고 핸드셰이크가 완료됩니다."
+        },
+        "es": {
+            "title": "Web Server de Sucursal Inaccesible",
+            "story": "El personal de soporte en la matriz informa que PC-Support no puede cargar la página alojada en Web-Server en la sucursal. El problema existe desde esta mañana y está bloqueando una verificación programada.",
+            "objective": "Restaurar una solicitud HTTP GET desde PC-Support a Web-Server para que tenga éxito.",
+            "hints": [
+                "Rastrear la solicitud desde PC-Support: llega a Router-HQ pero se descarta allí, nunca avanzando a Web-Server.",
+                "Router-HQ no tiene ruta para la respuesta porque la dirección de Web-Server, 10.0.2.1, en realidad no pertenece a la subred 10.0.9.0 en la que se encuentra.",
+                "En Web-Server, cambiar la dirección del puerto 0 a 10.0.9.1 con máscara 255.255.255.0 para que coincida con la subred de Router-Branch."
+            ],
+            "explanation": "Un host debe utilizar una dirección que pertenezca a la subred del enrutador al que se conecta. Web-Server fue configurado fuera de ese rango, por lo que los enrutadores aguas arriba no tenían una ruta válida de regreso. Hacer coincidir su dirección con la subred local restaura el enrutamiento y permite que el protocolo de enlace se complete."
+        },
+        "pt-BR": {
+            "title": "Web Server da Filial Inacessível",
+            "story": "A equipe de suporte na matriz relata que PC-Support não consegue carregar a página hospedada em Web-Server no escritório da filial. O problema existe desde esta manhã e está bloqueando uma verificação programada.",
+            "objective": "Restaurar uma solicitação HTTP GET de PC-Support para Web-Server para que tenha sucesso.",
+            "hints": [
+                "Rastreie a solicitação de PC-Support: ela chega a Router-HQ mas é descartada lá, nunca chegando a Web-Server.",
+                "Router-HQ não tem rota para a resposta porque o endereço de Web-Server, 10.0.2.1, na verdade não pertence à sub-rede 10.0.9.0 em que se encontra.",
+                "Em Web-Server, altere o endereço da porta 0 para 10.0.9.1 com máscara 255.255.255.0 para que corresponda à sub-rede do Router-Branch."
+            ],
+            "explanation": "Um host deve usar um endereço que pertença à sub-rede do roteador ao qual se conecta. Web-Server foi configurado fora desse intervalo, portanto os roteadores upstream não tinham um caminho válido de volta. Fazer com que seu endereço corresponda à sub-rede local restaura o roteamento e permite que o handshake seja concluído."
+        },
+        "de": {
+            "title": "Web-Server-Filiale nicht erreichbar",
+            "story": "Support-Mitarbeiter der Zentrale berichten, dass PC-Support die Webseite nicht laden kann, die auf Web-Server in der Filiale gehostet wird. Das Problem besteht seit heute Morgen und blockiert eine geplante Überprüfung.",
+            "objective": "Stellen Sie sicher, dass ein HTTP-GET von PC-Support zu Web-Server erfolgreich ist.",
+            "hints": [
+                "Verfolgen Sie die Anfrage von PC-Support: Sie erreicht Router-HQ, wird dort aber gelöscht und gelangt nie zu Web-Server.",
+                "Router-HQ hat keine Route für die Antwort, da die Adresse von Web-Server (10.0.2.1) nicht zum Subnetz 10.0.9.0 gehört, auf dem es sich befindet.",
+                "Ändern Sie auf Web-Server die Adresse von Port 0 auf 10.0.9.1 mit der Maske 255.255.255.0, damit sie dem Router-Branch-Subnetz entspricht."
+            ],
+            "explanation": "Ein Host muss eine Adresse verwenden, die zum Subnetz des Routers gehört, über den er sich verbindet. Web-Server war außerhalb dieses Bereichs konfiguriert, daher hatten die vorgelagerten Router keinen gültigen Pfad zurück. Das Anpassen der Adresse an das lokale Subnetz stellt das Routing wieder her und ermöglicht den Abschluss des Handshake."
+        },
+        "fr": {
+            "title": "Serveur Web distant inaccessible",
+            "story": "Le personnel d'assistance au siège signale que PC-Support ne peut pas charger la page hébergée sur Web-Server à la succursale. Ce problème persiste depuis ce matin et bloque une vérification planifiée.",
+            "objective": "Rétablissez une demande HTTP GET de PC-Support vers Web-Server pour qu'elle réussisse.",
+            "hints": [
+                "Tracez la demande de PC-Support : elle atteint Router-HQ mais est rejetée là-bas, sans jamais atteindre Web-Server.",
+                "Router-HQ n'a pas de route de retour car l'adresse de Web-Server (10.0.2.1) n'appartient pas au sous-réseau 10.0.9.0 sur lequel elle se trouve.",
+                "Sur Web-Server, changez l'adresse du port 0 en 10.0.9.1 avec le masque 255.255.255.0 pour qu'elle corresponde au sous-réseau de Router-Branch."
+            ],
+            "explanation": "Un hôte doit utiliser une adresse qui appartient au sous-réseau du routeur auquel il se connecte. Web-Server était configuré en dehors de cette plage, donc les routeurs en amont n'avaient pas de chemin valide pour le retour. L'ajustement de son adresse au sous-réseau local restaure le routage et permet à la négociation de se terminer."
+        },
+        "hi": {
+            "title": "शाखा वेब सर्वर अप्राप्य",
+            "story": "मुख्यालय में समर्थन कर्मचारी रिपोर्ट करते हैं कि PC-Support शाखा कार्यालय में Web-Server पर होस्ट किए गए पृष्ठ को लोड नहीं कर सकते। यह समस्या आज सुबह से मौजूद है और एक निर्धारित जांच को अवरुद्ध कर रही है।",
+            "objective": "PC-Support से Web-Server तक HTTP GET को पुनः स्थापित करें ताकि यह सफल हो।",
+            "hints": [
+                "PC-Support से अनुरोध को ट्रेस करें: यह Router-HQ तक पहुंचता है लेकिन वहां ड्रॉप कर दिया जाता है, यह कभी Web-Server तक नहीं पहुंचता।",
+                "Router-HQ के पास रिप्लाई के लिए कोई रूट नहीं है क्योंकि Web-Server का पता, 10.0.2.1, वास्तव में उस 10.0.9.0 सबनेट से संबंधित नहीं है जिस पर यह स्थित है।",
+                "Web-Server पर, पोर्ट 0 के पते को 10.0.9.1 में मास्क 255.255.255.0 के साथ बदलें ताकि यह Router-Branch सबनेट से मेल खाए।"
+            ],
+            "explanation": "एक होस्ट को एक पता उपयोग करना चाहिए जो उस राउटर के सबनेट से संबंधित हो जिससे यह जुड़ता है। Web-Server उस रेंज के बाहर कॉन्फ़िगर किया गया था, इसलिए अपस्ट्रीम राउटर के पास इसके लिए कोई वैध पथ नहीं था। इसके पते को स्थानीय सबनेट से मेल खाना रूटिंग को पुनः स्थापित करता है और हैंडशेक को पूरा होने देता है।"
+        },
+        "id": {
+            "title": "Server Web Cabang Tidak Dapat Dijangkau",
+            "story": "Staf dukungan di kantor pusat melaporkan bahwa PC-Support tidak dapat memuat halaman yang dihosting di Web-Server di kantor cabang. Masalah ini telah ada sejak pagi ini dan memblokir pemeriksaan yang dijadwalkan.",
+            "objective": "Pulihkan HTTP GET dari PC-Support ke Web-Server sehingga berhasil.",
+            "hints": [
+                "Lacak permintaan dari PC-Support: ia mencapai Router-HQ tetapi dijatuhkan di sana, tidak pernah sampai ke Web-Server.",
+                "Router-HQ tidak memiliki rute untuk balasan karena alamat Web-Server (10.0.2.1) sebenarnya tidak termasuk dalam jaringan 10.0.9.0 tempat Web-Server berada.",
+                "Di Web-Server, ubah alamat port 0 menjadi 10.0.9.1 dengan masker 255.255.255.0 agar sesuai dengan jaringan Router-Branch."
+            ],
+            "explanation": "Host harus menggunakan alamat yang termasuk dalam jaringan dari router tempat ia terhubung. Web-Server dikonfigurasi di luar rentang tersebut, sehingga router upstream tidak memiliki jalur yang valid kembali ke sana. Mencocokkan alamatnya dengan jaringan lokal memulihkan perutean dan memungkinkan handshake selesai."
+        },
+        "ru": {
+            "title": "Веб-сервер филиала недоступен",
+            "story": "Сотрудники техподдержки в главном офисе сообщают, что PC-Support не может загрузить страницу, размещённую на Web-Server в отделении. Проблема существует с этого утра и блокирует запланированную проверку.",
+            "objective": "Восстановите HTTP GET от PC-Support к Web-Server, чтобы он выполнился успешно.",
+            "hints": [
+                "Отследите запрос от PC-Support: он достигает Router-HQ, но там отбрасывается и никогда не доходит до Web-Server.",
+                "Router-HQ не имеет маршрута для ответа, потому что адрес Web-Server (10.0.2.1) на самом деле не принадлежит подсети 10.0.9.0, на которой он находится.",
+                "На Web-Server измените адрес порта 0 на 10.0.9.1 с маской 255.255.255.0, чтобы он соответствовал подсети Router-Branch."
+            ],
+            "explanation": "Хост должен использовать адрес, принадлежащий подсети маршрутизатора, через который он подключается. Web-Server был настроен вне этого диапазона, поэтому вышестоящие маршрутизаторы не имели допустимого пути обратно. Согласование его адреса с локальной подсетью восстанавливает маршрутизацию и позволяет завершить установление соединения."
+        },
+        "it": {
+            "title": "Web-Server della filiale irraggiungibile",
+            "story": "Il personale di supporto presso la sede centrale segnala che PC-Support non riesce a caricare la pagina ospitata su Web-Server presso la filiale. Il problema persiste da questa mattina e blocca un controllo programmato.",
+            "objective": "Ripristinare una richiesta HTTP GET da PC-Support a Web-Server affinché abbia successo.",
+            "hints": [
+                "Traccia la richiesta da PC-Support: raggiunge Router-HQ ma viene scartata lì, non arrivando mai a Web-Server.",
+                "Router-HQ non ha alcun percorso per la risposta perché l'indirizzo di Web-Server, 10.0.2.1, non appartiene effettivamente alla subnet 10.0.9.0 su cui si trova.",
+                "Su Web-Server, cambia l'indirizzo della porta 0 a 10.0.9.1 con Maschera 255.255.255.0 affinché corrisponda alla subnet di Router-Branch."
+            ],
+            "explanation": "Un host deve utilizzare un indirizzo che appartiene alla subnet del router a cui si connette. Web-Server era configurato al di fuori di tale intervallo, quindi i router a monte non avevano un percorso valido verso di esso. Adattare il suo indirizzo alla subnet locale ripristina il routing e consente il completamento dell'handshake."
+        },
+        "tr": {
+            "title": "Ulaşılamayan Şube Web-Server",
+            "story": "HQ'daki destek personeli, PC-Support'un şube ofisindeki Web-Server üzerinde barındırılan sayfayı yükleyemediğini bildiriyor. Sorun bu sabahtan beri devam ediyor ve planlanan bir kontrolü engelliyor.",
+            "objective": "PC-Support'tan Web-Server'a bir HTTP GET isteğini geri yükleyin ve başarılı olması sağlayın.",
+            "hints": [
+                "PC-Support'tan isteği takip edin: Router-HQ'ya ulaşıyor ama orada düşürülüyor, Web-Server'a hiç ulaşmıyor.",
+                "Router-HQ'nun yanıt için bir yolu yok çünkü Web-Server'ın adresi, 10.0.2.1, aslında üzerinde oturduğu 10.0.9.0 Maske'ye ait değil.",
+                "Web-Server'da, port 0'ın adresini 10.0.9.1 olarak 255.255.255.0 Maske ile değiştirerek Router-Branch alt ağıyla eşleşmesini sağlayın."
+            ],
+            "explanation": "Bir ana bilgisayar, bağlandığı yönlendiricinin alt ağına ait bir adres kullanmalıdır. Web-Server bu aralığın dışında yapılandırılmıştı, bu nedenle yukarı yöndeki yönlendiricilerin geri dönüş için geçerli bir yolu yoktu. Adresini yerel alt ağla eşleştirmek yönlendirmeyi geri yükler ve el sıkışmanın tamamlanmasını sağlar."
+        },
+        "th": {
+            "title": "Web-Server สาขาไม่สามารถเข้าถึง",
+            "story": "พนักงานสนับสนุนที่ HQ รายงานว่า PC-Support ไม่สามารถโหลดหน้าที่โฮสต์ใน Web-Server ที่สำนักงานสาขา ปัญหาเกิดขึ้นมาตั้งแต่เช้านี้และขัดขวางการตรวจสอบตามกำหนดการ",
+            "objective": "คืนค่า HTTP GET จาก PC-Support ไปยัง Web-Server เพื่อให้สำเร็จ",
+            "hints": [
+                "ติดตามคำขอจาก PC-Support: ไปถึง Router-HQ แต่ถูกลบที่นั่น ไม่ไปถึง Web-Server เลย",
+                "Router-HQ ไม่มีเส้นทางสำหรับการตอบกลับ เพราะที่อยู่ของ Web-Server คือ 10.0.2.1 ไม่ได้อยู่ในเครือข่ายย่อย 10.0.9.0 ที่มันอยู่จริงๆ",
+                "บน Web-Server เปลี่ยนที่อยู่ของพอร์ต 0 เป็น 10.0.9.1 ด้วย มาสก์ 255.255.255.0 เพื่อให้ตรงกับเครือข่ายย่อยของ Router-Branch"
+            ],
+            "explanation": "โฮสต์ต้องใช้ที่อยู่ที่อยู่ในเครือข่ายย่อยของเราเตอร์ที่มันเชื่อมต่อ Web-Server ถูกกำหนดค่านอกช่วงนั้น ดังนั้นเราเตอร์ต้นน้ำจึงไม่มีเส้นทางกลับที่ถูกต้องไป การจับคู่ที่อยู่กับเครือข่ายย่อยในท้องถิ่นจะคืนค่าการเส้นทางและปล่อยให้การจับมือเสร็จสิ้น"
+        },
+        "vi": {
+            "title": "Web-Server Chi nhánh không thể truy cập được",
+            "story": "Nhân viên hỗ trợ tại HQ báo cáo rằng PC-Support không thể tải trang được lưu trữ trên Web-Server tại chi nhánh. Vấn đề này kéo dài từ sáng nay và cản trở một cuộc kiểm tra theo lịch.",
+            "objective": "Khôi phục HTTP GET từ PC-Support đến Web-Server để nó thành công.",
+            "hints": [
+                "Theo dõi yêu cầu từ PC-Support: nó đến Router-HQ nhưng bị loại bỏ ở đó, không bao giờ tiếp tục đến Web-Server.",
+                "Router-HQ không có tuyến đường nào để trả lời vì địa chỉ của Web-Server, 10.0.2.1, thực ra không thuộc mạng con 10.0.9.0 nơi nó đang nằm.",
+                "Trên Web-Server, thay đổi địa chỉ của cổng 0 thành 10.0.9.1 với Số cổng 255.255.255.0 để nó khớp với mạng con Router-Branch."
+            ],
+            "explanation": "Một máy chủ phải sử dụng địa chỉ thuộc mạng con của bộ định tuyến mà nó kết nối. Web-Server được cấu hình ngoài phạm vi đó, do đó các bộ định tuyến ở hạ lưu không có đường dẫn hợp lệ trở lại nó. Khớp địa chỉ của nó với mạng con cục bộ sẽ khôi phục định tuyến và cho phép hoàn tất quá trình bắt tay."
+        }
+    }
+}
