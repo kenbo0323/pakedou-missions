@@ -1,0 +1,668 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-25",
+    "number": 35,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "cable_unplugged",
+        "missing_route"
+    ],
+    "concepts": [
+        "physical-link",
+        "static-route"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.20.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.20.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Tokyo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Tokyo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.20.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.28.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.6.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.28.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Osaka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.28.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.6.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Osaka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.6.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "No Reply from the Osaka Intranet",
+            "story": "The Sales team in Tokyo reports that PC-Sales cannot pull up pages from Intranet-01 in Osaka. The issue has been happening since this morning and nobody else has reported anything new.",
+            "objective": "Restore HTTP access from PC-Sales to Intranet-01.",
+            "hints": [
+                "Trace the path from Tokyo toward Osaka: the request gets as far as Router-Osaka and never reaches Switch-Osaka or Intranet-01 beyond it.",
+                "Router-Osaka has no physical link down to Switch-Osaka, and separately its routing table has no entry for the Tokyo network (10.0.20.0/255.255.255.0), so it drops the reply path.",
+                "On Router-Osaka: plug a cable into Switch-Osaka, and add a static route 10.0.20.0/255.255.255.0 via 10.0.28.1 on port 0."
+            ],
+            "explanation": "Two separate problems sat on the same router: a physical cable to the local switch was unplugged, and the routing table was missing an entry back to the sender's subnet. Both the link and the route must be fixed before traffic can flow end to end."
+        },
+        "ja": {
+            "title": "大阪のIntranetから応答がありません",
+            "story": "東京の営業チームから、PC-Salesが大阪のIntranet-01のページを表示できないと報告がありました。問題は今朝から発生しており、他に新たな報告はありません。",
+            "objective": "PC-SalesからIntranet-01へのHTTPアクセスを復旧してください。",
+            "hints": [
+                "東京から大阪への経路をたどると、リクエストはRouter-Osakaまでは届きますが、その先のSwitch-OsakaやIntranet-01には届いていません。",
+                "Router-OsakaからSwitch-Osakaへの物理リンクが切断されています。さらに、ルーティングテーブルに東京側のネットワーク(10.0.20.0/255.255.255.0)への経路がないため、応答が戻せません。",
+                "Router-Osakaで、Switch-Osakaへケーブルを接続してください。そして、ポート0で宛先ネットワーク10.0.20.0/255.255.255.0、中継先(ネクストホップ)10.0.28.1の静的ルートを追加してください。"
+            ],
+            "explanation": "同じルーターに2つの問題が重なっていました。ローカルスイッチへの物理ケーブルが外れていたことと、ルーティングテーブルに送信元のサブネットへ戻る経路が登録されていなかったことです。通信を両方向で成立させるには、リンクとルートの両方を直す必要があります。"
+        },
+        "zh-CN": {
+            "title": "大阪Intranet无回复",
+            "story": "东京销售团队报告说PC-Sales无法访问大阪的Intranet-01的页面。问题从今天早上开始，没有其他人报告新问题。",
+            "objective": "恢复从PC-Sales到Intranet-01的HTTP访问。",
+            "hints": [
+                "追踪从东京到大阪的路径：请求到达Router-Osaka，但从未到达Switch-Osaka或其后的Intranet-01。",
+                "Router-Osaka没有到Switch-Osaka的物理链路，其路由表也没有东京网络(10.0.20.0/255.255.255.0)的条目，所以它丢弃回复路径。",
+                "在Router-Osaka上：将网线插入Switch-Osaka，并在端口0上添加一条静态路由10.0.20.0/255.255.255.0，下一跳为10.0.28.1。"
+            ],
+            "explanation": "两个单独的问题出现在同一个Router上：到本地Switch的物理网线被拔掉了，路由表中缺少返回发送方子网的条目。在流量能够端到端流动之前，链路和路由都必须得到修复。"
+        },
+        "zh-TW": {
+            "title": "大阪Intranet無回應",
+            "story": "東京銷售團隊報告PC-Sales無法存取大阪的Intranet-01的網頁。問題從今天早上開始，沒有其他人報告新問題。",
+            "objective": "恢復從PC-Sales到Intranet-01的HTTP存取。",
+            "hints": [
+                "追蹤從東京到大阪的路徑：要求到達Router-Osaka，但從未到達Switch-Osaka或其後的Intranet-01。",
+                "Router-Osaka沒有到Switch-Osaka的實體連結，其路由表也沒有東京網路(10.0.20.0/255.255.255.0)的項目，所以它會丟棄回覆路徑。",
+                "在Router-Osaka上：將網線插入Switch-Osaka，並在連接埠0上新增靜態路由10.0.20.0/255.255.255.0，下一跳為10.0.28.1。"
+            ],
+            "explanation": "兩個單獨的問題出現在同一個Router上：到本機交換機的實體網線被拔掉了，路由表中缺少返回寄件者子網路的項目。在流量能夠端對端流動之前，連結和路由都必須修復。"
+        },
+        "ko": {
+            "title": "오사카 Intranet 응답 없음",
+            "story": "도쿄 영업팀에서 PC-Sales가 오사카의 Intranet-01 페이지에 접속할 수 없다고 보고했습니다. 이 문제는 오늘 아침부터 발생했으며 다른 사람들은 새로운 문제를 보고하지 않았습니다.",
+            "objective": "PC-Sales에서 Intranet-01으로의 HTTP 접속을 복원합니다.",
+            "hints": [
+                "도쿄에서 오사카로의 경로를 추적하면: 요청이 Router-Osaka까지만 도달하고 Switch-Osaka 또는 그 이상의 Intranet-01에는 도달하지 않습니다.",
+                "Router-Osaka는 Switch-Osaka로의 물리적 연결이 없고, 라우팅 테이블에 도쿄 네트워크(10.0.20.0/255.255.255.0)의 항목도 없어서 응답 경로를 버립니다.",
+                "Router-Osaka에서: Switch-Osaka에 케이블을 연결하고, 포트 0에서 다음 홉 10.0.28.1을 통해 정적 라우트 10.0.20.0/255.255.255.0을 추가합니다."
+            ],
+            "explanation": "두 가지 문제가 같은 Router에 있었습니다. 로컬 Switch로의 물리적 케이블이 뽑혀있었고, 라우팅 테이블에는 발신자 서브넷으로 돌아가는 항목이 없었습니다. 트래픽이 끝에서 끝까지 흐르기 전에 링크와 라우트가 모두 수정되어야 합니다."
+        },
+        "es": {
+            "title": "Sin respuesta de la Intranet de Osaka",
+            "story": "El equipo de Ventas en Tokio informa que PC-Sales no puede acceder a las páginas de Intranet-01 en Osaka. El problema ha estado ocurriendo desde esta mañana y nadie más ha reportado nada nuevo.",
+            "objective": "Restaurar el acceso HTTP desde PC-Sales a Intranet-01.",
+            "hints": [
+                "Rastrear la ruta desde Tokio hacia Osaka: la solicitud llega hasta Router-Osaka y nunca alcanza Switch-Osaka o Intranet-01 más allá.",
+                "Router-Osaka no tiene un enlace físico a Switch-Osaka, y además su tabla de rutas no tiene entrada para la red de Tokio (10.0.20.0/255.255.255.0), por lo que descarta la ruta de respuesta.",
+                "En Router-Osaka: conectar un cable a Switch-Osaka, y agregar una ruta estática 10.0.20.0/255.255.255.0 vía 10.0.28.1 en el puerto 0."
+            ],
+            "explanation": "Dos problemas separados se encontraban en el mismo Router: un cable físico al Switch local estaba desconectado, y la tabla de rutas carecía de una entrada de regreso a la subred del remitente. Tanto el enlace como la ruta deben corregirse antes de que el tráfico pueda fluir de extremo a extremo."
+        },
+        "pt-BR": {
+            "title": "Sem resposta da Intranet de Osaka",
+            "story": "O time de Vendas em Tóquio relata que o PC-Sales não consegue acessar páginas de Intranet-01 em Osaka. O problema vem acontecendo desde esta manhã e ninguém mais reportou nada novo.",
+            "objective": "Restaurar acesso HTTP de PC-Sales para Intranet-01.",
+            "hints": [
+                "Rastreie o caminho de Tóquio para Osaka: a requisição chega até Router-Osaka mas nunca alcança Switch-Osaka ou Intranet-01 além dele.",
+                "Router-Osaka não tem um enlace físico para Switch-Osaka, e sua tabela de roteamento não possui entrada para a rede de Tóquio (10.0.20.0/255.255.255.0), então descarta o caminho de resposta.",
+                "Em Router-Osaka: conecte um cabo em Switch-Osaka, e adicione uma rota estática 10.0.20.0/255.255.255.0 via 10.0.28.1 na porta 0."
+            ],
+            "explanation": "Dois problemas separados estavam no mesmo Router: um cabo físico para o Switch local estava desconectado, e a tabela de roteamento não tinha uma entrada de volta para a sub-rede do remetente. Tanto o enlace quanto a rota devem ser corrigidos antes do tráfego fluir de ponta a ponta."
+        },
+        "de": {
+            "title": "Keine Antwort vom Osaka-Intranet",
+            "story": "Das Sales-Team in Tokio meldet, dass PC-Sales keine Seiten vom Intranet-01 in Osaka abrufen kann. Das Problem besteht seit heute Morgen und niemand anders hat etwas Neues gemeldet.",
+            "objective": "HTTP-Zugriff von PC-Sales auf Intranet-01 wiederherstellen.",
+            "hints": [
+                "Verfolgen Sie den Pfad von Tokio nach Osaka: Die Anfrage reicht bis zu Router-Osaka und erreicht Switch-Osaka oder Intranet-01 dahinter nicht.",
+                "Router-Osaka hat keine physische Verbindung zu Switch-Osaka, und seine Routing-Tabelle hat keinen Eintrag für das Tokio-Netzwerk (10.0.20.0/255.255.255.0), daher verwirft es den Antwortpfad.",
+                "Auf Router-Osaka: Stecken Sie ein Kabel in Switch-Osaka und fügen Sie eine statische Route 10.0.20.0/255.255.255.0 via 10.0.28.1 auf Port 0 hinzu."
+            ],
+            "explanation": "Zwei separate Probleme waren auf demselben Router: Ein physisches Kabel zum lokalen Switch war nicht angesteckt, und die Routing-Tabelle hatte keinen Eintrag zurück zum Subnetz des Absenders. Sowohl die Verbindung als auch die Route müssen repariert werden, damit Datenverkehr End-to-End fließen kann."
+        },
+        "fr": {
+            "title": "Pas de réponse du réseau Intranet Osaka",
+            "story": "L'équipe Sales à Tokyo signale que PC-Sales ne peut pas accéder aux pages du réseau Intranet-01 à Osaka. Le problème persiste depuis ce matin et personne d'autre n'a signalé de problème.",
+            "objective": "Rétablir l'accès HTTP depuis PC-Sales vers Intranet-01.",
+            "hints": [
+                "Tracez le chemin de Tokyo vers Osaka : la demande atteint Router-Osaka mais ne dépasse jamais Switch-Osaka ou Intranet-01.",
+                "Router-Osaka n'a pas de lien physique vers Switch-Osaka, et sa Table de routage n'a pas d'entrée pour le réseau de Tokyo (10.0.20.0/255.255.255.0), il rejette donc le chemin de réponse.",
+                "Sur Router-Osaka : branchez un câble dans Switch-Osaka et ajoutez une route statique 10.0.20.0/255.255.255.0 via 10.0.28.1 sur port 0."
+            ],
+            "explanation": "Deux problèmes distincts se trouvaient sur le même routeur : un câble physique vers le commutateur local était débranché, et la Table de routage manquait d'une entrée pointant vers le sous-réseau de l'expéditeur. Le lien et la route doivent tous deux être reparés pour que le trafic circule d'un bout à l'autre."
+        },
+        "hi": {
+            "title": "ओसाका इंट्रानेट से कोई जवाब नहीं",
+            "story": "टोक्यो की सेल्स टीम की रिपोर्ट है कि PC-Sales ओसाका में Intranet-01 से पेज नहीं खोल सकता। यह समस्या आज सुबह से चल रही है और किसी और ने कोई नई समस्या की सूचना नहीं दी है।",
+            "objective": "PC-Sales से Intranet-01 तक HTTP एक्सेस को पुनः स्थापित करें।",
+            "hints": [
+                "टोक्यो से ओसाका तक का पथ ट्रेस करें: अनुरोध Router-Osaka तक पहुंचता है लेकिन Switch-Osaka या उसके आगे Intranet-01 तक कभी नहीं पहुंचता।",
+                "Router-Osaka के पास Switch-Osaka के लिए कोई भौतिक लिंक नहीं है, और इसकी रूटिंग टेबल में टोक्यो नेटवर्क (10.0.20.0/255.255.255.0) के लिए कोई प्रविष्टि नहीं है, इसलिए यह प्रतिक्रिया पथ को छोड़ देता है।",
+                "Router-Osaka पर: एक केबल को Switch-Osaka में प्लग करें, और पोर्ट 0 पर 10.0.20.0/255.255.255.0 के लिए एक स्टेटिक रूट 10.0.28.1 के माध्यम से जोड़ें।"
+            ],
+            "explanation": "एक ही राउटर पर दो अलग-अलग समस्याएं थीं: स्थानीय स्विच को जाने वाली भौतिक केबल अनप्लग थी, और रूटिंग टेबल में भेजने वाले के सबनेट के लिए कोई प्रविष्टि नहीं थी। ट्रैफिक के लिए सिरे से सिरे तक प्रवाहित होने से पहले लिंक और रूट दोनों को ठीक करना होगा।"
+        },
+        "id": {
+            "title": "Tidak Ada Balasan dari Intranet Osaka",
+            "story": "Tim Sales di Tokyo melaporkan bahwa PC-Sales tidak dapat membuka halaman dari Intranet-01 di Osaka. Masalah ini terjadi sejak pagi ini dan tidak ada yang lain melaporkan sesuatu yang baru.",
+            "objective": "Pulihkan akses HTTP dari PC-Sales ke Intranet-01.",
+            "hints": [
+                "Lacak jalur dari Tokyo ke Osaka: permintaan mencapai Router-Osaka tetapi tidak pernah sampai ke Switch-Osaka atau Intranet-01 di baliknya.",
+                "Router-Osaka tidak memiliki tautan fisik ke Switch-Osaka, dan Tabel Routing-nya tidak memiliki entri untuk jaringan Tokyo (10.0.20.0/255.255.255.0), sehingga menolak jalur balasan.",
+                "Pada Router-Osaka: colokkan kabel ke Switch-Osaka, dan tambahkan rute statis 10.0.20.0/255.255.255.0 melalui 10.0.28.1 pada port 0."
+            ],
+            "explanation": "Dua masalah terpisah ada di router yang sama: kabel fisik ke switch lokal tidak terpasang, dan Tabel Routing tidak memiliki entri kembali ke subnet pengirim. Baik tautan maupun rute harus diperbaiki sebelum lalu lintas dapat mengalir dari ujung ke ujung."
+        },
+        "ru": {
+            "title": "Нет ответа от интранета Осака",
+            "story": "Команда отдела продаж в Токио сообщает, что PC-Sales не может открыть страницы из Intranet-01 в Осаке. Проблема возникла с утра, и никто другой о ней не сообщал.",
+            "objective": "Восстановить HTTP-доступ с PC-Sales на Intranet-01.",
+            "hints": [
+                "Проследите маршрут от Токио к Осаке: запрос достигает Router-Osaka, но никогда не доходит до Switch-Osaka или Intranet-01 дальше.",
+                "Router-Osaka не имеет физического соединения с Switch-Osaka, а его Таблица маршрутизации не содержит записи для сети Токио (10.0.20.0/255.255.255.0), поэтому он отбрасывает обратный маршрут.",
+                "На Router-Osaka: подключите кабель к Switch-Osaka и добавьте статический маршрут 10.0.20.0/255.255.255.0 через 10.0.28.1 на порту 0."
+            ],
+            "explanation": "На одном маршрутизаторе одновременно были две отдельные проблемы: физический кабель к локальному коммутатору был отключен, а в Таблице маршрутизации отсутствовала запись, указывающая обратно на подсеть отправителя. Для сквозной передачи трафика необходимо исправить как соединение, так и маршрут."
+        },
+        "it": {
+            "title": "Nessuna risposta dalla Intranet di Osaka",
+            "story": "Il team Sales di Tokyo riferisce che PC-Sales non riesce ad accedere alle pagine di Intranet-01 a Osaka. Il problema si presenta da questa mattina e nessun altro ha segnalato novità.",
+            "objective": "Ripristina l'accesso HTTP da PC-Sales a Intranet-01.",
+            "hints": [
+                "Traccia il percorso da Tokyo verso Osaka: la richiesta arriva fino a Router-Osaka e non raggiunge mai Switch-Osaka né Intranet-01 oltre.",
+                "Router-Osaka non ha un collegamento fisico verso Switch-Osaka, inoltre nella sua Tabella di routing manca una voce per la rete Tokyo (10.0.20.0/255.255.255.0), perciò scarta il percorso di risposta.",
+                "Su Router-Osaka: collega un cavo a Switch-Osaka e aggiungi una rotta statica 10.0.20.0/255.255.255.0 via 10.0.28.1 sulla porta 0."
+            ],
+            "explanation": "Due problemi distinti erano presenti sullo stesso router: un cavo fisico verso lo switch locale era scollegato e nella Tabella di routing mancava una voce per raggiungere la subnet del mittente. Sia il collegamento che la rotta devono essere ripristinati affinché il traffico possa fluire da capo a capo."
+        },
+        "tr": {
+            "title": "Osaka İntranet'ten Yanıt Yok",
+            "story": "Tokyo'daki Satış ekibi, PC-Sales'in Osaka'daki Intranet-01'den sayfaları açamadığını bildiriyor. Sorun bu sabahtan beri yaşanıyor ve başka kimse yeni bir şey raporlamadı.",
+            "objective": "PC-Sales'ten Intranet-01'e HTTP erişimini geri yükle.",
+            "hints": [
+                "Tokyo'dan Osaka'ya giden yolu izle: istek Router-Osaka'ya kadar ulaşıyor ve Switch-Osaka'ya veya bundan ötesindeki Intranet-01'e asla ulaşmıyor.",
+                "Router-Osaka'nın Switch-Osaka'ya fiziksel bağlantısı yok ve ayrıca Yönlendirme Tablosunda Tokyo ağı (10.0.20.0/255.255.255.0) için giriş bulunmuyor, bu nedenle yanıt yolunu düşürüyor.",
+                "Router-Osaka'da: Switch-Osaka'ya bir kablo takın ve port 0 üzerinde 10.0.28.1 sonraki sıçrama ile 10.0.20.0/255.255.255.0 statik rotası ekleyin."
+            ],
+            "explanation": "Aynı router üzerinde iki ayrı sorun vardı: yerel switch'e giden fiziksel kablo çıkarılmıştı ve Yönlendirme Tablosunda gönderenin alt ağına dönüş için giriş eksikti. Trafik uçtan uca akabilmesi için hem bağlantı hem de rota düzeltilmelidir."
+        },
+        "vi": {
+            "title": "Không có phản hồi từ Intranet Osaka",
+            "story": "Nhóm Sales ở Tokyo báo cáo rằng PC-Sales không thể truy cập các trang từ Intranet-01 ở Osaka. Sự cố này xảy ra kể từ sáng nay và không ai khác báo cáo điều gì mới.",
+            "objective": "Khôi phục truy cập HTTP từ PC-Sales đến Intranet-01.",
+            "hints": [
+                "Truy vết đường dẫn từ Tokyo đến Osaka: yêu cầu đi đến Router-Osaka và không bao giờ đến Switch-Osaka hay Intranet-01 phía sau.",
+                "Router-Osaka không có liên kết vật lý đến Switch-Osaka, và riêng biệt Bảng định tuyến của nó không có mục cho mạng Tokyo (10.0.20.0/255.255.255.0), nên nó loại bỏ đường dẫn trả lời.",
+                "Trên Router-Osaka: cắm cáp vào Switch-Osaka và thêm tuyến tĩnh 10.0.20.0/255.255.255.0 qua Hop tiếp theo 10.0.28.1 trên cổng 0."
+            ],
+            "explanation": "Hai vấn đề riêng biệt nằm trên cùng một Router: cáp vật lý đến switch cục bộ đã bị tháo ra và Bảng định tuyến thiếu một mục để quay lại mạng con của người gửi. Cả liên kết và tuyến phải được khắc phục trước khi lưu lượng có thể chảy đầu cuối."
+        },
+        "th": {
+            "title": "ไม่มีการตอบสนองจาก Intranet-01 ในโอซาก้า",
+            "story": "ทีม Sales ในโตเกียวรายงานว่า PC-Sales ไม่สามารถดึงหน้าเว็บจาก Intranet-01 ในโอซาก้าได้ ปัญหานี้เกิดขึ้นตั้งแต่เช้าวันนี้ และไม่มีใครรายงานปัญหาใหม่อื่น ๆ",
+            "objective": "เรียกคืนการเข้าถึง HTTP จาก PC-Sales ไปยัง Intranet-01",
+            "hints": [
+                "ติดตามเส้นทางจากโตเกียวไปยังโอซาก้า: คำขอไปถึง Router-Osaka แล้วไม่เคยถึง Switch-Osaka หรือ Intranet-01 ที่อยู่เบื้องหลัง",
+                "Router-Osaka ไม่มีลิงก์ทางกายภาพลงมายัง Switch-Osaka และแยกต่างหากคือ ตารางเส้นทาง ของมันไม่มีรายการสำหรับเครือข่ายโตเกียว (10.0.20.0/255.255.255.0) ดังนั้นจึงปล่อยเส้นทางตอบกลับ",
+                "บน Router-Osaka: เสียบสายเคเบิลเข้าไปใน Switch-Osaka และเพิ่มเส้นทางคงที่ 10.0.20.0/255.255.255.0 ด้วย ฮ็อปถัดไป 10.0.28.1 บนพอร์ต 0"
+            ],
+            "explanation": "ปัญหาสองประการแยกต่างหากอยู่บน Router เดียวกัน: สายเคเบิลทางกายภาพไปยังสวิตช์ท้องถิ่นถูกดึงออก และ ตารางเส้นทาง ขาดรายการกลับไปยังซับเน็ตของผู้ส่ง ทั้งลิงก์และเส้นทางจะต้องได้รับการแก้ไขก่อนที่จะสามารถไหลข้อมูลแบบปลายเป้าหมายได้"
+        }
+    }
+}
