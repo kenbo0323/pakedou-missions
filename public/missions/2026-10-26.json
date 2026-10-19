@@ -1,0 +1,572 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-26",
+    "number": 36,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.21.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.21.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.21.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.21.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.27.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.27.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "New Hire, No File Server",
+            "story": "The new hire at PC-Design cannot open the file server's web page on their first day. PC-Reception nearby has no trouble at all reaching it.",
+            "objective": "Get an HTTP GET from PC-Design to File-Server to succeed.",
+            "hints": [
+                "The request from PC-Design never leaves its own PC — it doesn't even make it to Switch-1F or Router-Main.",
+                "PC-Design has no default gateway set, so it has no way to send traffic destined for the File-Server's subnet.",
+                "On PC-Design, set the default gateway to 10.0.21.254."
+            ],
+            "explanation": "A client needs a default gateway to reach addresses outside its own subnet. Without one, PC-Design's packets for File-Server have nowhere to go, even though the rest of the network is fine, as shown by PC-Reception's successful ping."
+        },
+        "ja": {
+            "title": "新入社員、File-Serverに繋がらない",
+            "story": "初出社日、PC-DesignからFile-Serverのウェブページが開けません。近くのPC-Receptionからは問題なくアクセスできています。",
+            "objective": "PC-DesignからFile-ServerへのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Designからのリクエストは自分自身のPCから出ていけておらず、Switch-1FやRouter-Mainにすら届いていません。",
+                "PC-Designにはデフォルトゲートウェイが設定されていないため、File-Serverのサブネット宛ての通信を送る手段がありません。",
+                "PC-Designでデフォルトゲートウェイを10.0.21.254に設定してください。"
+            ],
+            "explanation": "クライアントが自分のサブネットの外にあるアドレスへ通信するには、デフォルトゲートウェイが必要です。設定がないと、PC-DesignからFile-Server宛てのパケットは行き場を失ってしまいます。PC-Receptionからのpingが成功していることからも分かるように、ネットワークの他の部分には問題がありません。"
+        },
+        "zh-CN": {
+            "title": "新员工，无文件服务器",
+            "story": "新员工在PC-Design上无法在第一天打开文件服务器的网页。附近的PC-Reception可以轻松访问它。",
+            "objective": "让PC-Design到File-Server的HTTP GET请求成功。",
+            "hints": [
+                "来自PC-Design的请求从未离开其自身PC——它甚至没有到达Switch-1F或Router-Main。",
+                "PC-Design没有设置默认网关，所以它无法将流量发送到File-Server子网。",
+                "在PC-Design上，将默认网关设置为10.0.21.254。"
+            ],
+            "explanation": "客户端需要默认网关才能到达其自身子网外的地址。没有默认网关，PC-Design发送给File-Server的数据包无处可去，即使网络其余部分正常，如PC-Reception的成功ping所示。"
+        },
+        "zh-TW": {
+            "title": "新員工，無檔案伺服器",
+            "story": "新員工在PC-Design上無法在第一天打開檔案伺服器的網頁。附近的PC-Reception可以輕鬆訪問它。",
+            "objective": "讓PC-Design到File-Server的HTTP GET請求成功。",
+            "hints": [
+                "來自PC-Design的請求從未離開其自身PC——它甚至沒有到達Switch-1F或Router-Main。",
+                "PC-Design沒有設置預設閘道，所以它無法將流量發送到File-Server子網。",
+                "在PC-Design上，將預設閘道設置為10.0.21.254。"
+            ],
+            "explanation": "用戶端需要預設閘道才能到達其自身子網外的位址。沒有預設閘道，PC-Design發送給File-Server的封包無處可去，即使網路其餘部分正常，如PC-Reception的成功ping所示。"
+        },
+        "ko": {
+            "title": "신입사원, 파일 서버 없음",
+            "story": "신입사원이 PC-Design에서 첫 날에 파일 서버의 웹 페이지를 열 수 없습니다. 근처의 PC-Reception은 문제없이 접근할 수 있습니다.",
+            "objective": "PC-Design에서 File-Server로의 HTTP GET 요청을 성공하게 합니다.",
+            "hints": [
+                "PC-Design의 요청은 자신의 PC를 벗어나지 못합니다 — Switch-1F 또는 Router-Main에도 도달하지 못합니다.",
+                "PC-Design에는 기본 게이트웨이가 설정되지 않아 File-Server 서브넷으로 트래픽을 보낼 방법이 없습니다.",
+                "PC-Design에서 기본 게이트웨이를 10.0.21.254로 설정합니다."
+            ],
+            "explanation": "클라이언트는 자신의 서브넷 외의 주소에 도달하려면 기본 게이트웨이가 필요합니다. 기본 게이트웨이가 없으면 PC-Design의 File-Server 패킷이 갈 곳이 없습니다. 비록 PC-Reception의 성공적인 ping에서 보듯이 네트워크의 나머지 부분은 정상이지만 말입니다."
+        },
+        "es": {
+            "title": "Empleado Nuevo, Sin Servidor de Archivos",
+            "story": "El empleado nuevo en PC-Design no puede abrir la página web del servidor de archivos el primer día. PC-Reception cerca tiene ningún problema en acceder a ella.",
+            "objective": "Hacer que el HTTP GET desde PC-Design a File-Server tenga éxito.",
+            "hints": [
+                "La solicitud de PC-Design nunca sale de su propia PC — ni siquiera llega a Switch-1F o Router-Main.",
+                "PC-Design no tiene Gateway predeterminado establecido, por lo que no tiene forma de enviar tráfico destinado a la subred del File-Server.",
+                "En PC-Design, establece el Gateway predeterminado a 10.0.21.254."
+            ],
+            "explanation": "Un cliente necesita un Gateway predeterminado para alcanzar direcciones fuera de su propia subred. Sin uno, los paquetes de PC-Design para File-Server no tienen a dónde ir, aunque el resto de la red esté bien, como se muestra por el ping exitoso de PC-Reception."
+        },
+        "pt-BR": {
+            "title": "Novato, Sem Servidor de Arquivos",
+            "story": "O novato em PC-Design não consegue abrir a página web do servidor de arquivos no primeiro dia. PC-Reception próximo consegue acessá-la sem problemas.",
+            "objective": "Fazer o HTTP GET de PC-Design para File-Server funcionar.",
+            "hints": [
+                "A solicitação de PC-Design nunca sai do próprio PC — nem chega a Switch-1F ou Router-Main.",
+                "PC-Design não tem Gateway padrão configurado, então não tem como enviar tráfego destinado à sub-rede do File-Server.",
+                "Em PC-Design, configure o Gateway padrão como 10.0.21.254."
+            ],
+            "explanation": "Um cliente precisa de um Gateway padrão para alcançar endereços fora de sua própria sub-rede. Sem um, os pacotes de PC-Design para File-Server não têm para onde ir, mesmo que o resto da rede esteja funcionando, como mostra o ping bem-sucedido de PC-Reception."
+        },
+        "de": {
+            "title": "Neuer Mitarbeiter, kein Dateiserv",
+            "story": "Der neue Mitarbeiter an PC-Design kann die Webseite des Dateiservers am ersten Tag nicht öffnen. PC-Reception in der Nähe hat überhaupt keine Probleme, sie zu erreichen.",
+            "objective": "Ein HTTP GET von PC-Design zu File-Server muss erfolgreich sein.",
+            "hints": [
+                "Die Anfrage von PC-Design verlässt nie seinen eigenen PC – sie kommt nicht einmal zu Switch-1F oder Router-Main.",
+                "PC-Design hat kein Standard-Gateway gesetzt, daher hat es keine Möglichkeit, Traffic für das Subnetz des File-Server zu senden.",
+                "Setzen Sie auf PC-Design das Standard-Gateway auf 10.0.21.254."
+            ],
+            "explanation": "Ein Client benötigt ein Standard-Gateway, um Adressen außerhalb seines eigenen Subnetzes zu erreichen. Ohne ein Standard-Gateway haben die Pakete von PC-Design für File-Server keinen Zielort, obwohl der Rest des Netzwerks einwandfrei funktioniert, wie durch den erfolgreichen Ping von PC-Reception gezeigt wird."
+        },
+        "fr": {
+            "title": "Nouvel embauché, pas de serveur de fichiers",
+            "story": "Le nouvel embauché à PC-Design ne peut pas ouvrir la page web du serveur de fichiers le premier jour. PC-Reception à proximité n'a aucun problème pour l'atteindre.",
+            "objective": "Un HTTP GET de PC-Design à File-Server doit réussir.",
+            "hints": [
+                "La requête de PC-Design ne quitte jamais son propre PC — elle ne parvient même pas à Switch-1F ou Router-Main.",
+                "PC-Design n'a pas de Passerelle par défaut définie, donc il n'a aucun moyen d'envoyer le trafic destiné au sous-réseau du File-Server.",
+                "Sur PC-Design, réglez la Passerelle par défaut sur 10.0.21.254."
+            ],
+            "explanation": "Un Client a besoin d'une Passerelle par défaut pour atteindre les adresses en dehors de son propre sous-réseau. Sans une Passerelle par défaut, les paquets de PC-Design pour File-Server n'ont nulle part où aller, même si le reste du réseau fonctionne correctement, comme le montre le ping réussi de PC-Reception."
+        },
+        "hi": {
+            "title": "नया कर्मचारी, कोई फ़ाइल सर्वर नहीं",
+            "story": "PC-Design पर नया कर्मचारी अपने पहले दिन फ़ाइल सर्वर के वेब पेज को नहीं खोल सकता। पास में PC-Reception को इसे पहुंचने में कोई समस्या नहीं है।",
+            "objective": "PC-Design से File-Server को HTTP GET सफल होना चाहिए।",
+            "hints": [
+                "PC-Design से अनुरोध कभी अपने स्वयं के PC को नहीं छोड़ता — यह Switch-1F या Router-Main तक भी नहीं पहुंचता।",
+                "PC-Design में डिफ़ॉल्ट गेटवे सेट नहीं है, इसलिए इसके पास File-Server की सबनेट के लिए ट्रैफिक भेजने का कोई तरीका नहीं है।",
+                "PC-Design पर डिफ़ॉल्ट गेटवे को 10.0.21.254 पर सेट करें।"
+            ],
+            "explanation": "किसी Client को अपनी स्वयं की सबनेट के बाहर पते तक पहुंचने के लिए एक डिफ़ॉल्ट गेटवे की आवश्यकता होती है। बिना डिफ़ॉल्ट गेटवे के, PC-Design के File-Server के लिए पैकेट कहीं नहीं जा सकते, भले ही बाकी नेटवर्क ठीक काम कर रहा हो, जैसा कि PC-Reception के सफल पिंग द्वारा दिखाया गया है।"
+        },
+        "id": {
+            "title": "Karyawan Baru, Tanpa Server File",
+            "story": "Karyawan baru di PC-Design tidak dapat membuka halaman web server file pada hari pertama mereka. PC-Reception di dekatnya tidak memiliki masalah sama sekali untuk mencapainya.",
+            "objective": "HTTP GET dari PC-Design ke File-Server harus berhasil.",
+            "hints": [
+                "Permintaan dari PC-Design tidak pernah meninggalkan PC mereka sendiri — bahkan tidak sampai ke Switch-1F atau Router-Main.",
+                "PC-Design tidak memiliki Gateway Default yang diatur, jadi tidak ada cara untuk mengirim lalu lintas yang ditujukan untuk subnet File-Server.",
+                "Pada PC-Design, atur Gateway Default ke 10.0.21.254."
+            ],
+            "explanation": "Client memerlukan Gateway Default untuk menjangkau alamat di luar subnet mereka sendiri. Tanpa Gateway Default, paket PC-Design untuk File-Server tidak memiliki tempat untuk pergi, meskipun sisa jaringan berfungsi dengan baik, seperti yang ditunjukkan oleh ping yang berhasil dari PC-Reception."
+        },
+        "ru": {
+            "title": "Новый сотрудник, нет File Server",
+            "story": "Новый сотрудник на PC-Design не может открыть веб-страницу File Server в первый день работы. PC-Reception рядом вообще не имеет проблем с её доступом.",
+            "objective": "HTTP GET от PC-Design к File-Server должен быть успешным.",
+            "hints": [
+                "Запрос от PC-Design никогда не покидает собственный ПК — он не достигает даже Switch-1F или Router-Main.",
+                "На PC-Design не установлен Шлюз по умолчанию, поэтому нет способа отправить трафик для подсети File-Server.",
+                "На PC-Design установите Шлюз по умолчанию на 10.0.21.254."
+            ],
+            "explanation": "Клиенту требуется Шлюз по умолчанию для доступа к адресам вне собственной подсети. Без Шлюза по умолчанию пакеты PC-Design, предназначенные для File-Server, не имеют маршрута, даже если остальная сеть работает правильно, как показано успешным пингом от PC-Reception."
+        },
+        "it": {
+            "title": "Nuovo Dipendente, Nessun File Server",
+            "story": "Il nuovo dipendente presso PC-Design non riesce ad aprire la pagina web del file server nel suo primo giorno. PC-Reception nelle vicinanze non ha alcuna difficoltà a raggiungerlo.",
+            "objective": "Ottenere un HTTP GET da PC-Design a File-Server che abbia successo.",
+            "hints": [
+                "La richiesta da PC-Design non lascia mai il proprio PC — non arriva nemmeno a Switch-1F o Router-Main.",
+                "PC-Design non ha un Gateway predefinito configurato, quindi non ha modo di inviare traffico destinato alla subnet di File-Server.",
+                "Su PC-Design, impostare il Gateway predefinito a 10.0.21.254."
+            ],
+            "explanation": "Un Client necessita di un Gateway predefinito per raggiungere indirizzi al di fuori della propria subnet. Senza uno, i pacchetti di PC-Design destinati a File-Server non hanno dove andare, anche se il resto della rete funziona correttamente, come dimostrato dal ping riuscito di PC-Reception."
+        },
+        "tr": {
+            "title": "Yeni İşçi, Dosya Sunucusu Yok",
+            "story": "PC-Design'daki yeni çalışan ilk günde dosya sunucusunun web sayfasını açamıyor. Yakındaki PC-Reception buna ulaşmakta hiçbir sorun yaşamıyor.",
+            "objective": "PC-Design'dan File-Server'a bir HTTP GET başarıyla ulaştırın.",
+            "hints": [
+                "PC-Design'dan gelen istek kendi bilgisayarını hiçbir zaman terk etmez — Switch-1F veya Router-Main'e bile ulaşmaz.",
+                "PC-Design'da Varsayılan ağ geçidi ayarlanmamıştır, bu nedenle File-Server'ın alt ağına yönelik trafiği göndermenin hiçbir yolu yoktur.",
+                "PC-Design'da, Varsayılan ağ geçidini 10.0.21.254 olarak ayarlayın."
+            ],
+            "explanation": "Bir Client'in kendi alt ağının dışındaki adreslere ulaşmak için bir Varsayılan ağ geçidine ihtiyacı vardır. Biri olmadan, PC-Design'ın File-Server'a gönderdiği paketlerin gidecek yeri olmaz, hatta ağın geri kalanı da mükemmel şekilde çalışsa da, PC-Reception'ın başarılı ping'i bunu gösterir."
+        },
+        "th": {
+            "title": "พนักงานใหม่ ไม่มีเซิร์ฟเวอร์ไฟล์",
+            "story": "พนักงานใหม่ที่ PC-Design ไม่สามารถเปิดหน้าเว็บของเซิร์ฟเวอร์ไฟล์ในวันแรกของเขา PC-Reception ข้างเคียงไม่มีปัญหาเลยในการเข้าถึง",
+            "objective": "ส่ง HTTP GET จาก PC-Design ไปยัง File-Server อย่างสำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Design ไม่มีวันออกจาก PC ของมันเอง — แม้แต่ไม่ถึง Switch-1F หรือ Router-Main",
+                "PC-Design ไม่ได้ตั้งค่าเกตเวย์เริ่มต้น จึงไม่มีวิธีส่งข้อมูลไปยังเครือข่ายของ File-Server",
+                "บน PC-Design ให้ตั้งค่าเกตเวย์เริ่มต้นเป็น 10.0.21.254"
+            ],
+            "explanation": "Client ต้องการเกตเวย์เริ่มต้นเพื่อไปถึงแอดเดรสนอกเครือข่ายของตนเอง หากไม่มีเกตเวย์นี้ แพ็กเก็ตของ PC-Design ที่มุ่งหน้าไปยัง File-Server จะไม่รู้ว่าจะไปไหน แม้ว่าเครือข่ายส่วนที่เหลือจะทำงานได้ดีแล้ว ดังที่เห็นจาก ping ที่สำเร็จของ PC-Reception"
+        },
+        "vi": {
+            "title": "Nhân viên mới, không có File Server",
+            "story": "Nhân viên mới tại PC-Design không thể mở trang web của máy chủ tập tin vào ngày đầu tiên của họ. PC-Reception gần đó không gặp bất kỳ khó khăn nào trong việc truy cập.",
+            "objective": "Gửi HTTP GET từ PC-Design đến File-Server thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Design không bao giờ rời khỏi PC của riêng nó — nó thậm chí không đến Switch-1F hay Router-Main.",
+                "PC-Design không có Cổng mặc định được đặt, vì vậy nó không có cách nào để gửi lưu lượng truy cập đến mạng của File-Server.",
+                "Trên PC-Design, hãy đặt Cổng mặc định thành 10.0.21.254."
+            ],
+            "explanation": "Client cần một Cổng mặc định để truy cập các địa chỉ ngoài mạng con của nó. Không có nó, các gói từ PC-Design gửi đến File-Server sẽ không có đường đi, mặc dù phần còn lại của mạng hoạt động bình thường, như được chứng minh bằng ping thành công của PC-Reception."
+        }
+    }
+}
