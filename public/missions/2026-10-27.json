@@ -1,0 +1,575 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-27",
+    "number": 37,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "acl_deny"
+    ],
+    "concepts": [
+        "firewall",
+        "acl"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.19.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.19.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.19.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.4.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "FW-01",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.4.1",
+                            "protocol": "HTTP"
+                        },
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.4.1",
+                            "dstPort": 80
+                        },
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.4.1"
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Front",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.4.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-waf1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-waf1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-waf1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-waf1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-waf1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Wiki Page Won't Load",
+            "story": "PC-Admin reports the internal Wiki-01 page stopped loading in the browser this morning, though it worked fine yesterday. No one changed their own computer settings.",
+            "objective": "Restore a working HTTP request from PC-Admin to Wiki-01.",
+            "hints": [
+                "The web request from PC-Admin never gets past FW-01 on its way to Wiki-01.",
+                "FW-01 has a rule that denies HTTP traffic to Wiki-01's address before any permit rule can apply.",
+                "On FW-01, delete the ACL rule that denies HTTP from any source to 10.0.4.1."
+            ],
+            "explanation": "Firewall ACLs are read top to bottom and the first match wins. A deny rule placed above a permit rule for the same traffic will always block it, no matter what permit rules follow. Removing the blocking deny rule lets normal HTTP through while other protections stay intact."
+        },
+        "ja": {
+            "title": "Wikiページが表示されない",
+            "story": "PC-Adminから、今朝になって社内のWiki-01のページがブラウザで表示されなくなったと報告がありました。昨日までは問題なく動作しており、誰も自分のコンピューターの設定は変更していません。",
+            "objective": "PC-AdminからWiki-01へのHTTPリクエストが正常に通るように復旧してください。",
+            "hints": [
+                "PC-Adminからの通信は、Wiki-01へ向かう途中のFW-01を通過できていません。",
+                "FW-01には、Wiki-01のアドレス宛てのHTTP通信を拒否するルールがあり、許可ルールより先に適用されてしまっています。",
+                "FW-01で、送信元が任意(any)で宛先が10.0.4.1へのHTTPを拒否しているACLルールを削除してください。"
+            ],
+            "explanation": "ファイアウォールのACLルールは上から順に評価され、最初に一致したルールが適用されます。同じ通信に対して拒否ルールが許可ルールより上にあると、その後にどんな許可ルールがあっても通信はブロックされてしまいます。ブロックしている拒否ルールを削除することで、他の保護設定はそのままに、通常のHTTP通信が通るようになります。"
+        },
+        "zh-CN": {
+            "title": "Wiki 页面无法加载",
+            "story": "PC-Admin 报告今天早上内部 Wiki-01 页面在浏览器中无法加载，但昨天还能正常使用。没有人改动过自己计算机的设置。",
+            "objective": "恢复从 PC-Admin 到 Wiki-01 的正常 HTTP 请求。",
+            "hints": [
+                "来自 PC-Admin 的网络请求在前往 Wiki-01 的途中被 FW-01 阻止。",
+                "FW-01 上有一条规则在任何允许规则之前拒绝发往 Wiki-01 地址的 HTTP 流量。",
+                "在 FW-01 上，删除拒绝从任何源到 10.0.4.1 的 HTTP 的 ACL 规则。"
+            ],
+            "explanation": "Firewall ACL 规则从上到下逐条读取，第一条匹配的规则生效。如果拒绝规则放在针对相同流量的允许规则之上，它会一直阻止流量，无论后面有多少允许规则。删除阻止规则后，正常的 HTTP 流量就能通过，而其他保护措施仍然有效。"
+        },
+        "zh-TW": {
+            "title": "Wiki 頁面無法載入",
+            "story": "PC-Admin 回報今天早上內部 Wiki-01 頁面在瀏覽器中無法載入，但昨天還能正常使用。沒有人改動過自己電腦的設定。",
+            "objective": "恢復從 PC-Admin 到 Wiki-01 的正常 HTTP 請求。",
+            "hints": [
+                "來自 PC-Admin 的網路請求在前往 Wiki-01 的途中被 FW-01 攔截。",
+                "FW-01 上有一條規則在任何允許規則之前拒絕發往 Wiki-01 位址的 HTTP 流量。",
+                "在 FW-01 上，刪除拒絕從任何來源到 10.0.4.1 的 HTTP 的 ACL 規則。"
+            ],
+            "explanation": "Firewall ACL 規則從上到下逐條讀取，第一條符合的規則生效。如果拒絕規則放在針對相同流量的允許規則之上，它會一直攔截流量，無論後面有多少允許規則。刪除攔截規則後，正常的 HTTP 流量就能通過，而其他保護措施仍然有效。"
+        },
+        "ko": {
+            "title": "Wiki 페이지를 불러올 수 없음",
+            "story": "PC-Admin이 오늘 아침 내부 Wiki-01 페이지가 브라우저에서 로드되지 않는다고 보고했습니다. 어제는 정상이었는데요. 아무도 자신의 컴퓨터 설정을 변경하지 않았습니다.",
+            "objective": "PC-Admin에서 Wiki-01로의 정상적인 HTTP 요청을 복구합니다.",
+            "hints": [
+                "PC-Admin의 웹 요청이 Wiki-01으로 가는 도중 FW-01에서 차단됩니다.",
+                "FW-01에는 모든 허용 규칙보다 먼저 Wiki-01 주소로의 HTTP 트래픽을 거부하는 규칙이 있습니다.",
+                "FW-01에서 10.0.4.1로의 모든 원본에서 HTTP를 거부하는 ACL 규칙을 삭제합니다."
+            ],
+            "explanation": "Firewall ACL 규칙은 위에서 아래로 순서대로 읽히고 처음 일치하는 규칙이 적용됩니다. 같은 트래픽에 대한 허용 규칙 위에 거부 규칙이 있으면 뒤에 따르는 모든 허용 규칙이 있어도 항상 트래픽을 차단합니다. 차단 규부 규칙을 제거하면 정상적인 HTTP 트래픽이 통과하는 동시에 다른 보안 장치는 계속 작동합니다."
+        },
+        "es": {
+            "title": "La página Wiki no carga",
+            "story": "PC-Admin reporta que la página interna Wiki-01 dejó de cargarse en el navegador esta mañana, aunque ayer funcionaba correctamente. Nadie cambió la configuración de su propia computadora.",
+            "objective": "Restaurar una solicitud HTTP funcional desde PC-Admin a Wiki-01.",
+            "hints": [
+                "La solicitud web de PC-Admin nunca pasa de FW-01 en su camino hacia Wiki-01.",
+                "FW-01 tiene una regla que deniega el tráfico HTTP a la dirección de Wiki-01 antes de que se pueda aplicar ninguna regla de permiso.",
+                "En FW-01, elimina la regla ACL que deniega HTTP desde cualquier origen a 10.0.4.1."
+            ],
+            "explanation": "Los ACL de Firewall se leen de arriba a abajo y la primera coincidencia gana. Una regla de denegación colocada sobre una regla de permiso para el mismo tráfico siempre lo bloqueará, sin importar qué reglas de permiso sigan. Al eliminar la regla de denegación que bloquea, permite que HTTP normal pase mientras que otras protecciones permanecen intactas."
+        },
+        "pt-BR": {
+            "title": "Página Wiki não carrega",
+            "story": "PC-Admin relata que a página interna Wiki-01 parou de carregar no navegador esta manhã, embora funcionasse bem ontem. Ninguém alterou as configurações de seu próprio computador.",
+            "objective": "Restaurar uma solicitação HTTP funcional de PC-Admin para Wiki-01.",
+            "hints": [
+                "A solicitação da web de PC-Admin nunca passa de FW-01 no caminho para Wiki-01.",
+                "FW-01 tem uma regra que nega tráfego HTTP para o endereço de Wiki-01 antes que qualquer regra de permissão possa se aplicar.",
+                "Em FW-01, exclua a regra ACL que nega HTTP de qualquer origem para 10.0.4.1."
+            ],
+            "explanation": "ACLs de Firewall são lidas de cima para baixo e a primeira correspondência vence. Uma regra de negação colocada acima de uma regra de permissão para o mesmo tráfego sempre o bloqueará, não importa quantas regras de permissão se seguem. Remover a regra de negação que bloqueia permite que HTTP normal passe enquanto outras proteções permanecem intactas."
+        },
+        "de": {
+            "title": "Wiki-Seite lädt nicht",
+            "story": "PC-Admin berichtet, dass die interne Wiki-01-Seite heute Morgen nicht mehr im Browser geladen wird, obwohl sie gestern noch funktioniert hat. Niemand hat die eigenen Computereinstellungen geändert.",
+            "objective": "Stellen Sie eine funktionierende HTTP-Anfrage von PC-Admin zu Wiki-01 wieder her.",
+            "hints": [
+                "Die Webanfrage von PC-Admin kommt bei ihrer Reise zu Wiki-01 nicht über FW-01 hinaus.",
+                "FW-01 hat eine Regel, die HTTP-Verkehr zu Wiki-01's Adresse blockiert, bevor eine Zulassungsregel greifen kann.",
+                "Löschen Sie auf FW-01 die ACL-Regel, die HTTP von jeder Quelle zu 10.0.4.1 blockiert."
+            ],
+            "explanation": "Firewall-ACLs werden von oben nach unten gelesen und der erste Treffer gewinnt. Eine Blockierregel, die über einer Zulassungsregel für denselben Verkehr platziert ist, wird ihn immer blockieren, egal welche Zulassungsregeln folgen. Das Entfernen der blockierenden Blockierregel lässt normales HTTP durch, während andere Schutzmaßnahmen intakt bleiben."
+        },
+        "fr": {
+            "title": "La page Wiki ne se charge pas",
+            "story": "PC-Admin signale que la page Wiki-01 interne a cessé de se charger dans le navigateur ce matin, bien qu'elle fonctionnait parfaitement hier. Personne n'a modifié ses propres paramètres informatiques.",
+            "objective": "Rétablissez une requête HTTP fonctionnelle de PC-Admin vers Wiki-01.",
+            "hints": [
+                "La requête Web de PC-Admin n'arrive jamais au-delà de FW-01 sur le chemin vers Wiki-01.",
+                "FW-01 dispose d'une règle qui refuse le trafic HTTP vers l'adresse de Wiki-01 avant qu'une règle d'autorisation ne puisse s'appliquer.",
+                "Sur FW-01, supprimez la Règles ACL qui refuse HTTP de toute source vers 10.0.4.1."
+            ],
+            "explanation": "Les Règles ACL du Firewall sont lues de haut en bas et le premier critère trouvé gagne. Une règle de refus placée au-dessus d'une règle d'autorisation pour le même trafic le bloquera toujours, peu importe les règles d'autorisation qui suivent. Supprimer la règle de refus bloquante permet à HTTP normal de passer tandis que les autres protections restent intactes."
+        },
+        "hi": {
+            "title": "विकि पेज लोड नहीं हो रहा है",
+            "story": "PC-Admin बताते हैं कि आंतरिक Wiki-01 पेज आज सुबह ब्राउज़र में लोड नहीं हुआ, हालांकि कल ठीक काम कर रहा था। किसी ने अपनी कंप्यूटर सेटिंग्स नहीं बदली हैं।",
+            "objective": "PC-Admin से Wiki-01 तक एक काम करने वाली HTTP अनुरोध पुनः स्थापित करें।",
+            "hints": [
+                "PC-Admin से वेब अनुरोध Wiki-01 तक जाने वाले रास्ते में FW-01 से आगे कभी नहीं जाता।",
+                "FW-01 में एक नियम है जो किसी भी अनुमति नियम के लागू होने से पहले Wiki-01 के पते पर HTTP ट्रैफिक को अस्वीकार करता है।",
+                "FW-01 पर, ACL नियम को हटाएं जो किसी भी स्रोत से 10.0.4.1 तक HTTP को अस्वीकार करता है।"
+            ],
+            "explanation": "फायरवॉल ACL नियमों को ऊपर से नीचे तक पढ़ा जाता है और पहला मिलान जीतता है। समान ट्रैफिक के लिए अनुमति नियम के ऊपर रखा गया एक अस्वीकृति नियम इसे हमेशा ब्लॉक करेगा, चाहे कोई भी अनुमति नियम आगे आएं। अवरुद्ध अस्वीकृति नियम को हटाने से सामान्य HTTP को पास होने देता है जबकि अन्य सुरक्षा बरकरार रहती है।"
+        },
+        "id": {
+            "title": "Halaman Wiki Tidak Memuat",
+            "story": "PC-Admin melaporkan bahwa halaman Wiki-01 internal berhenti dimuat di browser pagi ini, padahal kemarin berfungsi dengan baik. Tidak ada yang mengubah pengaturan komputer mereka sendiri.",
+            "objective": "Pulihkan permintaan HTTP yang berfungsi dari PC-Admin ke Wiki-01.",
+            "hints": [
+                "Permintaan Web dari PC-Admin tidak pernah melampaui FW-01 dalam perjalanannya ke Wiki-01.",
+                "FW-01 memiliki aturan yang menolak lalu lintas HTTP ke alamat Wiki-01 sebelum aturan izin dapat diterapkan.",
+                "Di FW-01, hapus Aturan ACL yang menolak HTTP dari sumber apa pun ke 10.0.4.1."
+            ],
+            "explanation": "Aturan ACL Firewall dibaca dari atas ke bawah dan kecocokan pertama menang. Aturan penolakan yang ditempatkan di atas aturan izin untuk lalu lintas yang sama akan selalu memblokir, tidak peduli aturan izin apa yang mengikuti. Menghapus aturan penolakan pemblokiran memungkinkan HTTP normal melewati sambil perlindungan lain tetap utuh."
+        },
+        "ru": {
+            "title": "Страница Wiki не загружается",
+            "story": "PC-Admin сообщает, что внутренняя страница Wiki-01 не загружается в браузер с этого утра, хотя вчера она работала нормально. Никто не изменял свои собственные параметры компьютера.",
+            "objective": "Восстановите рабочий HTTP запрос от PC-Admin к Wiki-01.",
+            "hints": [
+                "Веб-запрос от PC-Admin никогда не проходит дальше FW-01 на пути к Wiki-01.",
+                "FW-01 содержит правило, которое запрещает трафик HTTP к адресу Wiki-01 до того, как может применяться правило разрешения.",
+                "На FW-01 удалите Правила ACL, которое запрещает HTTP с любого источника на 10.0.4.1."
+            ],
+            "explanation": "Правила ACL брандмауэра читаются сверху вниз, и первое совпадение побеждает. Правило запрета, расположенное над правилом разрешения для одного и того же трафика, всегда будет его блокировать, независимо от того, какие правила разрешения следуют. Удаление блокирующего правила запрета позволяет обычному HTTP проходить, при этом другие защиты остаются неповреждёнными."
+        },
+        "it": {
+            "title": "Pagina Wiki Non Si Carica",
+            "story": "PC-Admin segnala che la pagina interna Wiki-01 ha smesso di caricarsi nel browser questa mattina, anche se funzionava correttamente ieri. Nessuno ha modificato le impostazioni del proprio computer.",
+            "objective": "Ripristinare una richiesta HTTP funzionante da PC-Admin a Wiki-01.",
+            "hints": [
+                "La richiesta web da PC-Admin non supera mai FW-01 sulla strada verso Wiki-01.",
+                "FW-01 ha una regola che nega il traffico HTTP all'indirizzo di Wiki-01 prima di qualsiasi regola di permesso.",
+                "Su FW-01, elimina la regola ACL che nega HTTP da qualsiasi sorgente a 10.0.4.1."
+            ],
+            "explanation": "Le regole ACL di un Firewall vengono lette dall'alto verso il basso e la prima corrispondenza vince. Una regola di negazione posizionata sopra una regola di permesso per lo stesso traffico lo bloccherà sempre, indipendentemente dalle regole di permesso che seguono. Rimuovere la regola di negazione che blocca consente al traffico HTTP normale di passare mentre altre protezioni rimangono intatte."
+        },
+        "tr": {
+            "title": "Wiki Sayfası Yüklenemiyor",
+            "story": "PC-Admin, iç Wiki-01 sayfasının bu sabah tarayıcıda yüklenmediğini bildirir, dün düzgün çalışmasına rağmen. Hiç kimse kendi bilgisayar ayarlarını değiştirmemiştir.",
+            "objective": "PC-Admin'den Wiki-01'e çalışan bir HTTP isteğini geri yükleyin.",
+            "hints": [
+                "PC-Admin'den gelen web isteği Wiki-01'e giderken FW-01'i hiçbir zaman geçmez.",
+                "FW-01, herhangi bir izin kuralı uygulanmadan önce Wiki-01'in adresine HTTP trafiğini reddeden bir kurala sahiptir.",
+                "FW-01 üzerinde, 10.0.4.1'e herhangi bir kaynaktan HTTP'yi reddeden ACL Kuralını silin."
+            ],
+            "explanation": "Firewall ACL Kuralları yukarıdan aşağıya okunur ve ilk eşleşme kazanır. Aynı trafik için bir izin kuralının üzerine yerleştirilen bir reddetme kuralı, onu izleyen diğer izin kurallarından bağımsız olarak her zaman bloklar. Bloklaması yapan reddetme kuralını kaldırmak, normal HTTP trafiğinin geçmesini sağlarken diğer korumalar yerinde kalır."
+        },
+        "th": {
+            "title": "หน้า Wiki ไม่โหลด",
+            "story": "PC-Admin รายงานว่าหน้า Wiki-01 ภายในไม่สามารถโหลดในเบราว์เซอร์เช้านี้ แม้ว่าเมื่อเช้าวานนี้ใช้งานได้ดี ไม่มีใครเปลี่ยนการตั้งค่าคอมพิวเตอร์ของตนเอง",
+            "objective": "กู้คืนคำขอ HTTP ที่ใช้งานได้จาก PC-Admin ไปยัง Wiki-01",
+            "hints": [
+                "คำขอเว็บจาก PC-Admin ไม่เคยผ่าน FW-01 ในเส้นทางไปยัง Wiki-01",
+                "FW-01 มีกฎที่ปฏิเสธการรับส่งข้อมูล HTTP ไปยังที่อยู่ของ Wiki-01 ก่อนที่กฎอนุญาตใด ๆ จะสามารถใช้ได้",
+                "บน FW-01 ให้ลบกฎ ACL ที่ปฏิเสธ HTTP จากแหล่งใด ๆ ไปยัง 10.0.4.1"
+            ],
+            "explanation": "กฎ ACL ของ Firewall ถูกอ่านจากบนลงล่าง และการจับคู่ครั้งแรกจะชนะ กฎปฏิเสธที่วางไว้เหนือกฎอนุญาตสำหรับการรับส่งข้อมูลเดียวกันจะบล็อกมันเสมอ ไม่ว่าจะมีกฎอนุญาตใดตามมา การลบกฎปฏิเสธที่บล็อกจะอนุญาตให้การรับส่งข้อมูล HTTP ปกติผ่านไป ขณะที่การป้องกันอื่น ๆ ยังคงอยู่"
+        },
+        "vi": {
+            "title": "Trang Wiki Không Tải",
+            "story": "PC-Admin báo cáo rằng trang Wiki-01 nội bộ không thể tải trong trình duyệt sáng nay, mặc dù nó hoạt động tốt hôm qua. Không ai thay đổi cài đặt máy tính của riêng họ.",
+            "objective": "Khôi phục yêu cầu HTTP hoạt động từ PC-Admin đến Wiki-01.",
+            "hints": [
+                "Yêu cầu web từ PC-Admin không bao giờ vượt qua FW-01 trên đường đến Wiki-01.",
+                "FW-01 có quy tắc từ chối lưu lượng HTTP đến địa chỉ Wiki-01 trước khi bất kỳ quy tắc cho phép nào có thể áp dụng.",
+                "Trên FW-01, xóa quy tắc ACL từ chối HTTP từ bất kỳ nguồn nào đến 10.0.4.1."
+            ],
+            "explanation": "Quy tắc ACL của Firewall được đọc từ trên xuống dưới và kết quả khớp đầu tiên sẽ thắng. Quy tắc từ chối đặt trên quy tắc cho phép đối với cùng một lưu lượng sẽ luôn chặn nó, bất kể các quy tắc cho phép nào theo sau. Xóa quy tắc từ chối chặn cho phép lưu lượng HTTP bình thường đi qua trong khi các biện pháp bảo vệ khác vẫn có hiệu lực."
+        }
+    }
+}
