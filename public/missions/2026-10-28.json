@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-28",
+    "number": 38,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.9.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.9.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.9.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Office",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.9.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.18.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.18.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The Accounting Desk That Lost the File Server",
+            "story": "After a desk move, the designer at PC-Design reports the intranet file server won't load in the browser anymore. PC-Admin nearby has no trouble reaching it at all. The issue started right after the move.",
+            "objective": "Restore an HTTP connection from PC-Design to Intranet-01.",
+            "hints": [
+                "The request from PC-Design stops right at PC-Design: it never gets handed off toward Router-HQ to continue the trip off the local network.",
+                "PC-Design's default gateway is set to the server's own address (10.0.18.1) instead of a router, so PC-Design has no real router to forward the packet through.",
+                "On PC-Design, set the default gateway to 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "A default gateway must be a router on the device's own subnet, not the address of the remote server you're trying to reach. PC-Design was pointed at Intranet-01 itself, so it had no way to route off its local network. Pointing it to Router-HQ fixes routing for all off-subnet traffic."
+        },
+        "ja": {
+            "title": "ファイルサーバーを見失った経理デスク",
+            "story": "デスク移動の後、PC-Designのデザイナーから、イントラネットのファイルサーバーがブラウザで表示できなくなったと報告がありました。近くのPC-Adminは問題なくアクセスできています。問題は移動の直後から始まりました。",
+            "objective": "PC-DesignからIntranet-01へのHTTP接続を復旧させる。",
+            "hints": [
+                "PC-Designからのリクエストは、PC-Designの時点で止まってしまいます。ローカルネットワークの外に出るための中継先であるRouter-HQへ渡されていません。",
+                "PC-Designのデフォルトゲートウェイがルーターではなく、サーバー自身のアドレス(10.0.18.1)に設定されているため、PC-Designにはパケットを転送できる実際のルーターがありません。",
+                "PC-Designで、デフォルトゲートウェイを10.0.9.254(Router-HQ)に設定してください。"
+            ],
+            "explanation": "デフォルトゲートウェイには、接続先の遠隔サーバーのアドレスではなく、デバイス自身と同じサブネット上にあるルーターを指定する必要があります。PC-DesignはIntranet-01自身を指していたため、ローカルネットワークの外にルーティングする手段がありませんでした。Router-HQを指定することで、サブネット外へのすべての通信が正しくルーティングされるようになります。"
+        },
+        "zh-CN": {
+            "title": "失去文件服务器的会计桌面",
+            "story": "搬完办公桌后，PC-Design上的设计师报告说无法在浏览器中加载内网文件服务器。附近的PC-Admin却能轻松访问它。问题在搬家后立即出现。",
+            "objective": "恢复从PC-Design到Intranet-01的HTTP连接。",
+            "hints": [
+                "来自PC-Design的请求停在PC-Design本身：它从未被传递给Router-HQ以继续跳出本地网络的旅程。",
+                "PC-Design的默认网关被设置为服务器自己的地址（10.0.18.1）而不是路由器，所以PC-Design没有真正的路由器来转发数据包。",
+                "在PC-Design上，将默认网关设置为10.0.9.254（Router-HQ）。"
+            ],
+            "explanation": "默认网关必须是设备自己子网上的路由器，而不是您试图到达的远程服务器的地址。PC-Design被指向Intranet-01本身，所以它无法路由到本地网络之外的流量。将其指向Router-HQ可以为所有非子网流量修复路由。"
+        },
+        "zh-TW": {
+            "title": "遺失檔案伺服器的會計桌面",
+            "story": "搬完辦公桌後，PC-Design上的設計師報告說無法在瀏覽器中載入內網檔案伺服器。附近的PC-Admin卻能輕鬆存取它。問題在搬家後立即出現。",
+            "objective": "還原從PC-Design到Intranet-01的HTTP連線。",
+            "hints": [
+                "來自PC-Design的要求停在PC-Design本身：它從未被轉遞給Router-HQ以繼續跳出本機網路的旅程。",
+                "PC-Design的預設閘道被設定為伺服器自己的位址（10.0.18.1）而不是路由器，所以PC-Design沒有真正的路由器來轉送資料包。",
+                "在PC-Design上，將預設閘道設定為10.0.9.254（Router-HQ）。"
+            ],
+            "explanation": "預設閘道必須是設備自己子網上的路由器，而不是您試圖到達的遠端伺服器的位址。PC-Design被指向Intranet-01本身，所以它無法路由到本機網路之外的流量。將其指向Router-HQ可以為所有非子網流量修復路由。"
+        },
+        "ko": {
+            "title": "파일 서버를 잃은 회계 데스크",
+            "story": "책상을 옮긴 후 PC-Design의 디자이너는 브라우저에서 인트라넷 파일 서버를 더 이상 로드할 수 없다고 보고합니다. 근처의 PC-Admin은 전혀 문제없이 액세스할 수 있습니다. 이 문제는 이동 직후에 시작되었습니다.",
+            "objective": "PC-Design에서 Intranet-01로의 HTTP 연결을 복구합니다.",
+            "hints": [
+                "PC-Design의 요청은 PC-Design에서 멈춥니다: Router-HQ로 전달되지 않아 로컬 네트워크 밖으로 나가지 못합니다.",
+                "PC-Design의 기본 게이트웨이가 라우터 대신 서버 자신의 주소(10.0.18.1)로 설정되어 있어서 PC-Design은 패킷을 전달할 실제 라우터가 없습니다.",
+                "PC-Design에서 기본 게이트웨이를 10.0.9.254(Router-HQ)로 설정합니다."
+            ],
+            "explanation": "기본 게이트웨이는 장치와 같은 서브넷에 있는 라우터여야 하며, 도달하려는 원격 서버의 주소여서는 안 됩니다. PC-Design은 Intranet-01 자체를 가리키고 있어서 로컬 네트워크 외부로 라우팅할 방법이 없었습니다. 이를 Router-HQ로 지정하면 모든 서브넷 외 트래픽의 라우팅이 고정됩니다."
+        },
+        "es": {
+            "title": "El Escritorio de Contabilidad que Perdió el Servidor de Archivos",
+            "story": "Después de mover el escritorio, el diseñador en PC-Design reporta que el servidor de archivos de la intranet ya no carga en el navegador. PC-Admin cerca no tiene ningún problema para alcanzarlo. El problema comenzó justo después de la mudanza.",
+            "objective": "Restaurar una conexión HTTP desde PC-Design a Intranet-01.",
+            "hints": [
+                "La solicitud desde PC-Design se detiene en PC-Design: nunca se entrega a Router-HQ para continuar el viaje fuera de la red local.",
+                "La puerta de enlace predeterminada de PC-Design está configurada en la dirección del servidor (10.0.18.1) en lugar de un enrutador, por lo que PC-Design no tiene un enrutador real para reenviar el paquete.",
+                "En PC-Design, configure el Gateway predeterminado a 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "Una puerta de enlace predeterminada debe ser un enrutador en la propia subred del dispositivo, no la dirección del servidor remoto al que intenta llegar. PC-Design estaba apuntando a Intranet-01, por lo que no tenía forma de enrutar fuera de su red local. Apuntarlo a Router-HQ soluciona el enrutamiento para todo el tráfico fuera de la subred."
+        },
+        "pt-BR": {
+            "title": "A Mesa de Contabilidade que Perdeu o Servidor de Arquivos",
+            "story": "Depois de mudar a mesa, o designer em PC-Design relata que o servidor de arquivos da intranet não carrega mais no navegador. PC-Admin por perto não tem nenhum problema para acessá-lo. O problema começou logo após a mudança.",
+            "objective": "Restaurar uma conexão HTTP de PC-Design para Intranet-01.",
+            "hints": [
+                "A solicitação de PC-Design é interrompida em PC-Design: ela nunca é encaminhada para Router-HQ para continuar a jornada fora da rede local.",
+                "O gateway padrão de PC-Design está definido como o endereço do servidor (10.0.18.1) em vez de um roteador, então PC-Design não tem um roteador real para encaminhar o pacote.",
+                "Em PC-Design, defina o Gateway padrão como 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "Um gateway padrão deve ser um roteador na própria sub-rede do dispositivo, não o endereço do servidor remoto que você está tentando acessar. PC-Design estava apontado para Intranet-01, portanto não tinha como rotear para fora de sua rede local. Apontá-lo para Router-HQ corrige o roteamento para todo o tráfego fora da sub-rede."
+        },
+        "de": {
+            "title": "Der Accounting-Schreibtisch, der den File-Server verlor",
+            "story": "Nach einem Schreibtischwechsel berichtet der Designer bei PC-Design, dass der Intranet-File-Server nicht mehr im Browser geladen wird. PC-Admin in der Nähe hat keine Probleme, ihn zu erreichen. Das Problem begann direkt nach dem Umzug.",
+            "objective": "Eine HTTP-Verbindung von PC-Design zu Intranet-01 wiederherstellen.",
+            "hints": [
+                "Die Anfrage von PC-Design stoppt direkt bei PC-Design: Sie wird nie an Router-HQ weitergeleitet, um die Fahrt aus dem lokalen Netzwerk fortzusetzen.",
+                "Der Standard-Gateway von PC-Design ist auf die eigene Adresse des Servers (10.0.18.1) statt auf einen Router eingestellt, daher hat PC-Design keinen echten Router zum Weiterleiten des Pakets.",
+                "Stellen Sie auf PC-Design den Standard-Gateway auf 10.0.9.254 (Router-HQ) ein."
+            ],
+            "explanation": "Ein Standard-Gateway muss ein Router im eigenen Subnetz des Geräts sein, nicht die Adresse des Remote-Servers, den Sie erreichen möchten. PC-Design war auf Intranet-01 selbst verwiesen, daher hatte es keine Möglichkeit, sein lokales Netzwerk zu verlassen. Die Ausrichtung auf Router-HQ behebt das Routing für den gesamten Off-Subnet-Verkehr."
+        },
+        "fr": {
+            "title": "Le pupitre de comptabilité qui a perdu le serveur de fichiers",
+            "story": "Après un déménagement de bureau, le concepteur de PC-Design signale que le serveur de fichiers intranet ne se charge plus dans le navigateur. PC-Admin à proximité n'a aucun problème à le joindre. Le problème a commencé immédiatement après le déménagement.",
+            "objective": "Restaurer une connexion HTTP de PC-Design vers Intranet-01.",
+            "hints": [
+                "La requête de PC-Design s'arrête directement à PC-Design : elle n'est jamais transmise à Router-HQ pour continuer le trajet hors du réseau local.",
+                "La Passerelle par défaut de PC-Design est configurée sur l'adresse du serveur lui-même (10.0.18.1) au lieu d'un routeur, donc PC-Design n'a pas de vrai routeur pour transmettre le paquet.",
+                "Sur PC-Design, configurez la Passerelle par défaut sur 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "Une Passerelle par défaut doit être un routeur sur le propre sous-réseau de l'appareil, pas l'adresse du serveur distant que vous essayez d'atteindre. PC-Design était pointé sur Intranet-01 lui-même, donc il n'avait aucun moyen d'acheminer hors de son réseau local. Le pointer vers Router-HQ corrige le routage pour tout le trafic hors sous-réseau."
+        },
+        "hi": {
+            "title": "वह अकाउंटिंग डेस्क जिसने फ़ाइल सर्वर खो दिया",
+            "story": "डेस्क स्थानांतरण के बाद, PC-Design में डिज़ाइनर रिपोर्ट करता है कि इंट्रानेट फ़ाइल सर्वर अब ब्राउज़र में लोड नहीं हो रहा है। पास में PC-Admin को इसे प्राप्त करने में कोई परेशानी नहीं है। समस्या स्थानांतरण के तुरंत बाद शुरू हुई।",
+            "objective": "PC-Design से Intranet-01 तक एक HTTP कनेक्शन पुनः स्थापित करें।",
+            "hints": [
+                "PC-Design से अनुरोध सीधे PC-Design पर रुकता है: इसे कभी भी Router-HQ को आगे नहीं भेजा जाता, जिससे स्थानीय नेटवर्क से बाहर की यात्रा जारी रहे।",
+                "PC-Design का डिफ़ॉल्ट गेटवे एक राउटर के बजाय सर्वर के अपने पते (10.0.18.1) पर सेट है, इसलिए PC-Design के पास पैकेट को आगे करने के लिए कोई वास्तविक राउटर नहीं है।",
+                "PC-Design पर, डिफ़ॉल्ट गेटवे को 10.0.9.254 (Router-HQ) पर सेट करें।"
+            ],
+            "explanation": "एक डिफ़ॉल्ट गेटवे डिवाइस की अपनी सबनेट पर एक राउटर होना चाहिए, न कि उस रिमोट सर्वर का पता जिसे आप प्राप्त करने का प्रयास कर रहे हैं। PC-Design Intranet-01 पर ही इंगित था, इसलिए उसके पास अपने स्थानीय नेटवर्क से बाहर रूटिंग करने का कोई तरीका नहीं था। इसे Router-HQ की ओर इंगित करना सभी ऑफ-सबनेट ट्रैफ़िक के लिए रूटिंग को ठीक करता है।"
+        },
+        "id": {
+            "title": "Meja Akuntansi yang Kehilangan Server File",
+            "story": "Setelah perpindahan meja, desainer di PC-Design melaporkan server file intranet tidak lagi dimuat di browser. PC-Admin di dekatnya tidak kesulitan menjangkaunya sama sekali. Masalah dimulai tepat setelah perpindahan.",
+            "objective": "Pulihkan koneksi HTTP dari PC-Design ke Intranet-01.",
+            "hints": [
+                "Permintaan dari PC-Design berhenti langsung di PC-Design: tidak pernah diteruskan ke Router-HQ untuk melanjutkan perjalanan keluar dari jaringan lokal.",
+                "Gateway Default PC-Design diatur ke alamat server itu sendiri (10.0.18.1) bukan router, jadi PC-Design tidak memiliki router sebenarnya untuk meneruskan paket.",
+                "Di PC-Design, atur Gateway Default ke 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "Gateway Default harus berupa router di subnet perangkat itu sendiri, bukan alamat server jarak jauh yang Anda coba jangkau. PC-Design menunjuk ke Intranet-01 itu sendiri, jadi tidak memiliki cara untuk merutekan keluar dari jaringan lokalnya. Menunjuk ke Router-HQ memperbaiki perutean untuk semua lalu lintas di luar subnet."
+        },
+        "ru": {
+            "title": "Бухгалтерский стол, потерявший файловый сервер",
+            "story": "После перемещения стола дизайнер на PC-Design сообщает, что сервер файлов интрасети больше не загружается в браузер. PC-Admin рядом не имеет никаких проблем с его достижением. Проблема началась сразу же после переезда.",
+            "objective": "Восстановить HTTP-соединение от PC-Design к Intranet-01.",
+            "hints": [
+                "Запрос от PC-Design останавливается прямо на PC-Design: он никогда не передается Router-HQ для продолжения поездки за пределы локальной сети.",
+                "Шлюз по умолчанию PC-Design установлен на собственный адрес сервера (10.0.18.1) вместо маршрутизатора, поэтому PC-Design не имеет реального маршрутизатора для передачи пакета.",
+                "На PC-Design установите Шлюз по умолчанию на 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "Шлюз по умолчанию должен быть маршрутизатором в собственной подсети устройства, а не адресом удаленного сервера, который вы пытаетесь достичь. PC-Design указывал на сам Intranet-01, поэтому у него не было способа маршрутизировать вне локальной сети. Указание на Router-HQ исправляет маршрутизацию для всего трафика вне подсети."
+        },
+        "it": {
+            "title": "La postazione di contabilità che ha perso il file server",
+            "story": "Dopo il trasferimento di una postazione, il designer presso PC-Design segnala che il file server intranet non si carica più nel browser. PC-Admin nelle vicinanze non ha alcun problema a raggiungerlo. Il problema è iniziato subito dopo il trasferimento.",
+            "objective": "Ripristinare una connessione HTTP da PC-Design a Intranet-01.",
+            "hints": [
+                "La richiesta da PC-Design si ferma direttamente su PC-Design: non viene mai inoltrata verso Router-HQ per continuare il viaggio fuori dalla rete locale.",
+                "Il Gateway predefinito di PC-Design è impostato all'indirizzo del server stesso (10.0.18.1) invece di un router, quindi PC-Design non ha un vero router per inoltrare il pacchetto.",
+                "Su PC-Design, impostare il Gateway predefinito a 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "Un Gateway predefinito deve essere un router sulla stessa subnet del dispositivo, non l'indirizzo del server remoto che si sta cercando di raggiungere. PC-Design era puntato a Intranet-01 stesso, quindi non aveva modo di instradare al di fuori della sua rete locale. Puntarlo a Router-HQ ripristina l'instradamento per tutto il traffico al di fuori della subnet."
+        },
+        "tr": {
+            "title": "Muhasebe masasının kaybettiği dosya sunucusu",
+            "story": "Bir masa taşındıktan sonra, PC-Design'daki tasarımcı, intranet dosya sunucusunun artık tarayıcıda yüklenmediğini bildiriyor. Yakındaki PC-Admin'in buna ulaşmakta hiçbir sorunu yok. Sorun, taşındıktan hemen sonra başladı.",
+            "objective": "PC-Design'dan Intranet-01'e HTTP bağlantısını geri yükle.",
+            "hints": [
+                "PC-Design'dan gelen istek doğrudan PC-Design'de durur: yerel ağın dışındaki yolculuğu devam ettirmek için asla Router-HQ'ya iletilmez.",
+                "PC-Design'ın varsayılan ağ geçidi, bir router yerine sunucunun kendi adresine (10.0.18.1) ayarlanmıştır; bu nedenle PC-Design'ın paketi iletmesi için gerçek bir routeri yoktur.",
+                "PC-Design'da varsayılan ağ geçidini 10.0.9.254 (Router-HQ) olarak ayarla."
+            ],
+            "explanation": "Varsayılan ağ geçidi, cihazın kendi alt ağındaki bir router olmalı, ulaşmaya çalıştığınız uzak sunucunun adresi değil. PC-Design, Intranet-01'in kendisine işaret ediyordu, bu nedenle yerel ağının dışına yönlendirebilecek bir yolu yoktu. Bunu Router-HQ'ya işaret etmek, tüm alt ağ dışı trafiğin yönlendirilmesini düzeltir."
+        },
+        "th": {
+            "title": "โต๊ะบัญชีที่หลุดเซิร์ฟเวอร์ไฟล์",
+            "story": "หลังจากย้ายโต๊ะ นักออกแบบที่ PC-Design รายงานว่าเซิร์ฟเวอร์ไฟล์อินทราเน็ตไม่โหลดในเบราว์เซอร์อีกต่อไป PC-Admin ข้างเคียงสามารถเข้าถึงได้ปกติ ปัญหาเริ่มต้นขึ้นทันทีหลังการย้าย",
+            "objective": "กู้คืนการเชื่อมต่อ HTTP จาก PC-Design ไปยัง Intranet-01",
+            "hints": [
+                "คำขอจาก PC-Design หยุดลงที่ PC-Design เอง: ไม่มีการส่งต่อไปยัง Router-HQ เพื่อดำเนินการต่อจากเครือข่ายท้องถิ่น",
+                "เกตเวย์เริ่มต้นของ PC-Design ตั้งค่าเป็นที่อยู่ของเซิร์ฟเวอร์เอง (10.0.18.1) แทนที่จะเป็นเราเตอร์ ดังนั้น PC-Design จึงไม่มีเราเตอร์จริงเพื่อส่งต่อแพ็กเก็ต",
+                "บน PC-Design ตั้งค่าเกตเวย์เริ่มต้นเป็น 10.0.9.254 (Router-HQ)"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นต้องเป็นเราเตอร์บนเครือข่ายย่อยเดียวกันของอุปกรณ์ ไม่ใช่ที่อยู่ของเซิร์ฟเวอร์ระยะไกลที่คุณพยายามเข้าถึง PC-Design ชี้ไปที่ Intranet-01 เอง ดังนั้นจึงไม่มีวิธีเส้นทางออกจากเครือข่ายท้องถิ่น การชี้ไปที่ Router-HQ จะแก้ไขการเส้นทางสำหรับการไหลเบ้าบนเครือข่ายย่อยทั้งหมด"
+        },
+        "vi": {
+            "title": "Bàn kế toán đã mất máy chủ tập tin",
+            "story": "Sau khi chuyển bàn, nhân viên thiết kế tại PC-Design báo cáo rằng máy chủ tập tin intranet không còn tải được trong trình duyệt. PC-Admin gần đó không có vấn đề gì khi truy cập vào nó. Sự cố bắt đầu ngay sau khi chuyển.",
+            "objective": "Khôi phục kết nối HTTP từ PC-Design tới Intranet-01.",
+            "hints": [
+                "Yêu cầu từ PC-Design dừng ngay tại PC-Design: nó không bao giờ được chuyển tiếp tới Router-HQ để tiếp tục chuyến đi ngoài mạng cục bộ.",
+                "Cổng mặc định của PC-Design được đặt thành địa chỉ của chính máy chủ (10.0.18.1) thay vì bộ định tuyến, do đó PC-Design không có bộ định tuyến thực để chuyển tiếp gói.",
+                "Trên PC-Design, đặt cổng mặc định thành 10.0.9.254 (Router-HQ)."
+            ],
+            "explanation": "Cổng mặc định phải là bộ định tuyến trên cùng một mạng con với thiết bị, không phải địa chỉ của máy chủ từ xa mà bạn đang cố gắng kết nối. PC-Design đã hướng tới chính Intranet-01, vì vậy nó không có cách nào để định tuyến ngoài mạng cục bộ. Hướng nó tới Router-HQ sẽ sửa chữa định tuyến cho tất cả lưu lượng ngoài mạng con."
+        }
+    }
+}
