@@ -1,0 +1,678 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-29",
+    "number": 39,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "missing_route"
+    ],
+    "concepts": [
+        "static-route"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.18.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.18.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.7.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.7.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.18.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.7.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.26.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Branch Office Cut Off From Headquarters Files",
+            "story": "The sales team at the branch office complains that PC-Design can no longer open files stored on Intranet-01 at headquarters. The issue started this morning and nobody else has reported trouble.",
+            "objective": "Restore an HTTP GET from PC-Design to Intranet-01 so the connection succeeds.",
+            "hints": [
+                "Trace the request from PC-Design: it leaves the branch office fine but gets dropped right at Router-Sapporo before it ever reaches the headquarters side.",
+                "Router-Sapporo has no entry telling it how to reach the 10.0.26.0 network where Intranet-01 lives, so it discards the packet instead of forwarding it toward Router-Fukuoka.",
+                "On Router-Sapporo, add a static route to 10.0.26.0/255.255.255.0 with next hop 10.0.7.2 on port 1."
+            ],
+            "explanation": "Routers only forward packets to networks they know about. Without a static route for the remote subnet, even a correctly addressed packet gets dropped at the router instead of being sent toward the next hop. Adding the missing route lets traffic reach the destination network."
+        },
+        "ja": {
+            "title": "支店から本社ファイルへアクセス不可",
+            "story": "支店の営業チームから、PC-Designが本社のIntranet-01に保存されているファイルを開けなくなったとの連絡がありました。問題は今朝から発生しており、他に報告はありません。",
+            "objective": "PC-DesignからIntranet-01へのHTTP GETが成功するように、接続を復旧してください。",
+            "hints": [
+                "PC-Designからのリクエストを追跡すると、支店内は問題なく出ていきますが、本社側に届く前にRouter-Sapporoでドロップされています。",
+                "Router-Sapporoには、Intranet-01がある10.0.26.0ネットワークへの行き方を示すエントリがないため、Router-Fukuokaへ転送せずにパケットを破棄しています。",
+                "Router-Sapporoで、10.0.26.0/255.255.255.0 へのスタティックルートを、中継先(ネクストホップ) 10.0.7.2、ポート1で追加してください。"
+            ],
+            "explanation": "ルーターは、自分が知っているネットワーク宛てのパケットしか転送できません。リモートのサブネットへのスタティックルートがないと、宛先が正しいパケットであってもルーターで破棄され、次の中継先に送られません。不足しているルートを追加することで、トラフィックが宛先ネットワークに到達できるようになります。"
+        },
+        "zh-CN": {
+            "title": "支公司无法访问总部文件",
+            "story": "支公司销售团队反映，PC-Design 无法再从总部的 Intranet-01 打开文件。问题从今天早上开始出现，其他人都没有报告问题。",
+            "objective": "恢复从 PC-Design 到 Intranet-01 的 HTTP GET 请求，使连接成功。",
+            "hints": [
+                "追踪来自 PC-Design 的请求：它可以顺利离开支公司，但在 Router-Sapporo 处被丢弃，永远无法到达总部一侧。",
+                "Router-Sapporo 的路由表中没有条目告诉它如何到达 Intranet-01 所在的 10.0.26.0 网络，所以它会丢弃数据包，而不是将其转发给 Router-Fukuoka。",
+                "在 Router-Sapporo 上，添加一条静态路由到 10.0.26.0/255.255.255.0，下一跳为 10.0.7.2，端口号为 1。"
+            ],
+            "explanation": "Router 只转发它知道的网络的数据包。没有用于远程子网的静态路由，即使是正确寻址的数据包也会在 Router 处被丢弃，而不是被发送到下一跳。添加缺失的路由可以让流量到达目标网络。"
+        },
+        "zh-TW": {
+            "title": "支公司無法存取總部檔案",
+            "story": "支公司銷售團隊反映，PC-Design 無法再從總部的 Intranet-01 開啟檔案。問題從今天早上開始，其他人都沒有回報任何問題。",
+            "objective": "恢復從 PC-Design 到 Intranet-01 的 HTTP GET 請求，使連線成功。",
+            "hints": [
+                "追蹤來自 PC-Design 的請求：它可以順利離開支公司，但在 Router-Sapporo 被丟棄，永遠無法到達總部一側。",
+                "Router-Sapporo 的路由表中沒有條目告訴它如何到達 Intranet-01 所在的 10.0.26.0 網路，所以它會丟棄封包而不是轉發給 Router-Fukuoka。",
+                "在 Router-Sapporo 上，新增一條靜態路由到 10.0.26.0/255.255.255.0，下一跳為 10.0.7.2，連接埠號為 1。"
+            ],
+            "explanation": "Router 只轉發它知道的網路的封包。沒有用於遠端子網路的靜態路由，即使是正確定址的封包也會在 Router 被丟棄，而不是被送至下一跳。新增缺失的路由可以讓流量到達目的網路。"
+        },
+        "ko": {
+            "title": "지사가 본사 파일에 접근할 수 없음",
+            "story": "지사 판매팀이 PC-Design으로 본사의 Intranet-01에서 저장된 파일을 더 이상 열 수 없다고 불평합니다. 문제는 오늘 아침부터 시작되었으며 다른 사람들은 문제를 보고하지 않았습니다.",
+            "objective": "PC-Design에서 Intranet-01로의 HTTP GET 요청을 복구하여 연결이 성공하도록 합니다.",
+            "hints": [
+                "PC-Design에서의 요청을 추적하면: 지사는 잘 빠져나가지만 Router-Sapporo에서 즉시 삭제되어 본사 쪽에 도달할 수 없습니다.",
+                "Router-Sapporo의 라우팅 테이블에는 Intranet-01이 있는 10.0.26.0 네트워크에 도달하는 방법을 알려주는 항목이 없으므로 Router-Fukuoka로 전달하지 않고 패킷을 폐기합니다.",
+                "Router-Sapporo에서 10.0.26.0/255.255.255.0으로의 정적 라우트를 다음 홉 10.0.7.2, 포트 번호 1로 추가합니다."
+            ],
+            "explanation": "Router는 자신이 알고 있는 네트워크의 패킷만 전달합니다. 원격 서브넷에 대한 정적 라우트가 없으면 올바르게 주소 지정된 패킷도 라우터에서 삭제되어 다음 홉으로 전송되지 않습니다. 누락된 라우트를 추가하면 트래픽이 목적지 네트워크에 도달할 수 있습니다."
+        },
+        "es": {
+            "title": "Sucursal desconectada de archivos de matriz",
+            "story": "El equipo de ventas de la sucursal se queja de que PC-Design ya no puede abrir archivos almacenados en Intranet-01 en la oficina matriz. El problema comenzó esta mañana y nadie más ha reportado problemas.",
+            "objective": "Restaurar una solicitud HTTP GET desde PC-Design hacia Intranet-01 para que la conexión sea exitosa.",
+            "hints": [
+                "Rastrear la solicitud desde PC-Design: sale bien de la sucursal pero se descarta inmediatamente en Router-Sapporo antes de llegar al lado de la matriz.",
+                "Router-Sapporo no tiene ninguna entrada que le indique cómo alcanzar la red 10.0.26.0 donde reside Intranet-01, por lo que descarta el paquete en lugar de reenviarlo hacia Router-Fukuoka.",
+                "En Router-Sapporo, añade una ruta estática a 10.0.26.0/255.255.255.0 con siguiente salto 10.0.7.2 en puerto 1."
+            ],
+            "explanation": "Los routers solo reenvían paquetes a las redes que conocen. Sin una ruta estática para la subred remota, incluso un paquete correctamente direccionado se descarta en el router en lugar de enviarse al siguiente salto. Agregar la ruta faltante permite que el tráfico llegue a la red destino."
+        },
+        "pt-BR": {
+            "title": "Filial desconectada dos arquivos da matriz",
+            "story": "O time de vendas da filial reclama que o PC-Design não consegue mais abrir arquivos armazenados na Intranet-01 na sede. O problema começou esta manhã e nenhuma outra pessoa relatou problemas.",
+            "objective": "Restaurar uma solicitação HTTP GET do PC-Design para Intranet-01 para que a conexão seja bem-sucedida.",
+            "hints": [
+                "Rastreie a solicitação do PC-Design: ela sai da filial normalmente, mas é descartada no Router-Sapporo antes de chegar ao lado da matriz.",
+                "O Router-Sapporo não tem uma entrada que lhe diga como alcançar a rede 10.0.26.0 onde a Intranet-01 está localizada, portanto descarta o pacote em vez de encaminhá-lo para o Router-Fukuoka.",
+                "No Router-Sapporo, adicione uma rota estática para 10.0.26.0/255.255.255.0 com próximo salto 10.0.7.2 na porta 1."
+            ],
+            "explanation": "Os roteadores encaminham apenas pacotes para as redes que conhecem. Sem uma rota estática para a sub-rede remota, mesmo um pacote corretamente endereçado é descartado no roteador em vez de ser enviado para o próximo salto. Adicionar a rota faltante permite que o tráfego chegue à rede destino."
+        },
+        "de": {
+            "title": "Zweigstelle von Zentrale-Dateien abgeschnitten",
+            "story": "Das Verkaufsteam in der Zweigstelle beschwert sich, dass PC-Design nicht mehr auf Dateien zugreifen kann, die auf Intranet-01 in der Zentrale gespeichert sind. Das Problem begann heute Morgen und niemand anderes hat Probleme gemeldet.",
+            "objective": "Stellen Sie einen HTTP GET von PC-Design zu Intranet-01 wieder her, damit die Verbindung erfolgreich ist.",
+            "hints": [
+                "Verfolgen Sie die Anfrage von PC-Design: Sie verlässt die Zweigstelle korrekt, wird aber direkt bei Router-Sapporo gelöscht, bevor sie die Zentrale jemals erreicht.",
+                "Router-Sapporo hat keinen Eintrag, der ihm zeigt, wie man das Netzwerk 10.0.26.0 erreicht, auf dem sich Intranet-01 befindet. Daher verwirft es das Paket, anstatt es zu Router-Fukuoka weiterzuleiten.",
+                "Fügen Sie auf Router-Sapporo eine statische Route zu 10.0.26.0/255.255.255.0 mit Nächster Hop 10.0.7.2 auf Port 1 hinzu."
+            ],
+            "explanation": "Router leiten Pakete nur an Netzwerke weiter, die sie kennen. Ohne eine statische Route für das entfernte Subnetz wird selbst ein korrekt adressiertes Paket beim Router gelöscht, anstatt zum Nächster Hop gesendet zu werden. Das Hinzufügen der fehlenden Route ermöglicht es, dass der Datenverkehr das Zielnetzwerk erreicht."
+        },
+        "fr": {
+            "title": "Bureau régional coupé des fichiers du siège",
+            "story": "L'équipe de vente du bureau régional se plaint que PC-Design ne peut plus accéder aux fichiers stockés sur Intranet-01 au siège. Le problème a commencé ce matin et personne d'autre n'a signalé de souci.",
+            "objective": "Restaurez une requête HTTP GET de PC-Design vers Intranet-01 pour que la connexion réussisse.",
+            "hints": [
+                "Retracez la requête de PC-Design : elle quitte le bureau régional sans problème mais est abandonnée dès le Router-Sapporo avant d'atteindre le côté du siège.",
+                "Router-Sapporo n'a pas d'entrée lui indiquant comment atteindre le réseau 10.0.26.0 où se trouve Intranet-01, il abandonne donc le paquet au lieu de le transmettre vers Router-Fukuoka.",
+                "Sur Router-Sapporo, ajoutez une route statique vers 10.0.26.0/255.255.255.0 avec comme Saut suivant 10.0.7.2 sur le port 1."
+            ],
+            "explanation": "Les routeurs ne transmettent les paquets que vers les réseaux qu'ils connaissent. Sans route statique pour le sous-réseau distant, même un paquet correctement adressé est abandonné au routeur au lieu d'être envoyé vers le Saut suivant. L'ajout de la route manquante permet au trafic d'atteindre le Réseau de destination."
+        },
+        "hi": {
+            "title": "शाखा कार्यालय मुख्यालय की फ़ाइलों से कट गया",
+            "story": "शाखा कार्यालय की बिक्रय टीम शिकायत करती है कि PC-Design अब मुख्यालय में Intranet-01 पर संग्रहीत फ़ाइलों को खोल नहीं सकता। समस्या आज सुबह शुरू हुई और किसी और ने परेशानी की रिपोर्ट नहीं की।",
+            "objective": "PC-Design से Intranet-01 तक HTTP GET को पुनः स्थापित करें ताकि कनेक्शन सफल हो सके।",
+            "hints": [
+                "PC-Design से अनुरोध को ट्रेस करें: यह शाखा कार्यालय से ठीक से निकलता है लेकिन Router-Sapporo पर ही गिरा दिया जाता है इससे पहले कि यह मुख्यालय की ओर पहुंचे।",
+                "Router-Sapporo के पास 10.0.26.0 नेटवर्क तक पहुंचने का तरीका बताने वाली कोई प्रविष्टि नहीं है जहां Intranet-01 है, इसलिए यह पैकेट को Router-Fukuoka की ओर भेजने के बजाय छोड़ देता है।",
+                "Router-Sapporo पर, 10.0.26.0/255.255.255.0 के लिए एक स्थिर मार्ग जोड़ें जिसमें अगला हॉप 10.0.7.2 पोर्ट 1 पर हो।"
+            ],
+            "explanation": "राउटर केवल उन नेटवर्कों को पैकेट भेजते हैं जिन्हें वे जानते हैं। दूरस्थ सबनेट के लिए स्थैतिक मार्ग के बिना, यहां तक कि सही पते वाला पैकेट भी अगले हॉप की ओर भेजे जाने के बजाय राउटर पर गिरा दिया जाता है। लापता मार्ग जोड़ने से ट्रैफिक गंतव्य नेटवर्क तक पहुंच सकता है।"
+        },
+        "id": {
+            "title": "Kantor Cabang Terputus dari Berkas Kantor Pusat",
+            "story": "Tim penjualan di kantor cabang mengeluh bahwa PC-Design tidak lagi dapat membuka berkas yang tersimpan di Intranet-01 di kantor pusat. Masalah dimulai pagi ini dan tidak ada orang lain yang melaporkan gangguan.",
+            "objective": "Pulihkan HTTP GET dari PC-Design ke Intranet-01 agar koneksi berhasil.",
+            "hints": [
+                "Lacak permintaan dari PC-Design: permintaan meninggalkan kantor cabang dengan baik tetapi dihentikan tepat di Router-Sapporo sebelum mencapai sisi kantor pusat.",
+                "Router-Sapporo tidak memiliki entri yang memberi tahu cara menjangkau jaringan 10.0.26.0 tempat Intranet-01 berada, jadi ia membuang paket daripada meneruskannya ke Router-Fukuoka.",
+                "Di Router-Sapporo, tambahkan rute statis ke 10.0.26.0/255.255.255.0 dengan Hop berikutnya 10.0.7.2 pada port 1."
+            ],
+            "explanation": "Router hanya meneruskan paket ke jaringan yang mereka ketahui. Tanpa rute statis untuk subnet jarak jauh, bahkan paket yang ditujukan dengan benar dibuang di router alih-alih dikirim ke Hop berikutnya. Menambahkan rute yang hilang memungkinkan lalu lintas mencapai Jaringan tujuan."
+        },
+        "ru": {
+            "title": "Филиал отключен от файлов штаб-квартиры",
+            "story": "Коллектив продаж филиала жалуется, что PC-Design больше не может открыть файлы, хранящиеся на Intranet-01 в штаб-квартире. Проблема началась этим утром, и никто другой не сообщил о неприятностях.",
+            "objective": "Восстановите HTTP GET от PC-Design к Intranet-01, чтобы соединение установилось.",
+            "hints": [
+                "Отследите запрос от PC-Design: он корректно покидает филиал, но отбрасывается прямо на Router-Sapporo, прежде чем достичь штаб-квартиры.",
+                "Router-Sapporo не имеет записи о том, как достичь сети 10.0.26.0, где находится Intranet-01, поэтому отбрасывает пакет вместо его пересылки на Router-Fukuoka.",
+                "На Router-Sapporo добавьте статический маршрут к 10.0.26.0/255.255.255.0 с Следующим узлом 10.0.7.2 на порте 1."
+            ],
+            "explanation": "Маршрутизаторы пересылают пакеты только в известные им сети. Без статического маршрута для удаленной подсети даже правильно адресованный пакет отбрасывается маршрутизатором вместо отправки к следующему узлу. Добавление недостающего маршрута позволит трафику достичь целевой сети."
+        },
+        "it": {
+            "title": "Filiale Tagliata Fuori dai File della Sede",
+            "story": "Il team di vendita nella filiale lamenta che PC-Design non riesca più ad aprire i file archiviati su Intranet-01 nella sede centrale. Il problema è iniziato questa mattina e nessun altro ha segnalato difficoltà.",
+            "objective": "Ripristina una HTTP GET da PC-Design a Intranet-01 in modo che la connessione abbia successo.",
+            "hints": [
+                "Traccia la richiesta da PC-Design: esce dalla filiale senza problemi ma viene scartata proprio su Router-Sapporo prima di raggiungere il lato della sede.",
+                "Router-Sapporo non ha una voce che gli dica come raggiungere la rete 10.0.26.0 dove vive Intranet-01, quindi scarta il pacchetto anziché inoltarlo verso Router-Fukuoka.",
+                "Su Router-Sapporo, aggiungi un percorso statico a 10.0.26.0/255.255.255.0 con next hop 10.0.7.2 sulla porta 1."
+            ],
+            "explanation": "I router inoltrano pacchetti solo verso le reti che conoscono. Senza una rotta statica per la subnet remota, anche un pacchetto correttamente indirizzato viene scartato al router anziché essere inviato verso il next hop. L'aggiunta della rotta mancante consente al traffico di raggiungere la rete di destinazione."
+        },
+        "tr": {
+            "title": "Şubesi Genel Merkez Dosyalarından Kesildi",
+            "story": "Şubenin satış ekibi, PC-Design'ın artık genel merkezde Intranet-01'de depolanan dosyaları açamadığından şikayet ediyor. Sorun bu sabah başladı ve hiç kimse başka bir sorun bildirmedi.",
+            "objective": "PC-Design'dan Intranet-01'e HTTP GET bağlantısını geri yükleyin, böylece bağlantı başarılı olur.",
+            "hints": [
+                "PC-Design'dan gelen isteği izleyin: şubeden düzgün bir şekilde çıkar ancak genel merkez tarafına ulaşmadan önce doğrudan Router-Sapporo'da bırakılır.",
+                "Router-Sapporo'nun Intranet-01'in yaşadığı 10.0.26.0 ağına nasıl ulaşacağını söyleyen bir girişi yok, bu nedenle paketi Router-Fukuoka'ya yönlendirmek yerine atar.",
+                "Router-Sapporo'da, 10.0.26.0/255.255.255.0'e giden bir statik rota ekleyin; sonraki sıçrama 10.0.7.2, port 1'de."
+            ],
+            "explanation": "Router'lar yalnızca tanıdıkları ağlara paket iletir. Uzak subnet için statik bir rota olmadan, doğru adreslendirilen bir paket bile router'da atılır ve sonraki sıçramaya gönderilmez. Eksik rotanın eklenmesi trafiğin hedef ağa ulaşmasını sağlar."
+        },
+        "th": {
+            "title": "สาขาขาดการเชื่อมต่อไฟล์สำนักงานใหญ่",
+            "story": "ทีมขายสาขาร้องเรียนว่า PC-Design ไม่สามารถเปิดไฟล์ที่เก็บไว้บน Intranet-01 ที่สำนักงานใหญ่ได้อีกต่อไป ปัญหาเริ่มต้นในเช้านี้และไม่มีใครรายงานปัญหาอื่น",
+            "objective": "คืนค่า HTTP GET จาก PC-Design ไปยัง Intranet-01 เพื่อให้การเชื่อมต่อสำเร็จ",
+            "hints": [
+                "ติดตามการร้องขอจาก PC-Design: ออกจากสาขาได้ดี แต่หล่นลงที่ Router-Sapporo ก่อนถึงด้านสำนักงานใหญ่",
+                "Router-Sapporo ไม่มีรายการบอกว่าต้องเข้าถึงเครือข่าย 10.0.26.0 ที่ Intranet-01 อยู่อย่างไร จึงทิ้งแพ็กเก็ตแทนที่จะส่งต่อไปยัง Router-Fukuoka",
+                "บน Router-Sapporo ให้เพิ่มเส้นทางคงที่ไปยัง 10.0.26.0/255.255.255.0 พร้อมฮ็อปถัดไป 10.0.7.2 บนพอร์ต 1"
+            ],
+            "explanation": "Router ส่งต่อแพ็กเก็ตเฉพาะไปยังเครือข่ายที่รู้จักเท่านั้น หากไม่มีเส้นทางคงที่สำหรับซับเน็ตระยะไกล แม้แต่แพ็กเก็ตที่อยู่ที่อยู่ถูกต้องก็จะถูกทิ้งที่ router แทนที่จะส่งไปยังฮ็อปถัดไป การเพิ่มเส้นทางที่ขาดหายไปช่วยให้การจราจรถึงเครือข่ายปลายทาง"
+        },
+        "vi": {
+            "title": "Chi nhánh Bị Cắt Khỏi Tệp Trụ Sở Chính",
+            "story": "Đội bán hàng tại chi nhánh phàn nàn rằng PC-Design không còn mở được tệp được lưu trữ trên Intranet-01 tại trụ sở chính. Sự cố bắt đầu sáng nay và không ai khác đã báo cáo gặp sự cố.",
+            "objective": "Khôi phục HTTP GET từ PC-Design đến Intranet-01 để kết nối thành công.",
+            "hints": [
+                "Theo dõi yêu cầu từ PC-Design: nó rời chi nhánh tốt nhưng bị hủy ngay tại Router-Sapporo trước khi đến phía trụ sở chính.",
+                "Router-Sapporo không có mục nào cho nó biết cách tiếp cận mạng 10.0.26.0 nơi Intranet-01 nằm, nên nó loại bỏ gói tin thay vì chuyển tiếp nó đến Router-Fukuoka.",
+                "Trên Router-Sapporo, hãy thêm tuyến tĩnh đến 10.0.26.0/255.255.255.0 với hop tiếp theo 10.0.7.2 trên cổng 1."
+            ],
+            "explanation": "Router chỉ chuyển tiếp gói tin tới các mạng mà chúng biết. Nếu không có tuyến tĩnh cho subnet từ xa, ngay cả gói tin được địa chỉ hóa chính xác cũng bị hủy tại router thay vì được gửi tới hop tiếp theo. Thêm tuyến còn thiếu cho phép lưu lượng truy cập tiếp cận mạng đích."
+        }
+    }
+}
