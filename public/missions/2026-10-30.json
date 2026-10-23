@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-30",
+    "number": 40,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.23.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.23.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.23.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.4.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.11.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.4.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.4.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.11.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.23.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.4.1",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.11.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.11.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Orders Vanishing on the Way to HQ",
+            "story": "PC-Admin at the Sapporo branch tries to reach Web-Server in Fukuoka to place orders, but the connection never completes. Staff say the order page hasn't loaded since this morning.",
+            "objective": "Restore an HTTP GET from PC-Admin to Web-Server so the connection succeeds.",
+            "hints": [
+                "The reply from Web-Server gets dropped right at Router-Fukuoka before it can head back toward PC-Admin.",
+                "Router-Fukuoka holds a route to PC-Admin's network that points out the wrong port, so return traffic has nowhere valid to go.",
+                "On Router-Fukuoka, delete the route to 10.0.23.0/255.255.255.0 and add it again pointing via 10.0.4.1 out port 0."
+            ],
+            "explanation": "A static route must point out the port that actually leads toward the next-hop router. Here Router-Fukuoka's route to the PC-Admin subnet used the wrong outgoing port, so replies could never find their way back, even though the request got through fine."
+        },
+        "ja": {
+            "title": "本社への注文が消える問題",
+            "story": "札幌支店のPC-Adminから福岡のWeb-Serverへ注文を送ろうとしても、接続が完了しません。今朝から注文ページが読み込まれないとスタッフから報告がありました。",
+            "objective": "PC-AdminからWeb-Serverへの HTTP GET を復旧し、接続が成功するようにしてください。",
+            "hints": [
+                "Web-Serverからの応答は、PC-Adminに戻る途中のRouter-Fukuokaでちょうど破棄されています。",
+                "Router-Fukuokaが持つPC-Adminのネットワーク宛てのルートが誤ったポートを指しているため、戻りの通信が行き場を失っています。",
+                "Router-Fukuokaで、10.0.23.0/255.255.255.0 へのルートを削除し、中継先を10.0.4.1、ポート0として追加し直してください。"
+            ],
+            "explanation": "スタティックルートは、実際に中継先ルーターへ向かうポートを指している必要があります。今回はRouter-Fukuokaが持つPC-Adminのサブネット宛てルートが誤った出力ポートを指していたため、リクエストは届いても応答が戻って来られませんでした。"
+        },
+        "zh-CN": {
+            "title": "订单在送往总部的途中消失",
+            "story": "位于札幌分公司的 PC-Admin 尝试连接福冈的 Web-Server 以提交订单，但连接从未完成。员工说自今天早上以来，订单页面就一直无法加载。",
+            "objective": "恢复从 PC-Admin 到 Web-Server 的 HTTP GET 请求，使连接成功。",
+            "hints": [
+                "来自 Web-Server 的回复在 Router-Fukuoka 处被丢弃，无法返回 PC-Admin。",
+                "Router-Fukuoka 上指向 PC-Admin 网络的路由指向了错误的端口，导致返回流量无处可去。",
+                "在 Router-Fukuoka 上，删除指向 10.0.23.0/255.255.255.0 的路由，然后重新添加，通过下一跳 10.0.4.1 从端口 0 转发。"
+            ],
+            "explanation": "静态路由必须指向实际通往下一跳 Router 的端口。这里 Router-Fukuoka 指向 PC-Admin 子网的路由使用了错误的出站端口，因此回复永远无法找到返回路径，即使请求能够成功转发。"
+        },
+        "zh-TW": {
+            "title": "訂單在運往總部的途中消失",
+            "story": "位於札幌分公司的 PC-Admin 嘗試連線到福岡的 Web-Server 以提交訂單，但連線從未完成。員工表示自今早以來，訂單頁面就一直無法載入。",
+            "objective": "恢復從 PC-Admin 到 Web-Server 的 HTTP GET 請求，使連線成功。",
+            "hints": [
+                "來自 Web-Server 的回覆在 Router-Fukuoka 被丟棄，無法返回 PC-Admin。",
+                "Router-Fukuoka 上指向 PC-Admin 網路的路由指向了錯誤的連接埠，導致回程流量無處可去。",
+                "在 Router-Fukuoka 上，刪除指向 10.0.23.0/255.255.255.0 的路由，然後重新新增，通過下一跳 10.0.4.1 從連接埠 0 轉發。"
+            ],
+            "explanation": "靜態路由必須指向實際通往下一跳 Router 的連接埠。此處 Router-Fukuoka 指向 PC-Admin 子網的路由使用了錯誤的出站連接埠，因此回覆永遠無法找到返回路徑，即使請求能夠成功轉發。"
+        },
+        "ko": {
+            "title": "본사로 가는 도중 주문이 사라짐",
+            "story": "삿포로 지점의 PC-Admin이 후쿠오카의 Web-Server에 연결하여 주문을 제출하려고 하지만 연결이 완료되지 않습니다. 직원들은 오늘 아침부터 주문 페이지가 로드되지 않는다고 합니다.",
+            "objective": "PC-Admin에서 Web-Server로의 HTTP GET 요청을 복구하여 연결이 성공하도록 합니다.",
+            "hints": [
+                "Web-Server의 응답이 Router-Fukuoka에서 삭제되어 PC-Admin으로 돌아갈 수 없습니다.",
+                "Router-Fukuoka의 PC-Admin 네트워크로의 라우팅 테이블 항목이 잘못된 포트 번호를 가리키므로 반환 트래픽이 갈 곳이 없습니다.",
+                "Router-Fukuoka에서 10.0.23.0/255.255.255.0으로의 라우팅 테이블 항목을 삭제한 후 다음 홉 10.0.4.1을 통해 포트 0에서 다시 추가합니다."
+            ],
+            "explanation": "정적 라우팅 테이블 항목은 실제로 다음 홉 라우터로 가는 포트를 가리켜야 합니다. 여기서 Router-Fukuoka의 PC-Admin 서브넷으로의 라우팅 테이블 항목이 잘못된 나가는 포트를 사용했기 때문에 응답이 돌아갈 경로를 찾을 수 없었습니다. 요청은 성공했지만 응답은 도달하지 못했습니다."
+        },
+        "es": {
+            "title": "Pedidos desaparecen camino a la sede central",
+            "story": "PC-Admin en la sucursal de Sapporo intenta conectarse a Web-Server en Fukuoka para realizar pedidos, pero la conexión nunca se completa. El personal reporta que la página de pedidos no carga desde esta mañana.",
+            "objective": "Restaurar una solicitud HTTP GET desde PC-Admin a Web-Server para que la conexión sea exitosa.",
+            "hints": [
+                "La respuesta de Web-Server se descarta justo en Router-Fukuoka antes de poder regresar hacia PC-Admin.",
+                "Router-Fukuoka tiene una ruta a la red de PC-Admin que apunta al puerto incorrecto, por lo que el tráfico de retorno no tiene un camino válido.",
+                "En Router-Fukuoka, elimina la ruta a 10.0.23.0/255.255.255.0 y agrégala nuevamente apuntando al siguiente salto 10.0.4.1 por el puerto 0."
+            ],
+            "explanation": "Una ruta estática debe apuntar al puerto que realmente conduce hacia el router del siguiente salto. Aquí la ruta de Router-Fukuoka hacia la subred de PC-Admin usaba el puerto saliente incorrecto, por lo que las respuestas nunca pudieron encontrar el camino de regreso, aunque la solicitud llegara correctamente."
+        },
+        "pt-BR": {
+            "title": "Pedidos desaparecem no caminho para a matriz",
+            "story": "PC-Admin na filial de Sapporo tenta se conectar a Web-Server em Fukuoka para realizar pedidos, mas a conexão nunca é estabelecida. Funcionários relatam que a página de pedidos não carrega desde esta manhã.",
+            "objective": "Restaurar uma requisição HTTP GET de PC-Admin para Web-Server para que a conexão seja bem-sucedida.",
+            "hints": [
+                "A resposta de Web-Server é descartada bem em Router-Fukuoka antes de poder retornar para PC-Admin.",
+                "Router-Fukuoka possui uma rota para a rede de PC-Admin que aponta para a porta incorreta, deixando o tráfego de retorno sem caminho válido.",
+                "Em Router-Fukuoka, remova a rota para 10.0.23.0/255.255.255.0 e adicione-a novamente apontando para o próximo salto 10.0.4.1 pela porta 0."
+            ],
+            "explanation": "Uma rota estática deve apontar para a porta que realmente leva ao roteador do próximo salto. Aqui a rota de Router-Fukuoka para a sub-rede de PC-Admin usava a porta de saída incorreta, então as respostas nunca conseguiram encontrar o caminho de volta, mesmo que a solicitação tenha passado corretamente."
+        },
+        "de": {
+            "title": "Bestellungen verschwinden unterwegs zur Zentrale",
+            "story": "PC-Admin in der Filiale Sapporo versucht, Web-Server in Fukuoka zu erreichen, um Bestellungen aufzugeben, doch die Verbindung wird nie hergestellt. Die Mitarbeiter berichten, dass die Bestellungsseite seit heute Morgen nicht lädt.",
+            "objective": "Stellen Sie einen HTTP-GET von PC-Admin zu Web-Server wieder her, damit die Verbindung erfolgreich ist.",
+            "hints": [
+                "Die Antwort von Web-Server wird direkt bei Router-Fukuoka verworfen, bevor sie zu PC-Admin zurückgehen kann.",
+                "Router-Fukuoka hat eine Route zu PC-Admin's Netzwerk, die auf den falschen Port verweist, daher hat der Rückverkehr kein gültiges Ziel.",
+                "Löschen Sie auf Router-Fukuoka die Route zu 10.0.23.0/255.255.255.0 und fügen Sie sie erneut hinzu, mit Nächster Hop 10.0.4.1 auf Port 0."
+            ],
+            "explanation": "Eine statische Route muss auf den Port verweisen, der tatsächlich zum nächsten-Hop Router führt. Hier verwendete die Route von Router-Fukuoka zum PC-Admin-Subnetz den falschen ausgehenden Port, daher konnten Antworten den Rückweg nie finden, obwohl die Anfrage problemlos durchkam."
+        },
+        "fr": {
+            "title": "Commandes disparaissent en route vers le siège",
+            "story": "PC-Admin à la succursale de Sapporo tente de rejoindre Web-Server à Fukuoka pour passer des commandes, mais la connexion n'aboutit jamais. Le personnel signale que la page de commande ne se charge pas depuis ce matin.",
+            "objective": "Restaurez une requête HTTP GET de PC-Admin vers Web-Server pour que la connexion réussisse.",
+            "hints": [
+                "La réponse de Web-Server est abandonnée directement à Router-Fukuoka avant de pouvoir retourner vers PC-Admin.",
+                "Router-Fukuoka dispose d'une route vers le réseau de PC-Admin qui pointe vers le mauvais port, le trafic de retour n'a donc nulle part où aller.",
+                "Sur Router-Fukuoka, supprimez la route vers 10.0.23.0/255.255.255.0 et rajoutez-la en pointant via le Saut suivant 10.0.4.1 sur le port 0."
+            ],
+            "explanation": "Une route statique doit pointer vers le port qui mène réellement au routeur suivant. Ici, la route de Router-Fukuoka vers le sous-réseau PC-Admin utilisait le mauvais port sortant, les réponses ne pouvaient donc jamais trouver leur chemin de retour, même si la demande passait sans problème."
+        },
+        "hi": {
+            "title": "ऑर्डर मुख्यालय के रास्ते में गायब हो रहे हैं",
+            "story": "सप्पोरो शाखा में PC-Admin, फुकुओका में Web-Server तक पहुंचने का प्रयास कर रहा है ताकि ऑर्डर दिए जा सकें, लेकिन कनेक्शन कभी पूरा नहीं होता। कर्मचारी कहते हैं कि ऑर्डर पृष्ठ इस सुबह से लोड नहीं हो रहा है।",
+            "objective": "PC-Admin से Web-Server तक HTTP GET को पुनः स्थापित करें ताकि कनेक्शन सफल हो।",
+            "hints": [
+                "Web-Server का जवाब Router-Fukuoka पर ही रुक जाता है, इससे पहले कि यह PC-Admin की ओर वापस जा सके।",
+                "Router-Fukuoka के पास PC-Admin के नेटवर्क का एक रूट है जो गलत पोर्ट की ओर इशारा करता है, इसलिए रिटर्न ट्रैफिक के पास कहीं जाने के लिए नहीं है।",
+                "Router-Fukuoka पर, 10.0.23.0/255.255.255.0 का रूट हटाएं और इसे फिर से जोड़ें, अगला हॉप 10.0.4.1 को पोर्ट 0 के माध्यम से सेट करते हुए।"
+            ],
+            "explanation": "एक स्थिर रूट को उस पोर्ट की ओर इशारा करना चाहिए जो वास्तव में अगला हॉप राउटर तक जाता है। यहां Router-Fukuoka का PC-Admin सबनेट का रूट गलत आउटगोइंग पोर्ट का उपयोग कर रहा था, इसलिए जवाब कभी रास्ता वापस नहीं खोज सके, भले ही अनुरोध ठीक से पारित हुआ।"
+        },
+        "id": {
+            "title": "Pesanan Hilang dalam Perjalanan ke Kantor Pusat",
+            "story": "PC-Admin di cabang Sapporo mencoba menjangkau Web-Server di Fukuoka untuk melakukan pesanan, namun koneksi tidak pernah selesai. Staf mengatakan halaman pesanan tidak dimuat sejak pagi ini.",
+            "objective": "Pulihkan permintaan HTTP GET dari PC-Admin ke Web-Server sehingga koneksi berhasil.",
+            "hints": [
+                "Balasan dari Web-Server ditolak tepat di Router-Fukuoka sebelum dapat kembali ke PC-Admin.",
+                "Router-Fukuoka memiliki rute ke jaringan PC-Admin yang menunjuk ke port yang salah, sehingga lalu lintas kembali tidak memiliki tempat yang valid untuk pergi.",
+                "Di Router-Fukuoka, hapus rute ke 10.0.23.0/255.255.255.0 dan tambahkan kembali mengarah melalui Hop berikutnya 10.0.4.1 pada port 0."
+            ],
+            "explanation": "Rute statis harus menunjuk ke port yang benar-benar mengarah ke router hop berikutnya. Di sini, rute Router-Fukuoka ke subnet PC-Admin menggunakan port keluar yang salah, sehingga balasan tidak pernah dapat menemukan jalan pulang mereka, meskipun permintaan berhasil melewati."
+        },
+        "ru": {
+            "title": "Заказы теряются на пути в главный офис",
+            "story": "PC-Admin в отделении Саппоро пытается связаться с Web-Server в Фукуоке для размещения заказов, но соединение никогда не устанавливается. Сотрудники говорят, что страница заказов не загружается с утра.",
+            "objective": "Восстановите HTTP GET от PC-Admin к Web-Server, чтобы соединение прошло успешно.",
+            "hints": [
+                "Ответ от Web-Server отбрасывается прямо на Router-Fukuoka, прежде чем вернуться к PC-Admin.",
+                "Router-Fukuoka содержит маршрут к сети PC-Admin, указывающий на неправильный порт, поэтому обратный трафик не имеет действительного пункта назначения.",
+                "На Router-Fukuoka удалите маршрут к 10.0.23.0/255.255.255.0 и добавьте его снова, указывая Следующий узел 10.0.4.1 на порт 0."
+            ],
+            "explanation": "Статический маршрут должен указывать на порт, который фактически ведет к следующему узлу маршрутизатора. Здесь маршрут Router-Fukuoka к подсети PC-Admin использовал неправильный исходящий порт, поэтому ответы никогда не могли найти дорогу назад, хотя запрос прошел без проблем."
+        },
+        "it": {
+            "title": "Ordini che scompaiono verso la sede centrale",
+            "story": "PC-Admin presso il ramo di Sapporo tenta di raggiungere Web-Server a Fukuoka per effettuare ordini, ma la connessione non si completa mai. Lo staff dice che la pagina degli ordini non si carica da questa mattina.",
+            "objective": "Ripristinare una richiesta HTTP GET da PC-Admin a Web-Server affinché la connessione abbia successo.",
+            "hints": [
+                "La risposta da Web-Server viene scartata proprio su Router-Fukuoka prima di poter tornare verso PC-Admin.",
+                "Router-Fukuoka contiene un percorso verso la rete di PC-Admin che punta alla porta sbagliata, quindi il traffico di ritorno non ha una destinazione valida.",
+                "Su Router-Fukuoka, elimina il percorso verso 10.0.23.0/255.255.255.0 e aggiungilo di nuovo puntando via 10.0.4.1 dalla porta 0."
+            ],
+            "explanation": "Una rotta statica deve puntare alla porta che conduce effettivamente verso il router del rete hop successivo. In questo caso il percorso di Router-Fukuoka verso la subnet di PC-Admin utilizzava la porta in uscita sbagliata, quindi le risposte non potevano mai trovare la strada di ritorno, anche se la richiesta era passata senza problemi."
+        },
+        "tr": {
+            "title": "Siparişler HQ'ya Giderken Kaybolması",
+            "story": "Sapporo şubesindeki PC-Admin, Fukuoka'daki Web-Server'a ulaşarak sipariş vermek için bağlanmaya çalışır, ancak bağlantı hiçbir zaman tamamlanmaz. Personel, sipariş sayfasının bu sabahtan beri yüklenmediğini söylüyor.",
+            "objective": "PC-Admin'den Web-Server'e HTTP GET bağlantısını geri yükleyin, böylece bağlantı başarılı olur.",
+            "hints": [
+                "Web-Server'dan gelen yanıt, Router-Fukuoka'da PC-Admin'e geri dönmeden hemen önce düşürülür.",
+                "Router-Fukuoka, PC-Admin'in ağına giden bir rota tutar ve bu rota yanlış bağlantı noktasını gösterir, bu nedenle dönüş trafiğinin gidebileceği geçerli bir yer yoktur.",
+                "Router-Fukuoka üzerinde, 10.0.23.0/255.255.255.0 yolunu silin ve Sonraki sıçrama 10.0.4.1 ile bağlantı noktası 0 dışarıya gösterecek şekilde yeniden ekleyin."
+            ],
+            "explanation": "Statik bir rota, gerçekten Sonraki sıçrama yönlendiricisine giden bağlantı noktasını göstermelidir. Burada Router-Fukuoka'nın PC-Admin alt ağına giden rotası yanlış giden bağlantı noktasını kullanıyordu, bu nedenle yanıtlar hiçbir zaman geri dönüş yolunu bulamıyordu; istekte başarılı olmuş olsa da."
+        },
+        "th": {
+            "title": "คำสั่งซื้อหายไปบนเส้นทางไปยังสำนักงานใหญ่",
+            "story": "PC-Admin ที่สาขา Sapporo พยายามเข้าถึง Web-Server ที่ Fukuoka เพื่อสั่งซื้อ แต่การเชื่อมต่อไม่สำเร็จ พนักงานบอกว่าหน้าสั่งซื้อไม่ได้โหลดตั้งแต่เช้านี้",
+            "objective": "กู้คืนการร้องขอ HTTP GET จาก PC-Admin ไปยัง Web-Server เพื่อให้การเชื่อมต่อสำเร็จ",
+            "hints": [
+                "การตอบสนองจาก Web-Server ถูกทิ้งไว้ที่ Router-Fukuoka ก่อนที่จะกลับไปยัง PC-Admin",
+                "Router-Fukuoka มีเส้นทางไปยังเครือข่าย PC-Admin ที่ชี้ไปยังพอร์ตผิด จึงไม่มีพอร์ตที่ถูกต้องสำหรับการสื่อสารกลับ",
+                "ใน Router-Fukuoka ให้ลบเส้นทาง 10.0.23.0/255.255.255.0 แล้วเพิ่มใหม่โดยชี้ไปยัง ฮ็อปถัดไป 10.0.4.1 พอร์ต 0"
+            ],
+            "explanation": "เส้นทางแบบสถิต (Static Route) ต้องชี้ไปยังพอร์ตที่นำไปยังเราเตอร์ฮ็อปถัดไป ที่นี่เส้นทาง Router-Fukuoka ไปยัง PC-Admin ใช้พอร์ตขาออกผิด ทำให้การตอบกลับไม่สามารถหาเส้นทางกลับได้ แม้ว่าคำร้องขออาจผ่านไปได้ก็ตาม"
+        },
+        "vi": {
+            "title": "Đơn hàng mất tích trên đường tới trụ sở chính",
+            "story": "PC-Admin tại chi nhánh Sapporo cố gắng kết nối với Web-Server ở Fukuoka để đặt hàng, nhưng kết nối không bao giờ hoàn tất. Nhân viên cho biết trang đặt hàng không tải được kể từ sáng nay.",
+            "objective": "Khôi phục yêu cầu HTTP GET từ PC-Admin tới Web-Server để kết nối thành công.",
+            "hints": [
+                "Phản hồi từ Web-Server bị loại bỏ ngay tại Router-Fukuoka trước khi quay lại PC-Admin.",
+                "Router-Fukuoka chứa tuyến đường tới mạng PC-Admin chỉ tới cổng sai, vì vậy lưu lượng trở về không có đích hợp lệ.",
+                "Trên Router-Fukuoka, xóa tuyến tới 10.0.23.0/255.255.255.0 và thêm lại nó chỉ tới Hop tiếp theo 10.0.4.1 qua cổng 0."
+            ],
+            "explanation": "Tuyến đường tĩnh phải chỉ tới cổng thực sự dẫn tới bộ định tuyến hop tiếp theo. Ở đây tuyến của Router-Fukuoka tới subnet PC-Admin sử dụng cổng đi sai, nên các phản hồi không bao giờ tìm được đường quay lại, mặc dù yêu cầu đã qua được."
+        }
+    }
+}
