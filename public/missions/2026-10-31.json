@@ -1,0 +1,699 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-10-31",
+    "number": 41,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.23.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.23.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.23.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.23.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.4.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.4.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "VLAN-Switch-1F",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.23.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.4.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.8.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.9.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.8.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-vlan1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Lost Shares After the Desk Reshuffle",
+            "story": "Since the marketing floor's desk reshuffle, PC-Finance can't open shared files on the File-Server, and PC-Dev can't even get a ping reply from it. Both report the server as unreachable.",
+            "objective": "Restore HTTP access from PC-Finance to File-Server and ping connectivity from PC-Dev to File-Server.",
+            "hints": [
+                "Both requests die at Router-Edge: it receives the packets for File-Server from PC-Finance and PC-Dev but cannot forward them any further.",
+                "Router-Edge has no route to File-Server because the server's configured address no longer belongs to the 10.0.8.0 subnet behind that port.",
+                "On File-Server, set port 0's address to 10.0.8.1 with mask 255.255.255.0 so it sits back on Router-Edge's 10.0.8.0 network."
+            ],
+            "explanation": "A device's IP address must fall inside the subnet of the router port it connects to, or the router has no route to it and every packet is dropped before delivery. Matching the host address and mask to the router's subnet restores routing for all clients."
+        },
+        "ja": {
+            "title": "座席replace後に消えた共有ファイル",
+            "story": "マーケティングフロアの座席替え以降、PC-FinanceはFile-Server上の共有ファイルを開けなくなり、PC-DevはFile-Serverからのping応答すら得られなくなりました。どちらもサーバーに到達できないと報告しています。",
+            "objective": "PC-FinanceからFile-ServerへのHTTPアクセスと、PC-DevからFile-Serverへのping疎通を復旧させます。",
+            "hints": [
+                "どちらの通信もRouter-Edgeで止まっています。Router-EdgeはPC-FinanceとPC-DevからFile-Server宛てのパケットを受け取りますが、その先へ転送できません。",
+                "File-Serverに設定されているアドレスが、そのポートの背後にある10.0.8.0のサブネットに属していないため、Router-EdgeはFile-Serverへのルートを持っていません。",
+                "File-Serverのポート0のアドレスを10.0.8.1、マスクを255.255.255.0に設定し、Router-Edgeの10.0.8.0ネットワークに戻るようにしてください。"
+            ],
+            "explanation": "デバイスのIPアドレスは、接続しているルーターポートのサブネット内に収まっている必要があります。そうでないとルーターはそのデバイスへのルートを持たず、すべてのパケットは配送前に破棄されてしまいます。ホストアドレスとマスクをルーターのサブネットに合わせることで、すべてのクライアントに対するルーティングが復旧します。"
+        },
+        "zh-CN": {
+            "title": "办公室改革后的共享丢失",
+            "story": "自从市场营销部办公室改革后，PC-Finance无法打开File-Server上的共享文件，PC-Dev甚至无法收到来自File-Server的ping回复。两台PC都报告该服务器无法访问。",
+            "objective": "恢复PC-Finance对File-Server的HTTP访问，以及PC-Dev对File-Server的ping连接。",
+            "hints": [
+                "两个请求都在Router-Edge处被阻断：它能从PC-Finance和PC-Dev接收发往File-Server的数据包，但无法进一步转发。",
+                "Router-Edge没有到达File-Server的路由，因为该服务器配置的地址不再属于该端口后面的10.0.8.0子网。",
+                "在File-Server上，将端口0的地址设置为10.0.8.1，掩码为255.255.255.0，使其重新连接到Router-Edge的10.0.8.0网络。"
+            ],
+            "explanation": "设备的IP地址必须位于其连接的Router端口所在子网内，否则Router将无法路由到该设备，所有数据包都会在递送前被丢弃。将主机地址和掩码与Router的子网匹配可以恢复所有客户端的路由。"
+        },
+        "zh-TW": {
+            "title": "辦公室改組後的共用資源遺失",
+            "story": "自從行銷部辦公室改組後，PC-Finance無法開啟File-Server上的共用檔案，PC-Dev甚至無法收到來自File-Server的ping回覆。兩台PC都回報該伺服器無法連線。",
+            "objective": "恢復PC-Finance對File-Server的HTTP存取，以及PC-Dev對File-Server的ping連線。",
+            "hints": [
+                "兩個請求都在Router-Edge處被擋住：它能從PC-Finance和PC-Dev接收送往File-Server的封包，但無法進一步轉發。",
+                "Router-Edge沒有到達File-Server的路由，因為該伺服器設定的位址不再屬於該連接埠後面的10.0.8.0子網。",
+                "在File-Server上，將連接埠0的位址設為10.0.8.1，遮罩為255.255.255.0，使其重新連回Router-Edge的10.0.8.0網路。"
+            ],
+            "explanation": "設備的IP位址必須位在其連接的Router連接埠所在的子網內，否則Router無法路由到該設備，所有封包都會在遞送前被丟棄。將主機位址和遮罩與Router的子網相符，即可恢復所有用戶端的路由。"
+        },
+        "ko": {
+            "title": "사무실 이동 후 공유폴더 손실",
+            "story": "마케팅팀 사무실 이동 이후, PC-Finance는 File-Server의 공유 파일을 열 수 없고, PC-Dev는 File-Server에서 ping 응답을 받을 수 없습니다. 두 PC 모두 해당 서버에 도달할 수 없다고 보고합니다.",
+            "objective": "PC-Finance에서 File-Server로의 HTTP 접근과 PC-Dev에서 File-Server로의 ping 연결을 복구합니다.",
+            "hints": [
+                "두 요청 모두 Router-Edge에서 중단됩니다: PC-Finance와 PC-Dev에서 File-Server로의 패킷을 받지만 더 이상 전달할 수 없습니다.",
+                "Router-Edge에는 File-Server로의 경로가 없습니다. 서버의 설정된 주소가 더 이상 해당 포트 뒤 10.0.8.0 서브넷에 속하지 않기 때문입니다.",
+                "File-Server에서 포트 0의 주소를 10.0.8.1로, 마스크를 255.255.255.0으로 설정하여 Router-Edge의 10.0.8.0 네트워크에 다시 연결합니다."
+            ],
+            "explanation": "장치의 IP 주소는 연결된 Router 포트의 서브넷 범위 내에 있어야 합니다. 그렇지 않으면 Router는 해당 장치로의 경로를 찾을 수 없으며 모든 패킷이 전달 전에 제거됩니다. 호스트 주소와 마스크를 Router의 서브넷과 일치시키면 모든 클라이언트의 라우팅이 복구됩니다."
+        },
+        "es": {
+            "title": "Archivos compartidos perdidos tras la reubicación",
+            "story": "Tras la reubicación del área de marketing, PC-Finance no puede abrir archivos compartidos en File-Server, y PC-Dev ni siquiera recibe respuesta a los pings. Ambas máquinas reportan el servidor como inaccesible.",
+            "objective": "Restaurar el acceso HTTP de PC-Finance a File-Server y la conectividad ping de PC-Dev a File-Server.",
+            "hints": [
+                "Ambas solicitudes se detienen en Router-Edge: recibe los paquetes destinados a File-Server desde PC-Finance y PC-Dev pero no puede reenviarlos.",
+                "Router-Edge no tiene ruta a File-Server porque la dirección configurada del servidor ya no pertenece a la subred 10.0.8.0 detrás de ese puerto.",
+                "En File-Server, establece la dirección del puerto 0 a 10.0.8.1 con máscara 255.255.255.0 para que regrese a la red 10.0.8.0 de Router-Edge."
+            ],
+            "explanation": "La dirección IP de un dispositivo debe estar dentro de la subred del puerto del Router al que se conecta; de lo contrario, el Router no tendrá ruta hacia él y todos los paquetes se descartan antes de entregarse. Ajustar la dirección del host y máscara a la subred del Router restaura el enrutamiento para todos los clientes."
+        },
+        "pt-BR": {
+            "title": "Compartilhamentos perdidos após reorganização",
+            "story": "Após a reorganização do departamento de marketing, PC-Finance não consegue abrir arquivos compartilhados no File-Server e PC-Dev nem recebe respostas de ping dele. Ambos relatam o servidor como inacessível.",
+            "objective": "Restaurar o acesso HTTP de PC-Finance ao File-Server e a conectividade ping de PC-Dev ao File-Server.",
+            "hints": [
+                "Ambas as solicitações param em Router-Edge: ele recebe os pacotes destinados ao File-Server de PC-Finance e PC-Dev, mas não consegue reenviá-los.",
+                "Router-Edge não tem rota para o File-Server porque o endereço configurado do servidor não pertence mais à subnet 10.0.8.0 atrás dessa porta.",
+                "No File-Server, defina o endereço da porta 0 como 10.0.8.1 com máscara 255.255.255.0 para que volte à rede 10.0.8.0 do Router-Edge."
+            ],
+            "explanation": "O endereço IP de um dispositivo deve estar dentro da subnet da porta do Router à qual se conecta, ou o Router não terá rota para ele e todos os pacotes serão descartados antes da entrega. Ajustar o endereço do host e a máscara para a subnet do Router restaura o roteamento para todos os clientes."
+        },
+        "de": {
+            "title": "Freigegebene Dateien nach Umzug weg",
+            "story": "Nach der Umgestaltung des Marketing-Büros kann PC-Finance keine freigegebenen Dateien auf File-Server öffnen, und PC-Dev bekommt nicht einmal eine Ping-Antwort von ihm. Beide melden den Server als unerreichbar.",
+            "objective": "Stellen Sie HTTP-Zugriff von PC-Finance auf File-Server wieder her und Ping-Konnektivität von PC-Dev auf File-Server.",
+            "hints": [
+                "Beide Anfragen sterben bei Router-Edge ab: Er empfängt die Pakete für File-Server von PC-Finance und PC-Dev, kann sie aber nicht weiterleiten.",
+                "Router-Edge hat keine Route zu File-Server, weil die konfigurierte Adresse des Servers nicht mehr zum 10.0.8.0-Subnetz hinter diesem Port gehört.",
+                "Auf File-Server setzen Sie die Adresse von Port 0 auf 10.0.8.1 mit Maske 255.255.255.0, damit es wieder im 10.0.8.0-Netzwerk von Router-Edge sitzt."
+            ],
+            "explanation": "Die IP-Adresse eines Geräts muss innerhalb des Subnetzes des Router-Ports liegen, mit dem es verbunden ist, oder der Router hat keine Route dorthin und jedes Paket wird vor der Zustellung verworfen. Wenn die Host-Adresse und -Maske an das Router-Subnetz angepasst werden, wird die Weiterleitung für alle Clients wiederhergestellt."
+        },
+        "fr": {
+            "title": "Partages perdus après le remaniement",
+            "story": "Après le remaniement du bureau marketing, PC-Finance ne peut pas ouvrir les fichiers partagés sur File-Server, et PC-Dev n'obtient même pas de réponse ping de celui-ci. Les deux signalent le serveur comme inaccessible.",
+            "objective": "Rétablir l'accès HTTP de PC-Finance à File-Server et la connectivité ping de PC-Dev à File-Server.",
+            "hints": [
+                "Les deux demandes s'arrêtent à Router-Edge : il reçoit les paquets pour File-Server de PC-Finance et PC-Dev mais ne peut pas les transférer plus loin.",
+                "Router-Edge n'a pas de route vers File-Server car l'adresse configurée du serveur n'appartient plus au Réseau de destination 10.0.8.0 derrière ce port.",
+                "Sur File-Server, réglez l'adresse du port 0 sur 10.0.8.1 avec le Masque 255.255.255.0 pour qu'il se retrouve sur le Réseau de destination 10.0.8.0 de Router-Edge."
+            ],
+            "explanation": "L'adresse IP d'un Appareil doit se situer dans le Réseau de destination du port du Routeur auquel il se connecte, sinon le Routeur n'a pas de route vers lui et chaque paquet est rejeté avant la livraison. L'adaptation de l'adresse d'hôte et du Masque au Réseau de destination du Routeur rétablit l'acheminement pour tous les Clients."
+        },
+        "hi": {
+            "title": "डेस्क रीशफल के बाद खोए हुए शेयर",
+            "story": "मार्केटिंग फ्लोर के डेस्क रीशफल के बाद, PC-Finance File-Server पर साझा की गई फ़ाइलें नहीं खोल सकता, और PC-Dev को इससे ping प्रतिक्रिया भी नहीं मिलता। दोनों सर्वर को अप्राप्य के रूप में रिपोर्ट करते हैं।",
+            "objective": "PC-Finance से File-Server तक HTTP एक्सेस पुनः स्थापित करें और PC-Dev से File-Server तक ping कनेक्टिविटी।",
+            "hints": [
+                "दोनों अनुरोध Router-Edge पर समाप्त हो जाते हैं: यह PC-Finance और PC-Dev से File-Server के लिए पैकेट प्राप्त करता है लेकिन उन्हें आगे नहीं भेज सकता।",
+                "Router-Edge के पास File-Server का कोई रूट नहीं है क्योंकि सर्वर का कॉन्फ़िगर किया गया पता अब उस पोर्ट के पीछे 10.0.8.0 सबनेट से संबंधित नहीं है।",
+                "File-Server पर, पोर्ट 0 के पते को मास्क 255.255.255.0 के साथ 10.0.8.1 पर सेट करें ताकि यह Router-Edge के 10.0.8.0 नेटवर्क पर वापस आ जाए।"
+            ],
+            "explanation": "किसी डिवाइस का IP पता उस राउटर पोर्ट के सबनेट के भीतर होना चाहिए जिससे यह जुड़ा है, अन्यथा राउटर के पास इसका कोई रूट नहीं है और हर पैकेट डिलीवरी से पहले छोड़ दिया जाता है। होस्ट पते और मास्क को राउटर के सबनेट से मिलाने से सभी क्लाइंट्स के लिए रूटिंग पुनः स्थापित हो जाती है।"
+        },
+        "id": {
+            "title": "Berbagi Hilang Setelah Perubahan Meja",
+            "story": "Sejak perubahan meja lantai pemasaran, PC-Finance tidak dapat membuka file bersama di File-Server, dan PC-Dev bahkan tidak mendapat balasan ping darinya. Keduanya melaporkan server sebagai tidak dapat dijangkau.",
+            "objective": "Pulihkan akses HTTP dari PC-Finance ke File-Server dan konektivitas ping dari PC-Dev ke File-Server.",
+            "hints": [
+                "Kedua permintaan berhenti di Router-Edge: ia menerima paket untuk File-Server dari PC-Finance dan PC-Dev tetapi tidak dapat meneruskannya lebih jauh.",
+                "Router-Edge tidak memiliki rute ke File-Server karena alamat yang dikonfigurasi server tidak lagi termasuk dalam Jaringan tujuan 10.0.8.0 di belakang port tersebut.",
+                "Di File-Server, atur alamat port 0 ke 10.0.8.1 dengan Masker 255.255.255.0 sehingga berada kembali di Jaringan tujuan 10.0.8.0 Router-Edge."
+            ],
+            "explanation": "Alamat IP perangkat harus berada dalam Jaringan tujuan dari port Router yang terhubung dengannya, atau Router tidak memiliki rute ke sana dan setiap paket dijatuhkan sebelum pengiriman. Mencocokkan alamat host dan Masker dengan Jaringan tujuan Router memulihkan perutean untuk semua Klien."
+        },
+        "ru": {
+            "title": "Потеря общих папок после перестановки",
+            "story": "После перестановки столов в офисе маркетинга PC-Finance не может открыть общие файлы на File-Server, а PC-Dev даже не получает ответ ping от него. Обе системы сообщают о сервере как недоступном.",
+            "objective": "Восстановить доступ HTTP от PC-Finance к File-Server и Ping-связь от PC-Dev к File-Server.",
+            "hints": [
+                "Оба запроса прерываются на Router-Edge: он получает пакеты для File-Server от PC-Finance и PC-Dev, но не может их передать дальше.",
+                "У Router-Edge нет маршрута к File-Server, потому что настроенный адрес сервера больше не принадлежит Целевой сети 10.0.8.0 позади этого порта.",
+                "На File-Server установите адрес порта 0 на 10.0.8.1 с Маской 255.255.255.0, чтобы он вернулся в Целевую сеть 10.0.8.0 Router-Edge."
+            ],
+            "explanation": "IP-адрес устройства должен находиться внутри Целевой сети порта маршрутизатора, к которому оно подключено, иначе маршрутизатор не будет иметь маршрута к нему и каждый пакет будет отброшен перед доставкой. Согласование адреса хоста и Маски с Целевой сетью маршрутизатора восстанавливает маршрутизацию для всех клиентов."
+        },
+        "it": {
+            "title": "Condivisioni Perse Dopo il Riassetto Postazioni",
+            "story": "Dopo il riassetto postazioni del piano marketing, PC-Finance non riesce ad aprire i file condivisi su File-Server, e PC-Dev non riceve nemmeno risposte di ping. Entrambi segnalano il server come irraggiungibile.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Finance a File-Server e la connettività ping da PC-Dev a File-Server.",
+            "hints": [
+                "Entrambe le richieste si fermano a Router-Edge: riceve i pacchetti per File-Server da PC-Finance e PC-Dev ma non può inoltrarli oltre.",
+                "Router-Edge non ha un percorso verso File-Server perché l'indirizzo configurato del server non appartiene più alla subnet 10.0.8.0 dietro quella porta.",
+                "Su File-Server, imposta l'indirizzo della porta 0 a 10.0.8.1 con Maschera 255.255.255.0 così il server torna sulla rete 10.0.8.0 di Router-Edge."
+            ],
+            "explanation": "L'indirizzo IP di un dispositivo deve trovarsi all'interno della subnet della porta del router a cui si collega, altrimenti il router non ha un percorso verso di esso e ogni pacchetto viene scartato prima della consegna. Allineando l'indirizzo host e la maschera alla subnet del router si ripristina il routing per tutti i client."
+        },
+        "tr": {
+            "title": "Paylaşımlar Masaüstü Yeniden Düzenlemesinden Sonra Kayboldu",
+            "story": "Pazarlama katının masaüstü yeniden düzenlemesinden sonra PC-Finance, File-Server'daki paylaşılan dosyaları açamıyor ve PC-Dev ondan ping yanıtı bile alamıyor. Her ikisi de sunucuyu ulaşılamaz olarak bildiriyor.",
+            "objective": "PC-Finance'ten File-Server'a HTTP erişimini ve PC-Dev'den File-Server'a ping bağlantısını geri yükle.",
+            "hints": [
+                "Her iki istek Router-Edge'de durur: PC-Finance ve PC-Dev'den File-Server için paketleri alır ancak daha ileri iletemiyor.",
+                "Router-Edge'in File-Server'a giden bir yolu yoktur çünkü sunucunun yapılandırılmış adresi artık o portun arkasındaki 10.0.8.0 Hedef ağına ait değildir.",
+                "File-Server'da, port 0'ın adresini 10.0.8.1 olarak ve Maske'yi 255.255.255.0 olarak ayarla, böylece Router-Edge'in 10.0.8.0 Hedef ağına geri dönüyor."
+            ],
+            "explanation": "Bir cihazın IP adresi, bağlandığı router portunun Hedef ağının içinde yer almalıdır; aksi takdirde router'ın ona bir yolu yoktur ve her paket teslim edilmeden önce bırakılır. Ana bilgisayar adresini ve Maske'yi router'ın Hedef ağına eşitlemek tüm istemciler için yönlendirmeyi geri yükler."
+        },
+        "th": {
+            "title": "การแบ่งปันสูญหายหลังจากการจัดเรียงโต๊ะใหม่",
+            "story": "หลังจากการจัดเรียงโต๊ะใหม่ของชั้นการตลาด PC-Finance ไม่สามารถเปิดไฟล์ที่แชร์บน File-Server และ PC-Dev ไม่ได้รับการตอบสนอง ping เลย ทั้งคู่รายงานว่าเซิร์ฟเวอร์เข้าถึงไม่ได้",
+            "objective": "กู้คืนการเข้าถึง HTTP จาก PC-Finance ไปยัง File-Server และการเชื่อมต่อ ping จาก PC-Dev ไปยัง File-Server",
+            "hints": [
+                "คำขอทั้งสองติดอยู่ที่ Router-Edge: ได้รับแพ็กเก็ตสำหรับ File-Server จาก PC-Finance และ PC-Dev แต่ไม่สามารถส่งต่อได้อีก",
+                "Router-Edge ไม่มีเส้นทางไปยัง File-Server เพราะที่อยู่ที่กำหนดของเซิร์ฟเวอร์ไม่อยู่ในเครือข่ายปลายทาง 10.0.8.0 อีกต่อไป",
+                "บน File-Server ตั้งค่าที่อยู่พอร์ต 0 เป็น 10.0.8.1 ด้วยมาสก์ 255.255.255.0 เพื่อให้มันกลับไปยังเครือข่ายปลายทาง 10.0.8.0 ของ Router-Edge"
+            ],
+            "explanation": "ที่อยู่ IP ของอุปกรณ์ต้องอยู่ในเครือข่ายปลายทางของพอร์ต Router ที่เชื่อมต่ออยู่ มิฉะนั้น Router จะไม่มีเส้นทางไปยังอุปกรณ์นั้น และแพ็กเก็ตทุกตัวจะถูกทิ้งก่อนการส่งมอบ การจับคู่ที่อยู่โฮสต์และมาสก์กับเครือข่ายปลายทางของ Router จะกู้คืนการกำหนดเส้นทางสำหรับไคลเอนต์ทั้งหมด"
+        },
+        "vi": {
+            "title": "Chia sẻ Mất Tích Sau Sắp Xếp Lại Bàn Làm Việc",
+            "story": "Sau khi sắp xếp lại bàn làm việc của tầng tiếp thị, PC-Finance không thể mở các tệp được chia sẻ trên File-Server và PC-Dev thậm chí không nhận được phản hồi ping. Cả hai báo cáo rằng máy chủ không thể truy cập được.",
+            "objective": "Khôi phục truy cập HTTP từ PC-Finance đến File-Server và kết nối ping từ PC-Dev đến File-Server.",
+            "hints": [
+                "Cả hai yêu cầu đều dừng lại tại Router-Edge: nó nhận các gói tin cho File-Server từ PC-Finance và PC-Dev nhưng không thể chuyển tiếp chúng.",
+                "Router-Edge không có tuyến đường đến File-Server vì địa chỉ được cấu hình của máy chủ không còn thuộc mạng đích 10.0.8.0 phía sau cổng đó.",
+                "Trên File-Server, đặt địa chỉ cổng 0 thành 10.0.8.1 với Mặt nạ 255.255.255.0 để nó quay trở lại mạng đích 10.0.8.0 của Router-Edge."
+            ],
+            "explanation": "Địa chỉ IP của một thiết bị phải nằm trong mạng đích của cổng bộ định tuyến mà nó kết nối, nếu không bộ định tuyến sẽ không có tuyến đường đến nó và mọi gói tin sẽ bị loại bỏ trước khi gửi. Khớp địa chỉ máy chủ và mặt nạ với mạng đích của bộ định tuyến sẽ khôi phục định tuyến cho tất cả các máy khách."
+        }
+    }
+}
