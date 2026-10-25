@@ -1,0 +1,690 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-01",
+    "number": 42,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "cable_unplugged",
+        "vlan_mismatch"
+    ],
+    "concepts": [
+        "physical-link",
+        "vlan"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.30.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.30.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.7.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.7.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "Switch-Floor2",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 30
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.13.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.13.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.13.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Floor-Wide Outage to the File Server",
+            "story": "During the Sunday shift change, PC-Admin can't load the intranet file server's page, and PC-Support can't even get a ping reply from it. Both floors noticed around the same time.",
+            "objective": "Restore HTTP access from PC-Admin to Intranet-01 and ping access from PC-Support to Intranet-01.",
+            "hints": [
+                "PC-Admin's request never gets past Switch-Floor2 toward Router-Edge, and PC-Support's request also dies right at Switch-Floor2 before reaching Router-Edge.",
+                "The link between Switch-Floor2 and Router-Edge is unplugged, cutting off all routing; separately, PC-Support's switch port is assigned to VLAN 30 instead of VLAN 20, so it has no path to the router.",
+                "Plug in a cable between Switch-Floor2 and Router-Edge, and set Switch-Floor2 port 3 (PC-Support) to VLAN 20."
+            ],
+            "explanation": "A missing physical link between a switch and a router silently blocks every route behind that router, even if cables elsewhere look fine. Separately, a switch port assigned to the wrong VLAN isolates that device from its intended network entirely, since VLANs only forward within matching member ports."
+        },
+        "ja": {
+            "title": "ファイルサーバーへのフロア全体障害",
+            "story": "日曜のシフト交代中、PC-AdminはイントラネットのファイルサーバーのページをロードできずPC-SupportはそのサーバーからPingの応答すら受け取れません。両フロアでほぼ同時に気づきました。",
+            "objective": "PC-AdminからIntranet-01へのHTTPアクセスと、PC-SupportからIntranet-01へのPingアクセスを復旧させます。",
+            "hints": [
+                "PC-Adminのリクエストは、Switch-Floor2を越えてRouter-Edgeに向かうことができず、PC-Supportのリクエストも同じくSwitch-Floor2でRouter-Edgeに到達する前に途切れています。",
+                "Switch-Floor2とRouter-Edgeの間のリンクが抜けていて、すべてのルーティングが遮断されています。それとは別に、PC-SupportのスイッチポートがVLAN 20ではなくVLAN 30に割り当てられているため、ルーターへの経路がありません。",
+                "Switch-Floor2とRouter-Edgeの間にケーブルを接続し、Switch-Floor2のポート3(PC-Support)をVLAN 20に設定してください。"
+            ],
+            "explanation": "スイッチとルーターの間の物理リンクが抜けていると、他のケーブルに問題がなくても、そのルーターの先にあるすべてのルートが静かに遮断されてしまいます。それとは別に、スイッチポートが誤ったVLANに割り当てられていると、VLANは一致するメンバーポート間でしか転送しないため、その機器は本来のネットワークから完全に孤立してしまいます。"
+        },
+        "zh-CN": {
+            "title": "楼层范围内到文件服务器的中断",
+            "story": "在周日班次交接期间，PC-Admin 无法加载内网文件服务器的页面，PC-Support 甚至无法从中获得 ping 回复。两个楼层大约在同一时间注意到了这一点。",
+            "objective": "恢复从 PC-Admin 到 Intranet-01 的 HTTP 访问权限和从 PC-Support 到 Intranet-01 的 ping 访问权限。",
+            "hints": [
+                "PC-Admin 的请求从未从 Switch-Floor2 越过 Router-Edge，PC-Support 的请求也在 Switch-Floor2 处中断，无法到达 Router-Edge。",
+                "Switch-Floor2 和 Router-Edge 之间的链路未插接，切断了所有路由；另外，PC-Support 的交换机端口被分配到 VLAN 30 而不是 VLAN 20，所以它无法到达路由器。",
+                "在 Switch-Floor2 和 Router-Edge 之间插入一条网线，并将 Switch-Floor2 端口 3（PC-Support）设置为 VLAN 20。"
+            ],
+            "explanation": "交换机和路由器之间缺少物理链路会以无声方式阻断该路由器后面的每条路由，即使其他地方的网线看起来很好。另外，交换机端口分配给错误的 VLAN 会将该设备与其预期网络完全隔离，因为 VLAN 只在匹配的成员端口内转发。"
+        },
+        "zh-TW": {
+            "title": "樓層-寬範圍對檔案伺服器的中斷",
+            "story": "在周日班次交接期間，PC-Admin 無法載入內網檔案伺服器的頁面，PC-Support 甚至無法從中獲得 ping 回覆。兩個樓層大約在同一時間注意到了這一點。",
+            "objective": "恢復從 PC-Admin 到 Intranet-01 的 HTTP 存取權限和從 PC-Support 到 Intranet-01 的 ping 存取權限。",
+            "hints": [
+                "PC-Admin 的請求從未從 Switch-Floor2 越過 Router-Edge，PC-Support 的請求也在 Switch-Floor2 處中斷，無法到達 Router-Edge。",
+                "Switch-Floor2 和 Router-Edge 之間的連結未插接，切斷了所有路由；另外，PC-Support 的交換器連接埠被分配到 VLAN 30 而不是 VLAN 20，所以它無法到達路由器。",
+                "在 Switch-Floor2 和 Router-Edge 之間插入一條網線，並將 Switch-Floor2 連接埠 3（PC-Support）設定為 VLAN 20。"
+            ],
+            "explanation": "交換器和路由器之間缺少實體連結會無聲地阻斷該路由器後面的每條路由，即使其他地方的網線看起來很好。另外，交換器連接埠分配給錯誤的 VLAN 會將該設備與其預期網路完全隔離，因為 VLAN 只在相符的成員連接埠內轉送。"
+        },
+        "ko": {
+            "title": "층-전체 파일 서버 중단",
+            "story": "일요일 교대 시간 변경 중 PC-Admin은 인트라넷 파일 서버 페이지를 로드할 수 없으며, PC-Support는 이로부터 ping 회신도 받을 수 없습니다. 두 층 모두 거의 동시에 이를 알아챘습니다.",
+            "objective": "PC-Admin에서 Intranet-01로의 HTTP 접근 권한과 PC-Support에서 Intranet-01로의 ping 접근 권한을 복원합니다.",
+            "hints": [
+                "PC-Admin의 요청이 Switch-Floor2에서 Router-Edge로 진행되지 않으며, PC-Support의 요청도 Switch-Floor2에서 중단되어 Router-Edge에 도달하지 않습니다.",
+                "Switch-Floor2와 Router-Edge 사이의 링크가 분리되어 모든 라우팅이 차단되고, PC-Support의 스위치 포트가 VLAN 20 대신 VLAN 30으로 할당되어 라우터에 경로가 없습니다.",
+                "Switch-Floor2와 Router-Edge 사이에 케이블을 연결하고, Switch-Floor2 포트 3(PC-Support)을 기본 게이트웨이 20으로 설정합니다."
+            ],
+            "explanation": "스위치와 라우터 사이의 누락된 물리적 연결은 다른 곳의 케이블이 정상이어도 라우터 뒤의 모든 경로를 자동으로 차단합니다. 또한 스위치 포트가 잘못된 VLAN에 할당되면 VLAN이 일치하는 구성원 포트 내에서만 전송되므로 해당 장치가 의도된 네트워크에서 완전히 격리됩니다."
+        },
+        "es": {
+            "title": "Interrupción de piso completo al servidor de archivos",
+            "story": "Durante el cambio de turno del domingo, PC-Admin no puede cargar la página del servidor de archivos de intranet, y PC-Support ni siquiera puede obtener una respuesta de ping. Ambos pisos lo notaron alrededor del mismo tiempo.",
+            "objective": "Restaurar el acceso HTTP desde PC-Admin a Intranet-01 y el acceso ping desde PC-Support a Intranet-01.",
+            "hints": [
+                "La solicitud de PC-Admin nunca pasa Switch-Floor2 hacia Router-Edge, y la solicitud de PC-Support también se detiene en Switch-Floor2 antes de llegar a Router-Edge.",
+                "El enlace entre Switch-Floor2 y Router-Edge está desconectado, cortando todo enrutamiento; además, el puerto del switch de PC-Support está asignado a VLAN 30 en lugar de VLAN 20, por lo que no tiene ruta al router.",
+                "Conecte un cable entre Switch-Floor2 y Router-Edge, y establezca el puerto 3 de Switch-Floor2 (PC-Support) en VLAN 20."
+            ],
+            "explanation": "Un enlace físico faltante entre un switch y un router bloquea silenciosamente cada ruta detrás de ese router, incluso si los cables en otros lugares se ven bien. Además, un puerto del switch asignado a la VLAN incorrecta aísla completamente ese dispositivo de su red prevista, ya que las VLAN solo reenvían dentro de puertos miembros coincidentes."
+        },
+        "pt-BR": {
+            "title": "Indisponibilidade geral no servidor de arquivos",
+            "story": "Durante a troca de turno no domingo, PC-Admin não consegue carregar a página do servidor de arquivos de intranet, e PC-Support nem consegue receber uma resposta de ping. Ambos os pisos notaram isso aproximadamente na mesma época.",
+            "objective": "Restaurar o acesso HTTP de PC-Admin para Intranet-01 e o acesso ping de PC-Support para Intranet-01.",
+            "hints": [
+                "A solicitação de PC-Admin nunca passa por Switch-Floor2 em direção a Router-Edge, e a solicitação de PC-Support também morre em Switch-Floor2 antes de chegar a Router-Edge.",
+                "O link entre Switch-Floor2 e Router-Edge está desconectado, cortando todo o roteamento; além disso, a porta do switch de PC-Support está atribuída à VLAN 30 em vez de VLAN 20, portanto não tem caminho para o router.",
+                "Conecte um cabo entre Switch-Floor2 e Router-Edge e configure a porta 3 do Switch-Floor2 (PC-Support) para VLAN 20."
+            ],
+            "explanation": "Um link físico ausente entre um switch e um router bloqueia silenciosamente todas as rotas atrás desse router, mesmo que os cabos em outro lugar pareçam bem. Além disso, uma porta do switch atribuída à VLAN incorreta isola completamente esse dispositivo de sua rede pretendida, pois as VLANs só encaminham dentro de portas membro correspondentes."
+        },
+        "de": {
+            "title": "Flächenweiter Ausfall zum Datei-Server",
+            "story": "Während des Schichtwechsels am Sonntag kann PC-Admin die Intranet-Dateiserver-Seite nicht laden, und PC-Support erhält nicht einmal eine Ping-Antwort davon. Beide Etagen bemerkten das ungefähr zur gleichen Zeit.",
+            "objective": "Stellen Sie HTTP-Zugriff von PC-Admin zu Intranet-01 und Ping-Zugriff von PC-Support zu Intranet-01 wieder her.",
+            "hints": [
+                "Die Anfrage von PC-Admin kommt nie über Switch-Floor2 hinaus in Richtung Router-Edge, und auch die Anfrage von PC-Support erlischt direkt bei Switch-Floor2, bevor sie Router-Edge erreicht.",
+                "Die Verbindung zwischen Switch-Floor2 und Router-Edge ist nicht angesteckt, was alle Routings unterbricht; außerdem ist der Switch-Port von PC-Support auf VLAN 30 statt VLAN 20 eingestellt, daher hat er keine Verbindung zum Router.",
+                "Stecken Sie ein Kabel zwischen Switch-Floor2 und Router-Edge, und stellen Sie Switch-Floor2 Port 3 (PC-Support) auf VLAN 20."
+            ],
+            "explanation": "Eine fehlende physische Verbindung zwischen einem Switch und einem Router blockiert stumm jede Route hinter jenem Router, selbst wenn Kabel anderswo in Ordnung aussehen. Ferner isoliert ein Switch-Port, der auf die falsche VLAN eingestellt ist, dieses Gerät völlig von seinem beabsichtigten Netzwerk, da VLANs nur innerhalb von Ports mit übereinstimmenden Mitgliedschaften weiterleiten."
+        },
+        "fr": {
+            "title": "Panne à l'étage affectant le serveur de fichiers",
+            "story": "Pendant le changement d'équipe du dimanche, PC-Admin ne peut pas charger la page du serveur de fichiers intranet, et PC-Support n'obtient même pas de réponse ping de sa part. Les deux étages ont remarqué le problème à peu près au même moment.",
+            "objective": "Restaurer l'accès HTTP de PC-Admin à Intranet-01 et l'accès ping de PC-Support à Intranet-01.",
+            "hints": [
+                "La requête de PC-Admin ne passe jamais Switch-Floor2 vers Router-Edge, et la requête de PC-Support meurt aussi immédiatement à Switch-Floor2 avant d'atteindre Router-Edge.",
+                "Le lien entre Switch-Floor2 et Router-Edge est débranché, coupant tous les routages; de plus, le port du commutateur PC-Support est assigné au VLAN 30 au lieu du VLAN 20, il n'a donc pas de chemin vers le routeur.",
+                "Branchez un câble entre Switch-Floor2 et Router-Edge, et réglez le port 3 (PC-Support) de Switch-Floor2 au VLAN 20."
+            ],
+            "explanation": "Un lien physique manquant entre un commutateur et un routeur bloque silencieusement chaque route derrière ce routeur, même si les câbles ailleurs semblent corrects. De plus, un port de commutateur assigné au mauvais VLAN isole complètement ce périphérique de son réseau prévu, car les VLAN ne transfèrent que via les ports membres correspondants."
+        },
+        "hi": {
+            "title": "पूरी मंजिल पर सर्वर में रुकावट",
+            "story": "रविवार की पारी बदलते समय, PC-Admin इंट्रानेट फाइल सर्वर का पेज नहीं खोल सकता, और PC-Support को इससे पिंग जवाब भी नहीं मिलता। दोनों मंजिलों को लगभग एक ही समय पर समस्या दिखी।",
+            "objective": "PC-Admin से Intranet-01 तक HTTP एक्सेस और PC-Support से Intranet-01 तक पिंग एक्सेस बहाल करें।",
+            "hints": [
+                "PC-Admin का अनुरोध Switch-Floor2 को पार करके Router-Edge की ओर कभी नहीं जाता, और PC-Support का अनुरोध भी Switch-Floor2 पर ही रुक जाता है Router-Edge तक पहुँचने से पहले।",
+                "Switch-Floor2 और Router-Edge के बीच की लिंक अनप्लग है, सभी रूटिंग बंद है; अलग से, PC-Support की स्विच पोर्ट VLAN 20 की जगह VLAN 30 पर असाइन है, इसलिए राउटर तक उसका कोई रास्ता नहीं है।",
+                "Switch-Floor2 और Router-Edge के बीच केबल लगाएँ, और Switch-Floor2 पोर्ट 3 (PC-Support) को VLAN 20 पर सेट करें।"
+            ],
+            "explanation": "स्विच और राउटर के बीच एक लापता भौतिक लिंक उस राउटर के पीछे के सभी रास्तों को चुप-चाप ब्लॉक करता है, भले ही अन्य जगहों पर केबलें ठीक दिखें। अलग से, गलत VLAN पर असाइन की गई स्विच पोर्ट उस डिवाइस को इसके इच्छित नेटवर्क से पूरी तरह अलग करती है, क्योंकि VLAN केवल मेल खाने वाली सदस्य पोर्ट्स के भीतर ही आगे भेजते हैं।"
+        },
+        "id": {
+            "title": "Gangguan di Seluruh Lantai ke Server File",
+            "story": "Selama pergantian shift hari Minggu, PC-Admin tidak dapat memuat halaman server file intranet, dan PC-Support bahkan tidak mendapat balasan ping darinya. Kedua lantai menyadari masalah sekitar waktu yang sama.",
+            "objective": "Pulihkan akses HTTP dari PC-Admin ke Intranet-01 dan akses ping dari PC-Support ke Intranet-01.",
+            "hints": [
+                "Permintaan PC-Admin tidak pernah melewati Switch-Floor2 menuju Router-Edge, dan permintaan PC-Support juga mati di Switch-Floor2 sebelum mencapai Router-Edge.",
+                "Tautan antara Switch-Floor2 dan Router-Edge tidak tersambung, memutus semua routing; terpisah, port switch PC-Support ditetapkan ke VLAN 30 bukan VLAN 20, sehingga tidak memiliki jalur ke router.",
+                "Colokkan kabel antara Switch-Floor2 dan Router-Edge, dan atur Switch-Floor2 port 3 (PC-Support) ke VLAN 20."
+            ],
+            "explanation": "Tautan fisik yang hilang antara switch dan router secara diam-diam memblokir setiap rute di belakang router itu, meskipun kabel di tempat lain terlihat baik-baik saja. Secara terpisah, port switch yang ditetapkan ke VLAN yang salah mengisolasi perangkat itu sepenuhnya dari jaringan yang dimaksud, karena VLAN hanya meneruskan dalam port anggota yang cocok."
+        },
+        "ru": {
+            "title": "Сбой по всему этажу до файлового сервера",
+            "story": "Во время смены во время воскресенья PC-Admin не может загрузить страницу файлового сервера интранета, а PC-Support даже не получает ответ на ping. Обе стороны заметили проблему примерно в одно время.",
+            "objective": "Восстановите доступ HTTP с PC-Admin на Intranet-01 и доступ ping с PC-Support на Intranet-01.",
+            "hints": [
+                "Запрос от PC-Admin никогда не проходит через Switch-Floor2 к Router-Edge, и запрос от PC-Support также прерывается на Switch-Floor2 перед достижением Router-Edge.",
+                "Кабель между Switch-Floor2 и Router-Edge не подключен, что блокирует весь маршрутизацию; кроме того, порт коммутатора PC-Support назначен на VLAN 30 вместо VLAN 20, поэтому у него нет пути к маршрутизатору.",
+                "Подключите кабель между Switch-Floor2 и Router-Edge и установите порт 3 (PC-Support) Switch-Floor2 на VLAN 20."
+            ],
+            "explanation": "Отсутствующая физическая связь между коммутатором и маршрутизатором безмолвно блокирует каждый маршрут за этим маршрутизатором, даже если кабели в других местах выглядят в порядке. Кроме того, порт коммутатора, назначенный неправильной VLAN, полностью изолирует это устройство от предполагаемой сети, так как VLAN передают только через согласованные порты членства."
+        },
+        "it": {
+            "title": "Interruzione su tutta la piana verso il file server",
+            "story": "Durante il cambio turno domenicale, PC-Admin non riesce a caricare la pagina del file server intranet, e PC-Support non riceve neppure risposta a un ping. Entrambe le piani hanno notato il problema all'incirca nello stesso momento.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Admin a Intranet-01 e l'accesso ping da PC-Support a Intranet-01.",
+            "hints": [
+                "La richiesta di PC-Admin non oltrepassa Switch-Floor2 verso Router-Edge, e la richiesta di PC-Support muore anch'essa subito a Switch-Floor2 prima di raggiungere Router-Edge.",
+                "Il collegamento tra Switch-Floor2 e Router-Edge è scollegato, interrompendo tutto il routing; inoltre, la porta dello switch di PC-Support è assegnata a VLAN 30 anziché a VLAN 20, quindi non ha alcun percorso verso il router.",
+                "Collega un cavo tra Switch-Floor2 e Router-Edge, e imposta la porta 3 di Switch-Floor2 (PC-Support) su VLAN 20."
+            ],
+            "explanation": "Un collegamento fisico mancante tra uno switch e un router blocca silenziosamente ogni rotta dietro quel router, anche se i cavi altrove sembrano intatti. Separatamente, una porta dello switch assegnata a una VLAN errata isola completamente quel dispositivo dalla sua rete prevista, poiché le VLAN inoltrano solo all'interno delle porte membro corrispondenti."
+        },
+        "tr": {
+            "title": "Kat Çapında Dosya Sunucusu Kesintisi",
+            "story": "Pazar vardiya değişikliği sırasında, PC-Admin intranet dosya sunucusunun sayfasını yükleyemiyor ve PC-Support ondan ping yanıtı bile alamıyor. Her iki kat da aynı zamanda sorunu fark etti.",
+            "objective": "PC-Admin'den Intranet-01'e HTTP erişimini ve PC-Support'tan Intranet-01'e ping erişimini geri yükleyin.",
+            "hints": [
+                "PC-Admin'in isteği Switch-Floor2'yi geçememiş ve Router-Edge'e ulaşamıyor; PC-Support'un isteği de Switch-Floor2'de duruyor ve Router-Edge'e ulaşamıyor.",
+                "Switch-Floor2 ile Router-Edge arasındaki bağlantı kullanılmıyor ve tüm yönlendirmeyi kesiyor; ayrıca PC-Support'un switch portu VLAN 20 yerine VLAN 30'a atanmış olduğundan, yönlendiriciye gidecek bir yolu yok.",
+                "Switch-Floor2 ile Router-Edge arasına kabel takın ve Switch-Floor2 port 3'ü (PC-Support) VLAN 20'ye ayarlayın."
+            ],
+            "explanation": "Bir switch ile router arasındaki eksik fiziksel bağlantı, başka yerlerdeki kablolar iyi görünse bile o router'ın arkasındaki her yolu sessizce engeller. Ayrı olarak, hatalı VLAN'a atanmış bir switch portu, VLAN'lar yalnızca eşleşen üye portları içinde ileteceğinden, o cihazı hedeflenen ağından tamamen yalıtır."
+        },
+        "th": {
+            "title": "การหยุดให้บริการทั้งชั้นกับเซิร์ฟเวอร์ไฟล์",
+            "story": "ในช่วงเปลี่ยนกะวันอาทิตย์ PC-Admin ไม่สามารถเปิดหน้าเซิร์ฟเวอร์ไฟล์อินทราเน็ต และ PC-Support ไม่ได้รับการตอบสนอง ping เลย ทั้งสองชั้นสังเกตเห็นปัญหาในเวลาเดียวกัน",
+            "objective": "กู้คืนการเข้าถึง HTTP จาก PC-Admin ไปยัง Intranet-01 และการเข้าถึง ping จาก PC-Support ไปยัง Intranet-01",
+            "hints": [
+                "คำขอของ PC-Admin ไม่สามารถผ่าน Switch-Floor2 ไปยัง Router-Edge ได้ และคำขอของ PC-Support ก็หยุดที่ Switch-Floor2 ก่อนถึง Router-Edge",
+                "การเชื่อมต่อระหว่าง Switch-Floor2 และ Router-Edge ถูกดึงออก ปิดการใช้งานการกำหนดเส้นทางทั้งหมด นอกจากนี้ พอร์ต switch ของ PC-Support ถูกกำหนดให้กับ VLAN 30 แทน VLAN 20 จึงไม่มีเส้นทางไปยังเราเตอร์",
+                "เสียบสายเคเบิลระหว่าง Switch-Floor2 และ Router-Edge และตั้งค่าพอร์ต 3 ของ Switch-Floor2 (PC-Support) เป็น VLAN 20"
+            ],
+            "explanation": "การเชื่อมต่อทางกายภาพที่หายไประหว่าง L2 Switch และ Router จะปิดกั้นเส้นทางทั้งหมดที่อยู่เบื้องหลังเราเตอร์นั้นอย่างเงียบ แม้ว่าสายเคเบิลในที่อื่นดูเหมือนจะสมบูรณ์ นอกจากนี้ พอร์ต L2 Switch ที่กำหนดให้กับ VLAN ที่ไม่ถูกต้องจะแยกอุปกรณ์นั้นออกจากเครือข่ายที่ตั้งใจไว้ทั้งหมด เนื่องจาก VLAN จะส่งต่อเฉพาะภายในพอร์ตสมาชิกที่ตรงกัน"
+        },
+        "vi": {
+            "title": "Mất kết nối trên toàn tầng đến máy chủ tập tin",
+            "story": "Trong ca trực Chủ nhật, PC-Admin không thể tải trang máy chủ tập tin intranet và PC-Support thậm chí không nhận được phản hồi ping. Cả hai tầng phát hiện vấn đề vào cùng một thời gian.",
+            "objective": "Khôi phục quyền truy cập HTTP từ PC-Admin đến Intranet-01 và quyền truy cập ping từ PC-Support đến Intranet-01.",
+            "hints": [
+                "Yêu cầu của PC-Admin không vượt qua Switch-Floor2 hướng tới Router-Edge, và yêu cầu của PC-Support cũng bị dừng ngay tại Switch-Floor2 trước khi đến Router-Edge.",
+                "Liên kết giữa Switch-Floor2 và Router-Edge bị ngắt kết nối, cắt đứt tất cả định tuyến; ngoài ra, cổng switch của PC-Support được gán cho VLAN 30 thay vì VLAN 20 nên không có đường dẫn đến bộ định tuyến.",
+                "Kết nối cáp giữa Switch-Floor2 và Router-Edge, và đặt cổng 3 của Switch-Floor2 (PC-Support) thành VLAN 20."
+            ],
+            "explanation": "Liên kết vật lý bị thiếu giữa một L2 Switch và một Router sẽ im lặng chặn mọi tuyến đường phía sau bộ định tuyến đó, ngay cả khi các cáp ở nơi khác có vẻ ổn. Tách biệt, một cổng L2 Switch được gán cho VLAN sai sẽ hoàn toàn cô lập thiết bị đó khỏi mạng dự định của nó, vì VLAN chỉ chuyển tiếp trong các cổng thành viên phù hợp."
+        }
+    }
+}
