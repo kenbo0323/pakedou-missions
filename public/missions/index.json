@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "latest": "2026-11-01",
+    "latest": "2026-11-02",
     "missions": [
         {
             "id": "2026-09-21",
@@ -294,6 +294,13 @@
             "number": 42,
             "difficulty": 5,
             "requiresProDevices": true,
+            "track": "basic"
+        },
+        {
+            "id": "2026-11-02",
+            "number": 43,
+            "difficulty": 2,
+            "requiresProDevices": false,
             "track": "basic"
         }
     ]
