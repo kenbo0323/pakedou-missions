@@ -1,0 +1,588 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-03",
+    "number": 44,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "lb_farm",
+    "faultIds": [
+        "lb_no_backend"
+    ],
+    "concepts": [
+        "load-balancer",
+        "physical-link"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.26.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.11.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-lb1": {
+                "id": "dev-lb1",
+                "type": "LOAD_BALANCER",
+                "name": "LB-Web",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-lb1-p0",
+                        "index": 0,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.11.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p1",
+                        "index": 1,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p2",
+                        "index": 2,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p3",
+                        "index": 3,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p4",
+                        "index": 4,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p5",
+                        "index": 5,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p6",
+                        "index": 6,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p7",
+                        "index": 7,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-01",
+                "x": 80.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.11.1",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.11.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server2": {
+                "id": "dev-server2",
+                "type": "SERVER",
+                "name": "Web-02",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server2-p0",
+                        "index": 0,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.11.2",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p1",
+                        "index": 1,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p2",
+                        "index": 2,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p3",
+                        "index": 3,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.11.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server3": {
+                "id": "dev-server3",
+                "type": "SERVER",
+                "name": "Web-03",
+                "x": 320.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server3-p0",
+                        "index": 0,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.11.3",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p1",
+                        "index": 1,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p2",
+                        "index": 2,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p3",
+                        "index": 3,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.11.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-lb1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-lb1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-lb1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 3
+    },
+    "text": {
+        "en": {
+            "title": "No Backends to Serve",
+            "story": "Staff at the lab report the company website never loads from PC-Lab. The front desk says this started this morning and nothing on the page ever comes back.",
+            "objective": "Restore web access so PC-Lab can successfully load the site hosted behind LB-Web.",
+            "hints": [
+                "The request from PC-Lab reaches LB-Web but goes no further.",
+                "LB-Web has no working connection to any of Web-01, Web-02, or Web-03, so it has no backend to hand the request to.",
+                "Connect cables between LB-Web and each of Web-01, Web-02, and Web-03 to restore the backend links."
+            ],
+            "explanation": "A load balancer can only serve traffic if it has live links to its backend servers. With all three backend connections missing, LB-Web received the request but had nowhere to send it. Reconnecting the cables lets it distribute traffic again."
+        },
+        "ja": {
+            "title": "転送先サーバーが見つからない",
+            "story": "ラボのスタッフから、PC-Labから会社のウェブサイトが全く表示されないと報告がありました。受付担当によると今朝から発生していて、ページが一向に表示されないとのことです。",
+            "objective": "PC-LabからLB-Webの先にあるサイトを正常に表示できるよう、ウェブアクセスを復旧させます。",
+            "hints": [
+                "PC-LabからのリクエストはLB-Webまでは届いていますが、その先に進んでいません。",
+                "LB-WebはWeb-01、Web-02、Web-03のいずれとも有効な接続がなく、リクエストを渡せるサーバーがありません。",
+                "LB-WebとWeb-01、Web-02、Web-03のそれぞれの間にケーブルを接続し、バックエンドへのリンクを復旧させてください。"
+            ],
+            "explanation": "ロードバランサーは、バックエンドサーバーへの有効なリンクがある場合にのみトラフィックを処理できます。3つのバックエンド接続がすべて失われていたため、LB-WebはリクエストをWeb-01、Web-02、Web-03へ送ることができませんでした。ケーブルを再接続することで、再びトラフィックを振り分けられるようになります。"
+        },
+        "zh-CN": {
+            "title": "无后端可用",
+            "story": "实验室的员工报告说公司网站无法从 PC-Lab 加载。前台说这从今早开始，页面上的任何内容都没有返回。",
+            "objective": "恢复网络访问，使 PC-Lab 能够成功加载 LB-Web 后面托管的网站。",
+            "hints": [
+                "来自 PC-Lab 的请求到达 LB-Web 但没有进一步转发。",
+                "LB-Web 与 Web-01、Web-02 或 Web-03 都没有正常连接，因此没有后端来处理请求。",
+                "连接 LB-Web 与 Web-01、Web-02 和 Web-03 之间的网线，以恢复后端链接。"
+            ],
+            "explanation": "Load Balancer 只有在与后端服务器有正常链接时才能转发流量。由于三个后端连接全部中断，LB-Web 收到了请求但无处转发。重新连接网线使其能够再次分发流量。"
+        },
+        "zh-TW": {
+            "title": "無後端可用",
+            "story": "實驗室的員工報告說公司網站無法從 PC-Lab 加載。前台說這從今早開始，頁面上的任何內容都沒有返回。",
+            "objective": "恢復網路存取，使 PC-Lab 能夠成功加載 LB-Web 後面託管的網站。",
+            "hints": [
+                "來自 PC-Lab 的請求到達 LB-Web 但沒有進一步轉發。",
+                "LB-Web 與 Web-01、Web-02 或 Web-03 都沒有正常連線，因此沒有後端來處理請求。",
+                "連接 LB-Web 與 Web-01、Web-02 和 Web-03 之間的網線，以恢復後端連結。"
+            ],
+            "explanation": "Load Balancer 只有在與後端伺服器有正常連結時才能轉發流量。由於三個後端連線全部中斷，LB-Web 收到了請求但無處轉發。重新連接網線使其能夠再次分發流量。"
+        },
+        "ko": {
+            "title": "백엔드 서버 없음",
+            "story": "랩의 직원들이 회사 웹사이트가 PC-Lab에서 로드되지 않는다고 보고했습니다. 프론트 데스크에서는 오늘 아침부터 시작됐으며 페이지에서 아무것도 반환되지 않는다고 합니다.",
+            "objective": "LB-Web 뒤에서 호스팅되는 사이트를 PC-Lab이 성공적으로 로드할 수 있도록 웹 접근을 복구합니다.",
+            "hints": [
+                "PC-Lab의 요청이 LB-Web에 도달했지만 더 이상 진행되지 않습니다.",
+                "LB-Web이 Web-01, Web-02 또는 Web-03과 작동 중인 연결이 없어서 요청을 전달할 백엔드가 없습니다.",
+                "LB-Web과 각각 Web-01, Web-02, Web-03 사이의 케이블을 연결하여 백엔드 링크를 복구합니다."
+            ],
+            "explanation": "Load Balancer는 백엔드 서버에 대한 정상 링크가 있을 때만 트래픽을 전달할 수 있습니다. 세 개의 백엔드 연결이 모두 끊어졌으므로 LB-Web은 요청을 받았지만 전달할 곳이 없었습니다. 케이블을 다시 연결하면 트래픽을 다시 분배할 수 있습니다."
+        },
+        "es": {
+            "title": "Sin servidores backend",
+            "story": "El personal del laboratorio informa que el sitio web de la empresa no carga desde PC-Lab. La recepción dice que esto comenzó esta mañana y nada en la página regresa.",
+            "objective": "Restaurar el acceso web para que PC-Lab pueda cargar exitosamente el sitio alojado detrás de LB-Web.",
+            "hints": [
+                "La solicitud de PC-Lab llega a LB-Web pero no avanza.",
+                "LB-Web no tiene conexión funcional con ninguno de Web-01, Web-02 o Web-03, por lo que no tiene backend para entregar la solicitud.",
+                "Conecte cables entre LB-Web y cada uno de Web-01, Web-02 y Web-03 para restaurar los vínculos de backend."
+            ],
+            "explanation": "Un Load Balancer solo puede servir tráfico si tiene conexiones activas a sus servidores backend. Con los tres enlaces backend faltantes, LB-Web recibió la solicitud pero no tenía adónde enviarla. Reconectar los cables le permite distribuir el tráfico nuevamente."
+        },
+        "pt-BR": {
+            "title": "Sem servidores backend",
+            "story": "A equipe do laboratório relata que o site da empresa não carrega a partir de PC-Lab. A recepção informa que isto começou esta manhã e nada na página retorna.",
+            "objective": "Restaurar o acesso à web para que PC-Lab possa carregar com sucesso o site hospedado atrás de LB-Web.",
+            "hints": [
+                "A requisição de PC-Lab chega a LB-Web mas não vai além.",
+                "LB-Web não tem conexão funcional com nenhum de Web-01, Web-02 ou Web-03, portanto não tem backend para enviar a requisição.",
+                "Conecte cabos entre LB-Web e cada um de Web-01, Web-02 e Web-03 para restaurar os enlaces backend."
+            ],
+            "explanation": "Um Load Balancer só pode servir tráfego se tiver links ativos com seus servidores backend. Com todas as três conexões backend ausentes, LB-Web recebeu a requisição mas não tinha para onde enviá-la. Reconectar os cabos permite que ele distribua o tráfego novamente."
+        },
+        "de": {
+            "title": "Keine Backends verfügbar",
+            "story": "Mitarbeiter im Labor berichten, dass die Firmenwebseite nie von PC-Lab aus lädt. Der Empfang sagt, dass das heute Morgen begonnen hat und nichts von der Seite kommt jemals zurück.",
+            "objective": "Stellen Sie den Webzugriff wieder her, damit PC-Lab die Website hinter LB-Web erfolgreich laden kann.",
+            "hints": [
+                "Die Anfrage von PC-Lab erreicht LB-Web, geht aber nicht weiter.",
+                "LB-Web hat keine funktionierende Verbindung zu Web-01, Web-02 oder Web-03, hat also kein Backend für die Anfrage.",
+                "Verbinden Sie Kabel zwischen LB-Web und jedem von Web-01, Web-02 und Web-03, um die Backend-Links wiederherzustellen."
+            ],
+            "explanation": "Ein Load Balancer kann nur Datenverkehr übertragen, wenn er aktive Verbindungen zu seinen Backend-Servern hat. Ohne alle drei Backend-Verbindungen erhielt LB-Web die Anfrage, konnte sie aber nirgendwo hinschicken. Das erneute Anschließen der Kabel ermöglicht es dem Load Balancer, Datenverkehr erneut zu verteilen."
+        },
+        "fr": {
+            "title": "Pas de serveurs de destination",
+            "story": "Le personnel du labo signale que le site web d'entreprise ne charge jamais depuis PC-Lab. L'accueil dit que cela a commencé ce matin et que rien de la page ne revient jamais.",
+            "objective": "Restaurez l'accès web pour que PC-Lab puisse charger avec succès le site hébergé derrière LB-Web.",
+            "hints": [
+                "La requête en provenance de PC-Lab atteint LB-Web mais n'avance pas plus loin.",
+                "LB-Web n'a aucune connexion active à Web-01, Web-02 ou Web-03, il n'a donc pas de serveur de destination pour traiter la requête.",
+                "Connectez les câbles entre LB-Web et chacun des Web-01, Web-02 et Web-03 pour restaurer les liaisons de destination."
+            ],
+            "explanation": "Un Load Balancer ne peut servir le trafic que s'il dispose de connexions actives à ses serveurs de destination. Sans les trois connexions de destination, LB-Web a reçu la requête mais n'avait nulle part où l'envoyer. La reconnexion des câbles lui permet de redistribuer le trafic."
+        },
+        "hi": {
+            "title": "कोई बैकएंड सर्वर नहीं",
+            "story": "लैब के कर्मचारियों की रिपोर्ट है कि कंपनी की वेबसाइट PC-Lab से कभी लोड नहीं होती। फ्रंट डेस्क कहता है कि यह आज सुबह शुरू हुआ और पेज से कुछ भी वापस नहीं आता।",
+            "objective": "वेब एक्सेस को पुनः स्थापित करें ताकि PC-Lab LB-Web के पीछे होस्ट की गई साइट को सफलतापूर्वक लोड कर सकें।",
+            "hints": [
+                "PC-Lab से अनुरोध LB-Web तक पहुंचता है लेकिन आगे नहीं बढ़ता।",
+                "LB-Web का Web-01, Web-02 या Web-03 में से किसी से भी कोई कार्यशील कनेक्शन नहीं है, इसलिए अनुरोध भेजने के लिए कोई बैकएंड नहीं है।",
+                "LB-Web और Web-01, Web-02 और Web-03 में से प्रत्येक के बीच केबल कनेक्ट करें ताकि बैकएंड लिंक पुनः स्थापित हो सकें।"
+            ],
+            "explanation": "लोड बैलेंसर केवल तभी ट्रैफिक प्रदान कर सकता है जब उसके पास अपने बैकएंड सर्वर के लिए सक्रिय कनेक्शन हो। सभी तीन बैकएंड कनेक्शन गायब होने से, LB-Web को अनुरोध मिला लेकिन इसे भेजने के लिए कहीं नहीं था। केबल को फिर से कनेक्ट करने से यह ट्रैफिक वितरित करना फिर से शुरू कर सकता है।"
+        },
+        "id": {
+            "title": "Tidak Ada Server Backend",
+            "story": "Staf di lab melaporkan bahwa situs web perusahaan tidak pernah dimuat dari PC-Lab. Resepsionis mengatakan ini dimulai pagi ini dan tidak ada respons dari halaman.",
+            "objective": "Pulihkan akses web agar PC-Lab dapat berhasil memuat situs yang dihost di belakang LB-Web.",
+            "hints": [
+                "Permintaan dari PC-Lab mencapai LB-Web tetapi tidak melanjutkan lebih jauh.",
+                "LB-Web tidak memiliki koneksi yang berfungsi ke Web-01, Web-02, atau Web-03, sehingga tidak memiliki server backend untuk mengirimkan permintaan.",
+                "Hubungkan kabel antara LB-Web dan masing-masing Web-01, Web-02, dan Web-03 untuk memulihkan tautan backend."
+            ],
+            "explanation": "Load Balancer hanya dapat melayani lalu lintas jika memiliki koneksi aktif ke server backend-nya. Tanpa ketiga koneksi backend, LB-Web menerima permintaan tetapi tidak ada tempat untuk mengirimnya. Menghubungkan kembali kabel memungkinkan distribusi lalu lintas kembali bekerja."
+        },
+        "ru": {
+            "title": "Нет рабочих серверов",
+            "story": "Сотрудники лаборатории сообщают, что сайт компании не загружается с PC-Lab. Стойка приема говорит, что это началось сегодня утром и ничего на странице не возвращается.",
+            "objective": "Восстановите веб-доступ, чтобы PC-Lab мог успешно загружать сайт, расположенный за LB-Web.",
+            "hints": [
+                "Запрос от PC-Lab достигает LB-Web, но дальше не проходит.",
+                "LB-Web не имеет рабочего подключения ни к Web-01, ни к Web-02, ни к Web-03, поэтому нет сервера для обработки запроса.",
+                "Подключите кабели между LB-Web и каждым из Web-01, Web-02 и Web-03, чтобы восстановить соединения с серверами."
+            ],
+            "explanation": "Балансировщик нагрузки может обслуживать трафик только если у него есть активные соединения с его серверами. Без всех трех соединений LB-Web получил запрос, но не мог его никуда отправить. Переподключение кабелей позволяет снова распределять трафик."
+        },
+        "it": {
+            "title": "Nessun Backend Disponibile",
+            "story": "Lo staff del laboratorio segnala che il sito aziendale non si carica mai da PC-Lab. La reception dice che il problema è iniziato questa mattina e nessuna risposta torna dalla pagina.",
+            "objective": "Ripristinare l'accesso web affinché PC-Lab riesca a caricare il sito ospitato dietro a LB-Web.",
+            "hints": [
+                "La richiesta da PC-Lab raggiunge LB-Web ma non va oltre.",
+                "LB-Web non ha connessione attiva con nessuno tra Web-01, Web-02 e Web-03, quindi non ha un backend a cui passare la richiesta.",
+                "Collega i cavi tra LB-Web e ciascuno di Web-01, Web-02 e Web-03 per ripristinare i link verso i backend."
+            ],
+            "explanation": "Un Load Balancer può servire il traffico solo se ha link attivi verso i suoi server backend. Con tutte e tre le connessioni backend mancanti, LB-Web ha ricevuto la richiesta ma non aveva dove inviarla. Ricollegando i cavi, potrà distribuire nuovamente il traffico."
+        },
+        "tr": {
+            "title": "Arka Uç Sunucu Yok",
+            "story": "Laboratorumdaki personel, şirket web sitesinin PC-Lab'den hiçbir zaman yüklenmediğini bildiriyor. Resepsiyonist bunun bu sabah başladığını ve sayfadan hiçbir yanıt gelmediğini söylüyor.",
+            "objective": "PC-Lab'ın LB-Web'in arkasında barındırılan siteyi başarıyla yükleyebilmesi için web erişimini geri yükleyin.",
+            "hints": [
+                "PC-Lab'dan gelen istek LB-Web'e ulaşıyor ama daha ötesine gitmiyor.",
+                "LB-Web'in Web-01, Web-02 veya Web-03'ten herhangi birine çalışan bir bağlantısı yok, bu nedenle isteği yönlendireceği bir arka uç yok.",
+                "LB-Web ile Web-01, Web-02 ve Web-03'ün her biri arasında kablolar bağlayarak arka uç bağlantılarını geri yükleyin."
+            ],
+            "explanation": "Bir Load Balancer, arka uç sunucularına canlı bağlantıları olduğunda trafiği sunabilir. Üç arka uç bağlantısının da eksik olmasıyla, LB-Web isteği aldı ancak gönderecek yeri yoktu. Kabloları yeniden bağlamak trafiği dağıtmasına izin verir."
+        },
+        "th": {
+            "title": "ไม่มี Backend ให้บริการ",
+            "story": "พนักงานในห้องแลปรายงานว่าเว็บไซต์ของบริษัทไม่เคยโหลดจาก PC-Lab เจ้าหน้าที่ต้อนรับกล่าวว่าปัญหานี้เริ่มต้นตั้งแต่เช้านี้ และไม่มีการตอบสนองใดๆ กลับมาจากหน้าเว็บ",
+            "objective": "คืนการเข้าถึงเว็บเพื่อให้ PC-Lab สามารถโหลดไซต์ที่โฮสต์อยู่เบื้องหลัง LB-Web ได้สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Lab ไปถึง LB-Web แต่ไม่ไปต่อ",
+                "LB-Web ไม่มีการเชื่อมต่อที่ใช้งานได้กับ Web-01, Web-02 หรือ Web-03 ใดๆ เลย จึงไม่มี backend ที่จะส่งคำขอไป",
+                "เชื่อมต่อสายเคเบิลระหว่าง LB-Web และ Web-01, Web-02 และ Web-03 เพื่อคืนการเชื่อมต่อ backend"
+            ],
+            "explanation": "Load Balancer สามารถให้บริการการไหลของข้อมูลได้เฉพาะเมื่อมีการเชื่อมต่อแบบสดกับเซิร์ฟเวอร์ backend เมื่อการเชื่อมต่อ backend ทั้งสามหายไป LB-Web ได้รับคำขอแต่ไม่มีที่ไปส่ง การเชื่อมต่อสายเคเบิลใหม่ช่วยให้สามารถแจกจ่ายการไหลของข้อมูลอีกครั้ง"
+        },
+        "vi": {
+            "title": "Không Có Backend Để Phục Vụ",
+            "story": "Nhân viên phòng Lab báo cáo rằng trang web công ty không bao giờ tải từ PC-Lab. Lễ tân nói rằng vấn đề này bắt đầu từ sáng nay và không có phản hồi nào từ trang này.",
+            "objective": "Khôi phục quyền truy cập web để PC-Lab có thể tải thành công trang web được lưu trữ phía sau LB-Web.",
+            "hints": [
+                "Yêu cầu từ PC-Lab đến LB-Web nhưng không đi tiếp.",
+                "LB-Web không có kết nối hoạt động với bất kỳ Web-01, Web-02 hoặc Web-03, vì vậy nó không có backend để chuyển yêu cầu.",
+                "Kết nối cáp giữa LB-Web và từng Web-01, Web-02 và Web-03 để khôi phục các liên kết backend."
+            ],
+            "explanation": "Một Load Balancer chỉ có thể phục vụ lưu lượng truy cập nếu nó có các liên kết hoạt động đến các máy chủ backend của nó. Khi cả ba kết nối backend bị mất, LB-Web đã nhận yêu cầu nhưng không có chỗ nào để gửi nó. Kết nối lại các cáp cho phép nó phân phối lưu lượng truy cập một lần nữa."
+        }
+    }
+}
