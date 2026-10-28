@@ -1,0 +1,685 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-04",
+    "number": 45,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.9.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Tokyo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Tokyo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.9.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.30.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.12.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.30.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Osaka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.30.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.12.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.9.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.30.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Osaka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.12.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The Branch Office Dead End",
+            "story": "The worker at PC-Admin in the Tokyo branch has been unable to reach the Intranet-01 server at the head office since this morning, no matter what they try.",
+            "objective": "Restore an HTTP GET from PC-Admin to Intranet-01 so it gets a response.",
+            "hints": [
+                "The packet never leaves PC-Admin's own network segment — it dies right at PC-Admin before reaching Switch-Tokyo or Router-Tokyo.",
+                "PC-Admin's default gateway is set to an address that belongs to the head office server's own subnet, not to a router that can forward traffic for PC-Admin.",
+                "On PC-Admin, change the default gateway from 10.0.12.1 to 10.0.9.254, which is Router-Tokyo's address on PC-Admin's own subnet."
+            ],
+            "explanation": "A default gateway must be a router reachable on the client's own subnet, not an address that merely sits elsewhere on the network. PC-Admin pointed its gateway at the remote server's address instead of at Router-Tokyo, so traffic had nowhere valid to go."
+        },
+        "ja": {
+            "title": "支社からの行き止まり",
+            "story": "東京支社のPC-Adminを使う担当者が、今朝から何を試しても本社のIntranet-01サーバーにアクセスできずに困っています。",
+            "objective": "PC-AdminからIntranet-01へのHTTP GETが応答を受け取れるように復旧してください。",
+            "hints": [
+                "パケットはPC-Admin自身のネットワークセグメントから出ていません。Switch-TokyoやRouter-Tokyoに届く前に、PC-Adminの時点で止まっています。",
+                "PC-Adminのデフォルトゲートウェイが、本社サーバー自身のサブネットに属するアドレスに設定されており、PC-Adminの通信を中継できるルーターになっていません。",
+                "PC-Adminでデフォルトゲートウェイを10.0.12.1から10.0.9.254に変更してください。これはPC-Admin自身のサブネット上にあるRouter-Tokyoのアドレスです。"
+            ],
+            "explanation": "デフォルトゲートウェイは、クライアント自身のサブネット上で到達可能なルーターである必要があり、単にネットワークのどこかにあるアドレスではいけません。PC-Adminはゲートウェイを本社サーバーのアドレスに向けてしまっており、Router-Tokyoを指していなかったため、通信が正しく中継される経路がありませんでした。"
+        },
+        "zh-CN": {
+            "title": "分支机构的死胡同",
+            "story": "东京分公司PC-Admin的员工从今早开始就无法连接到总部的Intranet-01服务器，无论尝试什么方法都不行。",
+            "objective": "恢复从PC-Admin到Intranet-01的HTTP GET请求，使其能收到响应。",
+            "hints": [
+                "数据包永远不会离开PC-Admin自己的网络段——它在PC-Admin处就停止了，从未到达Switch-Tokyo或Router-Tokyo。",
+                "PC-Admin的默认网关被设置为属于总部服务器自己子网的地址，而不是能为PC-Admin转发流量的路由器。",
+                "在PC-Admin上，将默认网关从10.0.12.1改为10.0.9.254，这是Router-Tokyo在PC-Admin自己子网上的地址。"
+            ],
+            "explanation": "默认网关必须是可在客户端自己的子网上访问到的路由器，而不是仅仅位于网络其他地方的地址。PC-Admin把它的网关指向了远程服务器的地址而不是Router-Tokyo，所以流量没有有效的去向。"
+        },
+        "zh-TW": {
+            "title": "分支機構的死胡同",
+            "story": "東京分公司PC-Admin的員工從今早開始就無法連接到總部的Intranet-01伺服器，無論嘗試什麼方法都不行。",
+            "objective": "恢復從PC-Admin到Intranet-01的HTTP GET請求，使其能收到響應。",
+            "hints": [
+                "封包永遠不會離開PC-Admin自己的網路段——它在PC-Admin處就停止了，從未到達Switch-Tokyo或Router-Tokyo。",
+                "PC-Admin的預設閘道被設定為屬於總部伺服器自己子網的位址，而不是能為PC-Admin轉發流量的路由器。",
+                "在PC-Admin上，將預設閘道從10.0.12.1改為10.0.9.254，這是Router-Tokyo在PC-Admin自己子網上的位址。"
+            ],
+            "explanation": "預設閘道必須是可在客戶端自己的子網上訪問到的路由器，而不是僅僅位於網路其他地方的位址。PC-Admin把它的閘道指向了遠端伺服器的位址而不是Router-Tokyo，所以流量沒有有效的去向。"
+        },
+        "ko": {
+            "title": "지점의 막힌 길",
+            "story": "도쿄 지점의 PC-Admin 사용자가 오늘 아침부터 본사의 Intranet-01 Server에 접속할 수 없습니다. 어떤 시도를 해도 연결이 안 됩니다.",
+            "objective": "PC-Admin에서 Intranet-01으로의 HTTP GET이 응답을 받도록 복구합니다.",
+            "hints": [
+                "패킷이 PC-Admin의 자체 네트워크 세그먼트를 벗어나지 못합니다. Switch-Tokyo나 Router-Tokyo에 도달하기 전에 PC-Admin에서 멈춥니다.",
+                "PC-Admin의 기본 게이트웨이가 본사 Server 자체 서브넷에 속한 주소로 설정되어 있으며, PC-Admin의 트래픽을 전달할 수 있는 라우터가 아닙니다.",
+                "PC-Admin에서 기본 게이트웨이를 10.0.12.1에서 10.0.9.254로 변경하십시오. 이것이 PC-Admin의 자체 서브넷에서 Router-Tokyo의 주소입니다."
+            ],
+            "explanation": "기본 게이트웨이는 클라이언트의 자체 서브넷에서 도달 가능한 라우터여야 하며, 단순히 네트워크 다른 곳에 있는 주소가 아닙니다. PC-Admin이 Router-Tokyo 대신 원격 Server의 주소로 게이트웨이를 설정했기 때문에 트래픽이 유효한 경로를 찾지 못했습니다."
+        },
+        "es": {
+            "title": "El callejón sin salida de la sucursal",
+            "story": "El trabajador de PC-Admin en la sucursal de Tokio no ha podido conectarse al servidor Intranet-01 de la oficina central desde esta mañana, sin importar qué intente.",
+            "objective": "Restaurar una solicitud HTTP GET desde PC-Admin a Intranet-01 para que reciba una respuesta.",
+            "hints": [
+                "El paquete nunca sale del segmento de red propio de PC-Admin; muere directamente en PC-Admin antes de alcanzar Switch-Tokyo o Router-Tokyo.",
+                "El Gateway predeterminado de PC-Admin está configurado en una dirección que pertenece a la subred propia del servidor de la oficina central, no a un Router que pueda reenviar tráfico para PC-Admin.",
+                "En PC-Admin, cambia el Gateway predeterminado de 10.0.12.1 a 10.0.9.254, que es la dirección de Router-Tokyo en la subred propia de PC-Admin."
+            ],
+            "explanation": "Un Gateway predeterminado debe ser un Router accesible en la subred propia del cliente, no una dirección que simplemente esté en otro lugar de la red. PC-Admin apuntó su Gateway a la dirección del servidor remoto en lugar de a Router-Tokyo, así que el tráfico no tenía un destino válido."
+        },
+        "pt-BR": {
+            "title": "O beco sem saída da filial",
+            "story": "O funcionário de PC-Admin na filial de Tóquio não consegue acessar o servidor Intranet-01 da sede desde esta manhã, não importa o que tente.",
+            "objective": "Restaure uma solicitação HTTP GET de PC-Admin para Intranet-01 para que ela receba uma resposta.",
+            "hints": [
+                "O pacote nunca sai do próprio segmento de rede de PC-Admin — morre logo em PC-Admin antes de chegar ao Switch-Tokyo ou Router-Tokyo.",
+                "O Gateway padrão de PC-Admin está configurado para um endereço que pertence à própria subrede do servidor da sede, não para um Router que possa encaminhar tráfego para PC-Admin.",
+                "Em PC-Admin, altere o Gateway padrão de 10.0.12.1 para 10.0.9.254, que é o endereço de Router-Tokyo na própria subrede de PC-Admin."
+            ],
+            "explanation": "Um Gateway padrão deve ser um Router acessível na própria subrede do cliente, não um endereço que simplesmente fica em outro lugar da rede. PC-Admin apontou seu Gateway para o endereço do servidor remoto em vez de apontar para Router-Tokyo, então o tráfego não tinha um destino válido."
+        },
+        "de": {
+            "title": "The Branch Office Dead End",
+            "story": "Der Mitarbeiter an PC-Admin in der Tokio-Filiale kann seit heute Morgen den Intranet-01-Server in der Zentrale nicht erreichen, egal was er versucht.",
+            "objective": "Stellen Sie wieder her, dass ein HTTP GET von PC-Admin zu Intranet-01 eine Antwort erhält.",
+            "hints": [
+                "Das Paket verlässt nie PC-Admin's eigenes Netzwerksegment – es endet direkt bei PC-Admin, bevor es Switch-Tokyo oder Router-Tokyo erreicht.",
+                "Der Standard-Gateway von PC-Admin ist auf eine Adresse eingestellt, die zum eigenen Subnetz des Servers in der Zentrale gehört, nicht zu einem Router, der Verkehr für PC-Admin weiterleiten kann.",
+                "Ändern Sie auf PC-Admin den Standard-Gateway von 10.0.12.1 zu 10.0.9.254, was die Adresse von Router-Tokyo in PC-Admin's eigenem Subnetz ist."
+            ],
+            "explanation": "Ein Standard-Gateway muss ein Router sein, der im eigenen Subnetz des Clients erreichbar ist, nicht eine Adresse, die sich nur irgendwo anders im Netzwerk befindet. PC-Admin zeigte sein Gateway auf die Adresse des entfernten Servers statt auf Router-Tokyo, daher hatte der Verkehr nirgendwohin zu gehen."
+        },
+        "fr": {
+            "title": "L'Impasse de la Succursale",
+            "story": "Le collaborateur à PC-Admin à la succursale de Tokyo ne peut pas atteindre le serveur Intranet-01 au siège social depuis ce matin, peu importe ses tentatives.",
+            "objective": "Restaurez une requête HTTP GET de PC-Admin à Intranet-01 pour qu'elle reçoive une réponse.",
+            "hints": [
+                "Le paquet ne quitte jamais le propre segment réseau de PC-Admin — il s'arrête à PC-Admin avant d'atteindre Switch-Tokyo ou Router-Tokyo.",
+                "La passerelle par défaut de PC-Admin est définie sur une adresse qui appartient au propre sous-réseau du serveur du siège social, pas à un routeur capable de transférer le trafic pour PC-Admin.",
+                "Sur PC-Admin, modifiez la passerelle par défaut de 10.0.12.1 à 10.0.9.254, qui est l'adresse de Router-Tokyo sur le propre sous-réseau de PC-Admin."
+            ],
+            "explanation": "Une passerelle par défaut doit être un routeur accessible sur le propre sous-réseau du client, pas une adresse qui siège simplement ailleurs sur le réseau. PC-Admin a pointé sa passerelle vers l'adresse du serveur distant au lieu de Router-Tokyo, donc le trafic n'avait nulle part où aller."
+        },
+        "hi": {
+            "title": "शाखा कार्यालय की समस्या",
+            "story": "टोक्यो शाखा में PC-Admin पर काम करने वाले कर्मचारी को आज सुबह से मुख्यालय के Intranet-01 सर्वर तक नहीं पहुंचा जा सकता, चाहे वे कुछ भी कोशिश करें।",
+            "objective": "PC-Admin से Intranet-01 तक एक HTTP GET को पुनः स्थापित करें ताकि इसे प्रतिक्रिया मिले।",
+            "hints": [
+                "पैकेट PC-Admin के अपने नेटवर्क सेगमेंट को कभी नहीं छोड़ता — यह PC-Admin में ही Switch-Tokyo या Router-Tokyo तक पहुंचने से पहले समाप्त हो जाता है।",
+                "PC-Admin का डिफ़ॉल्ट गेटवे एक पते पर सेट है जो मुख्यालय के सर्वर के अपने सबनेट से संबंधित है, न कि एक राउटर से जो PC-Admin के लिए ट्रैफ़िक को फॉर्वर्ड कर सकता है।",
+                "PC-Admin पर, डिफ़ॉल्ट गेटवे को 10.0.12.1 से 10.0.9.254 में बदलें, जो PC-Admin के अपने सबनेट पर Router-Tokyo का पता है।"
+            ],
+            "explanation": "एक डिफ़ॉल्ट गेटवे एक राउटर होना चाहिए जो क्लाइंट के अपने सबनेट पर पहुंचा जा सकता है, न कि एक पता जो केवल नेटवर्क पर कहीं और बैठा है। PC-Admin ने अपने गेटवे को Router-Tokyo के बजाय दूरस्थ सर्वर के पते की ओर इशारा किया, इसलिए ट्रैफ़िक के पास कहीं जाने के लिए कोई जगह नहीं थी।"
+        },
+        "id": {
+            "title": "Impas Kantor Cabang",
+            "story": "Karyawan di PC-Admin di kantor cabang Tokyo tidak dapat menjangkau server Intranet-01 di kantor pusat sejak pagi ini, apapun yang mereka coba.",
+            "objective": "Pulihkan HTTP GET dari PC-Admin ke Intranet-01 sehingga menerima respons.",
+            "hints": [
+                "Paket tidak pernah meninggalkan segmen jaringan PC-Admin sendiri — paket tersebut berhenti di PC-Admin sebelum mencapai Switch-Tokyo atau Router-Tokyo.",
+                "Gateway Default PC-Admin diatur ke alamat yang termasuk dalam subnet server kantor pusat, bukan router yang dapat meneruskan lalu lintas untuk PC-Admin.",
+                "Pada PC-Admin, ubah Gateway Default dari 10.0.12.1 menjadi 10.0.9.254, yang merupakan alamat Router-Tokyo pada subnet PC-Admin sendiri."
+            ],
+            "explanation": "Gateway Default harus berupa Router yang dapat dijangkau di subnet klien sendiri, bukan alamat yang hanya berada di tempat lain di jaringan. PC-Admin menunjukkan gatewaynya ke alamat server jarak jauh alih-alih Router-Tokyo, jadi lalu lintas tidak memiliki tempat yang valid untuk pergi."
+        },
+        "ru": {
+            "title": "Тупик филиала",
+            "story": "Сотрудник в PC-Admin в филиале Токио не может достичь сервер Intranet-01 в головном офисе с этого утра, как бы ни старался.",
+            "objective": "Восстановите HTTP GET от PC-Admin к Intranet-01, чтобы получить ответ.",
+            "hints": [
+                "Пакет никогда не покидает собственный сегмент сети PC-Admin — он останавливается в самом PC-Admin перед тем, как достичь Switch-Tokyo или Router-Tokyo.",
+                "Шлюз по умолчанию PC-Admin установлен на адрес, принадлежащий собственной подсети сервера головного офиса, а не на маршрутизатор, который может перенаправлять трафик для PC-Admin.",
+                "На PC-Admin измените Шлюз по умолчанию с 10.0.12.1 на 10.0.9.254, что является адресом Router-Tokyo в собственной подсети PC-Admin."
+            ],
+            "explanation": "Шлюз по умолчанию должен быть маршрутизатором, доступным в собственной подсети клиента, а не адресом, который просто находится в другом месте сети. PC-Admin указал свой шлюз на адрес удаленного сервера вместо Router-Tokyo, поэтому трафику было некуда идти."
+        },
+        "it": {
+            "title": "Il Vicolo Cieco della Filiale",
+            "story": "Il lavoratore presso PC-Admin nella filiale di Tokyo non riesce a raggiungere il server Intranet-01 presso la sede centrale da questa mattina, per quanto ci provi.",
+            "objective": "Ripristinare una richiesta HTTP GET da PC-Admin a Intranet-01 affinché riceva una risposta.",
+            "hints": [
+                "Il pacchetto non lascia mai il segmento di rete di PC-Admin — muore proprio su PC-Admin prima di raggiungere Switch-Tokyo o Router-Tokyo.",
+                "Il Gateway predefinito di PC-Admin è impostato su un indirizzo che appartiene alla propria subnet del server della sede centrale, non a un Router che può inoltrare il traffico per PC-Admin.",
+                "Su PC-Admin, cambia il Gateway predefinito da 10.0.12.1 a 10.0.9.254, che è l'indirizzo di Router-Tokyo nella propria subnet di PC-Admin."
+            ],
+            "explanation": "Un Gateway predefinito deve essere un Router raggiungibile sulla propria subnet del client, non un indirizzo che si trova semplicemente altrove sulla rete. PC-Admin ha puntato il suo gateway all'indirizzo del server remoto invece di puntare a Router-Tokyo, quindi il traffico non aveva una destinazione valida."
+        },
+        "tr": {
+            "title": "Şubedeki Çıkmaz Sokak",
+            "story": "Tokyo şubesindeki PC-Admin'deki çalışan bu sabahtan beri merkez ofisdeki Intranet-01 sunucusuna ulaşamıyor, ne yapıp yapsa.",
+            "objective": "PC-Admin'den Intranet-01'e bir HTTP GET isteği gönder ve yanıt al.",
+            "hints": [
+                "Paket hiçbir zaman PC-Admin'in kendi ağ segmentinden ayrılmıyor — Switch-Tokyo veya Router-Tokyo'ya ulaşmadan PC-Admin'de ölüyor.",
+                "PC-Admin'in Varsayılan ağ geçidi, merkez ofis sunucusunun kendi subnetine ait bir adrese ayarlanmış, PC-Admin için trafiği iletebilecek bir Router'a değil.",
+                "PC-Admin'de Varsayılan ağ geçidini 10.0.12.1'den 10.0.9.254'e değiştir, bu Router-Tokyo'nun PC-Admin'in kendi subnetindeki adresidir."
+            ],
+            "explanation": "Varsayılan bir ağ geçidi, müşterinin kendi subnetinde erişilebilir bir Router olmalıdır, ağın başka bir yerinde oturan bir adres değil. PC-Admin ağ geçidini uzak sunucunun adresiyle göstermiş, Router-Tokyo yerine, bu nedenle trafiğin gidebileceği geçerli bir yer yoktu."
+        },
+        "th": {
+            "title": "ทางตันของสาขา",
+            "story": "พนักงานที่ PC-Admin ในสาขาโตเกียวไม่สามารถเข้าถึงเซิร์ฟเวอร์ Intranet-01 ที่สำนักงานใหญ่ตั้งแต่เช้านี้ ไม่ว่าจะพยายามอย่างไร",
+            "objective": "กู้คืนการส่ง HTTP GET จาก PC-Admin ไปยัง Intranet-01 เพื่อให้ได้รับการตอบสนอง",
+            "hints": [
+                "แพ็กเก็ตไม่เคยออกจากส่วนเครือข่ายของ PC-Admin เลย — มันตายที่ PC-Admin ก่อนที่จะถึง Switch-Tokyo หรือ Router-Tokyo",
+                "เกตเวย์เริ่มต้นของ PC-Admin ตั้งค่าไปยังที่อยู่ที่อยู่ในซับเน็ตของเซิร์ฟเวอร์ที่สำนักงานใหญ่ ไม่ใช่ Router ที่สามารถส่งต่อการจราจรสำหรับ PC-Admin",
+                "ใน PC-Admin ให้เปลี่ยนเกตเวย์เริ่มต้นจาก 10.0.12.1 เป็น 10.0.9.254 ซึ่งเป็นที่อยู่ของ Router-Tokyo ในซับเน็ตของ PC-Admin"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นต้องเป็น Router ที่เข้าถึงได้ในซับเน็ตของไคลเอนต์ ไม่ใช่ที่อยู่ที่อยู่ในที่อื่นบนเครือข่ายเท่านั้น PC-Admin ชี้เกตเวย์ไปยังที่อยู่ของเซิร์ฟเวอร์ระยะไกล แทนที่จะชี้ไปยัง Router-Tokyo ดังนั้นการจราจรจึงไม่มีที่ไปที่ถูกต้อง"
+        },
+        "vi": {
+            "title": "Ngõ Cụt ở Chi Nhánh",
+            "story": "Nhân viên tại PC-Admin ở chi nhánh Tokyo không thể kết nối với máy chủ Intranet-01 tại văn phòng chính kể từ sáng nay, dù có cố gắng như thế nào.",
+            "objective": "Khôi phục yêu cầu HTTP GET từ PC-Admin tới Intranet-01 để nhận được phản hồi.",
+            "hints": [
+                "Gói tin không bao giờ rời khỏi phân đoạn mạng riêng của PC-Admin — nó chết tại PC-Admin trước khi đến Switch-Tokyo hoặc Router-Tokyo.",
+                "Cổng mặc định của PC-Admin được đặt thành địa chỉ thuộc subnet riêng của máy chủ văn phòng chính, không phải là Router có thể chuyển tiếp lưu lượng cho PC-Admin.",
+                "Trên PC-Admin, thay đổi cổng mặc định từ 10.0.12.1 thành 10.0.9.254, đó là địa chỉ của Router-Tokyo trên subnet riêng của PC-Admin."
+            ],
+            "explanation": "Cổng mặc định phải là một Router có thể truy cập được trên subnet riêng của Client, không phải là địa chỉ nằm ở nơi khác trên mạng. PC-Admin đã trỏ cổng của nó tới địa chỉ của máy chủ từ xa thay vì trỏ tới Router-Tokyo, do đó lưu lượng không có nơi hợp lệ để đi."
+        }
+    }
+}
