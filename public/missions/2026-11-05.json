@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-05",
+    "number": 46,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.28.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.28.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-2F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.28.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.4.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Wiki Server Unreachable After Desk Move",
+            "story": "After the recent desk move, both the Dev and Finance teams report the Wiki-01 server has been unreachable. PC-Dev cannot open the wiki page, and PC-Finance cannot even get a ping reply from it.",
+            "objective": "Restore HTTP access from PC-Dev to Wiki-01 and ping access from PC-Finance to Wiki-01.",
+            "hints": [
+                "Traffic from both PC-Dev and PC-Finance toward Wiki-01 stops at Router-Edge, which cannot find a way to forward it.",
+                "Router-Edge has no route because Wiki-01 is currently configured with an address that doesn't belong to the 10.0.26.0/24 network behind the router.",
+                "On Wiki-01, set port 0's address to 10.0.26.1 with mask 255.255.255.0 so it matches Router-Edge's connected subnet."
+            ],
+            "explanation": "A server's address must fall within the subnet of the router port it's connected to, or the router has no matching route and cannot forward traffic to it, even though the physical link and switch work fine."
+        },
+        "ja": {
+            "title": "デスク移動後にWikiサーバーへ接続できない",
+            "story": "先日のデスク移動の後、DevチームとFinanceチームの両方からWiki-01サーバーに接続できないと報告がありました。PC-Devはwikiページを開けず、PC-Financeに至ってはpingの応答すら返ってきません。",
+            "objective": "PC-DevからWiki-01へのHTTPアクセスと、PC-FinanceからWiki-01へのpingアクセスを復旧させる。",
+            "hints": [
+                "PC-DevとPC-Financeの両方からWiki-01宛ての通信は、Router-Edgeで止まっています。Router-Edgeが転送先を見つけられない状態です。",
+                "Wiki-01には現在、ルーターの先にある10.0.26.0/24ネットワークに属さないアドレスが設定されているため、Router-Edgeには該当するルートがありません。",
+                "Wiki-01のポート0のアドレスを10.0.26.1、マスクを255.255.255.0に設定し、Router-Edgeの接続先サブネットと一致させてください。"
+            ],
+            "explanation": "サーバーのアドレスは、接続されているルーターのポートが属するサブネットの範囲内でなければなりません。範囲外だと、物理的な接続やスイッチが正常でも、ルーターに一致するルートがなく通信を転送できません。"
+        },
+        "zh-CN": {
+            "title": "Wiki 服务器在办公桌移动后无法访问",
+            "story": "最近的办公桌移动后，开发和财务团队都报告 Wiki-01 服务器无法访问。PC-Dev 无法打开 wiki 页面，PC-Finance 甚至无法从它收到 ping 回复。",
+            "objective": "恢复 PC-Dev 到 Wiki-01 的 HTTP 访问权限和 PC-Finance 到 Wiki-01 的 ping 访问权限。",
+            "hints": [
+                "来自 PC-Dev 和 PC-Finance 的流量前往 Wiki-01 时在 Router-Edge 处停止，它无法找到转发这些流量的方式。",
+                "Router-Edge 没有路由，因为 Wiki-01 当前配置的地址不属于路由器后面的 10.0.26.0/24 网络。",
+                "在 Wiki-01 上，将端口 0 的地址设置为 10.0.26.1，掩码为 255.255.255.0，使其与 Router-Edge 连接的子网匹配。"
+            ],
+            "explanation": "服务器的地址必须在它所连接的路由器端口的子网范围内。如果不在范围内，路由器将无法找到匹配的路由，无法转发流量，即使物理链路和交换机工作正常也是如此。"
+        },
+        "zh-TW": {
+            "title": "Wiki 伺服器在辦公桌移動後無法存取",
+            "story": "最近的辦公桌移動後，開發和財務團隊都回報 Wiki-01 伺服器無法存取。PC-Dev 無法開啟 wiki 頁面，PC-Finance 甚至無法從它收到 ping 回覆。",
+            "objective": "恢復 PC-Dev 到 Wiki-01 的 HTTP 存取和 PC-Finance 到 Wiki-01 的 ping 存取。",
+            "hints": [
+                "來自 PC-Dev 和 PC-Finance 的流量前往 Wiki-01 時在 Router-Edge 處停止，它無法找到轉發這些流量的方式。",
+                "Router-Edge 沒有路由，因為 Wiki-01 目前設定的位址不屬於路由器後面的 10.0.26.0/24 網路。",
+                "在 Wiki-01 上，將連接埠 0 的位址設定為 10.0.26.1，遮罩為 255.255.255.0，使其與 Router-Edge 連接的子網相符。"
+            ],
+            "explanation": "伺服器的位址必須在它所連接的路由器連接埠的子網範圍內。如果不在範圍內，路由器將無法找到相符的路由，無法轉發流量，即使實體連結和交換機工作正常也是如此。"
+        },
+        "ko": {
+            "title": "책상 이동 후 Wiki 서버 접근 불가",
+            "story": "최근 책상 이동 후 개발팀과 재무팀 모두 Wiki-01 서버에 접근할 수 없다고 보고했습니다. PC-Dev는 wiki 페이지를 열 수 없고, PC-Finance는 이것으로부터 ping 응답을 받을 수 없습니다.",
+            "objective": "PC-Dev에서 Wiki-01로의 HTTP 접근과 PC-Finance에서 Wiki-01로의 ping 접근을 복구하세요.",
+            "hints": [
+                "PC-Dev와 PC-Finance에서 Wiki-01로 향하는 트래픽은 Router-Edge에서 멈추는데, 이는 이 트래픽을 전달할 방법을 찾을 수 없습니다.",
+                "Router-Edge에 경로가 없는 이유는 Wiki-01이 현재 라우터 뒤의 10.0.26.0/24 네트워크에 속하지 않는 주소로 설정되어 있기 때문입니다.",
+                "Wiki-01에서 포트 0의 주소를 10.0.26.1로, 마스크를 255.255.255.0으로 설정하여 Router-Edge의 연결된 서브넷과 일치하도록 하세요."
+            ],
+            "explanation": "서버의 주소는 연결된 라우터 포트의 서브넷 범위 내에 있어야 합니다. 그렇지 않으면 라우터가 일치하는 경로를 찾을 수 없어 물리적 링크와 스위치가 정상적으로 작동하더라도 트래픽을 전달할 수 없습니다."
+        },
+        "es": {
+            "title": "Servidor Wiki Inalcanzable Tras Cambio de Escritorio",
+            "story": "Tras el reciente cambio de escritorio, tanto el equipo de Desarrollo como el de Finanzas reportan que el servidor Wiki-01 es inalcanzable. PC-Dev no puede abrir la página wiki, y PC-Finance ni siquiera recibe respuesta a ping de la misma.",
+            "objective": "Restaurar el acceso HTTP desde PC-Dev a Wiki-01 y el acceso ping desde PC-Finance a Wiki-01.",
+            "hints": [
+                "El tráfico desde PC-Dev y PC-Finance hacia Wiki-01 se detiene en Router-Edge, que no encuentra forma de reenviarlo.",
+                "Router-Edge no tiene ruta porque Wiki-01 está actualmente configurado con una dirección que no pertenece a la red 10.0.26.0/24 detrás del router.",
+                "En Wiki-01, configure la dirección del puerto 0 a 10.0.26.1 con máscara 255.255.255.0 para que coincida con la subred conectada de Router-Edge."
+            ],
+            "explanation": "La dirección de un servidor debe estar dentro de la subred del puerto del router al que está conectado, o el router no tendrá ruta coincidente y no podrá reenviar tráfico hacia él, incluso si el enlace físico y el switch funcionan correctamente."
+        },
+        "pt-BR": {
+            "title": "Servidor Wiki Inacessível Após Mudança de Mesa",
+            "story": "Após a mudança recente de mesa, tanto os times de Desenvolvimento quanto de Finanças relatam que o servidor Wiki-01 está inacessível. PC-Dev não consegue abrir a página wiki, e PC-Finance nem consegue receber resposta de ping dele.",
+            "objective": "Restaure o acesso HTTP de PC-Dev para Wiki-01 e o acesso ping de PC-Finance para Wiki-01.",
+            "hints": [
+                "O tráfego de PC-Dev e PC-Finance em direção a Wiki-01 para em Router-Edge, que não consegue encontrar uma forma de encaminhá-lo.",
+                "Router-Edge não tem rota porque Wiki-01 está atualmente configurado com um endereço que não pertence à rede 10.0.26.0/24 atrás do router.",
+                "Em Wiki-01, defina o endereço da porta 0 como 10.0.26.1 com máscara 255.255.255.0 para que corresponda à sub-rede conectada de Router-Edge."
+            ],
+            "explanation": "O endereço de um servidor deve estar dentro da sub-rede da porta do router à qual está conectado, ou o router não terá rota correspondente e não conseguirá encaminhar tráfego para ele, mesmo que o link físico e o switch funcionem corretamente."
+        },
+        "de": {
+            "title": "Wiki-Server nach Umzug nicht erreichbar",
+            "story": "Nach dem kürzlichen Umzug berichten sowohl das Dev- als auch das Finance-Team, dass der Wiki-01-Server nicht erreichbar ist. PC-Dev kann die Wiki-Seite nicht öffnen, und PC-Finance bekommt nicht einmal eine Ping-Antwort.",
+            "objective": "Stellen Sie HTTP-Zugriff von PC-Dev auf Wiki-01 und Ping-Zugriff von PC-Finance auf Wiki-01 wieder her.",
+            "hints": [
+                "Der Datenverkehr von PC-Dev und PC-Finance zu Wiki-01 stoppt bei Router-Edge, der keine Möglichkeit hat, ihn weiterzuleiten.",
+                "Router-Edge hat keine Route, weil Wiki-01 derzeit mit einer Adresse konfiguriert ist, die nicht zum Netzwerk 10.0.26.0/24 hinter dem Router gehört.",
+                "Legen Sie auf Wiki-01 die Adresse von Port 0 auf 10.0.26.1 mit Maske 255.255.255.0 fest, damit sie mit dem verbundenen Subnetz von Router-Edge übereinstimmt."
+            ],
+            "explanation": "Die Adresse eines Servers muss in dem Subnetz des Router-Ports liegen, mit dem er verbunden ist, sonst hat der Router keine passende Route und kann den Datenverkehr nicht weitergeleiten, auch wenn die physische Verbindung und der Switch perfekt funktionieren."
+        },
+        "fr": {
+            "title": "Serveur Wiki inaccessible après déménagement",
+            "story": "Après le récent déménagement, les équipes Dev et Finance signalent que le serveur Wiki-01 est inaccessible. PC-Dev ne peut pas ouvrir la page wiki, et PC-Finance ne reçoit même pas de réponse ping.",
+            "objective": "Restaurer l'accès HTTP de PC-Dev à Wiki-01 et l'accès ping de PC-Finance à Wiki-01.",
+            "hints": [
+                "Le trafic de PC-Dev et PC-Finance vers Wiki-01 s'arrête à Router-Edge, qui ne trouve aucun moyen de le transmettre.",
+                "Router-Edge n'a pas de route car Wiki-01 est actuellement configuré avec une adresse qui n'appartient pas au réseau 10.0.26.0/24 derrière le routeur.",
+                "Sur Wiki-01, configurez l'adresse du port 0 à 10.0.26.1 avec le masque 255.255.255.0 pour qu'elle corresponde au sous-réseau connecté de Router-Edge."
+            ],
+            "explanation": "L'adresse d'un serveur doit se trouver dans le sous-réseau du port du routeur auquel il est connecté, sinon le routeur n'a pas de route correspondante et ne peut pas transmettre le trafic vers lui, même si le lien physique et le commutateur fonctionnent parfaitement."
+        },
+        "hi": {
+            "title": "डेस्क मूव के बाद Wiki सर्वर अनुपलब्ध",
+            "story": "हाल की डेस्क मूव के बाद, Dev और Finance दोनों टीमें बताती हैं कि Wiki-01 सर्वर अनुपलब्ध है। PC-Dev wiki पेज नहीं खोल सकता, और PC-Finance को ping रिप्लाई भी नहीं मिल रहा है।",
+            "objective": "PC-Dev से Wiki-01 तक HTTP एक्सेस और PC-Finance से Wiki-01 तक ping एक्सेस बहाल करें।",
+            "hints": [
+                "PC-Dev और PC-Finance से Wiki-01 की ओर ट्रैफिक Router-Edge पर रुक जाता है, जो इसे आगे भेजने का कोई रास्ता नहीं खोज पाता है।",
+                "Router-Edge के पास कोई रूट नहीं है क्योंकि Wiki-01 वर्तमान में ऐसे एड्रेस के साथ कॉन्फ़िगर किया गया है जो रूटर के पीछे की 10.0.26.0/24 नेटवर्क से संबंधित नहीं है।",
+                "Wiki-01 पर, पोर्ट 0 का एड्रेस 10.0.26.1 सेट करें मास्क 255.255.255.0 के साथ ताकि यह Router-Edge की कनेक्टेड सबनेट से मेल खाए।"
+            ],
+            "explanation": "सर्वर का एड्रेस उस रूटर पोर्ट की सबनेट में होना चाहिए जिससे वह कनेक्ट है, अन्यथा रूटर के पास कोई मेल खाने वाला रूट नहीं होगा और वह ट्रैफिक को आगे नहीं भेज सकेगा, भले ही फिजिकल लिंक और स्विच बिल्कुल ठीक से काम कर रहे हों।"
+        },
+        "id": {
+            "title": "Server Wiki Tidak Dapat Dijangkau Setelah Pemindahan",
+            "story": "Setelah pemindahan meja baru-baru ini, tim Dev dan Finance melaporkan bahwa server Wiki-01 tidak dapat diakses. PC-Dev tidak dapat membuka halaman wiki, dan PC-Finance bahkan tidak menerima balasan ping.",
+            "objective": "Pulihkan akses HTTP dari PC-Dev ke Wiki-01 dan akses ping dari PC-Finance ke Wiki-01.",
+            "hints": [
+                "Lalu lintas dari PC-Dev dan PC-Finance menuju Wiki-01 berhenti di Router-Edge, yang tidak dapat menemukan cara untuk meneruskannya.",
+                "Router-Edge tidak memiliki rute karena Wiki-01 saat ini dikonfigurasi dengan alamat yang tidak termasuk dalam jaringan 10.0.26.0/24 di belakang router.",
+                "Pada Wiki-01, atur alamat port 0 menjadi 10.0.26.1 dengan mask 255.255.255.0 agar sesuai dengan subnet terhubung Router-Edge."
+            ],
+            "explanation": "Alamat server harus berada dalam subnet dari port router yang terhubung dengannya, atau router tidak memiliki rute yang cocok dan tidak dapat meneruskan lalu lintas kepadanya, meskipun tautan fisik dan sakelar berfungsi dengan baik."
+        },
+        "ru": {
+            "title": "Сервер Wiki недоступен после переезда",
+            "story": "После недавнего переезда оба отдела Dev и Finance сообщают, что сервер Wiki-01 недоступен. PC-Dev не может открыть страницу вики, а PC-Finance даже не получает ответ на ping.",
+            "objective": "Восстановите HTTP-доступ с PC-Dev на Wiki-01 и доступ ping с PC-Finance на Wiki-01.",
+            "hints": [
+                "Трафик с PC-Dev и PC-Finance в сторону Wiki-01 останавливается на Router-Edge, который не может найти способ его передать.",
+                "У Router-Edge нет маршрута, потому что Wiki-01 в настоящее время настроен с адресом, который не принадлежит сети 10.0.26.0/24 позади маршрутизатора.",
+                "На Wiki-01 установите адрес порта 0 на 10.0.26.1 с маской 255.255.255.0, чтобы он совпадал с подключённой подсетью Router-Edge."
+            ],
+            "explanation": "Адрес сервера должен находиться в пределах подсети порта маршрутизатора, к которому он подключен, иначе маршрутизатор не найдет подходящий маршрут и не сможет передавать трафик на него, даже если физическая связь и коммутатор работают отлично."
+        },
+        "it": {
+            "title": "Wiki Server Irraggiungibile Dopo il Trasloco",
+            "story": "Dopo il recente trasloco, sia il team Dev che il team Finance segnalano che il server Wiki-01 è irraggiungibile. PC-Dev non riesce ad aprire la pagina wiki e PC-Finance non riceve nemmeno una risposta ping.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Dev a Wiki-01 e l'accesso ping da PC-Finance a Wiki-01.",
+            "hints": [
+                "Il traffico da PC-Dev e PC-Finance verso Wiki-01 si ferma a Router-Edge, che non trova alcun modo per inoltrarlo.",
+                "Router-Edge non ha una rotta perché Wiki-01 è attualmente configurato con un indirizzo che non appartiene alla rete 10.0.26.0/24 dietro il router.",
+                "Su Wiki-01, imposta l'indirizzo della porta 0 a 10.0.26.1 con maschera 255.255.255.0 in modo che corrisponda alla subnet connessa di Router-Edge."
+            ],
+            "explanation": "L'indirizzo di un Server deve rientrare nella subnet della porta Router a cui è connesso, altrimenti il router non ha una rotta corrispondente e non può inoltrare il traffico verso di esso, anche se il collegamento fisico e lo Switch funzionano correttamente."
+        },
+        "tr": {
+            "title": "Wiki Sunucusu Masadan Taşınmadan Sonra Erişilemez",
+            "story": "Son masadan taşınmadan sonra, hem Dev hem de Finance ekipleri Wiki-01 sunucusunun erişilmez olduğunu bildiriyor. PC-Dev wiki sayfasını açamıyor ve PC-Finance Wiki-01'den ping yanıtı bile alamıyor.",
+            "objective": "PC-Dev'den Wiki-01'e HTTP erişimini ve PC-Finance'den Wiki-01'e ping erişimini geri yükle.",
+            "hints": [
+                "PC-Dev ve PC-Finance'den Wiki-01'e giden trafik Router-Edge'de durur, Router-Edge onu iletmenin bir yolunu bulamaz.",
+                "Router-Edge'in bir yolu yoktur çünkü Wiki-01 şu anda router arkasındaki 10.0.26.0/24 ağına ait olmayan bir adresle yapılandırılmıştır.",
+                "Wiki-01'de, port 0 adresini 10.0.26.1 ile maske 255.255.255.0 olacak şekilde ayarla, böylece Router-Edge'nin bağlı subnet'iyle eşleşir."
+            ],
+            "explanation": "Bir Sunucu'nun adresi, bağlandığı Router port'unun subnet'ine düşmeli, aksi takdirde router eşleşen bir yolu bulamaz ve ona trafik ileteemez; fiziksel bağlantı ve Switch iyi çalışsa da."
+        },
+        "th": {
+            "title": "เซิร์ฟเวอร์ Wiki ไม่สามารถเข้าถึงได้หลังย้ายโต๊ะ",
+            "story": "หลังจากการย้ายโต๊ะเมื่อเร็วๆ นี้ ทั้งทีม Dev และ Finance รายงานว่าเซิร์ฟเวอร์ Wiki-01 ไม่สามารถเข้าถึงได้ PC-Dev ไม่สามารถเปิดหน้า wiki ได้ และ PC-Finance ไม่ได้รับการตอบสนอง ping จาก Wiki-01 เลย",
+            "objective": "คืนค่า HTTP access จาก PC-Dev ไปยัง Wiki-01 และ ping access จาก PC-Finance ไปยัง Wiki-01",
+            "hints": [
+                "ทราฟฟิกจาก PC-Dev และ PC-Finance ไปยัง Wiki-01 หยุดที่ Router-Edge ซึ่งไม่พบวิธีในการส่งต่อ",
+                "Router-Edge ไม่มีเส้นทางเพราะ Wiki-01 ได้รับการกำหนดค่าด้วยที่อยู่ที่ไม่ได้อยู่ในเครือข่าย 10.0.26.0/24 ด้านหลัง Router",
+                "บน Wiki-01 ให้ตั้งค่าที่อยู่พอร์ต 0 เป็น 10.0.26.1 ด้วยมาสก์ 255.255.255.0 เพื่อให้ตรงกับเครือข่ายย่อยที่เชื่อมต่อของ Router-Edge"
+            ],
+            "explanation": "ที่อยู่ของ Server ต้องอยู่ในเครือข่ายย่อยของพอร์ต Router ที่มันเชื่อมต่อ มิฉะนั้น Router จะไม่พบเส้นทางที่ตรงกันและไม่สามารถส่งต่อทราฟฟิกไป ถึงแม้ว่าการเชื่อมต่อทางกายภาพและ Switch ทำงานได้ดี"
+        },
+        "vi": {
+            "title": "Máy Chủ Wiki Không Thể Truy Cập Sau Khi Di Chuyển Bàn",
+            "story": "Sau khi di chuyển bàn gần đây, cả hai đội Dev và Finance đều báo cáo rằng máy chủ Wiki-01 không thể truy cập được. PC-Dev không thể mở trang wiki và PC-Finance thậm chí không nhận được phản hồi ping từ nó.",
+            "objective": "Khôi phục truy cập HTTP từ PC-Dev đến Wiki-01 và truy cập ping từ PC-Finance đến Wiki-01.",
+            "hints": [
+                "Lưu lượng từ PC-Dev và PC-Finance đến Wiki-01 dừng lại tại Router-Edge, không tìm được cách để chuyển tiếp nó.",
+                "Router-Edge không có tuyến đường vì Wiki-01 hiện được cấu hình với một địa chỉ không thuộc mạng 10.0.26.0/24 phía sau router.",
+                "Trên Wiki-01, hãy đặt địa chỉ cổng 0 thành 10.0.26.1 với mặt nạ 255.255.255.0 để nó khớp với mạng con được kết nối của Router-Edge."
+            ],
+            "explanation": "Địa chỉ của một Server phải nằm trong mạng con của cổng Router mà nó kết nối, nếu không Router sẽ không có tuyến đường khớp và không thể chuyển tiếp lưu lượng đến nó, ngay cả khi liên kết vật lý và Switch hoạt động tốt."
+        }
+    }
+}
