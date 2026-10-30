@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-06",
+    "number": 47,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.7.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.28.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.5.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.28.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.28.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.5.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.7.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.28.1",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.5.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.5.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Orders Stuck Halfway to Headquarters",
+            "story": "The branch office reports that staff at PC-Design cannot pull up pages from Wiki-01 at headquarters all morning. The request seems to vanish before any reply comes back.",
+            "objective": "Restore HTTP access from PC-Design to Wiki-01 so the page loads successfully.",
+            "hints": [
+                "The reply from Wiki-01 never makes it back past Router-West; the request dies there before reaching PC-Design.",
+                "Router-West has a static route back to PC-Design's network pointed at the wrong next hop, so returning traffic gets sent out the wrong port instead of toward Router-East.",
+                "On Router-West, delete the route to 10.0.7.0/255.255.255.0 and add a static route for 10.0.7.0/255.255.255.0 via 10.0.28.1 on port 0."
+            ],
+            "explanation": "A static route's next hop must point toward the actual neighbor that leads to the destination network. Here Router-West's route for PC-Design's subnet pointed out the wrong port, so return traffic was misdirected and the TCP handshake with Wiki-01 could never complete."
+        },
+        "zh-CN": {
+            "title": "订单卡在总部中途",
+            "story": "分公司报告称，PC-Design上的员工整个上午都无法打开总部Wiki-01的页面。请求似乎在收到任何回复之前就消失了。",
+            "objective": "恢复从PC-Design到Wiki-01的HTTP访问，使页面加载成功。",
+            "hints": [
+                "来自Wiki-01的回复从未越过Router-West；请求在那里中断，无法到达PC-Design。",
+                "Router-West有一条返回PC-Design网络的静态路由，指向了错误的下一跳，导致返回流量从错误的端口发出而不是指向Router-East。",
+                "在Router-West上，删除指向10.0.7.0/255.255.255.0的路由，然后添加一条指向10.0.7.0/255.255.255.0的静态路由，下一跳为10.0.28.1，端口号为0。"
+            ],
+            "explanation": "静态路由的下一跳必须指向通往目标网络的实际邻近设备。此处Router-West针对PC-Design子网的路由指向了错误的端口，导致返回流量被误导，与Wiki-01的TCP握手永远无法完成。"
+        },
+        "zh-TW": {
+            "title": "訂單卡在總部中途",
+            "story": "分公司回報PC-Design上的員工整個上午都無法打開總部Wiki-01的頁面。請求似乎在收到任何回覆之前就消失了。",
+            "objective": "恢復從PC-Design到Wiki-01的HTTP訪問，使頁面加載成功。",
+            "hints": [
+                "來自Wiki-01的回覆從未越過Router-West；請求在那裡中斷，無法到達PC-Design。",
+                "Router-West有一條返回PC-Design網路的靜態路由，指向了錯誤的下一跳，導致返回流量從錯誤的連接埠發出而不是指向Router-East。",
+                "在Router-West上，刪除指向10.0.7.0/255.255.255.0的路由，然後新增一條指向10.0.7.0/255.255.255.0的靜態路由，下一跳為10.0.28.1，連接埠號為0。"
+            ],
+            "explanation": "靜態路由的下一跳必須指向通往目的網路的實際鄰近裝置。此處Router-West針對PC-Design子網的路由指向了錯誤的連接埠，導致返回流量被誤導，與Wiki-01的TCP握手永遠無法完成。"
+        },
+        "ko": {
+            "title": "주문이 본사 도중에 막혔습니다",
+            "story": "지사에서 PC-Design의 직원들이 본사의 Wiki-01 페이지를 하루종일 열 수 없다고 보고했습니다. 요청이 응답을 받기 전에 사라지는 것 같습니다.",
+            "objective": "PC-Design에서 Wiki-01으로의 HTTP 액세스를 복원하여 페이지가 성공적으로 로드되도록 합니다.",
+            "hints": [
+                "Wiki-01의 응답이 Router-West를 넘어 돌아오지 않으며, 요청이 그곳에서 중단되어 PC-Design에 도달하지 못합니다.",
+                "Router-West에는 PC-Design의 네트워크로 돌아가는 정적 경로가 잘못된 다음 홉을 가리키고 있어서, 반환 트래픽이 Router-East를 향하지 않고 잘못된 포트로 전송됩니다.",
+                "Router-West에서 10.0.7.0/255.255.255.0으로의 경로를 삭제하고, 10.0.7.0/255.255.255.0에 대한 정적 경로를 다음 홉 10.0.28.1, 포트 번호 0으로 추가합니다."
+            ],
+            "explanation": "정적 경로의 다음 홉은 목적지 네트워크로 이어지는 실제 이웃을 가리켜야 합니다. 여기서 Router-West의 PC-Design 서브넷 경로가 잘못된 포트를 가리키고 있어서, 반환 트래픽이 잘못 전달되었고 Wiki-01과의 TCP 핸드셰이크가 완료될 수 없었습니다."
+        },
+        "es": {
+            "title": "Pedidos atascados a mitad de camino a la matriz",
+            "story": "La oficina sucursal reporta que el personal en PC-Design no puede abrir páginas de Wiki-01 en la matriz toda la mañana. La solicitud parece desaparecer antes de que llegue cualquier respuesta.",
+            "objective": "Restaurar el acceso HTTP desde PC-Design a Wiki-01 para que la página cargue exitosamente.",
+            "hints": [
+                "La respuesta de Wiki-01 nunca regresa más allá de Router-West; la solicitud muere allí antes de alcanzar PC-Design.",
+                "Router-West tiene una ruta estática de regreso a la red de PC-Design apuntando al siguiente salto incorrecto, por lo que el tráfico de retorno se envía por el puerto equivocado en lugar de hacia Router-East.",
+                "En Router-West, elimina la ruta a 10.0.7.0/255.255.255.0 y agrega una ruta estática para 10.0.7.0/255.255.255.0 con siguiente salto 10.0.28.1 en puerto 0."
+            ],
+            "explanation": "El siguiente salto de una ruta estática debe apuntar hacia el vecino real que lleva a la red destino. Aquí la ruta de Router-West para la subred de PC-Design apuntaba por el puerto incorrecto, por lo que el tráfico de retorno fue desviado incorrectamente y el apretón de manos TCP con Wiki-01 nunca pudo completarse."
+        },
+        "pt-BR": {
+            "title": "Pedidos presos no caminho para a matriz",
+            "story": "A filial relata que a equipe no PC-Design não consegue abrir páginas da Wiki-01 na matriz a manhã toda. A solicitação parece desaparecer antes de qualquer resposta chegar.",
+            "objective": "Restaurar o acesso HTTP de PC-Design para Wiki-01 para que a página carregue com sucesso.",
+            "hints": [
+                "A resposta de Wiki-01 nunca volta além de Router-West; a solicitação morre ali antes de chegar ao PC-Design.",
+                "Router-West tem uma rota estática de volta à rede de PC-Design apontando para o próximo salto errado, então o tráfego de retorno é enviado pela porta errada em vez de para Router-East.",
+                "No Router-West, delete a rota para 10.0.7.0/255.255.255.0 e adicione uma rota estática para 10.0.7.0/255.255.255.0 com próximo salto 10.0.28.1 na porta 0."
+            ],
+            "explanation": "O próximo salto de uma rota estática deve apontar para o vizinho real que leva à rede destino. Aqui a rota de Router-West para a subrede de PC-Design apontava para a porta errada, então o tráfego de retorno foi redirecionado incorretamente e o handshake TCP com Wiki-01 nunca pôde ser concluído."
+        },
+        "de": {
+            "title": "Bestellungen stecken auf halber Strecke zur Zentrale",
+            "story": "Die Filiale meldet, dass Mitarbeiter auf PC-Design seit dem Morgen keine Seiten von Wiki-01 in der Zentrale abrufen können. Die Anfrage scheint zu verschwinden, bevor eine Antwort zurückkommt.",
+            "objective": "Stellen Sie HTTP-Zugriff von PC-Design zu Wiki-01 wieder her, damit die Seite erfolgreich geladen wird.",
+            "hints": [
+                "Die Antwort von Wiki-01 kommt nicht über Router-West zurück; die Anfrage bricht dort ab, bevor sie PC-Design erreicht.",
+                "Router-West hat eine statische Route zurück zu PC-Designs Netzwerk, die auf den falschen Nächsten Hop zeigt, sodass der Rückverkehr über die falsche Portnummer statt in Richtung Router-East gesendet wird.",
+                "Löschen Sie auf Router-West die Route zu 10.0.7.0/255.255.255.0 und fügen Sie eine statische Route für 10.0.7.0/255.255.255.0 über 10.0.28.1 auf Portnummer 0 hinzu."
+            ],
+            "explanation": "Der Nächste Hop einer statischen Route muss auf den eigentlichen Nachbarn zeigen, der zu dem Zielnetzwerk führt. Hier zeigte die Route von Router-West für das Subnetz von PC-Design über die falsche Portnummer, sodass der Rückverkehr fehlgeleitet wurde und der TCP-Handshake mit Wiki-01 nie abgeschlossen werden konnte."
+        },
+        "fr": {
+            "title": "Commandes bloquées à mi-chemin vers le siège",
+            "story": "La succursale signale que le personnel sur PC-Design ne peut pas afficher les pages de Wiki-01 au siège toute la matinée. La demande semble disparaître avant que la réponse ne revienne.",
+            "objective": "Restaurez l'accès HTTP de PC-Design à Wiki-01 pour que la page se charge correctement.",
+            "hints": [
+                "La réponse de Wiki-01 ne revient jamais au-delà de Router-West ; la demande s'arrête là avant d'atteindre PC-Design.",
+                "Router-West dispose d'une route statique vers le réseau de PC-Design pointant vers le mauvais Saut suivant, de sorte que le trafic de retour est envoyé par le mauvais numéro de port au lieu de vers Router-East.",
+                "Sur Router-West, supprimez la route vers 10.0.7.0/255.255.255.0 et ajoutez une route statique pour 10.0.7.0/255.255.255.0 via 10.0.28.1 sur le numéro de port 0."
+            ],
+            "explanation": "Le Saut suivant d'une route statique doit pointer vers le véritable voisin qui mène au Réseau de destination. Ici, la route de Router-West pour le sous-réseau de PC-Design pointait par le mauvais numéro de port, de sorte que le trafic de retour était mal dirigé et la négociation TCP avec Wiki-01 ne pouvait jamais se terminer."
+        },
+        "hi": {
+            "title": "ऑर्डर मुख्यालय की आधी दूरी पर अटके हैं",
+            "story": "शाखा कार्यालय रिपोर्ट करता है कि PC-Design पर कर्मचारी पूरी सुबह मुख्यालय के Wiki-01 से पृष्ठ नहीं खींच सकते। अनुरोध गायब हो जाता है इससे पहले कि कोई जवाब वापस आए।",
+            "objective": "PC-Design से Wiki-01 तक HTTP एक्सेस पुनः स्थापित करें ताकि पृष्ठ सफलतापूर्वक लोड हो।",
+            "hints": [
+                "Wiki-01 का जवाब Router-West को पार नहीं करता; अनुरोध वहां समाप्त हो जाता है इससे पहले कि यह PC-Design तक पहुंचे।",
+                "Router-West के पास PC-Design के नेटवर्क में वापस एक स्थैतिक मार्ग है जो गलत अगला हॉप की ओर इशारा करता है, इसलिए रिटर्न ट्रैफिक गलत पोर्ट नंबर के माध्यम से Router-East की ओर भेजा जाता है।",
+                "Router-West पर, 10.0.7.0/255.255.255.0 तक का मार्ग हटाएं और 10.0.7.0/255.255.255.0 के लिए पोर्ट नंबर 0 पर 10.0.28.1 के माध्यम से एक स्थैतिक मार्ग जोड़ें।"
+            ],
+            "explanation": "एक स्थैतिक मार्ग का अगला हॉप उस वास्तविक पड़ोसी की ओर इशारा करना चाहिए जो गंतव्य नेटवर्क तक पहुंचता है। यहां Router-West का मार्ग PC-Design की सबनेट के लिए गलत पोर्ट नंबर के माध्यम से इशारा करता था, इसलिए रिटर्न ट्रैफिक गलत दिशा में भेजा गया था और Wiki-01 के साथ TCP हैंडशेक कभी पूरा नहीं हो सका।"
+        },
+        "id": {
+            "title": "Pesanan Terjebak di Tengah Perjalanan ke Markas",
+            "story": "Kantor cabang melaporkan bahwa staf di PC-Design tidak dapat membuka halaman dari Wiki-01 di markas sepanjang pagi. Permintaan tampaknya menghilang sebelum ada balasan yang kembali.",
+            "objective": "Pulihkan akses HTTP dari PC-Design ke Wiki-01 agar halaman dimuat dengan berhasil.",
+            "hints": [
+                "Balasan dari Wiki-01 tidak pernah kembali melampaui Router-West; permintaan berhenti di sana sebelum mencapai PC-Design.",
+                "Router-West memiliki rute statis kembali ke Jaringan tujuan PC-Design yang menunjuk ke Hop berikutnya yang salah, sehingga lalu lintas kembali dikirim keluar melalui Nomor port yang salah, bukan ke arah Router-East.",
+                "Di Router-West, hapus rute ke 10.0.7.0/255.255.255.0 dan tambahkan rute statis untuk 10.0.7.0/255.255.255.0 melalui 10.0.28.1 pada Nomor port 0."
+            ],
+            "explanation": "Hop berikutnya dari rute statis harus menunjuk ke tetangga sebenarnya yang mengarah ke Jaringan tujuan. Di sini rute Router-West untuk subnet PC-Design menunjuk melalui Nomor port yang salah, sehingga lalu lintas kembali dialihkan dan jabat tangan TCP dengan Wiki-01 tidak pernah dapat diselesaikan."
+        },
+        "ru": {
+            "title": "Заказы застряли на полпути в штаб-квартиру",
+            "story": "Филиал сообщает, что сотрудники на PC-Design не могут открыть страницы из Wiki-01 в штаб-квартире все утро. Запрос, кажется, исчезает, прежде чем приходит ответ.",
+            "objective": "Восстановите HTTP-доступ с PC-Design на Wiki-01, чтобы страница успешно загружалась.",
+            "hints": [
+                "Ответ из Wiki-01 никогда не проходит Router-West; запрос там прерывается, прежде чем достичь PC-Design.",
+                "Router-West имеет статический маршрут обратно к Целевой сети PC-Design, направленный на неправильный Следующий узел, поэтому возвращаемый трафик отправляется через неправильный Номер порта вместо Router-East.",
+                "На Router-West удалите маршрут к 10.0.7.0/255.255.255.0 и добавьте статический маршрут для 10.0.7.0/255.255.255.0 через 10.0.28.1 на Номер порта 0."
+            ],
+            "explanation": "Следующий узел статического маршрута должен указывать на соседнее устройство, которое ведет к Целевой сети. Здесь маршрут Router-West для подсети PC-Design указывал через неправильный Номер порта, поэтому возвращаемый трафик был перенаправлен неправильно и рукопожатие TCP с Wiki-01 никогда не могло быть завершено."
+        },
+        "it": {
+            "title": "Ordini bloccati a metà strada verso la sede",
+            "story": "L'ufficio succursale segnala che il personale di PC-Design non riesce ad accedere alle pagine di Wiki-01 presso la sede da tutta la mattina. La richiesta sembra svanire prima che arrivi una risposta.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Design a Wiki-01 in modo che la pagina si carichi con successo.",
+            "hints": [
+                "La risposta da Wiki-01 non arriva mai oltre Router-West; la richiesta si ferma lì prima di raggiungere PC-Design.",
+                "Router-West ha una rotta statica verso la rete di PC-Design indirizzata al next hop sbagliato, quindi il traffico in ritorno viene inviato dalla porta sbagliata invece che verso Router-East.",
+                "Su Router-West, elimina la rotta verso 10.0.7.0/255.255.255.0 e aggiungi una rotta statica per 10.0.7.0/255.255.255.0 tramite 10.0.28.1 sulla porta 0."
+            ],
+            "explanation": "Il next hop di una rotta statica deve puntare al vicino effettivo che conduce alla Rete di destinazione. Qui la rotta di Router-West per la subnet di PC-Design indicava la porta sbagliata, quindi il traffico in ritorno era instradato male e l'handshake TCP con Wiki-01 non poteva completarsi."
+        },
+        "tr": {
+            "title": "Siparişler Merkez Ofise Yarı Yolda Takıldı",
+            "story": "Şube ofisi, PC-Design'daki personelin tüm sabah Wiki-01'den sayfaları açamadığını bildiriyor. İstek, herhangi bir yanıt gelmeden önce ortadan kayboluyor.",
+            "objective": "PC-Design'dan Wiki-01'e HTTP erişimini geri yükleyin; böylece sayfa başarıyla yüklensin.",
+            "hints": [
+                "Wiki-01'den gelen yanıt asla Router-West'i geçmez; istek, PC-Design'a ulaşmadan önce orada durur.",
+                "Router-West'in PC-Design ağına geri giden statik rotası yanlış sonraki sıçramaya işaret ediyor; dönüş trafiği Router-East yerine yanlış porttan gönderiliyor.",
+                "Router-West üzerinde 10.0.7.0/255.255.255.0 rotasını silin ve 10.0.7.0/255.255.255.0 için sonraki sıçrama 10.0.28.1 ve Port Ayarları port 0 olan statik rota ekleyin."
+            ],
+            "explanation": "Statik bir rotanın Sonraki sıçrama değeri, Hedef ağa giden gerçek komşuya işaret etmelidir. Burada Router-West'in PC-Design alt ağına giden rotası yanlış porta işaret ediyordu; dönüş trafiği yanlış yönlendirildi ve Wiki-01 ile TCP bağlantısı kurması hiçbir zaman tamamlanamadı."
+        },
+        "th": {
+            "title": "คำสั่งติดอยู่กลางทางไปสำนักงานใหญ่",
+            "story": "สำนักงานสาขาแจ้งว่าพนักงานที่ PC-Design ไม่สามารถเปิดหน้าจาก Wiki-01 ที่สำนักงานใหญ่ได้ตั้งแต่เช้า คำขอดูเหมือนหายไปก่อนที่จะได้รับการตอบสนอง",
+            "objective": "กู้คืนการเข้าถึง HTTP จาก PC-Design ไป Wiki-01 เพื่อให้หน้าโหลดสำเร็จ",
+            "hints": [
+                "คำตอบจาก Wiki-01 ไม่เคยผ่าน Router-West ได้; คำขอหยุดชะงักก่อนถึง PC-Design",
+                "Router-West มีเส้นทางคงที่กลับไปยังเครือข่าย PC-Design ชี้ไปยังฮ็อปถัดไปที่ผิด; ดังนั้นการจราจรกลับจึงถูกส่งผ่านพอร์ตผิดแทนที่จะไปยัง Router-East",
+                "บน Router-West ให้ลบเส้นทางไปยัง 10.0.7.0/255.255.255.0 และเพิ่มเส้นทางคงที่สำหรับ 10.0.7.0/255.255.255.0 โดยมีฮ็อปถัดไป 10.0.28.1 บนพอร์ต 0"
+            ],
+            "explanation": "ฮ็อปถัดไปของเส้นทางคงที่ต้องชี้ไปยังเพื่อนบ้านจริงที่นำไปสู่เครือข่ายปลายทาง ที่นี่เส้นทางของ Router-West สำหรับซับเน็ตของ PC-Design ชี้ไปยังพอร์ตที่ผิด ดังนั้นการจราจรกลับจึงถูกส่งไปในทิศทางผิด และการแลกเปลี่ยน TCP กับ Wiki-01 ไม่สามารถเสร็จสมบูรณ์ได้"
+        },
+        "vi": {
+            "title": "Đơn hàng Bị Kẹt Nửa Đường tới Trụ sở",
+            "story": "Văn phòng chi nhánh báo cáo rằng nhân viên tại PC-Design không thể mở trang từ Wiki-01 tại trụ sở suốt buổi sáng. Yêu cầu dường như biến mất trước khi có phản hồi nào trở lại.",
+            "objective": "Khôi phục quyền truy cập HTTP từ PC-Design tới Wiki-01 để trang tải thành công.",
+            "hints": [
+                "Phản hồi từ Wiki-01 không bao giờ quay lại qua Router-West; yêu cầu dừng lại ở đó trước khi tới PC-Design.",
+                "Router-West có tuyến tĩnh quay lại mạng của PC-Design chỉ đến hop tiếp theo sai; do đó lưu lượng trở lại được gửi ra cổng sai thay vì hướng tới Router-East.",
+                "Trên Router-West, xóa tuyến tới 10.0.7.0/255.255.255.0 và thêm tuyến tĩnh cho 10.0.7.0/255.255.255.0 qua hop tiếp theo 10.0.28.1 trên cổng 0."
+            ],
+            "explanation": "Hop tiếp theo của tuyến tĩnh phải chỉ đến hàng xóm thực tế dẫn đến mạng đích. Ở đây tuyến của Router-West cho mạng con của PC-Design chỉ đến cổng sai; lưu lượng trở lại bị định tuyến sai và bắt tay TCP với Wiki-01 không bao giờ hoàn thành được."
+        },
+        "ja": {
+            "title": "注文情報が本社手前で止まる",
+            "story": "支社からの報告によると、今朝からずっとPC-DesignのスタッフがWiki-01(本社)のページを開けないとのことです。リクエストは送信されるものの、応答が返ってくる前に消えてしまっているようです。",
+            "objective": "PC-DesignからWiki-01へのHTTPアクセスを復旧し、ページが正常に表示されるようにしてください。",
+            "hints": [
+                "Wiki-01からの応答がRouter-Westを越えて戻ってきていません。PC-Designに届く前にそこで消えてしまっています。",
+                "Router-Westには、PC-Designのネットワーク宛ての静的ルートが誤った中継先(ネクストホップ)に設定されているため、戻りの通信がRouter-Eastへではなく、間違ったポートへ送られてしまっています。",
+                "Router-Westで、10.0.7.0/255.255.255.0へのルートを削除し、10.0.7.0/255.255.255.0 を中継先(ネクストホップ)10.0.28.1、ポート0で静的ルートとして追加してください。"
+            ],
+            "explanation": "静的ルートの中継先(ネクストホップ)は、宛先ネットワークへ実際に導いてくれる隣接機器の方向を指している必要があります。今回はRouter-WestにあるPC-Designのサブネット宛てのルートが誤ったポートを向いていたため、戻りの通信が正しく届かず、Wiki-01とのTCPハンドシェイクが完了できませんでした。"
+        }
+    }
+}
