@@ -1,0 +1,690 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-07",
+    "number": 48,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "cable_unplugged",
+        "vlan_mismatch"
+    ],
+    "concepts": [
+        "physical-link",
+        "vlan"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.5.11",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.5.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.5.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.5.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.16.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.16.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.16.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.16.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "VLAN-Switch-1F",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 30
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.5.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.16.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.7.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-vlan1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Two Desks, No Intranet",
+            "story": "Finance says their PC can't reach the intranet site this morning, and Lab reports the same page won't load either. Both complaints started today, before anyone changed anything on purpose.",
+            "objective": "Restore access from PC-Finance and from PC-Lab to Intranet-01.",
+            "hints": [
+                "PC-Finance's packet never leaves its own port toward VLAN-Switch-1F. PC-Lab's packet reaches VLAN-Switch-1F but dies there before reaching Router-Main.",
+                "PC-Finance has no physical link to the switch at all. PC-Lab's switch port is grouped into VLAN 30, a VLAN with no path to the router, instead of VLAN 20.",
+                "Plug in a cable between PC-Finance and VLAN-Switch-1F. On VLAN-Switch-1F, set the port connected to PC-Lab (port 3) to VLAN 20."
+            ],
+            "explanation": "A missing cable breaks the link entirely, while a port assigned to the wrong VLAN isolates a device even though everything looks plugged in. Always confirm both the physical connection and the VLAN membership match where traffic needs to go."
+        },
+        "ja": {
+            "title": "2台のデスク、繋がらないイントラネット",
+            "story": "今朝、Financeから自分のPCがイントラネットサイトにアクセスできないと連絡がありました。Labも同じページが開かないと報告しています。どちらのトラブルも、誰も意図的に変更を加えていないのに今日発生しました。",
+            "objective": "PC-FinanceとPC-LabからIntranet-01へのアクセスを復旧させます。",
+            "hints": [
+                "PC-Financeのパケットは、VLAN-Switch-1Fに向けて自分のポートから一歩も出ていません。PC-Labのパケットは VLAN-Switch-1F には届きますが、Router-Mainに届く前にそこで止まっています。",
+                "PC-FinanceはそもそもスイッチへケーブルがPhysically接続されていません。PC-Labが接続されているスイッチポートは、本来のVLAN20ではなく、ルーターへの経路がないVLAN30にグループ分けされています。",
+                "PC-FinanceとVLAN-Switch-1Fの間にケーブルを接続してください。VLAN-Switch-1Fで、PC-Labが接続されているポート(ポート3)をVLAN20に設定してください。"
+            ],
+            "explanation": "ケーブルが抜けていると接続自体が完全に切断されますが、VLANの設定を間違えたポートは、見た目は正しく接続されているように見えても、その機器だけがネットワークから孤立してしまいます。物理的な接続とVLANの所属の両方が、通信させたい経路と一致しているかを必ず確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "两个办公室，无内网连接",
+            "story": "财务部说他们的 PC-Finance 今天早上无法访问内网站点，实验室也报告同一个页面加载不出来。两个问题都是今天才出现的，之前没有人刻意改过任何设置。",
+            "objective": "恢复 PC-Finance 和 PC-Lab 到 Intranet-01 的访问。",
+            "hints": [
+                "PC-Finance 的数据包无法离开自己的端口到达 VLAN-Switch-1F。PC-Lab 的数据包到达了 VLAN-Switch-1F，但在到达 Router-Main 之前就在那里断了。",
+                "PC-Finance 根本没有连接到交换机的物理链路。PC-Lab 的交换机端口被分配到 VLAN 30，该 VLAN 没有到达路由器的路径，而不是 VLAN 20。",
+                "在 PC-Finance 和 VLAN-Switch-1F 之间插入一根网线。在 VLAN-Switch-1F 上，将连接到 PC-Lab 的端口（端口 3）设置为 VLAN 20。"
+            ],
+            "explanation": "缺少的网线会完全断开链路，而分配到错误 VLAN 的端口即使看起来一切都已插入也会隔离设备。始终要确认物理连接和 VLAN 成员身份都符合流量需要去往的地方。"
+        },
+        "zh-TW": {
+            "title": "兩間辦公室，無內網連接",
+            "story": "財務部說他們的 PC-Finance 今天早上無法訪問內網站點，實驗室也報告同一個頁面載入不出來。兩個問題都是今天才出現的，之前沒有人刻意改過任何設定。",
+            "objective": "恢復 PC-Finance 和 PC-Lab 到 Intranet-01 的訪問。",
+            "hints": [
+                "PC-Finance 的數據包無法離開自己的連接埠到達 VLAN-Switch-1F。PC-Lab 的數據包到達了 VLAN-Switch-1F，但在到達 Router-Main 之前就在那裡斷了。",
+                "PC-Finance 根本沒有連接到交換器的物理連結。PC-Lab 的交換器連接埠被分配到 VLAN 30，該 VLAN 沒有到達路由器的路徑，而不是 VLAN 20。",
+                "在 PC-Finance 和 VLAN-Switch-1F 之間插入一根網線。在 VLAN-Switch-1F 上，將連接到 PC-Lab 的連接埠（連接埠 3）設定為 VLAN 20。"
+            ],
+            "explanation": "缺少的網線會完全斷開連結，而分配到錯誤 VLAN 的連接埠即使看起來一切都已插入也會隔離裝置。始終要確認物理連接和 VLAN 成員身份都符合流量需要去往的地方。"
+        },
+        "ko": {
+            "title": "두 사무실, 인트라넷 연결 불가",
+            "story": "재무팀이 PC-Finance로 오늘 아침에 인트라넷 사이트에 접속할 수 없다고 보고했고, 실험실도 같은 페이지가 열리지 않는다고 보고했습니다. 두 문제 모두 오늘 처음 발생했으며, 아무도 의도적으로 설정을 바꾼 적이 없습니다.",
+            "objective": "PC-Finance 및 PC-Lab에서 Intranet-01으로의 액세스를 복구합니다.",
+            "hints": [
+                "PC-Finance의 패킷이 자신의 포트를 떠나 VLAN-Switch-1F에 도달하지 못합니다. PC-Lab의 패킷은 VLAN-Switch-1F에 도달했지만 Router-Main에 도달하기 전에 그곳에서 사라집니다.",
+                "PC-Finance는 스위치로의 물리적 연결이 전혀 없습니다. PC-Lab의 스위치 포트가 라우터로의 경로가 없는 VLAN 30에 할당되어 있고, VLAN 20이 아닙니다.",
+                "PC-Finance와 VLAN-Switch-1F 사이에 케이블을 연결하세요. VLAN-Switch-1F에서 PC-Lab에 연결된 포트(포트 3)를 VLAN 20으로 설정하세요."
+            ],
+            "explanation": "손상된 케이블은 링크를 완전히 끊지만, 잘못된 VLAN에 할당된 포트는 모든 것이 연결된 것처럼 보여도 장치를 격리시킵니다. 항상 물리적 연결과 VLAN 멤버십이 트래픽이 가야 할 위치와 일치하는지 확인하세요."
+        },
+        "es": {
+            "title": "Dos Oficinas, Sin Acceso a Intranet",
+            "story": "Finanzas reporta que su PC-Finance no puede acceder al sitio de intranet esta mañana, y el Lab también informa que la misma página no se carga. Ambas quejas comenzaron hoy, antes de que nadie cambiara nada intencionalmente.",
+            "objective": "Restaurar el acceso desde PC-Finance y desde PC-Lab a Intranet-01.",
+            "hints": [
+                "El paquete de PC-Finance nunca sale de su propio puerto hacia VLAN-Switch-1F. El paquete de PC-Lab llega a VLAN-Switch-1F pero muere allí antes de llegar a Router-Main.",
+                "PC-Finance no tiene enlace físico con el conmutador en absoluto. El puerto del conmutador de PC-Lab está agrupado en VLAN 30, una VLAN sin ruta hacia el enrutador, en lugar de VLAN 20.",
+                "Conecte un cable entre PC-Finance y VLAN-Switch-1F. En VLAN-Switch-1F, establezca el puerto conectado a PC-Lab (puerto 3) en VLAN 20."
+            ],
+            "explanation": "Un cable faltante rompe el enlace completamente, mientras que un puerto asignado a la VLAN incorrecta aísla un dispositivo aunque todo parezca enchufado. Siempre confirme que tanto la conexión física como la pertenencia a VLAN coincidan con donde el tráfico necesita ir."
+        },
+        "pt-BR": {
+            "title": "Dois Escritórios, Sem Acesso à Intranet",
+            "story": "Financeiro relata que seu PC-Finance não consegue acessar o site da intranet esta manhã, e o Lab também informa que a mesma página não carrega. Ambas as reclamações começaram hoje, antes de alguém mudar algo intencionalmente.",
+            "objective": "Restaurar o acesso de PC-Finance e de PC-Lab para Intranet-01.",
+            "hints": [
+                "O pacote de PC-Finance nunca sai de sua própria porta em direção a VLAN-Switch-1F. O pacote de PC-Lab chega a VLAN-Switch-1F mas se perde lá antes de chegar a Router-Main.",
+                "PC-Finance não tem nenhum link físico com o switch. A porta do switch de PC-Lab está atribuída à VLAN 30, uma VLAN sem caminho para o roteador, em vez de VLAN 20.",
+                "Conecte um cabo entre PC-Finance e VLAN-Switch-1F. Em VLAN-Switch-1F, defina a porta conectada a PC-Lab (porta 3) para VLAN 20."
+            ],
+            "explanation": "Um cabo faltante quebra o link completamente, enquanto uma porta atribuída à VLAN incorreta isola um dispositivo mesmo que tudo pareça conectado. Sempre confirme que tanto a conexão física quanto a associação de VLAN correspondam ao local para o qual o tráfego precisa ir."
+        },
+        "de": {
+            "title": "Zwei Schreibtische, kein Intranet",
+            "story": "Finance meldet, dass sein PC das Intranet heute Morgen nicht erreichen kann, und Lab berichtet dasselbe für die gleiche Seite. Beide Probleme begannen heute, bevor jemand absichtlich etwas änderte.",
+            "objective": "Stellen Sie den Zugriff von PC-Finance und von PC-Lab auf Intranet-01 wieder her.",
+            "hints": [
+                "Das Paket von PC-Finance verlässt seinen eigenen Port zu VLAN-Switch-1F nie. Das Paket von PC-Lab erreicht VLAN-Switch-1F, stirbt aber dort, bevor es Router-Main erreicht.",
+                "PC-Finance hat überhaupt keine physische Verbindung zum Switch. Der Switch-Port von PC-Lab ist in VLAN 30 gruppiert, einem VLAN ohne Pfad zum Router, statt in VLAN 20.",
+                "Stecken Sie ein Kabel zwischen PC-Finance und VLAN-Switch-1F. Setzen Sie auf VLAN-Switch-1F den mit PC-Lab verbundenen Port (Port 3) auf VLAN 20."
+            ],
+            "explanation": "Ein fehlendes Kabel unterbricht die Verbindung vollständig, während ein Port, der dem falschen VLAN zugewiesen ist, ein Gerät isoliert, obwohl alles eingesteckt zu sein scheint. Bestätigen Sie immer sowohl die physische Verbindung als auch die VLAN-Zugehörigkeit entsprechend, wohin der Datenverkehr fließen muss."
+        },
+        "fr": {
+            "title": "Deux bureaux, pas d'intranet",
+            "story": "Finance signale que son PC ne peut pas accéder à l'intranet ce matin, et Lab rapporte que la même page ne se charge pas non plus. Les deux problèmes ont commencé aujourd'hui, avant que quiconque ne change intentionnellement quelque chose.",
+            "objective": "Restaurez l'accès de PC-Finance et de PC-Lab à Intranet-01.",
+            "hints": [
+                "Le paquet de PC-Finance ne quitte jamais son propre port vers VLAN-Switch-1F. Le paquet de PC-Lab atteint VLAN-Switch-1F mais s'y arrête avant de rejoindre Router-Main.",
+                "PC-Finance n'a aucune liaison physique avec le commutateur. Le port du commutateur de PC-Lab est regroupé dans VLAN 30, un VLAN sans chemin vers le routeur, au lieu de VLAN 20.",
+                "Branchez un câble entre PC-Finance et VLAN-Switch-1F. Sur VLAN-Switch-1F, réglez le port connecté à PC-Lab (port 3) sur VLAN 20."
+            ],
+            "explanation": "Un câble manquant rompt complètement la liaison, tandis qu'un port assigné au mauvais VLAN isole un appareil même si tout semble branché. Confirmez toujours que la connexion physique et l'appartenance au VLAN correspondent à l'endroit où le trafic doit aller."
+        },
+        "hi": {
+            "title": "दो डेस्क, कोई इंट्रानेट नहीं",
+            "story": "Finance कहते हैं कि उनकी PC आज सुबह इंट्रानेट साइट तक नहीं पहुंच सकती है, और Lab ने भी यही पेज लोड नहीं होने की रिपोर्ट की है। दोनों समस्याएं आज शुरू हुईं, इससे पहले कि कोई भी कुछ जानबूझकर बदले।",
+            "objective": "PC-Finance और PC-Lab से Intranet-01 तक पहुंच बहाल करें।",
+            "hints": [
+                "PC-Finance का पैकेट अपने ही पोर्ट से VLAN-Switch-1F की ओर कभी नहीं जाता। PC-Lab का पैकेट VLAN-Switch-1F तक पहुंचता है लेकिन Router-Main तक पहुंचने से पहले वहीं रुक जाता है।",
+                "PC-Finance के पास स्विच से कोई भौतिक लिंक नहीं है। PC-Lab के स्विच पोर्ट को VLAN 30 में समूहबद्ध किया गया है, एक VLAN जिसके पास राउटर तक कोई रास्ता नहीं है, VLAN 20 की जगह।",
+                "PC-Finance और VLAN-Switch-1F के बीच एक केबल लगाएं। VLAN-Switch-1F पर, PC-Lab से जुड़े पोर्ट (पोर्ट 3) को VLAN 20 पर सेट करें।"
+            ],
+            "explanation": "एक लापता केबल लिंक को पूरी तरह तोड़ देती है, जबकि गलत VLAN को सौंपा गया पोर्ट एक डिवाइस को अलग कर देता है भले ही सब कुछ जुड़ा हुआ दिखता हो। हमेशा पुष्टि करें कि भौतिक कनेक्शन और VLAN सदस्यता दोनों ही उस जगह से मेल खाते हैं जहां ट्रैफिक जाने की जरूरत है।"
+        },
+        "id": {
+            "title": "Dua Meja, Tidak Ada Intranet",
+            "story": "Finance mengatakan PC mereka tidak dapat mengakses situs intranet pagi ini, dan Lab melaporkan halaman yang sama juga tidak mau dimuat. Kedua keluhan dimulai hari ini, sebelum siapa pun dengan sengaja mengubah apa pun.",
+            "objective": "Pulihkan akses dari PC-Finance dan dari PC-Lab ke Intranet-01.",
+            "hints": [
+                "Paket PC-Finance tidak pernah meninggalkan port-nya sendiri menuju VLAN-Switch-1F. Paket PC-Lab mencapai VLAN-Switch-1F tetapi berhenti di sana sebelum mencapai Router-Main.",
+                "PC-Finance tidak memiliki tautan fisik ke switch sama sekali. Port switch PC-Lab dikelompokkan ke VLAN 30, sebuah VLAN tanpa jalur ke router, bukan VLAN 20.",
+                "Sambungkan kabel antara PC-Finance dan VLAN-Switch-1F. Pada VLAN-Switch-1F, atur port yang terhubung ke PC-Lab (port 3) ke VLAN 20."
+            ],
+            "explanation": "Kabel yang hilang memutus tautan sepenuhnya, sementara port yang ditugaskan ke VLAN yang salah mengisolasi perangkat meskipun semuanya terlihat tersambung. Selalu konfirmasi bahwa koneksi fisik dan keanggotaan VLAN cocok dengan tempat lalu lintas harus pergi."
+        },
+        "ru": {
+            "title": "Два стола, нет интранета",
+            "story": "Finance сообщает, что их ПК не может получить доступ к интранету сегодня утром, и Lab тоже говорит, что эта же страница не загружается. Обе проблемы начались сегодня, до того как кто-либо что-либо намеренно изменил.",
+            "objective": "Восстановите доступ с PC-Finance и с PC-Lab к Intranet-01.",
+            "hints": [
+                "Пакет с PC-Finance никогда не покидает собственный порт в направлении VLAN-Switch-1F. Пакет с PC-Lab достигает VLAN-Switch-1F, но там прерывается, прежде чем дойти до Router-Main.",
+                "PC-Finance вообще не имеет физического подключения к коммутатору. Порт коммутатора PC-Lab входит в VLAN 30, VLAN без пути к маршрутизатору, вместо VLAN 20.",
+                "Подключите кабель между PC-Finance и VLAN-Switch-1F. На VLAN-Switch-1F установите порт, подключенный к PC-Lab (порт 3), на VLAN 20."
+            ],
+            "explanation": "Отсутствующий кабель полностью разрывает связь, а порт, назначенный неправильной VLAN, изолирует устройство, даже если все выглядит подключенным. Всегда проверяйте, что физическое соединение и принадлежность VLAN соответствуют маршруту трафика."
+        },
+        "it": {
+            "title": "Due Postazioni, Nessun Intranet",
+            "story": "Finance segnala che il suo PC non riesce a raggiungere il sito intranet questa mattina, e Lab riferisce che la stessa pagina non si carica nemmeno per loro. Entrambi i problemi sono iniziati oggi, prima che chiunque modificasse consapevolmente qualcosa.",
+            "objective": "Ripristinare l'accesso da PC-Finance e da PC-Lab a Intranet-01.",
+            "hints": [
+                "Il pacchetto di PC-Finance non esce mai dalla sua porta verso VLAN-Switch-1F. Il pacchetto di PC-Lab raggiunge VLAN-Switch-1F ma muore lì prima di raggiungere Router-Main.",
+                "PC-Finance non ha alcun collegamento fisico al switch. La porta del switch di PC-Lab è assegnata alla VLAN 30, una VLAN senza percorso verso il router, invece che alla VLAN 20.",
+                "Collega un cavo tra PC-Finance e VLAN-Switch-1F. Su VLAN-Switch-1F, imposta la porta collegata a PC-Lab (porta 3) alla VLAN 20."
+            ],
+            "explanation": "Un cavo mancante interrompe completamente il collegamento, mentre una porta assegnata alla VLAN sbagliata isola un dispositivo anche se tutto sembra collegato. Conferma sempre sia il collegamento fisico che l'appartenenza alla VLAN corrispondano a dove il traffico deve andare."
+        },
+        "tr": {
+            "title": "İki Masaüstü, İntranet Yok",
+            "story": "Finans ekibi, PC'lerinin bu sabah intranet sitesine erişemediğini bildiriyor ve Lab da aynı sayfanın yüklenmedığini söylüyor. Her iki şikayeti de bugün başladı, kimse kasıtlı olarak bir şey değiştirmeden önce.",
+            "objective": "PC-Finance ve PC-Lab'dan Intranet-01'e erişimi geri yükleyin.",
+            "hints": [
+                "PC-Finance'ın paketi kendi portundan VLAN-Switch-1F'ye doğru asla çıkmaz. PC-Lab'ın paketi VLAN-Switch-1F'ye ulaşır ancak Router-Main'e ulaşmadan orada kalır.",
+                "PC-Finance'ın anahtara hiç fiziksel bağlantısı yoktur. PC-Lab'ın anahtar portu, router'a yol olmayan bir VLAN olan VLAN 30'a atanmıştır; VLAN 20 yerine.",
+                "PC-Finance ile VLAN-Switch-1F arasına bir kablo takın. VLAN-Switch-1F'de, PC-Lab'a bağlı portu (port 3) VLAN 20 olarak ayarlayın."
+            ],
+            "explanation": "Eksik bir kablo bağlantıyı tamamen kesintiye uğratırken, yanlış VLAN'a atanan bir port, her şey takılı görünse bile bir cihazı izole eder. Her zaman hem fiziksel bağlantıyı hem de VLAN üyeliğinin trafiğin gitmesi gereken yerle eşleştiğini doğrulayın."
+        },
+        "th": {
+            "title": "สองเดสก์ ไม่มี Intranet",
+            "story": "ฝ่าย Finance รายงานว่า PC ของพวกเขาไม่สามารถเข้าถึงไซต์ intranet เมื่อเช้านี้ และ Lab รายงานว่าหน้าเดียวกันนี้ไม่โหลดเช่นกัน ปัญหาทั้งสองเริ่มต้นวันนี้ ก่อนที่ใครจะเจตนาเปลี่ยนแปลงอะไร",
+            "objective": "คืนการเข้าถึงจาก PC-Finance และ PC-Lab ไปยัง Intranet-01",
+            "hints": [
+                "แพ็คเก็ตของ PC-Finance ไม่ออกจากพอร์ตของมันเลยไปทาง VLAN-Switch-1F แพ็คเก็ตของ PC-Lab ถึง VLAN-Switch-1F แต่ตายที่นั่นก่อนถึง Router-Main",
+                "PC-Finance ไม่มีลิงก์กายภาพกับสวิตช์เลย พอร์ตสวิตช์ของ PC-Lab ถูกจัดกลุ่มเป็น VLAN 30 ซึ่งเป็น VLAN ที่ไม่มีเส้นทางไปยังเราเตอร์ แทนที่จะเป็น VLAN 20",
+                "เสียบสายเคเบิลระหว่าง PC-Finance และ VLAN-Switch-1F บน VLAN-Switch-1F ให้ตั้งค่าพอร์ตที่เชื่อมต่อกับ PC-Lab (พอร์ต 3) เป็น VLAN 20"
+            ],
+            "explanation": "สายเคเบิลที่หายไปทำให้ลิงก์ขาดทั้งหมด ในขณะที่พอร์ตที่กำหนดให้กับ VLAN ที่ผิดจะแยกอุปกรณ์แม้ว่าทุกอย่างดูเหมือนเสียบปลั๊ก ยืนยันเสมอว่าทั้งการเชื่อมต่อกายภาพและการเป็นสมาชิก VLAN ตรงกับที่ที่ต้องการให้ส่งข้อมูล"
+        },
+        "vi": {
+            "title": "Hai Bàn Làm Việc, Không Có Intranet",
+            "story": "Phòng Tài chính báo cáo PC của họ không thể truy cập trang intranet sáng hôm nay, và Lab cũng báo cáo rằng trang này không tải được. Cả hai sự cố đều bắt đầu hôm nay, trước khi ai đó cố tình thay đổi bất cứ điều gì.",
+            "objective": "Khôi phục quyền truy cập từ PC-Finance và PC-Lab đến Intranet-01.",
+            "hints": [
+                "Gói của PC-Finance không bao giờ rời khỏi cổng của nó hướng tới VLAN-Switch-1F. Gói của PC-Lab tiếp cận VLAN-Switch-1F nhưng chết ở đó trước khi tiếp cận Router-Main.",
+                "PC-Finance không có liên kết vật lý nào với switch. Cổng switch của PC-Lab được gán cho VLAN 30, một VLAN không có đường dẫn đến router, thay vì VLAN 20.",
+                "Cắm dây cáp giữa PC-Finance và VLAN-Switch-1F. Trên VLAN-Switch-1F, đặt cổng được kết nối với PC-Lab (cổng 3) thành VLAN 20."
+            ],
+            "explanation": "Sợi cáp bị mất làm gián đoạn toàn bộ liên kết, trong khi một cổng được gán cho VLAN sai sẽ cô lập thiết bị ngay cả khi tất cả mọi thứ có vẻ được cắm vào. Luôn xác nhận cả kết nối vật lý và thành viên VLAN khớp với nơi cần gửi lưu lượng."
+        }
+    }
+}
