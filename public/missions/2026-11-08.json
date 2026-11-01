@@ -1,0 +1,591 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-08",
+    "number": 49,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "lb_farm",
+    "faultIds": [
+        "lb_no_backend",
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "load-balancer",
+        "physical-link",
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.30.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.10",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.25.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-lb1": {
+                "id": "dev-lb1",
+                "type": "LOAD_BALANCER",
+                "name": "LB-Web",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-lb1-p0",
+                        "index": 0,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.25.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p1",
+                        "index": 1,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p2",
+                        "index": 2,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p3",
+                        "index": 3,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p4",
+                        "index": 4,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p5",
+                        "index": 5,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p6",
+                        "index": 6,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p7",
+                        "index": 7,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "App-01",
+                "x": 80.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.25.1",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server2": {
+                "id": "dev-server2",
+                "type": "SERVER",
+                "name": "App-02",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server2-p0",
+                        "index": 0,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.25.2",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p1",
+                        "index": 1,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p2",
+                        "index": 2,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p3",
+                        "index": 3,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server3": {
+                "id": "dev-server3",
+                "type": "SERVER",
+                "name": "App-03",
+                "x": 320.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server3-p0",
+                        "index": 0,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.25.3",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p1",
+                        "index": 1,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p2",
+                        "index": 2,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p3",
+                        "index": 3,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-lb1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-lb1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-lb1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1",
+            "dev-lb1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 4
+    },
+    "text": {
+        "en": {
+            "title": "Finance Can't Reach the Web Portal",
+            "story": "Someone in the Finance team reports that the web portal has been completely unreachable from PC-Finance since this morning. No page loads at all, no matter how many times they retry.",
+            "objective": "Restore PC-Finance's ability to get a successful web response from LB-Web.",
+            "hints": [
+                "The request from PC-Finance never makes it past its own local network setup — it stops right there before reaching Router-HQ. Meanwhile, even traffic that reaches LB-Web has nowhere to go.",
+                "PC-Finance is pointed at LB-Web itself as its default gateway, but LB-Web is not a router and cannot forward packets onward. Separately, LB-Web has no working links to App-01, App-02, or App-03 to balance requests to.",
+                "Set PC-Finance's default gateway to 10.0.30.254 (Router-HQ). Also connect cables between LB-Web and each of App-01, App-02, and App-03."
+            ],
+            "explanation": "A client's default gateway must be an actual router, not just any nearby device — otherwise packets can't leave the local network at all. Separately, a load balancer is useless without working links to the backend servers it's supposed to distribute traffic to."
+        },
+        "ja": {
+            "title": "Finance部門がWebポータルに接続できない",
+            "story": "Finance部門の担当者から、今朝からPC-FinanceでWebポータルにまったく接続できないと報告がありました。何度試してもページが読み込まれません。",
+            "objective": "PC-FinanceがLB-Webから正常なWeb応答を受け取れるように復旧してください。",
+            "hints": [
+                "PC-Financeからのリクエストは、自分のローカルネットワークの設定から先に進めず、Router-HQに届く前にそこで止まってしまっています。一方で、LB-Webまでたどり着いたトラフィックも、その先に行き先がありません。",
+                "PC-FinanceはデフォルトゲートウェイとしてLB-Web自体を指定していますが、LB-Webはルーターではないためパケットを先に転送できません。また別の問題として、LB-WebからApp-01、App-02、App-03への有効な接続がなく、リクエストを振り分けられません。",
+                "PC-Financeのデフォルトゲートウェイを10.0.30.254（Router-HQ）に設定してください。さらに、LB-WebとApp-01、App-02、App-03のそれぞれの間をケーブルで接続してください。"
+            ],
+            "explanation": "クライアントのデフォルトゲートウェイには、単に近くにある機器ではなく、実際にルーターとして機能する機器を指定する必要があります。そうでないと、パケットはローカルネットワークの外に出ることができません。また、ロードバランサーは、振り分け先となるバックエンドサーバーへの有効な接続がなければ機能しません。"
+        },
+        "zh-CN": {
+            "title": "财务部无法访问网络门户",
+            "story": "财务部的某位员工反映，从今天早上起，PC-Finance 就完全无法访问网络门户。无论重试多少次，都无法加载任何页面。",
+            "objective": "恢复 PC-Finance 从 LB-Web 获得成功网络响应的能力。",
+            "hints": [
+                "PC-Finance 的请求从未越过其本地网络设置——它在到达 Router-HQ 之前就停止了。同时，即使流量到达 LB-Web，也无处可去。",
+                "PC-Finance 将 LB-Web 本身作为其 Default Gateway，但 LB-Web 不是 Router，无法转发数据包。此外，LB-Web 没有到 App-01、App-02 或 App-03 的工作链接来均衡请求。",
+                "将 PC-Finance 的 Default Gateway 设置为 10.0.30.254（Router-HQ）。同时连接 LB-Web 和 App-01、App-02、App-03 之间的电缆。"
+            ],
+            "explanation": "Client 的 Default Gateway 必须是实际的 Router，而不仅仅是任何附近的设备——否则数据包根本无法离开本地网络。同样，没有到其应该分配流量的后端 Server 的工作链接，Load Balancer 就毫无用处。"
+        },
+        "zh-TW": {
+            "title": "財務部無法存取網路入口",
+            "story": "財務部的某位員工反映，從今天早上起，PC-Finance 就完全無法存取網路入口。無論重試多少次，都無法載入任何頁面。",
+            "objective": "恢復 PC-Finance 從 LB-Web 獲得成功網路回應的能力。",
+            "hints": [
+                "PC-Finance 的請求從未越過其本機網路設定——它在到達 Router-HQ 之前就停止了。同時，即使流量到達 LB-Web，也無處可去。",
+                "PC-Finance 將 LB-Web 本身作為其 Default Gateway，但 LB-Web 不是 Router，無法轉送封包。此外，LB-Web 沒有到 App-01、App-02 或 App-03 的運作中連結來平衡請求。",
+                "將 PC-Finance 的 Default Gateway 設定為 10.0.30.254（Router-HQ）。同時連接 LB-Web 和 App-01、App-02、App-03 之間的纜線。"
+            ],
+            "explanation": "Client 的 Default Gateway 必須是實際的 Router，而不僅僅是任何附近的裝置——否則封包根本無法離開本機網路。同樣，沒有到其應該分配流量的後端 Server 的運作中連結，Load Balancer 就毫無用處。"
+        },
+        "ko": {
+            "title": "재무팀이 웹 포털에 접속할 수 없음",
+            "story": "재무팀 직원이 오늘 아침부터 PC-Finance에서 웹 포털에 완전히 접속할 수 없다고 보고했습니다. 몇 번을 재시도해도 어떤 페이지도 로드되지 않습니다.",
+            "objective": "PC-Finance가 LB-Web으로부터 성공적인 웹 응답을 받을 수 있도록 복구합니다.",
+            "hints": [
+                "PC-Finance의 요청이 자신의 로컬 네트워크 설정을 넘지 못하고, Router-HQ에 도달하기 전에 멈춥니다. 한편 LB-Web에 도달하는 트래픽도 갈 곳이 없습니다.",
+                "PC-Finance는 LB-Web 자체를 기본 게이트웨이로 가리키지만, LB-Web은 Router가 아니어서 패킷을 전달할 수 없습니다. 또한 LB-Web은 App-01, App-02, App-03으로 요청을 분산할 작동 중인 링크가 없습니다.",
+                "PC-Finance의 기본 게이트웨이를 10.0.30.254(Router-HQ)로 설정합니다. 또한 LB-Web과 App-01, App-02, App-03 사이에 케이블을 연결합니다."
+            ],
+            "explanation": "Client의 기본 게이트웨이는 단순히 근처의 어떤 장치가 아니라 실제 Router여야 합니다. 그렇지 않으면 패킷이 로컬 네트워크를 벗어날 수 없습니다. 마찬가지로 Load Balancer는 트래픽을 분산해야 하는 백엔드 Server로의 작동 중인 링크 없이는 무용지물입니다."
+        },
+        "es": {
+            "title": "Finanzas No Puede Acceder al Portal Web",
+            "story": "Alguien del equipo de Finanzas reporta que el portal web ha sido completamente inaccesible desde PC-Finance desde esta mañana. No se carga ninguna página, sin importar cuántas veces reintentan.",
+            "objective": "Restaurar la capacidad de PC-Finance para obtener una respuesta web exitosa de LB-Web.",
+            "hints": [
+                "La solicitud desde PC-Finance nunca supera su propia configuración de red local — se detiene justo antes de llegar a Router-HQ. Mientras tanto, incluso el tráfico que llega a LB-Web no tiene a dónde ir.",
+                "PC-Finance apunta a LB-Web como su Gateway predeterminado, pero LB-Web no es un Router y no puede reenviar paquetes. Además, LB-Web no tiene enlaces de funcionamiento a App-01, App-02 o App-03 para equilibrar solicitudes.",
+                "Establece el Gateway predeterminado de PC-Finance en 10.0.30.254 (Router-HQ). También conecta cables entre LB-Web y cada uno de App-01, App-02 y App-03."
+            ],
+            "explanation": "El Gateway predeterminado de un Client debe ser un Router real, no solo cualquier dispositivo cercano — de lo contrario, los paquetes no pueden salir de la red local en absoluto. De manera similar, un Load Balancer es inútil sin enlaces de funcionamiento a los servidores backend a los que se supone debe distribuir tráfico."
+        },
+        "pt-BR": {
+            "title": "Financeiro Não Consegue Acessar o Portal Web",
+            "story": "Alguém da equipe de Financeiro relata que o portal web ficou completamente inacessível do PC-Finance desde esta manhã. Nenhuma página carrega, não importa quantas vezes tentem novamente.",
+            "objective": "Restaurar a capacidade de PC-Finance obter uma resposta web bem-sucedida de LB-Web.",
+            "hints": [
+                "A solicitação de PC-Finance nunca passa por sua própria configuração de rede local — ela para bem ali antes de chegar a Router-HQ. Enquanto isso, mesmo o tráfego que chega a LB-Web não tem para onde ir.",
+                "PC-Finance aponta para LB-Web como seu Gateway padrão, mas LB-Web não é um Router e não consegue encaminhar pacotes. Além disso, LB-Web não possui links funcionando para App-01, App-02 ou App-03 para equilibrar requisições.",
+                "Defina o Gateway padrão de PC-Finance como 10.0.30.254 (Router-HQ). Também conecte cabos entre LB-Web e cada um dos App-01, App-02 e App-03."
+            ],
+            "explanation": "O Gateway padrão de um Client deve ser um Router real, não apenas qualquer dispositivo próximo — caso contrário, os pacotes não conseguem sair da rede local. De forma similar, um Load Balancer é inútil sem links funcionando para os Servers backend para os quais ele deve distribuir tráfego."
+        },
+        "de": {
+            "title": "Finance kann das Web-Portal nicht erreichen",
+            "story": "Jemand aus dem Finance-Team meldet, dass das Web-Portal seit heute Morgen von PC-Finance aus vollständig unerreichbar ist. Es lädt überhaupt keine Seite, egal wie oft man es versucht.",
+            "objective": "Stellen Sie PC-Finance's Fähigkeit wieder her, eine erfolgreiche Web-Antwort von LB-Web zu erhalten.",
+            "hints": [
+                "Die Anfrage von PC-Finance kommt nie über sein eigenes lokales Netzwerk-Setup hinaus — sie stoppt dort, bevor sie Router-HQ erreicht. Gleichzeitig hat selbst der Traffic, der LB-Web erreicht, nirgendwo hin zu gehen.",
+                "PC-Finance zeigt auf LB-Web selbst als seinen Standard-Gateway, aber LB-Web ist kein Router und kann Pakete nicht weiterleiten. Zusätzlich hat LB-Web keine funktionierenden Verbindungen zu App-01, App-02 oder App-03, um Anfragen auszuteilen.",
+                "Setzen Sie den Standard-Gateway von PC-Finance auf 10.0.30.254 (Router-HQ). Verbinden Sie auch Kabel zwischen LB-Web und jedem von App-01, App-02 und App-03."
+            ],
+            "explanation": "Das Standard-Gateway eines Clients muss ein echter Router sein, nicht einfach nur ein beliebiges nahegelegenes Gerät — sonst können Pakete das lokale Netzwerk überhaupt nicht verlassen. Zusätzlich ist ein Load Balancer ohne funktionierende Verbindungen zu den Backend-Servern, zu denen er Traffic verteilen soll, nutzlos."
+        },
+        "fr": {
+            "title": "Finance ne peut pas accéder au portail web",
+            "story": "Une personne de l'équipe Finance signale que le portail web est complètement inaccessible depuis PC-Finance depuis ce matin. Aucune page ne se charge, peu importe combien de fois on essaie.",
+            "objective": "Rétablir la capacité de PC-Finance à obtenir une réponse web réussie de LB-Web.",
+            "hints": [
+                "La requête de PC-Finance ne dépasse jamais sa propre configuration de réseau local — elle s'arrête là avant d'atteindre Router-HQ. Pendant ce temps, même le trafic qui atteint LB-Web n'a nulle part où aller.",
+                "PC-Finance est pointé vers LB-Web lui-même comme sa passerelle par défaut, mais LB-Web n'est pas un routeur et ne peut pas rediriger les paquets. De plus, LB-Web n'a pas de liens fonctionnels vers App-01, App-02 ou App-03 pour équilibrer les demandes.",
+                "Définissez la passerelle par défaut de PC-Finance sur 10.0.30.254 (Router-HQ). Connectez aussi des câbles entre LB-Web et chacun des App-01, App-02 et App-03."
+            ],
+            "explanation": "La passerelle par défaut d'un client doit être un vrai routeur, pas simplement n'importe quel appareil proche — sinon les paquets ne peuvent pas quitter le réseau local. De plus, un équilibreur de charge est inutile sans liens fonctionnels vers les serveurs backend auxquels il est censé distribuer le trafic."
+        },
+        "hi": {
+            "title": "Finance वेब पोर्टल तक नहीं पहुंच सकता",
+            "story": "Finance टीम का कोई सदस्य बताता है कि वेब पोर्टल आज सुबह से PC-Finance से पूरी तरह अप्राप्य है। कोई भी पेज लोड नहीं होता, कितनी भी बार कोशिश करने से कोई फर्क नहीं पड़ता।",
+            "objective": "PC-Finance को LB-Web से सफल वेब प्रतिक्रिया पाने की क्षमता को बहाल करें।",
+            "hints": [
+                "PC-Finance का अनुरोध अपने स्वयं के स्थानीय नेटवर्क सेटअप से आगे कभी नहीं जाता — यह Router-HQ तक पहुंचने से पहले वहीं रुक जाता है। इसी बीच, LB-Web तक पहुंचने वाली ट्रैफ़िक के पास कहीं जाने के लिए कोई रास्ता नहीं है।",
+                "PC-Finance LB-Web को अपने डिफ़ॉल्ट गेटवे के रूप में दर्शाया जाता है, लेकिन LB-Web एक Router नहीं है और पैकेट को आगे नहीं भेज सकता। अलग से, LB-Web के पास App-01, App-02 या App-03 के लिए कोई काम करने वाले लिंक नहीं हैं।",
+                "PC-Finance का डिफ़ॉल्ट गेटवे 10.0.30.254 (Router-HQ) पर सेट करें। साथ ही LB-Web और App-01, App-02 और App-03 के बीच केबल कनेक्ट करें।"
+            ],
+            "explanation": "किसी क्लाइंट का डिफ़ॉल्ट गेटवे एक वास्तविक Router होना चाहिए, केवल कोई भी पास की डिवाइस नहीं — अन्यथा पैकेट स्थानीय नेटवर्क छोड़ नहीं सकते। अलग से, एक Load Balancer उन बैकएंड सर्वर के लिए काम करने वाले लिंक के बिना बेकार है जिन्हें यह ट्रैफ़िक वितरित करने वाला है।"
+        },
+        "id": {
+            "title": "Finance Tidak Bisa Mengakses Portal Web",
+            "story": "Seseorang dari tim Finance melaporkan bahwa portal web sepenuhnya tidak dapat dijangkau dari PC-Finance sejak pagi hari ini. Tidak ada halaman yang dimuat, tidak peduli berapa kali mereka mencoba.",
+            "objective": "Pulihkan kemampuan PC-Finance untuk mendapatkan respons web yang berhasil dari LB-Web.",
+            "hints": [
+                "Permintaan dari PC-Finance tidak pernah melampaui konfigurasi jaringan lokal-nya sendiri — berhenti di sana sebelum mencapai Router-HQ. Sementara itu, bahkan lalu lintas yang mencapai LB-Web tidak punya tempat untuk pergi.",
+                "PC-Finance menunjuk pada LB-Web itu sendiri sebagai Gateway Default-nya, tetapi LB-Web bukan sebuah Router dan tidak dapat meneruskan paket. Secara terpisah, LB-Web tidak memiliki tautan yang berfungsi ke App-01, App-02, atau App-03 untuk menyeimbangkan permintaan.",
+                "Atur Gateway Default PC-Finance ke 10.0.30.254 (Router-HQ). Juga hubungkan kabel antara LB-Web dan masing-masing App-01, App-02, dan App-03."
+            ],
+            "explanation": "Gateway Default klien harus menjadi Router yang sebenarnya, bukan hanya perangkat apa pun yang dekat — jika tidak, paket tidak dapat meninggalkan jaringan lokal sama sekali. Secara terpisah, Load Balancer tidak berguna tanpa tautan yang berfungsi ke Server backend yang seharusnya mendistribusikan lalu lintas."
+        },
+        "ru": {
+            "title": "Finance не может получить доступ к веб-порталу",
+            "story": "Кто-то из команды Finance сообщает, что веб-портал полностью недоступен с PC-Finance с этого утра. Никакие страницы не загружаются, независимо от того, сколько раз они пытаются.",
+            "objective": "Восстановите способность PC-Finance получать успешный веб-ответ от LB-Web.",
+            "hints": [
+                "Запрос от PC-Finance никогда не выходит за пределы его собственной локальной сетевой настройки — останавливается прямо там перед достижением Router-HQ. Тем временем даже трафик, достигающий LB-Web, некуда идти.",
+                "PC-Finance указывает на LB-Web как на свой Шлюз по умолчанию, но LB-Web не является маршрутизатором и не может перенаправлять пакеты. Кроме того, LB-Web не имеет рабочих соединений с App-01, App-02 или App-03 для распределения запросов.",
+                "Установите Шлюз по умолчанию PC-Finance на 10.0.30.254 (Router-HQ). Также подключите кабели между LB-Web и каждым из App-01, App-02 и App-03."
+            ],
+            "explanation": "Шлюз по умолчанию клиента должен быть реальным маршрутизатором, а не просто любым соседним устройством — иначе пакеты не смогут вообще покинуть локальную сеть. Кроме того, балансировщик нагрузки бесполезен без рабочих соединений с внутренними серверами, к которым он должен распределять трафик."
+        },
+        "it": {
+            "title": "Finance Non Riesce a Raggiungere il Portale Web",
+            "story": "Qualcuno del team Finance riferisce che il portale web è completamente irraggiungibile da PC-Finance da questa mattina. Nessuna pagina si carica, non importa quante volte ritentano.",
+            "objective": "Ripristina la capacità di PC-Finance di ricevere una risposta web riuscita da LB-Web.",
+            "hints": [
+                "La richiesta da PC-Finance non supera mai la sua stessa configurazione di rete locale — si ferma subito lì prima di raggiungere Router-HQ. Nel frattempo, anche il traffico che raggiunge LB-Web non ha dove andare.",
+                "PC-Finance è configurato con LB-Web stesso come suo Gateway predefinito, ma LB-Web non è un Router e non può inoltrare pacchetti. Inoltre, LB-Web non ha link funzionanti verso App-01, App-02 o App-03 per bilanciare le richieste.",
+                "Imposta il Gateway predefinito di PC-Finance su 10.0.30.254 (Router-HQ). Inoltre, collega i cavi tra LB-Web e ognuno di App-01, App-02 e App-03."
+            ],
+            "explanation": "Il Gateway predefinito di un Client deve essere un vero Router, non solo un dispositivo qualsiasi nelle vicinanze — altrimenti i pacchetti non possono lasciare la rete locale. Inoltre, un Load Balancer è inutile senza link funzionanti ai Server di backend che dovrebbe distribuire il traffico."
+        },
+        "tr": {
+            "title": "Finance Web Portalına Erişemiyor",
+            "story": "Finance ekibinden biri, web portalının bu sabahtan beri PC-Finance'ten tamamen ulaşılamaz halde olduğunu bildiriyor. Kaç kez yeniden denerlerse densinler, hiçbir sayfa yüklenmez.",
+            "objective": "PC-Finance'in LB-Web'den başarılı bir web yanıtı alabilmesini sağla.",
+            "hints": [
+                "PC-Finance'ten gelen istek, kendi yerel ağ kurulumundan asla geçmez — Router-HQ'ya ulaşmadan orada kalır. Ayrıca, LB-Web'e ulaşan trafik bile hiçbir yere gidemez.",
+                "PC-Finance, LB-Web'in kendisini varsayılan ağ geçidi olarak göstermektedir, ancak LB-Web bir Router değildir ve paketleri iletmeye devam edemez. Bundan ayrı olarak, LB-Web'in istekleri dengelemesi gereken App-01, App-02 veya App-03'e çalışan bağlantıları yok.",
+                "PC-Finance'in varsayılan ağ geçidini 10.0.30.254 (Router-HQ) olarak ayarla. Ayrıca LB-Web ile App-01, App-02 ve App-03'ün her biri arasında kablolar bağla."
+            ],
+            "explanation": "Bir Client'in varsayılan ağ geçidi gerçek bir Router olmalıdır, sadece yakındaki herhangi bir cihaz değil — aksi takdirde paketler yerel ağı hiç terk edemez. Ayrıca, bir Load Balancer trafiği dağıtması gereken arka uç Sunucularına çalışan bağlantılar olmadan işe yaramaz."
+        },
+        "th": {
+            "title": "Finance ไม่สามารถเข้าถึง Web Portal",
+            "story": "สมาชิกของทีม Finance รายงานว่า web portal ไม่สามารถเข้าถึงได้จาก PC-Finance ตั้งแต่เช้านี้ เพจไม่โหลดเลย ไม่ว่าจะลองกี่ครั้ง",
+            "objective": "กู้คืนความสามารถของ PC-Finance ในการได้รับการตอบสนอง web สำเร็จจาก LB-Web",
+            "hints": [
+                "คำขอจาก PC-Finance ไม่ผ่านการตั้งค่าเครือข่ายท้องถิ่นของตัวเอง — หยุดอยู่ที่นั่นก่อนที่จะถึง Router-HQ ในขณะเดียวกัน แม้แต่ทราฟิกที่ถึง LB-Web ก็ไม่มีที่ไปด้วย",
+                "PC-Finance ชี้ไปที่ LB-Web เอง เป็น เกตเวย์เริ่มต้น แต่ LB-Web ไม่ใช่ Router และไม่สามารถส่งต่อแพกเก็ต นอกจากนี้ LB-Web ไม่มีลิงก์ที่ทำงานได้ไปยัง App-01, App-02 หรือ App-03 เพื่อทำการโหลดแบลนซ์คำขอ",
+                "ตั้งค่า เกตเวย์เริ่มต้น ของ PC-Finance เป็น 10.0.30.254 (Router-HQ) นอกจากนี้ให้เชื่อมต่อสายเคเบิลระหว่าง LB-Web และ App-01, App-02 และ App-03 แต่ละตัว"
+            ],
+            "explanation": "เกตเวย์เริ่มต้น ของ Client ต้องเป็น Router จริง ไม่ใช่เพียงอุปกรณ์ที่อยู่ใกล้เคียง — มิฉะนั้นแพกเก็ตจะไม่ออกจากเครือข่ายท้องถิ่น นอกจากนี้ Load Balancer ไร้ประโยชน์หากไม่มีลิงก์ที่ทำงานได้ไปยัง Server ด้านหลังที่ควรจะกระจายทราฟิก"
+        },
+        "vi": {
+            "title": "Finance Không Thể Truy Cập Web Portal",
+            "story": "Ai đó từ đội Finance báo cáo rằng web portal hoàn toàn không thể truy cập được từ PC-Finance kể từ sáng nay. Không có trang nào tải được, cho dù họ thử bao nhiêu lần.",
+            "objective": "Khôi phục khả năng của PC-Finance nhận được phản hồi web thành công từ LB-Web.",
+            "hints": [
+                "Yêu cầu từ PC-Finance không bao giờ vượt qua cài đặt mạng cục bộ của chính nó — nó dừng ở đó trước khi đến Router-HQ. Trong khi đó, ngay cả lưu lượng truy cập đến LB-Web cũng không có chỗ để đi.",
+                "PC-Finance được trỏ tới chính LB-Web làm Cổng mặc định của nó, nhưng LB-Web không phải là Router và không thể chuyển tiếp các gói tin. Ngoài ra, LB-Web không có liên kết hoạt động tới App-01, App-02 hoặc App-03 để cân bằng tải các yêu cầu.",
+                "Đặt Cổng mặc định của PC-Finance thành 10.0.30.254 (Router-HQ). Ngoài ra, kết nối cáp giữa LB-Web và mỗi App-01, App-02 và App-03."
+            ],
+            "explanation": "Cổng mặc định của Client phải là một Router thực tế, không chỉ là bất kỳ thiết bị nào gần đó — nếu không, các gói tin không thể rời khỏi mạng cục bộ. Ngoài ra, Load Balancer vô dụng nếu không có các liên kết hoạt động tới các Server phụ trợ mà nó được cho là sẽ phân phối lưu lượng truy cập."
+        }
+    }
+}
