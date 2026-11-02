@@ -1,0 +1,502 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-09",
+    "number": 50,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "internet_edge",
+    "faultIds": [
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.23.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.23.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "203.0.113.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-internet1": {
+                "id": "dev-internet1",
+                "type": "INTERNET",
+                "name": "docs.example.org",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-internet1-p0",
+                        "index": 0,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "203.0.113.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p1",
+                        "index": 1,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p2",
+                        "index": 2,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p3",
+                        "index": 3,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": [],
+                    "domainName": "docs.example.org"
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-internet1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-internet1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-internet1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-internet1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Branch Desk Can't Reach the Website",
+            "story": "A sales rep at the new branch desk reports that PC-Admin cannot load the company website, docs.example.org, since the machine was set up this morning.",
+            "objective": "Get an HTTP request from PC-Admin to docs.example.org to succeed.",
+            "hints": [
+                "The request never even leaves PC-Admin — it dies right there before reaching Switch-1F or Router-Edge.",
+                "PC-Admin has no default gateway configured, so it has no idea how to send traffic to an address outside its own network.",
+                "On PC-Admin, set the default gateway to 10.0.23.254 (Router-Edge's local port) so it knows where to send outbound traffic."
+            ],
+            "explanation": "Any device must know its default gateway to reach addresses outside its own subnet. Without one, outbound packets are dropped locally since the PC has no route off its network. Setting the gateway to the router's local-side address restores connectivity."
+        },
+        "ja": {
+            "title": "支店のデスクからウェブサイトに接続できない",
+            "story": "新しい支店のデスクで働く営業担当者から、今朝セットアップしたばかりのPC-Adminが会社のウェブサイトdocs.example.orgを表示できないと報告がありました。",
+            "objective": "PC-Adminからdocs.example.orgへのHTTPリクエストを成功させましょう。",
+            "hints": [
+                "リクエストはPC-Adminから一歩も出ていません。Switch-1FやRouter-Edgeに届く前に、その場で止まってしまっています。",
+                "PC-Adminにデフォルトゲートウェイが設定されていないため、自分のネットワークの外にあるアドレスへ通信を送る方法が分かっていません。",
+                "PC-Adminで、デフォルトゲートウェイを10.0.23.254(Router-Edgeのローカル側ポート)に設定し、外向きの通信の送り先を認識させましょう。"
+            ],
+            "explanation": "どの機器も、自分のサブネットの外にあるアドレスへ届けるにはデフォルトゲートウェイを知っている必要があります。設定がないと、PCはネットワークから出るルートを持たないため、送信パケットはその場で破棄されてしまいます。ゲートウェイをルーターのローカル側アドレスに設定することで、通信が復旧します。"
+        },
+        "zh-CN": {
+            "title": "分支机构PC无法访问网站",
+            "story": "新分支机构的销售代表报告称，PC-Admin 自今早设置以来，无法加载公司网站 docs.example.org。",
+            "objective": "使 PC-Admin 向 docs.example.org 发送的 HTTP 请求成功。",
+            "hints": [
+                "请求从未离开 PC-Admin — 它在到达 Switch-1F 或 Router-Edge 之前就已停止。",
+                "PC-Admin 没有配置默认网关，所以不知道如何将流量发送到其自身网络外的地址。",
+                "在 PC-Admin 上，将默认网关设置为 10.0.23.254（Router-Edge 的本地端口），以便它知道将出站流量发送到何处。"
+            ],
+            "explanation": "任何设备要到达自身子网外的地址，都必须知道其默认网关。如果没有配置，出站数据包会在本地被丢弃，因为 PC 没有离开其网络的路由。将网关设置为路由器的本地地址可以恢复连接。"
+        },
+        "zh-TW": {
+            "title": "分支機構 PC 無法存取網站",
+            "story": "新分支機構的銷售代表報告指出，PC-Admin 自今早設置以來，無法載入公司網站 docs.example.org。",
+            "objective": "使 PC-Admin 向 docs.example.org 發送的 HTTP 要求成功。",
+            "hints": [
+                "要求從未離開 PC-Admin — 它在到達 Switch-1F 或 Router-Edge 之前就已停止。",
+                "PC-Admin 沒有設定預設閘道，所以不知道如何將流量傳送到其自身網路外的位址。",
+                "在 PC-Admin 上，將預設閘道設定為 10.0.23.254（Router-Edge 的本機連接埠），以便它知道將輸出流量傳送到何處。"
+            ],
+            "explanation": "任何設備要到達自身子網外的位址，都必須知道其預設閘道。如果沒有設定，輸出封包會在本機被捨棄，因為 PC 沒有離開其網路的路由。將閘道設定為路由器的本機位址可以恢復連線。"
+        },
+        "ko": {
+            "title": "분점 PC가 웹사이트에 접속할 수 없음",
+            "story": "신규 분점 데스크의 영업 담당자가 PC-Admin이 오늘 아침 설정 이후 회사 웹사이트 docs.example.org에 접속할 수 없다고 보고했습니다.",
+            "objective": "PC-Admin에서 docs.example.org로의 HTTP 요청이 성공하도록 해야 합니다.",
+            "hints": [
+                "요청이 PC-Admin을 떠나지 않습니다 — Switch-1F나 Router-Edge에 도달하기 전에 여기서 실패합니다.",
+                "PC-Admin에는 기본 게이트웨이가 구성되어 있지 않아서 자신의 네트워크 외부로 트래픽을 보내는 방법을 모릅니다.",
+                "PC-Admin에서 기본 게이트웨이를 10.0.23.254(Router-Edge의 로컬 포트)로 설정하여 아웃바운드 트래픽을 전송할 위치를 알 수 있도록 합니다."
+            ],
+            "explanation": "모든 디바이스는 자신의 서브넷 외부의 주소에 도달하기 위해 기본 게이트웨이를 알아야 합니다. 구성되지 않으면 PC가 네트워크를 벗어날 경로가 없어서 아웃바운드 패킷이 로컬에서 삭제됩니다. 게이트웨이를 라우터의 로컬측 주소로 설정하면 연결이 복구됩니다."
+        },
+        "es": {
+            "title": "PC de sucursal no accede al sitio web",
+            "story": "Un representante de ventas en la nueva sucursal reporta que PC-Admin no puede cargar el sitio web de la empresa, docs.example.org, desde que fue configurada esta mañana.",
+            "objective": "Lograr que una solicitud HTTP de PC-Admin a docs.example.org sea exitosa.",
+            "hints": [
+                "La solicitud nunca sale de PC-Admin — muere aquí antes de llegar a Switch-1F o Router-Edge.",
+                "PC-Admin no tiene gateway predeterminado configurado, así que no sabe cómo enviar tráfico a una dirección fuera de su propia red.",
+                "En PC-Admin, configura el gateway predeterminado a 10.0.23.254 (puerto local de Router-Edge) para que sepa dónde enviar el tráfico saliente."
+            ],
+            "explanation": "Todo dispositivo debe conocer su gateway predeterminado para alcanzar direcciones fuera de su propia subred. Sin uno, los paquetes salientes se descartan localmente porque la PC no tiene ruta para salir de su red. Establecer el gateway en la dirección del lado local del router restaura la conectividad."
+        },
+        "pt-BR": {
+            "title": "PC da filial não consegue acessar o site",
+            "story": "Um representante de vendas na nova filial relata que o PC-Admin não consegue carregar o site da empresa, docs.example.org, desde que foi configurado esta manhã.",
+            "objective": "Fazer com que uma solicitação HTTP de PC-Admin para docs.example.org seja bem-sucedida.",
+            "hints": [
+                "A solicitação nunca sai de PC-Admin — ela falha ali mesmo antes de chegar a Switch-1F ou Router-Edge.",
+                "PC-Admin não tem um gateway padrão configurado, então não sabe como enviar tráfego para um endereço fora de sua própria rede.",
+                "No PC-Admin, configure o gateway padrão como 10.0.23.254 (porta local de Router-Edge) para que saiba para onde enviar o tráfego de saída."
+            ],
+            "explanation": "Qualquer dispositivo precisa conhecer seu gateway padrão para alcançar endereços fora de sua própria sub-rede. Sem um, os pacotes de saída são descartados localmente, pois o PC não tem rota para sair de sua rede. Definir o gateway para o endereço do lado local do roteador restaura a conectividade."
+        },
+        "de": {
+            "title": "Arbeitsplatz in der Filiale kann die Website nicht erreichen",
+            "story": "Ein Verkaufsvertreter am neuen Filialarbeitsplatz meldet, dass PC-Admin die Firmenwebsite docs.example.org seit der Einrichtung heute Morgen nicht laden kann.",
+            "objective": "Eine HTTP-Anfrage von PC-Admin an docs.example.org zum Erfolg führen.",
+            "hints": [
+                "Die Anfrage verlässt PC-Admin überhaupt nicht — sie stoppt dort, bevor sie Switch-1F oder Router-Edge erreicht.",
+                "PC-Admin hat keinen Standard-Gateway konfiguriert und weiß daher nicht, wie Datenverkehr zu einer Adresse außerhalb des eigenen Netzes gesendet wird.",
+                "Stellen Sie auf PC-Admin den Standard-Gateway auf 10.0.23.254 (Router-Edge's lokaler Port) ein, damit es weiß, wohin es den ausgehenden Datenverkehr senden soll."
+            ],
+            "explanation": "Jedes Gerät muss seinen Standard-Gateway kennen, um Adressen außerhalb des eigenen Subnetzes zu erreichen. Ohne einen werden ausgehende Pakete lokal verworfen, da der PC keine Route aus seinem Netz hat. Das Setzen des Gateways auf die lokale Adresse des Routers stellt die Konnektivität wieder her."
+        },
+        "fr": {
+            "title": "Le poste de travail de la succursale ne peut pas accéder au site web",
+            "story": "Un représentant commercial au nouveau poste de travail de la succursale signale que PC-Admin ne peut pas charger le site web de l'entreprise docs.example.org depuis la configuration ce matin.",
+            "objective": "Réussir à envoyer une requête HTTP de PC-Admin vers docs.example.org.",
+            "hints": [
+                "La requête ne quitte même pas PC-Admin — elle s'arrête là avant d'atteindre Switch-1F ou Router-Edge.",
+                "PC-Admin n'a pas de passerelle par défaut configurée, il ne sait donc pas comment envoyer le trafic vers une adresse en dehors de son propre réseau.",
+                "Sur PC-Admin, définissez la passerelle par défaut à 10.0.23.254 (port local du Router-Edge) pour qu'il sache où envoyer le trafic sortant."
+            ],
+            "explanation": "Tout appareil doit connaître sa passerelle par défaut pour atteindre des adresses en dehors de son propre sous-réseau. Sans elle, les paquets sortants sont supprimés localement puisque le PC n'a pas de route pour quitter son réseau. Définir la passerelle sur l'adresse locale du routeur rétablit la connectivité."
+        },
+        "hi": {
+            "title": "शाखा डेस्क वेबसाइट तक नहीं पहुंच सकता",
+            "story": "नई शाखा डेस्क पर एक बिक्रय प्रतिनिधि की रिपोर्ट है कि PC-Admin आज सुबह सेटअप के बाद से कंपनी की वेबसाइट docs.example.org को लोड नहीं कर सकता।",
+            "objective": "PC-Admin से docs.example.org को एक HTTP अनुरोध सफल बनाएं।",
+            "hints": [
+                "अनुरोध PC-Admin को कभी भी नहीं छोड़ता — यह वहां रुक जाता है Switch-1F या Router-Edge तक पहुंचने से पहले।",
+                "PC-Admin के पास डिफ़ॉल्ट गेटवे कॉन्फ़िगर नहीं है, इसलिए इसे नहीं पता कि अपनी नेटवर्क के बाहर एक पते पर ट्रैफ़िक कैसे भेजना है।",
+                "PC-Admin पर, डिफ़ॉल्ट गेटवे को 10.0.23.254 (Router-Edge का स्थानीय पोर्ट) पर सेट करें ताकि यह जाने कि आउटबाउंड ट्रैफ़िक कहां भेजना है।"
+            ],
+            "explanation": "किसी भी डिवाइस को अपनी डिफ़ॉल्ट गेटवे को जानना चाहिए ताकि अपनी सबनेट के बाहर पते तक पहुंच सके। बिना एक के, आउटबाउंड पैकेट स्थानीय रूप से छोड़ दिए जाते हैं क्योंकि पीसी के पास अपनी नेटवर्क से बाहर जाने का कोई रास्ता नहीं है। गेटवे को राउटर के स्थानीय-पक्ष पते पर सेट करने से कनेक्टिविटी बहाल होती है।"
+        },
+        "id": {
+            "title": "Meja Cabang Tidak Dapat Mengakses Situs Web",
+            "story": "Seorang perwakilan penjualan di meja cabang baru melaporkan bahwa PC-Admin tidak dapat memuat situs web perusahaan docs.example.org sejak mesin diatur pagi ini.",
+            "objective": "Jadikan permintaan HTTP dari PC-Admin ke docs.example.org berhasil.",
+            "hints": [
+                "Permintaan tidak pernah meninggalkan PC-Admin — permintaan berhenti di sana sebelum mencapai Switch-1F atau Router-Edge.",
+                "PC-Admin tidak memiliki gateway default yang dikonfigurasi, jadi tidak tahu cara mengirim lalu lintas ke alamat di luar jaringannya sendiri.",
+                "Pada PC-Admin, atur gateway default ke 10.0.23.254 (port lokal Router-Edge) sehingga tahu ke mana mengirim lalu lintas keluar."
+            ],
+            "explanation": "Setiap perangkat harus mengetahui gateway default-nya untuk menjangkau alamat di luar subnet-nya sendiri. Tanpa itu, paket keluar dijatuhkan secara lokal karena PC tidak memiliki rute keluar dari jaringannya. Menetapkan gateway ke alamat sisi lokal router mengembalikan konektivitas."
+        },
+        "ru": {
+            "title": "Рабочее место в филиале не может получить доступ к веб-сайту",
+            "story": "Торговый представитель на новом рабочем месте филиала сообщает, что PC-Admin не может загрузить корпоративный веб-сайт docs.example.org с момента установки этого утра.",
+            "objective": "Успешно отправить HTTP-запрос с PC-Admin на docs.example.org.",
+            "hints": [
+                "Запрос вообще не покидает PC-Admin — он останавливается там, прежде чем достичь Switch-1F или Router-Edge.",
+                "На PC-Admin не настроен шлюз по умолчанию, поэтому он не знает, как отправлять трафик на адрес вне своей собственной сети.",
+                "На PC-Admin установите шлюз по умолчанию на 10.0.23.254 (локальный порт Router-Edge), чтобы он знал, куда отправлять исходящий трафик."
+            ],
+            "explanation": "Любое устройство должно знать свой шлюз по умолчанию, чтобы достичь адресов вне своей собственной подсети. Без него исходящие пакеты отбрасываются локально, так как ПК не имеет маршрута из своей сети. Установка шлюза на адрес локальной стороны маршрутизатора восстанавливает подключение."
+        },
+        "it": {
+            "title": "Il PC della Succursale Non Raggiunge il Sito Web",
+            "story": "Un addetto vendite della nuova succursale riferisce che PC-Admin non riesce a caricare il sito aziendale, docs.example.org, da quando la macchina è stata configurata questa mattina.",
+            "objective": "Far sì che una richiesta HTTP da PC-Admin a docs.example.org abbia successo.",
+            "hints": [
+                "La richiesta non esce nemmeno da PC-Admin — muore subito lì prima di raggiungere Switch-1F o Router-Edge.",
+                "PC-Admin non ha un Gateway predefinito configurato, quindi non sa come inviare traffico verso un indirizzo al di fuori della sua rete.",
+                "Su PC-Admin, imposta il Gateway predefinito a 10.0.23.254 (porta locale di Router-Edge) in modo che sappia dove inviare il traffico in uscita."
+            ],
+            "explanation": "Qualsiasi dispositivo deve conoscere il suo Gateway predefinito per raggiungere indirizzi al di fuori della propria subnet. Senza uno, i pacchetti in uscita vengono scartati localmente poiché il PC non ha alcun percorso verso la sua rete. Impostare il gateway all'indirizzo lato-router ripristina la connettività."
+        },
+        "tr": {
+            "title": "Şube Masası Web Sitesine Erişemiyor",
+            "story": "Yeni şubedeki bir satış temsilcisi, bu sabah kurulduğundan beri PC-Admin'in şirket web sitesine, docs.example.org'a erişemediğini bildiriyor.",
+            "objective": "PC-Admin'den docs.example.org'a gelen bir HTTP isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "İstek PC-Admin'den çıkmıyor bile — Switch-1F veya Router-Edge'e ulaşmadan orada ölüyor.",
+                "PC-Admin'in hiçbir Varsayılan ağ geçidi yapılandırılmamıştır, bu nedenle trafiği kendi ağının dışında bir adrese nasıl göndereceğini bilmiyor.",
+                "PC-Admin'de, Varsayılan ağ geçidini 10.0.23.254 (Router-Edge'in yerel portu) olarak ayarlayın, böylece giden trafiği nereye göndereceğini bilir."
+            ],
+            "explanation": "Herhangi bir cihaz, kendi subnet'i dışında adreslere ulaşmak için Varsayılan ağ geçidini bilmelidir. Biri olmadan, PC'nin ağından çıkış rotası olmadığı için giden paketler yerel olarak bırakılır. Ağ geçidini yönlendiricinin yerel tarafı adresine ayarlamak bağlantıyı geri yükler."
+        },
+        "th": {
+            "title": "คอมพิวเตอร์สาขาไม่สามารถเข้าถึงเว็บไซต์",
+            "story": "พนักงานขายในสาขาใหม่รายงานว่า PC-Admin ไม่สามารถโหลดเว็บไซต์ของบริษัท docs.example.org ได้ตั้งแต่ที่ตั้งค่าเครื่องนี้เมื่อเช้านี้",
+            "objective": "ทำให้คำขอ HTTP จาก PC-Admin ไปยัง docs.example.org สำเร็จ",
+            "hints": [
+                "คำขอไม่ได้ออกจาก PC-Admin เลย — มันตายที่นั่นก่อนถึง Switch-1F หรือ Router-Edge",
+                "PC-Admin ไม่มีเกตเวย์เริ่มต้นที่กำหนดค่าไว้ จึงไม่รู้วิธีส่งข้อมูลไปยังที่อยู่นอกเครือข่ายของตัวเอง",
+                "บน PC-Admin ให้ตั้งเกตเวย์เริ่มต้นเป็น 10.0.23.254 (พอร์ตท้องถิ่นของ Router-Edge) เพื่อให้รู้ว่าจะส่งทราฟิกขาออกไปที่ไหน"
+            ],
+            "explanation": "อุปกรณ์ใดๆ จะต้องรู้เกตเวย์เริ่มต้นของมันเพื่อเข้าถึงที่อยู่นอกสับเน็ตของตัวเอง หากไม่มี แพ็กเก็ตขาออกจะถูกทิ้งไว้เฉพาะที่เนื่องจาก PC ไม่มีเส้นทางออกจากเครือข่าย การตั้งเกตเวย์เป็นที่อยู่ด้านท้องถิ่นของเราเตอร์จะคืนการเชื่อมต่อ"
+        },
+        "vi": {
+            "title": "Máy Tính Phòng Giao Dịch Không Thể Truy Cập Trang Web",
+            "story": "Một nhân viên bán hàng tại phòng giao dịch mới báo cáo rằng PC-Admin không thể tải trang web công ty, docs.example.org, kể từ khi máy được thiết lập vào sáng nay.",
+            "objective": "Đảm bảo yêu cầu HTTP từ PC-Admin đến docs.example.org thành công.",
+            "hints": [
+                "Yêu cầu không bao giờ rời khỏi PC-Admin — nó chết ngay tại đó trước khi đến Switch-1F hoặc Router-Edge.",
+                "PC-Admin không có cổng mặc định được cấu hình, nên nó không biết cách gửi lưu lượng đến địa chỉ bên ngoài mạng của nó.",
+                "Trên PC-Admin, hãy đặt cổng mặc định thành 10.0.23.254 (cổng cục bộ của Router-Edge) để nó biết gửi lưu lượng đi đâu."
+            ],
+            "explanation": "Bất kỳ thiết bị nào cũng phải biết cổng mặc định của nó để truy cập các địa chỉ bên ngoài subnet của nó. Nếu không có, các gói đi sẽ bị bỏ tại chỗ vì PC không có tuyến đi ra khỏi mạng. Đặt cổng vào địa chỉ phía cục bộ của router sẽ khôi phục kết nối."
+        }
+    }
+}
