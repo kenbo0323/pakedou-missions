@@ -1,0 +1,645 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-10",
+    "number": 51,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dns_office",
+    "faultIds": [
+        "dns_record_missing"
+    ],
+    "concepts": [
+        "dns",
+        "a-record"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.3.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.3.254",
+                    "dnsServer": "10.0.13.53",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-2F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.3.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.13.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-DC",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-dns1": {
+                "id": "dev-dns1",
+                "type": "DNS_SERVER",
+                "name": "DNS-01",
+                "x": 80.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-dns1-p0",
+                        "index": 0,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.13.53",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p1",
+                        "index": 1,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p2",
+                        "index": 2,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p3",
+                        "index": 3,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.13.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 320.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.13.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.13.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-dns1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-dns1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "domain_http",
+                "method": "GET",
+                "path": "/",
+                "body": "",
+                "domain": "hr.example.co.jp"
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The Intranet Site Won't Load",
+            "story": "Reception staff say the HR intranet site has stopped opening in the browser this morning. Typing the site's name gets nothing back, though the computer itself seems fine otherwise.",
+            "objective": "Make PC-Reception successfully reach hr.example.co.jp by name.",
+            "hints": [
+                "The browser request from PC-Reception never gets past DNS-01 — the name never turns into an address.",
+                "DNS-01 has no entry telling it what address hr.example.co.jp points to, so it cannot answer the lookup.",
+                "On DNS-01, add an A record for hr.example.co.jp pointing to 10.0.13.1."
+            ],
+            "explanation": "When a domain name has no matching A record on the DNS server, lookups fail and browsers can't connect even if the target server is reachable by address. Adding the correct A record lets the name resolve and the page load."
+        },
+        "ja": {
+            "title": "社内サイトが開かない",
+            "story": "受付担当者から、今朝からブラウザで人事部の社内サイトが開かなくなったとの報告がありました。サイト名を入力しても何も返ってこないものの、パソコン自体は他に問題なさそうです。",
+            "objective": "PC-Receptionからhr.example.co.jpに名前で正常にアクセスできるようにします。",
+            "hints": [
+                "PC-Receptionからのブラウザのリクエストは、DNS-01より先に進めていません。名前がアドレスに変換されていないのです。",
+                "DNS-01には、hr.example.co.jpがどのアドレスを指すかという情報が登録されていないため、問い合わせに答えられません。",
+                "DNS-01で、hr.example.co.jp のAレコードを追加し、10.0.13.1を指すように設定してください。"
+            ],
+            "explanation": "ドメイン名に対応するAレコードがDNSサーバーに存在しない場合、名前解決に失敗し、対象のサーバーがアドレスで到達可能であっても、ブラウザは接続できません。正しいAレコードを追加することで名前解決ができるようになり、ページが表示されるようになります。"
+        },
+        "zh-CN": {
+            "title": "内网站点无法加载",
+            "story": "前台工作人员反映，HR 内网站点今早无法在浏览器中打开。输入该站点名称无法获得任何响应，但计算机本身似乎运行正常。",
+            "objective": "使 PC-Reception 能够通过名称成功访问 hr.example.co.jp。",
+            "hints": [
+                "来自 PC-Reception 的浏览器请求在 DNS-01 处中断——域名未被转换为地址。",
+                "DNS-01 中没有条目说明 hr.example.co.jp 指向哪个地址，所以它无法响应查询。",
+                "在 DNS-01 上，为 hr.example.co.jp 添加一条指向 10.0.13.1 的 A 记录。"
+            ],
+            "explanation": "当域名在 DNS 服务器上没有对应的 A 记录时，名称解析会失败，即使目标服务器可通过地址访问，浏览器也无法连接。添加正确的 A 记录可使名称解析成功，页面随之加载。"
+        },
+        "zh-TW": {
+            "title": "內網站點無法載入",
+            "story": "前台員工表示 HR 內網站點今早無法在瀏覽器中打開。輸入該站點名稱無法獲得任何回應，但電腦本身似乎運作正常。",
+            "objective": "使 PC-Reception 能夠透過名稱成功連接到 hr.example.co.jp。",
+            "hints": [
+                "來自 PC-Reception 的瀏覽器請求在 DNS-01 處中斷——網域名稱未被轉換為位址。",
+                "DNS-01 中沒有條目說明 hr.example.co.jp 指向哪個位址，所以它無法回應查詢。",
+                "在 DNS-01 上，為 hr.example.co.jp 新增一條指向 10.0.13.1 的 A 記錄。"
+            ],
+            "explanation": "當網域名稱在 DNS 伺服器上沒有對應的 A 記錄時，名稱解析會失敗，即使目標伺服器可透過位址存取，瀏覽器也無法連接。新增正確的 A 記錄可使名稱解析成功，頁面隨之載入。"
+        },
+        "ko": {
+            "title": "인트라넷 사이트가 열리지 않음",
+            "story": "접수팀 직원들이 HR 인트라넷 사이트가 오늘 아침 브라우저에서 열리지 않는다고 보고했습니다. 사이트 이름을 입력해도 아무 응답이 없지만, 컴퓨터 자체는 정상 작동하는 것 같습니다.",
+            "objective": "PC-Reception이 이름으로 hr.example.co.jp에 성공적으로 접속하도록 만들기.",
+            "hints": [
+                "PC-Reception에서 온 브라우저 요청이 DNS-01에서 멈춤 — 도메인명이 주소로 변환되지 않음.",
+                "DNS-01에 hr.example.co.jp가 어떤 주소를 가리키는지 알려주는 항목이 없어서 조회에 응답할 수 없음.",
+                "DNS-01에서 hr.example.co.jp를 가리키는 A 레코드를 10.0.13.1로 추가하기."
+            ],
+            "explanation": "도메인명이 DNS 서버에서 일치하는 A 레코드가 없으면 조회가 실패하고, 대상 서버에 주소로 접속 가능해도 브라우저는 연결할 수 없습니다. 올바른 A 레코드를 추가하면 이름이 해석되어 페이지가 로드됩니다."
+        },
+        "es": {
+            "title": "El sitio de Intranet no carga",
+            "story": "El personal de Recepción reporta que el sitio de intranet de Recursos Humanos dejó de abrir en el navegador esta mañana. Al escribir el nombre del sitio no obtiene respuesta, aunque el equipo parece funcionar correctamente.",
+            "objective": "Lograr que PC-Reception alcance hr.example.co.jp por nombre.",
+            "hints": [
+                "La solicitud del navegador desde PC-Reception nunca pasa de DNS-01 — el nombre no se convierte en una dirección.",
+                "DNS-01 no tiene una entrada que indique a qué dirección apunta hr.example.co.jp, por lo que no puede responder la consulta.",
+                "En DNS-01, agregar un registro A para hr.example.co.jp que apunte a 10.0.13.1."
+            ],
+            "explanation": "Cuando un nombre de dominio no tiene un registro A coincidente en el Servidor DNS, las búsquedas fallan y los navegadores no pueden conectar aunque el servidor destino sea alcanzable por dirección. Agregar el registro A correcto permite que se resuelva el nombre y cargue la página."
+        },
+        "pt-BR": {
+            "title": "O site da Intranet não carrega",
+            "story": "A equipe de Recepção relata que o site da intranet de RH parou de abrir no navegador esta manhã. Digitar o nome do site não retorna nada, embora o computador pareça funcionar normalmente.",
+            "objective": "Fazer com que PC-Reception alcance hr.example.co.jp pelo nome.",
+            "hints": [
+                "A requisição do navegador de PC-Reception nunca passa por DNS-01 — o nome não é convertido em endereço.",
+                "DNS-01 não possui uma entrada dizendo a qual endereço hr.example.co.jp aponta, por isso não pode responder à consulta.",
+                "No DNS-01, adicione um registro A para hr.example.co.jp apontando para 10.0.13.1."
+            ],
+            "explanation": "Quando um nome de domínio não tem um registro A correspondente no Servidor DNS, as consultas falham e os navegadores não conseguem conectar, mesmo que o servidor de destino seja acessível pelo endereço. Adicionar o registro A correto permite que o nome seja resolvido e a página carregue."
+        },
+        "de": {
+            "title": "Die Intranet-Site lädt nicht",
+            "story": "Mitarbeiter der Rezeption berichten, dass die HR-Intranet-Site heute Morgen nicht mehr im Browser geöffnet wird. Die Eingabe des Seitennamens bringt keine Antwort, obwohl der Computer sonst einwandfrei funktioniert.",
+            "objective": "PC-Reception muss hr.example.co.jp erfolgreich erreichen.",
+            "hints": [
+                "Die Browser-Anfrage von PC-Reception kommt über DNS-01 nicht hinaus — der Name wird nicht in eine Adresse umgewandelt.",
+                "DNS-01 hat keinen Eintrag, der angibt, auf welche Adresse hr.example.co.jp zeigt, daher kann es die Abfrage nicht beantworten.",
+                "Fügen Sie auf DNS-01 einen A-Datensatz für hr.example.co.jp hinzu, der auf 10.0.13.1 zeigt."
+            ],
+            "explanation": "Wenn ein Domainname keinen entsprechenden A-Datensatz auf dem DNS-Server hat, schlagen Abfragen fehl und Browser können sich nicht verbinden, auch wenn der Zielserver per Adresse erreichbar ist. Das Hinzufügen des richtigen A-Datensatzes ermöglicht die Namensauflösung und das Laden der Seite."
+        },
+        "fr": {
+            "title": "Le site intranet ne charge pas",
+            "story": "Le personnel de la réception signale que le site intranet RH ne s'ouvre plus dans le navigateur ce matin. Taper le nom du site ne retourne rien, bien que l'ordinateur fonctionne correctement ailleurs.",
+            "objective": "Faire en sorte que PC-Reception accède avec succès à hr.example.co.jp par nom.",
+            "hints": [
+                "La requête du navigateur depuis PC-Reception ne passe pas au-delà du Serveur DNS DNS-01 — le nom ne se transforme pas en adresse.",
+                "Le Serveur DNS DNS-01 n'a pas d'entrée indiquant l'adresse vers laquelle hr.example.co.jp pointe, donc il ne peut pas répondre à la requête.",
+                "Sur DNS-01, ajoutez un enregistrement A pour hr.example.co.jp pointant vers 10.0.13.1."
+            ],
+            "explanation": "Quand un Nom de domaine n'a pas d'enregistrement A correspondant sur le Serveur DNS, les requêtes échouent et les navigateurs ne peuvent pas se connecter même si le serveur cible est accessible par adresse. L'ajout du bon enregistrement A permet au nom de se résoudre et à la page de charger."
+        },
+        "hi": {
+            "title": "इंट्रानेट साइट लोड नहीं हो रही है",
+            "story": "रिसेप्शन स्टाफ कहते हैं कि आज सुबह HR इंट्रानेट साइट ब्राउज़र में खुलना बंद कर गई है। साइट का नाम टाइप करने से कोई जवाब नहीं मिलता, हालांकि कंप्यूटर अन्यथा ठीक लग रहा है।",
+            "objective": "PC-Reception को hr.example.co.jp तक नाम से सफलतापूर्वक पहुंचना चाहिए।",
+            "hints": [
+                "PC-Reception से ब्राउज़र अनुरोध DNS-01 से आगे नहीं जाता — नाम पते में परिवर्तित नहीं होता है।",
+                "DNS-01 के पास कोई प्रविष्टि नहीं है जो बताती है कि hr.example.co.jp किस पते की ओर इशारा करता है, इसलिए यह लुकअप का जवाब नहीं दे सकता।",
+                "DNS-01 पर, hr.example.co.jp के लिए एक A रिकॉर्ड जोड़ें जो 10.0.13.1 की ओर इशारा करे।"
+            ],
+            "explanation": "जब किसी डोमेन नाम के पास DNS सर्वर पर कोई मेल खाने वाला A रिकॉर्ड नहीं होता है, तो लुकअप विफल हो जाते हैं और भले ही लक्ष्य सर्वर पते द्वारा पहुंचने योग्य हो, ब्राउज़र कनेक्ट नहीं कर सकते। सही A रिकॉर्ड जोड़ने से नाम का समाधान होता है और पृष्ठ लोड होता है।"
+        },
+        "id": {
+            "title": "Situs intranet tidak memuat",
+            "story": "Staf resepsi mengatakan situs intranet HR telah berhenti membuka di browser pagi ini. Mengetik nama situs tidak menghasilkan apa pun, meskipun komputer tampak berfungsi baik sebaliknya.",
+            "objective": "Buat PC-Reception berhasil menjangkau hr.example.co.jp berdasarkan nama.",
+            "hints": [
+                "Permintaan Browser dari PC-Reception tidak melewati Server DNS DNS-01 — nama tidak berubah menjadi alamat.",
+                "Server DNS DNS-01 tidak memiliki entri yang memberi tahu alamat apa yang ditunjuk oleh hr.example.co.jp, jadi tidak dapat menjawab pencarian.",
+                "Di DNS-01, tambahkan record A untuk hr.example.co.jp yang menunjuk ke 10.0.13.1."
+            ],
+            "explanation": "Ketika nama domain tidak memiliki record A yang sesuai di Server DNS, pencarian gagal dan browser tidak dapat terhubung meskipun server target dapat dijangkau melalui alamat. Menambahkan record A yang benar memungkinkan nama terselesaikan dan halaman dimuat."
+        },
+        "ru": {
+            "title": "Сайт интранета не загружается",
+            "story": "Сотрудники ресепшена сообщают, что сайт интранета отдела кадров перестал открываться в браузере этим утром. Ввод названия сайта ничего не возвращает, хотя компьютер в остальном работает нормально.",
+            "objective": "Сделать так, чтобы PC-Reception успешно достигал hr.example.co.jp по имени.",
+            "hints": [
+                "Запрос браузера с PC-Reception не проходит дальше DNS-01 — имя не преобразуется в адрес.",
+                "На DNS-01 нет записи, указывающей, на какой адрес указывает hr.example.co.jp, поэтому он не может ответить на запрос.",
+                "На DNS-01 добавьте запись A для hr.example.co.jp, указывающую на 10.0.13.1."
+            ],
+            "explanation": "Когда имя домена не имеет соответствующей записи A на DNS-сервере, поиск не удается и браузеры не могут подключиться, даже если целевой сервер доступен по адресу. Добавление правильной записи A позволяет имени разрешиться и странице загрузиться."
+        },
+        "it": {
+            "title": "Il Sito Intranet Non Si Carica",
+            "story": "Lo staff della Reception segnala che il sito intranet HR ha smesso di aprirsi nel browser questa mattina. Digitare il nome del sito non restituisce nulla, anche se il computer stesso funziona correttamente.",
+            "objective": "Fare in modo che PC-Reception raggiunga con successo hr.example.co.jp per nome.",
+            "hints": [
+                "La richiesta del browser da PC-Reception non supera mai DNS-01 — il nome non si trasforma in indirizzo.",
+                "DNS-01 non ha una voce che indichi a quale indirizzo hr.example.co.jp punta, quindi non può rispondere alla ricerca.",
+                "Su DNS-01, aggiungi un record A per hr.example.co.jp che punta a 10.0.13.1."
+            ],
+            "explanation": "Quando un nome di dominio non ha alcun record A corrispondente sul Server DNS, le ricerche falliscono e i browser non riescono a connettersi nemmeno se il server di destinazione è raggiungibile per indirizzo. L'aggiunta del corretto record A consente al nome di risolversi e alla pagina di caricarsi."
+        },
+        "tr": {
+            "title": "İntranet Sitesi Yüklenemiyor",
+            "story": "Resepsiyon personeli, İK intranet sitesinin bu sabah tarayıcıda açılmayı bıraktığını söylüyor. Sitenin adını yazmak hiçbir sonuç vermiyor, oysa bilgisayarın kendisi diğer açılardan sorunsuz çalışıyor.",
+            "objective": "PC-Reception'ın hr.example.co.jp'ye adla başarıyla ulaşmasını sağlayın.",
+            "hints": [
+                "PC-Reception'dan gelen tarayıcı isteği hiçbir zaman DNS-01'i geçemiyor — ad adrese dönüştürülmüyor.",
+                "DNS-01'in hr.example.co.jp'nin hangi adrese işaret ettiğini söyleyen bir girişi yok, bu nedenle aramayı cevaplayamıyor.",
+                "DNS-01'de hr.example.co.jp için 10.0.13.1'e işaret eden bir A kaydı ekleyin."
+            ],
+            "explanation": "Bir alan adının DNS Sunucusu'nda eşleşen A kaydı olmadığında, aramalar başarısız olur ve hedef sunucu adresle erişilebilir olsa bile tarayıcılar bağlanamaz. Doğru A kaydı eklemek, adın çözümlenmesini ve sayfanın yüklenmesini sağlar."
+        },
+        "th": {
+            "title": "เว็บไซต์อินทราเน็ตไม่โหลด",
+            "story": "พนักงานต้อนรับรายงานว่าเว็บไซต์อินทราเน็ต HR หยุดเปิดในเบราว์เซอร์เมื่อเช้านี้ การพิมพ์ชื่อเว็บไซต์ไม่ได้ส่งคืนอะไรเลย แม้ว่าคอมพิวเตอร์นั้นเองดูเหมือนทำงานได้ปกติ",
+            "objective": "ทำให้ PC-Reception เข้าถึง hr.example.co.jp ตามชื่อได้สำเร็จ",
+            "hints": [
+                "คำขอเบราว์เซอร์จาก PC-Reception ไม่เคยผ่าน DNS-01 — ชื่อไม่เปลี่ยนเป็นที่อยู่",
+                "DNS-01 ไม่มีรายการบอกว่า hr.example.co.jp ชี้ไปที่ที่อยู่ใด จึงไม่สามารถตอบการค้นหา",
+                "ที่ DNS-01 เพิ่มเรกคอร์ด A สำหรับ hr.example.co.jp ที่ชี้ไปที่ 10.0.13.1"
+            ],
+            "explanation": "เมื่อชื่อโดเมนไม่มีเรคคอร์ด A ที่ตรงกันบนเซิร์ฟเวอร์ DNS การค้นหาจะล้มเหลวและเบราว์เซอร์ไม่สามารถเชื่อมต่อได้ แม้ว่าเซิร์ฟเวอร์เป้าหมายจะสามารถเข้าถึงได้ด้วยที่อยู่ การเพิ่มเรคคอร์ด A ที่ถูกต้องช่วยให้ชื่อสามารถแก้ไขได้และหน้าโหลด"
+        },
+        "vi": {
+            "title": "Trang Web Nội Bộ Không Tải",
+            "story": "Nhân viên Lễ tân báo cáo rằng trang web nội bộ HR đã ngừng mở trong trình duyệt sáng nay. Gõ tên trang web không trả về gì cả, mặc dù chính máy tính đó dường như hoạt động bình thường.",
+            "objective": "Làm cho PC-Reception truy cập thành công hr.example.co.jp theo tên.",
+            "hints": [
+                "Yêu cầu trình duyệt từ PC-Reception không bao giờ vượt qua DNS-01 — tên không chuyển thành địa chỉ.",
+                "DNS-01 không có mục nào cho biết hr.example.co.jp trỏ đến địa chỉ nào, nên nó không thể trả lời tìm kiếm.",
+                "Trên DNS-01, thêm bản ghi A cho hr.example.co.jp trỏ đến 10.0.13.1."
+            ],
+            "explanation": "Khi tên miền không có bản ghi A phù hợp trên Máy chủ DNS, tìm kiếm sẽ không thành công và trình duyệt không thể kết nối ngay cả khi máy chủ đích có thể truy cập được theo địa chỉ. Thêm bản ghi A chính xác cho phép tên được phân giải và trang tải được."
+        }
+    }
+}
