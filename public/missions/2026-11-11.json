@@ -1,0 +1,575 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-11",
+    "number": 52,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "acl_deny"
+    ],
+    "concepts": [
+        "firewall",
+        "acl"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.21.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.21.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.21.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.5.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "Firewall-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.5.1",
+                            "protocol": "HTTP"
+                        },
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.5.1",
+                            "dstPort": 80
+                        },
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.5.1"
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Web",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.5.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.5.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-waf1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-waf1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-waf1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-waf1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-waf1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The Portal Won't Load",
+            "story": "Staff at the front desk report that Portal-01, the web portal normally reachable from PC-Reception, has stopped loading in the browser since this morning. No one changed anything on the PC itself.",
+            "objective": "Restore normal web access: a plain HTTP request from PC-Reception to Portal-01 must get a response.",
+            "hints": [
+                "The request from PC-Reception never gets past Firewall-Edge on its way to Portal-01 — it is dropped right there.",
+                "Firewall-Edge carries an ACL rule that explicitly denies HTTP traffic addressed to Portal-01, and that rule is evaluated before the rule meant to permit it.",
+                "On Firewall-Edge, delete the ACL rule that denies HTTP from any source to 10.0.5.1, so the lower permit rule for port 80 can take effect."
+            ],
+            "explanation": "Firewall ACLs are read top-down and the first match wins. A deny rule placed above a permit rule for the same traffic will always win, even if the permit rule looks correct. Always check rule order, not just rule presence, when legitimate traffic is unexpectedly blocked."
+        },
+        "ja": {
+            "title": "ポータルが表示されない",
+            "story": "受付スタッフから、PC-Receptionから普段アクセスできるはずのWebポータルPortal-01が、今朝からブラウザで表示されなくなったと報告がありました。PCの設定自体は誰も変更していません。",
+            "objective": "通常のWebアクセスを復旧させること:PC-ReceptionからPortal-01への通常のHTTPリクエストが応答を受け取れるようにします。",
+            "hints": [
+                "PC-Receptionからのリクエストは、Portal-01へ向かう途中でFirewall-Edgeを通過できず、そこで破棄されています。",
+                "Firewall-Edgeには、Portal-01宛てのHTTP通信を明示的に拒否するACLルールが設定されており、そのルールが許可ルールよりも先に評価されています。",
+                "Firewall-Edgeで、送信元を問わず10.0.5.1へのHTTPを拒否しているACLルールを削除してください。そうすれば、ポート80を許可する下のルールが有効になります。"
+            ],
+            "explanation": "ファイアウォールのACLは上から順に評価され、最初に一致したルールが適用されます。拒否ルールが同じ通信に対する許可ルールより上にあると、許可ルールが正しく見えても拒否が優先されてしまいます。正当な通信が予期せずブロックされた場合は、ルールの有無だけでなく、並び順も必ず確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "门户无法加载",
+            "story": "前台员工报告称，通常可从 PC-Reception 访问的网络门户 Portal-01 自今早开始无法在浏览器中加载。PC 本身没有任何改动。",
+            "objective": "恢复正常网络访问：来自 PC-Reception 对 Portal-01 的简单 HTTP 请求必须收到响应。",
+            "hints": [
+                "来自 PC-Reception 的请求在前往 Portal-01 的途中被 Firewall-Edge 阻止——直接在那里被丢弃。",
+                "Firewall-Edge 上有一条 ACL 规则明确拒绝发往 Portal-01 的 HTTP 流量，且该规则在允许流量的规则之前被评估。",
+                "在 Firewall-Edge 上删除拒绝来自任何源到 10.0.5.1 的 HTTP 的 ACL 规则，以便下面允许端口 80 的规则能生效。"
+            ],
+            "explanation": "防火墙 ACL 规则从上到下逐条读取，首次匹配即决出胜负。置于允许规则上方的拒绝规则总会优先，即使允许规则看起来正确。当合法流量被意外阻止时，始终要检查规则顺序，而不仅仅是规则是否存在。"
+        },
+        "zh-TW": {
+            "title": "門戶無法載入",
+            "story": "前台員工回報，通常可從 PC-Reception 存取的網路門戶 Portal-01 自今早起無法在瀏覽器中載入。PC 本身並未有任何變更。",
+            "objective": "恢復正常網路存取：來自 PC-Reception 對 Portal-01 的簡單 HTTP 請求必須收到回應。",
+            "hints": [
+                "來自 PC-Reception 的請求在前往 Portal-01 的途中被 Firewall-Edge 阻止——直接在該處被丟棄。",
+                "Firewall-Edge 上有一條 ACL 規則明確拒絕發往 Portal-01 的 HTTP 流量，且該規則在允許流量的規則之前被評估。",
+                "在 Firewall-Edge 上刪除拒絕來自任何來源到 10.0.5.1 的 HTTP 的 ACL 規則，以便下面允許連接埠 80 的規則能生效。"
+            ],
+            "explanation": "防火牆 ACL 規則從上到下逐條讀取，首次匹配即決出勝負。置於允許規則上方的拒絕規則總會優先，即使允許規則看起來正確。當合法流量被意外阻止時，始終要檢查規則順序，而不僅僅是規則是否存在。"
+        },
+        "ko": {
+            "title": "포털을 로드할 수 없음",
+            "story": "프론트데스크 직원들이 보고하기를, 일반적으로 PC-Reception에서 접속 가능한 웹 포털 Portal-01이 오늘 아침부터 브라우저에서 로드되지 않는다고 합니다. PC 자체에는 아무런 변경이 없었습니다.",
+            "objective": "정상적인 웹 접속 복구: PC-Reception에서 Portal-01으로의 일반 HTTP 요청이 응답을 받아야 합니다.",
+            "hints": [
+                "PC-Reception에서 보낸 요청이 Portal-01으로 가는 도중 Firewall-Edge에서 차단됩니다 — 바로 그곳에서 버려집니다.",
+                "Firewall-Edge에는 Portal-01으로 향하는 HTTP 트래픽을 명시적으로 거부하는 ACL 규칙이 있으며, 이 규칙이 허용 규칙보다 먼저 평가됩니다.",
+                "Firewall-Edge에서 10.0.5.1로의 모든 출발지에서의 HTTP를 거부하는 ACL 규칙을 삭제하여, 아래쪽의 포트 80 허용 규칙이 작동하도록 합니다."
+            ],
+            "explanation": "방화벽 ACL 규칙은 위에서 아래로 읽히며 첫 번째 일치가 우선입니다. 허용 규칙 위에 놓인 거부 규칙은 허용 규칙이 올바르게 보이더라도 항상 우선됩니다. 합법적인 트래픽이 예상치 못하게 차단될 때는 규칙의 존재 여부뿐 아니라 규칙 순서도 항상 확인하세요."
+        },
+        "es": {
+            "title": "El Portal No Carga",
+            "story": "El personal de la recepción reporta que Portal-01, el portal web normalmente accesible desde PC-Reception, ha dejado de cargar en el navegador desde esta mañana. Nada ha cambiado en la PC misma.",
+            "objective": "Restaurar el acceso web normal: una solicitud HTTP simple desde PC-Reception a Portal-01 debe recibir una respuesta.",
+            "hints": [
+                "La solicitud desde PC-Reception nunca pasa de Firewall-Edge en camino a Portal-01 — se descarta justo allí.",
+                "Firewall-Edge lleva una regla ACL que explícitamente deniega el tráfico HTTP dirigido a Portal-01, y esa regla se evalúa antes que la regla destinada a permitirlo.",
+                "En Firewall-Edge, elimina la regla ACL que deniega HTTP de cualquier origen a 10.0.5.1, para que la regla de permiso inferior para el puerto 80 pueda tomar efecto."
+            ],
+            "explanation": "Las ACL de firewall se leen de arriba hacia abajo y la primera coincidencia gana. Una regla de denegación colocada encima de una regla de permiso para el mismo tráfico siempre ganará, incluso si la regla de permiso se ve correcta. Siempre verifica el orden de las reglas, no solo su presencia, cuando el tráfico legítimo se bloquea inesperadamente."
+        },
+        "pt-BR": {
+            "title": "O Portal Não Carrega",
+            "story": "Funcionários da recepção relatam que Portal-01, o portal web normalmente acessível de PC-Reception, parou de carregar no navegador desde esta manhã. Nada foi alterado no próprio PC.",
+            "objective": "Restaurar o acesso web normal: uma solicitação HTTP simples de PC-Reception para Portal-01 deve receber uma resposta.",
+            "hints": [
+                "A solicitação de PC-Reception nunca passa por Firewall-Edge no caminho para Portal-01 — é descartada logo ali.",
+                "Firewall-Edge carrega uma regra ACL que explicitamente nega o tráfego HTTP endereçado a Portal-01, e essa regra é avaliada antes da regra destinada a permitir.",
+                "Em Firewall-Edge, delete a regra ACL que nega HTTP de qualquer origem para 10.0.5.1, para que a regra de permissão inferior para a porta 80 possa entrar em efeito."
+            ],
+            "explanation": "ACLs de firewall são lidas de cima para baixo e a primeira correspondência vence. Uma regra de negação colocada acima de uma regra de permissão para o mesmo tráfego sempre vencerá, mesmo que a regra de permissão pareça correta. Sempre verifique a ordem das regras, não apenas sua presença, quando o tráfego legítimo é inesperadamente bloqueado."
+        },
+        "de": {
+            "title": "Das Portal lädt nicht",
+            "story": "Das Personal an der Rezeption berichtet, dass Portal-01, das Webportal, das normalerweise von PC-Reception erreichbar ist, seit heute Morgen nicht mehr im Browser geladen wird. Niemand hat etwas am PC selbst geändert.",
+            "objective": "Stellen Sie den normalen Webzugriff wieder her: Eine einfache HTTP-Anfrage von PC-Reception an Portal-01 muss eine Antwort erhalten.",
+            "hints": [
+                "Die Anfrage von PC-Reception kommt nie an Firewall-Edge vorbei auf dem Weg zu Portal-01 — sie wird dort sofort verworfen.",
+                "Firewall-Edge enthält eine ACL-Regel, die HTTP-Verkehr an Portal-01 explizit verweigert, und diese Regel wird bewertet, bevor die Regel zur Zulassung angewendet wird.",
+                "Löschen Sie auf Firewall-Edge die ACL-Regel, die HTTP von einer beliebigen Quelle an 10.0.5.1 verweigert, damit die untere Zulassungsregel für Port 80 wirksam werden kann."
+            ],
+            "explanation": "Firewall-ACLs werden von oben nach unten gelesen und der erste Match gewinnt. Eine Deny-Regel oberhalb einer Permit-Regel für denselben Verkehr gewinnt immer, auch wenn die Permit-Regel korrekt aussieht. Überprüfen Sie immer die Regelreihenfolge, nicht nur die Anwesenheit von Regeln, wenn legitimer Verkehr unerwartet blockiert wird."
+        },
+        "fr": {
+            "title": "Le portail ne se charge pas",
+            "story": "Le personnel de la réception signale que Portal-01, le portail web normalement accessible depuis PC-Reception, ne se charge plus dans le navigateur depuis ce matin. Personne n'a rien modifié sur le PC lui-même.",
+            "objective": "Rétablir l'accès web normal : une requête HTTP simple de PC-Reception à Portal-01 doit recevoir une réponse.",
+            "hints": [
+                "La requête de PC-Reception n'arrive jamais à passer Firewall-Edge en direction de Portal-01 — elle est rejetée là-bas.",
+                "Firewall-Edge contient une règle ACL qui refuse explicitement le trafic HTTP adressé à Portal-01, et cette règle est évaluée avant la règle censée l'autoriser.",
+                "Sur Firewall-Edge, supprimez la règle ACL qui refuse HTTP de n'importe quelle source à 10.0.5.1, pour que la règle d'autorisation inférieure pour le port 80 puisse prendre effet."
+            ],
+            "explanation": "Les ACL de pare-feu sont lues de haut en bas et le premier match gagne. Une règle de refus placée au-dessus d'une règle d'autorisation pour le même trafic gagnera toujours, même si la règle d'autorisation semble correcte. Vérifiez toujours l'ordre des règles, pas seulement leur présence, quand un trafic légitime est bloqué de manière inattendue."
+        },
+        "hi": {
+            "title": "पोर्टल लोड नहीं हो रहा है",
+            "story": "रिसेप्शन के कर्मचारियों ने सूचना दी है कि Portal-01, जो वेब पोर्टल सामान्य रूप से PC-Reception से पहुंचने योग्य है, आज सुबह से ब्राउज़र में लोड नहीं हो रहा है। किसी ने PC पर कुछ नहीं बदला है।",
+            "objective": "सामान्य वेब एक्सेस पुनः स्थापित करें: PC-Reception से Portal-01 तक का एक सादा HTTP अनुरोध एक प्रतिक्रिया पाना चाहिए।",
+            "hints": [
+                "PC-Reception से अनुरोध Portal-01 तक जाने के रास्ते में Firewall-Edge को कभी पास नहीं करता — यह वहीं तुरंत गिरा दिया जाता है।",
+                "Firewall-Edge में एक ACL नियम है जो Portal-01 को संबोधित HTTP ट्रैफिक को स्पष्ट रूप से अस्वीकार करता है, और इस नियम का मूल्यांकन इसे अनुमति देने वाले नियम से पहले किया जाता है।",
+                "Firewall-Edge पर, ACL नियम को हटाएं जो किसी भी स्रोत से 10.0.5.1 तक HTTP को अस्वीकार करता है, ताकि पोर्ट 80 के लिए निचला अनुमति नियम प्रभावी हो सके।"
+            ],
+            "explanation": "फायरवॉल ACL को ऊपर से नीचे तक पढ़ा जाता है और पहला मिलान जीत जाता है। एक ही ट्रैफिक के लिए अनुमति नियम के ऊपर रखा गया अस्वीकार नियम हमेशा जीतेगा, भले ही अनुमति नियम सही दिखे। जब वैध ट्रैफिक अप्रत्याशित रूप से अवरुद्ध हो, तो हमेशा नियम के क्रम की जांच करें, केवल नियम की मौजूदगी नहीं।"
+        },
+        "id": {
+            "title": "Portal Tidak Mau Dimuat",
+            "story": "Staf di meja depan melaporkan bahwa Portal-01, portal web yang biasanya dapat diakses dari PC-Reception, tidak lagi dimuat di browser sejak pagi hari ini. Tidak ada yang mengubah apa pun di PC itu sendiri.",
+            "objective": "Pulihkan akses web normal: permintaan HTTP biasa dari PC-Reception ke Portal-01 harus mendapat respons.",
+            "hints": [
+                "Permintaan dari PC-Reception tidak pernah melewati Firewall-Edge dalam perjalanan ke Portal-01 — permintaan itu ditolak langsung di sana.",
+                "Firewall-Edge membawa aturan ACL yang secara eksplisit menolak lalu lintas HTTP yang ditujukan ke Portal-01, dan aturan itu dievaluasi sebelum aturan yang dimaksudkan untuk mengizinkannya.",
+                "Di Firewall-Edge, hapus aturan ACL yang menolak HTTP dari sumber mana pun ke 10.0.5.1, sehingga aturan izin yang lebih rendah untuk port 80 dapat berlaku."
+            ],
+            "explanation": "ACL Firewall dibaca dari atas ke bawah dan kecocokan pertama yang menang. Aturan penolakan yang ditempatkan di atas aturan izin untuk lalu lintas yang sama akan selalu menang, bahkan jika aturan izin terlihat benar. Selalu periksa urutan aturan, bukan hanya kehadiran aturan, ketika lalu lintas sah terhalang secara tidak terduga."
+        },
+        "ru": {
+            "title": "Портал не загружается",
+            "story": "Сотрудники стойки регистрации сообщают, что Portal-01, веб-портал, обычно доступный с PC-Reception, с этого утра больше не загружается в браузере. Никто ничего не менял на самом ПК.",
+            "objective": "Восстановите нормальный веб-доступ: простой HTTP-запрос с PC-Reception на Portal-01 должен получить ответ.",
+            "hints": [
+                "Запрос с PC-Reception никогда не проходит через Firewall-Edge на пути к Portal-01 — он отбрасывается прямо там.",
+                "Firewall-Edge содержит правило ACL, которое явно запрещает HTTP-трафик, адресованный Portal-01, и это правило обрабатывается перед правилом, предназначенным для его разрешения.",
+                "На Firewall-Edge удалите правило ACL, которое запрещает HTTP с любого источника на 10.0.5.1, чтобы нижнее правило разрешения для порта 80 могло вступить в силу."
+            ],
+            "explanation": "Правила ACL брандмауэра обрабатываются сверху вниз, и первое совпадение побеждает. Правило запрета, размещенное выше правила разрешения для одного и того же трафика, всегда побеждает, даже если правило разрешения выглядит правильно. Всегда проверяйте порядок правил, а не просто их наличие, когда законный трафик неожиданно блокируется."
+        },
+        "it": {
+            "title": "Il portale non si carica",
+            "story": "Il personale della reception segnala che Portal-01, il portale web normalmente raggiungibile da PC-Reception, ha smesso di caricarsi nel browser da questa mattina. Nessuno ha modificato nulla sul PC stesso.",
+            "objective": "Ripristinare l'accesso web normale: una semplice richiesta HTTP da PC-Reception a Portal-01 deve ricevere una risposta.",
+            "hints": [
+                "La richiesta da PC-Reception non riesce mai a superare Firewall-Edge durante il percorso verso Portal-01 — viene scartata proprio lì.",
+                "Firewall-Edge contiene una regola ACL che nega esplicitamente il traffico HTTP indirizzato a Portal-01, e questa regola viene valutata prima della regola che dovrebbe permetterlo.",
+                "Su Firewall-Edge, elimina la regola ACL che nega HTTP da qualsiasi origine a 10.0.5.1, in modo che la regola di permesso inferiore per la porta 80 possa avere effetto."
+            ],
+            "explanation": "Le ACL del Firewall vengono lette dall'alto verso il basso e la prima corrispondenza vince. Una regola di negazione posizionata sopra una regola di permesso per lo stesso traffico avrà sempre la precedenza, anche se la regola di permesso sembra corretta. Controlla sempre l'ordine delle regole, non solo la loro presenza, quando il traffico legittimo viene inaspettatamente bloccato."
+        },
+        "tr": {
+            "title": "Portal Yüklenmiyoryor",
+            "story": "Resepsiyon görevlileri, PC-Reception'dan normalden ulaşılabilen Portal-01 web portalının bu sabahtan beri tarayıcıda yüklenmediğini bildirmiştir. PC'nin kendisinde hiç bir değişiklik yapılmamıştır.",
+            "objective": "Normal web erişimini geri yükleyin: PC-Reception'dan Portal-01'e yapılan basit bir HTTP isteği yanıt almalıdır.",
+            "hints": [
+                "PC-Reception'dan gelen istek Portal-01'e giden yolda Firewall-Edge'i asla geçemez — tam orada düşürülür.",
+                "Firewall-Edge, Portal-01'e yönelik HTTP trafiğini açıkça reddeden bir ACL Kuralı taşır ve bu kural izin verme kuralından önce değerlendirilir.",
+                "Firewall-Edge üzerinde, 10.0.5.1'e herhangi bir kaynaktan HTTP'yi reddeden ACL Kuralını silin, böylece port 80 için alt izin kuralı etkili olabilir."
+            ],
+            "explanation": "Firewall ACL Kuralları üstten aşağıya doğru okunur ve ilk eşleşme kazanır. Aynı trafik için izin kuralının üzerine yerleştirilen bir reddetme kuralı, izin kuralı doğru görünse bile her zaman kazanacaktır. Meşru trafik beklenmedik şekilde engellendiğinde, kural sırasını, sadece kuralın varlığını değil, kontrol edin."
+        },
+        "th": {
+            "title": "พอร์ทัลจะไม่โหลด",
+            "story": "พนักงานต้อนรับรายงานว่า Portal-01 ซึ่งเป็นพอร์ทัลเว็บที่สามารถเข้าถึงได้ตามปกติจาก PC-Reception ไม่สามารถโหลดในเบราว์เซอร์ได้ตั้งแต่เช้านี้ ไม่มีใครเปลี่ยนแปลงอะไรบน PC เอง",
+            "objective": "กู้คืนการเข้าถึงเว็บปกติ: คำขอ HTTP ธรรมดาจาก PC-Reception ไปยัง Portal-01 ต้องได้รับการตอบสนอง",
+            "hints": [
+                "คำขอจาก PC-Reception ไม่สามารถผ่าน Firewall-Edge ไปยัง Portal-01 ได้ — มันถูกดรอปตรงตรงนั้น",
+                "Firewall-Edge มี กฎ ACL ที่ปฏิเสธอย่างชัดแจ้งการรับส่งข้อมูล HTTP ที่อยู่ถึง Portal-01 และกฎนี้ได้รับการประเมินก่อนกฎที่ควรอนุญาตมัน",
+                "บน Firewall-Edge ให้ลบ กฎ ACL ที่ปฏิเสธ HTTP จากแหล่งใดๆ ไปยัง 10.0.5.1 เพื่อให้กฎอนุญาตด้านล่างสำหรับพอร์ต 80 สามารถมีผล"
+            ],
+            "explanation": "กฎ ACL ของ Firewall ถูกอ่านจากบนลงล่าง และการจับคู่ครั้งแรกชนะ กฎปฏิเสธที่วางไว้เหนือกฎอนุญาตสำหรับการรับส่งข้อมูลเดียวกันจะชนะเสมอ แม้ว่ากฎอนุญาตดูเหมือนว่าถูกต้อง ตรวจสอบลำดับกฎเสมอ ไม่ใช่เพียงการมีอยู่ของกฎ เมื่อการรับส่งข้อมูลที่ถูกต้องถูกบล็อกอย่างไม่คาดคิด"
+        },
+        "vi": {
+            "title": "Portal không tải được",
+            "story": "Nhân viên lễ tân báo cáo rằng Portal-01, cổng thông tin web thường được truy cập từ PC-Reception, đã ngừng tải trong trình duyệt từ sáng nay. Không ai thay đổi bất cứ điều gì trên chính PC.",
+            "objective": "Khôi phục quyền truy cập web bình thường: một yêu cầu HTTP đơn giản từ PC-Reception tới Portal-01 phải nhận được phản hồi.",
+            "hints": [
+                "Yêu cầu từ PC-Reception không bao giờ vượt qua Firewall-Edge trên đường tới Portal-01 — nó bị xóa ngay tại đó.",
+                "Firewall-Edge có một Quy tắc ACL từ chối rõ ràng lưu lượng HTTP gửi tới Portal-01, và quy tắc này được đánh giá trước quy tắc nhằm cho phép nó.",
+                "Trên Firewall-Edge, xóa Quy tắc ACL từ chối HTTP từ bất kỳ nguồn nào tới 10.0.5.1, để quy tắc cho phép ở dưới cùng cho cổng 80 có thể có hiệu lực."
+            ],
+            "explanation": "Quy tắc ACL của Firewall được đọc từ trên xuống và quy tắc khớp đầu tiên sẽ thắng. Một quy tắc từ chối đặt phía trên quy tắc cho phép đối với cùng lưu lượng sẽ luôn thắng, ngay cả khi quy tắc cho phép trông có vẻ đúng. Luôn kiểm tra thứ tự quy tắc, không chỉ sự hiện diện của quy tắc, khi lưu lượng hợp pháp bị chặn một cách bất ngờ."
+        }
+    }
+}
