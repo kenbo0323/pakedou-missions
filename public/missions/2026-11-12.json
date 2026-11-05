@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-12",
+    "number": 53,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.30.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.30.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Core",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.25.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.25.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Cursed Laptops",
+            "story": "The sales team insists their laptops are cursed: PC-Sales cannot open the shared file server's web page, no matter how many times they retry. PC-Design nearby doesn't seem to have this problem.",
+            "objective": "Restore the HTTP connection from PC-Sales to File-Server.",
+            "hints": [
+                "The request from PC-Sales never makes it past PC-Sales itself — it never reaches Router-Main at all.",
+                "PC-Sales is sending its traffic for other subnets to an address that belongs to File-Server, not to a router, so nothing forwards the packet onward.",
+                "On PC-Sales, set the default gateway to 10.0.30.254 so traffic is handed to Router-Main."
+            ],
+            "explanation": "A client's default gateway must be an actual router interface on its own subnet. Here PC-Sales pointed its gateway at the file server's address instead of Router-Main, so packets meant for other subnets had nowhere to go. Always verify the gateway is both reachable and a routing device."
+        },
+        "ja": {
+            "title": "呪われたノートパソコン",
+            "story": "営業チームは自分たちのノートパソコンが呪われていると言い張っています。PC-Salesは何度やり直しても共有ファイルサーバーのウェブページを開けません。すぐ隣のPC-Designにはこの問題がないようです。",
+            "objective": "PC-SalesからFile-ServerへのHTTP接続を復旧してください。",
+            "hints": [
+                "PC-Salesからのリクエストは、PC-Sales自身から先に進んでおらず、Router-Mainにすら届いていません。",
+                "PC-Salesは他のサブネット宛の通信を、ルーターではなくFile-Serverに属するアドレスへ送ってしまっているため、パケットを先へ転送してくれる機器がありません。",
+                "PC-Sales上でデフォルトゲートウェイを10.0.30.254に設定し、通信がRouter-Mainに渡されるようにしてください。"
+            ],
+            "explanation": "クライアントのデフォルトゲートウェイは、自分と同じサブネット上にある実際のルーターのインターフェースでなければなりません。今回はPC-SalesのゲートウェイがRouter-Mainではなくファイルサーバーのアドレスを指していたため、他のサブネット宛のパケットが行き場を失っていました。ゲートウェイが到達可能であることと、それがルーティングを行う機器であることを、常に確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "诅咒笔记本电脑",
+            "story": "销售团队坚持认为他们的笔记本电脑被诅咒了：PC-Sales 无法打开共享文件服务器的网页，无论尝试多少次都不行。附近的 PC-Design 似乎没有这个问题。",
+            "objective": "恢复 PC-Sales 到 File-Server 的 HTTP 连接。",
+            "hints": [
+                "PC-Sales 的请求从未离开过 PC-Sales 本身——它根本没有到达 Router-Main。",
+                "PC-Sales 正在将其他子网的流量发送到 File-Server 的地址，而不是路由器，因此没有任何东西转发该数据包。",
+                "在 PC-Sales 上，将默认网关设置为 10.0.30.254，以便流量转交给 Router-Main。"
+            ],
+            "explanation": "客户端的默认网关必须是其自身子网上的实际路由器接口。此处 PC-Sales 将其网关指向了文件服务器的地址，而不是 Router-Main，因此发往其他子网的数据包无处可去。始终验证网关既可以到达又是路由设备。"
+        },
+        "zh-TW": {
+            "title": "被詛咒的筆記本電腦",
+            "story": "銷售團隊堅稱他們的筆記本電腦被詛咒了：PC-Sales 無法開啟共用檔案伺服器的網頁，無論重試多少次都不行。附近的 PC-Design 似乎沒有這個問題。",
+            "objective": "恢復 PC-Sales 到 File-Server 的 HTTP 連線。",
+            "hints": [
+                "PC-Sales 的要求從未離開 PC-Sales 本身——它根本沒有到達 Router-Main。",
+                "PC-Sales 正在將其他子網的流量傳送到 File-Server 的位址，而不是路由器，因此沒有任何東西轉送該封包。",
+                "在 PC-Sales 上，將預設閘道設定為 10.0.30.254，以便流量轉交給 Router-Main。"
+            ],
+            "explanation": "用戶端的預設閘道必須是其自身子網上的實際路由器介面。此處 PC-Sales 將其閘道指向了檔案伺服器的位址，而不是 Router-Main，因此發往其他子網的封包無處可去。始終驗證閘道既可到達又是路由設備。"
+        },
+        "ko": {
+            "title": "저주받은 노트북",
+            "story": "영업팀은 자신들의 노트북이 저주받았다고 주장합니다: PC-Sales는 공유 파일 서버의 웹 페이지를 열 수 없으며, 아무리 많이 재시도해도 안 됩니다. 근처의 PC-Design은 이 문제가 없는 것 같습니다.",
+            "objective": "PC-Sales에서 File-Server로의 HTTP 연결을 복구합니다.",
+            "hints": [
+                "PC-Sales의 요청은 PC-Sales 자체를 벗어나지 못했습니다 — Router-Main에 도달하지 않습니다.",
+                "PC-Sales가 다른 서브넷의 트래픽을 라우터가 아닌 File-Server의 주소로 전송하고 있어서 어떤 것도 패킷을 전달하지 않습니다.",
+                "PC-Sales에서 기본 게이트웨이를 10.0.30.254로 설정하여 트래픽이 Router-Main으로 전달되도록 하세요."
+            ],
+            "explanation": "클라이언트의 기본 게이트웨이는 자신의 서브넷 위의 실제 라우터 인터페이스여야 합니다. 여기서 PC-Sales는 게이트웨이를 Router-Main이 아닌 파일 서버의 주소로 지정했으므로 다른 서브넷으로 향하는 패킷이 갈 곳이 없습니다. 항상 게이트웨이가 도달 가능하고 라우팅 장치인지 확인하세요."
+        },
+        "es": {
+            "title": "Portátiles Malditos",
+            "story": "El equipo de ventas insiste en que sus portátiles están malditos: PC-Sales no puede abrir la página web del servidor de archivos compartidos, sin importar cuántas veces lo intente. PC-Design cercano parece no tener este problema.",
+            "objective": "Restaurar la conexión HTTP desde PC-Sales a File-Server.",
+            "hints": [
+                "La solicitud desde PC-Sales nunca sale de PC-Sales — nunca llega a Router-Main.",
+                "PC-Sales está enviando su tráfico para otras subredes a una dirección que pertenece a File-Server, no a un router, así que nada reenvía el paquete.",
+                "En PC-Sales, establece el Gateway predeterminado a 10.0.30.254 para que el tráfico se entregue a Router-Main."
+            ],
+            "explanation": "El Gateway predeterminado de un cliente debe ser una interfaz de router real en su propia subred. Aquí PC-Sales apuntaba su gateway a la dirección del servidor de archivos en lugar de Router-Main, así que los paquetes destinados a otras subredes no tenían adónde ir. Siempre verifica que el gateway sea tanto alcanzable como un dispositivo de enrutamiento."
+        },
+        "pt-BR": {
+            "title": "Laptops Amaldiçoados",
+            "story": "O time de vendas insiste que seus laptops estão amaldiçoados: PC-Sales não consegue abrir a página web do servidor de arquivos compartilhados, não importa quantas vezes tente. PC-Design próximo parece não ter esse problema.",
+            "objective": "Restaurar a conexão HTTP de PC-Sales para File-Server.",
+            "hints": [
+                "A solicitação de PC-Sales nunca sai de PC-Sales — nunca chega a Router-Main.",
+                "PC-Sales está enviando seu tráfego para outras subredes para um endereço que pertence a File-Server, não a um router, então nada encaminha o pacote adiante.",
+                "Em PC-Sales, defina o Gateway padrão para 10.0.30.254 para que o tráfego seja entregue a Router-Main."
+            ],
+            "explanation": "O Gateway padrão de um cliente deve ser uma interface de router real em sua própria subrede. Aqui, PC-Sales apontava seu gateway para o endereço do servidor de arquivos em vez de Router-Main, então os pacotes destinados a outras subredes não tinham para onde ir. Sempre verifique se o gateway é alcançável e um dispositivo de roteamento."
+        },
+        "de": {
+            "title": "Verfluchte Laptops",
+            "story": "Das Sales-Team behauptet, ihre Laptops seien verflucht: PC-Sales kann die Webseite des gemeinsamen File-Servers nicht öffnen, egal wie oft sie es versuchen. PC-Design in der Nähe scheint dieses Problem nicht zu haben.",
+            "objective": "Stelle die HTTP-Verbindung von PC-Sales zu File-Server wieder her.",
+            "hints": [
+                "Die Anfrage von PC-Sales kommt nie über PC-Sales selbst hinaus — sie erreicht Router-Main überhaupt nicht.",
+                "PC-Sales sendet seinen Verkehr für andere Subnetzwerke an eine Adresse, die File-Server gehört, nicht einem Router, daher leitet nichts das Paket weiter.",
+                "Stelle auf PC-Sales das Standard-Gateway auf 10.0.30.254 ein, damit der Verkehr zu Router-Main weitergeleitet wird."
+            ],
+            "explanation": "Das Standard-Gateway eines Clients muss eine echte Router-Schnittstelle in seinem eigenen Subnetzwerk sein. Hier wies PC-Sales sein Gateway auf die Adresse des File-Servers hin statt auf Router-Main, daher hatten Pakete für andere Subnetzwerke keine Möglichkeit weitergeleitet zu werden. Überprüfe immer, dass das Gateway erreichbar ist und ein Routing-Gerät darstellt."
+        },
+        "fr": {
+            "title": "Ordinateurs Portables Maudits",
+            "story": "L'équipe commerciale insiste sur le fait que leurs ordinateurs portables sont maudits : PC-Sales ne peut pas ouvrir la page web du serveur de fichiers partagés, peu importe combien de fois ils essaient. PC-Design à proximité ne semble pas avoir ce problème.",
+            "objective": "Restaurer la connexion HTTP de PC-Sales à File-Server.",
+            "hints": [
+                "La demande de PC-Sales ne dépasse jamais PC-Sales lui-même — elle n'atteint pas du tout Router-Main.",
+                "PC-Sales envoie son trafic pour les autres réseaux vers une adresse qui appartient à File-Server, non à un routeur, donc rien ne fait avancer le paquet.",
+                "Sur PC-Sales, réglez la passerelle par défaut sur 10.0.30.254 afin que le trafic soit transmis à Router-Main."
+            ],
+            "explanation": "La passerelle par défaut d'un Client doit être une interface routeur réelle sur son propre réseau. Ici, PC-Sales pointait sa passerelle vers l'adresse du serveur de fichiers au lieu de Router-Main, donc les paquets destinés à d'autres réseaux n'avaient nulle part aller. Vérifiez toujours que la passerelle est à la fois accessible et qu'il s'agit d'un appareil de routage."
+        },
+        "hi": {
+            "title": "श्रापित लैपटॉप",
+            "story": "बिक्रय दल जोर देता है कि उनके लैपटॉप श्रापित हैं: PC-Sales साझा फाइल सर्वर के वेब पृष्ठ को नहीं खोल सकते, चाहे वे कितनी भी बार पुनः प्रयास करें। पास में PC-Design को यह समस्या नहीं लगती है।",
+            "objective": "PC-Sales से File-Server तक HTTP कनेक्शन पुनः स्थापित करें।",
+            "hints": [
+                "PC-Sales का अनुरोध कभी PC-Sales के आगे नहीं जाता — यह Router-Main तक ही नहीं पहुंचता है।",
+                "PC-Sales अन्य सबनेट के लिए अपनी ट्रैफिक एक पते पर भेज रहा है जो File-Server का है, न कि राउटर का, इसलिए कोई भी पैकेट को आगे नहीं भेजता है।",
+                "PC-Sales पर, डिफ़ॉल्ट गेटवे को 10.0.30.254 पर सेट करें ताकि ट्रैफिक Router-Main को दिया जाए।"
+            ],
+            "explanation": "एक Client का डिफ़ॉल्ट गेटवे अपनी सबनेट पर एक वास्तविक राउटर इंटरफेस होना चाहिए। यहां PC-Sales ने अपने गेटवे को Router-Main की बजाय फाइल सर्वर के पते पर इंगित किया, इसलिए अन्य सबनेट के लिए पैकेट कहीं नहीं जा सकते। हमेशा जांचें कि गेटवे पहुंच योग्य है और यह एक राउटिंग डिवाइस है।"
+        },
+        "id": {
+            "title": "Laptop yang Terkutuk",
+            "story": "Tim penjualan bersikeras bahwa laptop mereka terkutuk: PC-Sales tidak dapat membuka halaman web server file bersama, tidak peduli berapa kali mereka mencoba ulang. PC-Design di dekatnya tidak tampak memiliki masalah ini.",
+            "objective": "Pulihkan koneksi HTTP dari PC-Sales ke File-Server.",
+            "hints": [
+                "Permintaan dari PC-Sales tidak pernah melewati PC-Sales sendiri — tidak pernah mencapai Router-Main sama sekali.",
+                "PC-Sales mengirim lalu lintasnya untuk subnet lain ke alamat yang dimiliki File-Server, bukan router, jadi tidak ada yang meneruskan paket.",
+                "Di PC-Sales, atur Gateway Default ke 10.0.30.254 sehingga lalu lintas diteruskan ke Router-Main."
+            ],
+            "explanation": "Gateway Default Client harus berupa antarmuka router nyata di subnet-nya sendiri. Di sini PC-Sales menunjukkan gateway-nya ke alamat server file alih-alih Router-Main, sehingga paket yang ditujukan untuk subnet lain tidak memiliki tempat untuk pergi. Selalu verifikasi bahwa gateway dapat dijangkau dan merupakan perangkat routing."
+        },
+        "ru": {
+            "title": "Проклятые ноутбуки",
+            "story": "Команда продаж настаивает, что их ноутбуки прокляты: PC-Sales не может открыть веб-страницу общего файлового сервера, независимо от количества попыток. PC-Design рядом, похоже, не имеет этой проблемы.",
+            "objective": "Восстановите HTTP-соединение от PC-Sales к File-Server.",
+            "hints": [
+                "Запрос от PC-Sales никогда не проходит дальше самого PC-Sales — он вообще не достигает Router-Main.",
+                "PC-Sales отправляет свой трафик для других подсетей на адрес, принадлежащий File-Server, а не маршрутизатору, поэтому никто не перенаправляет пакет дальше.",
+                "На PC-Sales установите Шлюз по умолчанию на 10.0.30.254, чтобы трафик передавался на Router-Main."
+            ],
+            "explanation": "Шлюз по умолчанию Client должен быть реальным интерфейсом маршрутизатора в его собственной подсети. Здесь PC-Sales указал свой шлюз на адрес файлового сервера вместо Router-Main, поэтому пакеты, предназначенные для других подсетей, неразборчивы. Всегда проверяйте, что шлюз достижим и является устройством маршрутизации."
+        },
+        "it": {
+            "title": "Laptop Maledetti",
+            "story": "Il team vendite sostiene che i loro laptop siano maledetti: PC-Sales non riesce ad aprire la pagina web del file server condiviso, non importa quante volte riprova. PC-Design nelle vicinanze non sembra avere questo problema.",
+            "objective": "Ripristinare la connessione HTTP da PC-Sales a File-Server.",
+            "hints": [
+                "La richiesta da PC-Sales non va oltre PC-Sales stesso — non raggiunge mai Router-Main.",
+                "PC-Sales sta inviando il traffico per altre subnet a un indirizzo che appartiene a File-Server, non a un router, quindi nessun dispositivo inoltrat il pacchetto.",
+                "Su PC-Sales, imposta il Gateway predefinito a 10.0.30.254 in modo che il traffico venga indirizzato a Router-Main."
+            ],
+            "explanation": "Il Gateway predefinito di un client deve essere un'interfaccia router effettiva sulla sua stessa subnet. Qui PC-Sales puntava il suo gateway all'indirizzo del file server invece che a Router-Main, quindi i pacchetti destinati ad altre subnet non avevano dove andare. Verifica sempre che il gateway sia sia raggiungibile che un dispositivo di routing."
+        },
+        "tr": {
+            "title": "Lanetli Dizüstü Bilgisayarlar",
+            "story": "Satış ekibi, dizüstü bilgisayarlarının lanetli olduğundan ısrar ediyor: PC-Sales, paylaşılan dosya sunucusunun web sayfasını açamıyor, kaç kez yeniden denerse desin. Yakındaki PC-Design bu sorunu yaşamıyor.",
+            "objective": "PC-Sales'ten File-Server'a olan HTTP bağlantısını geri yükleyin.",
+            "hints": [
+                "PC-Sales'ten gelen istek hiçbir zaman PC-Sales'i geçemiyor — Router-Main'e hiçbir zaman ulaşmıyor.",
+                "PC-Sales, diğer subnet'ler için trafiği bir yönlendiriciye değil File-Server'a ait olan bir adrese gönderiyor, bu nedenle hiçbir cihaz paketi ileri taşımıyor.",
+                "PC-Sales'te, Varsayılan ağ geçidi değerini 10.0.30.254 olarak ayarlayın, böylece trafik Router-Main'e yönlendirilir."
+            ],
+            "explanation": "Bir istemcinin Varsayılan ağ geçidi kendi subnet'i üzerindeki gerçek bir Router arayüzü olmalıdır. Burada PC-Sales, ağ geçidini Router-Main yerine dosya sunucusunun adresine işaret ediyordu, bu nedenle diğer subnet'lere yönelik paketlerin gidecek yeri yoktu. Ağ geçidinin hem erişilebilir hem de bir yönlendirme cihazı olduğunu her zaman doğrulayın."
+        },
+        "th": {
+            "title": "แล็ปท็อปที่ถูกสาป",
+            "story": "ทีมขายยืนยันว่าแล็ปท็อปของพวกเขาถูกสาป PC-Sales ไม่สามารถเปิดหน้าเว็บของเซิร์ฟเวอร์ไฟล์ที่ใช้ร่วมกันได้ ไม่ว่าจะพยายามกี่ครั้ง PC-Design ที่อยู่ใกล้เคียงดูเหมือนว่าจะไม่มีปัญหานี้",
+            "objective": "กู้คืนการเชื่อมต่อ HTTP จาก PC-Sales ไปยัง File-Server",
+            "hints": [
+                "คำขอจาก PC-Sales ไม่ผ่านไปกว่า PC-Sales เอง — ไม่เคยถึง Router-Main เลย",
+                "PC-Sales กำลังส่งทราฟิกสำหรับเครือข่ายอื่นไปยังที่อยู่ที่เป็นของ File-Server ไม่ใช่เราเตอร์ จึงไม่มีอุปกรณ์ใดส่งต่อแพ็กเก็ต",
+                "บน PC-Sales ตั้ง เกตเวย์เริ่มต้น เป็น 10.0.30.254 เพื่อให้ทราฟิกถูกส่งไปที่ Router-Main"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นของไคลเอนต์ต้องเป็นอินเทอร์เฟซ Router จริงในเครือข่ายเดียวกัน ที่นี่ PC-Sales ชี้เกตเวย์ไปยังที่อยู่ของเซิร์ฟเวอร์ไฟล์แทน Router-Main จึงไม่มีที่ไปสำหรับแพ็กเก็ตที่มีไปยังเครือข่ายอื่น ตรวจสอบเสมอว่าเกตเวย์สามารถเข้าถึงได้และเป็นอุปกรณ์เส้นทาง"
+        },
+        "vi": {
+            "title": "Laptop Bị Nguyền Rủa",
+            "story": "Đội bán hàng khăng khăng cho rằng các máy tính xách tay của họ bị nguyền rủa: PC-Sales không thể mở trang web của máy chủ tệp được chia sẻ, dù cố gắng bao nhiêu lần. PC-Design gần đó dường như không gặp vấn đề này.",
+            "objective": "Phục hồi kết nối HTTP từ PC-Sales tới File-Server.",
+            "hints": [
+                "Yêu cầu từ PC-Sales không bao giờ vượt quá chính PC-Sales — nó không bao giờ đến Router-Main.",
+                "PC-Sales đang gửi lưu lượng cho các subnet khác tới một địa chỉ thuộc về File-Server, không phải router, vì vậy không có thiết bị nào chuyển tiếp gói tin.",
+                "Trên PC-Sales, đặt Cổng mặc định thành 10.0.30.254 để lưu lượng được gửi tới Router-Main."
+            ],
+            "explanation": "Cổng mặc định của máy khách phải là một giao diện Router thực sự trên cùng subnet của nó. Ở đây PC-Sales trỏ cổng của nó tới địa chỉ của máy chủ tệp thay vì Router-Main, do đó các gói tin dành cho các subnet khác không có chỗ đi. Luôn xác minh rằng cổng vừa có thể truy cập được vừa là một thiết bị định tuyến."
+        }
+    }
+}
