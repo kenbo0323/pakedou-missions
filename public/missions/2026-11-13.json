@@ -1,0 +1,686 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-13",
+    "number": 54,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.5.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.5.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.5.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.8.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.28.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.8.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.8.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.28.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.5.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.8.1",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.28.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Orders Stuck Halfway to Headquarters",
+            "story": "Sales staff at headquarters say their order lookups to the Fukuoka branch server never finish. Every attempt from PC-Sales since this afternoon just hangs and times out.",
+            "objective": "Restore a working HTTP GET from PC-Sales to Intranet-01.",
+            "hints": [
+                "The request reaches Intranet-01, but the reply heading back toward PC-Sales stalls and is dropped right at Router-Fukuoka, which never forwards it onward.",
+                "Router-Fukuoka holds a route to PC-Sales' network that points out the wrong port instead of toward Router-Sapporo, so it has nowhere valid to send the reply.",
+                "On Router-Fukuoka, delete the route to 10.0.5.0/255.255.255.0 and add a route to 10.0.5.0/255.255.255.0 via 10.0.8.1 on port 0."
+            ],
+            "explanation": "A static route's next hop must point toward a real neighboring router interface on the correct link. Here the route to the PC-Sales subnet aimed at the wrong port, so Router-Fukuoka could not deliver return traffic, breaking the TCP handshake even though the request got through."
+        },
+        "ja": {
+            "title": "本社への注文が途中で止まっている",
+            "story": "本社の営業担当者が、福岡支店サーバーへの注文照会が完了しないと報告しています。今日の午後から、PC-Salesからのアクセスはすべて応答がなくタイムアウトしてしまいます。",
+            "objective": "PC-SalesからIntranet-01へのHTTP GETを正常に動作させる。",
+            "hints": [
+                "リクエストはIntranet-01まで届いていますが、PC-Sales宛ての返信はRouter-Fukuokaのところで止まってしまい、その先へ転送されていません。",
+                "Router-Fukuokaが持つPC-Salesのネットワーク宛てのルートが、Router-Sapporoではなく誤ったポートを指しているため、返信を送る先がない状態です。",
+                "Router-Fukuokaで、10.0.5.0/255.255.255.0 へのルートを削除し、10.0.5.0/255.255.255.0 を中継先(ネクストホップ) 10.0.8.1、ポート0で追加してください。"
+            ],
+            "explanation": "スタティックルートの中継先(ネクストホップ)は、正しいリンク上にある実在する隣接ルーターのインターフェースを指している必要があります。今回はPC-Salesのサブネット宛てのルートが誤ったポートを指していたため、Router-Fukuokaが復路の通信を届けられず、リクエスト自体は届いていたにもかかわらずTCPのハンドシェイクが成立しませんでした。"
+        },
+        "zh-CN": {
+            "title": "订单卡在发往总部的途中",
+            "story": "总部销售人员反映他们对福冈分支服务器的订单查询无法完成。自从今天下午以来，PC-Sales 的每次尝试都会挂起并超时。",
+            "objective": "恢复从 PC-Sales 到 Intranet-01 的正常 HTTP GET 请求。",
+            "hints": [
+                "请求到达 Intranet-01，但返回回复在 Router-Fukuoka 处停止并被丢弃，从未转发到 PC-Sales。",
+                "Router-Fukuoka 中有一条指向 PC-Sales 网络的路由，它指向错误的端口而不是 Router-Sapporo，因此没有有效的路径来发送回复。",
+                "在 Router-Fukuoka 上，删除指向 10.0.5.0/255.255.255.0 的路由，然后添加一条指向 10.0.5.0/255.255.255.0 的路由，下一跳为 10.0.8.1，端口号为 0。"
+            ],
+            "explanation": "静态路由的下一跳必须指向相邻路由器上正确链路上的真实接口。此处指向 PC-Sales 子网的路由指向错误的端口，因此 Router-Fukuoka 无法发送返回流量，破坏了 TCP 握手，即使请求已通过。"
+        },
+        "zh-TW": {
+            "title": "訂單卡在前往總部的途中",
+            "story": "總部銷售人員表示他們對福岡分公司伺服器的訂單查詢無法完成。自今天下午以來，PC-Sales 的每次嘗試都會掛起並逾時。",
+            "objective": "恢復從 PC-Sales 到 Intranet-01 的正常 HTTP GET 請求。",
+            "hints": [
+                "請求到達 Intranet-01，但返回的回覆在 Router-Fukuoka 處停止並被丟棄，從未轉發給 PC-Sales。",
+                "Router-Fukuoka 中有一條指向 PC-Sales 網路的路由，它指向錯誤的連接埠而不是 Router-Sapporo，因此沒有有效的路徑來傳送回覆。",
+                "在 Router-Fukuoka 上，刪除指向 10.0.5.0/255.255.255.0 的路由，然後新增一條指向 10.0.5.0/255.255.255.0 的路由，下一跳為 10.0.8.1，連接埠號為 0。"
+            ],
+            "explanation": "靜態路由的下一跳必須指向相鄰路由器上正確連結上的真實介面。此處指向 PC-Sales 子網的路由指向錯誤的連接埠，因此 Router-Fukuoka 無法傳送返回流量，破壞了 TCP 交握，即使請求已通過。"
+        },
+        "ko": {
+            "title": "주문이 본사로 가는 중간에 멈춤",
+            "story": "본사 영업 직원들이 후쿠오카 지점 서버에 대한 주문 조회가 완료되지 않는다고 보고합니다. 오늘 오후부터 PC-Sales의 모든 시도가 멈추고 시간 초과됩니다.",
+            "objective": "PC-Sales에서 Intranet-01로의 정상 HTTP GET 요청을 복구합니다.",
+            "hints": [
+                "요청은 Intranet-01에 도달하지만, 돌아오는 응답은 Router-Fukuoka에서 정지되어 버려지고 PC-Sales로 전달되지 않습니다.",
+                "Router-Fukuoka에는 PC-Sales 네트워크를 가리키는 경로가 있는데, 이것이 Router-Sapporo가 아닌 잘못된 포트를 가리키고 있어서 응답을 보낼 유효한 경로가 없습니다.",
+                "Router-Fukuoka에서 10.0.5.0/255.255.255.0으로의 경로를 삭제하고, 다음 홉 10.0.8.1, 포트 번호 0으로 10.0.5.0/255.255.255.0으로의 경로를 추가합니다."
+            ],
+            "explanation": "정적 경로의 다음 홉은 올바른 링크의 인접 라우터 인터페이스를 가리켜야 합니다. 여기서 PC-Sales 서브넷으로의 경로가 잘못된 포트를 가리키고 있어서 Router-Fukuoka가 반환 트래픽을 전달할 수 없으며, 요청이 통과했더라도 TCP 핸드셰이크를 중단시킵니다."
+        },
+        "es": {
+            "title": "Pedidos atascados en camino a la sede",
+            "story": "El personal de ventas de la sede reporta que sus búsquedas de pedidos al servidor de la rama de Fukuoka nunca terminan. Todos los intentos desde PC-Sales desde esta tarde simplemente se cuelgan y agotan el tiempo de espera.",
+            "objective": "Restaurar una solicitud HTTP GET de trabajo desde PC-Sales a Intranet-01.",
+            "hints": [
+                "La solicitud llega a Intranet-01, pero la respuesta que regresa hacia PC-Sales se detiene y se descarta justo en Router-Fukuoka, que nunca la reenvía.",
+                "Router-Fukuoka tiene una ruta a la red de PC-Sales que apunta al puerto incorrecto en lugar de hacia Router-Sapporo, por lo que no tiene forma válida de enviar la respuesta.",
+                "En Router-Fukuoka, elimine la ruta a 10.0.5.0/255.255.255.0 y agregue una ruta a 10.0.5.0/255.255.255.0 mediante 10.0.8.1 en puerto 0."
+            ],
+            "explanation": "El siguiente salto de una ruta estática debe apuntar a una interfaz de router vecino real en el enlace correcto. Aquí la ruta a la subred de PC-Sales apuntaba al puerto incorrecto, por lo que Router-Fukuoka no pudo entregar el tráfico de retorno, rompiendo el protocolo de enlace TCP aunque la solicitud llegara."
+        },
+        "pt-BR": {
+            "title": "Pedidos presos a meio caminho para a sede",
+            "story": "Funcionários de vendas da sede relatam que as consultas de pedidos ao servidor da filial de Fukuoka nunca terminam. Todas as tentativas do PC-Sales desde esta tarde simplesmente travam e expiram.",
+            "objective": "Restaurar uma solicitação HTTP GET funcional do PC-Sales para Intranet-01.",
+            "hints": [
+                "A solicitação chega a Intranet-01, mas a resposta voltando para PC-Sales trava e é descartada logo em Router-Fukuoka, que nunca a encaminha.",
+                "Router-Fukuoka tem uma rota para a rede de PC-Sales que aponta para a porta errada em vez de apontar para Router-Sapporo, então não tem um caminho válido para enviar a resposta.",
+                "Em Router-Fukuoka, delete a rota para 10.0.5.0/255.255.255.0 e adicione uma rota para 10.0.5.0/255.255.255.0 via 10.0.8.1 na porta 0."
+            ],
+            "explanation": "O próximo salto de uma rota estática deve apontar para uma interface de roteador vizinho real no link correto. Aqui a rota para a sub-rede de PC-Sales apontava para a porta errada, então Router-Fukuoka não pôde entregar o tráfego de retorno, interrompendo o handshake TCP mesmo que a solicitação tivesse passado."
+        },
+        "de": {
+            "title": "Bestellungen stecken auf halber Strecke fest",
+            "story": "Vertriebsmitarbeiter in der Zentrale berichten, dass ihre Auftragsabfragen zum Fukuoka-Filialserver nie abgeschlossen werden. Jeder Versuch vom PC-Sales seit heute Nachmittag hängt einfach fest und läuft ab.",
+            "objective": "Stellen Sie einen funktionsfähigen HTTP GET von PC-Sales zu Intranet-01 wieder her.",
+            "hints": [
+                "Die Anforderung erreicht Intranet-01, aber die Antwortkopfzeile, die zurück zu PC-Sales führt, stockt und wird direkt bei Router-Fukuoka gelöscht, das sie nicht weiterleitet.",
+                "Router-Fukuoka hat eine Route zum Netzwerk von PC-Sales, die auf den falschen Port statt auf Router-Sapporo zeigt, sodass es keinen gültigen Ort für die Antwort hat.",
+                "Löschen Sie auf Router-Fukuoka die Route zu 10.0.5.0/255.255.255.0 und fügen Sie eine Route zu 10.0.5.0/255.255.255.0 via 10.0.8.1 auf Port 0 hinzu."
+            ],
+            "explanation": "Der Nächster Hop einer statischen Route muss auf eine echte benachbarte Router-Schnittstelle auf der richtigen Verbindung zeigen. Hier zielte die Route zum PC-Sales-Subnetz auf den falschen Port ab, sodass Router-Fukuoka den Rückverkehr nicht zustellen konnte und den TCP-Handshake unterbrach, obwohl die Anforderung durchkam."
+        },
+        "fr": {
+            "title": "Commandes bloquées à mi-chemin vers le siège",
+            "story": "Le personnel commercial au siège signale que leurs recherches de commandes vers le serveur de la succursale de Fukuoka ne se terminent jamais. Chaque tentative depuis PC-Sales cet après-midi s'arrête simplement et dépasse le délai.",
+            "objective": "Restaurez une requête HTTP GET fonctionnelle de PC-Sales vers Intranet-01.",
+            "hints": [
+                "La requête atteint Intranet-01, mais l'en-tête de réponse revenant vers PC-Sales s'arrête et est supprimé directement chez Router-Fukuoka, qui ne le transmet pas.",
+                "Router-Fukuoka possède une route vers le réseau de PC-Sales qui pointe vers le mauvais port au lieu de Router-Sapporo, donc il n'a nulle part valide pour envoyer la réponse.",
+                "Sur Router-Fukuoka, supprimez la route vers 10.0.5.0/255.255.255.0 et ajoutez une route vers 10.0.5.0/255.255.255.0 via 10.0.8.1 sur le port 0."
+            ],
+            "explanation": "Le saut suivant d'une route statique doit pointer vers une véritable interface routeur voisine sur le lien correct. Ici, la route vers le sous-réseau PC-Sales visait le mauvais port, donc Router-Fukuoka n'a pas pu livrer le trafic de retour, cassant la poignée de main TCP même si la requête était passée."
+        },
+        "hi": {
+            "title": "ऑर्डर आधे रास्ते में मुख्यालय तक अटके",
+            "story": "मुख्यालय में बिक्रय कर्मचारी कहते हैं कि फुकुओका शाखा सर्वर को उनकी ऑर्डर खोजें कभी समाप्त नहीं होती। PC-Sales से आज दोपहर के बाद का प्रत्येक प्रयास बस रुक जाता है और समय समाप्त हो जाता है।",
+            "objective": "PC-Sales से Intranet-01 तक एक कार्यशील HTTP GET पुनः स्थापित करें।",
+            "hints": [
+                "अनुरोध Intranet-01 तक पहुंचता है, लेकिन PC-Sales की ओर लौटने वाली प्रतिक्रिया शीर्षलेख Router-Fukuoka पर रुक जाता है और गिरा दिया जाता है, जो इसे आगे नहीं भेजता।",
+                "Router-Fukuoka के पास PC-Sales के नेटवर्क के लिए एक रूट है जो Router-Sapporo की ओर जाने के बजाय गलत पोर्ट की ओर इशारा करता है, इसलिए उसके पास प्रतिक्रिया भेजने के लिए कोई वैध जगह नहीं है।",
+                "Router-Fukuoka पर, 10.0.5.0/255.255.255.0 का रूट हटाएं और 10.0.5.0/255.255.255.0 का रूट 10.0.8.1 के माध्यम से पोर्ट 0 पर जोड़ें।"
+            ],
+            "explanation": "एक स्थिर रूट के अगला हॉप को सही लिंक पर एक वास्तविक पड़ोसी राउटर इंटरफेस की ओर इशारा करना चाहिए। यहां PC-Sales सबनेट के लिए रूट गलत पोर्ट की ओर इशारा कर रहा था, इसलिए Router-Fukuoka रिटर्न ट्रैफिक वितरित नहीं कर सका, TCP हैंडशेक को तोड़ दिया, भले ही अनुरोध पारित हो गया हो।"
+        },
+        "id": {
+            "title": "Pesanan Macet Setengah Jalan ke Kantor Pusat",
+            "story": "Staf penjualan di kantor pusat mengatakan pencarian pesanan mereka ke server cabang Fukuoka tidak pernah selesai. Setiap upaya dari PC-Sales sejak sore ini hanya tergantung dan habis waktu.",
+            "objective": "Pulihkan HTTP GET yang berfungsi dari PC-Sales ke Intranet-01.",
+            "hints": [
+                "Permintaan mencapai Intranet-01, tetapi kepala balasan yang kembali ke PC-Sales terhenti dan dijatuhkan tepat di Router-Fukuoka, yang tidak meneruskannya.",
+                "Router-Fukuoka memiliki rute ke jaringan PC-Sales yang menunjuk ke port yang salah daripada menuju Router-Sapporo, jadi tidak ada tempat yang valid untuk mengirim balasan.",
+                "Di Router-Fukuoka, hapus rute ke 10.0.5.0/255.255.255.0 dan tambahkan rute ke 10.0.5.0/255.255.255.0 via 10.0.8.1 pada port 0."
+            ],
+            "explanation": "Hop berikutnya dari rute statis harus menunjuk ke antarmuka router tetangga nyata pada tautan yang benar. Di sini rute ke subnet PC-Sales menunjuk ke port yang salah, jadi Router-Fukuoka tidak dapat mengirimkan lalu lintas kembali, memecahkan jabat tangan TCP meskipun permintaan berhasil."
+        },
+        "ru": {
+            "title": "Заказы застряли на полпути в штаб-квартиру",
+            "story": "Сотрудники отдела продаж в штаб-квартире сообщают, что поиск заказов на сервере филиала Фукуока никогда не заканчивается. Каждая попытка с PC-Sales с этого дня просто зависает и истекает.",
+            "objective": "Восстановите работающий HTTP GET с PC-Sales на Intranet-01.",
+            "hints": [
+                "Запрос достигает Intranet-01, но заголовок ответа, идущий обратно к PC-Sales, зависает и отбрасывается прямо в Router-Fukuoka, который его не передает.",
+                "Router-Fukuoka имеет маршрут к сети PC-Sales, который указывает на неправильный порт вместо Router-Sapporo, поэтому нет действительного места для отправки ответа.",
+                "На Router-Fukuoka удалите маршрут к 10.0.5.0/255.255.255.0 и добавьте маршрут к 10.0.5.0/255.255.255.0 через 10.0.8.1 на порту 0."
+            ],
+            "explanation": "Следующий узел статического маршрута должен указывать на реальный интерфейс соседнего маршрутизатора на правильном канале. Здесь маршрут к подсети PC-Sales указывал на неправильный порт, поэтому Router-Fukuoka не смог доставить ответный трафик, разрушив квитирование TCP, несмотря на то, что запрос прошел."
+        },
+        "it": {
+            "title": "Ordini Bloccati a Metà Strada verso la Sede",
+            "story": "Lo staff di vendita della sede centrale dice che le loro ricerche di ordini al server della filiale di Fukuoka non finiscono mai. Ogni tentativo da PC-Sales da questo pomeriggio si blocca e scade il timeout.",
+            "objective": "Ripristinare un HTTP GET funzionante da PC-Sales a Intranet-01.",
+            "hints": [
+                "La richiesta raggiunge Intranet-01, ma la risposta di ritorno verso PC-Sales si blocca ed è scartata proprio a Router-Fukuoka, che non la inoltra.",
+                "Router-Fukuoka contiene una rotta verso la rete di PC-Sales che punta a una porta sbagliata invece di verso Router-Sapporo, quindi non ha un posto valido dove inviare la risposta.",
+                "Su Router-Fukuoka, elimina la rotta a 10.0.5.0/255.255.255.0 e aggiungi una rotta a 10.0.5.0/255.255.255.0 via 10.0.8.1 sulla porta 0."
+            ],
+            "explanation": "Il next hop di una rotta statica deve puntare verso una vera interfaccia del router vicino sul collegamento corretto. Qui la rotta verso la subnet di PC-Sales puntava a una porta sbagliata, quindi Router-Fukuoka non poteva consegnare il traffico di ritorno, interrompendo l'handshake TCP anche se la richiesta era passata."
+        },
+        "tr": {
+            "title": "Siparişler Çeyrek Yolda Merkez Ofise Takılı",
+            "story": "Merkez ofisteki satış personeli, Fukuoka şubesindeki sunucuya yönelik sipariş aramalarının hiçbir zaman bitmediğini söylüyor. PC-Sales'ten bu öğleden sonra yapılan her girişim takılıp zaman aşımına uğruyor.",
+            "objective": "PC-Sales'ten Intranet-01'e çalışan bir HTTP GET geri yükleyin.",
+            "hints": [
+                "İstek Intranet-01'e ulaşır, ancak PC-Sales'e geri dönüş yanıtı takılır ve Router-Fukuoka'da düşürülür, orası da ileriye iletmez.",
+                "Router-Fukuoka'da PC-Sales ağına yönelik bir rota vardır ve bu rota Router-Sapporo'ya yönelmek yerine yanlış porta işaret eder, bu nedenle yanıtı göndermek için geçerli bir yer yoktur.",
+                "Router-Fukuoka'da 10.0.5.0/255.255.255.0 rotasını silin ve 10.0.5.0/255.255.255.0 rotasını sonraki sıçrama 10.0.8.1 ve port 0 olacak şekilde ekleyin."
+            ],
+            "explanation": "Statik rotanın sonraki sıçraması doğru bağlantı üzerindeki gerçek bir komşu Router arabirimini işaret etmelidir. Burada PC-Sales alt ağına yönelik rota yanlış porta işaret ettiğinden Router-Fukuoka geri dönüş trafiğini iletamedi ve istek başarılı olmasına rağmen TCP el sıkışmasını bozdu."
+        },
+        "th": {
+            "title": "ซื้อสินค้าติดอยู่ครึ่งทางไปสำนักงานใหญ่",
+            "story": "พนักงานขายที่สำนักงานใหญ่บอกว่าการค้นหาคำสั่งซื้อของพวกเขาไปยังเซิร์ฟเวอร์ Intranet-01 ของสาขา Fukuoka ไม่เสร็จสิ้นเลย ทุกครั้งที่พยายามจาก PC-Sales ตั้งแต่บ่ายนี้ หยุดทำงานและหมดเวลา",
+            "objective": "กู้คืน HTTP GET ที่ทำงานได้จาก PC-Sales ไปยัง Intranet-01",
+            "hints": [
+                "คำขอไปถึง Intranet-01 แต่การตอบกลับที่กลับมาทาง PC-Sales ติดขัดและหยุดลงเลยที่ Router-Fukuoka ซึ่งไม่ส่งต่อไป",
+                "Router-Fukuoka มีเส้นทางไปยังเครือข่าย PC-Sales ที่ชี้ไปยังพอร์ตที่ผิดแทนที่จะชี้ไปทาง Router-Sapporo จึงไม่มีที่ที่ถูกต้องในการส่งการตอบกลับ",
+                "บน Router-Fukuoka ให้ลบเส้นทาง 10.0.5.0/255.255.255.0 และเพิ่มเส้นทาง 10.0.5.0/255.255.255.0 ที่มีฮ็อปถัดไป 10.0.8.1 พอร์ต 0"
+            ],
+            "explanation": "ฮ็อปถัดไปของเส้นทางแบบสถิตย์ต้องชี้ไปยังอินเทอร์เฟซ Router เพื่อนบ้านที่แท้จริงบนลิงก์ที่ถูกต้อง ที่นี่เส้นทางไปยัง PC-Sales subnet ชี้ไปยังพอร์ตที่ผิด ดังนั้น Router-Fukuoka จึงไม่สามารถส่งมอบการรับส่งข้อมูลกลับได้ ทำให้การจับมือ TCP เสียหาย แม้ว่าคำขออพยพได้"
+        },
+        "vi": {
+            "title": "Đơn Hàng Bị Kẹt Nửa Đường Về Trụ Sở",
+            "story": "Nhân viên bán hàng tại trụ sở chính nói rằng việc tra cứu đơn hàng của họ tới Máy chủ DNS tại chi nhánh Fukuoka không bao giờ kết thúc. Mỗi lần cố gắng từ PC-Sales kể từ chiều nay đều bị treo và hết thời gian chờ.",
+            "objective": "Khôi phục HTTP GET hoạt động từ PC-Sales tới Intranet-01.",
+            "hints": [
+                "Yêu cầu đến được Intranet-01, nhưng phản hồi quay trở lại PC-Sales bị kẹt và bị loại bỏ ngay tại Router-Fukuoka, nó không chuyển tiếp được.",
+                "Router-Fukuoka có một tuyến đường tới mạng PC-Sales nhưng nó chỉ tới một cổng sai thay vì hướng tới Router-Sapporo, do đó không có nơi hợp lệ để gửi phản hồi.",
+                "Trên Router-Fukuoka, xóa tuyến đường tới 10.0.5.0/255.255.255.0 và thêm tuyến đường tới 10.0.5.0/255.255.255.0 có hop tiếp theo 10.0.8.1 cổng 0."
+            ],
+            "explanation": "Hop tiếp theo của một tuyến đường tĩnh phải chỉ tới một giao diện Router láng giềng thực tế trên liên kết chính xác. Ở đây tuyến đường tới subnet PC-Sales chỉ tới một cổng sai, vì vậy Router-Fukuoka không thể gửi lưu lượng trở về, làm gián đoạn bắt tay TCP mặc dù yêu cầu đã qua."
+        }
+    }
+}
