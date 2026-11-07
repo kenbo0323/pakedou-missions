@@ -1,0 +1,571 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-14",
+    "number": 55,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "missing_default_gateway",
+        "acl_order_trap"
+    ],
+    "concepts": [
+        "default-gateway",
+        "firewall",
+        "acl",
+        "rule-order"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.30.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.6.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "FW-DMZ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.6.1"
+                        },
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.6.1",
+                            "dstPort": 80
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Front",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.6.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-waf1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-waf1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-waf1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-waf1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-waf1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 3
+    },
+    "text": {
+        "en": {
+            "title": "No Route, No Rules",
+            "story": "PC-Finance in accounting has never been able to open the Intranet-01 page. Separately, security flags that an injection-style URL and even a plain ping to Intranet-01 from that PC are not being stopped.",
+            "objective": "Make PC-Finance reach Intranet-01 over HTTP, while a ping and an injection-style HTTP request to Intranet-01 get blocked.",
+            "hints": [
+                "The request never leaves PC-Finance toward Router-HQ. Separately, once traffic from PC-Finance reaches FW-DMZ in front of Intranet-01, everything to 10.0.6.1 is stopped there, good or bad.",
+                "PC-Finance has no default gateway, so it cannot send beyond its own subnet. On FW-DMZ a deny-everything rule to 10.0.6.1 sits above the port 80 permit, catching all traffic before it and before any dedicated block.",
+                "Set PC-Finance's default gateway to 10.0.30.254. On FW-DMZ delete the top deny-all rule to 10.0.6.1, then add it again at the bottom, after the port 80 permit rule."
+            ],
+            "explanation": "A client needs a default gateway to send traffic off its own subnet. Firewalls check rules top to bottom; the first match wins, so a broad deny above a narrow permit silences that permit. Moving the deny below the permit lets wanted traffic through while still blocking everything else, including pings and attacks."
+        },
+        "ja": {
+            "title": "ルートもルールもない",
+            "story": "経理部のPC-FinanceがIntranet-01のページを開けません。別件として、セキュリティ側からはそのPCからIntranet-01へのインジェクション形式のURLや単純なpingすら止められていないとの指摘があります。",
+            "objective": "PC-FinanceからIntranet-01へHTTPで到達できるようにしつつ、Intranet-01へのpingとインジェクション形式のHTTPリクエストはブロックされるようにします。",
+            "hints": [
+                "リクエストがPC-FinanceからRouter-HQへ向けて出て行っていません。別件として、PC-FinanceからIntranet-01の手前にあるFW-DMZへ届いたトラフィックは、良いものも悪いものも含めてすべて10.0.6.1宛てでそこで止められています。",
+                "PC-Financeにはデフォルトゲートウェイが設定されていないため、自分のサブネットの外へ送信できません。FW-DMZでは、10.0.6.1宛てのすべてを拒否するルールがポート80を許可するルールより上にあり、専用のブロックルールより先にすべてのトラフィックを捕らえてしまっています。",
+                "PC-Financeのデフォルトゲートウェイを10.0.30.254に設定します。FW-DMZでは、10.0.6.1宛てのすべてを拒否する一番上のルールを削除し、ポート80を許可するルールの下(一番下)に同じルールを追加し直します。"
+            ],
+            "explanation": "クライアントは自分のサブネットの外へトラフィックを送るためにデフォルトゲートウェイが必要です。ファイアウォールはルールを上から順に照合し、最初に一致したルールが適用されます。そのため、狭い範囲を許可するルールの上に広い範囲を拒否するルールがあると、その許可ルールは機能しなくなります。拒否ルールを許可ルールの下に移動すれば、必要な通信は通しつつ、pingや攻撃を含むそれ以外のすべてのトラフィックは引き続きブロックできます。"
+        },
+        "zh-TW": {
+            "title": "無路由，無規則",
+            "story": "財務部的PC-Finance從未能夠打開Intranet-01頁面。另外，安全小組標記了注入式URL和對Intranet-01的普通ping請求都未被阻止。",
+            "objective": "讓PC-Finance通過HTTP到達Intranet-01，同時阻止對Intranet-01的ping和注入式HTTP請求。",
+            "hints": [
+                "請求從未從PC-Finance離開指向Router-HQ。另外，當來自PC-Finance的流量到達Intranet-01前的FW-DMZ時，所有到10.0.6.1的流量都在該處被停止，無論好壞。",
+                "PC-Finance沒有預設閘道，因此無法向其自己的子網之外發送資料。在FW-DMZ上，一條對10.0.6.1的拒絕所有規則位於連接埠80許可之上，在此之前和任何專門的阻擋之前攔截所有流量。",
+                "將PC-Finance的預設閘道設定為10.0.30.254。在FW-DMZ上刪除頂部對10.0.6.1的拒絕所有規則，然後在連接埠80許可規則之後的底部重新新增。"
+            ],
+            "explanation": "用戶端需要預設閘道才能將流量發送到其自己的子網之外。防火牆從上到下檢查規則；首個符合項獲勝，因此在窄許可之上的寬拒絕會使該許可無聲失效。將拒絕規則移到許可之下使所需流量通過，同時仍阻止所有其他流量，包括ping和攻擊。"
+        },
+        "ko": {
+            "title": "경로 없음, 규칙 없음",
+            "story": "회계 부서의 PC-Finance는 Intranet-01 페이지를 열 수 없습니다. 또한 보안 팀이 주입식 URL과 PC에서 Intranet-01으로의 일반 ping이 차단되지 않음을 표시했습니다.",
+            "objective": "PC-Finance가 HTTP를 통해 Intranet-01에 도달하도록 하면서 Intranet-01으로의 ping과 주입식 HTTP 요청을 차단합니다.",
+            "hints": [
+                "요청이 PC-Finance에서 Router-HQ로 나가지 않습니다. 또한 PC-Finance의 트래픽이 Intranet-01 앞의 FW-DMZ에 도달하면 10.0.6.1으로의 모든 트래픽이 그곳에서 중지됩니다.",
+                "PC-Finance에는 기본 게이트웨이가 없어서 자신의 서브넷 밖으로 트래픽을 보낼 수 없습니다. FW-DMZ에서 10.0.6.1에 대한 거부 규칙이 포트 80 허용 위에 있어서 모든 트래픽을 그 전과 전용 차단 전에 가로챕니다.",
+                "PC-Finance의 기본 게이트웨이를 10.0.30.254로 설정합니다. FW-DMZ에서 10.0.6.1에 대한 최상위 거부 규칙을 삭제한 다음 포트 80 허용 규칙 아래의 맨 아래에 다시 추가합니다."
+            ],
+            "explanation": "클라이언트는 자신의 서브넷 밖으로 트래픽을 보내기 위해 기본 게이트웨이가 필요합니다. 방화벽은 위에서 아래로 규칙을 확인하며 첫 번째 일치가 우선입니다. 좁은 허용 위의 광범위한 거부는 그 허용을 무효화합니다. 거부를 허용 아래로 이동하면 원하는 트래픽은 통과하지만 ping과 공격을 포함한 다른 모든 트래픽은 계속 차단됩니다."
+        },
+        "es": {
+            "title": "Sin ruta, sin reglas",
+            "story": "PC-Finance en contabilidad nunca ha podido abrir la página de Intranet-01. Por otro lado, seguridad reporta que una URL de inyección y un ping simple a Intranet-01 desde esa PC no están siendo bloqueados.",
+            "objective": "Hacer que PC-Finance alcance Intranet-01 por HTTP, mientras que un ping y una solicitud HTTP de inyección a Intranet-01 sean bloqueados.",
+            "hints": [
+                "La solicitud nunca sale de PC-Finance hacia Router-HQ. Además, una vez que el tráfico de PC-Finance llega a FW-DMZ frente a Intranet-01, todo a 10.0.6.1 es detenido allí, bueno o malo.",
+                "PC-Finance no tiene Gateway predeterminado, por lo que no puede enviar más allá de su propia subred. En FW-DMZ una regla de negación total a 10.0.6.1 está por encima del permiso en puerto 80, interceptando todo el tráfico antes.",
+                "Establece el Gateway predeterminado de PC-Finance en 10.0.30.254. En FW-DMZ elimina la regla de negación total superior a 10.0.6.1, luego agrégala nuevamente al final, después de la regla de permiso en puerto 80."
+            ],
+            "explanation": "Un cliente necesita un Gateway predeterminado para enviar tráfico fuera de su propia subred. Los firewalls revisan reglas de arriba a abajo; el primer coincidencia gana, así que una negación amplia sobre un permiso estrecho silencia ese permiso. Mover la negación bajo el permiso permite que el tráfico deseado pase mientras sigue bloqueando todo lo demás, incluidos pings y ataques."
+        },
+        "pt-BR": {
+            "title": "Sem rota, sem regras",
+            "story": "PC-Finance na contabilidade nunca conseguiu abrir a página Intranet-01. Além disso, a segurança relata que uma URL de injeção e um ping simples para Intranet-01 não estão sendo bloqueados.",
+            "objective": "Fazer PC-Finance alcançar Intranet-01 via HTTP, enquanto ping e requisição HTTP de injeção para Intranet-01 sejam bloqueados.",
+            "hints": [
+                "A requisição nunca sai de PC-Finance em direção a Router-HQ. Além disso, uma vez que o tráfego de PC-Finance chega a FW-DMZ na frente de Intranet-01, todo tráfego para 10.0.6.1 é parado lá.",
+                "PC-Finance não tem Gateway padrão, então não consegue enviar dados além da própria subrede. Em FW-DMZ, uma regra de negação total para 10.0.6.1 fica acima da permissão na porta 80, capturando todo o tráfego antes dela.",
+                "Defina o Gateway padrão de PC-Finance como 10.0.30.254. Em FW-DMZ, delete a regra de negação total superior para 10.0.6.1 e adicione-a novamente no final, após a regra de permissão na porta 80."
+            ],
+            "explanation": "Um cliente precisa de um Gateway padrão para enviar tráfego fora de sua própria subrede. Firewalls verificam regras de cima para baixo; a primeira correspondência vence, então uma negação ampla acima de uma permissão restrita anula essa permissão. Mover a negação abaixo da permissão deixa o tráfego desejado passar enquanto ainda bloqueia todo o resto, incluindo pings e ataques."
+        },
+        "de": {
+            "title": "Keine Route, keine Regeln",
+            "story": "PC-Finance in der Buchhaltung konnte die Seite von Intranet-01 noch nie öffnen. Außerdem werden Sicherheitsflaggen gesetzt: Eine Injection-artige URL und auch ein einfaches Ping zu Intranet-01 von diesem PC werden nicht blockiert.",
+            "objective": "Ermöglichen Sie, dass PC-Finance Intranet-01 über HTTP erreicht, während ein Ping und eine Injection-artige HTTP-Anfrage zu Intranet-01 blockiert werden.",
+            "hints": [
+                "Die Anfrage verlässt PC-Finance nie in Richtung Router-HQ. Außerdem wird alles zu 10.0.6.1 auf FW-DMZ vor Intranet-01 blockiert, sobald Datenverkehr von PC-Finance dort ankommt, egal ob erlaubt oder nicht.",
+                "PC-Finance hat kein Standard-Gateway, daher kann es nicht über sein eigenes Subnetz hinaus senden. Auf FW-DMZ sitzt eine Deny-alles-Regel zu 10.0.6.1 über der Port-80-Freigabe und fängt den gesamten Datenverkehr davor ab.",
+                "Stellen Sie das Standard-Gateway von PC-Finance auf 10.0.30.254 ein. Löschen Sie auf FW-DMZ die oberste Deny-alles-Regel zu 10.0.6.1 und fügen Sie sie dann wieder unten nach der Port-80-Freigabe ein."
+            ],
+            "explanation": "Ein Client benötigt ein Standard-Gateway, um Datenverkehr außerhalb seines eigenen Subnetzes zu senden. Firewalls prüfen Regeln von oben nach unten; der erste Treffer zählt, daher blockiert eine umfassende Deny-Regel über einer engen Freigabe diese Freigabe. Wenn die Deny-Regel unter die Freigabe verschoben wird, lässt sie erwünschten Datenverkehr durch und blockiert weiterhin alles andere, einschließlich Pings und Angriffe."
+        },
+        "fr": {
+            "title": "Pas de route, pas de règles",
+            "story": "PC-Finance du service comptable n'a jamais pu ouvrir la page Intranet-01. De plus, des drapeaux de sécurité indiquent qu'une URL de type injection et même un simple ping vers Intranet-01 depuis ce PC ne sont pas bloqués.",
+            "objective": "Permettre à PC-Finance d'accéder à Intranet-01 en HTTP, tandis qu'un ping et une requête HTTP de type injection vers Intranet-01 sont bloqués.",
+            "hints": [
+                "La requête ne quitte jamais PC-Finance en direction de Router-HQ. De plus, une fois le trafic de PC-Finance arrivant sur FW-DMZ devant Intranet-01, tout vers 10.0.6.1 y est bloqué, que ce soit du trafic autorisé ou non.",
+                "PC-Finance n'a pas de Passerelle par défaut, il ne peut donc pas envoyer de données au-delà de son propre sous-réseau. Sur FW-DMZ, une règle de refus total vers 10.0.6.1 se trouve au-dessus de la permission du port 80, interceptant tout le trafic avant elle.",
+                "Définissez la Passerelle par défaut de PC-Finance sur 10.0.30.254. Sur FW-DMZ, supprimez la règle de refus total en haut vers 10.0.6.1, puis rajoutez-la en bas après la permission du port 80."
+            ],
+            "explanation": "Un Client a besoin d'une Passerelle par défaut pour envoyer du trafic au-delà de son propre sous-réseau. Les Firewalls vérifient les règles de haut en bas ; la première correspondance gagne, donc un refus large au-dessus d'une permission étroite bloque cette permission. Placer le refus sous la permission laisse passer le trafic souhaité tout en bloquant le reste, y compris les pings et les attaques."
+        },
+        "hi": {
+            "title": "कोई रूट नहीं, कोई नियम नहीं",
+            "story": "लेखा विभाग में PC-Finance कभी भी Intranet-01 पृष्ठ नहीं खोल सका है। अलग से, सुरक्षा सूचकांक दिखाते हैं कि उस PC से Intranet-01 के लिए एक इंजेक्शन-शैली URL और सादा ping भी ब्लॉक नहीं किए जा रहे हैं।",
+            "objective": "PC-Finance को HTTP पर Intranet-01 तक पहुंचने दें, जबकि Intranet-01 के लिए ping और इंजेक्शन-शैली HTTP अनुरोध ब्लॉक हों।",
+            "hints": [
+                "अनुरोध कभी PC-Finance को Router-HQ की ओर नहीं जाता है। अलग से, एक बार PC-Finance की ट्रैफिक Intranet-01 के सामने FW-DMZ तक पहुंचने के बाद, 10.0.6.1 के लिए सभी कुछ वहां ब्लॉक हो जाता है, चाहे वह अच्छा हो या बुरा।",
+                "PC-Finance के पास डिफ़ॉल्ट गेटवे नहीं है, इसलिए यह अपनी निजी सबनेट से परे नहीं भेज सकता है। FW-DMZ पर 10.0.6.1 के लिए एक डिनाई-सब कुछ नियम पोर्ट 80 परमिट के ऊपर बैठा है, सभी ट्रैफिक को इससे पहले और किसी भी समर्पित ब्लॉक से पहले पकड़ता है।",
+                "PC-Finance के डिफ़ॉल्ट गेटवे को 10.0.30.254 पर सेट करें। FW-DMZ पर 10.0.6.1 के लिए शीर्ष डिनाई-सब नियम को हटाएं, फिर इसे पोर्ट 80 परमिट नियम के बाद नीचे दोबारा जोड़ें।"
+            ],
+            "explanation": "एक क्लायंट को अपनी सबनेट से परे ट्रैफिक भेजने के लिए डिफ़ॉल्ट गेटवे की आवश्यकता होती है। Firewall ऊपर से नीचे नियमों की जांच करते हैं; पहला मिलान जीतता है, इसलिए एक संकीर्ण परमिट के ऊपर एक व्यापक डिनाई उस परमिट को चुप करता है। डिनाई को परमिट के नीचे ले जाने से चाही गई ट्रैफिक गुजरने देता है जबकि बाकी सभी को ब्लॉक करता है, जिसमें pings और हमले शामिल हैं।"
+        },
+        "id": {
+            "title": "Tidak ada Rute, Tidak ada Aturan",
+            "story": "PC-Finance di departemen akuntansi tidak pernah bisa membuka halaman Intranet-01. Terpisah, bendera keamanan menunjukkan bahwa URL gaya injeksi dan bahkan ping biasa ke Intranet-01 dari PC tersebut tidak diblokir.",
+            "objective": "Buat PC-Finance mencapai Intranet-01 melalui HTTP, sementara ping dan permintaan HTTP gaya injeksi ke Intranet-01 diblokir.",
+            "hints": [
+                "Permintaan tidak pernah meninggalkan PC-Finance menuju Router-HQ. Terpisah, setelah lalu lintas dari PC-Finance mencapai FW-DMZ di depan Intranet-01, semua ke 10.0.6.1 dihentikan di sana, baik atau buruk.",
+                "PC-Finance tidak memiliki Gateway Default, sehingga tidak dapat mengirim di luar subnet-nya sendiri. Di FW-DMZ, aturan tolak-semua ke 10.0.6.1 berada di atas izin port 80, menangkap semua lalu lintas sebelumnya.",
+                "Tetapkan Gateway Default PC-Finance ke 10.0.30.254. Di FW-DMZ, hapus aturan tolak-semua teratas ke 10.0.6.1, lalu tambahkan kembali di bagian bawah, setelah aturan izin port 80."
+            ],
+            "explanation": "Klien membutuhkan Gateway Default untuk mengirim lalu lintas di luar subnet-nya sendiri. Firewall memeriksa aturan dari atas ke bawah; kecocokan pertama menang, jadi tolakan luas di atas izin sempit diam-diamkan. Memindahkan tolakan di bawah izin membiarkan lalu lintas yang diinginkan lewat sambil masih memblokir semuanya, termasuk ping dan serangan."
+        },
+        "ru": {
+            "title": "Нет маршрута, нет правил",
+            "story": "PC-Finance в бухгалтерии никогда не смогла открыть страницу Intranet-01. Кроме того, флаги безопасности показывают, что URL-адрес типа инъекции и даже обычный ping на Intranet-01 с этого ПК не блокируются.",
+            "objective": "Позвольте PC-Finance достичь Intranet-01 через HTTP, а ping и HTTP-запрос типа инъекции на Intranet-01 блокируйте.",
+            "hints": [
+                "Запрос никогда не покидает PC-Finance в сторону Router-HQ. Кроме того, как только трафик от PC-Finance достигает FW-DMZ перед Intranet-01, все на 10.0.6.1 там блокируется, хорошее или плохое.",
+                "PC-Finance не имеет Шлюза по умолчанию, поэтому она не может отправлять трафик за пределы своей собственной подсети. На FW-DMZ правило отказа для всего на 10.0.6.1 находится выше разрешения порта 80, перехватывая весь трафик раньше.",
+                "Установите Шлюз по умолчанию PC-Finance на 10.0.30.254. На FW-DMZ удалите верхнее правило отказа для всего на 10.0.6.1, затем добавьте его снова внизу, после правила разрешения порта 80."
+            ],
+            "explanation": "Client требует Шлюза по умолчанию для отправки трафика за пределы своей подсети. Брандмауэры проверяют правила сверху вниз; первое совпадение побеждает, поэтому широкий отказ над узким разрешением блокирует это разрешение. Перемещение отказа ниже разрешения позволяет желаемому трафику пройти, а остальному — блокироваться, включая ping и атаки."
+        },
+        "it": {
+            "title": "Nessuna rotta, nessuna regola",
+            "story": "PC-Finance in contabilità non ha mai potuto aprire la pagina Intranet-01. Inoltre, il sistema di sicurezza segnala che né un URL con stile injection né un semplice ping a Intranet-01 da quel PC vengono bloccati.",
+            "objective": "Far raggiungere a PC-Finance Intranet-01 tramite HTTP, mentre un ping e una richiesta HTTP in stile injection a Intranet-01 vengono bloccati.",
+            "hints": [
+                "La richiesta non esce mai da PC-Finance verso Router-HQ. Separatamente, quando il traffico da PC-Finance raggiunge FW-DMZ davanti a Intranet-01, tutto verso 10.0.6.1 viene fermato lì, sia il buono che il cattivo.",
+                "PC-Finance non ha Gateway predefinito, quindi non può inviare al di fuori della propria subnet. Su FW-DMZ una regola deny-everything verso 10.0.6.1 si trova sopra il permit della porta 80, catturando tutto il traffico prima di esso e prima di qualsiasi blocco dedicato.",
+                "Imposta il Gateway predefinito di PC-Finance a 10.0.30.254. Su FW-DMZ elimina la regola deny-all in alto verso 10.0.6.1, quindi aggiungila di nuovo in fondo, dopo la regola permit della porta 80."
+            ],
+            "explanation": "Un Client ha bisogno di un Gateway predefinito per inviare traffico al di fuori della propria subnet. I Firewall controllano le regole dall'alto verso il basso; la prima corrispondenza vince, quindi un deny ampio sopra un permit ristretto silenzia quel permit. Spostando il deny sotto il permit, il traffico desiderato può passare mentre tutto il resto, inclusi i ping e gli attacchi, rimane bloccato."
+        },
+        "tr": {
+            "title": "Rota Yok, Kural Yok",
+            "story": "Muhasebe bölümündeki PC-Finance hiçbir zaman Intranet-01 sayfasını açamıyor. Ayrıca güvenlik sistemi, injection tarzı bir URL'nin ve hatta PC-Finance'ten Intranet-01'e düz bir ping'in engellenmiyor olduğunu raportuyor.",
+            "objective": "PC-Finance'in HTTP üzerinden Intranet-01'e ulaşmasını sağlayın, ancak Intranet-01'e yapılan ping ve injection tarzı HTTP istekleri engellensin.",
+            "hints": [
+                "İstek asla PC-Finance'ten Router-HQ'ya çıkmıyor. Ayrıca PC-Finance'ten gelen trafik Intranet-01'in önündeki FW-DMZ'ye ulaştığında, 10.0.6.1'e her şey orada durduruluyor, iyi ya da kötü olsun.",
+                "PC-Finance'in Varsayılan ağ geçidi yok, bu nedenle kendi subnet'i dışına trafik gönderemiyor. FW-DMZ'de 10.0.6.1'e karşı bir deny-everything kuralı port 80 permit'in üzerinde oturuyor ve tüm trafiği önce onu ve dedike herhangi bir bloğu yakalayor.",
+                "PC-Finance'in Varsayılan ağ geçidini 10.0.30.254 olarak ayarlayın. FW-DMZ'de 10.0.6.1'e karşı üstteki deny-all kuralını silin, ardından port 80 permit kuralından sonra altta yeniden ekleyin."
+            ],
+            "explanation": "Bir Client'in kendi subnet'i dışına trafik göndermesi için Varsayılan ağ geçidine ihtiyacı vardır. Firewall'lar kuralları yukarıdan aşağıya kontrol eder; ilk eşleşme kazanır, bu nedenle dar bir permit'in üzerindeki geniş bir deny, o permit'i sessizleştirir. Deny'yi permit'in altına taşımak, istenen trafiğin geçmesini sağlarken ping'ler ve saldırılar dahil olmak üzere her şeyi engeller."
+        },
+        "th": {
+            "title": "ไม่มีเส้นทาง ไม่มีกฎ",
+            "story": "PC-Finance ในแผนกบัญชีไม่สามารถเปิดหน้า Intranet-01 ได้เลย นอกจากนี้ ระบบความปลอดภัยรายงานว่า URL แบบ injection และแม้กระทั่ง ping ธรรมดาไปยัง Intranet-01 จาก PC นั้นไม่ได้ถูกบล็อก",
+            "objective": "ให้ PC-Finance เข้าถึง Intranet-01 ผ่าน HTTP ขณะที่ ping และคำขอ HTTP แบบ injection ไปยัง Intranet-01 ถูกบล็อก",
+            "hints": [
+                "คำขอไม่มีวันออกจาก PC-Finance ไปยัง Router-HQ อีกทั้งเมื่อการจราจรจาก PC-Finance ถึง FW-DMZ ด้านหน้า Intranet-01 ทราฟฟิกทั้งหมดไปยัง 10.0.6.1 จะถูกหยุดที่นั่น ไม่ว่าจะดีหรือไม่ดี",
+                "PC-Finance ไม่มีเกตเวย์เริ่มต้น ดังนั้นจึงไม่สามารถส่งข้อมูลนอก subnet ของตัวเองได้ บน FW-DMZ กฎ deny-everything ไปยัง 10.0.6.1 นั่งอยู่เหนือ permit ของพอร์ต 80 ซึ่งจับทราฟฟิกทั้งหมดก่อนที่จะปล่อยผ่านและก่อนบล็อกที่เฉพาะเจาะจง",
+                "ตั้งค่าเกตเวย์เริ่มต้นของ PC-Finance เป็น 10.0.30.254 บน FW-DMZ ลบกฎ deny-all ด้านบนไปยัง 10.0.6.1 จากนั้นเพิ่มอีกครั้งที่ด้านล่าง หลังจากกฎ permit ของพอร์ต 80"
+            ],
+            "explanation": "Client ต้องใช้เกตเวย์เริ่มต้นเพื่อส่งการจราจรออกนอก subnet ของตัวเอง Firewall ตรวจสอบกฎจากบนลงล่าง การจับคู่ครั้งแรกชนะ ดังนั้น deny ที่กว้างเหนือ permit ที่แคบจะทำให้ permit นั้นเงียบ การย้าย deny ไปไว้ด้านล่าง permit ช่วยให้ทราฟฟิกที่ต้องการผ่านได้ พร้อมยังคงบล็อกทุกอย่าง รวมถึง ping และการโจมตี"
+        },
+        "vi": {
+            "title": "Không có tuyến đường, không có quy tắc",
+            "story": "PC-Finance ở bộ phận kế toán không bao giờ có thể mở trang Intranet-01. Ngoài ra, hệ thống bảo mật báo cáo rằng URL kiểu injection và thậm chí cả ping đơn giản tới Intranet-01 từ PC đó không bị chặn.",
+            "objective": "Cho phép PC-Finance kết nối với Intranet-01 qua HTTP, trong khi ping và yêu cầu HTTP kiểu injection tới Intranet-01 bị chặn.",
+            "hints": [
+                "Yêu cầu không bao giờ rời khỏi PC-Finance hướng tới Router-HQ. Riêng biệt, khi lưu lượng từ PC-Finance đến FW-DMZ phía trước Intranet-01, mọi thứ tới 10.0.6.1 đều bị dừng ở đó, dù tốt hay xấu.",
+                "PC-Finance không có Cổng mặc định, nên không thể gửi dữ liệu ngoài subnet của nó. Trên FW-DMZ một quy tắc deny-everything tới 10.0.6.1 nằm trên quy tắc permit cổng 80, bắt tất cả lưu lượng trước nó và trước bất kỳ quy tắc chặn nào.",
+                "Đặt Cổng mặc định của PC-Finance thành 10.0.30.254. Trên FW-DMZ xóa quy tắc deny-all ở trên cùng tới 10.0.6.1, sau đó thêm lại nó ở dưới cùng, sau quy tắc permit cổng 80."
+            ],
+            "explanation": "Client cần Cổng mặc định để gửi lưu lượng ngoài subnet của nó. Firewall kiểm tra quy tắc từ trên xuống dưới; khớp đầu tiên thắng, vì vậy deny rộng trên permit hẹp sẽ tắt permit đó. Di chuyển deny dưới permit cho phép lưu lượng mong muốn đi qua trong khi vẫn chặn mọi thứ khác, bao gồm ping và các cuộc tấn công."
+        },
+        "zh-CN": {
+            "title": "无路由，无规则",
+            "story": "财务部的 PC-Finance 一直无法打开 Intranet-01 页面。另外，安全团队发现该 PC 对 Intranet-01 的注入式 URL 和普通 ping 请求都没有被阻止。",
+            "objective": "让 PC-Finance 通过 HTTP 访问 Intranet-01，同时阻止对 Intranet-01 的 ping 和注入式 HTTP 请求。",
+            "hints": [
+                "请求从未从 PC-Finance 离开前往 Router-HQ。另外，从 PC-Finance 到达 FW-DMZ 的流量在 Intranet-01 前面时，所有发往 10.0.6.1 的流量都在那里被停止，无论好坏。",
+                "PC-Finance 没有默认网关，无法在自己的子网外发送数据。在 FW-DMZ 上，一条拒绝所有到 10.0.6.1 的规则位于端口号 80 许可规则之上，在它和任何专门的阻止之前捕获所有流量。",
+                "设置 PC-Finance 的默认网关为 10.0.30.254。在 FW-DMZ 上删除最上面拒绝所有到 10.0.6.1 的规则，然后在端口号 80 许可规则之后将其再次添加。"
+            ],
+            "explanation": "客户端需要默认网关才能在自己的子网外发送流量。防火墙从上到下检查规则；第一个匹配获胜，因此在狭隘许可上方的广泛拒绝会使该许可失效。将拒绝移到许可下方可以让想要的流量通过，同时仍然阻止其他所有流量，包括 ping 和攻击。"
+        }
+    }
+}
