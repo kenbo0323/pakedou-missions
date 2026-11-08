@@ -1,0 +1,503 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-15",
+    "number": 56,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "internet_edge",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.16.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.16.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Office",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.16.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "203.0.113.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-internet1": {
+                "id": "dev-internet1",
+                "type": "INTERNET",
+                "name": "docs.example.org",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-internet1-p0",
+                        "index": 0,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "203.0.114.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p1",
+                        "index": 1,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p2",
+                        "index": 2,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p3",
+                        "index": 3,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": [],
+                    "domainName": "docs.example.org"
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-internet1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-internet1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-internet1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Docs Server Unreachable",
+            "story": "Staff at the office say PC-Dev cannot open the docs.example.org page this morning. Nobody recalls any recent change, but the request never comes back with a page.",
+            "objective": "Get an HTTP GET from PC-Dev to docs.example.org to succeed.",
+            "hints": [
+                "Follow the request from PC-Dev out through Switch-Office to Router-Main: the packet gets dropped right there, before it ever leaves toward the Internet host.",
+                "Router-Main has no route for the destination because docs.example.org's own address, 203.0.114.10, falls outside the 203.0.113.0/24 network the router actually knows how to reach.",
+                "On docs.example.org, set port 0's address to 203.0.113.10 with mask 255.255.255.0 so it sits in the correct subnet behind Router-Main."
+            ],
+            "explanation": "A host must be addressed inside the subnet its router serves. Here docs.example.org was misconfigured one network over, so Router-Main had no matching route and silently dropped every packet meant for it, leaving the PC's TCP handshake to time out."
+        },
+        "ja": {
+            "title": "docs.example.org に接続できない",
+            "story": "オフィスのスタッフから、今朝 PC-Dev が docs.example.org のページを開けないと報告がありました。最近の変更に心当たりはないのに、リクエストを送ってもページが返ってきません。",
+            "objective": "PC-Dev から docs.example.org への HTTP GET を成功させる。",
+            "hints": [
+                "PC-Dev から Switch-Office を通って Router-Main へと流れるリクエストを追ってみましょう。パケットはインターネット側に出て行く前に、ちょうどそこで破棄されています。",
+                "Router-Main には宛先へのルートがありません。docs.example.org 自身のアドレスである 203.0.114.10 が、ルーターが実際に経路を把握している 203.0.113.0/24 ネットワークの外にあるためです。",
+                "docs.example.org のポート0のアドレスを、マスク 255.255.255.0 とともに 203.0.113.10 に設定し、Router-Main の配下にある正しいサブネットに収まるようにしてください。"
+            ],
+            "explanation": "ホストは、自分のルーターが担当するサブネットの内側のアドレスを持つ必要があります。今回 docs.example.org は1つ隣のネットワークに誤って設定されていたため、Router-Main には一致するルートがなく、そのホスト宛てのパケットをすべて静かに破棄していました。その結果、PCのTCPハンドシェイクはタイムアウトしてしまいました。"
+        },
+        "zh-CN": {
+            "title": "文档服务器无法访问",
+            "story": "办公室的员工说PC-Dev无法打开docs.example.org页面。没有人记得有任何最近的更改，但请求始终没有返回任何页面。",
+            "objective": "让PC-Dev向docs.example.org发送的HTTP GET请求成功。",
+            "hints": [
+                "跟踪从PC-Dev通过Switch-Office到Router-Main的请求：数据包在那里被丢弃，尚未向Internet主机发出。",
+                "Router-Main没有目标路由，因为docs.example.org的地址203.0.114.10不在Router-Main实际知道如何到达的203.0.113.0/24网络内。",
+                "在docs.example.org上，将端口0的地址设置为203.0.113.10，掩码为255.255.255.0，使其位于Router-Main后面的正确子网中。"
+            ],
+            "explanation": "一个主机必须位于其Router服务的子网内。这里docs.example.org被错误配置在另一个网络上，所以Router-Main没有匹配的路由，无声地丢弃了发往它的每个数据包，导致PC的TCP握手超时。"
+        },
+        "zh-TW": {
+            "title": "文檔伺服器無法連線",
+            "story": "辦公室的員工表示PC-Dev無法開啟docs.example.org頁面。沒有人記得有任何最近的變更，但請求始終沒有返回任何頁面。",
+            "objective": "讓PC-Dev向docs.example.org發送的HTTP GET請求成功。",
+            "hints": [
+                "跟踪從PC-Dev通過Switch-Office到Router-Main的請求：封包在那裡被丟棄，尚未向Internet主機發出。",
+                "Router-Main沒有目的地路由，因為docs.example.org的位址203.0.114.10不在Router-Main實際知道如何到達的203.0.113.0/24網路內。",
+                "在docs.example.org上，將連接埠0的位址設定為203.0.113.10，遮罩為255.255.255.0，使其位於Router-Main後面的正確子網中。"
+            ],
+            "explanation": "一個主機必須位於其Router服務的子網內。這裡docs.example.org被錯誤設定在另一個網路上，所以Router-Main沒有符合的路由，無聲地丟棄了發往它的每個封包，導致PC的TCP交握超時。"
+        },
+        "ko": {
+            "title": "문서 서버 연결 불가",
+            "story": "사무실 직원들이 PC-Dev에서 docs.example.org 페이지를 열 수 없다고 보고했습니다. 최근 변경 사항을 기억하는 사람이 없으며, 요청이 페이지를 반환하지 않습니다.",
+            "objective": "PC-Dev에서 docs.example.org로의 HTTP GET 요청이 성공하도록 합니다.",
+            "hints": [
+                "PC-Dev에서 Switch-Office를 통해 Router-Main으로 가는 요청을 따라가세요. 패킷이 그곳에서 드롭되어 Internet 호스트로 나가지 못합니다.",
+                "Router-Main에는 목적지 경로가 없습니다. docs.example.org의 주소인 203.0.114.10이 Router-Main이 실제로 도달할 수 있는 203.0.113.0/24 네트워크 외에 있기 때문입니다.",
+                "docs.example.org에서 포트 0의 주소를 203.0.113.10으로, 마스크를 255.255.255.0으로 설정하여 Router-Main 뒤의 올바른 서브넷에 위치하도록 합니다."
+            ],
+            "explanation": "호스트는 자신의 Router가 서비스하는 서브넷 내에 위치해야 합니다. 여기서 docs.example.org가 다른 네트워크에 잘못 구성되어 Router-Main에 일치하는 경로가 없어서 모든 패킷을 무음으로 드롭했고, PC의 TCP 핸드셰이크가 시간 초과되었습니다."
+        },
+        "es": {
+            "title": "Servidor de documentos inaccesible",
+            "story": "El personal de la oficina reporta que PC-Dev no puede abrir la página docs.example.org esta mañana. Nadie recuerda cambios recientes, pero la solicitud nunca regresa con una página.",
+            "objective": "Hacer que una solicitud HTTP GET desde PC-Dev a docs.example.org tenga éxito.",
+            "hints": [
+                "Sigue la solicitud desde PC-Dev a través de Switch-Office hasta Router-Main: el paquete se descarta allí, antes de que salga hacia el host de Internet.",
+                "Router-Main no tiene una ruta para el destino porque la dirección de docs.example.org, 203.0.114.10, cae fuera de la red 203.0.113.0/24 que el router realmente sabe alcanzar.",
+                "En docs.example.org, establece la dirección del puerto 0 a 203.0.113.10 con máscara 255.255.255.0 para que esté en la subred correcta detrás de Router-Main."
+            ],
+            "explanation": "Un host debe estar direccionado dentro de la subred que su router sirve. Aquí docs.example.org estaba mal configurado en otra red, por lo que Router-Main no tenía una ruta coincidente y descartaba silenciosamente cada paquete destinado a él, dejando el apretón de manos TCP de la PC agotarse."
+        },
+        "pt-BR": {
+            "title": "Servidor de documentos inacessível",
+            "story": "Funcionários do escritório relatam que PC-Dev não consegue abrir a página docs.example.org esta manhã. Ninguém se lembra de alterações recentes, mas a solicitação nunca retorna com uma página.",
+            "objective": "Conseguir que uma solicitação HTTP GET de PC-Dev para docs.example.org tenha sucesso.",
+            "hints": [
+                "Acompanhe a solicitação de PC-Dev através de Switch-Office até Router-Main: o pacote é descartado lá, antes de sair em direção ao host da Internet.",
+                "Router-Main não possui uma rota para o destino porque o endereço de docs.example.org, 203.0.114.10, fica fora da rede 203.0.113.0/24 que o roteador realmente consegue alcançar.",
+                "Em docs.example.org, defina o endereço da porta 0 para 203.0.113.10 com máscara 255.255.255.0 para que fique na sub-rede correta atrás de Router-Main."
+            ],
+            "explanation": "Um host deve ser endereçado dentro da sub-rede que seu roteador atende. Aqui docs.example.org estava configurado incorretamente em outra rede, portanto Router-Main não tinha uma rota correspondente e descartava silenciosamente todos os pacotes destinados a ele, deixando o handshake TCP do PC expirar."
+        },
+        "de": {
+            "title": "Docs Server nicht erreichbar",
+            "story": "Mitarbeiter im Büro berichten, dass PC-Dev diese Morgen die Seite docs.example.org nicht öffnen kann. Niemand erinnert sich an eine kürzliche Änderung, aber die Anfrage kommt niemals mit einer Antwort zurück.",
+            "objective": "Ein HTTP GET von PC-Dev zu docs.example.org muss erfolgreich sein.",
+            "hints": [
+                "Folgen Sie der Anfrage von PC-Dev durch Switch-Office zu Router-Main: Das Paket wird dort sofort verworfen, bevor es zum Internet-Host geht.",
+                "Router-Main hat keine Route für das Ziel, weil die Adresse von docs.example.org, 203.0.114.10, außerhalb des Netzwerks 203.0.113.0/24 liegt, das der Router tatsächlich kennt.",
+                "Auf docs.example.org Port 0 die Adresse 203.0.113.10 mit Maske 255.255.255.0 setzen, damit es im korrekten Subnetz hinter Router-Main liegt."
+            ],
+            "explanation": "Ein Host muss in dem Subnetz adressiert sein, das sein Router bedient. Hier war docs.example.org fehlkonfiguriert in einem anderen Netzwerk, deshalb hatte Router-Main keine passende Route und verwarf alle Pakete stillschweigend, wodurch der TCP-Handshake von PC-Dev abbrach."
+        },
+        "fr": {
+            "title": "Serveur de documents inaccessible",
+            "story": "Le personnel du bureau rapporte que PC-Dev ne peut pas ouvrir la page docs.example.org ce matin. Personne ne se souvient d'une modification récente, mais la requête ne revient jamais avec une réponse.",
+            "objective": "Un HTTP GET de PC-Dev vers docs.example.org doit réussir.",
+            "hints": [
+                "Suivez la requête de PC-Dev à travers Switch-Office jusqu'à Router-Main : le paquet est supprimé là, avant même de se diriger vers l'hôte Internet.",
+                "Router-Main n'a pas de route pour la destination car l'adresse de docs.example.org, 203.0.114.10, se trouve en dehors du réseau 203.0.113.0/24 que le routeur sait réellement atteindre.",
+                "Sur docs.example.org, définissez l'adresse du port 0 à 203.0.113.10 avec le Masque 255.255.255.0 pour qu'elle se trouve dans le bon sous-réseau derrière Router-Main."
+            ],
+            "explanation": "Un hôte doit être adressé dans le sous-réseau que son routeur sert. Ici, docs.example.org était mal configuré dans un autre réseau, donc Router-Main n'avait pas de route correspondante et supprimait silencieusement tous les paquets destinés à lui, laissant la poignée de main TCP du PC expirer."
+        },
+        "hi": {
+            "title": "डॉक्स सर्वर अनुपलब्ध",
+            "story": "कार्यालय के कर्मचारियों का कहना है कि आज सुबह PC-Dev docs.example.org पृष्ठ नहीं खोल सकता। किसी को हाल के किसी परिवर्तन की याद नहीं है, लेकिन अनुरोध कभी उत्तर के साथ वापस नहीं आता।",
+            "objective": "PC-Dev से docs.example.org तक HTTP GET सफल होना चाहिए।",
+            "hints": [
+                "अनुरोध को PC-Dev से Switch-Office के माध्यम से Router-Main तक का पालन करें: पैकेट वहीं गिराया जाता है, इससे पहले कि यह Internet होस्ट की ओर जाए।",
+                "Router-Main के पास गंतव्य के लिए कोई मार्ग नहीं है क्योंकि docs.example.org का पता, 203.0.114.10, 203.0.113.0/24 नेटवर्क के बाहर है जिसे राउटर वास्तव में जानता है।",
+                "docs.example.org पर, पोर्ट 0 का पता 203.0.113.10 मास्क 255.255.255.0 के साथ सेट करें ताकि यह Router-Main के पीछे सही सबनेट में बैठे।"
+            ],
+            "explanation": "एक होस्ट को उस सबनेट के अंदर पता होना चाहिए जिसे उसका राउटर सेवा देता है। यहाँ docs.example.org को दूसरे नेटवर्क में गलत तरीके से कॉन्फ़िगर किया गया था, इसलिए Router-Main के पास कोई मेल खाता मार्ग नहीं था और इसे पूरी तरह से चुप रहकर गिरा दिया गया, जिससे PC की TCP हैंडशेक समय समाप्त हो गई।"
+        },
+        "id": {
+            "title": "Server Docs Tidak Dapat Dijangkau",
+            "story": "Staf di kantor melaporkan bahwa PC-Dev tidak dapat membuka halaman docs.example.org pagi ini. Tidak ada yang mengingat perubahan baru-baru ini, tetapi permintaan tidak pernah kembali dengan halaman.",
+            "objective": "HTTP GET dari PC-Dev ke docs.example.org harus berhasil.",
+            "hints": [
+                "Ikuti permintaan dari PC-Dev melalui Switch-Office ke Router-Main: paket dilepas di sana, sebelum pernah pergi ke host Internet.",
+                "Router-Main tidak memiliki rute untuk tujuan karena alamat docs.example.org, 203.0.114.10, berada di luar jaringan 203.0.113.0/24 yang benar-benar diketahui router.",
+                "Pada docs.example.org, atur Nomor port 0 ke alamat 203.0.113.10 dengan Masker 255.255.255.0 sehingga berada di Jaringan tujuan yang benar di belakang Router-Main."
+            ],
+            "explanation": "Host harus dialamatkan di dalam Jaringan tujuan yang dilayani routernya. Di sini docs.example.org dikonfigurasi salah di jaringan lain, jadi Router-Main tidak memiliki rute yang sesuai dan diam-diam menjatuhkan setiap paket yang ditujukan untuk itu, meninggalkan handshake TCP PC untuk melampaui waktu."
+        },
+        "ru": {
+            "title": "Сервер документов недоступен",
+            "story": "Сотрудники офиса сообщают, что PC-Dev не может открыть страницу docs.example.org этим утром. Никто не помнит о недавних изменениях, но запрос никогда не возвращает страницу.",
+            "objective": "HTTP GET от PC-Dev к docs.example.org должен быть успешным.",
+            "hints": [
+                "Проследите запрос от PC-Dev через Switch-Office к Router-Main: пакет отбрасывается там, прежде чем он отправится на хост Internet.",
+                "Router-Main не имеет маршрута для целевой сети, потому что адрес docs.example.org, 203.0.114.10, находится вне сети 203.0.113.0/24, которую маршрутизатор действительно может достичь.",
+                "На docs.example.org установите для порта 0 Имя адреса 203.0.113.10 с Маской 255.255.255.0, чтобы он находился в правильной подсети позади Router-Main."
+            ],
+            "explanation": "Хост должен быть адресован внутри подсети, которую обслуживает его маршрутизатор. Здесь docs.example.org был неправильно настроен в другой сети, поэтому Router-Main не имел подходящего маршрута и молча отбросил все пакеты, предназначенные для него, в результате чего истекло время ожидания трехстороннего рукопожатия TCP компьютера PC."
+        },
+        "it": {
+            "title": "Server Docs Non Raggiungibile",
+            "story": "Lo staff dell'ufficio dice che PC-Dev non riesce ad aprire la pagina docs.example.org stamattina. Nessuno ricorda cambiamenti recenti, ma la richiesta non ritorna mai con una pagina.",
+            "objective": "Ottenere un HTTP GET da PC-Dev a docs.example.org che abbia successo.",
+            "hints": [
+                "Segui la richiesta da PC-Dev attraverso Switch-Office fino a Router-Main: il pacchetto viene scartato proprio lì, prima di partire verso l'host Internet.",
+                "Router-Main non ha una rotta per la destinazione perché l'indirizzo di docs.example.org, 203.0.114.10, cade fuori dalla rete 203.0.113.0/24 che il router sa raggiungere.",
+                "Su docs.example.org, impostare il numero porta 0 con indirizzo 203.0.113.10 e maschera 255.255.255.0 in modo che si trovi nella subnet corretta dietro Router-Main."
+            ],
+            "explanation": "Un host deve trovarsi dentro la subnet che il suo router serve. Qui docs.example.org era configurato erroneamente su una rete diversa, quindi Router-Main non aveva una rotta corrispondente e ha scartato silenziosamente ogni pacchetto destinato ad esso, lasciando che l'handshake TCP del PC scadesse."
+        },
+        "tr": {
+            "title": "Docs Sunucusu Ulaşılamaz",
+            "story": "Ofisteki personel, bu sabah PC-Dev'in docs.example.org sayfasını açamadığını söylüyor. Hiç kimse son zamanlarda bir değişiklik hatırlamıyor, ancak istek asla bir sayfa ile geri gelmiyor.",
+            "objective": "PC-Dev'den docs.example.org'a giden bir HTTP GET isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "İsteği PC-Dev'den Switch-Office üzerinden Router-Main'e doğru takip edin: paket orada düşürülüyor, İnternet konağına doğru gitmeden önce.",
+                "Router-Main'in hedef için bir rotası yok çünkü docs.example.org'un adresi, 203.0.114.10, yönlendiricinin bildiği 203.0.113.0/24 ağının dışında kalıyor.",
+                "docs.example.org üzerinde, port 0'ın adresini 203.0.113.10 ve maske 255.255.255.0 olarak ayarlayın, böylece Router-Main'in arkasındaki doğru subnet içinde yer alsın."
+            ],
+            "explanation": "Bir ana bilgisayar, yönlendiricisinin hizmet verdiği subnet içinde adreslenmelidir. Burada docs.example.org yanlış bir ağ üzerinde yapılandırıldı, bu nedenle Router-Main'in eşleşen bir rotası yoktu ve buna yönelik her paketi sessizce bıraktı, PC'nin TCP el sıkışması zaman aşımına uğratıldı."
+        },
+        "vi": {
+            "title": "Máy chủ Docs Không Thể Truy Cập",
+            "story": "Nhân viên tại văn phòng nói rằng PC-Dev không thể mở trang docs.example.org sáng nay. Không ai nhớ có thay đổi gần đây, nhưng yêu cầu không bao giờ quay lại với một trang web.",
+            "objective": "Làm cho HTTP GET từ PC-Dev đến docs.example.org thành công.",
+            "hints": [
+                "Theo dõi yêu cầu từ PC-Dev qua Switch-Office đến Router-Main: gói tin bị loại bỏ ngay tại đó, trước khi rời khỏi máy chủ Internet.",
+                "Router-Main không có tuyến đường cho đích đến vì địa chỉ của docs.example.org, 203.0.114.10, nằm ngoài mạng 203.0.113.0/24 mà bộ định tuyến biết cách tiếp cận.",
+                "Trên docs.example.org, đặt cổng 0 có địa chỉ 203.0.113.10 với mặt nạ 255.255.255.0 để nó nằm trong mạng con chính xác phía sau Router-Main."
+            ],
+            "explanation": "Một máy chủ phải được địa chỉ hóa trong mạng con mà bộ định tuyến của nó phục vụ. Ở đây docs.example.org bị cấu hình sai trên một mạng khác, vì vậy Router-Main không có tuyến đường phù hợp và im lặng bỏ mọi gói tin dành cho nó, khiến bắt tay TCP của PC hết thời gian."
+        },
+        "th": {
+            "title": "เซิร์ฟเวอร์ Docs ไม่สามารถเข้าถึงได้",
+            "story": "พนักงานในสำนักงานรายงานว่า PC-Dev ไม่สามารถเปิดหน้า docs.example.org ได้ในเช้านี้ ไม่มีใครจำได้ว่ามีการเปลี่ยนแปลงใด ๆ เมื่อเร็ว ๆ นี้ แต่คำขอไม่เคยได้รับการตอบกลับมากับหน้าเพจ",
+            "objective": "ให้ HTTP GET จาก PC-Dev ไปยัง docs.example.org สำเร็จ",
+            "hints": [
+                "ติดตามคำขอจาก PC-Dev ผ่าน Switch-Office ไปยัง Router-Main: แพ็กเก็ตถูกละทิ้งตรงนั่นก่อนที่มันจะออกไปยังโฮสต์ Internet",
+                "Router-Main ไม่มีเส้นทางสำหรับเครือข่ายปลายทาง เพราะที่อยู่ของ docs.example.org คือ 203.0.114.10 ซึ่งอยู่นอกเครือข่าย 203.0.113.0/24 ที่ Router-Main รู้จักวิธีเข้าถึง",
+                "ใน docs.example.org ให้ตั้งค่าที่อยู่ของพอร์ต 0 เป็น 203.0.113.10 พร้อมมาสก์ 255.255.255.0 เพื่อให้มันอยู่ในซับเน็ตที่ถูกต้องหลัง Router-Main"
+            ],
+            "explanation": "โฮสต์ต้องมีที่อยู่อยู่ในซับเน็ตที่ Router ให้บริการ ที่นี่ docs.example.org ถูกตั้งค่าผิด ดังนั้น Router-Main ไม่มีเส้นทางตรงกัน และละทิ้งแพ็กเก็ตทั้งหมดที่มีไปสำหรับมัน ทำให้การเชื่อมต่อ TCP ของ PC หมดเวลา"
+        }
+    }
+}
