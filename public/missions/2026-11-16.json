@@ -1,0 +1,673 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-16",
+    "number": 57,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "cable_unplugged"
+    ],
+    "concepts": [
+        "physical-link"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.22.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.22.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.22.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.19.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.25.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.19.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.19.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.25.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.22.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.19.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.25.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "No Response from the File Server",
+            "story": "The support team in Sapporo reports that PC-Support cannot get File-Server in Fukuoka to answer any requests since this morning. Nothing else has changed on their end.",
+            "objective": "Restore HTTP access from PC-Support to File-Server.",
+            "hints": [
+                "The packet from PC-Support reaches Router-Fukuoka but gets no further toward File-Server.",
+                "Router-Fukuoka cannot forward onto the Fukuoka LAN because its link toward Switch-Fukuoka is physically down.",
+                "Connect a cable between Router-Fukuoka and Switch-Fukuoka to restore the link."
+            ],
+            "explanation": "A router can only forward packets out of interfaces that have an active physical link. When the cable to the local switch is unplugged, the router has no way to deliver traffic to devices on that segment, even if routing tables are otherwise correct."
+        },
+        "ja": {
+            "title": "File-Serverから応答がありません",
+            "story": "札幌のサポートチームから、今朝よりPC-Supportが福岡のFile-Serverにリクエストを送っても応答が返らないと報告がありました。他には何も変更していないとのことです。",
+            "objective": "PC-SupportからFile-ServerへのHTTPアクセスを復旧させます。",
+            "hints": [
+                "PC-Supportからのパケットは Router-Fukuoka までは届きますが、その先 File-Server へは進めません。",
+                "Router-Fukuoka は Switch-Fukuoka へのリンクが物理的にダウンしているため、福岡のLANへ転送できません。",
+                "Router-Fukuoka と Switch-Fukuoka の間にケーブルを接続して、リンクを復旧させてください。"
+            ],
+            "explanation": "ルーターは、物理リンクが有効なインターフェースからしかパケットを転送できません。ローカルスイッチへのケーブルが抜けていると、ルーティングテーブルの設定が正しくても、そのセグメント上の機器へ通信を届ける手段がなくなってしまいます。"
+        },
+        "zh-CN": {
+            "title": "来自文件服务器的无响应",
+            "story": "札幌的支持团队报告说，自今天早上以来，PC-Support 无法与位于福冈的 File-Server 通信。他们那边没有做任何更改。",
+            "objective": "恢复从 PC-Support 到 File-Server 的 HTTP 访问。",
+            "hints": [
+                "来自 PC-Support 的数据包到达了 Router-Fukuoka，但无法继续向 File-Server 传递。",
+                "Router-Fukuoka 无法转发到福冈局域网上，因为其指向 Switch-Fukuoka 的链路物理上已断开。",
+                "在 Router-Fukuoka 和 Switch-Fukuoka 之间连接一条网线以恢复链路。"
+            ],
+            "explanation": "Router 只能通过具有活跃物理链接的接口转发数据包。当通往本地交换机的网线被拔掉时，即使路由表配置正确，Router 也无法将流量传递到该段上的设备。"
+        },
+        "zh-TW": {
+            "title": "檔案伺服器無回應",
+            "story": "札幌的支援團隊回報，自今天早上起，PC-Support 無法與位在福岡的 File-Server 通訊。他們那邊並未做任何變更。",
+            "objective": "恢復從 PC-Support 到 File-Server 的 HTTP 存取。",
+            "hints": [
+                "來自 PC-Support 的封包到達了 Router-Fukuoka，但無法繼續向 File-Server 傳遞。",
+                "Router-Fukuoka 無法轉發到福岡區域網路上，因為其連向 Switch-Fukuoka 的鏈路在實體上已斷開。",
+                "在 Router-Fukuoka 和 Switch-Fukuoka 之間連接網路線纜以復原鏈路。"
+            ],
+            "explanation": "Router 只能透過具有作用中實體鏈路的介面轉發封包。當通往本地交換器的網線被拔除時，即使路由表設定正確，Router 也無法將流量傳遞到該網路區段上的裝置。"
+        },
+        "ko": {
+            "title": "파일 서버 응답 없음",
+            "story": "삿포로의 지원 팀이 오늘 아침부터 PC-Support가 후쿠오카의 File-Server와 통신할 수 없다고 보고했습니다. 그들 쪽에서는 아무것도 변경하지 않았습니다.",
+            "objective": "PC-Support에서 File-Server로의 HTTP 접근을 복원합니다.",
+            "hints": [
+                "PC-Support에서 보낸 패킷이 Router-Fukuoka에 도달하지만 File-Server로 더 이상 진행되지 않습니다.",
+                "Router-Fukuoka가 Switch-Fukuoka로 향하는 링크가 물리적으로 단절되어 있어 후쿠오카 LAN으로 전달할 수 없습니다.",
+                "Router-Fukuoka와 Switch-Fukuoka 사이에 케이블을 연결하여 링크를 복원합니다."
+            ],
+            "explanation": "라우터는 활성 물리 링크가 있는 인터페이스를 통해서만 패킷을 전달할 수 있습니다. 로컬 스위치로의 케이블이 분리되면 라우팅 테이블이 올바르더라도 라우터는 해당 세그먼트의 장치로 트래픽을 전달할 수 없습니다."
+        },
+        "es": {
+            "title": "Sin respuesta del servidor de archivos",
+            "story": "El equipo de soporte en Sapporo reporta que PC-Support no puede comunicarse con File-Server en Fukuoka desde esta mañana. No han realizado ningún cambio de su lado.",
+            "objective": "Restaurar el acceso HTTP desde PC-Support a File-Server.",
+            "hints": [
+                "El paquete desde PC-Support llega a Router-Fukuoka pero no avanza hacia File-Server.",
+                "Router-Fukuoka no puede reenviar hacia la LAN de Fukuoka porque su enlace hacia Switch-Fukuoka está físicamente desconectado.",
+                "Conecta un cable entre Router-Fukuoka y Switch-Fukuoka para restaurar el enlace."
+            ],
+            "explanation": "Un router solo puede reenviar paquetes a través de interfaces que tienen un enlace físico activo. Cuando el cable hacia el switch local se desconecta, el router no puede entregar tráfico a dispositivos en ese segmento, incluso si las tablas de rutas son correctas."
+        },
+        "pt-BR": {
+            "title": "Sem resposta do servidor de arquivos",
+            "story": "O time de suporte em Sapporo relata que PC-Support não consegue se comunicar com File-Server em Fukuoka desde esta manhã. Nada foi alterado do lado deles.",
+            "objective": "Restaurar o acesso HTTP de PC-Support para File-Server.",
+            "hints": [
+                "O pacote de PC-Support chega a Router-Fukuoka mas não avança para File-Server.",
+                "Router-Fukuoka não consegue encaminhar para a LAN de Fukuoka porque seu link para Switch-Fukuoka está fisicamente desconectado.",
+                "Conecte um cabo entre Router-Fukuoka e Switch-Fukuoka para restaurar o link."
+            ],
+            "explanation": "Um router só consegue encaminhar pacotes por interfaces que têm um link físico ativo. Quando o cabo para o switch local é desconectado, o router não consegue entregar tráfego para dispositivos naquele segmento, mesmo se as tabelas de roteamento estiverem corretas."
+        },
+        "de": {
+            "title": "Keine Antwort vom File-Server",
+            "story": "Das Support-Team in Sapporo meldet, dass PC-Support keinen Kontakt mit File-Server in Fukuoka aufbauen kann – alle Anfragen bleiben unbeantwortet. Seitdem ist auf ihrer Seite nichts verändert worden.",
+            "objective": "Stelle HTTP-Zugriff von PC-Support auf File-Server wieder her.",
+            "hints": [
+                "Das Paket von PC-Support erreicht Router-Fukuoka, kommt aber nicht weiter zu File-Server.",
+                "Router-Fukuoka kann keine Pakete auf das Fukuoka-LAN weiterleiten, weil sein Link zu Switch-Fukuoka physisch unterbrochen ist.",
+                "Verbinde ein Kabel zwischen Router-Fukuoka und Switch-Fukuoka, um den Link wiederherzustellen."
+            ],
+            "explanation": "Ein Router kann Pakete nur über Schnittstellen weiterleiten, die eine aktive physische Verbindung haben. Wenn das Kabel zum lokalen Switch gezogen ist, hat der Router keine Möglichkeit, Datenverkehr an Geräte in diesem Segment zu übermitteln – selbst wenn die Routing-Tabellen sonst korrekt sind."
+        },
+        "fr": {
+            "title": "Pas de réponse du Serveur de fichiers",
+            "story": "L'équipe support de Sapporo rapporte que PC-Support ne peut pas joindre File-Server à Fukuoka – aucune requête n'obtient de réponse depuis ce matin. Rien n'a changé de leur côté.",
+            "objective": "Rétablissez l'accès HTTP de PC-Support vers File-Server.",
+            "hints": [
+                "Le paquet de PC-Support atteint Router-Fukuoka mais ne progresse pas plus loin vers File-Server.",
+                "Router-Fukuoka ne peut pas acheminer vers le LAN de Fukuoka car sa liaison vers Switch-Fukuoka est physiquement rompue.",
+                "Connectez un câble entre Router-Fukuoka et Switch-Fukuoka pour rétablir la liaison."
+            ],
+            "explanation": "Un routeur ne peut acheminer des paquets que par les interfaces ayant une liaison physique active. Lorsque le câble vers le commutateur local est débranché, le routeur n'a aucun moyen de livrer le trafic aux appareils de ce segment, même si les tables de routage sont par ailleurs correctes."
+        },
+        "hi": {
+            "title": "File-Server से कोई प्रतिक्रिया नहीं",
+            "story": "Sapporo की सहायता टीम की रिपोर्ट है कि PC-Support, Fukuoka में File-Server से संपर्क नहीं कर सकता – आज सुबह से कोई भी अनुरोध जवाब नहीं पा रहा है। उनकी ओर से कुछ भी नहीं बदला है।",
+            "objective": "PC-Support से File-Server तक HTTP पहुंच को पुनः स्थापित करें।",
+            "hints": [
+                "PC-Support से पैकेट Router-Fukuoka तक पहुंचता है लेकिन File-Server की ओर आगे नहीं बढ़ता।",
+                "Router-Fukuoka Fukuoka LAN को पैकेट नहीं भेज सकता क्योंकि Switch-Fukuoka की ओर इसका लिंक भौतिक रूप से टूटा हुआ है।",
+                "Router-Fukuoka और Switch-Fukuoka के बीच केबल जोड़कर लिंक को पुनः स्थापित करें।"
+            ],
+            "explanation": "एक Router केवल उन इंटरफेस से पैकेट आगे भेज सकता है जिनके पास सक्रिय भौतिक लिंक है। जब स्थानीय स्विच की ओर केबल खींच दी जाती है, तो Router के पास उस सेगमेंट पर डिवाइस को ट्रैफिक देने का कोई तरीका नहीं होता – भले ही Routing Tables अन्यथा सही हों।"
+        },
+        "id": {
+            "title": "Tidak Ada Respons dari File-Server",
+            "story": "Tim dukungan di Sapporo melaporkan bahwa PC-Support tidak dapat menghubungi File-Server di Fukuoka – tidak ada permintaan yang mendapat respons sejak pagi ini. Tidak ada yang berubah di sisi mereka.",
+            "objective": "Pulihkan akses HTTP dari PC-Support ke File-Server.",
+            "hints": [
+                "Paket dari PC-Support mencapai Router-Fukuoka tetapi tidak berlanjut lebih jauh ke File-Server.",
+                "Router-Fukuoka tidak dapat meneruskan ke LAN Fukuoka karena tautannya ke Switch-Fukuoka secara fisik terputus.",
+                "Sambungkan kabel antara Router-Fukuoka dan Switch-Fukuoka untuk memulihkan tautan."
+            ],
+            "explanation": "Router hanya dapat meneruskan paket melalui antarmuka yang memiliki tautan fisik aktif. Ketika kabel ke switch lokal dicabut, router tidak memiliki cara untuk mengirimkan lalu lintas ke perangkat di segmen itu, bahkan jika tabel routing sebaliknya benar."
+        },
+        "ru": {
+            "title": "No Response from the File Server",
+            "story": "Команда поддержки в Саппоро сообщает, что PC-Support не может связаться с File-Server в Фукуоке – с утра ни одна запрос не получает ответа. С их стороны ничего не изменилось.",
+            "objective": "Восстановите доступ HTTP с PC-Support на File-Server.",
+            "hints": [
+                "Пакет с PC-Support достигает Router-Fukuoka, но не идет дальше к File-Server.",
+                "Router-Fukuoka не может передавать на локальную сеть Фукуоки, потому что его канал к Switch-Fukuoka физически разорван.",
+                "Подключите кабель между Router-Fukuoka и Switch-Fukuoka, чтобы восстановить канал."
+            ],
+            "explanation": "Маршрутизатор может передавать пакеты только через интерфейсы, имеющие активное физическое соединение. Когда кабель к локальному коммутатору отсоединен, маршрутизатор не может доставить трафик устройствам в этом сегменте – даже если таблицы маршрутизации в остальном верны."
+        },
+        "it": {
+            "title": "Nessuna risposta dal File-Server",
+            "story": "Il team di supporto di Sapporo segnala che PC-Support non riescce ad ottenere una risposta da File-Server a Fukuoka da questa mattina. Niente altro è cambiato dalla loro parte.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Support a File-Server.",
+            "hints": [
+                "Il pacchetto da PC-Support raggiunge Router-Fukuoka ma non prosegue verso File-Server.",
+                "Router-Fukuoka non può inoltrare sulla LAN di Fukuoka perché il collegamento verso Switch-Fukuoka è fisicamente down.",
+                "Collega un cavo tra Router-Fukuoka e Switch-Fukuoka per ripristinare il collegamento."
+            ],
+            "explanation": "Un Router può inoltrare i pacchetti solo dalle interfacce che hanno un collegamento fisico attivo. Quando il cavo verso lo switch locale è staccato, il Router non ha modo di consegnare il traffico ai dispositivi su quel segmento, anche se le Tabelle di routing sono altrimenti corrette."
+        },
+        "tr": {
+            "title": "File-Server'dan Yanıt Yok",
+            "story": "Sapporo'daki destek ekibi, PC-Support'un bu sabahtan beri Fukuoka'daki File-Server'dan yanıt alamamasını bildirmektedir. Taraflarında başka hiçbir şey değişmemiştir.",
+            "objective": "PC-Support'dan File-Server'a HTTP erişimini geri yükleyin.",
+            "hints": [
+                "PC-Support'tan gelen paket Router-Fukuoka'ya ulaşır ancak File-Server'a doğru ilerlemez.",
+                "Router-Fukuoka, Switch-Fukuoka'ya doğru olan bağlantısı fiziksel olarak kapalı olduğu için Fukuoka LAN'ına iletim yapamaz.",
+                "Router-Fukuoka ve Switch-Fukuoka arasını bir kablo ile bağlayarak bağlantıyı geri yükleyin."
+            ],
+            "explanation": "Bir Router, yalnızca etkin fiziksel bağlantıya sahip arabirimlerden paketleri iletebilir. Yerel anahtara giden kablo sökülüp çıkarıldığında, Router, Yönlendirme Tablosu aksi takdirde doğru olsa bile, bu segmentteki cihazlara trafiği iletmenin hiçbir yolu yoktur."
+        },
+        "th": {
+            "title": "ไม่มีการตอบสนองจาก File-Server",
+            "story": "ทีมสนับสนุนที่เมืองซัปโปโรรายงานว่า PC-Support ไม่สามารถรับการตอบสนองจาก File-Server ที่เมืองฟุกุโอกะตั้งแต่เช้านี้ ไม่มีอะไรเปลี่ยนแปลงไปจากด้านของพวกเขา",
+            "objective": "กู้คืนการเข้าถึง HTTP จาก PC-Support ไปยัง File-Server",
+            "hints": [
+                "แพ็กเก็ตจาก PC-Support ถึง Router-Fukuoka แต่ไม่ดำเนินต่อไปยัง File-Server",
+                "Router-Fukuoka ไม่สามารถส่งต่อไปยัง LAN ของฟุกุโอกะได้เนื่องจากลิงก์ไปยัง Switch-Fukuoka ดับลงเป็นอย่างไร",
+                "เชื่อมต่อสายเคเบิลระหว่าง Router-Fukuoka และ Switch-Fukuoka เพื่อกู้คืนลิงก์"
+            ],
+            "explanation": "Router สามารถส่งต่อแพ็กเก็ตออกจากอินเทอร์เฟซที่มีลิงก์ฟิสิกัลที่ใช้งานอยู่เท่านั้น เมื่อสายเคเบิลไปยังสวิตช์ท้องถิ่นถูกถอด Router จะไม่มีวิธีใดในการจัดส่งการรับส่งข้อมูลไปยังอุปกรณ์บนเซ็กเมนต์นั้น แม้ว่าตารางเส้นทางจะถูกต้องอย่างอื่น"
+        },
+        "vi": {
+            "title": "Không có phản hồi từ File-Server",
+            "story": "Đội hỗ trợ ở Sapporo báo cáo rằng PC-Support không thể nhận được bất kỳ phản hồi nào từ File-Server ở Fukuoka kể từ sáng nay. Không có gì thay đổi ở phía họ.",
+            "objective": "Khôi phục truy cập HTTP từ PC-Support đến File-Server.",
+            "hints": [
+                "Gói từ PC-Support đến Router-Fukuoka nhưng không tiếp tục đến File-Server.",
+                "Router-Fukuoka không thể chuyển tiếp đến LAN Fukuoka vì liên kết của nó đến Switch-Fukuoka bị ngắt vật lý.",
+                "Kết nối cáp giữa Router-Fukuoka và Switch-Fukuoka để khôi phục liên kết."
+            ],
+            "explanation": "Một Router chỉ có thể chuyển tiếp các gói từ các giao diện có liên kết vật lý hoạt động. Khi cáp nối đến công tắc cục bộ bị tháo rời, Router không có cách nào để gửi lưu lượng đến các thiết bị trên phân đoạn đó, ngay cả khi Bảng định tuyến khác là chính xác."
+        }
+    }
+}
