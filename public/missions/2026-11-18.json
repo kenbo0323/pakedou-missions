@@ -1,0 +1,573 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-18",
+    "number": 59,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.30.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.30.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Core",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.18.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.18.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Finance Can't Reach the File Server",
+            "story": "After the weekend desk reshuffle, the accounting team on PC-Finance reports they cannot open files on File-Server. Reception on PC-Reception notices nothing unusual and works as normal.",
+            "objective": "Get an HTTP GET from PC-Finance to File-Server to succeed.",
+            "hints": [
+                "The request from PC-Finance never makes it past PC-Finance itself toward Router-HQ.",
+                "PC-Finance's default gateway is set to File-Server's own address, 10.0.18.1, instead of a router, so traffic has nowhere to go.",
+                "On PC-Finance, set the default gateway to 10.0.30.254 (Router-HQ's port 0 address)."
+            ],
+            "explanation": "A default gateway must be a router interface on the client's own subnet, not the destination server's address. PC-Finance was pointed at File-Server itself, so packets could never be forwarded off the local subnet. Setting the gateway to Router-HQ's address restores routing."
+        },
+        "ja": {
+            "title": "経理部門がFile-Serverにアクセスできない",
+            "story": "週末の席替え後、PC-Financeを使う経理チームがFile-Server上のファイルを開けないと報告しています。PC-Receptionの受付担当者は特に異常を感じておらず、通常通り利用できています。",
+            "objective": "PC-FinanceからFile-ServerへのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Financeからのリクエストは、PC-Finance自身からRouter-HQに向かう途中で止まってしまっています。",
+                "PC-Financeのデフォルトゲートウェイが、ルーターではなくFile-Server自身のアドレスである10.0.18.1に設定されているため、通信の行き先がありません。",
+                "PC-Financeで、デフォルトゲートウェイを10.0.30.254(Router-HQのポート0のアドレス)に設定してください。"
+            ],
+            "explanation": "デフォルトゲートウェイには、宛先サーバーのアドレスではなく、クライアント自身が属するサブネット上のルーターのインターフェースを設定する必要があります。PC-FinanceはFile-Server自身を指すよう設定されていたため、パケットがローカルサブネットの外へ転送されることがありませんでした。ゲートウェイをRouter-HQのアドレスに設定することで、ルーティングが正常に戻ります。"
+        },
+        "zh-CN": {
+            "title": "Finance 无法连接到 File-Server",
+            "story": "周末办公室重新调整座位后，PC-Finance 上的会计团队报告无法打开 File-Server 上的文件。PC-Reception 上的前台没有发现异常，工作正常。",
+            "objective": "让来自 PC-Finance 的 HTTP GET 请求到 File-Server 成功。",
+            "hints": [
+                "来自 PC-Finance 的请求从未离开 PC-Finance 本身，无法到达 Router-HQ。",
+                "PC-Finance 的默认网关被设置为 File-Server 的地址 10.0.18.1，而不是路由器，所以流量无处可去。",
+                "在 PC-Finance 上，将默认网关设置为 10.0.30.254（Router-HQ 的端口 0 地址）。"
+            ],
+            "explanation": "默认网关必须是 Client 自身子网上的 Router 接口，而不是目标服务器的地址。PC-Finance 被指向了 File-Server 本身，所以数据包无法转发出本地子网。将网关设置为 Router-HQ 的地址可以恢复路由。"
+        },
+        "zh-TW": {
+            "title": "Finance 無法連接到 File-Server",
+            "story": "週末辦公室重新調整座位後，PC-Finance 上的會計團隊報告無法打開 File-Server 上的檔案。PC-Reception 上的前台沒有發現異常，工作正常。",
+            "objective": "讓來自 PC-Finance 的 HTTP GET 請求到 File-Server 成功。",
+            "hints": [
+                "來自 PC-Finance 的請求從未離開 PC-Finance 本身，無法到達 Router-HQ。",
+                "PC-Finance 的預設閘道被設置為 File-Server 的地址 10.0.18.1，而不是路由器，所以流量無處可去。",
+                "在 PC-Finance 上，將預設閘道設置為 10.0.30.254（Router-HQ 的連接埠 0 地址）。"
+            ],
+            "explanation": "預設閘道必須是 Client 自身子網上的 Router 介面，而不是目標伺服器的地址。PC-Finance 被指向了 File-Server 本身，所以封包無法轉發出本地子網。將閘道設置為 Router-HQ 的地址可以恢復路由。"
+        },
+        "ko": {
+            "title": "Finance가 File-Server에 연결할 수 없음",
+            "story": "주말 책상 재배치 후 PC-Finance의 회계팀은 File-Server의 파일을 열 수 없다고 보고합니다. PC-Reception의 접수실은 특이한 점을 발견하지 못했고 정상 작동합니다.",
+            "objective": "PC-Finance에서 File-Server로의 HTTP GET이 성공하도록 합니다.",
+            "hints": [
+                "PC-Finance의 요청이 PC-Finance 자체를 떠나 Router-HQ에 도달하지 못합니다.",
+                "PC-Finance의 기본 게이트웨이가 라우터 대신 File-Server 자신의 주소인 10.0.18.1로 설정되어 있어서 트래픽이 갈 곳이 없습니다.",
+                "PC-Finance에서 기본 게이트웨이를 10.0.30.254(Router-HQ의 포트 0 주소)로 설정합니다."
+            ],
+            "explanation": "기본 게이트웨이는 클라이언트 자신의 서브넷에 있는 라우터 인터페이스여야 하며, 목적지 서버의 주소가 아닙니다. PC-Finance가 File-Server 자체를 가리키고 있어서 패킷이 로컬 서브넷을 벗어날 수 없었습니다. 게이트웨이를 Router-HQ의 주소로 설정하면 라우팅이 복구됩니다."
+        },
+        "es": {
+            "title": "Finance No Puede Alcanzar File-Server",
+            "story": "Después de la reorganización de escritorios del fin de semana, el equipo de contabilidad en PC-Finance reporta que no pueden abrir archivos en File-Server. La recepción en PC-Reception no nota nada inusual y funciona normalmente.",
+            "objective": "Lograr que una solicitud HTTP GET desde PC-Finance a File-Server sea exitosa.",
+            "hints": [
+                "La solicitud desde PC-Finance nunca sale de PC-Finance hacia Router-HQ.",
+                "El Gateway predeterminado de PC-Finance está configurado a la dirección de File-Server, 10.0.18.1, en lugar de un router, por lo que el tráfico no tiene a dónde ir.",
+                "En PC-Finance, configura el Gateway predeterminado a 10.0.30.254 (dirección del puerto 0 de Router-HQ)."
+            ],
+            "explanation": "Un Gateway predeterminado debe ser una interfaz Router en la propia subred del cliente, no la dirección del servidor destino. PC-Finance apuntaba a File-Server mismo, por lo que los paquetes nunca podían ser reenviados fuera de la subred local. Configurar el gateway a la dirección de Router-HQ restaura el enrutamiento."
+        },
+        "pt-BR": {
+            "title": "Finance Não Consegue Alcançar File-Server",
+            "story": "Após a reorganização de mesas no fim de semana, a equipe de contabilidade em PC-Finance relata que não consegue abrir arquivos em File-Server. A recepção em PC-Reception não nota nada inusitado e funciona normalmente.",
+            "objective": "Conseguir que uma solicitação HTTP GET de PC-Finance para File-Server seja bem-sucedida.",
+            "hints": [
+                "A solicitação de PC-Finance nunca sai de PC-Finance em direção a Router-HQ.",
+                "O Gateway padrão de PC-Finance está configurado para o endereço de File-Server, 10.0.18.1, em vez de um router, então o tráfego não tem para onde ir.",
+                "Em PC-Finance, defina o Gateway padrão para 10.0.30.254 (endereço da porta 0 de Router-HQ)."
+            ],
+            "explanation": "Um Gateway padrão deve ser uma interface Router na própria sub-rede do cliente, não o endereço do servidor de destino. PC-Finance estava apontando para o próprio File-Server, então os pacotes nunca poderiam ser encaminhados para fora da sub-rede local. Definir o gateway para o endereço de Router-HQ restaura o roteamento."
+        },
+        "de": {
+            "title": "Finance kann File-Server nicht erreichen",
+            "story": "Nach der Umgestaltung der Schreibtische am Wochenende berichtet das Buchhaltungsteam auf PC-Finance, dass es keine Dateien auf File-Server öffnen kann. Der Empfangsdienst auf PC-Reception bemerkt nichts Ungewöhnliches und arbeitet normal.",
+            "objective": "Ein HTTP GET von PC-Finance zu File-Server muss erfolgreich sein.",
+            "hints": [
+                "Die Anfrage von PC-Finance kommt nie über PC-Finance selbst hinaus in Richtung Router-HQ.",
+                "Der Standard-Gateway auf PC-Finance ist auf die eigene Adresse des File-Server, 10.0.18.1, statt auf einen Router eingestellt, daher hat der Datenverkehr keine Route.",
+                "Setzen Sie auf PC-Finance den Standard-Gateway auf 10.0.30.254 (Adresse von Router-HQ Port 0)."
+            ],
+            "explanation": "Ein Standard-Gateway muss eine Router-Schnittstelle im eigenen Subnetz des Clients sein, nicht die Adresse des Zielservers. PC-Finance war auf den File-Server selbst verwiesen, daher konnten Pakete nie vom lokalen Subnetz weitergeleitet werden. Das Setzen des Gateways auf die Adresse von Router-HQ stellt das Routing wieder her."
+        },
+        "fr": {
+            "title": "Finance ne peut pas atteindre le File-Server",
+            "story": "Après le réagencement des postes de travail du week-end, l'équipe comptable sur PC-Finance signale qu'elle ne peut pas ouvrir les fichiers sur File-Server. La réception sur PC-Reception ne remarque rien d'inhabituel et fonctionne normalement.",
+            "objective": "Un HTTP GET de PC-Finance vers File-Server doit réussir.",
+            "hints": [
+                "La requête de PC-Finance ne va jamais au-delà de PC-Finance elle-même vers Router-HQ.",
+                "La passerelle par défaut de PC-Finance est définie sur l'adresse propre du File-Server, 10.0.18.1, au lieu d'un routeur, donc le trafic n'a nulle part où aller.",
+                "Sur PC-Finance, définissez la passerelle par défaut sur 10.0.30.254 (adresse du port 0 de Router-HQ)."
+            ],
+            "explanation": "Une passerelle par défaut doit être une interface routeur du propre sous-réseau du client, pas l'adresse du serveur de destination. PC-Finance pointait vers le File-Server lui-même, de sorte que les paquets ne pouvaient jamais être transmis en dehors du sous-réseau local. Définir la passerelle sur l'adresse de Router-HQ restaure le routage."
+        },
+        "hi": {
+            "title": "Finance File-Server तक नहीं पहुंच सकता",
+            "story": "सप्ताहांत में डेस्क पुनर्व्यवस्था के बाद, PC-Finance पर लेखा टीम रिपोर्ट करती है कि वह File-Server पर फ़ाइलें नहीं खोल सकती। PC-Reception पर रिसेप्शन को कुछ भी असामान्य नहीं दिख रहा और यह सामान्य रूप से काम कर रहा है।",
+            "objective": "PC-Finance से File-Server तक HTTP GET सफल होना चाहिए।",
+            "hints": [
+                "PC-Finance से अनुरोध PC-Finance से आगे Router-HQ की ओर नहीं जाता।",
+                "PC-Finance की डिफ़ॉल्ट गेटवे File-Server के अपने पते 10.0.18.1 पर सेट है, रूटर पर नहीं, इसलिए ट्रैफिक के पास कहीं जाने का रास्ता नहीं है।",
+                "PC-Finance पर डिफ़ॉल्ट गेटवे को 10.0.30.254 (Router-HQ का पोर्ट 0 पता) पर सेट करें।"
+            ],
+            "explanation": "डिफ़ॉल्ट गेटवे क्लाइंट की अपनी सबनेट पर एक रूटर इंटरफेस होना चाहिए, गंतव्य सर्वर का पता नहीं। PC-Finance File-Server को ही निर्दिष्ट था, इसलिए पैकेट कभी भी स्थानीय सबनेट से आगे नहीं जा सकते थे। गेटवे को Router-HQ के पते पर सेट करने से रूटिंग बहाल हो जाती है।"
+        },
+        "id": {
+            "title": "Finance Tidak Dapat Menjangkau File-Server",
+            "story": "Setelah pengaturan ulang meja akhir pekan, tim akuntansi di PC-Finance melaporkan mereka tidak dapat membuka file di File-Server. Resepsionis di PC-Reception tidak melihat apa pun yang tidak biasa dan bekerja dengan normal.",
+            "objective": "HTTP GET dari PC-Finance ke File-Server harus berhasil.",
+            "hints": [
+                "Permintaan dari PC-Finance tidak pernah melampaui PC-Finance sendiri menuju Router-HQ.",
+                "Gateway Default PC-Finance diatur ke alamat File-Server sendiri, 10.0.18.1, bukan ke router, jadi lalu lintas tidak memiliki tempat untuk pergi.",
+                "Pada PC-Finance, atur Gateway Default ke 10.0.30.254 (alamat port 0 Router-HQ)."
+            ],
+            "explanation": "Gateway Default harus berupa antarmuka router pada subnet klien sendiri, bukan alamat server tujuan. PC-Finance mengarah ke File-Server itu sendiri, sehingga paket tidak pernah dapat diteruskan keluar dari subnet lokal. Mengatur gateway ke alamat Router-HQ memulihkan perutean."
+        },
+        "ru": {
+            "title": "Finance не может достучаться до File-Server",
+            "story": "После перестановки столов на выходных команда бухгалтерии на PC-Finance сообщает, что не может открывать файлы на File-Server. Персонал приема на PC-Reception не замечает ничего необычного и работает в обычном режиме.",
+            "objective": "HTTP GET от PC-Finance к File-Server должен быть успешным.",
+            "hints": [
+                "Запрос от PC-Finance никогда не проходит дальше самого PC-Finance в направлении Router-HQ.",
+                "Шлюз по умолчанию на PC-Finance установлен на собственный адрес File-Server, 10.0.18.1, вместо маршрутизатора, поэтому трафику некуда идти.",
+                "На PC-Finance установите Шлюз по умолчанию на 10.0.30.254 (адрес порта 0 маршрутизатора Router-HQ)."
+            ],
+            "explanation": "Шлюз по умолчанию должен быть интерфейсом маршрутизатора в собственной подсети клиента, а не адресом сервера назначения. PC-Finance был направлен на сам File-Server, поэтому пакеты никогда не могли быть отправлены за пределы локальной подсети. Установка шлюза на адрес Router-HQ восстанавливает маршрутизацию."
+        },
+        "it": {
+            "title": "Finance non riesce a raggiungere il File Server",
+            "story": "Dopo il rimpasto delle scrivanie del fine settimana, il team di contabilità su PC-Finance segnala che non riesce ad aprire file su File-Server. La Reception su PC-Reception non nota nulla di insolito e funziona normalmente.",
+            "objective": "Fare in modo che una richiesta HTTP GET da PC-Finance a File-Server abbia successo.",
+            "hints": [
+                "La richiesta da PC-Finance non va oltre PC-Finance stesso verso Router-HQ.",
+                "Il Gateway predefinito di PC-Finance è impostato all'indirizzo di File-Server stesso, 10.0.18.1, invece che a un router, così il traffico non ha dove andare.",
+                "Su PC-Finance, impostare il Gateway predefinito a 10.0.30.254 (indirizzo della porta 0 di Router-HQ)."
+            ],
+            "explanation": "Un Gateway predefinito deve essere un'interfaccia router sulla stessa subnet del client, non l'indirizzo del server di destinazione. PC-Finance è stato puntato a File-Server stesso, quindi i pacchetti non potevano mai essere inoltrati fuori dalla subnet locale. Impostare il gateway all'indirizzo di Router-HQ ripristina il routing."
+        },
+        "tr": {
+            "title": "Finance Dosya Sunucusuna Ulaşamıyor",
+            "story": "Hafta sonu masaları yeniden düzenledikten sonra, PC-Finance üzerindeki muhasebe ekibi File-Server'da dosya açamadıklarını bildirmektedir. PC-Reception'daki Resepsiyon herhangi bir anormallik fark etmez ve normal şekilde çalışır.",
+            "objective": "PC-Finance'tan File-Server'a bir HTTP GET isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "PC-Finance'tan gelen istek, PC-Finance'ın kendisini Router-HQ'ya doğru asla geçemez.",
+                "PC-Finance'ın varsayılan ağ geçidi, bir router yerine File-Server'ın kendi adresi olan 10.0.18.1'e ayarlanmıştır, bu nedenle trafik nereye gideceğini bilmez.",
+                "PC-Finance'ta, varsayılan ağ geçidini 10.0.30.254 olarak ayarlayın (Router-HQ'ın port 0 adresi)."
+            ],
+            "explanation": "Varsayılan ağ geçidi, istemcinin kendi alt ağında bir router arabirimi olmalıdır, hedef sunucunun adresi değil. PC-Finance doğrudan File-Server'a yönlendirildiği için paketler asla yerel alt ağdan iletilemedi. Ağ geçidini Router-HQ adresine ayarlamak yönlendirmeyi geri yükler."
+        },
+        "th": {
+            "title": "Finance ไม่สามารถเข้าถึง File Server",
+            "story": "หลังจากการจัดเรียงโต๊ะใหม่ในวันเสาร์อาทิตย์ ทีมบัญชีบนโพ PC-Finance รายงานว่าไม่สามารถเปิดไฟล์บน File-Server ได้ การรับสมัครที่ PC-Reception ไม่พบปัญหาใดๆ และทำงานได้ปกติ",
+            "objective": "ทำให้คำขอ HTTP GET จาก PC-Finance ไปยัง File-Server สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Finance ไม่ผ่าน PC-Finance ไปยัง Router-HQ เลย",
+                "เกตเวย์เริ่มต้นของ PC-Finance ตั้งค่าไว้ที่ที่อยู่ของ File-Server เอง 10.0.18.1 แทนที่จะเป็นเราเตอร์ ดังนั้นการรับส่งข้อมูลไม่มีที่ไป",
+                "บน PC-Finance ให้ตั้งเกตเวย์เริ่มต้นเป็น 10.0.30.254 (ที่อยู่พอร์ต 0 ของ Router-HQ)"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นจะต้องเป็นอินเทอร์เฟซเราเตอร์บนเครือข่ายย่อยเดียวกันของไคลเอนต์ ไม่ใช่ที่อยู่ของเซิร์ฟเวอร์ปลายทาง PC-Finance ถูกชี้ไปที่ File-Server เอง ดังนั้นแพ็กเก็ตจึงไม่สามารถส่งต่อออกจากเครือข่ายย่อยท้องถิ่นได้ การตั้งเกตเวย์ไปที่ที่อยู่ของ Router-HQ จะคืนการกำหนดเส้นทาง"
+        },
+        "vi": {
+            "title": "Finance Không Thể Truy Cập File Server",
+            "story": "Sau khi sắp xếp lại bàn làm việc vào cuối tuần, đội kế toán trên PC-Finance báo cáo rằng họ không thể mở file trên File-Server. Bộ phận Tiếp tân trên PC-Reception không phát hiện vấn đề gì và hoạt động bình thường.",
+            "objective": "Đảm bảo yêu cầu HTTP GET từ PC-Finance đến File-Server thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Finance không bao giờ vượt quá PC-Finance để đi tới Router-HQ.",
+                "Cổng mặc định của PC-Finance được đặt thành địa chỉ của File-Server là 10.0.18.1, thay vì một router, vì vậy lưu lượng không có chỗ đi.",
+                "Trên PC-Finance, hãy đặt cổng mặc định thành 10.0.30.254 (địa chỉ cổng 0 của Router-HQ)."
+            ],
+            "explanation": "Cổng mặc định phải là một giao diện router trên mạng con của chính client, chứ không phải địa chỉ máy chủ đích. PC-Finance đã được trỏ tới File-Server, nên các gói tin không thể bao giờ được chuyển tiếp ra khỏi mạng con cục bộ. Đặt cổng vào địa chỉ của Router-HQ sẽ khôi phục định tuyến."
+        }
+    }
+}
