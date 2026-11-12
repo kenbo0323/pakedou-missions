@@ -1,0 +1,1316 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-19",
+    "number": 60,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "missing_route"
+    ],
+    "concepts": [
+        "static-route"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.26.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.20.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.7.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.20.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.20.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.7.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Branch Office Can't Reach HQ Files",
+            "story": "Since this morning, the finance team at the branch office reports they cannot open any files stored on the headquarters File-Server from PC-Finance. They need this working for a deadline.",
+            "objective": "Restore HTTP access from PC-Finance to File-Server.",
+            "hints": [
+                "The reply never makes it back past Router-Fukuoka — the request reaches File-Server, but the return trip stalls there.",
+                "Router-Fukuoka has no routing entry telling it how to reach PC-Finance's network, so it drops the reply instead of forwarding it.",
+                "On Router-Fukuoka, add a static route for network 10.0.26.0 / 255.255.255.0 via next hop 10.0.20.1 on port 0."
+            ],
+            "explanation": "Routers only forward packets to networks they know about. File-Server's replies reached Router-Fukuoka, but without a static route pointing back toward PC-Finance's subnet, the router had no idea where to send them and dropped them, causing the connection attempt to time out."
+        },
+        "ja": {
+            "title": "支社からHQファイルにアクセスできない",
+            "story": "今朝から、支社の経理チームがPC-FinanceからHQのFile-Serverに保存されているファイルを開けないと報告しています。締め切りのため、至急復旧が必要です。",
+            "objective": "PC-FinanceからFile-ServerへのHTTPアクセスを復旧させる。",
+            "hints": [
+                "応答がRouter-Fukuokaを通過できていません。リクエストはFile-Serverまで届いていますが、復路でそこから先に進めなくなっています。",
+                "Router-Fukuokaには、PC-Financeのネットワークへの経路を示すルーティングエントリがないため、応答を転送せずに破棄してしまっています。",
+                "Router-Fukuokaに、宛先ネットワーク 10.0.26.0 / マスク 255.255.255.0 を、中継先(ネクストホップ) 10.0.20.1、ポート0で、スタティックルートとして追加してください。"
+            ],
+            "explanation": "ルーターは自分が知っているネットワーク宛てのパケットしか転送できません。File-Serverからの応答はRouter-Fukuokaまで届いていましたが、PC-Financeのサブネットへ戻るためのスタティックルートがなかったため、ルーターはどこへ送ればよいか分からず応答を破棄してしまいました。その結果、接続はタイムアウトしてしまいました。"
+        },
+        "zh-CN": {
+            "title": "分支机构无法访问总部文件",
+            "story": "从今天早上开始，分支机构的财务团队报告无法从 PC-Finance 访问存储在总部 File-Server 上的任何文件。他们需要在截止期限前解决这个问题。",
+            "objective": "恢复从 PC-Finance 到 File-Server 的 HTTP 访问。",
+            "hints": [
+                "回复永远无法通过 Router-Fukuoka — 请求到达了 File-Server，但返回的数据在那里停止了。",
+                "Router-Fukuoka 没有路由条目告诉它如何到达 PC-Finance 的网络，所以它丢弃了回复而不是转发它。",
+                "在 Router-Fukuoka 上，添加一条静态路由，为目标网络 10.0.26.0 / 255.255.255.0，下一跳 10.0.20.1，端口 0。"
+            ],
+            "explanation": "Router 只能转发它知道的网络的数据包。File-Server 的回复到达了 Router-Fukuoka，但没有指向 PC-Finance 子网的静态路由，Router 不知道将回复发送到何处，因此丢弃了它们，导致连接尝试超时。"
+        },
+        "zh-TW": {
+            "title": "分支機構無法存取總部檔案",
+            "story": "從今天早上開始，分支機構的財務團隊報告無法從 PC-Finance 存取儲存在總部 File-Server 上的任何檔案。他們需要在截止期限前解決這個問題。",
+            "objective": "恢復從 PC-Finance 到 File-Server 的 HTTP 存取。",
+            "hints": [
+                "回覆永遠無法通過 Router-Fukuoka — 請求到達了 File-Server，但返回的資料在那裡停止了。",
+                "Router-Fukuoka 沒有路由項目告訴它如何到達 PC-Finance 的網路，所以它捨棄了回覆而不是轉發它。",
+                "在 Router-Fukuoka 上，新增一條靜態路由，目的網路 10.0.26.0 / 255.255.255.0，下一跳 10.0.20.1，連接埠 0。"
+            ],
+            "explanation": "Router 只能轉發它知道的網路的資料包。File-Server 的回覆到達了 Router-Fukuoka，但沒有指向 PC-Finance 子網的靜態路由，Router 不知道將回覆傳送到何處，因此捨棄了它們，導致連線嘗試逾時。"
+        },
+        "ko": {
+            "title": "지사가 본사 파일에 접근할 수 없음",
+            "story": "오늘 아침부터 지사의 재무팀이 PC-Finance에서 본사 File-Server에 저장된 파일을 열 수 없다고 보고하고 있습니다. 마감 기한까지 이를 해결해야 합니다.",
+            "objective": "PC-Finance에서 File-Server로의 HTTP 접근을 복구하세요.",
+            "hints": [
+                "응답이 Router-Fukuoka를 통과하지 못합니다 — 요청은 File-Server에 도달하지만, 반환 데이터가 그곳에서 멈춥니다.",
+                "Router-Fukuoka에는 PC-Finance의 네트워크에 도달하는 방법을 알려주는 라우팅 항목이 없어서 응답을 전달하지 않고 버립니다.",
+                "Router-Fukuoka에서 목적지 네트워크 10.0.26.0 / 255.255.255.0에 대해 다음 홉 10.0.20.1, 포트 0을 통한 정적 경로를 추가하세요."
+            ],
+            "explanation": "Router는 알고 있는 네트워크의 패킷만 전달합니다. File-Server의 응답은 Router-Fukuoka에 도달했지만, PC-Finance 서브넷을 가리키는 정적 경로가 없어서 Router는 응답을 어디로 보낼지 몰라 버렸고, 이로 인해 연결 시도가 시간 초과되었습니다."
+        },
+        "es": {
+            "title": "Sucursal no puede acceder a archivos de matriz",
+            "story": "Desde esta mañana, el equipo de finanzas de la sucursal reporta que no puede abrir archivos almacenados en el File-Server de la matriz desde PC-Finance. Necesitan que funcione antes de la fecha límite.",
+            "objective": "Restaurar acceso HTTP desde PC-Finance al File-Server.",
+            "hints": [
+                "La respuesta nunca llega más allá de Router-Fukuoka — la solicitud alcanza File-Server, pero el viaje de retorno se detiene allí.",
+                "Router-Fukuoka no tiene entrada de ruta que le indique cómo alcanzar la red de PC-Finance, por lo que descarta la respuesta en lugar de reenviarla.",
+                "En Router-Fukuoka, agregue una ruta estática para la red destino 10.0.26.0 / 255.255.255.0 via siguiente salto 10.0.20.1 en puerto 0."
+            ],
+            "explanation": "Los Router solo reenvían paquetes a redes que conocen. Las respuestas de File-Server llegaron a Router-Fukuoka, pero sin una ruta estática que apunte hacia la subred de PC-Finance, el Router no sabía dónde enviarlas y las descartó, causando que el intento de conexión agotara el tiempo de espera."
+        },
+        "pt-BR": {
+            "title": "Filial não consegue acessar arquivos da matriz",
+            "story": "Desde esta manhã, o time de finanças da filial relata que não consegue abrir nenhum arquivo armazenado no File-Server da matriz a partir do PC-Finance. Precisam que isso funcione antes do prazo.",
+            "objective": "Restaurar acesso HTTP de PC-Finance para File-Server.",
+            "hints": [
+                "A resposta nunca passa pelo Router-Fukuoka — a solicitação chega ao File-Server, mas a volta fica presa lá.",
+                "Router-Fukuoka não tem entrada de rota informando como alcançar a rede de PC-Finance, então descarta a resposta em vez de repassá-la.",
+                "No Router-Fukuoka, adicione uma rota estática para a rede destino 10.0.26.0 / 255.255.255.0 via próximo salto 10.0.20.1 na porta 0."
+            ],
+            "explanation": "Router só encaminha pacotes para redes que conhece. As respostas de File-Server chegaram ao Router-Fukuoka, mas sem uma rota estática apontando de volta para a subrede de PC-Finance, o Router não sabia para onde enviá-las e as descartou, causando o timeout na tentativa de conexão."
+        },
+        "de": {
+            "title": "Filiale kann Dateien der Zentrale nicht erreichen",
+            "story": "Seit heute Morgen können die Mitarbeiter des Finance-Teams in der Filiale keine Dateien vom Zentral-File-Server auf PC-Finance öffnen. Sie benötigen dies für eine Deadline.",
+            "objective": "HTTP-Zugriff von PC-Finance auf File-Server wiederherstellen.",
+            "hints": [
+                "Die Antwort kommt nicht über Router-Fukuoka zurück — die Anfrage erreicht File-Server, aber die Rückfahrt steckt dort fest.",
+                "Router-Fukuoka hat keinen Routing-Eintrag, der angibt, wie das Netzwerk von PC-Finance erreichbar ist, daher verwirft es die Antwort, anstatt sie weiterzuleiten.",
+                "Fügen Sie auf Router-Fukuoka eine statische Route für Netzwerk 10.0.26.0 / 255.255.255.0 via Nächster Hop 10.0.20.1 auf Portnummer 0 hinzu."
+            ],
+            "explanation": "Router leiten Pakete nur an Netzwerke weiter, die sie kennen. Die Antworten von File-Server erreichten Router-Fukuoka, aber ohne eine statische Route zurück zum Subnetz von PC-Finance hatte der Router keine Ahnung, wohin er sie senden sollte, und verwarf sie, was zum Timeout der Verbindung führte."
+        },
+        "fr": {
+            "title": "La filiale ne peut pas accéder aux fichiers du siège",
+            "story": "Depuis ce matin, l'équipe finance de la filiale signale qu'elle ne peut ouvrir aucun fichier stocké sur le File-Server du siège depuis PC-Finance. Cela doit fonctionner avant leur deadline.",
+            "objective": "Restaurer l'accès HTTP de PC-Finance au File-Server.",
+            "hints": [
+                "La réponse n'arrive jamais à dépasser Router-Fukuoka — la demande atteint File-Server, mais le retour s'arrête là.",
+                "Router-Fukuoka n'a pas d'entrée de routage indiquant comment atteindre le réseau de PC-Finance, donc il supprime la réponse au lieu de la transmettre.",
+                "Sur Router-Fukuoka, ajoutez une route statique pour le réseau 10.0.26.0 / 255.255.255.0 via le Saut suivant 10.0.20.1 sur le Numéro de port 0."
+            ],
+            "explanation": "Les routeurs ne transmettent des paquets que vers les réseaux qu'ils connaissent. Les réponses du File-Server ont atteint Router-Fukuoka, mais sans une route statique pointant vers le sous-réseau de PC-Finance, le routeur ne savait pas où les envoyer et les a supprimées, ce qui a causé l'expiration du délai de la tentative de connexion."
+        },
+        "hi": {
+            "title": "शाखा कार्यालय मुख्यालय की फ़ाइलों तक नहीं पहुंच सकता",
+            "story": "आज सुबह से, शाखा कार्यालय की वित्त टीम को PC-Finance से मुख्यालय के File-Server पर संग्रहीत कोई भी फ़ाइल खोलने में असमर्थता की सूचना मिल रही है। उन्हें एक समय सीमा के लिए इस कार्यक्षमता की आवश्यकता है।",
+            "objective": "PC-Finance से File-Server तक HTTP पहुंच को पुनः स्थापित करें।",
+            "hints": [
+                "प्रतिक्रिया Router-Fukuoka के पार कभी नहीं पहुंचती — अनुरोध File-Server तक पहुंचता है, लेकिन वापसी की यात्रा वहीं रुक जाती है।",
+                "Router-Fukuoka के पास PC-Finance के नेटवर्क तक पहुंचने का तरीका बताने वाली कोई रूटिंग प्रविष्टि नहीं है, इसलिए यह प्रतिक्रिया को आगे भेजने की जगह छोड़ देता है।",
+                "Router-Fukuoka पर, नेटवर्क 10.0.26.0 / 255.255.255.0 के लिए अगला हॉप 10.0.20.1, पोर्ट नंबर 0 पर एक स्थैतिक मार्ग जोड़ें।"
+            ],
+            "explanation": "राउटर केवल उन नेटवर्क के लिए पैकेट आगे भेजते हैं जिन्हें वे जानते हैं। File-Server की प्रतिक्रियाएं Router-Fukuoka तक पहुंचीं, लेकिन PC-Finance की सबनेट की ओर वापस इशारा करने वाले स्थैतिक मार्ग के बिना, राउटर को नहीं पता था कि उन्हें कहां भेजना है और उसने उन्हें छोड़ दिया, जिससे कनेक्शन प्रयास का समय समाप्त हो गया।"
+        },
+        "id": {
+            "title": "Kantor Cabang Tidak Dapat Menjangkau File Kantor Pusat",
+            "story": "Sejak pagi ini, tim keuangan di kantor cabang melaporkan bahwa mereka tidak dapat membuka file apa pun yang disimpan di File-Server kantor pusat dari PC-Finance. Mereka membutuhkan ini untuk memenuhi tenggat waktu.",
+            "objective": "Pulihkan akses HTTP dari PC-Finance ke File-Server.",
+            "hints": [
+                "Balasan tidak pernah berhasil melewati Router-Fukuoka — permintaan mencapai File-Server, tetapi perjalanan kembali terhenti di sana.",
+                "Router-Fukuoka tidak memiliki entri routing yang memberitahu cara menjangkau jaringan PC-Finance, jadi ia menghapus balasan daripada meneruskannya.",
+                "Di Router-Fukuoka, tambahkan rute statis untuk Jaringan tujuan 10.0.26.0 / 255.255.255.0 via Hop berikutnya 10.0.20.1 pada Nomor port 0."
+            ],
+            "explanation": "Router hanya meneruskan paket ke jaringan yang mereka ketahui. Balasan dari File-Server mencapai Router-Fukuoka, tetapi tanpa rute statis yang menunjuk kembali ke subnet PC-Finance, router tidak tahu ke mana mengirimnya dan menghapusnya, menyebabkan upaya koneksi habis waktu."
+        },
+        "ru": {
+            "title": "Филиал не может получить доступ к файлам головного офиса",
+            "story": "С этого утра финансовая команда филиала сообщает, что она не может открыть какие-либо файлы, хранящиеся на центральном File-Server, с компьютера PC-Finance. Это необходимо для соблюдения сроков.",
+            "objective": "Восстановить доступ по HTTP с PC-Finance на File-Server.",
+            "hints": [
+                "Ответ никогда не проходит дальше Router-Fukuoka — запрос достигает File-Server, но обратный путь застревает там.",
+                "На Router-Fukuoka отсутствует запись маршрутизации, указывающая, как достичь сети PC-Finance, поэтому он отбрасывает ответ вместо его переадресации.",
+                "На Router-Fukuoka добавьте статический маршрут для целевой сети 10.0.26.0 / 255.255.255.0 со следующим узлом 10.0.20.1 на Номер порта 0."
+            ],
+            "explanation": "Маршрутизаторы пересылают пакеты только в сети, которые им известны. Ответы от File-Server достигли Router-Fukuoka, но без статического маршрута, указывающего на подсеть PC-Finance, маршрутизатор не знал, куда их отправить, и отбросил их, что привело к истечению времени попытки подключения."
+        },
+        "it": {
+            "title": "La filiale non riesce a raggiungere i file della sede",
+            "story": "Dalla questa mattina, il team di finanza presso la filiale riferisce che non riesce ad aprire alcun file memorizzato sul File-Server della sede centrale da PC-Finance. È necessario che funzioni per una scadenza.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Finance a File-Server.",
+            "hints": [
+                "La risposta non passa oltre Router-Fukuoka — la richiesta raggiunge File-Server, ma il ritorno si blocca lì.",
+                "Router-Fukuoka non ha una voce nella Tabella di routing che gli dica come raggiungere la rete di PC-Finance, quindi scarta la risposta invece di inoltrarla.",
+                "Su Router-Fukuoka, aggiungi una rotta statica per la rete 10.0.26.0 / 255.255.255.0 con next hop 10.0.20.1 sulla porta 0."
+            ],
+            "explanation": "I router inoltrano i pacchetti solo verso le reti che conoscono. Le risposte di File-Server hanno raggiunto Router-Fukuoka, ma senza una rotta statica che punti indietro verso la subnet di PC-Finance, il router non sapeva dove inviarle e le ha scartate, causando il timeout del tentativo di connessione."
+        },
+        "tr": {
+            "title": "Şube Ofisi HQ Dosyalarına Erişemiyor",
+            "story": "Bu sabahtan beri, şube ofisindeki finans ekibi, PC-Finance'ten merkez File-Server'da depolanan dosyaları açamadıklarını bildiriyor. Bir son tarih için bunun çalışması gerekmektedir.",
+            "objective": "PC-Finance'ten File-Server'a HTTP erişimini geri yükleyin.",
+            "hints": [
+                "Yanıt hiç Router-Fukuoka'yı geçmiyor — istek File-Server'a ulaşır, ancak dönüş yolculuğu orada durur.",
+                "Router-Fukuoka'da PC-Finance'in ağına nasıl ulaşacağını söyleyen bir Yönlendirme Tablosu girdisi yok, bu nedenle yanıtı iletmek yerine siliyor.",
+                "Router-Fukuoka'da, 10.0.26.0 / 255.255.255.0 ağı için Sonraki sıçrama 10.0.20.1 olan statik bir rota, port 0 üzerinde ekleyin."
+            ],
+            "explanation": "Yönlendiriciler, yalnızca hakkında bilgi sahibi oldukları ağlara paket gönderir. File-Server'ın yanıtları Router-Fukuoka'ya ulaştı, ancak PC-Finance'in subnet'ine geri işaret eden statik bir rota olmadan, yönlendirici bunları nereye göndereceğini bilmedi ve sildi, bağlantı denemesinin zaman aşımına uğramasına neden oldu."
+        },
+        "th": {
+            "title": "สาขาไม่สามารถเข้าถึงไฟล์สำนักงานใหญ่",
+            "story": "ตั้งแต่เช้านี้ ทีมการเงินที่สาขาออกแบบรายงานว่าพวกเขาไม่สามารถเปิดไฟล์ใดๆ ที่เก็บไว้บน File-Server ของสำนักงานใหญ่จาก PC-Finance ได้ ต้องให้ระบบนี้ทำงานสำหรับกำหนดเวลา",
+            "objective": "กู้คืนการเข้าถึง HTTP จาก PC-Finance ไปยัง File-Server",
+            "hints": [
+                "คำตอบไม่เคยผ่าน Router-Fukuoka — คำขอถึง File-Server แต่การเดินทางกลับติดขัดที่นั่น",
+                "Router-Fukuoka ไม่มีรายการในตารางเส้นทางที่บอกวิธีการเข้าถึงเครือข่ายของ PC-Finance ดังนั้นจึงทิ้งคำตอบแทนที่จะส่งต่อ",
+                "บน Router-Fukuoka ให้เพิ่มเส้นทางแบบคงที่สำหรับเครือข่าย 10.0.26.0 / 255.255.255.0 ด้วยฮ็อปถัดไป 10.0.20.1 บนพอร์ต 0"
+            ],
+            "explanation": "เราเตอร์จะส่งต่อแพคเก็ตไปยังเครือข่ายที่พวกเขารู้เท่านั้น คำตอบของ File-Server ถึง Router-Fukuoka แต่ไม่มีเส้นทางแบบคงที่ที่ชี้ไปยังเซ็บเน็ตของ PC-Finance เราเตอร์ไม่รู้ว่าจะส่งต่อไปที่ไหน จึงทิ้งพวกเขา ส่งผลให้ความพยายามเชื่อมต่อหมดเวลา"
+        },
+        "vi": {
+            "title": "Chi nhánh không thể truy cập tệp của văn phòng chính",
+            "story": "Kể từ sáng nay, đội tài chính tại chi nhánh báo cáo rằng họ không thể mở bất kỳ tệp nào được lưu trữ trên File-Server của trụ sở từ PC-Finance. Điều này cần hoạt động để đáp ứng thời hạn.",
+            "objective": "Khôi phục quyền truy cập HTTP từ PC-Finance đến File-Server.",
+            "hints": [
+                "Phản hồi không bao giờ vượt qua Router-Fukuoka — yêu cầu đến File-Server nhưng cuộc hành trình trở lại bị đình trệ ở đó.",
+                "Router-Fukuoka không có mục nhập nào trong Bảng định tuyến cho biết cách tiếp cận mạng của PC-Finance, vì vậy nó bỏ phản hồi thay vì chuyển tiếp.",
+                "Trên Router-Fukuoka, thêm tuyến tĩnh cho mạng 10.0.26.0 / 255.255.255.0 với hop tiếp theo 10.0.20.1 trên cổng 0."
+            ],
+            "explanation": "Bộ định tuyến chỉ chuyển tiếp các gói tới các mạng mà chúng biết. Các phản hồi từ File-Server đã đến Router-Fukuoka, nhưng nếu không có tuyến tĩnh chỉ lại hướng mạng con của PC-Finance, bộ định tuyến không biết nên gửi chúng đến đâu và đã bỏ chúng, gây ra hết thời gian chờ kết nối."
+        },
+        "af": {
+            "title": "Takkie kan nie HK-lêers bereik nie",
+            "story": "Sedert vanoggend rapporteer die finansiële span by die takkie dat hulle nie enige lêers wat op die hoofkantoor File-Server geberg is, vanaf PC-Finance kan oopmaak nie. Dit moet vir 'n deurlopende termyn werk.",
+            "objective": "Herstel HTTP-toegang van PC-Finance na File-Server.",
+            "hints": [
+                "Die antwoord kom nooit verby Router-Fukuoka nie — die versoek bereik File-Server, maar die terugkeer stol daar.",
+                "Router-Fukuoka het geen Roeteringstabel-inskrywing wat hom sê hoe om PC-Finance se netwerk te bereik nie, dus gooi dit die antwoord weg in plaas daarvan dit aan te stuur.",
+                "Op Router-Fukuoka, voeg 'n statiese roete vir netwerk 10.0.26.0 / 255.255.255.0 by via volgende hop 10.0.20.1 op poort 0."
+            ],
+            "explanation": "Roeteerders stuur slegs pakkette na netwerke wat hulle ken. File-Server se antwoorde het Router-Fukuoka bereik, maar sonder 'n statiese roete wat terug na PC-Finance se subnet wys, het die roeteerder nie geweet waar om dit te stuur nie en het dit weggegooi, wat veroorsaak het dat die verbindingspoging uitgetel het."
+        },
+        "az": {
+            "title": "Şöbə Ofis Merkəz Fayllarına Çata Bilmədi",
+            "story": "Bu sabahdan etibarən, şöbə ofisindəki maliyyə qrupu PC-Finance-dən Merkəz File-Server-də saxlanan heç bir faylı aça bilmədiklərini bildirirlər. Vaxt limitinə görə buna ehtiyacları var.",
+            "objective": "PC-Finance-dən File-Server-ə HTTP giriş əsas qur.",
+            "hints": [
+                "Cavab heç vaxt Router-Fukuoka-nın arxasından qayıtmır — sorğu File-Server-ə çatır, lakin geri dönüş orada dayanır.",
+                "Router-Fukuoka-nın PC-Finance şəbəkəsinə necə çatacağını bildirən marşrutlaşdırma cədvəli girişi yoxdur, buna görə də cavabı yenidən göndərmək əvəzinə silir.",
+                "Router-Fukuoka-da 10.0.26.0 / 255.255.255.0 şəbəkəsi üçün statik marşrut əlavə edin, növbəti keçid 10.0.20.1, port nömrəsi 0."
+            ],
+            "explanation": "Marşrutlayıcılar yalnız bildikləri şəbəkələrə paketləri yönləndirirlər. File-Server-in cavabları Router-Fukuoka-ya çatdı, lakin PC-Finance-in subnet-inə qayıdan statik marşrutun olmaması səbəbindən marşrutlayıcı onları harada göndərəcəyini bilmədi və sildi, bu da bağlantı cəhdinin zaman aşımına uğramasına səbəb oldu."
+        },
+        "be": {
+            "title": "Філіял не можа дасяgnуць файлы штаб-кватэры",
+            "story": "З утра фінансавая каманда філіяла паведамляе, што яны не могуць адкрыць ніякія файлы, адчыненыя на File-Server штаб-кватэры з PC-Finance. Ім гэта патрібна да рок.",
+            "objective": "Аднавіць доступ HTTP ад PC-Finance да File-Server.",
+            "hints": [
+                "Адказ хіколі не вяртаецца ў Router-Fukuoka — запыт дасягае File-Server, але зварот там спыняецца.",
+                "Router-Fukuoka не мае запісу табліцы маршрутызацыі, які казаў бы, як дасяgnуць сетку PC-Finance, таму ён адхіляе адказ замест перасылкі.",
+                "На Router-Fukuoka дадайце статычны маршрут для сеткі 10.0.26.0 / 255.255.255.0 праз наступны пераход 10.0.20.1 на порце 0."
+            ],
+            "explanation": "Маршрутызатары перасылаюць пакеты толькі на сеткі, якія яны ведаюць. Адказы File-Server дасягнулі Router-Fukuoka, але без статычнага маршруту, накіраванага назад на подсетку PC-Finance, маршрутызатар не ведаў, куды іх адправіць, і адхіліў іх, што спрычыніла ўыпаўленне спробы падлучэння."
+        },
+        "bg": {
+            "title": "Клонът не може да достигне файловете на централата",
+            "story": "От тази сутрин финансовият екип на клона съобщава, че не могат да отворят никакви файлове, съхранени на File-Server на централата от PC-Finance. Това им е необходимо до един краен срок.",
+            "objective": "Възстановете достъпа HTTP от PC-Finance до File-Server.",
+            "hints": [
+                "Отговорът никога не се връща обратно на Router-Fukuoka — заявката достига File-Server, но обратния път там се спира.",
+                "Router-Fukuoka няма запис в таблицата за маршрутизация, който да му казва как да достигне мрежата на PC-Finance, затова отхвърля отговора вместо да го пренасочи.",
+                "На Router-Fukuoka добавете статичен маршрут за мрежа 10.0.26.0 / 255.255.255.0 чрез следващ преход 10.0.20.1 на порт 0."
+            ],
+            "explanation": "Маршрутизаторите пренасочват пакети само към мрежи, за които знаят. Отговорите на File-Server достигнаха Router-Fukuoka, но без статичен маршрут, сочещ назад към подмрежата на PC-Finance, маршрутизаторът не знаеше камо да ги изпрати и ги отхвърли, което причини времето на свързване да изтече."
+        },
+        "bn": {
+            "title": "শাখা অফিস HQ ফাইলে পৌঁছাতে পারছে না",
+            "story": "আজ সকাল থেকে, শাখা অফিসের ফিন্যান্স টিম জানায় যে তারা সদর দপ্তরের File-Server থেকে PC-Finance এ সংরক্ষিত কোনো ফাইল খুলতে পারছে না। তাদের একটি সময়সীমার জন্য এটি কাজ করা প্রয়োজন।",
+            "objective": "PC-Finance থেকে File-Server এ HTTP অ্যাক্সেস পুনরুদ্ধার করুন।",
+            "hints": [
+                "উত্তর কখনো Router-Fukuoka অতিক্রম করে ফিরে আসে না — অনুরোধ File-Server এ পৌঁছায়, কিন্তু ফেরার যাত্রা সেখানে থেমে যায়।",
+                "Router-Fukuoka এর কোনো রাউটিং এন্ট্রি নেই যা এটিকে PC-Finance এর নেটওয়ার্কে পৌঁছাতে বলে, তাই এটি এটি ফরওয়ার্ড করার পরিবর্তে উত্তর ফেলে দেয়।",
+                "Router-Fukuoka এ, নেটওয়ার্ক 10.0.26.0 / 255.255.255.0 এর জন্য একটি স্ট্যাটিক রুট যোগ করুন নেক্সট হপ 10.0.20.1 এ পোর্ট 0 এ।"
+            ],
+            "explanation": "রাউটাররা শুধুমাত্র সেই নেটওয়ার্কে প্যাকেট ফরওয়ার্ড করে যা তারা জানে। File-Server এর উত্তর Router-Fukuoka এ পৌঁছেছে, কিন্তু PC-Finance এর সাবনেটের দিকে নির্দেশ করে এমন একটি স্ট্যাটিক রুট ছাড়া, রাউটার জানত না তাদের কোথায় পাঠাতে হবে এবং তাদের ফেলে দিয়েছে, যা সংযোগ প্রচেষ্টা টাইম আউট হতে কারণ হয়েছে।"
+        },
+        "ca": {
+            "title": "L'oficina subalterna no pot arribar als arxius de la seu",
+            "story": "Des d'aquesta matinada, l'equip de finances de l'oficina subalterna reporta que no pot obrir cap dels arxius emmagatzemats al File-Server de la seu central des de PC-Finance. Ho necessiten funcionant per a una data límit.",
+            "objective": "Restaureu l'accés HTTP de PC-Finance a File-Server.",
+            "hints": [
+                "La resposta mai no passa enrere de Router-Fukuoka — la sol·licitud arriba a File-Server, però el viatge de retorn s'atura allà.",
+                "Router-Fukuoka no té cap entrada a la Taula d'encaminament que li digui com arribar a la xarxa de PC-Finance, així que descarta la resposta en lloc de reenviar-la.",
+                "A Router-Fukuoka, afegiu una ruta estàtica per a la xarxa 10.0.26.0 / 255.255.255.0 amb Salt següent 10.0.20.1 al port 0."
+            ],
+            "explanation": "Els encaminadors només reenvien paquets a les xarxes que coneixen. Les respostes de File-Server van arribar a Router-Fukuoka, però sense una ruta estàtica que apunti enrere cap a la subxarxa de PC-Finance, l'encaminador no sabia on enviar-les i les va descartar, causant que l'intent de connexió expirés."
+        },
+        "cs": {
+            "title": "Pobočka se nemohu připojit k souborům ústředí",
+            "story": "Od dnešního rána hlásí finanční tým v pobočce, že nemohou otevřít žádné soubory uložené na ústředním File-Server z PC-Finance. Potřebují to zprovoznit do stanoveného termínu.",
+            "objective": "Obnovte přístup HTTP z PC-Finance na File-Server.",
+            "hints": [
+                "Odpověď se nikdy nevrací zpět přes Router-Fukuoka — požadavek File-Server dosáhne, ale zpáteční cesta se tam zastavuje.",
+                "Router-Fukuoka nemá žádnou položku Směrovací tabulka, která by mu řekla, jak dosáhnout sítě PC-Finance, tak místo toho odpověď zahodí.",
+                "Na Router-Fukuoka přidejte statickou trasu pro síť 10.0.26.0 / 255.255.255.0 přes Další skok 10.0.20.1 na portu 0."
+            ],
+            "explanation": "Směrovače přeposílají pakety pouze do sítí, které znají. Odpovědi ze souboru File-Server dosáhly Router-Fukuoka, ale bez statické trasy směřující zpět k podsíti PC-Finance neměl směrovač tušení, kam je poslat, a zahodil je, což způsobilo, že pokus o připojení vypršel."
+        },
+        "da": {
+            "title": "Filialkontoret kan ikke få adgang til HQ-filer",
+            "story": "Siden i morges rapporterer økonomiholdet på filialkontoret, at de ikke kan åbne nogen filer gemt på hovedkontorers File-Server fra PC-Finance. De har brug for dette fungerer inden en deadline.",
+            "objective": "Gendan HTTP-adgang fra PC-Finance til File-Server.",
+            "hints": [
+                "Svaret kommer aldrig tilbage forbi Router-Fukuoka — anmodningen når File-Server, men returvejen standser der.",
+                "Router-Fukuoka har ingen Routingtabel-post, der fortæller det, hvordan det når PC-Finance's netværk, så det kasserer svaret i stedet for at videresende det.",
+                "I Router-Fukuoka skal du tilføje en statisk rute for netværk 10.0.26.0 / 255.255.255.0 via neste hop 10.0.20.1 på port 0."
+            ],
+            "explanation": "Routere sender kun pakker videre til netværk, de kender til. File-Server's svar nåede Router-Fukuoka, men uden en statisk rute, der peger tilbage mod PC-Finance's subnet, vidste routeren ikke, hvor den skulle sende dem, og kasserede dem, hvilket gjorde, at forbindelsesforsøget fik timeout."
+        },
+        "el": {
+            "title": "Το υποκατάστημα δεν μπορεί να φτάσει στα αρχεία της έδρας",
+            "story": "Από το πρωί, η ομάδα χρηματοοικονομικών του υποκαταστήματος αναφέρει ότι δεν μπορούν να ανοίξουν αρχεία αποθηκευμένα στο File-Server της κεντρικής έδρας από τη PC-Finance. Χρειάζεται αυτό να δουλέψει για μια προθεσμία.",
+            "objective": "Επαναφέρετε την πρόσβαση HTTP από PC-Finance στο File-Server.",
+            "hints": [
+                "Η απάντηση δεν γυρίζει ποτέ πίσω από το Router-Fukuoka — το αίτημα φτάνει στο File-Server, αλλά το ταξίδι επιστροφής σταματά εκεί.",
+                "Το Router-Fukuoka δεν έχει καμία εγγραφή Πίνακα δρομολόγησης που να του λέει πώς να φτάσει στο δίκτυο της PC-Finance, οπότε απορρίπτει την απάντηση αντί να την προωθήσει.",
+                "Στο Router-Fukuoka, προσθέστε μια στατική διαδρομή για το δίκτυο 10.0.26.0 / 255.255.255.0 μέσω Επόμενο βήμα 10.0.20.1 στη θύρα 0."
+            ],
+            "explanation": "Τα δρομολόγια προωθούν πακέτα μόνο σε δίκτυα που γνωρίζουν. Οι απαντήσεις του File-Server έφτασαν στο Router-Fukuoka, αλλά χωρίς μια στατική διαδρομή που να δείχνει πίσω προς το υποδίκτυο της PC-Finance, το δρομολόγιο δεν γνώριζε πού να τα στείλει και τα απέρριψε, με αποτέλεσμα η προσπάθεια σύνδεσης να λήξει."
+        },
+        "et": {
+            "title": "Filiaal ei pääse juurde peakontoori failidele",
+            "story": "Alates sellest hommikust teatavad filiaaali finantsvõistkond, et ei saa avada ühtegi faili, mis on salvestatud peakontoori File-Server-ile PC-Finance-ist. Neil on selle jaoks määratud tähtaeg.",
+            "objective": "Taastada HTTP-juurdepääs PC-Finance-ist File-Server-ile.",
+            "hints": [
+                "Vastus ei jõua tagasi mööda Router-Fukuoka — päring jõuab File-Server-ile, kuid tagasitee seisab seal.",
+                "Router-Fukuoka-l puudub marsruutimiskirje, mis ütleb, kuidas jõuda PC-Finance võrguni, nii et see visib vastuse asemel välja ja ei edastab seda.",
+                "Router-Fukuoka-le lisage staatiline marsruut sihtvõrgu 10.0.26.0 / 255.255.255.0 jaoks järgmise hüppena 10.0.20.1 pordinumbrile 0."
+            ],
+            "explanation": "Marsruudid edastavad pakette ainult neile teadaolevatele võrkudele. File-Server vastused jõudsid Router-Fukuoka-le, kuid ilma staatilise marsruudita, mis osutab tagasi PC-Finance alamvõrgu suunas, ei teadnud marsruuter, kuhu need saata, ja viskas nad välja, mis põhjustas ühenduse katkenemise aja ületamise."
+        },
+        "eu": {
+            "title": "Adarrek ezin dute HQ fitxategiak hartu",
+            "story": "Goizean hasi zenetik, adararen finantza taldeak adierazten dute ezin dutela ireki File-Server fitxategi guztiak PC-Finance-tik. Horretarako epea dute.",
+            "objective": "HTTP sarrera berreskuratu PC-Finance-tik File-Server-era.",
+            "hints": [
+                "Erantzuna ez da itzultzen Router-Fukuoka aurrera — eskaera File-Server-era iristen da, baina itzuleran hor gelditzen da.",
+                "Router-Fukuoka-ek ez du bideratze-sarreren bat PC-Finance sarean nola iristen den jakiteko, beraz erantzuna bota egiten du aurrera bidali beharrean.",
+                "Router-Fukuoka-n, gehitu helmuga-sarearen 10.0.26.0 / 255.255.255.0 bideratze estatikoa hurrengo jauzia 10.0.20.1 ataka-zenbakian 0 bidez."
+            ],
+            "explanation": "Bideratzaileak paketeak bakarrik ezagutzen dituzten sareetan bidaltzen dituzte. File-Server erantzunak Router-Fukuoka-ra iritsi ziren, baina PC-Finance azpian sarearen itzalera seinalatzen duen bideratze estatiko gabe, bideratzaileak ez zekien nora bidali eta bota zituen, konexio saiakera denboraz kanpo uzten duelarik."
+        },
+        "fa": {
+            "title": "دفتر شعبه نمی‌تواند به فایل‌های مرکزی دسترسی پیدا کند",
+            "story": "از صبح امروز، تیم مالی در دفتر شعبه گزارش می‌دهند که نمی‌توانند هیچ فایلی را که در File-Server مرکزی ذخیره شده است از PC-Finance باز کنند. آن‌ها برای این کار مهلت دارند.",
+            "objective": "بازیابی دسترسی HTTP از PC-Finance به File-Server.",
+            "hints": [
+                "پاسخ هرگز از Router-Fukuoka بازنمی‌گردد — درخواست به File-Server می‌رسد اما بازگشت در آنجا متوقف می‌شود.",
+                "Router-Fukuoka فاقد ورودی مسیریابی است که به آن نشان دهد چگونه به شبکه PC-Finance برسد، بنابراین به جای آن که پاسخ را منتقل کند آن را کنار می‌گذارد.",
+                "در Router-Fukuoka، یک مسیر استاتیک برای شبکه مقصد 10.0.26.0 / 255.255.255.0 با هاپ بعدی 10.0.20.1 در شماره پورت 0 اضافه کنید."
+            ],
+            "explanation": "روترها فقط بسته‌ها را به شبکه‌هایی که می‌شناسند منتقل می‌کنند. پاسخ‌های File-Server به Router-Fukuoka رسیده بودند اما بدون مسیر استاتیکی که به سمت زیرشبکه PC-Finance اشاره کند، روتر نمی‌دانست آن‌ها را کجا بفرستد و آن‌ها را کنار گذاشت، در نتیجه تلاش اتصال دچار انقضای زمان شد."
+        },
+        "fi": {
+            "title": "Sivukonttori ei pääse pääkonttorin tiedostoihin",
+            "story": "Tänä aamuna sivukonttorin rahoitustiimi ilmoittaa, että he eivät pysty avaamaan mitään tiedostoja, jotka on tallennettu pääkonttorin File-Server-iin PC-Finance-koneesta. He tarvitsevat tämän toimivaksi määräaikaan mennessä.",
+            "objective": "Palauta HTTP-pääsy PC-Finance-koneesta File-Server-iin.",
+            "hints": [
+                "Vastaus ei koskaan pääse takaisin Router-Fukuoka-n läpi — pyyntö saavuttaa File-Server-in, mutta paluureitti jumiutuu sinne.",
+                "Router-Fukuoka-lla ei ole reititystaulu-merkintää, joka kertoisi sille, miten saavuttaa PC-Finance-verkon, joten se pudottaa vastauksen sen sijaan, että lähettäisi sen eteenpäin.",
+                "Lisää Router-Fukuoka-lle staattinen reitti kohdeverkkolle 10.0.26.0 / 255.255.255.0 seuraavan hypyn 10.0.20.1 kautta porttinumerolla 0."
+            ],
+            "explanation": "Reittimet lähettävät paketteja vain verkkoon, jotka ne tuntevat. File-Server-in vastaukset saavuttivat Router-Fukuoka-n, mutta ilman staattista reittiä, joka osoittaa takaisin PC-Finance-aliverkon suuntaan, reititin ei tiennyt minne ne lähettää, ja se pudotti ne, mikä aiheutti yhteyden aikakauden ylittymisen."
+        },
+        "fil": {
+            "title": "Hindi makakaabot ng Branch sa HQ Files",
+            "story": "Mula ngayong umaga, ang finance team sa branch office ay nag-uulat na hindi nila mabubuksan ang anumang file na nakaimbak sa headquarters File-Server mula sa PC-Finance. Kailangan nila itong gawing gumagana para sa deadline.",
+            "objective": "Ibalik ang HTTP access mula sa PC-Finance patungo sa File-Server.",
+            "hints": [
+                "Ang reply ay hindi umabot sa likod ng Router-Fukuoka — ang request ay umabot sa File-Server, pero ang return trip ay huminto doon.",
+                "Ang Router-Fukuoka ay walang routing entry na nagsasabi kung paano maaabot ang network ng PC-Finance, kaya binabag nito ang reply sa halip na ipadala ito.",
+                "Sa Router-Fukuoka, magdagdag ng static route para sa network 10.0.26.0 / 255.255.255.0 via next hop 10.0.20.1 sa port 0."
+            ],
+            "explanation": "Ang routers ay nagpapadala lamang ng packets sa networks na kanilang kilala. Ang replies mula sa File-Server ay umabot sa Router-Fukuoka, pero nang walang static route na nakaturo pabalik sa PC-Finance subnet, ang router ay walang ideya kung saan ipadala ang mga ito at ibinagsak nito ang mga ito, na nagsanhi ng connection attempt na mag-timeout."
+        },
+        "gl": {
+            "title": "A Sucursal Non Pode Chegar aos Ficheiros da Sede",
+            "story": "Desde esta mañá, o equipo de finanzas da sucursal informa que non pode abrir ningún ficheiro almacenado no File-Server da sede desde PC-Finance. Necesitan que isto funcione antes dunha data límite.",
+            "objective": "Restaurar o acceso HTTP desde PC-Finance ao File-Server.",
+            "hints": [
+                "A resposta nunca volta máis alá de Router-Fukuoka — a solicitude chega ao File-Server, pero a volta detense alí.",
+                "Router-Fukuoka non ten entrada de enrutamento que lle diga como chegar á rede de PC-Finance, polo que bota a resposta en lugar de reenviala.",
+                "En Router-Fukuoka, engade unha ruta estática para a rede 10.0.26.0 / 255.255.255.0 vía seguinte salto 10.0.20.1 no porto 0."
+            ],
+            "explanation": "Os routers só reenvían paquetes a redes que coñecen. As respostas do File-Server chegaron a Router-Fukuoka, pero sen unha ruta estática que apuntase cara á subred de PC-Finance, o router non sabía onde reenviálas e botoulas, causando que o intento de conexión caducarse."
+        },
+        "gu": {
+            "title": "શાખા કાર્યાલય હેડક્વાર્ટર ફાઇલોમાં પહોંચી શકતો નથી",
+            "story": "આજ સવારથી, શાખા કાર્યાલયના ફિનાન્સ ટીમ અહેવાલ આપે છે કે તેઓ PC-Finance થી હેડક્વાર્ટર File-Server પર સંગ્રહિત કોઈપણ ફાઇલ ખોલી શકતા નથી. તેમને સમયમર્યાદા માટે આ કામ કરવું જોઈએ.",
+            "objective": "PC-Finance થી File-Server સુધી HTTP ઍક્સેસ પુનઃસ્થાપિત કરો.",
+            "hints": [
+                "જવાબ Router-Fukuoka ની આગળ કદી પરત ફરતો નથી — વિનંતી File-Server સુધી પહોંચે છે, પરંતુ રીટર્ન ત્રિપ ત્યાં અટવાય છે.",
+                "Router-Fukuoka પાસે PC-Finance ના નેટવર્ક સુધી પહોંચવાનું કહેનાર કોઈ રાઉટિંગ પ્રવેશ નથી, તેથી તે જવાબ ફોરવર્ડ કરવાને બદલે છોડી દે છે.",
+                "Router-Fukuoka પર, નેટવર્ક 10.0.26.0 / 255.255.255.0 માટે સ્ટેટિક રુટ નેક્સ્ટ હોપ 10.0.20.1, પોર્ટ નંબર 0 પર ઉમેરો."
+            ],
+            "explanation": "રાઉટર્સ ફક્ત તે નેટવર્કમાં પયોટ પોષણ આગળ ભેજે છે જે તેઓ જાણે છે. File-Server ના જવાબો Router-Fukuoka સુધી પહોંચ્યા, પરંતુ PC-Finance ના સબનેટ તરફ નિર્દેશ કરતો સ્ટેટિક રુટ વિના, રાઉટર જાણતો નથી કે તેમને ક્યાં પাઠવવું અને તેમને છોડી દીધો, જેને કારણે કનેક્શન પ્રયાસ સમયાધિન થાય છે."
+        },
+        "he": {
+            "title": "סניף משרד אינו יכול להגיע לקבצי משרדי ראשי",
+            "story": "מאז הבוקר, צוות הFinance בסניף הדיווח שהם לא יכולים לפתוח קבצים בשרת File-Server של משרדי ראשי מ-PC-Finance. הם צריכים שזה יעבוד לפני מועד.",
+            "objective": "שחזר גישת HTTP מ-PC-Finance ל-File-Server.",
+            "hints": [
+                "התשובה לעולם לא חוזרת מעבר ל-Router-Fukuoka — הבקשה מגיעה ל-File-Server, אבל הדרך חזרה עומדת שם.",
+                "ל-Router-Fukuoka אין ערך ניתוב שאומר לו כיצד להגיע לרשת של PC-Finance, לכן הוא משליך את התשובה במקום להעביר אותה.",
+                "על Router-Fukuoka, הוסף מסלול סטטי לרשת 10.0.26.0 / 255.255.255.0 דרך הקפיצה הבאה 10.0.20.1 בנמל 0."
+            ],
+            "explanation": "נתבים רק העברה חבילות לרשתות שהם יודעים. תשובות של File-Server הגיעו ל-Router-Fukuoka, אך ללא מסלול סטטי המצביע בחזרה לכיוון תת הרשת של PC-Finance, הנתב לא ידע לאן לשלוח אותם והשליך אותם, מה שגרם לנסיון החיבור להגיע לתוקף."
+        },
+        "hr": {
+            "title": "Područna Kancelarja Ne Može Dosegnuti Datoteke Sjedišta",
+            "story": "Od jutros, financijski tim područne kancelarije izvještava da ne mogu otvoriti nikakve datoteke pohranjene na File-Server sjedišta iz PC-Finance. Trebaju da to radi do roka.",
+            "objective": "Obnovite HTTP pristup iz PC-Finance na File-Server.",
+            "hints": [
+                "Odgovor nikad ne ide dalje od Router-Fukuoka — zahtjev dostiže File-Server, ali povratni put staje tamo.",
+                "Router-Fukuoka nema unosa u tablici usmjeravanja koja mu govori kako dosegnuti mrežu PC-Finance, pa odbacuje odgovor umjesto da ga prosleđuje.",
+                "Na Router-Fukuoka, dodajte statičku rutu za mrežu 10.0.26.0 / 255.255.255.0 putem sljedećeg skoka 10.0.20.1 na priključku 0."
+            ],
+            "explanation": "Usmjerivači samo prosleđuju pakete do mreža koje poznaju. Odgovori File-Server-a dostigli su Router-Fukuoka, ali bez statičke rute koja je pokazivala natrag prema podmreži PC-Finance, usmjerivač nije znao gdje ih poslati i odbacio ih, uzrokujući da pokušaj veze istekne."
+        },
+        "hu": {
+            "title": "A Fiókiroda Nem Érheti El a Központi Fájlokat",
+            "story": "Ma reggel óta a fiókirodában lévő pénzügyi csapat azt jelenti, hogy nem tudnak megnyitni a központ File-Server-én tárolt fájlokat a PC-Finance-ból. Szükségük van erre a munkára egy határidő miatt.",
+            "objective": "Állítsa vissza a HTTP-hozzáférést a PC-Finance-ról a File-Server-re.",
+            "hints": [
+                "A válasz soha nem jut túl a Router-Fukuoka-n — a kérés eléri a File-Server-t, de a visszaút ott megakad.",
+                "A Router-Fukuoka-n nincs útválasztási bejegyzés, amely megmondaná, hogyan lehet elérni a PC-Finance hálózatát, ezért elveti a választ ahelyett, hogy továbbítaná azt.",
+                "A Router-Fukuoka-n adjon hozzá egy statikus útvonalat a 10.0.26.0 / 255.255.255.0 hálózathoz a következő ugrás 10.0.20.1 segítségével a 0-s porton."
+            ],
+            "explanation": "Az útválasztók csak a számukra ismert hálózatokhoz továbbítják a csomagokat. A File-Server válaszai elérték a Router-Fukuoka-t, de a PC-Finance alhálózata felé visszamutatő statikus útvonal nélkül az útválasztó nem tudta, hova küldje őket, és elvetette őket, ami miatt a kapcsolódási kísérlet időtúllépés miatt meghiúsult."
+        },
+        "hy": {
+            "title": "Մասնաճյուղային գրասենյակը չի կարող հասնել հիմնարկի ֆայլերին",
+            "story": "Այս առավոտից ի վեր մասնաճյուղային գրասենյակի ֆինանսական թիմը հաղորդում է, որ չեն կարողանում բացել հիմնարկի File-Server սերվերում պահվող որևէ ֆայլ PC-Finance համակարգչից: Նրանց այս գործն անհրաժեշտ է期限ի համար:",
+            "objective": "Վերականգնել HTTP հաղորդակցությունը PC-Finance-ից File-Server:",
+            "hints": [
+                "Պատասխանը երբեք չի վերադառնում Router-Fukuoka-ից դուրս — հարցումը հասնում է File-Server, բայց հետ ճանապարհը այնտեղ կանգ է առնում:",
+                "Router-Fukuoka-ն չունի երթուղավորման մուտք, որը ասում է այն ինչպես հասնել PC-Finance ցանցին, ուստի այն ընկնում է պատասխանը փոխանցելու փոխարեն:",
+                "Router-Fukuoka-ում ավելացրեք ստատիկ երթուղ 10.0.26.0 / 255.255.255.0 ցանցի համար հաջորդ հանգույցի միջոցով 10.0.20.1 պորտ 0-ում:"
+            ],
+            "explanation": "Երթուղերներն ուղղորդում են փաթեթներ միայն այն ցանցերին, որոնց մասին գիտեն: File-Server-ի պատասխանները հասել են Router-Fukuoka-ի, բայց PC-Finance ենթացանցի վերև ուղղորդող ստատիկ երթուղ չունենալով, երթուղերը չգիտեր թե որտեղ ուղարկել դրանք և ընկեց դրանք, ինչը կապի փորձը ժամանակից դուրս թողեց:"
+        },
+        "is": {
+            "title": "Útibúið getur ekki komist að skrám HQ",
+            "story": "Síðan í morgun tilkynnir fjármálateymið á útibúinu að það geti ekki opnað neinar skrár sem geymdar eru á höfuðstöðvum File-Server frá PC-Finance. Þeir þurfa þetta virkt fyrir frest.",
+            "objective": "Endurheimta HTTP aðgang frá PC-Finance til File-Server.",
+            "hints": [
+                "Svarið kemur aldrei aftur um leið og það fer fram úr Router-Fukuoka — beiðnin nær File-Server, en endurkomuleið stöðvast þar.",
+                "Router-Fukuoka hefur enga beiniferil sem segir því hvernig á að ná til nets PC-Finance, svo það fleygir svarinu í stað þess að miðla því.",
+                "Á Router-Fukuoka, bættu við kyrrstæðum beiniferli fyrir net 10.0.26.0 / 255.255.255.0 um næsta hopp 10.0.20.1 á tenginu 0."
+            ],
+            "explanation": "Leiðvísarar miðla aðeins pökkum til neta sem þeir þekkja. Svör File-Server náðu Router-Fukuoka, en án kyrrstæðs beiniferils sem bendir aftur til undirnet PC-Finance, hafði leiðvísarinn enga hugmynd um hvert ætti að senda þau og fleygði þeim, sem olli því að tengingartilraun gekk tímanum."
+        },
+        "ka": {
+            "title": "ფილიალს ფაილებზე წვდომა არ შეუძლია",
+            "story": "დღის დილიდან ფილიალის ფინანსური გუნდი ცხადყოფს, რომ ვერ აკრებენ რომელიმე ფაილს, რომელიც დეპოზიტია ტერიტორიული ოფისის File-Server სერვერზე PC-Finance-ის კომპიუტერიდან. მათ ეს ჰჭირდებათ ვადამდე.",
+            "objective": "HTTP წვდომის აღდგენა PC-Finance-დან File-Server-მდე.",
+            "hints": [
+                "პასუხი არასოდეს ბრუნდება Router-Fukuoka-ს გარეთ — მოთხოვნა მიაღწევს File-Server-ს, მაგრამ საპირისპირო მარშრუტი იქ იჭუჭუნება.",
+                "Router-Fukuoka-ს არ აქვს მარშრუტიზაციის ჩანაწერი, რომელიც მას გეუბნება როგორ მიაღწიოს PC-Finance ქსელამდე, ამიტომ აგდებს პასუხს წინსვლაში გადაცემის ნაცვლად.",
+                "Router-Fukuoka-ზე, დაამატეთ სტატიკური მარშრუტი ქსელი 10.0.26.0 / 255.255.255.0-ისთვის შემდეგი ჰოპი 10.0.20.1-ის მეშვეობით პორტი 0-ზე."
+            ],
+            "explanation": "მარშრუტიზატორები ფრჩხილებს აბრუნებენ მხოლოდ იმ ქსელებში, რომელთა შესახებ იციან. File-Server-ის პასუხები მიაღწია Router-Fukuoka-ს, მაგრამ PC-Finance ქვესამрეწველოს დაბრუნების მარშრუტის გარეშე, მარშრუტიზატორი არ იცოდა სად ეცემათ და აგდო ისინი, რაც გამოიწვია კავშირის ცდის ვადაგადენა."
+        },
+        "kk": {
+            "title": "Салалық кеңсе HQ файлдарына жете алмайды",
+            "story": "Бүгін ертеңнен бастап салалық кеңседегі қаржы командасы растайды, олар басшылық органының File-Server серверінде сақталған ешқандай файлды PC-Finance компьютеріндегі ашай алмайды. Олар бұл мерзімге дейін қажет.",
+            "objective": "HTTP қатынасын PC-Finance-тен File-Server-ге қалпына келтіру.",
+            "hints": [
+                "Жауап Router-Fukuoka-ның сыртына ешқашан қайтарылмайды — өтініш File-Server-ге жетеді, бірақ қайтарылатын сапар онда тоқталады.",
+                "Router-Fukuoka-да PC-Finance желісіне қалай жету керектігін айтатын маршруттау жазбасы жоқ, сондықтан ол жүктемеге орнына жүктемени тас салады.",
+                "Router-Fukuoka-да, 10.0.26.0 / 255.255.255.0 желісі үшін статикалық маршрут қосыңыз, келесі хоп 10.0.20.1, 0 портында."
+            ],
+            "explanation": "Маршрутизаторлар пакеттерді олар білген желілерге ғана жүктейді. File-Server жауабы Router-Fukuoka-ға жетті, бірақ PC-Finance ішкі желісіне бағытталған статикалық маршрутсыз, маршрутизатор оларды қайда жібергенін білмеді және оларды тас салды, бұл байланыс күтімі ұзақ ойнауға әкелді."
+        },
+        "km": {
+            "title": "ការិយាល័យសាខាមិនអាចទទួលបានឯកសារ HQ",
+            "story": "ចាប់តាំងពីព្រឹក ថ្ងៃនេះ ក្រុមហិរញ្ញវត្ថុនៃការិយាល័យសាខាបានរាយការណ៍ថា ពួកគេមិនអាចបើកឯកសារណាមួយដែលបានរក្សាទុកលើម៉ាស៊ីនបម្រើ File-Server របស់ប្រធានបទពីកុំព្យូទ័រ PC-Finance ទេ។ ពួកគេត្រូវការវាដើម្បីដំណើរការសម្រាប់ពេលវេលាកំណត់។",
+            "objective": "ស្ដារការទទួលបាន HTTP ពី PC-Finance ទៅ File-Server។",
+            "hints": [
+                "ការឆ្លើយតបមិនដែលត្រឡប់មកវិញលើសពី Router-Fukuoka ទេ — សំណើឈានដល់ File-Server ប៉ុន្តែដំណើរឯងត្រឡប់ចាប់ផ្តើមឈប់នៅទីនោះ។",
+                "Router-Fukuoka មិនមាននូវកំណត់ទីតាំងណាដែលប្រាប់ឱ្យវាលេងដល់បណ្ដាញ PC-Finance ដូច្នេះវាលុបចោលការឆ្លើយឆ្លងក្នុងការផ្ទេរវាជំនួស។",
+                "នៅលើ Router-Fukuoka សូមបន្ថែមផ្លូវគោលលទ្ធិថេរសម្រាប់បណ្ដាញ 10.0.26.0 / 255.255.255.0 ដោយរយៈនៃលេខច្រក 10.0.20.1 នៅលើច្រក 0។"
+            ],
+            "explanation": "ម៉ាស៊ីនបង្វែរលេងដាច់វាលដែលពួកគេស្គាល់។ ការឆ្លើយតបរបស់ File-Server បានឈានដល់ Router-Fukuoka ប៉ុន្តែដោយគ្មានផ្លូវគោលលទ្ធិថេរចង្អុលទៅឆ្ពោះទៅរកបណ្ដាញរងរបស់ PC-Finance ម៉ាស៊ីនបង្វែរនឹងមិនដឹងថាត្រូវផ្ញើពួកវាទៅណាហើយលុបចោលពួកវាដែលបណ្តាលឱ្យការព្យាយាមភ្ជាប់ផ្អាក។"
+        },
+        "kn": {
+            "title": "ಶಾಖೆ ಕಛೇರಿ HQ ಫೈಲ್‌ಗಳನ್ನು ತಲುಪಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ",
+            "story": "ಈ ಬೆಳಿಗ್ಗೆ ಮೊದಲು, ಶಾಖೆ ಕಛೇರಿಯ ಆರ್ಥಿಕ ತಂಡವು PC-Finance ರಿಂದ ಹೆಡ್‌ಕ್ವಾರ್ಟರ್ಸ್ File-Server ಗಳಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾದ ಯಾವುದೇ ಫೈಲ್‌ಗಳನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ ಎಂದು ವರದಿ ಮಾಡಿದೆ. ಮುಕ್ತಾಯದ ಸಮಯಸೀಮೆಗಾಗಿ ಇದು ಕಾರ್ಯರತವಾಗಿರುವುದು ಅಗತ್ಯವಾಗಿದೆ.",
+            "objective": "PC-Finance ನಿಂದ File-Server ಗೆ HTTP ಪ್ರವೇಶವನ್ನು ಪುನಃಸ್ಥಾಪಿಸಿ.",
+            "hints": [
+                "ಪ್ರತ್ಯುತ್ತರವು Router-Fukuoka ಅನ್ನು ದಾಟಿ ಕೆಳಗೆ ಹೋಗುವುದಿಲ್ಲ — ವಿನಂತಿಯು File-Server ನ ಬಳಿಗೆ ತಲುಪುತ್ತದೆ, ಆದರೆ ಮರಳುವ ಸಾಗರವು ಅಲ್ಲಿ ನಿಂತುಹೋಗುತ್ತದೆ.",
+                "Router-Fukuoka ಗೆ PC-Finance ನ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಹೇಗೆ ತಲುಪಬೇಕು ಎಂದು ಹೇಳುವ ರೂಟಿಂಗ್ ಟೇಬಲ್ ಪ್ರವೇಶವಿಲ್ಲ, ಆದ್ದರಿಂದ ಇದನ್ನು ಮುಂದಕ್ಕೆ ಕಳುಹಿಸದೇ ಎಸೆಯುತ್ತದೆ.",
+                "Router-Fukuoka ಮೇಲೆ, ನೆಟ್‌ವರ್ಕ್ 10.0.26.0 / 255.255.255.0 ಕ್ಕಾಗಿ ಸ್ಥಿರ ಮಾರ್ಗವನ್ನು ನೆಕ್ಸ್ಟ್ ಹಾಪ್ 10.0.20.1 ಮೇಲೆ ಪೋರ್ಟ್ 0 ನಲ್ಲಿ ಸೇರಿಸಿ."
+            ],
+            "explanation": "ರೌಟರ್‌ಗಳು ಅವುಗಳು ಸುಲಭವಾಗಿ ಪ್ರವೇಶಿಸುವ ನೆಟ್‌ವರ್ಕ್‌ಗಳಿಗೆ ಮಾತ್ರ ಪ್ಯಾಕೆಟ್‌ಗಳನ್ನು ಫಾರ್ವಾರ್ಡ್ ಮಾಡುತ್ತವೆ. File-Server ನ ಪ್ರತ್ಯುತ್ತರಗಳು Router-Fukuoka ನ ಬಳಿಗೆ ತಲುಪಿದೆ, ಆದರೆ PC-Finance ನ ಸಬ್‌ನೆಟ್‌ನ ಕಡೆಗೆ ತೋರಿಸುವ ಸ್ಥಿರ ಮಾರ್ಗವಿಲ್ಲದೆ, ರೌಟರ್ ಅವುಗಳನ್ನು ಎಲ್ಲಿಗೆ ಕಳುಹಿಸಬೇಕು ಎಂದು ತಿಳಿಯಲಿಲ್ಲ ಮತ್ತು ಅವುಗಳನ್ನು ಎಸೆಯಿತು, ಇದು ಸಂಪರ್ಕ ಪ್ರಯತ್ನವನ್ನು ಸಮಯ ಮಾಡಲು ಕಾರಣವಾಯಿತು."
+        },
+        "ky": {
+            "title": "Филиал офису HQ файлдарына жетише албайт",
+            "story": "Бүгүн таңында филиал офисунун каржы тобу PC-Finance ден штаб-квартира File-Server орнотулган файлдарды ачууга мүмкүн боло албай жатканын билдирди. Мөлчүрдөргү сугат үчүн бул иштеп турушу керек.",
+            "objective": "PC-Finance ден File-Server ге HTTP жузгөчүлүгүн калыбына келтир.",
+            "hints": [
+                "Жооп Router-Fukuoka өтүп кетпейт — сурооо File-Server ге жеткен, бирок кайра келүүсү ошол жерде токтоп калат.",
+                "Router-Fukuoka PC-Finance тармагына кантип жетээри боюнча маршруттоо таблицасы жазуусу жок, ошол үчүн жоопту алып барбастан тоголотот.",
+                "Router-Fukuoka боюнча 10.0.26.0 / 255.255.255.0 тармак үчүн статикалык маршрутту кийинки түйүн 10.0.20.1 менен порт 0 боюнча кошуу."
+            ],
+            "explanation": "Маршруттоочулар бир гана белген тармактарга пакеттерди жиберишет. File-Server жоопторунун Router-Fukuoka ге жеткени, бирок PC-Finance сабсетине караган статикалык маршруту жок болгондо, маршруттоочу аларды кайда жиберээри боюнча билбей, аларды таштап коюп, туташуу аракети узак болуп калды."
+        },
+        "lo": {
+            "title": "ສາขາບໍ່ສາມາດເຂົ້າຖືງໄຟລ໌ຂອງ HQ",
+            "story": "ຕັ້ງແຕ່ເຊົ້າວານນີ້, ທີມວິຊາການເງິນ ຢູ່ສາຂາບົນຄວາມບໍ່ສາມາດເປີດໄຟລ໌ທີ່ຖືກເກັບໄວ້ ຢູ່ໃນ File-Server ຂອງສາຂາຫຼັກ ຈາກ PC-Finance. ພວກເຂົາຕ້ອງໃຫ້ສິ່ງນີ້ສໍາເລັດ ສໍາລັບເວລາກໍານົດຂອບເຂດ.",
+            "objective": "ກູ້ຄືນ HTTP access ຈາກ PC-Finance ໄປ File-Server.",
+            "hints": [
+                "ການຕອບສະຫນອງບໍ່ເຄີຍຜ່ານ Router-Fukuoka — ຄໍາຂໍຂໍ ຕໍ່ຊ File-Server, ແຕ່ ການກັບຄືນ ຫຼຸດລົງ ຢູ່ທີ່ນັ້ນ.",
+                "Router-Fukuoka ບໍ່ມີ ຕາຕະລາງເສັ້ນທາງ ບອກວ່າ ວິທີ ໄປຫາ ເຄືອຂ່າຍ ຂອງ PC-Finance, ສະນັ້ນ ມັນ ປະໄວ້ ການຕອບ ແທນທີ່ຈະ ສົ່ງຕໍ່.",
+                "ຢູ່ Router-Fukuoka, ເພີ່ມ static route ສໍາລັບ ເຄືອຂ່າຍ 10.0.26.0 / 255.255.255.0 ໂດຍ next hop 10.0.20.1 ຢູ່ port 0."
+            ],
+            "explanation": "ຕົວກຳມະກອນ ມຸ້ຍຍັງເຕື່ອເກັບລະວາງ ພຽງ ເຄືອຂ່າຍ ທີ່ພວກເຂົາຮູ້ ກ່ຽວກັບ. ການຕອບ File-Server ໄດ້ ຮອດ Router-Fukuoka, ແຕ່ ຖ້າບໍ່ໃช່ static route ຊີ້ໄປ ຕໍ່ PC-Finance subnet, ຕົວກຳມະກອນ ບໍ່ຮູ້ ວ່າ ຄວນຖ່າຍທຳ ແລະ ໂຍນ ພວກເຂົາ, ເຮັດໃຫ້ ການພະຍາຍາມ ເຊື່ອມຕໍ່ ໝົດເວລາ."
+        },
+        "lt": {
+            "title": "Filialui nepavyksta pasiekti HQ failus",
+            "story": "Šiandien ryto finansų komanda filiale pranešė, kad negali atidaryti jokių failų, saugomų štabadienės File-Server, iš PC-Finance. Jiems to reikia darbui iki termino.",
+            "objective": "Atkurti HTTP prieigą iš PC-Finance į File-Server.",
+            "hints": [
+                "Atsakas nepraeis per Router-Fukuoka — prašymas pasiekia File-Server, bet grąžinimas ten sustabdomas.",
+                "Router-Fukuoka neturi maršrutų lentelės įrašo, kuris pasakytų, kaip pasiekti PC-Finance tinklą, todėl vietoj to, kad persiųsti atsaką, jis jį atmeta.",
+                "Router-Fukuoka, pridėkite statinį maršrutą tinklui 10.0.26.0 / 255.255.255.0 per kitą šuolį 10.0.20.1 prievade 0."
+            ],
+            "explanation": "Maršrutizatoriai siunčia paketus tik į tinklus, kuriuos jie pažįsta. File-Server atsakai pasiekė Router-Fukuoka, tačiau be statinio maršruto, nukreipiančio atgal į PC-Finance poklasį, maršrutizatorius nežinojo, kur juos siųsti, ir juos atmetė, dėl to prašymas sujungti pasibaigė."
+        },
+        "lv": {
+            "title": "Filiāle nevar piekļūt HQ failiem",
+            "story": "Šorīt filiāles finanšu komanda ziņoja, ka nevar atvērt nevienu failu, kas glabājas galvenajā bīroja File-Server, no PC-Finance. Viņiem tas ir nepieciešams darbam līdz termiņam.",
+            "objective": "Atjaunot HTTP pieejamību no PC-Finance uz File-Server.",
+            "hints": [
+                "Atbilde nekad nepāriet pāri Router-Fukuoka — pieprasījums sasniedz File-Server, bet atgriešanās tur apstājas.",
+                "Router-Fukuoka nav maršrutēšanas tabulas ieraksta, kas pasaktu, kā piekļūt PC-Finance tīklam, tāpēc tas atmeta atbildi, nevis to pārsūtīja.",
+                "Router-Fukuoka pievienojiet statisko maršrutu tīklam 10.0.26.0 / 255.255.255.0 ar nākamo lēcienu 10.0.20.1 porta 0."
+            ],
+            "explanation": "Maršrutētāji sūta paketnes tikai tiem tīkliem, ko viņi pazīst. File-Server atbildes sasniedza Router-Fukuoka, bet bez statiska maršruta, kas norāda atpakaļ uz PC-Finance apakštīklu, maršrutētājs nezināja, kur tās sūtīt, un tās atmeta, izraisot savienojuma mēģinājuma iztilpumu."
+        },
+        "mk": {
+            "title": "Филијалата не може да достави до HQ датотеки",
+            "story": "Од утро, финансискиот тим во филијалата пријави дека не можат отворити никакви датотеки од главниот офис File-Server од PC-Finance. Нивната рочност зависи од ова.",
+            "objective": "Восстави HTTP пристап од PC-Finance до File-Server.",
+            "hints": [
+                "Одговорот никогаш не минува по Router-Fukuoka — барањето достига до File-Server, но враќањето застанува таму.",
+                "Router-Fukuoka нема рутирачка табела што му вели како да достави до мрежата на PC-Finance, затоа ја отфрла одговорот наместо да го препрати.",
+                "На Router-Fukuoka, додај статичка рута за мрежа 10.0.26.0 / 255.255.255.0 со следен скок 10.0.20.1 на порта 0."
+            ],
+            "explanation": "Рутерите пропраќаат пакети само до мрежи што ги познаваат. Одговорите од File-Server достигнаа до Router-Fukuoka, но без статична рута која покажува назад кон подмрежата на PC-Finance, рутерот не знаеше каде да ги испрати и ги отфрли, што предизвика временскиот истек на врската."
+        },
+        "ml": {
+            "title": "ബ്രാഞ്ച് ഓഫീസ് HQ ഫയലുകളിലേക്ക് എത്താൻ കഴിയുന്നില്ല",
+            "story": "ഈ രാവിലെ മുതൽ, ബ്രാഞ്ച് ഓഫീസിലെ ഫിനാൻസ് ടീം പറയുന്നത് PC-Finance ൽ നിന്ന് ആസ്ഥാനത്തെ File-Server ൽ സംഭരിച്ചിരിക്കുന്ന ഫയലുകൾ തുറക്കാൻ കഴിയുന്നില്ല എന്നാണ്. അവർക്ക് ഒരു സമയപരിധിക്കായി ഇത് പ്രവർത്തിക്കേണ്ടതുണ്ട്.",
+            "objective": "PC-Finance ൽ നിന്ന് File-Server ലേക്കുള്ള HTTP ആക്സസ് പുനഃസ്ഥാപിക്കുക.",
+            "hints": [
+                "Router-Fukuoka കടന്നുപോയി തിരികെയെത്താത്ത ഉത്തരം — അപേക്ഷ File-Server എത്തി, പക്ഷേ തിരികെയുള്ള യാത്ര അവിടെ നിലനിൽക്കുന്നു.",
+                "Router-Fukuoka ന് PC-Finance ന്റെ നെറ്റ്‌വർക്കിലേക്ക് എത്ത് എങ്ങിനെ പറയുന്ന ഒരു റൂട്ടിംഗ് ടേബിൾ നിയമം ഇല്ല, അതിനാൽ ഇത് അത് സംഭരിക്കുന്നതിനുപകരം തിരികെ അയയ്ക്കുന്നു.",
+                "Router-Fukuoka ൽ, നെറ്റ്‌വർക്ക് 10.0.26.0 / 255.255.255.0 ന് നെക്സ്റ്റ് ഹോപ്പ് 10.0.20.1 ലഘുവായ പോർട്ട് 0 ൽ ഒരു നിരന്തരമായ റൂട്ട് ചേർക്കുക."
+            ],
+            "explanation": "രൂട്ടറുകൾ അവർ അറിയുന്ന നെറ്റ്‌വർക്കുകളിലേക്കേ പാക്കറ്റുകൾ സംഭരിക്കുന്നുള്ളൂ. File-Server ന്റെ ഉത്തരങ്ങൾ Router-Fukuoka ൽ എത്തി, പക്ഷേ PC-Finance ന്റെ സബ്നെറ്റിലേക്കുള്ള നിരന്തരമായ റൂട്ട് ഇല്ലാതെ, റൂട്ടറിന് അവയ് എവിടേക്ക് അയയ്ക്കണം എന്നറിയില്ലായിരുന്നു, അതിനാൽ അവ നീക്കം ചെയ്തു, ഇത് കണക്ഷൻ ശ്രമത്തിന്റെ സമയപരിധി കഴിയാൻ കാരണമായി."
+        },
+        "mn": {
+            "title": "Салбаа Офис HQ Файлуудад Хүрч Чадахгүй",
+            "story": "Өнөө өглөө оноос эхлэн салбаа офисын Санхүүгийн баг PC-Finance-ээс本部の File-Server дээр хадгалагдсан бичигдсэн файлуудыг нээх боломжгүй гэж мэдээлэв. Эцэсийн хугацаагаа барьж авахын тулд үүнийг ажилуулах хэрэгтэй.",
+            "objective": "PC-Finance-ээс File-Server-т HTTP хандалт сэргээх.",
+            "hints": [
+                "Хариулт Router-Fukuoka-г хүлээн авахгүй — хүсэлт File-Server-д хүрсэн, гэхдээ буцаж ирэх аялал тэнд өлсчихсөн.",
+                "Router-Fukuoka-д PC-Finance-ын сүлжээнд хэрхэн хүрэхийг хэлдэг маршрутын дүрэм байхгүй байна, учир нь энэ нь түүнийг урагшлуулахын оронд хариулт хасдаг.",
+                "Router-Fukuoka дээр, сүлжээ 10.0.26.0 / 255.255.255.0 агуулах статик маршрут нэмэх, дараагийн хүсэлт 10.0.20.1, порт 0."
+            ],
+            "explanation": "Маршрутчид зөвхөн мэддэг сүлжээнүүдэд пакетуудыг урагшлуулдаг. File-Server-н хариулт Router-Fukuoka-д хүрсэн, гэхдээ PC-Finance-ын подсүлжээ хүртэл эргүүлэх статик маршрут байхгүй байсан тул маршрутчид тэдгээрийг хаашаа илгээхээ мэдэхгүй байсан бөгөөд тэдгээрийг хасаж, холболтын оролдлогын хугацаа дуусахад хүргэсэн."
+        },
+        "mr": {
+            "title": "ब्रांच ऑफिस HQ फाइलांपर्यंत पोहोचू शकत नाही",
+            "story": "आज सकाळपासून, ब्रांच ऑफिसातील आर्थिक संघ PC-Finance मधून मुख्यालयातील File-Server वर संग्रहीत कोणत्याही फाइली उघडू शकत नाहीत असा अहवाल देत आहे. त्यांना अंतिम मुदतीसाठी हे कार्यरत करणे आवश्यक आहे.",
+            "objective": "PC-Finance पासून File-Server पर्यंत HTTP प्रवेश पुनः स्थापित करा.",
+            "hints": [
+                "उत्तर Router-Fukuoka ने परत हवेत येत नाही — विनंती File-Server पर्यंत पोहोचते, परंतु परत येण्याची यात्रा तेथे थांबते.",
+                "Router-Fukuoka ला PC-Finance च्या नेटवर्कपर्यंत कसे पोहोचायचे हे सांगणारी राउटिंग टेबल नोंद नाही, म्हणून ते त्याऐवजी पुढे न करता उत्तर टाकून देते.",
+                "Router-Fukuoka वर, नेटवर्क 10.0.26.0 / 255.255.255.0 साठी नेक्स्ट हॉप 10.0.20.1 वर पोर्ट 0 वर एक स्थिर मार्ग जोडा."
+            ],
+            "explanation": "राउटर फक्त त्यांना माहीत असलेल्या नेटवर्कमध्ये पॅकेट पाठवतात. File-Server चे उत्तर Router-Fukuoka पर्यंत पोहोचले, परंतु PC-Finance च्या सबनेटकडे परत निर्देश करणारी स्थिर मार्ग नसल्याने, राउटरला ते कुठे पाठवायचे हे माहीत नव्हते आणि त्यांनी ते टाकून दिले, ज्यामुळे कनेक्शन प्रयास वेळेच्या बाहेर गेला."
+        },
+        "ms": {
+            "title": "Pejabat Cawangan Tidak Dapat Mencapai Fail HQ",
+            "story": "Sejak pagi ini, pasukan kewangan di pejabat cawangan melaporkan mereka tidak dapat membuka sebarang fail yang disimpan di pelayan File-Server ibu pejabat daripada PC-Finance. Mereka memerlukan ini berfungsi untuk tarikh akhir.",
+            "objective": "Pulihkan akses HTTP daripada PC-Finance ke File-Server.",
+            "hints": [
+                "Balasan tidak pernah kembali melepasi Router-Fukuoka — permintaan mencapai File-Server, tetapi perjalanan pulang tersekat di sana.",
+                "Router-Fukuoka tidak mempunyai kemasukan jadual penghalaan yang memberitahu ia cara mencapai rangkaian PC-Finance, jadi ia membuang balasan daripada memajukannya.",
+                "Pada Router-Fukuoka, tambahkan laluan statik untuk rangkaian 10.0.26.0 / 255.255.255.0 melalui lompatan seterusnya 10.0.20.1 pada port 0."
+            ],
+            "explanation": "Penghala hanya memajukan paket ke rangkaian yang mereka ketahui. Balasan File-Server mencapai Router-Fukuoka, tetapi tanpa laluan statik yang menunjuk kembali ke subnet PC-Finance, penghala tidak tahu ke mana untuk menghantarnya dan membuangnya, menyebabkan percubaan sambungan tamat masa."
+        },
+        "my": {
+            "title": "ခွဲခြာ ရုံး မှ HQ ဖိုင်များ မရောက်ရှိနိုင်",
+            "story": "ယနေ့နံနက်ကစ၍ ခွဲခြာရုံးရှိ ငွေဆောင်ရွက်ချက်အဖွဲ့သည် 본사 File-Server ရှိ သိုလှောင်ထားသည့် ဖိုင်များကို PC-Finance မှ ဖွင့်၍မရှိသည်ဟု အစီရင်ခံခြင်းပြုလုပ်နေကြသည်။ သူတို့သည် မ期限အတွက် ၎င်းကိုအလုပ်လုပ်ရန် လိုအပ်သည်။",
+            "objective": "PC-Finance မှ File-Server သို့ HTTP အဆင့်ခံခြင်းကို ပြန်လည်ရယူခြင်း။",
+            "hints": [
+                "အဖြေမည်သည့်အခါမျှ Router-Fukuoka ကျော်ပြန်မလှည့်ပါ — တောင်းဆိုချက်သည် File-Server သို့ ရောက်ရှိသော်လည်း ပြန်လည်ခရီးသည် အဲဒီမှာ ရပ်နေသည်။",
+                "Router-Fukuoka သည် PC-Finance ၏ ကွန်ရက်သို့ မည်သည့်နည်းအားဖြင့် ရောက်ရှိရမည်ကို 示す routing entry မရှိသောကြောင့် ၎င်းသည် အဖြေကို စေလွှတ်မည့်အစား ဖယ်ရှားထားသည်။",
+                "Router-Fukuoka တွင် network 10.0.26.0 / 255.255.255.0 အတွက် static route ကို next hop 10.0.20.1 မှ port 0 တွင် ထည့်သွင်းပါ။"
+            ],
+            "explanation": "ルーターများသည် သူတို့လည်သိသည့် ကွန်ရက်များသို့သာ ပက်ကက်များကို စေလွှတ်သည်။ File-Server ၏ အဖြေများသည် Router-Fukuoka သို့ ရောက်ရှိခဲ့သော်လည်း PC-Finance ၏ subnet သို့ ပြန်လည်ညွှန်ပြသည့် static route မရှိသောအခါ router သည် သူတို့ကို မည်သည့်နေရာသို့ ပို့ရမည်ကို မသိသောကြောင့် ၎င်းတို့ကို ဖယ်ရှားလိုက်ခြင်းဖြင့် ချိတ်ဆက်မှု प्रयासသည် သကားအချိန် ကုန်ခြင်းကို ကျေးဇူးပြုခြင်းပြုလုပ်သည်။"
+        },
+        "ne": {
+            "title": "शाखा कार्यालय HQ फाइलहरू पहुँच गर्न सक्षम छैन",
+            "story": "आज बिहानदेखी, शाखा कार्यालयको वित्त टीमले मुख्यालयको File-Server मा भण्डार गरिएका फाइलहरू PC-Finance बाट खोल्न सक्षम छैनन् भनी रिपोर्ट गरेको छ। उनीहरूलाई समय सीमाको लागि यो काम गर्न आवश्यक छ।",
+            "objective": "PC-Finance देखि File-Server सम्म HTTP पहुँच पुनः स्थापन गरिनुहोस्।",
+            "hints": [
+                "जवाफ कहिले पनि Router-Fukuoka लाई पार गर्न सक्षम छैन — अनुरोध File-Server सम्म पुग्छ, तर फिर्ती यात्रा त्यहाँ रोकिन्छ।",
+                "Router-Fukuoka को सँग PC-Finance को नेटवर्क सम्म कसरी पहुँच गर्ने भनेर बताउने कुनै राउटिङ तालिका प्रविष्टि छैन, त्यसैले यो जवाफलाई अगाडि बढाउनुको सट्टा हटाइन्छ।",
+                "Router-Fukuoka मा, नेटवर्क 10.0.26.0 / 255.255.255.0 को लागि एक स्थिर मार्ग नेक्स्ट हप 10.0.20.1 मा पोर्ट 0 मा थप्नुहोस्।"
+            ],
+            "explanation": "राउटरहरूले केवल ज्ञात नेटवर्कहरूमा प्याकेटहरू अगाडि बढाउँछन्। File-Server को जवाफहरू Router-Fukuoka सम्म पुगे, तर PC-Finance को सबनेटको दिशामा फिर्ता निर्देश गर्ने स्थिर मार्ग बिना, राउटरलाई तिनीहरूलाई कहाँ पठाउने भनेर थाहा थिएन र तिनीहरूलाई हटाइदियो, जसले जडान प्रयास समय सीमा अतिक्रम हुन कारण बन्यो।"
+        },
+        "nl": {
+            "title": "Filiaal kan HQ-bestanden niet bereiken",
+            "story": "Sinds vanmorgen melden de financiële medewerkers op het filiaal dat zij geen bestanden kunnen openen die op de File-Server van het hoofdkantoor zijn opgeslagen, vanuit PC-Finance. Dit moet werkend zijn voor een deadline.",
+            "objective": "HTTP-toegang van PC-Finance naar File-Server herstellen.",
+            "hints": [
+                "Het antwoord komt nooit langs Router-Fukuoka terug — het verzoek bereikt File-Server, maar de terugreis stopt daar.",
+                "Router-Fukuoka heeft geen routeringstabelvermelding die aangeeft hoe het het netwerk van PC-Finance kan bereiken, dus het verwijdert het antwoord in plaats van het door te sturen.",
+                "Voeg op Router-Fukuoka een vaste route toe voor netwerk 10.0.26.0 / 255.255.255.0 via volgende hop 10.0.20.1 op poort 0."
+            ],
+            "explanation": "Routers sturen pakketten alleen door naar netwerken die zij kennen. De antwoorden van File-Server bereikten Router-Fukuoka, maar zonder een vaste route die terug naar het subnet van PC-Finance wijst, wist de router niet waar zij heen moest sturen en verwijderde deze, waardoor de verbindingspoging time-out liep."
+        },
+        "no": {
+            "title": "Filialkontor kan ikke nå HQ-filer",
+            "story": "Siden i morges rapporterer finansteamet på filialkontoret at de ikke kan åpne noen filer lagret på hovedkontorets File-Server fra PC-Finance. De trenger dette til å fungere for en frist.",
+            "objective": "Gjenopprett HTTP-tilgang fra PC-Finance til File-Server.",
+            "hints": [
+                "Svaret kommer aldri tilbake forbi Router-Fukuoka — forespørselen når File-Server, men returturen stopper der.",
+                "Router-Fukuoka har ingen rutetabeloppføring som forteller den hvordan den skal nå PC-Finance sitt nettverk, så den forkaster svaret i stedet for å videresende det.",
+                "På Router-Fukuoka, legg til en statisk rute for nettverk 10.0.26.0 / 255.255.255.0 via neste hopp 10.0.20.1 på port 0."
+            ],
+            "explanation": "Rutere videresender kun pakker til nettverk de kjenner til. File-Server sine svar nådde Router-Fukuoka, men uten en statisk rute som peker tilbake mot PC-Finance sitt delnett, hadde rutteren ingen idé om hvor den skulle sende dem, og den forkastet dem. Dette forårsaket at tilkoblingsforsøket gikk i tidsavbrudd."
+        },
+        "or": {
+            "title": "ଶାଖା ଅଫିସ HQ ଫାଇଲ ପାଇଲା ନାହିଁ",
+            "story": "ଆଜି ସକାଳ ଠାରୁ, ଶାଖା ଅଫିସର ଅର୍ଥ ଦଳ ରିପୋର୍ଟ କରୁଛି ଯେ ସେମାନେ ମୁଖ୍ୟାଳୟର File-Server ରେ ସଂରକ୍ଷିତ ଫାଇଲଗୁଡ଼ିକ PC-Finance ରୁ ଖୋଲି ନପାରିବେ। ସେମାନଙ୍କୁ ଏକ ସମୟସୀମା ପାଇଁ ଏଟି କାମ କରିବାର ଆବଶ୍ୟକତା ରହିଛି।",
+            "objective": "PC-Finance ରୁ File-Server ପର୍ଯ୍ୟନ୍ତ HTTP ପ୍ରବେଶାଧିକାର ପୁନରୁଦ୍ଧାର କରନ୍ତୁ।",
+            "hints": [
+                "ଉତ୍ତର କେବେ ବି Router-Fukuoka ଦେଇ ଫେରି ନଆସେ — ଅନୁରୋଧ File-Server ରେ ପୌଁଚେ, କିନ୍ତୁ ଫେରତ ଯାତ୍ରା ସେଠାରେ ଅଟକିଯାଏ।",
+                "Router-Fukuoka ର PC-Finance ର ନେଟୱର୍କ ପର୍ଯ୍ୟନ୍ତ ପହଞ୍ଚିବାର ଉପାୟ କହିବାରୁ ରାଉଟିଂ ଟେବୁଲ ପ୍ରବିଷ୍ଟି ନାହିଁ, ତେଣୁ ଏହା ଉତ୍ତରକୁ ଅଗ୍ରଗାମୀ ନ କରି ଆଲେଖ୍ୟ କରେ।",
+                "Router-Fukuoka ରେ, ନେଟୱର୍କ 10.0.26.0 / 255.255.255.0 ପାଇଁ ଏକ ସ୍ଥିର ମାର୍ଗ ନେକ୍ସଟ ହପ 10.0.20.1 ଦ୍ବାରା ପୋର୍ଟ 0 ରେ ଯୋଡନ୍ତୁ।"
+            ],
+            "explanation": "ରୁଟର୍ମାନେ କେବଳ ସେମାନେ ଜାଣିଥିବା ନେଟୱର୍କକୁ ପାକେଟ ଅଗ୍ରଗାମୀ କରନ୍ତି। File-Server ର ଉତ୍ତରଗୁଡ଼ିକ Router-Fukuoka ରେ ପୌଁଚିଯାଇଥିଲେ, କିନ୍ତୁ PC-Finance ର ସବନେଟ ଆଡକୁ ନିର୍ଦେଶ ନ କରିବା ସ୍ଥିର ମାର୍ଗ ବିନା, ରୁଟରର ସେମାନଙ୍କୁ କେଉଁଠାକୁ ପଠାଇବାର ଧାରଣା ନଥିଲା ଏବଂ ସେ ସେମାନଙ୍କୁ ଅଲେଖ୍ୟ କରିଦେଲା, ଯାହାଦ୍ୱାରା ସଂଯୋଗ ପ୍ରୟାସ ସମୟ ବାହାରି ଗଲା।"
+        },
+        "pa": {
+            "title": "ਸ਼ਾਖਾ ਦਫ਼ਤਰ HQ ਫਾਈਲਾਂ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚ ਸਕਦਾ",
+            "story": "ਅੱਜ ਸਵੇਰੇ ਤੋਂ, ਸ਼ਾਖਾ ਦਫ਼ਤਰ ਦੀ ਫਿਨਾਂਸ ਟੀਮ ਰਿਪੋਰਟ ਕਰ ਰਹੀ ਹੈ ਕਿ ਉਹ PC-Finance ਤੋਂ ਹੈਡਕੁਆਰਟਰਸ File-Server ਉੱਤੇ ਸਟੋਰ ਕੀਤੀਆਂ ਕੋਈ ਵੀ ਫਾਈਲਾਂ ਨਹੀਂ ਖੋਲ ਸਕਦੇ। ਉਨ੍ਹਾਂ ਨੂੰ ਡੈੱਡਲਾਈਨ ਲਈ ਇਹ ਕਾਮ ਕਰਨ ਦੀ ਲੋੜ ਹੈ।",
+            "objective": "PC-Finance ਤੋਂ File-Server ਤੱਕ HTTP ਐਕਸੈਸ ਮੁੜ ਬਹਾਲ ਕਰੋ।",
+            "hints": [
+                "ਜਵਾਬ Router-Fukuoka ਤੋਂ ਵਾਪਸ ਕਦੇ ਨਹੀਂ ਆਉਂਦਾ — ਬੇਨਤੀ File-Server ਤੱਕ ਪਹੁੰਚਦੀ ਹੈ, ਪਰ ਵਾਪਸੀ ਦੀ ਯਾਤਰਾ ਉੱਥੇ ਰੁਕ ਜਾਂਦੀ ਹੈ।",
+                "Router-Fukuoka ਕੋਲ ਕੋਈ ਰੂਟਿੰਗ ਐਂਟਰੀ ਨਹੀਂ ਹੈ ਜੋ ਇਹ ਦੱਸੇ ਕਿ PC-Finance ਦੇ ਨੈੱਟਵਰਕ ਤੱਕ ਕਿਵੇਂ ਪਹੁੰਚਾ ਜਾਵੇ, ਇਸ ਲਈ ਇਹ ਜਵਾਬ ਨੂੰ ਫਾਰਵਰਡ ਕਰਨ ਦੀ ਬਜਾਏ ਸੁੱਟ ਦਿੰਦਾ ਹੈ।",
+                "Router-Fukuoka ਉੱਤੇ, ਨੈੱਟਵਰਕ 10.0.26.0 / 255.255.255.0 ਲਈ ਇੱਕ ਸਥਿਤ ਰੂਟ ਜੋੜੋ ਨੈਕਸਟ ਹੌਪ 10.0.20.1 ਦੇ ਰਾਹੀਂ ਪੋਰਟ ਨੰਬਰ 0 ਉੱਤੇ।"
+            ],
+            "explanation": "ਰਾؤਟਰ ਸਿਰਫ ਉਹ ਪੈਕੇਟ ਫਾਰਵਰਡ ਕਰਦੇ ਹਨ ਜਿਨ੍ਹਾਂ ਨੈੱਟਵਰਕਾਂ ਬਾਰੇ ਉਹ ਜਾਣਦੇ ਹਨ। File-Server ਦੇ ਜਵਾਬ Router-Fukuoka ਤੱਕ ਪਹੁੰਚ ਗਏ, ਪਰ ਇਸ ਤरह ਕੋਈ ਸਥਿਤ ਰੂਟ ਨਹੀਂ ਸੀ ਜੋ PC-Finance ਦੇ ਸਬਨੈੱਟ ਵਲ ਵਾਪਸ ਆਖਾ ਕਰੇ, ਇਸ ਲਈ ਰਾਉਟਰ ਨੂੰ ਪਤਾ ਨਹੀਂ ਸੀ ਕਿ ਉਹਨਾਂ ਨੂੰ ਕਿੱਥੇ ਭੇਜਣਾ ਹੈ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਸੁੱਟ ਦਿੱਤਾ, ਜਿਸ ਨਾਲ ਕੁਨੈਕਸ਼ਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਟਾਈਮ ਆਊਟ ਹੋ ਗਈ।"
+        },
+        "pl": {
+            "title": "Oddział nie może uzyskać dostępu do plików HQ",
+            "story": "Od rana zespół finansowy w oddziale zgłasza, że nie może otworzyć żadnych plików przechowywanych na serwerze plików File-Server z centralą z komputera PC-Finance. Potrzebują to do działania na dotrzymanie terminu.",
+            "objective": "Przywróć dostęp HTTP z PC-Finance do File-Server.",
+            "hints": [
+                "Odpowiedź nigdy nie wraca za Router-Fukuoka — żądanie dociera do File-Server, ale powrotna podróż staje się tam.",
+                "Router-Fukuoka nie ma wpisu routingu, który powiada mu, jak dotrzeć do sieci PC-Finance, więc usuwa odpowiedź zamiast ją przesyłać dalej.",
+                "Na Router-Fukuoka dodaj trasę statyczną dla sieci 10.0.26.0 / 255.255.255.0 za pośrednictwem następny skok 10.0.20.1 na porcie 0."
+            ],
+            "explanation": "Routery przesyłają pakiety tylko do sieci, które znają. Odpowiedzi z File-Server dotarły do Router-Fukuoka, ale bez statycznej trasy wskazującej z powrotem do podsieci PC-Finance, router nie wiedział, gdzie je wysłać i je usunął, powodując przekroczenie limitu czasu próby połączenia."
+        },
+        "pt-PT": {
+            "title": "Filial Não Consegue Aceder aos Ficheiros da Matriz",
+            "story": "Desde esta manhã, a equipa de finanças da filial relata que não consegue abrir ficheiros armazenados no File-Server da matriz a partir do PC-Finance. Precisam que isto funcione para cumprir um prazo.",
+            "objective": "Restaurar acesso HTTP do PC-Finance para File-Server.",
+            "hints": [
+                "A resposta nunca volta passado Router-Fukuoka — o pedido chega ao File-Server, mas a viagem de retorno fica presa lá.",
+                "Router-Fukuoka não tem uma entrada de encaminhamento que lhe diga como alcançar a rede de PC-Finance, por isso descarta a resposta em vez de reencaminhá-la.",
+                "No Router-Fukuoka, adicione uma rota estática para a rede 10.0.26.0 / 255.255.255.0 via próximo salto 10.0.20.1 na porta 0."
+            ],
+            "explanation": "Os encaminhadores apenas encaminham pacotes para redes que conhecem. As respostas do File-Server chegaram ao Router-Fukuoka, mas sem uma rota estática apontando de volta para a sub-rede de PC-Finance, o encaminhador não sabia para onde enviá-las e descartou-as, causando o tempo limite da tentativa de ligação."
+        },
+        "rm": {
+            "title": "Succursal na po daatg a la datoteca dal maun",
+            "story": "Dapi agno matgen, il team da finanzas dal succursal rapporta che na po derschifier ina platta datas enmagazinadas sin il File-Server dal maun ord da PC-Finance. Eis na besogna che quai funcziuna per ina scadenza.",
+            "objective": "Restaura l'access HTTP ord da PC-Finance a File-Server.",
+            "hints": [
+                "La resposta na returna mai puspei Router-Fukuoka — la dumonda na arricha a File-Server, ma il vadi da riturn restagl là.",
+                "Router-Fukuoka na dispona d'ina entrada dals router che ledi sco raggiungir la rait da PC-Finance, cunsaquenter descarta la resposta empè da inoltrescher quella.",
+                "Sin il Router-Fukuoka, agiunschet ina ruta statica per la rait 10.0.26.0 / 255.255.255.0 transvia prossem hop 10.0.20.1 sin port 0."
+            ],
+            "explanation": "Ils router inoltra mo pacais a raits che saivan. Las responsas dal File-Server na arrichain a Router-Fukuoka, ma senza ina ruta statica che mussta sie puspei a la subrait da PC-Finance, il router na saviva netschi sper inoltrescher quellas e las descartà, causa che la dumeneda da connexiun na expirescha en temp."
+        },
+        "ro": {
+            "title": "Sucursala nu poate accesa fișierele sediului central",
+            "story": "Din această dimineață, echipa de finanțe din sucursală raportează că nu poate deschide niciun fișier stocat pe File-Server din sediul central din PC-Finance. Au nevoie ca aceasta să funcționeze pentru o deadline.",
+            "objective": "Restabilește accesul HTTP de la PC-Finance la File-Server.",
+            "hints": [
+                "Răspunsul nu se întoarce niciodată dincolo de Router-Fukuoka — cererea ajunge la File-Server, dar drumul de întoarcere se blochează acolo.",
+                "Router-Fukuoka nu are o intrare de rutare care să-i spună cum să ajungă la rețeaua PC-Finance, deci aruncă răspunsul în loc să-l transmită mai departe.",
+                "Pe Router-Fukuoka, adaugă o rută statică pentru rețeaua 10.0.26.0 / 255.255.255.0 via următorul salt 10.0.20.1 pe portul 0."
+            ],
+            "explanation": "Routerele transmit doar pachete către rețele pe care le cunosc. Răspunsurile File-Server au ajuns la Router-Fukuoka, dar fără o rută statică care să indice înapoi spre subrețeaua PC-Finance, routerul nu a știut încotro să le trimită și le-a aruncat, determinând timeout pentru tentativa de conexiune."
+        },
+        "si": {
+            "title": "शाખा कार्यालय मुख्यालय फाइलों तक पहुंच नहीं सकता",
+            "story": "आज सुबह से, शाखा कार्यालयस्थ वित्त दल की रिपोर्ट है कि वे PC-Finance से मुख्यालय स्थित File-Server पर संग्रहीत कोई भी फाइल खोल नहीं सकते। समय सीमा के लिए इसे काम करने की आवश्यकता है।",
+            "objective": "PC-Finance से File-Server तक HTTP प्रवेशाधिकार पुनः स्थापित करें।",
+            "hints": [
+                "Router-Fukuoka को जवाब कभी नहीं मिलता — अनुरोध File-Server तक पहुंचता है, लेकिन वापसी वहीं रुक जाती है।",
+                "Router-Fukuoka के पास कोई रवूटिंग प्रविष्टि नहीं है जो इसे बताती है कि PC-Finance के जाल तक कैसे पहुंचें, इसलिए यह जवाब को आगे भेजने की बजाय छोड़ देता है।",
+                "Router-Fukuoka पर, नेटवर्क 10.0.26.0 / 255.255.255.0 के लिए एक स्थिर मार्ग अगले हॉप 10.0.20.1 के माध्यम से पोर्ट 0 पर जोड़ें।"
+            ],
+            "explanation": "राउटर केवल उन नेटवर्कों को पैकेट भेजते हैं जिनके बारे में वे जानते हैं। File-Server की प्रतिक्रिया Router-Fukuoka तक पहुंची, लेकिन PC-Finance के सबनेट की ओर इंगित करने वाले स्थिर मार्ग के बिना, राउटर को नहीं पता था कि उन्हें कहां भेजना है और उन्होंने उन्हें छोड़ दिया, जिससे कनेक्शन प्रयास समाप्त हो गया।"
+        },
+        "sk": {
+            "title": "Pobočka Nemôže Dosiahnuť HQ Súbory",
+            "story": "Od dnešného rána správy finančného tímu na pobočke uvádza, že nemôže otvoriť žiadne súbory uložené na File-Server v centrále z PC-Finance. Potrebujú to na prácu do stanoveného termínu.",
+            "objective": "Obnoviť HTTP prístup z PC-Finance na File-Server.",
+            "hints": [
+                "Odpoveď nikdy neprechádza cez Router-Fukuoka — požiadavka dosiahne File-Server, ale spätná cesta tam stojí.",
+                "Router-Fukuoka nemá Smerovacia tabuľka záznam, ktorý by mu povedal, ako dosiahnuť sieť PC-Finance, takže odpoveď zahodí namiesto toho, aby ju poslal ďalej.",
+                "Na Router-Fukuoka pridajte statickú trasu pre sieť 10.0.26.0 / 255.255.255.0 cez ďalší skok 10.0.20.1 na porte 0."
+            ],
+            "explanation": "Smerovače prepájajú pakety len do sietí, o ktorých vedia. Odpoveď z File-Server sa dostala na Router-Fukuoka, ale bez statickej trasy smerujúcej späť k PC-Finance subnetu mal smerovač problém s tým, kam ich poslať, a zahodil ich, čo spôsobilo, že pokus o pripojenie skončil vypršaním času."
+        },
+        "sl": {
+            "title": "Podružnica ne more dostopati datoteke HQ",
+            "story": "Že od jutri finančna ekipa na podružnici poroča, da ne morejo odpreti nobenih datotek, shranjenih na File-Server v sedežu podjetja, iz naprave PC-Finance. Potrebujejo, da to deluje do roka.",
+            "objective": "Obnovite HTTP dostop iz PC-Finance do File-Server.",
+            "hints": [
+                "Odgovor nikoli ne gre nazaj mimo Router-Fukuoka — zahtevek doseže File-Server, povratni potez pa se tam ustavi.",
+                "Router-Fukuoka nima usmerjevalne tabele vnosa, ki bi mu povedal, kako doseči omrežje PC-Finance, zato odpove zavrže namesto da bi jo poslal naprej.",
+                "Na Router-Fukuoka dodajte statično pot za omrežje 10.0.26.0 / 255.255.255.0 prek naslednjega skoka 10.0.20.1 na vratih 0."
+            ],
+            "explanation": "Usmerjevalniki samo pošiljajo pakete v omrežja, ki jih poznajo. Odgovori strežnika File-Server so prispeli do Router-Fukuoka, a brez statične poti, ki se vrača k podomrežju PC-Finance, usmerjevalnik ni vedel, kam jih poslati, in jih je zavrnil, kar je povzročilo, da je poskus vzpostavitve povezave potekel."
+        },
+        "sq": {
+            "title": "Zyra Degë Nuk Mund të Arrijë Skedat e HQ",
+            "story": "Që këtë mëngjes, ekipa financiare në degën e filialit raporton se nuk mund të hapë asnjë skedar të ruajtur në File-Server të seli qendrore nga PC-Finance. Ata kanë nevojë që ky funksion të funksionojë për afatin kohor.",
+            "objective": "Rivendosni aksesin HTTP nga PC-Finance në File-Server.",
+            "hints": [
+                "Përgjigja nuk kalon kurrë mbrapa Router-Fukuoka — kërkesa arrin File-Server, por rruga e kthimit ndalet atje.",
+                "Router-Fukuoka nuk ka një hyrje në Tabela e rrugëzimit që t'i thotë si të arrijë rrjetin e PC-Finance, kështu që hidhet përgjigja në vend që ta dërgojë para.",
+                "Në Router-Fukuoka, shtoni një rrugë statike për rrjetin 10.0.26.0 / 255.255.255.0 përmes hapit të ardhshëm 10.0.20.1 në numrin e portit 0."
+            ],
+            "explanation": "Rrugzuesit vetëm përcjellin paketa në rrjete të cilat e njohin. Përgjigjet e File-Server arritën Router-Fukuoka, por pa një rrugë statike që të kthehet drejt nën-rrjetit të PC-Finance, rrugzuesi nuk dinte se ku t'i dërgonte ato dhe i hodhi, duke shkaktuar që përpjekja e lidhjes të skadojë."
+        },
+        "sr": {
+            "title": "Филијала не може доћи до датотека од управе",
+            "story": "Од јутрос, финансијски тим на филијали извештава да не могу отворити никакве датотеке складиштене на управи File-Server из PC-Finance. Требају да ово функционише до рока.",
+            "objective": "Обновите HTTP приступ из PC-Finance на File-Server.",
+            "hints": [
+                "Одговор никада не пролази назад кроз Router-Fukuoka — захтев достигне File-Server, али повратна путања се тамо заустави.",
+                "Router-Fukuoka нема уноса у Табела рутирања која би му рекла како доћи до мреже PC-Finance, па umesto да пренесе одговор, баца га.",
+                "На Router-Fukuoka, додајте статичку руту за мрежу 10.0.26.0 / 255.255.255.0 преко следећег скока 10.0.20.1 на броју порта 0."
+            ],
+            "explanation": "Рутери само прослеђују пакете до мрежа за које знају. Одговори File-Server су достигли Router-Fukuoka, али без статичке руте која показује назад према подмрежи PC-Finance, рутер није знао где их послати и бацио их је, што је довело до истека време покушаја успостављања веза."
+        },
+        "sv": {
+            "title": "Filialkontoret kan inte nå HQ-filerna",
+            "story": "Sedan denna morgon rapporterar finansteamet på filialkontoret att de inte kan öppna några filer lagrade på huvudkontorets File-Server från PC-Finance. De behöver detta fungera innan en deadline.",
+            "objective": "Återställ HTTP-åtkomst från PC-Finance till File-Server.",
+            "hints": [
+                "Svaret kommer aldrig tillbaka förbi Router-Fukuoka — förfrågan når File-Server, men återresan stannar där.",
+                "Router-Fukuoka har ingen routingpost som talar om hur den ska nå PC-Finance's nätverk, så den släpper svaret istället för att vidarebefordra det.",
+                "Lägg till en statisk rutt på Router-Fukuoka för målnätverk 10.0.26.0 / 255.255.255.0 via nästa hopp 10.0.20.1 på portnummer 0."
+            ],
+            "explanation": "Routrar vidarebefordrar endast paket till nätverk de känner till. File-Servers svar nådde Router-Fukuoka, men utan en statisk rutt som pekar tillbaka mot PC-Finance's subnät, visste routern inte var den skulle skicka dem och släppte dem, vilket orsakade att anslutningsförsöket låste sig."
+        },
+        "sw": {
+            "title": "Kantorino Hakikuwezi Kufikia Faili za HQ",
+            "story": "Tangu asubuhi hii, timu ya fedha katika kantorino cha matawi inakamatiana kwamba haiwezi kufungua faili zozote zilizohifadhiwa kwenye File-Server ya kantor makuu kutoka kwa PC-Finance. Wanahitaji hii kufanya kazi kwa ajili ya deadline.",
+            "objective": "Rejesha ufikaji wa HTTP kutoka PC-Finance hadi File-Server.",
+            "hints": [
+                "Jibu halina tena kurudi nyuma ya Router-Fukuoka — ombi linakufikia File-Server, lakini safari ya kurudi imesimama huko.",
+                "Router-Fukuoka haina jedwali la uelekezaji linaloeleza jinsi ya kufikia mtandao wa PC-Finance, kwa hiyo inadondosha jibu badala ya kulilipitisha.",
+                "Juu ya Router-Fukuoka, ongeza njia tuli kwa mtandao 10.0.26.0 / 255.255.255.0 kwa njia ya hop inayofuata 10.0.20.1 kwenye nambari ya port 0."
+            ],
+            "explanation": "Routers huhamisha pakiti tu kwa mitandao wanayoijua. Majibu ya File-Server yalikamatia Router-Fukuoka, lakini bila njia tuli inaeleza kurudi kwa subneti ya PC-Finance, router haikujua mahali pa kuipitisha na kwa hiyo ikaiacha, na kusababisha jaribio la kuunganisha kucheza."
+        },
+        "ta": {
+            "title": "கிளை அலுவலகம் HQ கோப்புகளைச் சேர முடியாது",
+            "story": "இந்த காலையில் இருந்து, கிளை அலுவலகத்தில் உள்ள நிதி குழு PC-Finance இலிருந்து தலைமை நிலையத்தில் File-Server இல் சேமிக்கப்பட்ட எந்த கோப்புகளையும் திறக்க முடியாது என்று புகார் கூறுகிறது. அவர்களுக்கு கால எல்லையை முன்னிட்டு இது செயல்பட வேண்டும்.",
+            "objective": "PC-Finance இலிருந்து File-Server க்கு HTTP அணுகலை மீட்டெடுக்கவும்.",
+            "hints": [
+                "பதில் Router-Fukuoka க்கு அப்பால் திரும்பிய ஒரு முறை கூட வருவதில்லை — கோரிக்கை File-Server ஐ அடையும், ஆனால் திரும்பவரும் பயணம் அங்கே நின்றுவிடும்.",
+                "Router-Fukuoka இல் PC-Finance இன் நெட்வொர்க்கை அடைவது பற்றி சொல்லும் ரூட்டிங் உள்ளீடு இல்லை, எனவே அது விருப்பத்தை முன்னோக்கி அனுப்பாமல் வீசியெறிகிறது.",
+                "Router-Fukuoka இல், நெட்வொர்க் 10.0.26.0 / 255.255.255.0 க்கான நிலையான ரூட்டைச் சேர்க்கவும், அடுத்த ஹாப் 10.0.20.1 வழியாக போர்ட் எண் 0 இல்."
+            ],
+            "explanation": "Router கள் அவர்கள் அறிந்த நெட்வொர்க்குகளுக்கு மட்டுமே பாக்கெட்டுகளை முன்னிறுத்துகின்றன. File-Server இன் பதில் Router-Fukuoka க்கு வந்துவிட்டது, ஆனால் PC-Finance இன் சபநெட்டுக்கு திரும்பிக் காட்டும் நிலையான ரூட்டு இல்லாமல், ரூட்டர் அவற்றை எங்கு அனுப்ப வேண்டும் என்பதை அறியாமல் இருந்து அவற்றை வீசியெறிந்தது, இதனால் இணைப்புப் பரீட்சை நேரம் முடிந்துவிட்டது."
+        },
+        "te": {
+            "title": "శాఖ కార్యాలయం HQ ఫైళ్లను చేరుకోలేనిది",
+            "story": "ఈ ఉదయం నుండి, శాఖ కార్యాలయం వద్ద ఉన్న ఆర్థిక జట్టు PC-Finance నుండి ప్రధాన కార్యాలయం File-Server లో నిల్వ చేయబడిన ఏ ఫైల్‌లను కూడా తెరవలేనని నివేదించింది. వారికి గడువు కోసం ఇది పని చేయాలి.",
+            "objective": "PC-Finance నుండి File-Server కు HTTP యాక్సెస్ చేయుటను పునరుద్ధరించండి.",
+            "hints": [
+                "సమాధానం Router-Fukuoka గుండా నెట్‌వర్క్ కు తిరిగి రాదు — అభ్యర్థన File-Server కు చేరుకుంటుంది, కానీ రిటర్న్ ట్రిప్ అక్కడ ఆగిపోతుంది.",
+                "Router-Fukuoka PC-Finance నెట్‌వర్క్ కు ఎందుకు చేరుకోవాలో చెప్పే రూటింగ్ ఎంట్రీ లేనందున, ఇది సమాధానాన్ని ఫార్వార్డ్ చేయడానికి బదులుగా విస్మరిస్తుంది.",
+                "Router-Fukuoka లో, నెట్‌వర్క్ 10.0.26.0 / 255.255.255.0 కు సంబంధించిన నిలువుచేసిన ఫ్లాప్‌ను చేర్చండి, నెక్స్ట్ హాప్ 10.0.20.1 ద్వారా పోర్ట్ నంబర్ 0 లో."
+            ],
+            "explanation": "రూటర్‌లు వారికి తెలిసిన నెట్‌వర్క్‌లకు మాత్రమే పాకెట్‌లను ఫార్వార్డ్ చేస్తాయి. File-Server సమాధానాలు Router-Fukuoka కు చేరుకుంటాయి, కానీ PC-Finance సబ్‌నెట్ వైపుకు ఇండ్డూ సూచించే నిలువుచేసిన ఫ్లాప్ లేకుండా, రూటర్ వాటిని ఎక్కడ పంపాలో తెలియక, వాటిని తిస్సేసింది, ఇది కనెక్షన్ ప్రయత్నం టైమ్‌ఔట్ కు సంబంధించినది."
+        },
+        "uk": {
+            "title": "Філіал не може досягти файлів HQ",
+            "story": "З цього ранку фінансова команда філіалу повідомляє, що не може відкрити жодних файлів, збережених на File-Server головного офісу з PC-Finance. Вони потребують цього для дотримання крайнього терміну.",
+            "objective": "Відновіть доступ HTTP з PC-Finance на File-Server.",
+            "hints": [
+                "Відповідь ніколи не повертається назад через Router-Fukuoka — запит досягає File-Server, але зворотний шлях там застрягає.",
+                "У Router-Fukuoka немає запису маршрутизації, який розповідає, як досягти мережі PC-Finance, тому він скидає відповідь замість її переадресації.",
+                "На Router-Fukuoka додайте статичний маршрут для мережі 10.0.26.0 / 255.255.255.0 через наступний перехід 10.0.20.1 на номері порту 0."
+            ],
+            "explanation": "Маршрутизатори пересилають пакети лише до мереж, про які вони знають. Відповіді File-Server досягли Router-Fukuoka, але без статичного маршруту, спрямованого назад до підмережі PC-Finance, маршрутизатор не знав, куди їх надіслати, і скинув їх, що призвело до тайм-ауту спроби підключення."
+        },
+        "ur": {
+            "title": "برانچ آفس ہیڈ کوارٹرز کی فائلوں تک رسائی نہیں کر سکتا",
+            "story": "صبح سے، برانچ آفس میں فنانس ٹیم کی رپورٹ ہے کہ وہ ہیڈ کوارٹرز میں موجود File-Server پر محفوظ کوئی بھی فائل PC-Finance سے کھول نہیں سکتے۔ انہیں یہ کام ایک ڈیڈ لائن کے لیے کرنے کی ضرورت ہے۔",
+            "objective": "PC-Finance سے File-Server تک HTTP رسائی بحال کریں۔",
+            "hints": [
+                "جواب Router-Fukuoka سے آگے کبھی نہیں پہنچتا — درخواست File-Server تک پہنچ جاتی ہے، لیکن واپسی کا سفر وہیں رک جاتا ہے۔",
+                "Router-Fukuoka کے پاس کوئی روٹنگ ٹیبل اندراجات نہیں جو اسے بتائے کہ PC-Finance کے نیٹ ورک تک کیسے رسائی حاصل کی جائے، اس لیے یہ جواب کو آگے بھیجنے کی بجائے معاف کر دیتا ہے۔",
+                "Router-Fukuoka پر، نیٹ ورک 10.0.26.0 / 255.255.255.0 کے لیے ایک جامد روٹ شامل کریں، نیکسٹ ہاپ 10.0.20.1 کے ذریعے پورٹ 0 پر۔"
+            ],
+            "explanation": "روٹرز صرف انہی نیٹ ورکس کو فارورڈ کرتے ہیں جن کے بارے میں انہیں معلومات ہے۔ File-Server کے جوابات Router-Fukuoka تک پہنچ گئے، لیکن بغیر کسی جامد روٹ کے جو PC-Finance کی subnet کی طرف واپس اشارہ کرے، روٹر کو معلوم نہیں تھا کہ انہیں کہاں بھیجیں اور انہیں معاف کر دیا، جس سے اتصال کی کوشش ختم ہو گئی۔"
+        },
+        "zu": {
+            "title": "Iofisi Yasangweni Ayikwazi Ukufinyelela Amafayili e-HQ",
+            "story": "Kusukela ekuseni, ithimu ye-finance kwiofisi yasangweni ilikhiphe ukuthi ayikwazi ukuvula noma iyiphi ifayili elungele kwiFile-Server kwiheadquarters ivela ku-PC-Finance. Badinga lokhu ukuthi kusebenze ngokuya ku-deadline.",
+            "objective": "Kulungisa ukungenelela kwe-HTTP evela ku-PC-Finance ukuya kwi-File-Server.",
+            "hints": [
+                "Impendulo ayinakho ukuphambili ngaphezu kwe-Router-Fukuoka — icelo lifikelele ku-File-Server, kodwa ukunyakulwa kokubuya kumamisele kukhona.",
+                "I-Router-Fukuoka ayinayo inethiwekhi okuyiwa kuyo ethebula lemizila eyazisayo ukuthi kufika kuphi ku-PC-Finance, ngakho-ke idonsela impendulo esikhundleni sokuyithwala phambili.",
+                "Ku-Router-Fukuoka, engeza umzila olinganiselwe wenethiwekhi 10.0.26.0 / 255.255.255.0 nge-next hop 10.0.20.1 ephothi 0."
+            ],
+            "explanation": "Ama-Router adluliselela kuphela amapakete anethiwekhi azaziyo. Impendulo ye-File-Server yafika kwi-Router-Fukuoka, kodwa ngaphandle komzila olinganiselwe ozoba mkhonzi ekhombisa kwi-subnet ye-PC-Finance, irautha ayazi ukuthi yayizoyithwala kuphi, waydonsela, okudlulisela ikuphi um-timeout womzamo wokuxhumeka."
+        },
+        "am": {
+            "title": "ቅርንጫፍ ቢሮ HQ ፋይሎች ሊደርስ አይችልም",
+            "story": "ዛሬ ጠዋት ጀምሮ በቅርንጫፍ ቢሮ ውስጥ ያለው የፋይናንስ ቡድን ከ File-Server ሃላፊነት ውስጥ በ PC-Finance ላይ ማንኛውንም ፋይል መክፈት እንደማይችል ሪፖርት ገብታል። ለመጨረሻ ወቅት ይህ ማስተሳሰር ያስፈልጋል።",
+            "objective": "ከ PC-Finance ወደ File-Server HTTP መድረስ ሥራ ላይ ይግቡ።",
+            "hints": [
+                "መልሱ በ Router-Fukuoka ሲያልፍ ወደ ሌላ ቦታ አይደርስም — ጥያቄው File-Server ላይ ይደርሳል ነገር ግን መመለሻ ጉዞ እዚያ ይቆማል።",
+                "Router-Fukuoka ለ PC-Finance አውታረ መረብ ለመድረስ እንዴት እንደሚሠራ የሚነግር የማዘዋወሪያ ሰንጠረዥ ግቤት የለውም ስለዚህ መልሱን ወደ ፊት ለመላክ ይልቅ ብትሰርዋለች።",
+                "Router-Fukuoka ላይ ለአውታረ መረብ 10.0.26.0 / 255.255.255.0 ቀጣይ ሆፕ 10.0.20.1 ላይ በፖርት 0 ስታስ ወሳኝ ጉያ ጨምር።"
+            ],
+            "explanation": "ルーターはነሱ ስለሚያውቁት አውታረ መረቦች ብቻ ፓኬት ይልካሉ። የ File-Server መልሶች ወደ Router-Fukuoka ደርሰዋል ነገር ግን ወደ PC-Finance ንዑስ አውታር ያመላክተው ስታስ ወሳኝ ጉያ ሳይኖር ሮውተር ተሪ የት እንደሚላክ አላወቀም እና ወረወረ ይህም የግንኙነት ሙከራ ጊዜ ከገደለ।"
+        },
+        "ar": {
+            "title": "فرع المكتب لا يمكنه الوصول إلى ملفات المقر الرئيسي",
+            "story": "منذ صباح اليوم، يبلغ فريق الشؤون المالية في فرع المكتب أنهم لا يستطيعون فتح أي ملفات مخزنة على File-Server المقر الرئيسي من PC-Finance. يحتاجون إلى هذا الإصلاح في موعد نهائي.",
+            "objective": "استعادة وصول HTTP من PC-Finance إلى File-Server.",
+            "hints": [
+                "الرد لا يعود أبداً بعد Router-Fukuoka — الطلب يصل إلى File-Server، لكن رحلة العودة تتوقف هناك.",
+                "Router-Fukuoka ليس لديه إدخال في جدول التوجيه يخبره كيف يصل إلى شبكة PC-Finance، لذلك يسقط الرد بدلاً من إعادة توجيهه.",
+                "على Router-Fukuoka، أضف مسار ثابت للشبكة 10.0.26.0 / 255.255.255.0 عبر القفزة التالية 10.0.20.1 على رقم المنفذ 0."
+            ],
+            "explanation": "أجهزة التوجيه تعيد توجيه الحزم فقط للشبكات التي تعرفها. وصلت الردود من File-Server إلى Router-Fukuoka، لكن بدون مسار ثابت يشير إلى الخلف نحو نطاق PC-Finance، لم يكن لدى الموجه أي فكرة عن مكان إرسالها وأسقطها، مما تسبب في انتهاء محاولة الاتصال بسبب انقضاء المهلة الزمنية."
+        }
+    }
+}
