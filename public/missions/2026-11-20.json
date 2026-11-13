@@ -1,0 +1,1324 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-20",
+    "number": 61,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.17.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.17.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.17.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.15.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.18.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.15.2",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.15.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.18.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.17.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.15.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.18.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.18.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Vanishing Orders to Headquarters",
+            "story": "The Sapporo branch reopened this week, but PC-Admin cannot pull up the Web-Server page in Fukuoka. Every order form just spins and times out, and staff are asking why nothing arrives at headquarters.",
+            "objective": "Get an HTTP request from PC-Admin to Web-Server to succeed.",
+            "hints": [
+                "The request never gets past Router-Sapporo; it is dropped there before heading toward Fukuoka.",
+                "Router-Sapporo has a route to the Web-Server's network pointing out the wrong port, so it never leaves on the link that actually leads toward Fukuoka.",
+                "On Router-Sapporo, delete the bad route to 10.0.18.0/255.255.255.0 and add a static route to 10.0.18.0/255.255.255.0 via 10.0.15.2 on port 1."
+            ],
+            "explanation": "A static route must send traffic out the interface that actually leads to the next hop. Here the route to the remote network pointed out the wrong port, so Router-Sapporo dropped every packet before it could cross the WAN link to Fukuoka."
+        },
+        "ja": {
+            "title": "本社への発注が届かない",
+            "story": "今週、札幌支店が営業を再開しましたが、PC-Adminから福岡にあるWeb-Serverのページが開けません。注文フォームがぐるぐる回り続けてタイムアウトし、スタッフは本社に何も届かないと困惑しています。",
+            "objective": "PC-AdminからWeb-ServerへのHTTPリクエストを成功させる。",
+            "hints": [
+                "リクエストはRouter-Sapporoを越えられず、福岡へ向かう前にそこで破棄されています。",
+                "Router-Sapporoには、Web-Serverのネットワーク宛てのルートが間違ったポートを向くように設定されているため、福岡へ実際につながる回線に出て行けません。",
+                "Router-Sapporoで、10.0.18.0/255.255.255.0への誤ったルートを削除し、10.018.0/255.255.255.0を中継先10.0.15.2、ポート1で静的ルートとして追加します。"
+            ],
+            "explanation": "静的ルートは、実際に中継先へつながるインターフェースへトラフィックを送り出す必要があります。この例では、リモートネットワーク宛てのルートが間違ったポートを向いていたため、Router-SapporoはパケットがWAN回線を越えて福岡へ届く前にすべて破棄していました。"
+        },
+        "zh-CN": {
+            "title": "发往总部的订单消失了",
+            "story": "札幌分公司本周重新开业，但 PC-Admin 无法访问福冈的 Web-Server 页面。每份订单表单都在加载中无限旋转并最终超时，员工们想知道为什么订单无法送达总部。",
+            "objective": "让 PC-Admin 到 Web-Server 的 HTTP 请求成功完成。",
+            "hints": [
+                "该请求在 Router-Sapporo 处被拦截，在前往福冈之前就被丢弃了。",
+                "Router-Sapporo 到 Web-Server 网络的路由指向了错误的端口，所以流量无法通过实际连向福冈的链路离开。",
+                "在 Router-Sapporo 上，删除指向 10.0.18.0/255.255.255.0 的错误路由，然后添加一条静态路由到 10.0.18.0/255.255.255.0，下一跳为 10.0.15.2，端口号为 1。"
+            ],
+            "explanation": "静态路由必须通过实际连向下一跳的接口来发送流量。在这里，到远程网络的路由指向了错误的端口，所以 Router-Sapporo 在流量跨越广域网链路到达福冈之前就丢弃了每个数据包。"
+        },
+        "zh-TW": {
+            "title": "發往總部的訂單消失了",
+            "story": "札幌分公司本週重新開業，但 PC-Admin 無法存取福岡的 Web-Server 頁面。每份訂單表單都在載入中無限旋轉並最終逾時，員工們想知道為什麼訂單無法送達總部。",
+            "objective": "讓 PC-Admin 到 Web-Server 的 HTTP 請求成功完成。",
+            "hints": [
+                "該請求在 Router-Sapporo 處被攔截，在前往福岡之前就被丟棄了。",
+                "Router-Sapporo 到 Web-Server 網路的路由指向了錯誤的連接埠，所以流量無法通過實際連向福岡的連結離開。",
+                "在 Router-Sapporo 上，刪除指向 10.0.18.0/255.255.255.0 的錯誤路由，然後新增一條靜態路由到 10.0.18.0/255.255.255.0，下一跳為 10.0.15.2，連接埠號為 1。"
+            ],
+            "explanation": "靜態路由必須通過實際連向下一跳的介面來傳送流量。在這裡，到遠端網路的路由指向了錯誤的連接埠，所以 Router-Sapporo 在流量跨越廣域網連結到達福岡之前就丟棄了每個資料封包。"
+        },
+        "ko": {
+            "title": "본사로의 주문이 사라졌습니다",
+            "story": "삿포로 지점이 이번 주에 재개업했지만 PC-Admin은 후쿠오카의 Web-Server 페이지에 접속할 수 없습니다. 모든 주문 양식이 계속 로딩되다가 결국 시간 초과되며, 직원들은 주문이 왜 본사에 도착하지 않는지 궁금해하고 있습니다.",
+            "objective": "PC-Admin에서 Web-Server로의 HTTP 요청이 성공하도록 해야 합니다.",
+            "hints": [
+                "요청이 Router-Sapporo에서 막혀 후쿠오카로 향하기 전에 버려집니다.",
+                "Router-Sapporo의 Web-Server 네트워크로의 경로가 잘못된 포트를 가리키므로, 실제로 후쿠오카로 가는 링크를 통해 나갈 수 없습니다.",
+                "Router-Sapporo에서 10.0.18.0/255.255.255.0으로의 잘못된 경로를 삭제하고, 다음 홉 10.0.15.2의 포트 1로 10.0.18.0/255.255.255.0으로 가는 정적 경로를 추가합니다."
+            ],
+            "explanation": "정적 경로는 실제로 다음 홉으로 가는 인터페이스로 트래픽을 보내야 합니다. 여기서는 원격 네트워크로의 경로가 잘못된 포트를 가리켰으므로 Router-Sapporo는 트래픽이 후쿠오카로의 WAN 링크를 건너기 전에 모든 패킷을 버렸습니다."
+        },
+        "es": {
+            "title": "Los pedidos hacia la matriz desaparecen",
+            "story": "La sucursal de Sapporo reabrió esta semana, pero PC-Admin no puede acceder a la página de Web-Server en Fukuoka. Cada formulario de pedido gira continuamente y se agota el tiempo de espera, y el personal se pregunta por qué nada llega a la matriz.",
+            "objective": "Lograr que una solicitud HTTP desde PC-Admin hacia Web-Server se complete exitosamente.",
+            "hints": [
+                "La solicitud nunca avanza más allá de Router-Sapporo; se descarta ahí antes de dirigirse hacia Fukuoka.",
+                "Router-Sapporo tiene una ruta hacia la red de Web-Server que apunta a un puerto incorrecto, por lo que nunca sale por el enlace que realmente va hacia Fukuoka.",
+                "En Router-Sapporo, elimina la ruta incorrecta a 10.0.18.0/255.255.255.0 y añade una ruta estática a 10.0.18.0/255.255.255.0 vía 10.0.15.2 en puerto 1."
+            ],
+            "explanation": "Una ruta estática debe enviar el tráfico por la interfaz que realmente conduce al siguiente salto. Aquí la ruta hacia la red remota apuntaba al puerto incorrecto, por lo que Router-Sapporo descartaba cada paquete antes de que pudiera cruzar el enlace WAN hacia Fukuoka."
+        },
+        "pt-BR": {
+            "title": "Pedidos para a Matriz Desaparecem",
+            "story": "A filial de Sapporo reabriu esta semana, mas PC-Admin não consegue acessar a página Web-Server em Fukuoka. Todos os formulários de pedido ficam carregando e expiram, e os funcionários querem saber por que nada chega à matriz.",
+            "objective": "Fazer com que uma requisição HTTP de PC-Admin para Web-Server seja bem-sucedida.",
+            "hints": [
+                "A requisição fica presa em Router-Sapporo e é descartada lá antes de chegar a Fukuoka.",
+                "Router-Sapporo tem uma rota para a rede Web-Server apontando para a porta errada, então nunca sai pelo enlace que realmente leva a Fukuoka.",
+                "Em Router-Sapporo, delete a rota incorreta para 10.0.18.0/255.255.255.0 e adicione uma rota estática para 10.0.18.0/255.255.255.0 via 10.0.15.2 na porta 1."
+            ],
+            "explanation": "Uma rota estática deve enviar o tráfego pela interface que realmente leva ao próximo salto. Aqui a rota para a rede remota apontava para a porta errada, então Router-Sapporo descartava cada pacote antes dele conseguir atravessar o enlace WAN até Fukuoka."
+        },
+        "de": {
+            "title": "Bestellungen an das Hauptquartier verschwinden",
+            "story": "Die Filiale Sapporo ist diese Woche wiedereröffnet worden, aber PC-Admin kann die Web-Server-Seite in Fukuoka nicht abrufen. Jedes Bestellformular dreht sich nur und lädt nicht, und die Mitarbeiter fragen, warum nichts die Zentrale erreicht.",
+            "objective": "Ein HTTP-Request von PC-Admin zu Web-Server muss erfolgreich sein.",
+            "hints": [
+                "Der Request kommt nicht über Router-Sapporo hinaus; er wird dort abgebrochen, bevor er nach Fukuoka geht.",
+                "Router-Sapporo hat eine Route zum Netzwerk von Web-Server, die auf den falschen Port zeigt, daher geht die Anfrage nicht auf der Verbindung ab, die nach Fukuoka führt.",
+                "Löschen Sie auf Router-Sapporo die schlechte Route zu 10.0.18.0/255.255.255.0 und fügen Sie eine statische Route zu 10.0.18.0/255.255.255.0 über Nächster Hop 10.0.15.2 auf Port 1 hinzu."
+            ],
+            "explanation": "Eine statische Route muss Datenverkehr über die Schnittstelle senden, die tatsächlich zum Nächsten Hop führt. Hier zeigte die Route zum Remotenetzwerk auf den falschen Port, daher verwarf Router-Sapporo jedes Paket, bevor es die WAN-Verbindung nach Fukuoka durchqueren konnte."
+        },
+        "fr": {
+            "title": "Les commandes vers le siège disparaissent",
+            "story": "La succursale de Sapporo a rouvert cette semaine, mais PC-Admin ne peut pas accéder à la page Web-Server à Fukuoka. Chaque formulaire de commande tourne sans fin et expire, et le personnel demande pourquoi rien n'arrive au siège.",
+            "objective": "Obtenir un succès d'une requête HTTP de PC-Admin vers Web-Server.",
+            "hints": [
+                "La requête ne dépasse jamais Router-Sapporo ; elle est supprimée là avant de se diriger vers Fukuoka.",
+                "Router-Sapporo possède une route vers le réseau de Web-Server qui pointe sur le mauvais port, elle ne sort donc pas par le lien qui mène réellement vers Fukuoka.",
+                "Sur Router-Sapporo, supprimez la mauvaise route vers 10.0.18.0/255.255.255.0 et ajoutez une route statique vers 10.0.18.0/255.255.255.0 via le Saut suivant 10.0.15.2 sur le port 1."
+            ],
+            "explanation": "Une route statique doit envoyer le trafic par l'interface qui mène réellement au Saut suivant. Ici, la route vers le réseau distant pointait sur le mauvais port, de sorte que Router-Sapporo a supprimé chaque paquet avant qu'il ne puisse traverser la liaison WAN vers Fukuoka."
+        },
+        "hi": {
+            "title": "मुख्यालय के लिए गायब आदेश",
+            "story": "साप्पोरो शाखा इस सप्ताह फिर से खुली है, लेकिन PC-Admin फुकुओका में Web-Server पृष्ठ नहीं खोल सकता। हर ऑर्डर फॉर्म बस घूमता है और समय समाप्त हो जाता है, और कर्मचारी पूछ रहे हैं कि मुख्यालय तक कुछ भी क्यों नहीं पहुंचता।",
+            "objective": "PC-Admin से Web-Server तक HTTP अनुरोध सफल होना चाहिए।",
+            "hints": [
+                "अनुरोध कभी Router-Sapporo से आगे नहीं जाता; यह फुकुओका की ओर जाने से पहले वहां हटा दिया जाता है।",
+                "Router-Sapporo के पास Web-Server के नेटवर्क के लिए एक मार्ग है जो गलत पोर्ट की ओर इशारा करता है, इसलिए यह उस लिंक से नहीं निकलता जो वास्तव में फुकुओका की ओर जाती है।",
+                "Router-Sapporo पर, 10.0.18.0/255.255.255.0 का बुरा मार्ग हटाएं और अगला हॉप 10.0.15.2, पोर्ट 1 पर 10.0.18.0/255.255.255.0 के लिए एक स्थिर मार्ग जोड़ें।"
+            ],
+            "explanation": "एक स्थिर मार्ग को उस इंटरफ़ेस के माध्यम से ट्रैफ़िक भेजना चाहिए जो वास्तव में अगले हॉप तक जाता है। यहां दूरस्थ नेटवर्क का मार्ग गलत पोर्ट की ओर इशारा करता था, इसलिए Router-Sapporo ने हर पैकेट को फुकुओका के लिए WAN लिंक को पार करने से पहले हटा दिया।"
+        },
+        "id": {
+            "title": "Pesanan untuk Kantor Pusat Hilang",
+            "story": "Cabang Sapporo dibuka kembali minggu ini, tetapi PC-Admin tidak dapat membuka halaman Web-Server di Fukuoka. Setiap formulir pesanan hanya berputar dan waktu tunggu habis, dan staf bertanya mengapa tidak ada yang sampai ke kantor pusat.",
+            "objective": "Permintaan HTTP dari PC-Admin ke Web-Server harus berhasil.",
+            "hints": [
+                "Permintaan tidak pernah melewati Router-Sapporo; permintaan dihapus di sana sebelum menuju ke Fukuoka.",
+                "Router-Sapporo memiliki rute ke jaringan Web-Server yang menunjuk ke port yang salah, sehingga tidak keluar dari tautan yang sebenarnya menuju Fukuoka.",
+                "Di Router-Sapporo, hapus rute buruk ke 10.0.18.0/255.255.255.0 dan tambahkan rute statis ke 10.0.18.0/255.255.255.0 melalui Hop berikutnya 10.0.15.2 pada port 1."
+            ],
+            "explanation": "Rute statis harus mengirim lalu lintas melalui antarmuka yang benar-benar mengarah ke Hop berikutnya. Di sini, rute ke jaringan jarak jauh menunjuk ke port yang salah, jadi Router-Sapporo menghapus setiap paket sebelum dapat melewati tautan WAN ke Fukuoka."
+        },
+        "ru": {
+            "title": "Исчезающие заказы в штаб-квартиру",
+            "story": "Филиал Саппоро переоткрылся на этой неделе, но PC-Admin не может открыть страницу Web-Server в Фукуоке. Каждая форма заказа просто вращается и истекает, а сотрудники спрашивают, почему ничего не доходит до штаб-квартиры.",
+            "objective": "HTTP-запрос от PC-Admin к Web-Server должен выполниться успешно.",
+            "hints": [
+                "Запрос никогда не проходит дальше Router-Sapporo; он отбрасывается там перед направлением в Фукуоку.",
+                "Router-Sapporo имеет маршрут к сети Web-Server, указывающий на неправильный порт, поэтому он не выходит на канал, который фактически ведет в Фукуоку.",
+                "На Router-Sapporo удалите неверный маршрут к 10.0.18.0/255.255.255.0 и добавьте статический маршрут к 10.0.18.0/255.255.255.0 через Следующий узел 10.0.15.2 на порту 1."
+            ],
+            "explanation": "Статический маршрут должен отправлять трафик через интерфейс, который фактически ведет к следующему узлу. Здесь маршрут к удаленной сети указывал на неправильный порт, поэтому Router-Sapporo отбросил каждый пакет перед тем, как он смог пересечь WAN-канал в Фукуоку."
+        },
+        "it": {
+            "title": "Gli ordini scomparsi per la sede",
+            "story": "Il ramo di Sapporo ha riaperto questa settimana, ma PC-Admin non riece a visualizzare la pagina Web-Server a Fukuoka. Ogni modulo d'ordine si blocca e va in timeout, e il personale si chiede perché nulla arriva alla sede.",
+            "objective": "Far sì che una richiesta HTTP da PC-Admin a Web-Server vada a buon fine.",
+            "hints": [
+                "La richiesta non va oltre Router-Sapporo; viene scartata lì prima di dirigersi verso Fukuoka.",
+                "Router-Sapporo ha una rotta verso la rete Web-Server che punta alla porta sbagliata, quindi non parte mai sul collegamento che effettivamente porta verso Fukuoka.",
+                "Su Router-Sapporo, elimina la rotta non valida verso 10.0.18.0/255.255.255.0 e aggiungi una rotta statica verso 10.0.18.0/255.255.255.0 via 10.0.15.2 sulla porta 1."
+            ],
+            "explanation": "Una rotta statica deve inviare il traffico sull'interfaccia che effettivamente porta al next hop. In questo caso la rotta verso la rete remota puntava alla porta sbagliata, quindi Router-Sapporo ha scartato ogni pacchetto prima che potesse attraversare il collegamento WAN verso Fukuoka."
+        },
+        "tr": {
+            "title": "Merkez Ofise Giden Siparişler Kayboldu",
+            "story": "Sapporo şubesi bu hafta yeniden açıldı, ancak PC-Admin Fukuoka'daki Web-Server sayfasını açamıyor. Her sipariş formu donuyor ve zaman aşımına uğruyor; personel neden hiçbir şeyin merkez ofise ulaşmadığını merak ediyor.",
+            "objective": "PC-Admin'den Web-Server'a bir HTTP isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "İstek Router-Sapporo'yu geçemiyor; Fukuoka'ya gitmeden önce orada bırakılıyor.",
+                "Router-Sapporo'da Web-Server ağına giden bir rota, yanlış porta işaret ediyor; bu yüzden Fukuoka'ya doğru giden bağlantıdan hiç çıkmıyor.",
+                "Router-Sapporo'da, 10.0.18.0/255.255.255.0 adresine giden hatalı rotayı sil ve 10.0.18.0/255.255.255.0 hedef ağı için sonraki sıçrama 10.0.15.2, port numarası 1 olacak şekilde statik bir rota ekle."
+            ],
+            "explanation": "Statik bir rota, trafiği gerçekten sonraki sıçramaya giden arabirime göndermelidir. Burada uzak ağa giden rota yanlış porta işaret ediyordu; bu nedenle Router-Sapporo, Fukuoka'ya giden WAN bağlantısını geçmeden önce her paketi bıraktı."
+        },
+        "th": {
+            "title": "คำสั่งซื้อที่หายไปถึงสำนักงานใหญ่",
+            "story": "สาขา Sapporo เปิดใหม่สัปดาห์นี้ แต่ PC-Admin ไม่สามารถโหลดหน้า Web-Server ใน Fukuoka ได้ ฟอร์มการสั่งซื้อทั้งหมดค้างอยู่และหมดเวลา พนักงานสงสัยว่าทำไมไม่มีอะไรถึงสำนักงานใหญ่",
+            "objective": "ทำให้คำขอ HTTP จาก PC-Admin ถึง Web-Server สำเร็จ",
+            "hints": [
+                "คำขอไม่ได้ผ่าน Router-Sapporo ถูกวางไว้ที่นั่นก่อนจะไปทาง Fukuoka",
+                "Router-Sapporo มีเส้นทางไปยังเครือข่าย Web-Server ที่ชี้ไปยังพอร์ตที่ผิด จึงไม่ออกจากลิงก์ที่นำไปยัง Fukuoka",
+                "ที่ Router-Sapporo ให้ลบเส้นทางที่ไม่ถูกต้องไปยัง 10.0.18.0/255.255.255.0 และเพิ่มเส้นทางแบบคงที่ไปยัง 10.0.18.0/255.255.255.0 โดยฮ็อปถัดไป 10.0.15.2 ที่หมายเลขพอร์ต 1"
+            ],
+            "explanation": "เส้นทางแบบคงที่ต้องส่งทราฟฟิกออกทางอินเตอร์เฟซที่นำไปยังฮ็อปถัดไปจริงๆ ที่นี่เส้นทางไปยังเครือข่ายระยะไกลชี้ไปยังพอร์ตที่ผิด ดังนั้น Router-Sapporo จึงวางแพ็กเก็ตทั้งหมดลงก่อนที่จะข้ามลิงก์ WAN ไปยัง Fukuoka"
+        },
+        "vi": {
+            "title": "Các đơn hàng biến mất gửi tới trụ sở chính",
+            "story": "Chi nhánh Sapporo mở cửa trở lại tuần này, nhưng PC-Admin không thể tải trang Web-Server ở Fukuoka. Mọi biểu mẫu đơn hàng đều bị treo và hết thời gian chờ, nhân viên đang thắc mắc tại sao không có gì đến được trụ sở chính.",
+            "objective": "Tạo cho yêu cầu HTTP từ PC-Admin tới Web-Server thành công.",
+            "hints": [
+                "Yêu cầu không vượt qua Router-Sapporo; nó bị loại bỏ ở đó trước khi hướng tới Fukuoka.",
+                "Router-Sapporo có tuyến đường tới mạng Web-Server chỉ tới cổng sai, nên nó không bao giờ rời khỏi liên kết thực sự dẫn tới Fukuoka.",
+                "Trên Router-Sapporo, xóa tuyến đường xấu tới 10.0.18.0/255.255.255.0 và thêm tuyến đường tĩnh tới 10.0.18.0/255.255.255.0 qua hop tiếp theo 10.0.15.2 trên số cổng 1."
+            ],
+            "explanation": "Tuyến đường tĩnh phải gửi lưu lượng truy cập ra giao diện thực sự dẫn tới hop tiếp theo. Ở đây tuyến đường tới mạng từ xa chỉ tới cổng sai, vì vậy Router-Sapporo đã loại bỏ mọi gói tin trước khi nó có thể vượt qua liên kết WAN tới Fukuoka."
+        },
+        "af": {
+            "title": "Verdwynende bestellings aan hoofkantoor",
+            "story": "Die Sapporo-tak het hierdie week heropengemaak, maar PC-Admin kan die Web-Server-bladsy in Fukuoka nie laai nie. Elke bestellingsvorm bevries en verval, en personeel vra hoekom niks by die hoofkantoor aankom nie.",
+            "objective": "Maak 'n HTTP-versoek van PC-Admin na Web-Server suksesvol.",
+            "hints": [
+                "Die versoek kom nooit verby Router-Sapporo; dit word daar verwerp voordat dit na Fukuoka gaan.",
+                "Router-Sapporo het 'n roete na die Web-Server-netwerk wat na die verkeerde poort wys, dus gaan dit nooit uit op die skakel wat werklik na Fukuoka lei nie.",
+                "Op Router-Sapporo, skrap die sleg roete na 10.0.18.0/255.255.255.0 en voeg 'n statiese roete na 10.0.18.0/255.255.255.0 by via volgende hop 10.0.15.2 op poortnommer 1."
+            ],
+            "explanation": "'n Statiese roete moet verkeer op die koppelvlak stuur wat werklik na die volgende hop lei. Hier het die roete na die eksterne netwerk na die verkeerde poort gewys, dus het Router-Sapporo elke pakket verwerp voordat dit die WAN-skakel na Fukuoka kon kruis."
+        },
+        "am": {
+            "title": "የጥቅል ደረቅነት ለሪፖርት",
+            "story": "የሳፕኖሮ ቅርንጫፍ ይህ ሳምንት እንደገና ተከፈተ፣ ነገር ግን PC-Admin የ Web-Server ገጽ በፉኩኦካ ውስጥ ሊስወግድ አይችልም። ሙሉ የትዕዛዝ ሪፖርት ሞሌት ሰፋር ያደርጋል እና ጊዜ አልፈው ይወድቃሉ፣ እና ሠራተኞች ለምን ምንም ነገር በሪፖርት ወደ መካቢያ አልደረሰም ብለው ይጠይቃሉ።",
+            "objective": "HTTP ጥያቄ ከ PC-Admin ወደ Web-Server እንዲሳካ ያድርጉ።",
+            "hints": [
+                "ጥያቄ Router-Sapporo ከፍ ሌላ ነገር ወደ Fukuoka ከመሄድ በፊት ይወድቃል።",
+                "Router-Sapporo የ Web-Server አውታረ መረብ ወደ 틀린ፖርት ያመለክታል ሌላ ወደ Fukuoka ወደሚወስደው ምናባዊ አገናኝ ላይ አይወጣም።",
+                "በ Router-Sapporo ላይ 10.0.18.0/255.255.255.0 ወደ 나쁜ርุድ ቦታ ሰርዝ እና ወደ 10.0.18.0/255.255.255.0 ሌላ ሙያዊ ጠባብ ጨምር በተመሳሳይ ቀጣይ ሆፕ 10.0.15.2 በポート 1።"
+            ],
+            "explanation": "ሙያዊ ርክክብ ከሚወስድ ግንኙነት ውጭ ትራፊክ መላክ አለበት ወደ ቀጣይ ሆፕ። እዚህ ርክክብ ወደ ሩቅ ተጫዋች ወደ ስህተት ጉባኤ ወጣ፣ ስለዚህ Router-Sapporo እሁድ ጥቅሌ በወሰደ በFukuoka ወደ WAN አገናኝ ቅርናውን ቅብሌ አደርገዋል።"
+        },
+        "ar": {
+            "title": "اختفاء الطلبات إلى مقر الشركة",
+            "story": "تم افتتاح فرع سابورو هذا الأسبوع، لكن PC-Admin لا يستطيع فتح صفحة Web-Server في فوكوكا. كل نموذج طلب يتعطل ويانقضي الوقت، والموظفون يتساءلون لماذا لا يصل شيء إلى المقر الرئيسي.",
+            "objective": "جعل طلب HTTP من PC-Admin إلى Web-Server ينجح.",
+            "hints": [
+                "الطلب لا يتجاوز Router-Sapporo أبداً؛ يتم حذفه هناك قبل التوجه نحو فوكوكا.",
+                "Router-Sapporo لديه مسار إلى شبكة Web-Server يشير إلى المنفذ الخاطئ، لذا لا يترك الرابط الذي يؤدي فعلاً نحو فوكوكا.",
+                "في Router-Sapporo، احذف المسار السيء إلى 10.0.18.0/255.255.255.0 وأضف مسار ثابت إلى 10.0.18.0/255.255.255.0 عبر 10.0.15.2 على المنفذ 1."
+            ],
+            "explanation": "يجب أن يرسل المسار الثابت حركة المرور عبر الواجهة التي تؤدي فعلاً إلى القفزة التالية. هنا أشار المسار إلى الشبكة البعيدة إلى المنفذ الخاطئ، لذا قام Router-Sapporo بحذف كل حزمة قبل أن تتمكن من عبور رابط الشبكة الواسعة إلى فوكوكا."
+        },
+        "az": {
+            "title": "Merkeziə Yönetim Sifarişlərinin İtməsi",
+            "story": "Sapporo şöbəsi bu həftə yenidən açıldı, lakin PC-Admin Fukuoka-da Web-Server səhifəsini aça bilmir. Hər bir sifariş forması donmuş qalır və vaxt aşırı olur, işçilər isə mərkəzə nə üçün heç bir şey çatmadığını soruşdurlar.",
+            "objective": "PC-Admin-dən Web-Server-ə HTTP istəyinin uğurlu olmasını təmin edin.",
+            "hints": [
+                "İstək Router-Sapporo-yu keçmir; Fukuoka-ya doğru gətməzdən əvvəl orada atılır.",
+                "Router-Sapporo-nun Web-Server şəbəkəsinə olan marşrutu yanlış portu göstərir, buna görə Fukuoka-ya aparan keçidi tərk etmir.",
+                "Router-Sapporo-da 10.0.18.0/255.255.255.0-ə zəif marşrutu silin və 10.0.18.0/255.255.255.0-ə statik marşrut əlavə edin, növbəti keçid 10.0.15.2, port 1-də."
+            ],
+            "explanation": "Statik marşrut trafiki əslində növbəti keçidə aparan interfeys vasitəsilə göndərməlidir. Burada uzaq şəbəkəyə olan marşrut yanlış porta işarə edirdi, buna görə Router-Sapporo hər paketi Fukuoka-ya WAN keçidindən keçməzdən əvvəl atdı."
+        },
+        "be": {
+            "title": "Заказы, якія зніклі, насамкінец прибываюць",
+            "story": "Галіна Саппора дзесь недзелі вернулася, але PC-Admin не можа адкрыць старонку Web-Server у Фукуока. Кожная форма заказу вясна верцца і вычакаў час, а персанал пытаецца, чаму нічога не прыходзіць на центральны офіс.",
+            "objective": "Зрабіць запыт HTTP ад PC-Admin да Web-Server удалым.",
+            "hints": [
+                "Запыт никогда не выходзіць за Router-Sapporo; ён выдаляецца там перад тым, як адправіцца ў Фукуока.",
+                "Router-Sapporo мае маршрут ў сетку Web-Server, якая указвае на неправільны порт, таму ён не пакідае канал, який насамрэч вядзе да Фукуока.",
+                "На Router-Sapporo выдаліце дрэнны маршрут да 10.0.18.0/255.255.255.0 і дадайце статычны маршрут да 10.0.18.0/255.255.255.0 праз 10.0.15.2 на порте 1."
+            ],
+            "explanation": "Статычны маршрут павінен адпраўляць трафік праз інтэрфейс, які насамрэч вядзе да наступнага переходу. Тут маршрут ў адлегленую сетку указваў на неправільны порт, таму Router-Sapporo выдаляў кожны пакет перад тым, як ён мог перасеч каналь WAN ў Фукуока."
+        },
+        "bg": {
+            "title": "Изчезващи поръчки към централата",
+            "story": "Филиалът на Sapporo отвори отново тази седмица, но PC-Admin не може да отвори страницата на Web-Server във Fukuoka. Всяка формуляр за поръчка се завърта и изтече времето, а служителите питат защо нищо не пристигна в централата.",
+            "objective": "Направете HTTP заявка от PC-Admin до Web-Server да бъде успешна.",
+            "hints": [
+                "Заявката никога не преминава Router-Sapporo; той е отхвърлена там преди да тръгне към Fukuoka.",
+                "Router-Sapporo има маршрут към мрежата на Web-Server, който сочи към грешния порт, така че не излиза от връзката, която всъщност води към Fukuoka.",
+                "На Router-Sapporo изтрийте лошия маршрут към 10.0.18.0/255.255.255.0 и добавете статични маршрут към 10.0.18.0/255.255.255.0 чрез 10.0.15.2 на порт 1."
+            ],
+            "explanation": "Статични маршрут трябва да изпраща трафика през интерфейса, който всъщност води към следващия преход. Тук маршрутът към далечната мрежа сочи към грешния порт, така че Router-Sapporo отхвърли всеки пакет, преди той да може да пресече WAN връзката към Fukuoka."
+        },
+        "bn": {
+            "title": "সদর দফতরে হারিয়ে যাওয়া অর্ডার",
+            "story": "সাপোরো শাখা এই সপ্তাহে পুনরায় খোলা হয়েছে, কিন্তু PC-Admin ফুকুওকার Web-Server পৃষ্ঠা দেখতে পারছে না। প্রতিটি অর্ডার ফর্ম শুধু ঘোরে এবং সময় শেষ হয়ে যায়, এবং কর্মীরা জিজ্ঞাসা করছে কেন কিছুই সদর দফতরে পৌঁছায় না।",
+            "objective": "PC-Admin থেকে Web-Server এ HTTP অনুরোধ সফল করুন।",
+            "hints": [
+                "অনুরোধটি কখনও Router-Sapporo এর বাইরে যায় না; এটি ফুকুওকার দিকে যাওয়ার আগে সেখানে বাদ দেওয়া হয়।",
+                "Router-Sapporo এর Web-Server এর নেটওয়ার্কে একটি রুট আছে যা ভুল পোর্ট দিয়ে নির্দেশ করে, তাই এটি কখনও সেই লিঙ্কে চলে না যা প্রকৃতপক্ষে ফুকুওকার দিকে নিয়ে যায়।",
+                "Router-Sapporo এ, 10.0.18.0/255.255.255.0 এর খারাপ রুট মুছুন এবং 10.0.18.0/255.255.255.0 এর জন্য একটি স্ট্যাটিক রুট যোগ করুন নেক্সট হপ 10.0.15.2, পোর্ট নম্বর 1 এর মাধ্যমে।"
+            ],
+            "explanation": "একটি স্ট্যাটিক রুট অবশ্যই ট্রাফিক সেই ইন্টারফেস দিয়ে পাঠাতে হবে যা প্রকৃতপক্ষে নেক্সট হপের দিকে নিয়ে যায়। এখানে দূরবর্তী নেটওয়ার্কের রুট ভুল পোর্ট নির্দেশ করেছিল, তাই Router-Sapporo প্রতিটি প্যাকেট বাদ দিয়েছিল যাতে এটি ফুকুওকার দিকে WAN লিঙ্ক অতিক্রম করতে না পারে।"
+        },
+        "ca": {
+            "title": "Comandes desaparegudes a la seu central",
+            "story": "La sucursal de Sapporo va reobrir aquesta setmana, però PC-Admin no pot accedir a la pàgina de Web-Server a Fukuoka. Cada formulari de comanda simplement es queda penjat i caduca, i el personal pregunta per què res no arriba a la seu central.",
+            "objective": "Aconseguir que una sol·licitud HTTP de PC-Admin a Web-Server tingui èxit.",
+            "hints": [
+                "La sol·licitud mai no passa de Router-Sapporo; es descarta allà abans de dirigir-se cap a Fukuoka.",
+                "Router-Sapporo té una ruta cap a la xarxa de Web-Server que apunta cap al port incorrecte, de manera que mai no surt per l'enllaç que realment condueix cap a Fukuoka.",
+                "En Router-Sapporo, suprimiu la ruta defectuosa a 10.0.18.0/255.255.255.0 i afegiu una ruta estàtica a 10.0.18.0/255.255.255.0 via 10.0.15.2 en el número de port 1."
+            ],
+            "explanation": "Una ruta estàtica ha d'enviar tràfic per la interfície que realment condueix al salt següent. Aquí, la ruta cap a la xarxa remota apuntava cap al port incorrecte, de manera que Router-Sapporo descartava cada paquet abans que pogués creuar l'enllaç WAN cap a Fukuoka."
+        },
+        "cs": {
+            "title": "Zmizející objednávky do sídla",
+            "story": "Pobočka v Sapporu se tento týden znovu otevřela, ale PC-Admin nemůže najít stránku Web-Server ve Fukuoce. Každý formulář objednávky se jen točí a vyprší čas, a zaměstnanci se ptají, proč nic nedorazí do sídla.",
+            "objective": "Zprovozněte HTTP požadavek z PC-Admin na Web-Server.",
+            "hints": [
+                "Požadavek se nikdy nedostane přes Router-Sapporo; je zde vynechán, než se vydá směrem do Fukuoky.",
+                "Router-Sapporo má cestu k síti Web-Server nasměrovanou na nesprávný port, takže nikdy nevyjede na spoj, který skutečně vede do Fukuoky.",
+                "Na Router-Sapporo odstraňte špatnou cestu na 10.0.18.0/255.255.255.0 a přidejte statickou cestu na 10.0.18.0/255.255.255.0 na dalšího skoku 10.0.15.2, číslo portu 1."
+            ],
+            "explanation": "Statická cesta musí posílat provoz rozhraním, které skutečně vede k dalšímu skoku. Zde cesta k vzdálené síti ukazovala na nesprávný port, takže Router-Sapporo vynechával každý paket dříve, než mohl překonat spoj WAN do Fukuoky."
+        },
+        "da": {
+            "title": "Forsvundne ordrer til hovedkontoret",
+            "story": "Sapporo-filialen blev genåbnet denne uge, men PC-Admin kan ikke åbne Web-Server-siden i Fukuoka. Hver ordreformular roterer bare rundt og modtager timeout, og medarbeiderne spørger, hvorfor intet ankommer til hovedkontoret.",
+            "objective": "Få en HTTP-forespørgsel fra PC-Admin til Web-Server til at lykkes.",
+            "hints": [
+                "Forespørgslen kommer aldrig videre fra Router-Sapporo; den droppes dér, før den sender hen imod Fukuoka.",
+                "Router-Sapporo har en rute til Web-Servers netværk, der peger på den forkerte port, så den forlader aldrig linket, som faktisk fører til Fukuoka.",
+                "På Router-Sapporo skal du slette den dårlige rute til 10.0.18.0/255.255.255.0 og tilføje en statisk rute til 10.0.18.0/255.255.255.0 via 10.0.15.2 på portnummer 1."
+            ],
+            "explanation": "En statisk rute skal sende trafik ud via det interface, som faktisk fører til næste trin. Her pegede ruten til det fjerne netværk på den forkerte port, så Router-Sapporo droppede hver paket, før det kunne krydse WAN-linket til Fukuoka."
+        },
+        "el": {
+            "title": "Εξαφανιζόμενες παραγγελίες προς την έδρα",
+            "story": "Το κατάστημα Sapporo ανοίχτηκε ξανά αυτή την εβδομάδα, αλλά το PC-Admin δεν μπορεί να ανοίξει τη σελίδα Web-Server στη Fukuoka. Κάθε φόρμα παραγγελίας απλώς περιστρέφεται και λήγει, και το προσωπικό ρωτά γιατί τίποτα δεν φτάνει στην έδρα.",
+            "objective": "Καθιστώ δυνατή τη λήψη του HTTP ερωτήματος από PC-Admin σε Web-Server.",
+            "hints": [
+                "Το ερώτημα δεν ξεπερνά ποτέ το Router-Sapporo· απορρίπτεται εκεί πριν κατευθυνθεί προς τη Fukuoka.",
+                "Το Router-Sapporo έχει μια διαδρομή προς το δίκτυο του Web-Server που δείχνει τον λάθος αριθμό θύρας, ώστε να μην εξέρχεται ποτέ από το σύνδεσμο που οδηγεί στη Fukuoka.",
+                "Στο Router-Sapporo, διαγράψτε τη κακή διαδρομή προς 10.0.18.0/255.255.255.0 και προσθέστε μια στατική διαδρομή προς 10.0.18.0/255.255.255.0 μέσω 10.0.15.2 στον αριθμό θύρας 1."
+            ],
+            "explanation": "Μια στατική διαδρομή πρέπει να στέλνει κίνηση μέσω της διεπαφής που οδηγεί όντως στο επόμενο βήμα (next hop). Εδώ η διαδρομή προς το απομακρυσμένο δίκτυο έδειχνε τον λάθος αριθμό θύρας, ώστε το Router-Sapporo να απέρριπτε κάθε πακέτο πριν μπορέσει να διασχίσει τον σύνδεσμο WAN προς τη Fukuoka."
+        },
+        "et": {
+            "title": "Kadunud käsud peakontoori poole",
+            "story": "Sapporo filiaal avati sel nädalal uuesti, aga PC-Admin ei saa Fukuokast Web-Server lehte kätte. Kõik tellimusvormid lihtsalt kutsuvad ja jäävad ajale, ja personal küsib, miks miski peakontorisse ei jõua.",
+            "objective": "Tagada, et HTTP-päring PC-Admin'ist Web-Server'isse õnnestub.",
+            "hints": [
+                "Päring ei jõua kunagi Router-Sapporo'st edasi; see visatakse seal ära enne Fukuoka poole suunda.",
+                "Router-Sapporo'l on marsruut Web-Server'i võrku, mis osutab vale pordinumbrile, seega see ei lahku kunagi linkilt, mis tegelikult Fukuoka poole viib.",
+                "Router-Sapporo'l kustutage vale marsruut 10.0.18.0/255.255.255.0 poole ja lisage staatiline marsruut 10.0.18.0/255.255.255.0 poole järgmise hüpena 10.0.15.2 pordinumbril 1."
+            ],
+            "explanation": "Staatiline marsruut peab saatma liiklust liidesele, mis tegelikult järgmise hüpeni viib. Siin osutus marsruut kaugvõrku vale poole, mistõttu Router-Sapporo viskas iga paketi ära enne, kui see sai WAN-lingil Fukuokasse ülekanda."
+        },
+        "eu": {
+            "title": "Aginduen Desagertzea Nagusiaren Aldera",
+            "story": "Sapporon adarra asteburu honetan berrabiarazi zen, baina PC-Admin'ek ezin du Web-Server orria Fukuokakotatik hartu. Ordena formulario guztiak besterik ez dira bira-biratzen eta denbora-agurra igaro du, eta langilea galdetzen ari da zergatik ez da inongo gauza nagusiaren bulegora iristen.",
+            "objective": "HTTP eskaera PC-Admin'etik Web-Server'era lortzea.",
+            "hints": [
+                "Eskaera inoiz ez da Router-Sapporo'tik igaro; hura han ezabatzen da Fukuokarantz joan aurretik.",
+                "Router-Sapporo'k Web-Server'aren sarean ruta bat du, ataka-zenbaki okerra duena, beraz inoiz ez da igaro Fukuokarantz duen esteka hartik.",
+                "Router-Sapporo'n, ezabatu 10.0.18.0/255.255.255.0 akatsa eta gehitu bideratze-estatikoa 10.0.18.0/255.255.255.0 raino, hurrengo jauzia 10.0.15.2 da eta ataka-zenbakia 1 da."
+            ],
+            "explanation": "Bideratze estatiko batek trafikoa hurrengo jauziara benetan doan interfazean bidali behar du. Hemen ferneko sarearen bidea ataka okerra zuen, beraz Router-Sapporo'k paketeak egindako WAN loturan Fukuokara joan ahal zuten aurretik ezabatu zituen."
+        },
+        "fa": {
+            "title": "سفارشات گمشدهٔ سفارش مدیریت",
+            "story": "شعبهٔ ساپورو این هفته دوباره افتتاح شد، اما رایانهٔ مدیر (PC-Admin) نمی‌تواند صفحهٔ Web-Server را در فوکوکا باز کند. تمام فرم‌های سفارش به تعلیق در می‌آیند و مهلت تمام می‌شود، و کارمندان از این که هیچ پیامی به دفتر مرکزی نمی‌رسد شگفت‌زده‌اند.",
+            "objective": "اطمینان از موفقیت درخواستِ HTTP از PC-Admin تا Web-Server.",
+            "hints": [
+                "درخواست هرگز از Router-Sapporo فراتر نمی‌رود؛ آن‌جا پیش از ارسال به سمت فوکوکا حذف می‌شود.",
+                "Router-Sapporo دارای مسیری برای شبکهٔ Web-Server است که به شماره پورت اشتباه اشاره می‌کند، بنابراین هرگز از پیوندی نمی‌گذرد که واقعاً به فوکوکا می‌رسد.",
+                "در Router-Sapporo، مسیر بد تا 10.0.18.0/255.255.255.0 را حذف کنید و مسیر ثابت تا 10.0.18.0/255.255.255.0 را از طریق هاپ بعدی 10.0.15.2 و شماره پورت 1 اضافه کنید."
+            ],
+            "explanation": "مسیر ثابت باید ترافیک را از رابطی ارسال کند که واقعاً به هاپ بعدی می‌رسد. در اینجا مسیر شبکهٔ دوردست به پورت اشتباه اشاره می‌کرد، بنابراین Router-Sapporo تمام بسته‌ها را قبل از عبور از پیوند WAN به فوکوکا حذف می‌کرد."
+        },
+        "fi": {
+            "title": "Häviävät Käskyt Pääkonttoriin",
+            "story": "Sapporon sivukonttori avattiin uudelleen tällä viikolla, mutta PC-Admin ei voi avata Web-Server sivua Fukuokasta. Kaikki tilauslomakkeet vain pyörivät ja aikakatkaisu laukeaa, ja henkilöstö ihmettelee, miksi mikään ei saavu pääkonttoriin.",
+            "objective": "Varmista, että HTTP-pyyntö PC-Admin'ista Web-Server'iin onnistuu.",
+            "hints": [
+                "Pyyntö ei koskaan pääse Router-Sapporo'n yli; se pudotetaan siellä ennen kuin se menee Fukuokaan.",
+                "Router-Sapporo'lla on reitti Web-Server'in verkkoon, joka osoittaa väärään porttinumeroon, joten se ei koskaan lähde linkillä, joka todella johtaa Fukuokaan.",
+                "Poista Router-Sapporo'lta väärä reitti 10.0.18.0/255.255.255.0 verkko-osoitteeseen ja lisää staattinen reitti 10.0.18.0/255.255.255.0 verkko-osoitteeseen seuraavan hypyn kautta 10.0.15.2 porttinumerolla 1."
+            ],
+            "explanation": "Staattinen reitti on lähettävä liikenne rajapinnasta, joka todella johtaa seuraavaan hypyn kohteeseen. Tässä etäverkon reitti osoitti väärään porttiin, joten Router-Sapporo pudotti jokaisen paketin ennen kuin se pystyi ylittämään WAN-yhteyden Fukuokaan."
+        },
+        "fil": {
+            "title": "Nakawalang Order sa Punong-Opisina",
+            "story": "Ang Sapporo na sangay ay muling bukas ngayong linggo, ngunit ang PC-Admin ay hindi makakakuha ng Web-Server na pahina mula sa Fukuoka. Lahat ng anyo ng order ay umiikot lamang at tumatagal, at ang mga kawani ay nagtatanong kung bakit walang dumadating sa pangunahing opisina.",
+            "objective": "Siguraduhin na ang HTTP na hiling mula sa PC-Admin sa Web-Server ay matagumpay.",
+            "hints": [
+                "Ang hiling ay hindi kailanman umabot sa lampas sa Router-Sapporo; ito ay ibinagsak doon bago ito magpunta patungo sa Fukuoka.",
+                "Router-Sapporo ay may ruta sa network ng Web-Server na tumuturo sa maling numero ng port, kaya ito ay hindi kailanman umalis sa link na tunay na nagreresulta sa Fukuoka.",
+                "Sa Router-Sapporo, burahin ang maling ruta sa 10.0.18.0/255.255.255.0 at magdagdag ng static na ruta sa 10.0.18.0/255.255.255.0 sa pamamagitan ng susunod na hop 10.0.15.2 sa port number 1."
+            ],
+            "explanation": "Ang isang static na ruta ay dapat magpadala ng trapiko sa interface na tunay na nagreresulta sa susunod na hop. Dito ang ruta sa malayong network ay tumuturo sa maling port, kaya ang Router-Sapporo ay nag-drop ng bawat packet bago ito makalusot sa WAN link patungo sa Fukuoka."
+        },
+        "gl": {
+            "title": "Pedidos que desaparecen cara a sede",
+            "story": "A sucursal de Sapporo reabrió esta semana, pero PC-Admin non pode cargar a páxina de Web-Server en Fukuoka. Cada formulario de pedidos só xira e vence, e o persoal pregunta por que nada chega á sede.",
+            "objective": "Conseguir que unha solicitude HTTP de PC-Admin a Web-Server teña éxito.",
+            "hints": [
+                "A solicitude nunca vai máis alá de Router-Sapporo; é descartada alí antes de encaminarse cara a Fukuoka.",
+                "Router-Sapporo ten unha ruta á rede de Web-Server que apunta ao porto incorrecto, polo que nunca sae pola ligazón que realmente leva cara a Fukuoka.",
+                "En Router-Sapporo, elimina a ruta incorrecta a 10.0.18.0/255.255.255.0 e engade unha ruta estática a 10.0.18.0/255.255.255.0 a través de 10.0.15.2 no porto 1."
+            ],
+            "explanation": "Unha ruta estática debe enviar o tráfico pola interface que realmente leva ao seguinte salto. Aquí a ruta á rede remota apuntaba ao porto incorrecto, polo que Router-Sapporo descartaba cada paquete antes de poder cruzar a ligazón WAN cara a Fukuoka."
+        },
+        "gu": {
+            "title": "અદૃશ્ય ઓર્ડર્સ હેડક્વાર્ટર્સ તરફ",
+            "story": "સપોરો શાખા આ સપ્તાહે ફરીથી ખુલી, પરંતુ PC-Admin ફુકુઓકામાં Web-Server પૃષ્ઠ લોડ કરી શકતો નથી. દરેક ઓર્ડર ફોર્મ માત્ર ફરે છે અને સમય સમાપ્ત થાય છે, અને કર્મચારીઓ પૂછે છે કે શા માટે કંઈ હેડક્વાર્ટર્સ સુધી પહોંચતું નથી.",
+            "objective": "PC-Admin થી Web-Server સુધી HTTP વિનંતી સફળ કરો.",
+            "hints": [
+                "વિનંતી Router-Sapporo ની બહાર ક્યારેય જતી નથી; તે ફુકુઓકા તરફ જતી પહેલાં ત્યાં મૂકવામાં આવે છે.",
+                "Router-Sapporo પાસે Web-Server ના નેટવર્કનો રૂટ છે જે ખોટા પોર્ટ તરફ નિર્દેશ કરે છે, તેથી તે તે લિંક પર ક્યારેય જતો નથી જે ખરેખર ફુકુઓકા તરફ જાય છે.",
+                "Router-Sapporo પર, 10.0.18.0/255.255.255.0 નો ખરાબ રૂટ હटાવો અને 10.0.18.0/255.255.255.0 તરફ 10.0.15.2 દ્વારા પોર્ટ 1 પર સ્થિર રૂટ ઉમેરો."
+            ],
+            "explanation": "એક સ્થિર રૂટ નેક્સ્ટ હોપ તરફ ખરેખર જતા ઇન્ટરફેસ પર ટ્રાફિક મોકલવો જોઈએ. અહીં રિમોટ નેટવર્ક તરફનો રૂટ ખોટા પોર્ટ તરફ નિર્દેશ કરતો હતો, તેથી Router-Sapporo દરેક પેકેટ ફુકુઓકા તરફ WAN લિંક ક્રોસ કરતા પહેલાં છોડી દેતો હતો."
+        },
+        "he": {
+            "title": "הזמנות שנעלמות לנמלים",
+            "story": "סניף סאפורו נפתח מחדש השבוע, אך PC-Admin לא יכול לטעון את דף Web-Server בפוקואוקה. כל טופס הזמנה פשוט מסתובב ופוקע בתהליך, והצוות שואל למה שום דבר לא מגיע לנמלים.",
+            "objective": "הצליח בהבקשת HTTP מ-PC-Admin אל Web-Server.",
+            "hints": [
+                "הבקשה אף פעם לא עוברת את Router-Sapporo; היא נפלה שם לפני שהיא הולכת לכיוון פוקואוקה.",
+                "Router-Sapporo יש מסלול לרשת Web-Server שמצביע לפתח הלא נכון, אז זה אף פעם לא יוצא על הקישור שבעצם מוביל לפוקואוקה.",
+                "ב-Router-Sapporo, מחק את המסלול הרע אל 10.0.18.0/255.255.255.0 והוסף מסלול סטטי אל 10.0.18.0/255.255.255.0 דרך 10.0.15.2 על יציאה 1."
+            ],
+            "explanation": "מסלול סטטי חייב לשלוח תעבורה דרך הממשק שבעצם מוביל להקפיצה הבאה. כאן המסלול לרשת הרחוקה הצביע על הפתח השגוי, כך שRouter-Sapporo הטילה כל חבילה לפני שהייתה יכולה לחצות את קישור ה-WAN לפוקואוקה."
+        },
+        "hr": {
+            "title": "Nestale narudžbe za glavni ured",
+            "story": "Sapirorska grana ponovo se otvorila ovog tjedna, ali PC-Admin ne može učitati stranicu Web-Servera u Fukuoki. Svaki obrazac za narudžbu samo se vrti i istječe vrijeme, a osoblje pita zašto ništa ne stigne do glavnog ureda.",
+            "objective": "Omogući da HTTP zahtjev od PC-Admin prema Web-Server uspije.",
+            "hints": [
+                "Zahtjev nikada ne prođe dalje od Router-Sapporo; baca se tamo prije nego što se uputi prema Fukuoki.",
+                "Router-Sapporo ima rutu prema mreži Web-Servera koja pokazuje na krivi port, pa nikada ne izlazi vezom koja zapravo vodi prema Fukuoki.",
+                "Na Router-Sapporo obriši lošu rutu na 10.0.18.0/255.255.255.0 i dodaj statičku rutu na 10.0.18.0/255.255.255.0 kroz 10.0.15.2 na portu 1."
+            ],
+            "explanation": "Statička ruta mora slati prometom kroz sučelje koje zapravo vodi sljedećem skoku. Ovdje je ruta prema udaljnoj mreži pokazivala na krivi port, pa je Router-Sapporo odbacivao svaki paket prije nego što je mogao prijeći WAN vezu prema Fukuoki."
+        },
+        "hu": {
+            "title": "Eltűnő megrendelések a központhoz",
+            "story": "A szaporói fiók ezen a héten újra megnyitott, de a PC-Admin nem tudja betölteni a Web-Server oldalt Fukuokában. Minden megrendelési képernyő csak forog és időtúllépés, és a személyzet azt kérdezi, miért nem érkezik semmi a központba.",
+            "objective": "Érvényes HTTP kérés PC-Admin-tól Web-Server felé.",
+            "hints": [
+                "A kérés sosem jut el a Router-Sapporo túlára; ott eldobásra kerül, mielőtt Fukuoka felé indulna.",
+                "Router-Sapporo-nak van egy útvonala a Web-Server hálózata felé, amely a rossz portra mutat, így sosem hagyja el azt a linket, amely valójában Fukuoka felé vezetne.",
+                "A Router-Sapporo-n töröld a rossz útvonalat a 10.0.18.0/255.255.255.0 felé, és adj hozzá egy statikus útvonalat a 10.0.18.0/255.255.255.0 felé a 10.0.15.2 által az 1-es porton."
+            ],
+            "explanation": "Az statikus útvonalnak a forgalmat arra az interfészre kell küldenie, amely valóban az következő ugráshoz vezet. Itt az útvonal a távoli hálózat felé a rossz portra mutatott, így a Router-Sapporo minden csomagot eldobott, mielőtt át tudott volna menni a WAN-vonalon Fukuoka felé."
+        },
+        "hy": {
+            "title": "Անհետացող պատվերներ Հաղորդակցության կենտրոն",
+            "story": "Սապպորո մասնաճյուղը այս շաբաթ վերաբացվեց, բայց PC-Admin-ը չի կարողանում բացել Web-Server-ի էջը Ֆուկուոկայում: Պատվերի ձևերը պարզապես պտույտ են կատարում և ժամանակ են սպառում, իսկ անձնակազմը հարցնում է, թե ինչու ոչինչ չի հասնում հաղորդակցության կենտրոն:",
+            "objective": "HTTP հարցումը PC-Admin-ից Web-Server-ին հաջողակ դարձել:",
+            "hints": [
+                "Հարցումը երբեք չի անցնում Router-Sapporo-ից; այն այնտեղ ընկնում է, մինչ Ֆուկուոկայի ուղղությամբ գնալիս:",
+                "Router-Sapporo-ն ունի Web-Server-ի ցանցի երթուղ, որը ցույց է տալիս սխալ պորտ, ուստի այն երբեք չի դուրս գալիս այն հղման միջոցով, որը իսկապես տանում է Ֆուկուոկայի ուղղությամբ:",
+                "Router-Sapporo-ում ջնջեք վատ երթուղը 10.0.18.0/255.255.255.0 և ավելացրեք ստատիկ երթուղ 10.0.18.0/255.255.255.0 դեպի 10.0.15.2 պորտ 1-ի վրա:"
+            ],
+            "explanation": "Ստատիկ երթուղը պետք է ուղղել տրաֆիկը այն ինտերֆեյսից, որը իսկապես տանում է հաջորդ հանգույցին: Այստեղ ցանցի երթուղը ցույց էր տալիս սխալ պորտ, ուստի Router-Sapporo-ն ընկեց յուրաքանչյուր փաթեթ, մինչ այն կարող էր անցնել WAN հղումը Ֆուկուոկայի ուղղությամբ:"
+        },
+        "is": {
+            "title": "Horfin pantanir til höfuðstöðva",
+            "story": "Sapporo-útibúið opnaðist aftur þessa vikuna, en PC-Admin getur ekki opnað vefsíðu Web-Server í Fukuoka. Öll pöntunareyðublöð snúast bara og dregst fram, og starfsfólk spyrja hvers vegna ekkert kemur til höfuðstöðva.",
+            "objective": "HTTP-beiðni frá PC-Admin til Web-Server skal tekst.",
+            "hints": [
+                "Beiðnin kemst aldrei framhjá Router-Sapporo; hún er sleppt þar áður en hún fer til Fukuoka.",
+                "Router-Sapporo er með leið til nets Web-Server sem bendur á rangan tengja, svo hún fer aldrei út á tengilinn sem raunverulega leiðir til Fukuoka.",
+                "Á Router-Sapporo, eyðið darlegu leiðinni til 10.0.18.0/255.255.255.0 og bætið við statískri leið til 10.0.18.0/255.255.255.0 um 10.0.15.2 á tengi 1."
+            ],
+            "explanation": "Statísk leið verður að senda umferð út á tengilinn sem raunverulega leiðir til næsta hopps. Hér benti leiðin til fjarnets á rangan tengja, svo Router-Sapporo sleppti öllum pökkum áður en það gæti farið yfir WAN-tengilinn til Fukuoka."
+        },
+        "ka": {
+            "title": "გაქვავებული შეკვეთები შტაბზე",
+            "story": "საპორო ფილიალი ამ კვირაში ხელახლა გაიხსნა, მაგრამ PC-Admin ვერ ხსნის Web-Server-ის გვერდს ფუკუოკაში. ყველა შეკვეთის ფორმა უბრალოდ ტრიალდება და ხელმოკიდებულია, ხოლო პერსონალი კითხულობს, თუ რატომ არ ჩდება ვერაფერი შტაბზე.",
+            "objective": "HTTP მოთხოვნა PC-Admin-ից Web-Server-ზე წარმატებული იყოს.",
+            "hints": [
+                "მოთხოვნა არ გადის Router-Sapporo-ს; იგი ჩამოირჩევა იქ, სანამ ფუკუოკის მხრივ წაწევს.",
+                "Router-Sapporo-ს აქვს მარშრუტი Web-Server-ის ქსელზე, რომელიც არასწორ პორტზე მიმართულია, ამიტომ ის არასოდეს გადის ის ბმულით, რომელიც ნამდვილად მივყავართ ფუკუოკისკენ.",
+                "Router-Sapporo-ზე წაშალეთ ცუდი მარშრუტი 10.0.18.0/255.255.255.0 და დაამატეთ სტატიკური მარშრუტი 10.0.18.0/255.255.255.0 10.0.15.2-ზე პორტი 1-ზე."
+            ],
+            "explanation": "სტატიკური მარშრუტი უნდა გაზიდოს ტრაფიკი ის ინტერფეისიდან, რომელიც რეალურად მივყავართ შემდეგ hop-ზე. აქ მარშრუტი დაშორებული ქსელზე არასწორ პორტზე მიმართულია, ამიტომ Router-Sapporo ქვეითებდა თითოეულ პაკეტს, სანამ ის შეიძლება გამოსულიყო WAN ბმულით ფუკუოკასკენ."
+        },
+        "kk": {
+            "title": "Төлқоағалау орталығына жіберілген тапсырмалар жойылды",
+            "story": "Саппоро бөлімі осы аптада қайта ашылды, бірақ PC-Admin Фукуокадағы Web-Server беттерін ала алмайды. Барлық тапсырма пішіндері тек айналады және уақыты өтеді, ал қызметкерлер неге ешнәрсе орталыққа келмейтінін сұрайды.",
+            "objective": "PC-Admin-нен Web-Server-ге HTTP сұрауы сәтті болуы керек.",
+            "hints": [
+                "Сұрау Router-Sapporo-дан өтпейді; ол Фукуока қарай кету алдында ордағы ұстап қалады.",
+                "Router-Sapporo-ның Web-Server желісіне маршруты бар, бұл қате портқа бағытталған, сондықтан ол Фукуока қарай оның өтіп өтетін сылбаға шығып тастамайды.",
+                "Router-Sapporo-да 10.0.18.0/255.255.255.0 ақ маршрутты өшіріңіз және 10.0.18.0/255.255.255.0 үшін статикалық маршрут қосыңыз 10.0.15.2 ішіндегі 1 портында."
+            ],
+            "explanation": "Статикалық маршрут келесі hop-қа өтіп өтетін интерфейстен трафиктің шығуын бағыттауы керек. Мұнда қашықтағы желіге маршрут қате портқа бағытталған болғандықтан, Router-Sapporo Фукуокаға қарай WAN сылбасынан өтпес бұрын әрбір пакетті қуыс қалдырды."
+        },
+        "km": {
+            "title": "ការបញ្ជាទិញដែលបាត់ទៅប្រឹក្សាប្រධាន",
+            "story": "សាខា Sapporo បានបើកឡើងវិញក្នុងសប្តាហ៍នេះ ប៉ុន្តែ PC-Admin មិនអាចបើក Web-Server ទំព័រក្នុង Fukuoka ។ ទម្រង់ការបញ្ជាទិញលឿងបង្វិលដង់ដេក ហើយក្រុមការងារស្វាគមន៍សួរថាហេតុអ្វីបានជាគ្មានគ្រប់គ្រងដល់ប្រឹក្សាប្រធាន។",
+            "objective": "HTTP ស្នើសុំពី PC-Admin ទៅ Web-Server ត្រូវតែបង្កើត។",
+            "hints": [
+                "ស្នើសុំមិនដែលឆ្លងផ្តាច់ Router-Sapporo ឡើយ; វាត្រូវបានលុបចោលនៅទីនោះមុនពេលឈានទៅ Fukuoka ។",
+                "Router-Sapporo មានផ្លូវទៅបណ្ដាញ Web-Server ដែលចង្អុលទៅច្រក sai ដែលមិនត្រឹមត្រូវ ដូច្នេះវាមិនដែលចេញលើតំណភ្ជាប់ដែលពិតប្រាកដលឿងទៅ Fukuoka ។",
+                "នៅលើ Router-Sapporo លុបផ្លូវលោក 10.0.18.0/255.255.255.0 ហើយបន្ថែមផ្លូវឋិតិវន្ត 10.0.18.0/255.255.255.0 តាមរយៈ 10.0.15.2 នៅលើច្រក 1 ។"
+            ],
+            "explanation": "ផ្លូវឋិតិវន្តត្រូវតែផ្ញើចរាចរណ៍ចេញលើចរន្តផ្ទាល់ខ្លួនដែលពិតប្រាកដលឿងទៅលើដំណើរដំណាលក្រោយ។ នៅទីនេះផ្លូវទៅបណ្ដាញឆ្ងាយត្រូវចង្អុលទៅច្រកមិនត្រឹមត្រូវ ដូច្នេះ Router-Sapporo បានលុបលុយយបង់ ដូច្នេះវាមិនបានឆ្លងកាត់តំណភ្ជាប់ WAN ទៅ Fukuoka ។"
+        },
+        "kn": {
+            "title": "ಸದರ್ಮುಖಕ್ಕೆ ಕಣ್ಮರೆಯಾದ ಆದೇಶಗಳು",
+            "story": "ಸಾಪೋರೋ ಶಾಖೆ ಈ ವಾರ ಮತ್ತೆ ತೆರೆಯಿತು, ಆದರೆ PC-Admin ಫುಕುಒಕದಲ್ಲಿರುವ Web-Server ಪುಟವನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ. ಪ್ರತಿ ಆದೇಶ ಫಾರ್ಮ್ ಕಾರ್ಯರತವಾಗುತ್ತಿದೆ ಮತ್ತು ಸಮಯ ಮೀರುತ್ತಿದೆ, ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸದರ್ಮುಖಕ್ಕೆ ಏಕೆ ಏನೂ ಬರುತ್ತಿಲ್ಲ ಎಂದು ಪ್ರಶ್ನೆ ಮಾಡುತ್ತಿದ್ದಾರೆ.",
+            "objective": "PC-Admin ಇಂದ Web-Server ಕ್ಕೆ HTTP ವಿನಂತಿ ಯಶಸ್ವಿಯಾಗಿರಲು.",
+            "hints": [
+                "ವಿನಂತಿ Router-Sapporo ಮೀರುತ್ತಿಲ್ಲ; ಇದು ಫುಕುಒಕದ ಕಡೆಗೆ ಹೋಗುವ ಮೊದಲು ಅಲ್ಲಿ ಬೀಸಲ್ಪಡುತ್ತಿದೆ.",
+                "Router-Sapporo ಕ್ಕೆ Web-Server ನ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಒಂದು ರೂಟ್ ನಿರ್ದಿಷ್ಟ ಪೋರ್ಟ್ ಆಲ್ ತ್ರಾಸ್ತಪ್ರೌ ಹೋಗುತ್ತಿದೆ, ಆದ್ದರಿಂದ ಇದು ಫುಕುಒಕದ ಕಡೆಗೆ ನಿರ್ವಹಿತವಾಗುವ ಲಿಂಕ್‌ನಲ್ಲಿ ಎಂದಿಗೂ ಬಿಡುವುದಿಲ್ಲ.",
+                "Router-Sapporo ನಲ್ಲಿ, 10.0.18.0/255.255.255.0 ಗೆ ಕೆಟ್ಟ ರೂಟ್ ಅಳಿಸಿ ಮತ್ತು 10.0.15.2, ಪೋರ್ಟ್ 1 ಮೂಲಕ 10.0.18.0/255.255.255.0 ಗೆ ಸ್ಟ್‌ಯಾಟಿಕ್ ರೂಟ್ ಸೇರಿಸಿ."
+            ],
+            "explanation": "ಒಂದು ಸ್ಟ್‌ಯಾಟಿಕ್ ರೂಟ್ ನೆಕ್ಸ್ಟ್ ಹಾಪ್‌ಗೆ ನಿಜವಾಗಿ ಉತ್ತೇಜಿತವಾದ ಇಂಟರ್‌ಫೇಸ್ ಮೂಲಕ ಟ್ರಾಫಿಕ್ ಕಳುಹಿಸಬೇಕು. ಇಲ್ಲಿ ದೂರದ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಮಾರ್ಗವು ತಪ್ಪು ಪೋರ್ಟ್ ನೆಟ್‌ವರ್ಕ್‌ನೆಡುವಿತು, ಆದ್ದರಿಂದ Router-Sapporo ಪ್ರತಿ ಪ್ಯಾಕೆಟ್ ಬೀಸಿದೆ ಅದು ಫುಕುಒಕಕ್ಕೆ WAN ಲಿಂಕ್‌ ಮೀರಲು ಸಾಧ್ಯವಾಗುವ ಮೊದಲು."
+        },
+        "ky": {
+            "title": "Штаб-квартирага жоголгон буйруктар",
+            "story": "Саппоро филиалы бул аптада кайра ачылды, бирок PC-Admin Фукуокадагы Web-Server баракчасын ачалгысыз жатат. Ар бир буйрук формасы айланып жатат жана убакыты тиканат, ал эми каттама менеджерлер эмне үчүн штаб-квартирага эч нерсе келип жатпай жатканын сурап жатышат.",
+            "objective": "PC-Admin ишинен Web-Server ишине чейин болгон HTTP сурамдагы ийгілік. ",
+            "hints": [
+                "Сурам Router-Sapporo ашкана өтпөйт; ал Фукуокаго жөндөй берүүдөн мурда ошол жерде таштап коюлат.",
+                "Router-Sapporo де Web-Server тараачы тармактагы бир маршрутту нехеме портко карап жатат, ошондуктан ал эч качан Фукуокага укмалуу байланысты эмес.",
+                "Router-Sapporo де 10.0.18.0/255.255.255.0 га жаман маршруттун алып салууну, жана 10.0.15.2, порту 1 аркылуу 10.0.18.0/255.255.255.0 га статистикалык маршрутту кошууну."
+            ],
+            "explanation": "Статистикалык маршрутта дайын кийинки түйүнгө иш албис интерфейстен трафик жибереши керек. Бул жерде алысынан тармакка маршруту нехеме портту эмес, ошондуктан Router-Sapporo ар бир пакетин таштап коюу керек болчу, ал Фукуокага WAN байланышын өтүшү эле болгон."
+        },
+        "lo": {
+            "title": "ຄຳສັ່ງທີ່ຫາຍໄປຕໍ່ສຳນັກງານໃຫຍ່",
+            "story": "ສາຂາ Sapporo ເປີດຄືນໃໝ່ໃນອາທິດນີ້, ແຕ່ PC-Admin ບໍ່ສາມາດເຫັນໜ້າ Web-Server ໃນ Fukuoka. ແບບຟອມຄຳສັ່ງທັງຫມົດຫຼ돈ໃຫຍ່ ແລະ ໝົດເວລາ, ແລະ ພະນັກງານກໍາລັງຖາມວ່າເປັນຫຍັງບໍ່ມີຫຍັງມາເຖິງສຳນັກງານໃຫຍ່.",
+            "objective": "ໃຫ້ HTTP request ຈາກ PC-Admin ໄປຫາ Web-Server ສຳເລັດ.",
+            "hints": [
+                "Request ບໍ່ເຊົາ Router-Sapporo; ມັນຖືກວາງໄວ້ທີ່ນັ້ນກ່ອນທີ່ຈະໄປຫາ Fukuoka.",
+                "Router-Sapporo ມີເສັ້ນທາງໄປຫາເຄືອຂ່າຍ Web-Server ສະແດງໃຫ້ເຫັນເຖິງເພອร์ທີ່ຜິດ, ດັ່ງນັ້ນມັນບໍ່ຍອ່ມໄປໃນລິງຄ໌ທີ່ຈະນໍາໄປຫາ Fukuoka.",
+                "ເຊື່ອ Router-Sapporo, ລຶບເສັ້ນທາງທີ່ບໍ່ດີ 10.0.18.0/255.255.255.0 ແລະ ໃສ່ເສັ້ນທາງໂຕ 10.0.18.0/255.255.255.0 ຜ່ານ 10.0.15.2 ເຊື່ອ port 1."
+            ],
+            "explanation": "ເສັ້ນທາງໂຕສະຖຶティ ຈະສົ່ງການລົກຖືກໃຈລະຫວ່າງ interface ທີ່ຖະລົ ສະພາບກັນລະ hop ອື່ນ. ທີ່ນີ້, ເສັ້ນທາງໄປຫາເຄືອຂ່າຍທີ່ຢູ່ໄກຫາງເສັ້ນທາງບົ່ງໄປຫາເພສ ທີ່ຜິດ, ດັ່ງນັ້ນ Router-Sapporo ຈະໄວ້ທຸກແພັກເກັດກ່ອນທີ່ມັນສາມາດຂ້າມລິງຄ໌ WAN ໄປຫາ Fukuoka."
+        },
+        "lt": {
+            "title": "Išnykę nurodymai į pagrindinę būstinę",
+            "story": "Sapporo filialas šią savaitę vėl atidaryta, bet PC-Admin negali iš naujo peržiūrėti Web-Server puslapio Fukuokoje. Kiekviena užsakymo forma tiesiog sukasi ir baigsis laiku, o personalas neklausimų kodėl nieko nepasiekia pagrindinę būstinę.",
+            "objective": "Padaryti, kad HTTP prašymas iš PC-Admin į Web-Server būtų sėkmingas.",
+            "hints": [
+                "Prašymas niekada nepraeina Router-Sapporo; jis atmetamas ten prieš kelyje į Fukuoką.",
+                "Router-Sapporo turi maršrutą į Web-Server tinklo rodydą klaidingą prievadą, todėl jis niekada negreitina ryšiu, kuri iš tiesų veda į Fukuoką.",
+                "Router-Sapporo, ištrinti blogą maršrutą į 10.0.18.0/255.255.255.0 ir pridėti statinį maršrutą į 10.0.18.0/255.255.255.0 per 10.0.15.2 ant prievado 1."
+            ],
+            "explanation": "Statinis maršrutas turi siųsti srautą per sąsają, kuri iš tiesų veda prie kito šuolio. Čia maršrutas į nuotolinį tinklą rodė klaidingą prievadą, todėl Router-Sapporo atmetė kiekvieną paketą, prieš jam galėdama peržengti WAN ryšį į Fukuoką."
+        },
+        "lv": {
+            "title": "Pazudusie pavēlējumi uz galveno ofisu",
+            "story": "Sapporo filiāle šonedēļ atkal atvēra durvīs, bet PC-Admin nevar izsaukt Web-Server lapu Fukuokā. Katra pasūtījuma forma vienkārši griežas apļa un beigties laiku, un personāls jautā, kāpēc nekas nenonāk galvenajā birojs.",
+            "objective": "Padarīt, lai HTTP pieprasījums no PC-Admin uz Web-Server būtu veiksmīgs.",
+            "hints": [
+                "Pieprasījums nekad nepāriet Router-Sapporo; tas ir pazudis tur pirms tam, kad virzītos uz Fukuoku.",
+                "Router-Sapporo ir maršruts uz Web-Server tīklu, kas norāda uz nepareizu portu, tāpēc tas nekad negulst uz saiti, kas faktiski vērs uz Fukuoku.",
+                "Router-Sapporo, izdzēst slēgu maršrutu uz 10.0.18.0/255.255.255.0 un pievienot statisko maršrutu uz 10.0.18.0/255.255.255.0 caur 10.0.15.2 uz porti 1."
+            ],
+            "explanation": "Statisks maršruts jānosūta saturs caur saskarni, kas faktiski vērs uz nākamo lēcienu. Šeit maršruts uz attālināto tīklu norādīja uz nepareizu portu, tāpēc Router-Sapporo palaida katru paketi, pirms tā varētu šķērsot WAN saiti uz Fukuoku."
+        },
+        "mk": {
+            "title": "Исчезнувачки налози до главниот кантор",
+            "story": "Одделението во Сапоро се повторно отвори оваа недела, но PC-Admin не може да го вчита страницата на Web-Server во Фукуока. Секој формулар за налози само се врти и истекува, а вработениците прашуваат зошто ништо не пристигнува на главниот кантор.",
+            "objective": "Направи HTTP барање од PC-Admin до Web-Server да успее.",
+            "hints": [
+                "Барањето никогаш не оди подалеку од Router-Sapporo; се отфрла таму пред да оди кон Фукуока.",
+                "Router-Sapporo има маршрута до мрежата на Web-Server која покажува на погрешен порт, па затоа никогаш не излегува на врската што всушност води кон Фукуока.",
+                "На Router-Sapporo, избриши ја лошата маршрута до 10.0.18.0/255.255.255.0 и додај статичка маршрута до 10.0.18.0/255.255.255.0 преку 10.0.15.2 на порт 1."
+            ],
+            "explanation": "Статичката маршрута мора да ја праќа сообраќајот низ интерфејсот што всушност води до следниот скок. Овде маршрутата до далечната мрежа покажувала на погрешен порт, па Router-Sapporo отфрлаше секој пакет пред да може да прекрсти WAN врската кон Фукуока."
+        },
+        "ml": {
+            "title": "അപ്രത്യാശിത ഓർഡറുകൾ ആസ്ഥാനത്തിലേക്ക്",
+            "story": "സാപോറോ ശാഖ ഈ ആഴ്ചയിൽ വീണ്ടും തുറന്നു, എന്നാൽ PC-Admin ഫുകുവോകയിലെ Web-Server പേജ് ലോഡ് ചെയ്യാൻ കഴിയുന്നില്ല. ഓരോ ഓർഡർ ഫോമും വെറുതെ കറങ്ങുകയും സമയം കഴിഞ്ഞുപോകുകയും ചെയ്യുന്നു, സ്റ്റാഫ് അസ്ഥാനത്തിലേക്ക് ഒന്നും എത്തിക്കാത്തത് എന്തിനാണെന്ന് ചോദിക്കുന്നു.",
+            "objective": "PC-Admin ൽ നിന്നുള്ള HTTP അഭ്യർത്ഥന Web-Server ലേക്ക് വിജയിക്കാൻ ഉണ്ടാകുക.",
+            "hints": [
+                "അഭ്യർത്ഥന Router-Sapporo കടന്നുപോകുന്നില്ല; ഫുകുവോകയിലേക്കുള്ള പാതയിലേക്ക് പോകുന്നതിന് മുമ്പ് അത് അവിടെ നിരസിക്കപ്പെടുന്നു.",
+                "Router-Sapporo ൻ Web-Server ന്റെ നെറ്റ്‌വർക്കിലേക്കുള്ള ഒരു റൂട്ട് തെറ്റായ പോർട്ടിലേക്ക് ചൂണ്ടിക്കാണിക്കുന്നു, അതിനാൽ ഫുകുവോകയിലേക്ക് ശരിക്കും നയിക്കുന്ന ലിങ്കിൽ ഇത് ഒരിക്കലും പുറത്തിറങ്ങുന്നില്ല.",
+                "Router-Sapporo ൽ, 10.0.18.0/255.255.255.0 ലേക്കുള്ള ക്ഷതിപ്പെട്ട റൂട്ട് ഇല്ലാതാക്കുകയും 10.0.15.2 വഴി പോർട്ട് 1 ൽ 10.0.18.0/255.255.255.0 ലേക്കുള്ള സ്ഥിര റൂട്ട് ചേർക്കുകയും ചെയ്യുക."
+            ],
+            "explanation": "സ്ഥിര റൂട്ട് ട്രാഫിക് അയയ്‌ക്കുന്നത് അത്ത പോർട്ട് വഴി അയയ്‌ക്കണം, അത് അടുത്ത ഹോപ്പിലേക്ക് ശരിക്കും നയിക്കുന്നു. ഇവിടെ ദൂരത്തുള്ള നെറ്റ്‌വർക്കിലേക്കുള്ള റൂട്ട് തെറ്റായ പോർട്ട് ചൂണ്ടിക്കാണിച്ചത് കൊണ്ട്, Router-Sapporo ഫുകുവോകയിലേക്കുള്ള WAN ലിങ്ക് കടക്കുന്നതിന് മുമ്പ് ഓരോ പാക്കറ്റും നിരസിച്ചു."
+        },
+        "mn": {
+            "title": "Төв офисын орлуулагдах захиалга",
+            "story": "Саппоро салбар энэ долоо хоногт дахин нээгдсэн боловч PC-Admin нь Фукуокагийн Web-Server хуудсыг ачаалж чадахгүй байна. Заалгын маягтаа завсрын цаг хүлээх мөч урт байгаа бөгөөд ажилтнууд төв офисод юу ч ирээгүй гэж нь асуухаараа байна.",
+            "objective": "PC-Admin-ээс Web-Server руу HTTP хүсэлт амжилттай байхаа яасан.",
+            "hints": [
+                "Хүсэлт Router-Sapporo-ыг хяналт дахь явахаа аль хэдийн боогдсон; Фукуока руу явахаас өмнө түүнийг тэнд буцаадсан.",
+                "Router-Sapporo Web-Server-ийн сүлжээрүү чиглүүлэлт буруу портоор заасан байна, иймээс Фукуока руу жинхэнэ чиглүүлэлт төв холбоос дээр үзүүлээгүй.",
+                "Router-Sapporo дээр 10.0.18.0/255.255.255.0 руу алдаатай чиглүүлэлтийг устгаж, 10.0.15.2 замын дагуу 1 портоор 10.0.18.0/255.255.255.0 руу статик чиглүүлэлт нэмэх."
+            ],
+            "explanation": "Статик чиглүүлэлт сүлжээний дээр үзүүлэлэтээр дамжуулан сообраќалалыг дараагийн үсрэлт үсрүүлэхээр ёстой. Энд дулаан сүлжээрүү чиглүүлэлт буруу портоор заасан байсан тул Router-Sapporo нь Фукуока руу WAN холбоосыг огтлох хүртэл бүх пакетыг буцаадсан."
+        },
+        "mr": {
+            "title": "मुख्यालयात अदृश्य ऑर्डर",
+            "story": "सप्पोरो शाखा या आठवड्यात पुन्हा उघडली, परंतु PC-Admin फुकुओका येथील Web-Server पृष्ठ लोड करू शकत नाही. प्रत्येक ऑर्डर फॉर्म फक्त फिरत राहतो आणि टाइम आउट होतो, आणि कर्मचारी विचारत आहेत की मुख्यालयात काहीही का येत नाही.",
+            "objective": "PC-Admin पासून Web-Server पर्यंत HTTP विनंती यशस्वी होण्यासाठी काम करा.",
+            "hints": [
+                "विनंती Router-Sapporo पार करत नाही; फुकुओका दिशेला जाण्यापूर्वी तिथे सोडून दिली जाते.",
+                "Router-Sapporo ला Web-Server च्या नेटवर्कवर चुकीच्या पोर्टकडे निर्देशित मार्ग आहे, म्हणून तो कधीही फुकुओकाच्या दिशेने जाणाऱ्या लिंकवर बाहेर पडत नाही.",
+                "Router-Sapporo वर, 10.0.18.0/255.255.255.0 ला चुकीचा मार्ग हटवा आणि पोर्ट 1 वर 10.0.15.2 द्वारे 10.0.18.0/255.255.255.0 ला स्थिर मार्ग जोडा."
+            ],
+            "explanation": "स्थिर मार्ग असा इंटरफेस वापरून ट्राफिक पाठवला पाहिजे जो नेक्स्ट हॉप पर्यंत खरोखर जातो. येथे दूरच्या नेटवर्कला चुकीच्या पोर्टकडे निर्देशित मार्ग होता, म्हणून Router-Sapporo ने फुकुओकाला WAN लिंक ओलांडण्यापूर्वी प्रत्येक पॅकेट सोडून दिला."
+        },
+        "ms": {
+            "title": "Pesanan Hilang ke Ibu Pejabat",
+            "story": "Cawangan Sapporo dibuka semula minggu ini, tetapi PC-Admin tidak dapat membuka halaman Web-Server di Fukuoka. Setiap borang pesanan hanya berputar dan tamat masa, dan kakitangan bertanya mengapa tiada apa-apa sampai ke ibu pejabat.",
+            "objective": "Dapatkan permintaan HTTP daripada PC-Admin ke Web-Server berjaya.",
+            "hints": [
+                "Permintaan tidak pernah melepasi Router-Sapporo; ia dibuang di sana sebelum menuju Fukuoka.",
+                "Router-Sapporo mempunyai laluan ke rangkaian Web-Server yang menunjuk ke port yang salah, jadi ia tidak pernah keluar pada pautan yang benar-benar membawa ke Fukuoka.",
+                "Pada Router-Sapporo, padamkan laluan tidak baik ke 10.0.18.0/255.255.255.0 dan tambahkan laluan statik ke 10.0.18.0/255.255.255.0 melalui 10.0.15.2 pada port 1."
+            ],
+            "explanation": "Laluan statik mesti menghantar trafik keluar antara muka yang benar-benar membawa ke lompatan seterusnya. Di sini laluan ke rangkaian jauh menunjuk ke port yang salah, jadi Router-Sapporo membuang setiap paket sebelum ia boleh melintasi pautan WAN ke Fukuoka."
+        },
+        "my": {
+            "title": "ကုမ္ပဏီမှူး လျှပ်စစ်စာမျးပျောက်ဆုံးခြင်း",
+            "story": "ဆပ်ပိုရိုမြို့ ခွဲခြားခန်းသည် ဒီအပတ်အဆင်အလည်ဖွင့်လှစ်ခဲ့သည် သို့သော် PC-Admin သည် ဖုကူအိုကာမြို့ရှိ Web-Server စာမျက်နှာကို ဆွဲယူလို့ မရနိုင်ပါ။ အမိန့်စာစုံလင်ချက်ဖောင်မ်များသည် လည်ပတ်နေပြီး အချိန်ကုန်ဆုံးသွားပြီး၊ အလုပ်သမားများသည် ကုမ္ပဏီမှူးသို့ အဘယ်သည်ကားမည်သည့်အရာမျှမရောက်ရှိသည်ကို မေးမြန်းနေကြပါသည်။",
+            "objective": "PC-Admin မှ Web-Server သို့ HTTP တောင်းဆိုမှုအောင်မြင်စေရန်",
+            "hints": [
+                "တောင်းဆိုမှုသည် Router-Sapporo ကုန်ပြီးရပ်တန့်ခြင်းမခံရပြီး ဖုကူအိုကာဆီသို့ လာမီကျ ဖြုတ်ပြီးဆုံးသည်။",
+                "Router-Sapporo သည် Web-Server ၏ ကွန်ရက်သို့ လမ်းကြောင်းကို အမှားအဆန် port သို့ညွှန်ပြနေသည်၊ ထို့ကြောင့် ဖုကူအိုကာမြို့သို့ အမှန်တကယ်သို့သွားသော လင်ခ်ပေါ်သို့ မည်သည်မျှ ထွက်ခွာသွားခြင်းမရှိပါ။",
+                "Router-Sapporo တွင် 10.0.18.0/255.255.255.0 သို့အမှားအမုန့်ကျ လမ်းကြောင်း ဖျက်သိမ်းပြီး၊ 10.0.18.0/255.255.255.0 သို့ port 1 တွင် 10.0.15.2 မှတစ်ဆင့် ကိုယ်ပိုင်သည့် လမ်းကြောင်း ပေါင်းထည့်ပါ။"
+            ],
+            "explanation": "ကိုယ်ပိုင်သည့် လမ်းကြောင်းသည် အမှန်တကယ် နောက်ဆုံးကျ သုံးစွဲသည့်ယုံတင်းသို့ အဆက်အသွယ်ခွင့်ပြုရန် လုပ်ဆောင်ခွင့်မည်သည်ချ့ အဆင်အလည်ဝင်ရောက်ရမည်ဖြစ်ပါသည်။ ဤတွင် အဆက်ကို먼 ကွန်ရက်သို့ လမ်းကြောင်းသည် အမှားအဆန် port ကို ညွှန်ပြခဲ့ခြင်း ကြောင့်၊ Router-Sapporo သည် WAN လင်ခ်ကုန်ပြီး ဖုကူအိုကာမြို့သို့ ဖြတ်သန်းသွားနိုင်မီက အဆိုးအဆန် ငယ်ငယ်တစ်ခုအားလုံးကို ဖျုံစုံစတ်မှီခိုခွင့်မျိုးဖြုတ်ပြီးဆုံးခြင်းဖြစ်ပါသည်။"
+        },
+        "ne": {
+            "title": "मुख्यालयको अदृश्य आदेशहरू",
+            "story": "साप्पोरो शाखा यो हप्ता पुनः खुल्यो, तर PC-Admin ले फुकुओका मा Web-Server पृष्ठ नदेख्न सक्छन्। प्रत्येक आदेश फार्म बस घुमिरहेको छ र समय समाप्त हुन्छ, र कर्मचारीहरू किन मुख्यालयमा केही आइरहेको छैन भनी सोधिरहेका छन्।",
+            "objective": "PC-Admin बाट Web-Server मा HTTP अनुरोध सफल गराउनुहोस्।",
+            "hints": [
+                "अनुरोध कहिल्यै Router-Sapporo पास गर्दैन; यो फुकुओका तिर जाने अगि त्यहाँ गिराइन्छ।",
+                "Router-Sapporo को Web-Server को नेटवर्क को एक राउट छ जो गलत पोर्ट मा औंल्याइरहेको छ, त्यसैले यो कहिल्यै फुकुओका को दिशा को लिङ्क मा बाहिर निस्कँदैन।",
+                "Router-Sapporo मा, 10.0.18.0/255.255.255.0 को खराब राउट हटाइ, र 10.0.18.0/255.255.255.0 को ​​एक स्थिर राउट जोडी नेक्स्ट हप 10.0.15.2, पोर्ट 1 मा।"
+            ],
+            "explanation": "एक स्थिर राउटले ट्र्याफिकलाई त्यस इन्टरफेसबाट बाहिर पठाउनु पर्छ जुन वास्तवमा नेक्स्ट हपको दिशामा जान्छ। यहाँ रिमोट नेटवर्कको राउटले गलत पोर्टमा औंल्याइरहेको थियो, त्यसैले Router-Sapporo ले WAN लिङ्कबाट फुकुओकामा पार गर्न सक्नु अघि प्रत्येक प्याकेट गिराइदियो।"
+        },
+        "nl": {
+            "title": "Verdwijnende orders naar het hoofdkantoor",
+            "story": "De afdeling Sapporo heropende deze week, maar PC-Admin kan de Web-Server pagina in Fukuoka niet laden. Elk bestelformulier blijft hangen en verloopt, en medewerkers vragen zich af waarom er niets aankomt op het hoofdkantoor.",
+            "objective": "Zorg ervoor dat een HTTP-verzoek van PC-Admin naar Web-Server slaagt.",
+            "hints": [
+                "Het verzoek passeert Router-Sapporo nooit; het wordt daar weggegooid voordat het naar Fukuoka gaat.",
+                "Router-Sapporo heeft een route naar het netwerk van Web-Server die naar de verkeerde poort wijst, dus deze wordt nooit verzonden via de link die werkelijk naar Fukuoka leidt.",
+                "Verwijder op Router-Sapporo de slechte route naar 10.0.18.0/255.255.255.0 en voeg een statische route naar 10.0.18.0/255.255.255.0 toe via 10.0.15.2 op poortnummer 1."
+            ],
+            "explanation": "Een statische route moet verkeer via de interface sturen die werkelijk naar de volgende hop leidt. Hier wees de route naar het externe netwerk naar de verkeerde poort, dus Router-Sapporo gooide elk pakket weg voordat het de WAN-link naar Fukuoka kon kruisen."
+        },
+        "no": {
+            "title": "Forsvinnende ordrer til hovedkontoret",
+            "story": "Sapporo-filialen åpnet igjen denne uken, men PC-Admin kan ikke laste inn Web-Server siden i Fukuoka. Hver bestillingsskjema henger og tidsavbruddes, og ansatte lurer på hvorfor ingenting ankommer til hovedkontoret.",
+            "objective": "Få en HTTP-forespørsel fra PC-Admin til Web-Server til å lykkes.",
+            "hints": [
+                "Forespørselen kommer aldri forbi Router-Sapporo; den blir droppet der før den går mot Fukuoka.",
+                "Router-Sapporo har en route til Web-Server sitt nettverk som peker til feil port, så den forlater aldri på linken som faktisk leder mot Fukuoka.",
+                "På Router-Sapporo, slett den dårlige ruten til 10.0.18.0/255.255.255.0 og legg til en statisk rute til 10.0.18.0/255.255.255.0 via 10.0.15.2 på portnummer 1."
+            ],
+            "explanation": "En statisk rute må sende trafikk ut på grensesnittet som faktisk leder til neste hopp. Her pekte ruten til det eksterne nettverket til feil port, så Router-Sapporo droppet hver pakke før den kunne krysse WAN-linken til Fukuoka."
+        },
+        "or": {
+            "title": "ମୁଖ୍ୟାଳୟକୁ ଅଦୃଶ୍ୟ ଅର୍ଡର",
+            "story": "ସାପୋରୋ ଶାଖା ଏହି ସପ୍ତାହରେ ପୁନରାବୃତ୍ତି ହୋଇଥିଲା, କିନ୍ତୁ PC-Admin ଫୁକୁଓକାରେ Web-Server ପୃଷ୍ଠା ଖୋଲିପାରିନାହଁ। ପ୍ରତ୍ୟେକ ଅର୍ଡର ଫର୍ମ କେବଳ ଘୁରିରହେ ଏବଂ ସମୟ ଶେଷ ହୋଇଯାଏ, ଏବଂ କର୍ମଚାରୀମାନେ ମୁଖ୍ୟାଳୟକୁ ଜିନିଷ ଆସୁନାହିଁ କାହିଁକି ବୁଝିବାକୁ ଚେଷ୍ଟା କରୁଛନ୍ତି।",
+            "objective": "PC-Admin ରୁ Web-Server କୁ ଏକ HTTP ଅନୁରୋଧକୁ ସଫଳ କରନ୍ତୁ।",
+            "hints": [
+                "ଅନୁରୋଧ Router-Sapporo ଦେଇ କଦାପି ଯାଏ ନାହିଁ; ଏହା ସେଠାରେ ଫୁକୁଓକା ଆଡକୁ ଯିବା ଆଗରୁ ପଡାଇ ଦିଆଯାଏ।",
+                "Router-Sapporo ର Web-Server ର ନେଟୱର୍କରେ ଏକ ରୁଟ ରହିଛି ଯାହା ଭୁଲ ପୋର୍ଟକୁ ନିର୍ଦେଶ କରେ, ତେଣୁ ଏହା ଫୁକୁଓକା ଆଡକୁ ଆସୁଥିବା ଲିଙ୍କ ଉପରେ କଦାପି ଛାଡି ଯାଏ ନାହିଁ।",
+                "Router-Sapporo ରେ, 10.0.18.0/255.255.255.0 ରେ ଖରାପ ରୁଟ ଲିଭିଦିଅ ଏବଂ 10.0.18.0/255.255.255.0 ରେ ନେକ୍ସଟ ହପ 10.0.15.2, ପୋର୍ଟ 1 ମାଧ୍ୟମରେ ଏକ ଷ୍ଟାଟିକ ରୁଟ ଯୋଗ କରନ୍ତୁ।"
+            ],
+            "explanation": "ଏକ ଷ୍ଟାଟିକ ରୁଟ ଟ୍ରାଫିକକୁ ସେହି ଇଣ୍ଟରଫେସ ଉପରେ ଯିବାକୁ ଦେବା ଆବଶ୍ୟକ ଯାହା ଆସଲେ ନେକ୍ସଟ ହପ ଆଡକୁ ଯାଏ। ଏଠାରେ ରିମୋଟ ନେଟୱର୍କ ର ରୁଟ ଭୁଲ ପୋର୍ଟକୁ ନିର୍ଦେଶ କରୁଥିଲା, ତେଣୁ Router-Sapporo WAN ଲିଙ୍କ ଦେଇ ଫୁକୁଓକାକୁ ଯିବା ଆଗରୁ ପ୍ରତ୍ୟେକ ପ୍ୟାକେଟକୁ ପଡାଇ ଦେଲା।"
+        },
+        "pa": {
+            "title": "ਸਜਾ ਦੇ ਆਦੇਸ਼",
+            "story": "ਸਪੋਰੋ ਸ਼ਾਖਾ ਇਸ ਹਫ਼ਤੇ ਦੁਬਾਰਾ ਖੁਲ ਗਈ ਹੈ, ਪਰ PC-Admin ਫੁਕੁਓਕਾ ਵਿੱਚ Web-Server ਪੰਨਾ ਖੋਲ ਨਹੀਂ ਸਕ ਰਹੇ। ਹਰ ਆਰਡਰ ਫਾਰਮ ਜਿਆਦਾ ਸਮਾਂ ਲੈ ਰਿਹਾ ਹੈ ਅਤੇ ਸਟਾਫ ਪੁੱਛ ਰਿਹੇ ਹਨ ਕਿ ਮੁੱਖ ਦਫਤਰ ਕੋਲ ਕੁਝ ਵੀ ਕਿਉਂ ਨਹੀਂ ਪਹੁੰਚ ਰਿਹਾ।",
+            "objective": "PC-Admin ਤੋਂ Web-Server ਤੱਕ ਇੱਕ HTTP ਬੇਨਤੀ ਸਫਲ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।",
+            "hints": [
+                "ਬੇਨਤੀ Router-Sapporo ਤੋਂ ਅੱਗੇ ਨਹੀਂ ਜਾਂਦੀ; ਇਹ ਫੁਕੁਓਕਾ ਵੱਲ ਜਾਣ ਤੋਂ ਪਹਲੇ ਹੀ ਖਤਮ ਹੋ ਜਾਂਦੀ ਹੈ।",
+                "Router-Sapporo ਕੋਲ Web-Server ਦੇ ਨੈੱਟਵਰਕ ਲਈ ਇੱਕ ਰੂਟ ਹੈ ਜੋ ਗਲਤ ਪੋਰਟ ਤੇ ਆਦੇਸ਼ ਦਿੰਦਾ ਹੈ, ਇਸ ਲਈ ਇਹ ਉਸ ਲਿੰਕ ਤੇ ਨਹੀਂ ਜਾਂਦਾ ਜੋ ਅਸਲ ਵਿੱਚ ਫੁਕੁਓਕਾ ਵੱਲ ਜਾਂਦੀ ਹੈ।",
+                "Router-Sapporo ਤੇ, 10.0.18.0/255.255.255.0 ਦਾ ਖਰਾਬ ਰੂਟ ਹਟਾਓ ਅਤੇ ਪੋਰਟ 1 ਤੇ 10.0.15.2 ਨੈਕਸਟ ਹੌਪ ਦੇ ਰਾਹ ਤੋਂ 10.0.18.0/255.255.255.0 ਲਈ ਇੱਕ ਸਥਿਰ ਰੂਟ ਜੋੜੋ।"
+            ],
+            "explanation": "ਇੱਕ ਸਥਿਰ ਰੂਟ ਨੂੰ ਟਰੈਫਿਕ ਉਸ ਇੰਟਰਫੇਸ ਤੇ ਭੇਜਣਾ ਚਾਹੀਦਾ ਹੈ ਜੋ ਅਸਲ ਵਿੱਚ ਨੈਕਸਟ ਹੌਪ ਤੱਕ ਜਾਂਦੀ ਹੈ। ਇੱਥੇ ਰਿਮੋਟ ਨੈੱਟਵਰਕ ਲਈ ਰੂਟ ਗਲਤ ਪੋਰਟ ਤੇ ਆਦੇਸ਼ ਦੇ ਰਿਹਾ ਸੀ, ਇਸ ਲਈ Router-Sapporo ਨੇ ਹਰ ਪੈਕਟ ਨੂੰ ਫੁਕੁਓਕਾ ਨੱਤਜ਼ੋ ਪੋਰਟ ਦੇ ਰਾਹ ਤੋਂ ਪਾਰ ਜਾਣ ਤੋਂ ਪਹਲੇ ਹੀ ਖਤਮ ਕਰ ਦਿੱਤਾ।"
+        },
+        "pl": {
+            "title": "Znikające zamówienia na siedzibę",
+            "story": "Oddział w Sapporo ponownie otworzył się w tym tygodniu, ale PC-Admin nie może otworzyć strony Web-Server w Fukuoce. Każdy formularz zamówienia się zawiesza i wygasa, a pracownicy pytają, dlaczego nic nie dociera do siedziby.",
+            "objective": "Żądanie HTTP od PC-Admin do Web-Server musi się powieść.",
+            "hints": [
+                "Żądanie nigdy nie przechodzi poza Router-Sapporo; zostaje tam porzucone, zanim pójdzie w kierunku Fukuoki.",
+                "Router-Sapporo ma trasę do sieci Web-Server wskazującą na niewłaściwy port, więc nigdy nie wyjeżdża na łączu, które faktycznie prowadzi do Fukuoki.",
+                "Na Router-Sapporo usuń złą trasę do 10.0.18.0/255.255.255.0 i dodaj trasę statyczną do 10.0.18.0/255.255.255.0 przez 10.0.15.2 na porcie 1."
+            ],
+            "explanation": "Trasa statyczna musi wysyłać ruch przez interfejs, który faktycznie prowadzi do następnego skoku. Tutaj trasa do sieci zdalnej wskazywała na niewłaściwy port, więc Router-Sapporo porzucał każdy pakiet, zanim mógł przejść łącze WAN do Fukuoki."
+        },
+        "pt-PT": {
+            "title": "Pedidos desaparecidos para a sede",
+            "story": "A filial de Sapporo reabriu esta semana, mas PC-Admin não consegue abrir a página Web-Server em Fukuoka. Cada formulário de pedido fica carregado e expira, e a equipa pergunta por que nada chega à sede.",
+            "objective": "Um pedido HTTP de PC-Admin para Web-Server deve ser bem-sucedido.",
+            "hints": [
+                "O pedido nunca passa de Router-Sapporo; é rejeitado ali antes de se dirigir para Fukuoka.",
+                "Router-Sapporo tem uma rota para a rede Web-Server apontando para a porta incorreta, por isso nunca sai na ligação que realmente leva para Fukuoka.",
+                "Em Router-Sapporo, elimine a rota incorreta para 10.0.18.0/255.255.255.0 e adicione uma rota estática para 10.0.18.0/255.255.255.0 via 10.0.15.2 na porta 1."
+            ],
+            "explanation": "Uma rota estática deve enviar tráfego pela interface que realmente leva ao próximo salto. Aqui a rota para a rede remota apontava para a porta incorreta, por isso Router-Sapporo rejeitava cada pacote antes de conseguir atravessar a ligação WAN para Fukuoka."
+        },
+        "rm": {
+            "title": "Comandas che sparschan",
+            "story": "La sucursa da Sapporo ha reavart cette septimona, ma PC-Admin na po betg avrir la pagina Web-Server a Fukuoka. Mintga formulari da comanda sa chargua liunga e scada, e l'equipa demands per tge nagut na vegn a destinaziun a la sede.",
+            "objective": "Ina dumonda HTTP da PC-Admin a Web-Server sto vegn bainpassa.",
+            "hints": [
+                "La dumonda na passa mai avant da Router-Sapporo; ella vegn geda suenter avaquell ch'ella vulair sa direcziuna vers Fukuoka.",
+                "Router-Sapporo ha ina ruta a la rait Web-Server che mussa al port fauss, per tgi ella na part mai sut il colliaziun che cunduscha veramain vers Fukuoka.",
+                "En Router-Sapporo, stgira la mala ruta a 10.0.18.0/255.255.255.0 e zunt ina ruta statica a 10.0.18.0/255.255.255.0 via 10.0.15.2 al port 1."
+            ],
+            "explanation": "Ina ruta statica sto trametter il traffic tras l'interfatscha che cunduscha veramain al next hop. Qua la ruta a la rait teletuonza mussa al port fauss, per tgi Router-Sapporo ha gida mintga paketa avaquell che quella pudeva passir il colliaziun WAN a Fukuoka."
+        },
+        "ro": {
+            "title": "Comenzi care dispar către sediu",
+            "story": "Sucursala din Sapporo s-a redeschis săptămâna aceasta, dar PC-Admin nu poate deschide pagina Web-Server din Fukuoka. Fiecare formular de comandă se încarcă lent și expiră, iar personalul se întreabă de ce nimic nu ajunge la sediu.",
+            "objective": "O cerere HTTP de la PC-Admin la Web-Server trebuie să reușească.",
+            "hints": [
+                "Cererea nu trece niciodată dincolo de Router-Sapporo; este respinsă acolo înainte de a se îndrepta spre Fukuoka.",
+                "Router-Sapporo are o rută către rețeaua Web-Server care indică portul incorect, deci nu plecă pe legătura care duce de fapt spre Fukuoka.",
+                "Pe Router-Sapporo, ștergeți ruta greșită către 10.0.18.0/255.255.255.0 și adăugați o rută statică către 10.0.18.0/255.255.255.0 prin 10.0.15.2 pe portul 1."
+            ],
+            "explanation": "O rută statică trebuie să trimită traficul prin interfața care duce de fapt la următorul hop. Aici ruta către rețeaua la distanță indica portul incorect, deci Router-Sapporo a respins fiecare pachet înainte ca acesta să putea traversa legătura WAN spre Fukuoka."
+        },
+        "si": {
+            "title": "සදාටන එක්කෙනකුගේ නිකුත්කිරීම් අධිකාරයට",
+            "story": "සපોරෝ ශාඛාව මෙම සතියේ නැවත විවෘත විය, නමුත් PC-Admin ෆුකුඔකා හි Web-Server පිටුව ඇලිස්තු කළ නොහැක. එක් එක් ඇණවුම් පෝරමය සරලවම භ්‍රමණය වෙමින් කාලය ඉක්මවා යයි, සහ කර්මචාරීන් සිටුවා ඇත්තේ අධිකාරයට කිසිවක් පැමිණේ නැත්තේ ඇයි ඉතා කුතුහලයි.",
+            "objective": "PC-Admin සිට Web-Server වෙතට HTTP ඉල්ලීම සාර්ථක කරන්න.",
+            "hints": [
+                "ඉල්ලීම කිසිවිටෙක Router-Sapporo ඉතිරි නොකර ගිය එක්තරා අඩු අවස්ථාවකදී එය අවතරණය කරනු ලබයි ෆුකුඔකා දිසාවට ගිය දිනුම.",
+                "Router-Sapporo හි Web-Server හි ජාලයට විතරකි සිතින්කතාවේ වැරදි පෝට් එක ඉතිරි කිරුණු ගිය එක්තරා අඩු අවස්ථාවකදී එය ෆුකුඔකා දෙසින් සිටින WAN සම්බන්ධනයෙන් අඩුයි.",
+                "Router-Sapporo හි 10.0.18.0/255.255.255.0 වෙත ඇති වැරදි මාර්ගය ඉවත් කරන්න සහ 10.0.18.0/255.255.255.0 වෙත ස්ථිතික මාර්ගය සংකලනය කරන්න 10.0.15.2 හි ඊළඟ හොප් පෝට් 1 තුළින්."
+            ],
+            "explanation": "ස්ථිතික මාර්ගයකි ඒ අවසර පිටුවෙන් ගිය එක්තරා අඩු අවස්ථාවකදී ඊළඟ හොපයට ඒ ගිනුම ගිය පෙර ජාලයෙන් යුතුයි. මෙතැන ඔබ ඈත ජාලයට විතරකි සිතින්කතාවේ වැරදි පෝට් එක ඉතිරි කිරුණු ගිය එක්තරා අඩු අවස්ථාවකදී එය Router-Sapporo ඉතිරි කිරුණු ගිය එක්තරා අඩු අවස්ථාවකදී පිටුවලින් ෆුකුඔකා දෙසින් සිටින WAN සම්බන්ධනයෙන් අඩු වෙමින්."
+        },
+        "sk": {
+            "title": "Zmizajúce objednávky na sídlo",
+            "story": "Vetva v Sappore sa táto týždeň znova otvorila, ale PC-Admin nemôže načítať stránku Web-Server vo Fukuoke. Každy formulár objednávky sa len točí a vyprší čas, a personál sa pýta, prečo sa nič nedostaví na sídlo.",
+            "objective": "Dosiahnite, aby bol HTTP požiadavok od PC-Admin na Web-Server úspešný.",
+            "hints": [
+                "Požiadavok nikdy nepresne Router-Sapporo; je odložená tam skôr, ako by sa vydala smerom do Fukuoky.",
+                "Router-Sapporo má Smerovacia tabuľka k sieti Web-Server smerujúca von nesprávnym portom, takže nikdy neopustí prepojenie, ktoré skutočne vedie do Fukuoky.",
+                "Na Router-Sapporo odstráňte chybného Smerovacia tabuľka na 10.0.18.0/255.255.255.0 a pridajte statickú Smerovacia tabuľka na 10.0.18.0/255.255.255.0 cez 10.0.15.2 na porte 1."
+            ],
+            "explanation": "Statická Smerovacia tabuľka musí poslať správy von z rozhrania, ktoré skutočne vedie k ďalšiemu skoku. Tu Smerovacia tabuľka k vzdalenej sieti smerovala von nesprávnym portom, takže Router-Sapporo vyradil každý paket skôr, ako mohol prejsť WAN spojením do Fukuoky."
+        },
+        "sl": {
+            "title": "Izginjočie naročila za sedeže",
+            "story": "Podružnica v Sapporeju se je ta teden ponovno odprla, vendar PC-Admin ne more naložiti stran Web-Server v Fukuoki. Vsak obrazec za naročilo se le vrti in preide čas, zaposleni pa se sprašujejo, zakaj se nič ne dobi na sedež.",
+            "objective": "Dosežite uspešen HTTP zahtevek od PC-Admin do Web-Server.",
+            "hints": [
+                "Zahtevek nikoli ne preide Router-Sapporo; pred tem je opuščen, preden se vydal proti Fukuoki.",
+                "Router-Sapporo ima Usmerjevalna tabela k omrežju Web-Server usmerjena iz napačnega vrat, zato nikoli ne zapusti povezave, ki res vodi do Fukuoke.",
+                "Na Router-Sapporo izbrišite napačni Usmerjevalna tabela na 10.0.18.0/255.255.255.0 in dodajte statično Usmerjevalna tabela na 10.0.18.0/255.255.255.0 preko 10.0.15.2 na vratih 1."
+            ],
+            "explanation": "Statična Usmerjevalna tabela mora poslati promet iz vmesnika, ki res vodi k naslednjemu skoku. Tu je Usmerjevalna tabela k oddaljenim omrežjem usmerjena iz napačnega vrat, zato je Router-Sapporo izločil vsak paket, preden je mogel prečkati WAN povezavo do Fukuoke."
+        },
+        "sq": {
+            "title": "Porositë e zhdukura për seli",
+            "story": "Dega në Sapporo u rihap këtë javë, por PC-Admin nuk mund të ngarkojë faqen Web-Server në Fukuoka. Çdo formular porositjeje thjesht rrotullohet dhe shkon koha, dhe punonjësit pyesin pse asgjë nuk arrin në selinë.",
+            "objective": "Bëni që kërkesa HTTP nga PC-Admin tek Web-Server të jetë e suksesshme.",
+            "hints": [
+                "Kërkesa nuk kalon kurrë Router-Sapporo; ajo braktisset atje përpara se të shkojë drejt Fukuokes.",
+                "Router-Sapporo ka Tabela e rrugëzimit për Rrjeti i destinacionit të Web-Server duke dërguar jashtë nga porti i gabuar, kështu që nuk largohet kurrë në lidhjen që vërtet drejton drejt Fukuokes.",
+                "Në Router-Sapporo, fshini Tabela e rrugëzimit të gabuar në 10.0.18.0/255.255.255.0 dhe shtoni një Tabela e rrugëzimit statike në 10.0.18.0/255.255.255.0 përmes 10.0.15.2 në Numri i portit 1."
+            ],
+            "explanation": "Një Tabela e rrugëzimit statike duhet të dërgojë trafikun jashtë nga ndërfaqja që vërtet drejton drejt hapit tjetër. Këtu Tabela e rrugëzimit për Rrjeti i destinacionit i largët dërgonte jashtë nga porti i gabuar, kështu që Router-Sapporo lëshoi çdo paket përpara se të mund të kalonte lidhjen WAN në Fukuoka."
+        },
+        "sr": {
+            "title": "Нестајуће поруџбине за седиште",
+            "story": "Сапорска филијала се поново отворила ове недеље, али PC-Admin не може да учита страницу Web-Server у Фукуоки. Сваки образац поруџбине се само окреће и истиче време, а запослени се питају зашто ништа не стигне у седиште.",
+            "objective": "Направите да HTTP захтев од PC-Admin до Web-Server буде успешан.",
+            "hints": [
+                "Захтев никада не прође Router-Sapporo; он је одбачен пре него што се упути према Фукуоки.",
+                "Router-Sapporo има Табела рутирања до Одредишна мрежа Web-Server која показује на погрешан порт, тако да никада не напусти везу која заиста води prema Фукуоки.",
+                "На Router-Sapporo избришите лошу Табела рутирања до 10.0.18.0/255.255.255.0 и додајте статичку Табела рутирања до 10.0.18.0/255.255.255.0 преко 10.0.15.2 на Број порта 1."
+            ],
+            "explanation": "Статичка Табела рутирања мора да пошаље саобраћај кроз интерфејс који заиста води до Следећи скок. Овде је Табела рутирања до удаљене мреже показивала на погрешан порт, па је Router-Sapporo одбацио сваки пакет пре него што је могао да пређе WAN везу до Фукуоке."
+        },
+        "sv": {
+            "title": "Försvunna order till huvudkontoret",
+            "story": "Sapporo-filialen öppnade igen den här veckan, men PC-Admin kan inte hämta Web-Server-sidan i Fukuoka. Varje orderformulär bara roterar och timeout, och personalen undrar varför ingenting anländer till huvudkontoret.",
+            "objective": "Få en HTTP-begäran från PC-Admin till Web-Server att lyckas.",
+            "hints": [
+                "Begäran aldrig får förbi Router-Sapporo; den släpps där innan den går mot Fukuoka.",
+                "Router-Sapporo har en rutt till Web-Server:s nätverk som pekar ut fel portnummer, så den lämnar aldrig på länken som faktiskt leder mot Fukuoka.",
+                "På Router-Sapporo, ta bort den dåliga rutten till 10.0.18.0/255.255.255.0 och lägg till en statisk rutt till 10.0.18.0/255.255.255.0 via 10.0.15.2 på port 1."
+            ],
+            "explanation": "En statisk rutt måste skicka trafik ut på gränssnittet som faktiskt leder till nästa hopp. Här pekade rutten till fjärrnätverket ut fel port, så Router-Sapporo släppte varje paket innan det kunde korsa WAN-länken till Fukuoka."
+        },
+        "sw": {
+            "title": "Amri Yanayopatikana kwa Ofisi Kuu",
+            "story": "Tawi la Sapporo lilionyezwa tena wiki hii, lakini PC-Admin haiwezi kupakua ukurasa wa Web-Server katika Fukuoka. Kila fomu ya amri inazunguka na kuishia, na wafanyakazi wanauliza kwa nini hakuna kinachowasili kwenye ofisi kuu.",
+            "objective": "Pata ombi la HTTP kutoka PC-Admin kwenda Web-Server kuwa na mafanikio.",
+            "hints": [
+                "Ombi hilo halilipiti Router-Sapporo; linaachwa huko kabla haijasonga kuelekea Fukuoka.",
+                "Router-Sapporo ina njia ya uelekezaji kwenda mtandao wa Web-Server inayoelekeza porini lengwa, kwa hivyo haisogi kwenye kiungo kinachosonga kweli kuelekea Fukuoka.",
+                "Kwenye Router-Sapporo, ondoa njia ngumu inayoelekeza kwenye 10.0.18.0/255.255.255.0 na ongeza njia tuli inayoelekeza kwenye 10.0.18.0/255.255.255.0 kupitia 10.0.15.2 kwenye port 1."
+            ],
+            "explanation": "Njia tuli lazima itume trafiki kuelekea kiungo kinachosonga kweli kwa hop inayofuata. Hapa njia inayoelekeza mtandao mbali ilitaka kuelekea porini lengwa, kwa hivyo Router-Sapporo iliachana na pakiti kila moja kabla haijaweza kukumbatia kiungo cha WAN kuelekea Fukuoka."
+        },
+        "ta": {
+            "title": "மறைந்துபோன தலைமையகத்திற்கான உத்தரவுகள்",
+            "story": "சப்পोरो கிளை இந்த வாரம் மீண்டும் திறந்தது, ஆனால் PC-Admin ஃபுகுओకा-வில் Web-Server பக்கத்தை பெற முடியவில்லை. ஒவ்வொரு ஆர்டர் படிவமும் சுழலுகிறது மற்றும் நேரம் முடிந்துவிடுகிறது, மேலும் பணியாளர்கள் தலைமையகத்திற்கு எதுவும் வருவதில்லை என்று கேட்கிறார்கள்.",
+            "objective": "PC-Admin இலிருந்து Web-Server க்கு HTTP கோரிக்கை வெற்றிபெற வேண்டும்.",
+            "hints": [
+                "கோரிக்கை Router-Sapporo ஐ ஒருபோதும் கடக்க முடியவில்லை; இது ஃபுකுओகாவை நோக்கி செல்வதற்கு முன்பு அங்கே நீக்கப்படும்.",
+                "Router-Sapporo ற்கு Web-Server இனுடைய நெட்வொர்க்கிற்கான ரூட் தவறான போர்ட் நோக்கி சுட்டிக்காட்டுகிறது, எனவே இது ஃபுகுओகாவை நோக்கி உண்மையில் செல்லும் இணைப்பில் விட்டுச்செல்லப்படுவதில்லை.",
+                "Router-Sapporo-வில், 10.0.18.0/255.255.255.0 க்கான மோசமான ரூட்டை நீக்கவும் மற்றும் 10.0.18.0/255.255.255.0 க்கு 10.0.15.2 மூலம் போர்ட் 1-ல் ஒரு ஸ்ট்যাটிக் ரூட் சேர்க்கவும்."
+            ],
+            "explanation": "ஒரு ஸ்ட்যாটிக் ரூட் உண்மையில் அடுத்த ஹாப்பை வழிநடத்தும் இணைப்பில் தராஃபிக் அனுப்ப வேண்டும். இங்கே தொலைதூர நெட்வொர்க்கிற்கான ரூட் தவறான போர்ட்டை நோக்கியிருந்தது, எனவே Router-Sapporo ஃபுகுओகாவிற்கு WAN இணைப்பை கடக்க முடிவதற்கு முன்பு ஒவ்வொரு பாக்கெட்டையும் நீக்கிவிட்டது."
+        },
+        "te": {
+            "title": "సాథ్‌ను కోసం అదృశ్యమైన ఆర్డర్‌లు",
+            "story": "సప్పోరో శాఖ ఈ వారం మళ్లీ తెరిచింది, కానీ PC-Admin ఫుకుઓకాలో Web-Server పేజీని విలీన చేయలేకపోయింది. ప్రతిটి ఆర్డర్ ఫారమ్ కేవలం తిరుగుతుంది మరియు సమయం ముగిసిపోతుంది, మరియు సిబ్బంది ఏదీ సాధారణ కార్యాలయానికి రానందుకు ఎందుకు అని అడుగుతున్నారు.",
+            "objective": "PC-Admin నుండి Web-Server కు HTTP అభ్యర్థన విజయవంతమవ్వాలి.",
+            "hints": [
+                "అభ్యర్థన Router-Sapporo ను ఎప్పుడూ దాటకుండా ఉంది; ఇది ఫుకుఓకా వైపుకు వెళ్లే ముందు అక్కడ డ్రాప్ చేయబడుతుంది.",
+                "Router-Sapporo కు Web-Server నెట్‌వర్క్‌కు ఒక మార్గం ఉంది ఇది తప్పు పోర్ట్‌కు చూపుతుంది, కాబట్టి ఇది ఫుకుఓకా వైపుకు నిజంగా దారితీసే లింక్‌పై విడిచిపెట్టబడదు.",
+                "Router-Sapporo పై, 10.0.18.0/255.255.255.0 కు చెడ్డ మార్గాన్ని తీసివేసి, 10.0.18.0/255.255.255.0 కు 10.0.15.2 ద్వారా పోర్ట్ 1 పై స్థిర మార్గాన్ని జోడించండి."
+            ],
+            "explanation": "స్థిర మార్గం నిజంగా నెక్స్ట్ హాప్‌కు దారితీసే ఇంటర్‌ఫేస్‌పై ట్రాఫిక్‌ను పంపాలి. ఇక్కడ రిమోట్ నెట్‌వర్క్‌కు మార్గం తప్పు పోర్ట్‌కు చూపించింది, కాబట్టి Router-Sapporo ఫుకుఓకాకు WAN లింక్‌ను దాటగలిగే ముందు ప్రతిটి ప్యాకెట్‌ను డ్రాప్ చేసింది."
+        },
+        "uk": {
+            "title": "Замовлення, що зникли для штаб-квартири",
+            "story": "Філіал Саппоро цього тижня знову відкрився, але PC-Admin не може завантажити сторінку Web-Server у Фукуоці. Кожна форма замовлення просто крутиться і закінчується, а персонал питає, чому нічого не надходить до штаб-квартири.",
+            "objective": "HTTP-запит від PC-Admin до Web-Server повинен бути успішним.",
+            "hints": [
+                "Запит ніколи не проходить через Router-Sapporo; він скидається там перед тим, як йти в напрямку Фукуоки.",
+                "Router-Sapporo має маршрут до мережі Web-Server, який вказує на неправильний порт, тому він ніколи не піддається на лінку, яка насправді веде в напрямку Фукуоки.",
+                "На Router-Sapporo видаліть поганий маршрут до 10.0.18.0/255.255.255.0 та додайте статичний маршрут до 10.0.18.0/255.255.255.0 через 10.0.15.2 на порту 1."
+            ],
+            "explanation": "Статичний маршрут повинен надсилати трафік на інтерфейс, який насправді веде до наступного переходу. Тут маршрут до віддаленої мережі вказував на неправильний порт, тому Router-Sapporo скинув кожен пакет до того, як він міг перетнути WAN-лінку до Фукуоки."
+        },
+        "ur": {
+            "title": "صدارت کے لیے غائب ہونے والے احکامات",
+            "story": "سپپورو برانچ اس ہفتے دوبارہ کھل گئی، لیکن PC-Admin فوکوکا میں Web-Server کا صفحہ نہیں دیکھ سکتے۔ ہر آرڈر فارم صرف گھومتا ہے اور ختم ہو جاتا ہے، اور عملہ پوچھ رہے ہیں کہ ہیڈ کوارٹرز میں کوئی چیز کیوں نہیں پہنچتی۔",
+            "objective": "PC-Admin سے Web-Server تک HTTP درخواست کامیاب ہونے کے لیے حاصل کریں۔",
+            "hints": [
+                "درخواست کبھی بھی Router-Sapporo سے آگے نہیں جاتی؛ یہ فوکوکا کی طرف جانے سے پہلے وہاں ڈالی جاتی ہے۔",
+                "Router-Sapporo کے پاس Web-Server کے نیٹ ورک کے لیے ایک روٹ ہے جو غلط پورٹ کی طرف اشارہ کرتا ہے، اس لیے یہ اس لنک پر نہیں نکلتا جو اصل میں فوکوکا کی طرف جاتا ہے۔",
+                "Router-Sapporo پر، 10.0.18.0/255.255.255.0 کے لیے برا روٹ حذف کریں اور 10.0.18.0/255.255.255.0 کے لیے ایک مقررہ روٹ 10.0.15.2 کے ذریعے پورٹ 1 پر شامل کریں۔"
+            ],
+            "explanation": "ایک مقررہ روٹ ٹریفک کو اس انٹرفیس سے باہر بھیجنا چاہیے جو اصل میں نیکسٹ ہاپ کی طرف جاتا ہے۔ یہاں دور دراز نیٹ ورک کے لیے روٹ غلط پورٹ کی طرف اشارہ کرتا تھا، اس لیے Router-Sapporo نے ہر پیکٹ کو WAN لنک فوکوکا تک پار کرنے سے پہلے ڈال دیا۔"
+        },
+        "zu": {
+            "title": "Isikhangiso Esiyashisa kuMengameli Omkhulu",
+            "story": "Isangane sase-Sapporo sabulungiswa nolwandle, kodwa u-PC-Admin akabukhoni ukubuka ikhasi le-Web-Server e-Fukuoka. Lonke ifomu lokuhola lokuhola lujwayele njalo kuyoxakeke, futhi abasebenzi bebuza ukuthi yini futhi ayingeni e-headquarters.",
+            "objective": "Shintsha isicelo se-HTTP isiqalelo esisuka ku-PC-Admin kuya ku-Web-Server ukuthi siphume kahle.",
+            "hints": [
+                "Isicelo asikaze siyaphumela kude ne-Router-Sapporo; ibaxwe apho ngaphambi kokuthi ihambe eya e-Fukuoka.",
+                "I-Router-Sapporo inendlela (route) ku-network yase-Web-Server ekhomba kusikhungo esingenalungile, ngakho ayiphumi nesesandla esisebenzela ngqo eya e-Fukuoka.",
+                "Ku-Router-Sapporo, usule umzila ombi 10.0.18.0/255.255.255.0 bese ushaya umzila omuma 10.0.18.0/255.255.255.0 nge-10.0.15.2 ku-port 1."
+            ],
+            "explanation": "Umzila omuma kufanele uthumele uthrafile esenzakalweni eqinisekile ekhumula kabusha ekugcinweni enhlanganisweni yokuthikamezela endleleni. Lapha umzila wenetiwekhi ekusenisweni kwasikhomba sikhungo esingenalungile, ngakho i-Router-Sapporo yabaxela wonke amaphasikete ngaphambi kokuthi angavele kuphambi kwe-WAN link e-Fukuoka."
+        }
+    }
+}
