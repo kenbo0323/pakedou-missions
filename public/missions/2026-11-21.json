@@ -1,0 +1,1339 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-21",
+    "number": 62,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "vlan_mismatch",
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "vlan",
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.15.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.15.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.15.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.6.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.6.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "Switch-Floor2",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 30
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.15.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.6.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.17.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.17.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.17.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-vlan1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "PC-Dev Can't Reach the Web Server",
+            "story": "After the weekend desk reshuffle, PC-Dev reports it cannot open the internal web server page. PC-Reception, on the other floor, has had no trouble reaching the same server all morning.",
+            "objective": "Get an HTTP request from PC-Dev to Web-Server to succeed.",
+            "hints": [
+                "The request never even leaves PC-Dev — it has nowhere to be sent off its own subnet. Separately, Switch-Floor2's port for PC-Dev also keeps it from reaching Router-Edge's segment.",
+                "PC-Dev has no default gateway configured, so it cannot route traffic beyond its own subnet. On top of that, Switch-Floor2's port 0 sits in the wrong VLAN, isolating PC-Dev from the gateway's VLAN.",
+                "On PC-Dev, set the default gateway to 10.0.15.254. On Switch-Floor2, set port 0 (PC-Dev) to VLAN 10."
+            ],
+            "explanation": "A device must belong to the correct VLAN to reach its own gateway, and it must have a default gateway configured to send traffic beyond its local subnet. Missing either one blocks off-subnet communication even if the physical cabling is fine."
+        },
+        "ja": {
+            "title": "PC-DevがWeb-Serverに接続できない",
+            "story": "週末のデスク配置換えの後、PC-Devが社内のWebサーバーのページを開けないと報告しています。別のフロアにあるPC-Receptionは、朝からずっと同じサーバーに問題なくアクセスできています。",
+            "objective": "PC-DevからWeb-ServerへのHTTPリクエストを成功させる。",
+            "hints": [
+                "リクエストはPC-Devから出ていくことすらできません。自分のサブネットの外に送り出す先がないためです。それとは別に、Switch-Floor2のPC-Dev側のポートも、Router-Edgeのセグメントに届かない原因になっています。",
+                "PC-Devにはデフォルトゲートウェイが設定されていないため、自分のサブネットを超えた通信をルーティングできません。さらに、Switch-Floor2のポート0が誤ったVLANに属しており、PC-Devがゲートウェイと同じVLANから切り離されています。",
+                "PC-Devで、デフォルトゲートウェイを10.0.15.254に設定します。Switch-Floor2では、ポート0(PC-Dev)をVLAN 10に設定します。"
+            ],
+            "explanation": "デバイスが自分のゲートウェイに到達するには正しいVLANに属している必要があり、さらにローカルのサブネットを超えて通信を送るにはデフォルトゲートウェイが設定されている必要があります。どちらか一方でも欠けていると、物理的な配線に問題がなくてもサブネット外との通信はできません。"
+        },
+        "zh-CN": {
+            "title": "PC-Dev 无法连接到 Web-Server",
+            "story": "周末办公室重新调整座位后，PC-Dev 报告无法打开内部网页服务器。在另一楼层的 PC-Reception 整个上午都能成功访问同一服务器。",
+            "objective": "让从 PC-Dev 到 Web-Server 的 HTTP 请求成功。",
+            "hints": [
+                "请求甚至没有离开 PC-Dev — 它在自己的子网内没有去向。同时，Switch-Floor2 上 PC-Dev 的端口也阻止了它到达 Router-Edge 网段的连接。",
+                "PC-Dev 没有配置 默认网关，因此无法将流量路由到自己的子网之外。此外，Switch-Floor2 的 端口号 0 处于错误的 VLAN，将 PC-Dev 与网关的 VLAN 隔离。",
+                "在 PC-Dev 上，将 默认网关 设置为 10.0.15.254。在 Switch-Floor2 上，将 端口 0（PC-Dev）设置为 VLAN 10。"
+            ],
+            "explanation": "设备必须属于正确的 VLAN 才能连接到自己的网关，并且必须配置 默认网关 以将流量发送到本地子网之外。缺少其中任何一个都会阻止跨子网通信，即使物理布线完好无损。"
+        },
+        "zh-TW": {
+            "title": "PC-Dev 無法連接到 Web-Server",
+            "story": "週末辦公室重新調整座位後，PC-Dev 報告無法打開內部網頁伺服器。在另一樓層的 PC-Reception 整個上午都能成功存取同一伺服器。",
+            "objective": "讓從 PC-Dev 到 Web-Server 的 HTTP 要求成功。",
+            "hints": [
+                "要求甚至沒有離開 PC-Dev — 它在自己的子網內沒有去向。同時，Switch-Floor2 上 PC-Dev 的連接埠也阻止了它到達 Router-Edge 網段的連線。",
+                "PC-Dev 沒有設定 預設閘道，因此無法將流量路由到自己的子網之外。此外，Switch-Floor2 的 連接埠號 0 處於錯誤的 VLAN，將 PC-Dev 與閘道的 VLAN 隔離。",
+                "在 PC-Dev 上，將 預設閘道 設定為 10.0.15.254。在 Switch-Floor2 上，將 連接埠 0（PC-Dev）設定為 VLAN 10。"
+            ],
+            "explanation": "裝置必須屬於正確的 VLAN 才能連接到自己的閘道，並且必須設定 預設閘道 以將流量傳送到本地子網之外。缺少其中任何一個都會阻止跨子網通訊，即使實體布線完好無損。"
+        },
+        "ko": {
+            "title": "PC-Dev가 Web-Server에 연결할 수 없음",
+            "story": "주말 사무실 자리 재배치 후, PC-Dev가 내부 웹 서버 페이지를 열 수 없다고 보고했습니다. 다른 층에 있는 PC-Reception은 아침 내내 같은 서버에 문제없이 접속할 수 있었습니다.",
+            "objective": "PC-Dev에서 Web-Server로의 HTTP 요청을 성공하게 하기.",
+            "hints": [
+                "요청이 PC-Dev를 떠나지도 못했습니다 — 자신의 서브넷 내에서 갈 곳이 없습니다. 게다가 Switch-Floor2의 PC-Dev 포트도 Router-Edge 세그먼트에 도달하지 못하게 차단합니다.",
+                "PC-Dev는 기본 게이트웨이가 설정되지 않아 자신의 서브넷 외부로 트래픽을 라우팅할 수 없습니다. 더욱이, Switch-Floor2의 포트 번호 0은 잘못된 VLAN에 있어 PC-Dev를 게이트웨이의 VLAN에서 격리시킵니다.",
+                "PC-Dev에서 기본 게이트웨이를 10.0.15.254로 설정하세요. Switch-Floor2에서 포트 0(PC-Dev)을 VLAN 10으로 설정하세요."
+            ],
+            "explanation": "장치가 자신의 게이트웨이에 접속하려면 올바른 VLAN에 속해야 하며, 로컬 서브넷을 넘어 트래픽을 전송하려면 기본 게이트웨이가 설정되어야 합니다. 둘 중 하나가 없으면 실제 배선이 정상이어도 서브넷 간 통신이 차단됩니다."
+        },
+        "es": {
+            "title": "PC-Dev no puede alcanzar Web-Server",
+            "story": "Después del cambio de escritorios del fin de semana, PC-Dev reporta que no puede abrir la página del servidor web interno. PC-Reception, en otro piso, ha podido acceder al mismo servidor sin problemas toda la mañana.",
+            "objective": "Lograr que una solicitud HTTP de PC-Dev a Web-Server sea exitosa.",
+            "hints": [
+                "La solicitud ni siquiera sale de PC-Dev — no tiene adónde enviarse fuera de su propia subred. Además, el puerto de PC-Dev en Switch-Floor2 tampoco le permite alcanzar el segmento de Router-Edge.",
+                "PC-Dev no tiene Gateway predeterminado configurado, por lo que no puede enrutar tráfico más allá de su propia subred. Además, el Número de puerto 0 de Switch-Floor2 está en la VLAN incorrecta, aislando PC-Dev de la VLAN de la puerta de enlace.",
+                "En PC-Dev, establezca el Gateway predeterminado en 10.0.15.254. En Switch-Floor2, establezca el Número de puerto 0 (PC-Dev) a VLAN 10."
+            ],
+            "explanation": "Un dispositivo debe pertenecer a la VLAN correcta para alcanzar su propia puerta de enlace, y debe tener un Gateway predeterminado configurado para enviar tráfico más allá de su subred local. La falta de cualquiera de estos dos elementos bloquea la comunicación entre subredes, incluso si el cableado físico está en perfecto estado."
+        },
+        "pt-BR": {
+            "title": "PC-Dev não consegue alcançar Web-Server",
+            "story": "Após a reorganização de mesas do fim de semana, PC-Dev reporta que não consegue abrir a página do servidor web interno. PC-Reception, em outro andar, não teve dificuldade em acessar o mesmo servidor a manhã toda.",
+            "objective": "Fazer com que uma solicitação HTTP de PC-Dev para Web-Server seja bem-sucedida.",
+            "hints": [
+                "A solicitação nem sai de PC-Dev — não tem para onde ser enviada fora de sua própria subrede. Além disso, a porta de PC-Dev em Switch-Floor2 também a impede de alcançar o segmento de Router-Edge.",
+                "PC-Dev não tem Gateway padrão configurado, então não consegue rotear tráfego além de sua própria subrede. Além disso, o Número da porta 0 de Switch-Floor2 está na VLAN errada, isolando PC-Dev da VLAN do gateway.",
+                "Em PC-Dev, defina o Gateway padrão como 10.0.15.254. Em Switch-Floor2, defina o Número da porta 0 (PC-Dev) para VLAN 10."
+            ],
+            "explanation": "Um dispositivo deve pertencer à VLAN correta para alcançar seu próprio gateway, e deve ter um Gateway padrão configurado para enviar tráfego além de sua subrede local. A falta de qualquer um desses dois elementos bloqueia a comunicação entre subredes, mesmo que a fiação física esteja perfeita."
+        },
+        "de": {
+            "title": "PC-Dev kann Web-Server nicht erreichen",
+            "story": "Nach der Umgestaltung der Schreibtische übers Wochenende meldet PC-Dev, dass es die interne Web-Server-Seite nicht öffnen kann. PC-Reception auf der anderen Etage hat den gleichen Server den ganzen Morgen über problemlos erreicht.",
+            "objective": "Ein HTTP-Request von PC-Dev zu Web-Server soll erfolgreich sein.",
+            "hints": [
+                "Der Request verlässt PC-Dev nicht — es gibt keinen Weg, Traffic außerhalb seines eigenen Subnetzes zu senden. Zusätzlich hält Switch-Floor2's Port für PC-Dev es daran, Router-Edge's Segment zu erreichen.",
+                "PC-Dev hat kein Standard-Gateway konfiguriert, deshalb kann es Traffic jenseits seines eigenen Subnetzes nicht leiten. Hinzu kommt, dass Switch-Floor2's Port 0 im falschen VLAN sitzt und PC-Dev vom VLAN des Gateways isoliert.",
+                "Auf PC-Dev das Standard-Gateway auf 10.0.15.254 setzen. Auf Switch-Floor2 Port 0 (PC-Dev) auf VLAN 10 setzen."
+            ],
+            "explanation": "Ein Gerät muss sich im richtigen VLAN befinden, um sein eigenes Gateway zu erreichen, und es muss ein Standard-Gateway konfiguriert haben, um Traffic jenseits seines lokalen Subnetzes zu senden. Fehlt eines von beiden, wird Kommunikation außerhalb des Subnetzes blockiert, selbst wenn die physische Verkabelung in Ordnung ist."
+        },
+        "fr": {
+            "title": "PC-Dev ne peut pas atteindre le serveur Web",
+            "story": "Après le remaniement des postes de travail du week-end, PC-Dev signale qu'il ne peut pas ouvrir la page du serveur Web interne. PC-Reception, à l'autre étage, n'a eu aucune difficulté à accéder au même serveur toute la matinée.",
+            "objective": "Faire en sorte qu'une requête HTTP de PC-Dev vers Web-Server réussisse.",
+            "hints": [
+                "La requête ne quitte même pas PC-Dev — il n'y a aucun moyen d'envoyer le trafic en dehors de son propre sous-réseau. De plus, le port de Switch-Floor2 pour PC-Dev l'empêche aussi d'atteindre le segment de Router-Edge.",
+                "PC-Dev n'a pas de passerelle par défaut configurée, donc il ne peut pas acheminer le trafic au-delà de son propre sous-réseau. De plus, le port 0 de Switch-Floor2 se trouve dans le mauvais VLAN, isolant PC-Dev du VLAN de la passerelle.",
+                "Sur PC-Dev, définissez la passerelle par défaut sur 10.0.15.254. Sur Switch-Floor2, définissez le port 0 (PC-Dev) sur VLAN 10."
+            ],
+            "explanation": "Un appareil doit appartenir au bon VLAN pour atteindre sa propre passerelle, et il doit avoir une passerelle par défaut configurée pour envoyer le trafic au-delà de son sous-réseau local. L'absence de l'une ou de l'autre bloque la communication hors sous-réseau, même si le câblage physique est correct."
+        },
+        "hi": {
+            "title": "PC-Dev वेब-सर्वर तक नहीं पहुंच सकता",
+            "story": "सप्ताहांत की डेस्क की पुनर्व्यवस्था के बाद, PC-Dev ने रिपोर्ट किया कि वह आंतरिक वेब सर्वर पृष्ठ नहीं खोल सकता। दूसरी मंजिल पर PC-Reception को सुबह भर उसी सर्वर तक पहुंचने में कोई परेशानी नहीं हुई।",
+            "objective": "PC-Dev से Web-Server तक HTTP अनुरोध सफल होना चाहिए।",
+            "hints": [
+                "अनुरोध PC-Dev को भी नहीं छोड़ता — इसके अपने सबनेट से परे ट्रैफिक भेजने का कोई तरीका नहीं है। अलग से, Switch-Floor2 का PC-Dev का पोर्ट इसे Router-Edge के सेगमेंट तक पहुंचने से भी रोकता है।",
+                "PC-Dev के पास डिफ़ॉल्ट गेटवे कॉन्फ़िगर नहीं है, इसलिए यह अपने सबनेट से परे ट्रैफिक नहीं भेज सकता। इसके अलावा, Switch-Floor2 की पोर्ट 0 गलत VLAN में है, PC-Dev को गेटवे की VLAN से अलग करता है।",
+                "PC-Dev पर, डिफ़ॉल्ट गेटवे को 10.0.15.254 पर सेट करें। Switch-Floor2 पर, पोर्ट 0 (PC-Dev) को VLAN 10 पर सेट करें।"
+            ],
+            "explanation": "एक डिवाइस को अपने गेटवे तक पहुंचने के लिए सही VLAN में होना चाहिए, और इसमें अपने स्थानीय सबनेट से परे ट्रैफिक भेजने के लिए डिफ़ॉल्ट गेटवे कॉन्फ़िगर होना चाहिए। यदि कोई भी गायब है, तो सबनेट के बाहर का संचार अवरुद्ध हो जाता है, भले ही भौतिक केबलिंग ठीक हो।"
+        },
+        "id": {
+            "title": "PC-Dev Tidak Dapat Mencapai Web-Server",
+            "story": "Setelah pengaturan ulang meja di akhir pekan, PC-Dev melaporkan bahwa tidak dapat membuka halaman server Web internal. PC-Reception, di lantai lain, tidak mengalami kesulitan untuk menjangkau server yang sama sepanjang pagi.",
+            "objective": "Buat permintaan HTTP dari PC-Dev ke Web-Server berhasil.",
+            "hints": [
+                "Permintaan tidak pernah meninggalkan PC-Dev — tidak ada cara untuk mengirim lalu lintas di luar subnetnya sendiri. Selain itu, port Switch-Floor2 untuk PC-Dev juga mencegahnya menjangkau segmen Router-Edge.",
+                "PC-Dev tidak memiliki gateway default yang dikonfigurasi, jadi tidak dapat merutekan lalu lintas di luar subnetnya sendiri. Di samping itu, port 0 Switch-Floor2 berada di VLAN yang salah, mengisolasi PC-Dev dari VLAN gateway.",
+                "Di PC-Dev, atur gateway default ke 10.0.15.254. Di Switch-Floor2, atur port 0 (PC-Dev) ke VLAN 10."
+            ],
+            "explanation": "Perangkat harus berada di VLAN yang benar untuk mencapai gateway miliknya sendiri, dan harus memiliki gateway default yang dikonfigurasi untuk mengirim lalu lintas di luar subnetnya. Jika salah satu hilang, komunikasi di luar subnet diblokir meskipun kabel fisik berfungsi dengan baik."
+        },
+        "ru": {
+            "title": "PC-Dev не может подключиться к Web-Server",
+            "story": "После перестановки рабочих столов в выходные дни PC-Dev сообщает, что не может открыть страницу внутреннего веб-сервера. PC-Reception на другом этаже без проблем получала доступ к тому же серверу весь день.",
+            "objective": "Обеспечить успешную передачу HTTP-запроса от PC-Dev на Web-Server.",
+            "hints": [
+                "Запрос даже не покидает PC-Dev — нет способа отправить трафик вне своей сети. К тому же порт Switch-Floor2 для PC-Dev также препятствует доступу к сегменту Router-Edge.",
+                "На PC-Dev не настроен шлюз по умолчанию, поэтому он не может маршрутизировать трафик вне своей сети. Кроме того, порт 0 Switch-Floor2 находится в неправильной VLAN, изолируя PC-Dev от VLAN шлюза.",
+                "На PC-Dev установите шлюз по умолчанию 10.0.15.254. На Switch-Floor2 установите порт 0 (PC-Dev) в VLAN 10."
+            ],
+            "explanation": "Устройство должно принадлежать правильной VLAN для доступа к собственному шлюзу и должно иметь настроенный шлюз по умолчанию для отправки трафика вне локальной сети. Отсутствие любого из них блокирует межсетевое взаимодействие, даже если физическая кабельная разводка в порядке."
+        },
+        "it": {
+            "title": "PC-Dev non riesce a raggiungere il Web Server",
+            "story": "Dopo il riarrangiamento dei posti a weekend, PC-Dev segnala che non riesce ad aprire la pagina del web server interno. PC-Reception, all'altro piano, ha raggiunto lo stesso server senza problemi tutta la mattina.",
+            "objective": "Fare in modo che una richiesta HTTP da PC-Dev a Web-Server abbia successo.",
+            "hints": [
+                "La richiesta non lascia nemmeno PC-Dev — non ha dove essere inviata al di fuori della propria subnet. Separatamente, la porta di Switch-Floor2 per PC-Dev la impedisce anche di raggiungere il segmento di Router-Edge.",
+                "PC-Dev non ha alcun Gateway predefinito configurato, quindi non può instradare il traffico oltre la propria subnet. Inoltre, la porta 0 di Switch-Floor2 si trova nella VLAN sbagliata, isolando PC-Dev dalla VLAN del gateway.",
+                "Su PC-Dev, imposta il Gateway predefinito su 10.0.15.254. Su Switch-Floor2, imposta la porta 0 (PC-Dev) su VLAN 10."
+            ],
+            "explanation": "Un dispositivo deve appartenere alla VLAN corretta per raggiungere il proprio gateway e deve avere un Gateway predefinito configurato per inviare il traffico oltre la propria subnet locale. La mancanza di uno di questi due elementi blocca la comunicazione al di fuori della subnet, anche se il cablaggio fisico è corretto."
+        },
+        "tr": {
+            "title": "PC-Dev Web-Server'a Ulaşamıyor",
+            "story": "Hafta sonu masaların yeniden düzenlenmesinin ardından PC-Dev, dahili web sunucusu sayfasını açamadığını bildiriyor. Başka bir kattaki PC-Reception, tüm sabah aynı sunucuya ulaşmakta sorun yaşamadı.",
+            "objective": "PC-Dev'den Web-Server'a gönderilen HTTP isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "İstek PC-Dev'den çıkmıyor bile — kendi alt ağının dışına gönderilebilecek hiçbir yeri yok. Ayrıca, Switch-Floor2'nin PC-Dev için olan portu, onu Router-Edge'in segmentine ulaşmaktan da alıkoyuyor.",
+                "PC-Dev'in yapılandırılmış bir Varsayılan ağ geçidi yok, bu nedenle kendi alt ağının ötesinde trafiği yönlendiremez. Buna ek olarak, Switch-Floor2'nin port 0'ı yanlış VLAN'da yer almakta, PC-Dev'i ağ geçidinin VLAN'ından izole etmektedir.",
+                "PC-Dev'de Varsayılan ağ geçidini 10.0.15.254 olarak ayarlayın. Switch-Floor2'de port 0'ı (PC-Dev) VLAN 10 olarak ayarlayın."
+            ],
+            "explanation": "Bir cihazın kendi ağ geçidine ulaşmak için doğru VLAN'da olması ve yerel alt ağının ötesinde trafiği göndermek için bir Varsayılan ağ geçidi yapılandırılmış olması gerekir. Bu ikisinden biri eksik olsa bile, fiziksel kablolama iyiyse bile alt ağ dışı iletişim engellenir."
+        },
+        "th": {
+            "title": "PC-Dev ไม่สามารถเข้าถึง Web-Server ได้",
+            "story": "หลังจากการจัดเรียงโต๊ะใหม่ในช่วงวีกเอนด์ PC-Dev รายงานว่าไม่สามารถเปิดหน้าเว็บเซิร์ฟเวอร์ภายในได้ PC-Reception ชั้นอื่น ไม่มีปัญหาในการเข้าถึงเซิร์ฟเวอร์เดียวกันตลอดเช้า",
+            "objective": "ทำให้การร้องขอ HTTP จาก PC-Dev ไปยัง Web-Server สำเร็จ",
+            "hints": [
+                "การร้องขอไม่ออกจาก PC-Dev เลย — ไม่มีที่ไปนอกซับเน็ตของตัวเอง นอกจากนี้ พอร์ตของ Switch-Floor2 สำหรับ PC-Dev ยังป้องกันไม่ให้เข้าถึงส่วนของ Router-Edge",
+                "PC-Dev ไม่มีเกตเวย์เริ่มต้นที่กำหนดค่าไว้ ดังนั้นจึงไม่สามารถกำหนดเส้นทางการท่องเว็บไปไกลกว่าซับเน็ตของตัวเอง นอกจากนี้ พอร์ต 0 ของ Switch-Floor2 อยู่ใน VLAN ที่ผิด ซึ่งแยก PC-Dev จาก VLAN ของเกตเวย์",
+                "บน PC-Dev ตั้งเกตเวย์เริ่มต้นเป็น 10.0.15.254 บน Switch-Floor2 ตั้งพอร์ต 0 (PC-Dev) เป็น VLAN 10"
+            ],
+            "explanation": "อุปกรณ์ต้องอยู่ใน VLAN ที่ถูกต้องเพื่อให้เข้าถึงเกตเวย์ของตัวเอง และต้องมีเกตเวย์เริ่มต้นที่กำหนดค่าไว้เพื่อส่งการท่องเว็บไปไกลกว่าซับเน็ตภายในของตัวเอง หากขาดสิ่งใดสิ่งหนึ่งจะปิดกั้นการสื่อสารนอกซับเน็ตแม้ว่าการต่อสายกายภาพจะถูกต้องก็ตาม"
+        },
+        "vi": {
+            "title": "PC-Dev Không Thể Kết Nối Đến Web-Server",
+            "story": "Sau khi sắp xếp lại chỗ ngồi vào cuối tuần, PC-Dev báo cáo rằng nó không thể mở trang web server nội bộ. PC-Reception ở tầng khác đã có thể kết nối đến cùng một máy chủ suốt sáng mà không gặp vấn đề.",
+            "objective": "Đảm bảo yêu cầu HTTP từ PC-Dev đến Web-Server thành công.",
+            "hints": [
+                "Yêu cầu không bao giờ rời khỏi PC-Dev — nó không có nơi để gửi ngoài subnet của chính nó. Ngoài ra, cổng của Switch-Floor2 dành cho PC-Dev cũng ngăn nó tiếp cận phân đoạn Router-Edge.",
+                "PC-Dev không có Cổng mặc định được cấu hình, nên nó không thể định tuyến lưu lượng truy cập vượt quá subnet của chính nó. Thêm vào đó, cổng 0 của Switch-Floor2 nằm trong VLAN sai, cách ly PC-Dev khỏi VLAN của cổng.",
+                "Trên PC-Dev, đặt Cổng mặc định thành 10.0.15.254. Trên Switch-Floor2, đặt cổng 0 (PC-Dev) thành VLAN 10."
+            ],
+            "explanation": "Một thiết bị phải thuộc VLAN chính xác để tiếp cận cổng mặc định của chính nó và phải có Cổng mặc định được cấu hình để gửi lưu lượng truy cập vượt quá subnet cục bộ của chính nó. Thiếu một trong hai yếu tố sẽ chặn giao tiếp ngoài subnet ngay cả khi dây cáp vật lý ổn định."
+        },
+        "af": {
+            "title": "PC-Dev Kan Nie die Web-Server Bereik Nie",
+            "story": "Na die herrangskikking van tafels oor die naweekend rapporteer PC-Dev dat dit nie die interne webbladsydy kan oopmaak nie. PC-Reception op die ander vloer het die hele môre geen moeite gehad om dieselfde bediener te bereik nie.",
+            "objective": "Maak seker dat 'n HTTP-aanvraag van PC-Dev na Web-Server slaag.",
+            "hints": [
+                "Die aanvraag verlaat PC-Dev nie eers nie — dit het geen plek om buite sy eie subnet gestuur te word nie. Daarbenewens hou Switch-Floor2 se poort vir PC-Dev dit ook daarvan af om Router-Edge se segment te bereik.",
+                "PC-Dev het geen Verstek-gateway ingestel nie, dus kan dit nie verkeer buite sy eie subnet stuur nie. Daarby is Switch-Floor2 se poort 0 in die verkeerde VLAN, wat PC-Dev van die gjenkaai se VLAN isoleer.",
+                "Stel op PC-Dev die Verstek-gateway op 10.0.15.254. Stel op Switch-Floor2 poort 0 (PC-Dev) op VLAN 10."
+            ],
+            "explanation": "'n Toestel moet in die korrekte VLAN wees om sy eie gateway te bereik, en dit moet 'n Verstek-gateway hê wat ingestel is om verkeer buite sy eie subnet te stuur. Die afwesigheid van enige van hierdie twee dinge blokkeer kommunikasie buite die subnet, selfs as die fisieke kabel in orde is."
+        },
+        "am": {
+            "title": "PC-Dev Web-Server ላይ ማግኘት አይችልም",
+            "story": "ሳምንቱ ከያልቁ በኋላ ሌሎቹን ጠረጴዛዎች ያደረደሩ ሲሆን PC-Dev ውስጣዊ ዋና ገጽ ትከላ ሊከፍት አልቻለም። በሌላ ወለል ላይ ያለ PC-Reception አንድ ሰዓት ሙሉ ብዙም ችግር ሳይጠብቅ ተመሳሳይ ሰርቨር ላይ ደርሷል።",
+            "objective": "ከ PC-Dev ወደ Web-Server የ HTTP ጥያቄ ስኬታማ ሆኖ መጨረስ።",
+            "hints": [
+                "ጥያቄው በ PC-Dev ውስጥ ሙሉ ሆኖ ይቆያል — ከራሱ ንዑስ አውታረ መረብ ውጭ ሊላክ ምንም ቦታ የለም። ተለያይተው፣ Switch-Floor2 ውስጥ PC-Dev ための ፖርት ደግሞ Router-Edge አከባቢን ሊደርስ ይከላከላል።",
+                "PC-Dev ነባሪ ጌትዌይ ቅንብር የለበትም ስለዚህ ከራሱ ንዑስ አውታረ መረብ ውጭ ትራፊክ ሊወስደው አይችልም። ከዚህ በላይ Switch-Floor2 ፖርት 0 በስህተት VLAN ውስጥ ተቀምጧል፣ PC-Dev ን ከ ጌትዌይ VLAN ገለልተኛ ያደርገዋል።",
+                "PC-Dev ላይ ነባሪ ጌትዌይ ወደ 10.0.15.254 ያብነዋል። Switch-Floor2 ላይ ፖርት 0 (PC-Dev) VLAN 10 ላይ ያብነዋል።"
+            ],
+            "explanation": "መሳሪያ ራሱን ጌትዌይ ለማግኘት ወደ ትክክለኛ VLAN መሆን አለበት፣ ከወደ ውጪ ንዑስ አውታረ መረብ ትራፊክ ላክ ነባሪ ጌትዌይ ቅንብር ሊኖረው አለበት። አንደኛውንም ሕልድ እንኳን ፊዚካል ካብልማውም ዛሬ-ንዑስ አውታረ መረብ ግንኙነት ያግደዋል።"
+        },
+        "ar": {
+            "title": "PC-Dev لا يمكنه الوصول إلى Web-Server",
+            "story": "بعد تجديد مكاتب نهاية الأسبوع، أبلغت PC-Dev أنها لا تستطيع فتح صفحة خادم الويب الداخلي. لم تواجه PC-Reception، الموجودة بالطابق الآخر، أي مشكلة في الوصول إلى نفس الخادم طوال الصباح.",
+            "objective": "اجعل طلب HTTP من PC-Dev إلى Web-Server ينجح.",
+            "hints": [
+                "الطلب لم يغادر PC-Dev حتى — ليس لديه مكان يتم إرساله خارج شبكته الخاصة. بشكل منفصل، منفذ Switch-Floor2 الخاص بـ PC-Dev يمنعه أيضاً من الوصول إلى جزء Router-Edge.",
+                "PC-Dev لا يحتوي على بوابة افتراضية مُعدة، لذلك لا يمكنه توجيه حركة المرور خارج شبكته الخاصة. بالإضافة إلى ذلك، المنفذ 0 في Switch-Floor2 يقع في VLAN خاطئ، مما يعزل PC-Dev عن VLAN البوابة.",
+                "على PC-Dev، عيّن البوابة الافتراضية على 10.0.15.254. على Switch-Floor2، عيّن المنفذ 0 (PC-Dev) على VLAN 10."
+            ],
+            "explanation": "يجب أن يكون الجهاز في VLAN صحيح ليصل إلى بوابته الخاصة، وعليه أن يكون لديه بوابة افتراضية مُعدة لإرسال حركة المرور خارج الشبكة المحلية. إذا كان هناك نقص في أحد هذين الأمرين، فسيتم حجب الاتصال خارج الشبكة حتى لو كانت الأسلاك المادية على ما يرام."
+        },
+        "az": {
+            "title": "PC-Dev Web-Server-ə Çata Bilmir",
+            "story": "Həftə sonundan sonra masaların yenidən yerləşdirilməsi nəticəsində PC-Dev daxili veb serverin səhifəsini aça bilmir. Digər mərtəbədə olan PC-Reception, bütün səhər boyunca eyni serverə çatmaqda heç bir problem yaşamayıb.",
+            "objective": "PC-Dev-dən Web-Server-ə HTTP sorğusu uğurlu olsun.",
+            "hints": [
+                "Sorğu PC-Dev-dən belə çıxmır — öz şəbəkəsindən kənara göndəriləcək yer yoxdur. Bundan ayrı olaraq, Switch-Floor2-nin PC-Dev üçün portu da onu Router-Edge seqmentinə çatmaqdan qoruyur.",
+                "PC-Dev-də defolt şlüz quraşdırılmayıb, buna görə də öz şəbəkəsindən kənara trafiki marşrutlaşdıra bilmir. Bununla birlikdə, Switch-Floor2-nin port 0 yanlış VLAN-da yerləşir, PC-Dev-i şlüzün VLAN-ından təcrid edir.",
+                "PC-Dev-də defolt şlüzü 10.0.15.254 olaraq təyin edin. Switch-Floor2-də port 0 (PC-Dev) VLAN 10 olaraq təyin edin."
+            ],
+            "explanation": "Cihaz öz şlüzünə çatmaq üçün düzgün VLAN-da olmalı, şəbəkə daxilində trafiki göndərmək üçün defolt şlüz quraşdırması olmalıdır. Hər ikisindən hər hansı biri olmaması, fiziki kabelləmə yaxşı olsa da, şəbəkə daxili rabitəni bloklar."
+        },
+        "be": {
+            "title": "PC-Dev Не можа Дасцячь Web-Server",
+            "story": "Пасля перастаноўкі сталоў у канцы тыдня PC-Dev паведаміла, што не можа адкрыць страніцу ўнутрашнага вэб-сервера. PC-Reception, што на іншым паверсе, не мела праблем з дасцаганнем аднаго сервера ўсе раніцы.",
+            "objective": "Зрабіць, каб HTTP запыт ад PC-Dev да Web-Server прайшоў паспяхова.",
+            "hints": [
+                "Запыт нават не пакідае PC-Dev — яму няма куды адправіцца за межы яго сеткі. Адасобліна, порт Switch-Floor2 для PC-Dev таксама перашкаджае дасцаганню сегмента Router-Edge.",
+                "PC-Dev не мае налады Шлюз па змаўчанні, таму не можа маршрутызаваць трафік за межы сеткі. Больш таго, порт 0 Switch-Floor2 знаходзіцца ў дрэннай VLAN, ізалюючы PC-Dev ад VLAN шлюза.",
+                "На PC-Dev установіце Шлюз па змаўчанні 10.0.15.254. На Switch-Floor2 установіце порт 0 (PC-Dev) на VLAN 10."
+            ],
+            "explanation": "Прыстасаванне павінна быць у правільнай VLAN, каб дасцячь свой шлюз, і павінна мець налады Шлюз па змаўчанні для адправкі трафіку за межы лакальнай сеткі. Калі адсутнічае хоць одна з гэтых налад, лакаль-выходная сувязь блакіруецца, нават калі фізічная кабельна структура ў парадку."
+        },
+        "bg": {
+            "title": "PC-Dev Не Може да Достави Web-Server",
+            "story": "След преместването на бюрата в края на седмицата PC-Dev съобщи, че не може да отвори страницата на вътрешния уеб сървър. PC-Reception, която е на другия етаж, няма имала проблем да достави до същия сървър през цялото утро.",
+            "objective": "Направете HTTP запрос от PC-Dev до Web-Server да успее.",
+            "hints": [
+                "Запросът даже не напуска PC-Dev — няма къде да се изпрати извън собствената му мрежа. Отделно, портът на Switch-Floor2 за PC-Dev също го предотвратява да достигне сегмента на Router-Edge.",
+                "PC-Dev няма конфигуриран Шлюз по подразбиране, затова не може да маршрутизира трафик извън собствената си мрежа. Освен това портът 0 на Switch-Floor2 е в грешната VLAN, изолирайки PC-Dev от VLAN на шлюза.",
+                "На PC-Dev установете Шлюз по подразбиране на 10.0.15.254. На Switch-Floor2 установете порт 0 (PC-Dev) на VLAN 10."
+            ],
+            "explanation": "Устройството трябва да бъде в правилната VLAN, за да достигне собствения си шлюз, и трябва да има конфигуриран Шлюз по подразбиране, за да изпраща трафик извън локалната мрежа. Ако липсва някоя от двете, свързаността извън мрежата е блокирана, дори ако физическото кабелиране е правилно."
+        },
+        "bn": {
+            "title": "PC-Dev ওয়েব সার্ভারে পৌঁছাতে পারছে না",
+            "story": "সপ্তাহান্তের ডেস্ক পুনর্বিন্যাসের পরে, PC-Dev রিপোর্ট করেছে যে এটি অভ্যন্তরীণ ওয়েব সার্ভার পৃষ্ঠা খুলতে পারছে না। PC-Reception, যা অন্য তলায় আছে, সারা সকাল একই সার্ভারে পৌঁছাতে কোনো সমস্যা হয়নি।",
+            "objective": "PC-Dev থেকে Web-Server-এ একটি HTTP অনুরোধ সফল হওয়া নিশ্চিত করুন।",
+            "hints": [
+                "অনুরোধ কখনও PC-Dev ছেড়ে যায় না — এটির নিজের সাবনেট থেকে পাঠানোর জায়গা নেই। আলাদাভাবে, Switch-Floor2-এর PC-Dev-এর পোর্টও এটিকে Router-Edge-এর সেগমেন্টে পৌঁছাতে বাধা দেয়।",
+                "PC-Dev-এর কোনো ডিফল্ট গেটওয়ে কনফিগার করা নেই, তাই এটি তার নিজের সাবনেটের বাইরে ট্রাফিক রুট করতে পারে না। এর উপরে, Switch-Floor2-এর পোর্ট 0 ভুল VLAN-এ থাকে, PC-Dev-কে গেটওয়ের VLAN থেকে বিচ্ছিন্ন করে।",
+                "PC-Dev-এ, ডিফল্ট গেটওয়ে 10.0.15.254 এ সেট করুন। Switch-Floor2-এ, পোর্ট 0 (PC-Dev) কে VLAN 10-এ সেট করুন।"
+            ],
+            "explanation": "একটি ডিভাইসকে তার নিজের গেটওয়ে পৌঁছাতে সঠিক VLAN-এ থাকতে হবে, এবং এটির স্থানীয় সাবনেটের বাইরে ট্রাফিক পাঠাতে একটি ডিফল্ট গেটওয়ে কনফিগার করা থাকতে হবে। এর মধ্যে কোনো একটি মিস করলে শারীরিক ক্যাবলিং ঠিক থাকলেও সাবনেট-এর বাইরের যোগাযোগ বন্ধ হয়ে যায়।"
+        },
+        "ca": {
+            "title": "PC-Dev no pot arribar al Web-Server",
+            "story": "Després de la reorganització d'escriptori de cap de setmana, PC-Dev reporta que no pot obrir la pàgina del servidor web intern. PC-Reception, a l'altre pis, ha estat accedint al mateix servidor sense problemes tota la matinada.",
+            "objective": "Aconseguir que una sol·licitud HTTP de PC-Dev a Web-Server tingui èxit.",
+            "hints": [
+                "La sol·licitud mai ni deixa PC-Dev — no té lloc a on ser-hi enviada fora de la seva pròpia xarxa. Per separat, el port de Switch-Floor2 per a PC-Dev també l'impedeix arribar al segment de Router-Edge.",
+                "PC-Dev no té cap Passarel·la per defecte configurada, per la qual cosa no pot encaminar tràfic més allà de la seva pròpia xarxa. A més, el port 0 de Switch-Floor2 es troba en la VLAN equivocada, aïllant PC-Dev de la VLAN de la passarel·la.",
+                "A PC-Dev, estableix la Passarel·la per defecte a 10.0.15.254. A Switch-Floor2, estableix el port 0 (PC-Dev) a VLAN 10."
+            ],
+            "explanation": "Un dispositiu ha de pertànyer a la VLAN correcta per arribar a la seva pròpia passarel·la, i ha de tenir una Passarel·la per defecte configurada per enviar tràfic més allà de la seva xarxa local. La manca de qualsevol d'aquestes dues coses bloqueja la comunicació fora de la xarxa fins i tot si el cablejat físic és correcte."
+        },
+        "cs": {
+            "title": "PC-Dev se nemůže připojit na Web-Server",
+            "story": "Po reorganizaci stolů o víkendu hlásí PC-Dev, že nemůže otevřít stránku interního webového serveru. PC-Reception, která je na jiném patře, celé dopoledne bez problémů přistupuje ke stejnému serveru.",
+            "objective": "Zajistit, aby byl HTTP požadavek z PC-Dev na Web-Server úspěšný.",
+            "hints": [
+                "Požadavek nikdy neopustí PC-Dev — nemá kam být odeslán mimo její vlastní podsíť. Navíc port Switch-Floor2 pro PC-Dev jí také brání v dosažení segmentu Router-Edge.",
+                "PC-Dev nemá nakonfigurovanou žádnou Výchozí bránu, takže nemůže směrovat provoz mimo vlastní podsíť. Navíc port 0 na Switch-Floor2 se nachází v nesprávné VLAN, která izoluje PC-Dev od brány VLAN.",
+                "Na PC-Dev nastavte Výchozí bránu na 10.0.15.254. Na Switch-Floor2 nastavte port 0 (PC-Dev) do VLAN 10."
+            ],
+            "explanation": "Zařízení musí patřit do správné VLAN, aby dosáhlo vlastní brány, a musí mít nakonfigurovanou Výchozí bránu, aby posílalo provoz mimo místní podsíť. Chybí-li kterákoli z těchto dvou možností, blokuje se komunikace mimo podsíť, i když je fyzické kabeláž v pořádku."
+        },
+        "da": {
+            "title": "PC-Dev kan ikke nå Web-Server",
+            "story": "Efter omorganiseringen af skriveborde i weekenden rapporterer PC-Dev, at den ikke kan åbne den interne webserverside. PC-Reception på den anden etage har haft ingen problemer med at nå den samme server hele formiddagen.",
+            "objective": "Få en HTTP-anmodning fra PC-Dev til Web-Server til at lykkes.",
+            "hints": [
+                "Anmodningen forlader aldrig PC-Dev — den har intet sted at blive sendt fra dens eget undernet. Derudover holder Switch-Floor2's port for PC-Dev den også fra at nå Router-Edge's segment.",
+                "PC-Dev har ingen Standardgateway konfigureret, så den kan ikke dirigere trafik uden for sit eget undernet. Desuden sidder Switch-Floor2's port 0 i det forkerte VLAN, hvilket isolerer PC-Dev fra gatewayens VLAN.",
+                "På PC-Dev skal du angive Standardgateway til 10.0.15.254. På Switch-Floor2 skal du angive port 0 (PC-Dev) til VLAN 10."
+            ],
+            "explanation": "En enhed skal høre til det korrekte VLAN for at nå sin egen gateway, og den skal have en Standardgateway konfigureret for at sende trafik uden for sit lokale undernet. Hvis enten det ene eller det andet mangler, blokeres kommunikation uden for undernettet, selv hvis det fysiske ledningsnet er i orden."
+        },
+        "el": {
+            "title": "Το PC-Dev δεν μπορεί να φτάσει τον Web-Server",
+            "story": "Μετά την αναδιοργάνωση των γραφείων το Σάββατο-Κυριακή, το PC-Dev αναφέρει ότι δεν μπορεί να ανοίξει τη σελίδα του εσωτερικού διακομιστή ιστού. Το PC-Reception, στο άλλο πάτωμα, δεν είχε ούτε ένα πρόβλημα με την πρόσβαση στον ίδιο διακομιστή όλο το πρωί.",
+            "objective": "Ώστε μια αίτηση HTTP από PC-Dev προς Web-Server να είναι επιτυχής.",
+            "hints": [
+                "Το αίτημα δεν φεύγει ποτέ από το PC-Dev — δεν έχει που να αποστέλλεται έξω από το δικό του υποδίκτυο. Ξεχωριστά, η θύρα του Switch-Floor2 για το PC-Dev την κρατά επίσης από την πρόσβαση στο τμήμα του Router-Edge.",
+                "Το PC-Dev δεν έχει ρυθμισμένη καμία Προεπιλεγμένη πύλη, γι' αυτό δεν μπορεί να δρομολογήσει κίνηση πέρα από το δικό του υποδίκτυο. Επιπλέον, η θύρα 0 του Switch-Floor2 βρίσκεται στο λάθος VLAN, απομονώνοντας το PC-Dev από το VLAN της πύλης.",
+                "Στο PC-Dev, ορίστε την Προεπιλεγμένη πύλη σε 10.0.15.254. Στο Switch-Floor2, ορίστε τη θύρα 0 (PC-Dev) σε VLAN 10."
+            ],
+            "explanation": "Μια συσκευή πρέπει να ανήκει στο σωστό VLAN για να φτάσει στη δική της πύλη, και πρέπει να έχει ρυθμισμένη μια Προεπιλεγμένη πύλη για να αποστέλλει κίνηση πέρα από το τοπικό της υποδίκτυο. Η απουσία οποιασδήποτε από αυτές τις δύο δυνατότητες αποκλείει την επικοινωνία εκτός υποδικτύου ακόμα κι αν η φυσική καλωδίωση είναι καλή."
+        },
+        "et": {
+            "title": "PC-Dev ei jõua veebiserverini",
+            "story": "Pärast nädalavahetuse töölaude ümberkorraldamist teatab PC-Dev, et ei suuda avada sisemist veebiserverit. PC-Reception, teisel korrusel, on kogu hommikus veebiserverini hästi jõudnud.",
+            "objective": "Hangi HTTP päring PC-Devilt Web-Serverisse edukaks.",
+            "hints": [
+                "Päring ei lahku kunagi PC-Devilt — sellel pole kuhugi saata väljaspool oma alamvõrku. Samuti hoiab Switch-Floor2 port 0 PC-Devit ära Router-Edge'i segmendini jõudmisest.",
+                "PC-Devil puudub Vaikelüüs, mistõttu ei saa liiklust saata üle oma alamvõrgu. Lisaks on Switch-Floor2 port 0 valel VLAN-il, mis eraldab PC-Devit lüüsi VLAN-ist.",
+                "PC-Devil määra Vaikelüüs aadressile 10.0.15.254. Switch-Floor2 port 0 määra VLAN 10-sse."
+            ],
+            "explanation": "Seade peab kuuluma õigesse VLAN-i, et jõuda oma lüüsini, ja tal peab olema Vaikelüüs seadistatud, et saata liiklust väljaspool kohalikku alamvõrku. Ilma kummagi neist blokeeritakse alamvõrgu-välised sidemed isegi siis, kui füüsiline kaabel on korras."
+        },
+        "eu": {
+            "title": "PC-Dev ezin du Web-Serverra iritsi",
+            "story": "Asteburuan mahaia birdeskatzea egin ondoren, PC-Dev ezin dela zerbitzarian sartu adierazten du. PC-Reception, beste solairuan, zerbitzarirarte iritsi izana du goizean.",
+            "objective": "HTTP eskaera PC-Devtik Web-Serverrera zuzena izan dadila.",
+            "hints": [
+                "Eskaera ez da PC-Devtik irteten: ez du helbururik bere sarearen kanpo. Baita ere, Switch-Floor2 atakak PC-Devaren bidea blokeatzen du Router-Edgera.",
+                "PC-Devek ez du Atebide lehenetsia konfiguraturik, beraz ezin du trafikoa bere saretik kanpo hedarazi. Gainera, Switch-Floor2-ko ataka 0 VLAN oker batean dago, PC-Devak atebidean sartzea itxita.",
+                "PC-Devean ezarri Atebide lehenetsia 10.0.15.254-ra. Switch-Floor2-ko ataka 0 VLAN 10-era ezarri."
+            ],
+            "explanation": "Gailu bat bere atebidean iritsi ahal izateko VLAN zuzena izan behar du, eta trafikoa bere sarean kanpo hedarazi ahal izateko Atebide lehenetsia konfiguraturik izan behar du. Bietako bat ere gabe, saretik kanpoko bideak blokeatuta daude, nahiz eta kable fisikoa ondo egon."
+        },
+        "fa": {
+            "title": "PC-Dev نمی‌تواند به Web-Server برسد",
+            "story": "پس از تنظیم مجدد میز‌های دفتری در آخر هفته، PC-Dev گزارش می‌دهد که نمی‌تواند صفحه سرور وب داخلی را باز کند. PC-Reception در طبقه دیگر در طول صبح بدون مشکل به همان سرور رسیده است.",
+            "objective": "درخواست HTTP از PC-Dev به Web-Server موفق شود.",
+            "hints": [
+                "درخواست هرگز PC-Dev را ترک نمی‌کند — راهی برای ارسال آن خارج از شبکه خود ندارد. علاوه بر این، پورت Switch-Floor2 برای PC-Dev مانع از رسیدن به بخش Router-Edge می‌شود.",
+                "PC-Dev دروازه پیش‌فرض تنظیم شده ندارد، بنابراین نمی‌تواند ترافیک را فراتر از شبکه خود ارسال کند. علاوه بر این، پورت 0 Switch-Floor2 در VLAN اشتباه قرار دارد و PC-Dev را از VLAN دروازه جدا می‌کند.",
+                "در PC-Dev، دروازه پیش‌فرض را به 10.0.15.254 تنظیم کنید. در Switch-Floor2، پورت 0 را به VLAN 10 تنظیم کنید."
+            ],
+            "explanation": "یک دستگاه باید در VLAN صحیح قرار داشته باشد تا به دروازه خود برسد، و باید دروازه پیش‌فرض تنظیم شده داشته باشد تا ترافیک را فراتر از شبکه محلی ارسال کند. نبود هر یک از اینها ارتباط خارج از شبکه را مسدود می‌کند حتی اگر سیم کشی فیزیکی درست باشد."
+        },
+        "fi": {
+            "title": "PC-Dev ei pääse Web-Serverille",
+            "story": "Pöytien uudelleenjärjestelyn jälkeen viikonloppuna PC-Dev ilmoittaa, etteivät se pääse avaamaan sisäisen verkkopalvelimen sivua. PC-Reception toisella kerroksella on onnistunut tavoittamaan saman palvelimen koko aamun.",
+            "objective": "HTTP-pyyntö PC-Deviltä Web-Serverille onnistuu.",
+            "hints": [
+                "Pyyntö ei poistu koskaan PC-Deviltä — sillä ei ole mitään paikkaa lähettää oman aliverkon ulkopuolelle. Lisäksi Switch-Floor2 portti 0 estää PC-Deviä saavuttamasta Router-Edgen segmenttiä.",
+                "PC-Devilla ei ole Oletusyhdyskäytävää konfiguroitu, joten se ei voi lähettää liikennettä oman aliverkkonsa ulkopuolelle. Lisäksi Switch-Floor2 portti 0 on väärässä VLAN-issa, mikä eristää PC-Devin yhdyskäytävän VLAN-ista.",
+                "Aseta PC-Devilla Oletusyhdyskäytäväksi 10.0.15.254. Aseta Switch-Floor2 portti 0 VLAN 10-een."
+            ],
+            "explanation": "Laitteen on kuuluttava oikeaan VLAN-iin päästäkseen omalle yhdyskäytävälleen, ja sillä on oltava Oletusyhdyskäytävä konfiguroituna lähettääkseen liikennettä paikallisen aliverkon ulkopuolelle. Ilman kumpaa tahansa niistä aliverkon ulkoinen viestintä estyy, vaikka fyysinen johdotus olisi kunnossa."
+        },
+        "fil": {
+            "title": "PC-Dev Hindi Nakakaabot sa Web-Server",
+            "story": "Pagkatapos ng desk reshuffle sa weekend, PC-Dev ay nag-report na hindi nito mabuksan ang internal web server page. PC-Reception, sa ibang palapag, walang problema sa pag-access sa parehong server buong umaga.",
+            "objective": "Ang HTTP request mula PC-Dev patungo Web-Server ay magtagumpay.",
+            "hints": [
+                "Ang request ay hindi umalis sa PC-Dev — walang lugar para ipadala ito sa labas ng sariling subnet. Bukod dito, ang port ng Switch-Floor2 para sa PC-Dev ay pumipigil din sa pag-access sa Router-Edge segment.",
+                "Walang default gateway ang PC-Dev na naka-configure, kaya hindi nito mailalabas ang traffic sa labas ng sariling subnet. Dagdag pa, ang port 0 ng Switch-Floor2 ay nasa maling VLAN, na nagsasabing PC-Dev sa gateway VLAN.",
+                "Sa PC-Dev, itakda ang default gateway sa 10.0.15.254. Sa Switch-Floor2, itakda ang port 0 (PC-Dev) sa VLAN 10."
+            ],
+            "explanation": "Ang isang device ay dapat sa tamang VLAN upang maabot ang sariling gateway, at dapat mayroong configured na default gateway upang ipadala ang traffic sa labas ng local subnet. Kung kulang ang isa, ang off-subnet communication ay hindi magiging posible kahit ang physical cabling ay tama."
+        },
+        "gl": {
+            "title": "PC-Dev non pode acadar o Web-Server",
+            "story": "Despois da reorganización da mesa do fin de semana, PC-Dev informa que non pode abrir a páxina do servidor web interno. PC-Reception, no outro piso, conseguiu acadar o mesmo servidor toda a mañá sen problemas.",
+            "objective": "Conseguir que unha solicitude HTTP desde PC-Dev ata Web-Server teña éxito.",
+            "hints": [
+                "A solicitude nunca sae de PC-Dev — non ten por onde ser enviada fora da súa propia subrede. Aparte diso, o porto de Switch-Floor2 para PC-Dev tamén lle impide acadar o segmento de Router-Edge.",
+                "PC-Dev non ten Pasarela predeterminada configurada, polo que non pode encamiñar tráfico alén da súa propia subrede. Ademais, o porto 0 de Switch-Floor2 está na VLAN errada, illando PC-Dev da VLAN do gateway.",
+                "En PC-Dev, establece a Pasarela predeterminada en 10.0.15.254. En Switch-Floor2, establece o porto 0 (PC-Dev) en VLAN 10."
+            ],
+            "explanation": "Unha dispoñibilidade debe pertencer á VLAN correcta para acadar o seu propio gateway, e debe ter unha Pasarela predeterminada configurada para enviar tráfico máis aló da súa subrede local. A falta de calquera delas bloquea a comunicación fóra de subrede aínda que o cableado físico sexa correcto."
+        },
+        "gu": {
+            "title": "PC-Dev વેબ-સર્વરને પહોંચી શકતું નથી",
+            "story": "સપ્તાહાંતે ડેસ્કના પુનર્ગઠન પછી, PC-Dev જણાવે છે કે તે આંતરિક વેબ સર્વર પૃષ્ઠ ખોલી શકતું નથી. બીજા માળ પર PC-Reception આખો સવાર આ જ સર્વર સુધી પહોંચવામાં સફળ રહ્યો.",
+            "objective": "PC-Dev થી Web-Server પર HTTP વિનંતી સફળ કરો.",
+            "hints": [
+                "વિનંતી PC-Dev માંથી બહાર જ નહીં આવે — તેને તેના પોતાના સબનેટની બહાર મોકલવાનો કોઈ રસ્તો નથી. અલગથી, Switch-Floor2 ની PC-Dev માટેની પોર્ટ તેને Router-Edge ના સેગમેન્ટ સુધી પહોંચતાં પણ અટકાવે છે.",
+                "PC-Dev પાસે ડિફૉલ્ટ ગેટવે કોન્ફિગર્ડ નથી, તેથી તે તેના પોતાના સબનેટથી આગળ ટ્રાફિક રૂટ કરી શકતું નથી. તે ઉપરાંત, Switch-Floor2 ની પોર્ટ 0 ખોટા VLAN માં છે, PC-Dev ને ગેટવે VLAN થી અલગ કરે છે.",
+                "PC-Dev પર, ડિફૉલ્ટ ગેટવે 10.0.15.254 પર સેટ કરો. Switch-Floor2 પર, પોર્ટ 0 (PC-Dev) ને VLAN 10 પર સેટ કરો."
+            ],
+            "explanation": "ડિવાઇસને તેના પોતાના ગેટવે સુધી પહોંચવા માટે સાચા VLAN માં હોવું જોઈએ, અને તેના સ્થાનિક સબનેટની બહાર ટ્રાફિક મોકલવા માટે ડિફૉલ્ટ ગેટવે કોન્ફિગર્ડ હોવું જોઈએ. તેમાંથી કોઈ પણ ખૂટતો હોય તો શારીરિક કેબલીંગ સરસ હોય તો પણ સબનેટ વિનાનો સંચાર અટકી જાય છે."
+        },
+        "he": {
+            "title": "PC-Dev לא יכול להגיע ל-Web-Server",
+            "story": "לאחר סידור השולחנות של סוף השבוע, PC-Dev דווח שהוא לא יכול לפתוח את דף שרת האינטרנט הפנימי. PC-Reception, בקומה השנייה, הצליח להגיע לאותו שרת כל הבוקר ללא בעיות.",
+            "objective": "לגרום בקשת HTTP מ-PC-Dev ל-Web-Server להצליח.",
+            "hints": [
+                "הבקשה לעולם לא עוזבת את PC-Dev — אין לה לאן להישלח מחוץ לרשת שלה. בנוסף, היציאה של Switch-Floor2 של PC-Dev גם מונעת ממנה להגיע לקטע של Router-Edge.",
+                "ל-PC-Dev אין שער ברירת מחדל מוגדר, לכן הוא לא יכול לתעבור תעבורה מעבר לרשת שלו. בנוסף, יציאה 0 של Switch-Floor2 נמצאת ב-VLAN הלא נכונה, מבדלת את PC-Dev מ-VLAN של השער.",
+                "ב-PC-Dev, הגדר את שער ברירת המחדל ל-10.0.15.254. ב-Switch-Floor2, הגדר יציאה 0 (PC-Dev) ל-VLAN 10."
+            ],
+            "explanation": "כל התקן חייב להיות ב-VLAN הנכון כדי להגיע לשער שלו, וחייב להיות עם שער ברירת מחדל מוגדר כדי לשלוח תעבורה מעבר לרשת המקומית. חסר כל אחד מהם חוסם תקשורת מחוץ לרשת אפילו אם הכבלים הפיזיים בסדר."
+        },
+        "hr": {
+            "title": "PC-Dev ne može dosegnuti Web-Server",
+            "story": "Nakon prepodele stolova tijekom vikenda, PC-Dev prijavljuje da ne može otvoriti stranicu internog web servera. PC-Reception, na drugoj etaži, uspešno je dosegao isti server sve jutro bez problema.",
+            "objective": "Omogući HTTP zahtev iz PC-Dev do Web-Server da uspe.",
+            "hints": [
+                "Zahtev nikada ni ne napušta PC-Dev — nema gde biti poslat van vlastite podmreže. Osim toga, port Switch-Floor2 za PC-Dev ga čini nemogućim da dosegne segment Router-Edge.",
+                "PC-Dev nema konfigurisanog Zadanog pristupnika, pa ne može rutirati saobraćaj van vlastite podmreže. Pored toga, port 0 Switch-Floor2 je u pogešnoj VLAN-i, izolujući PC-Dev od VLAN-e pristupnika.",
+                "Na PC-Dev, postavi Zadani pristupnik na 10.0.15.254. Na Switch-Floor2, postavi port 0 (PC-Dev) na VLAN 10."
+            ],
+            "explanation": "Uređaj mora biti u ispravnoj VLAN-i da bi dosegao sopstveni pristupnik, i mora imati konfigurisanog Zadanog pristupnika da bi slao saobraćaj van lokalne podmreže. Nedostatak bilo kojeg od njih blokira međupodmrežnu komunikaciju čak i ako je fizičko kabliranje u redu."
+        },
+        "hu": {
+            "title": "PC-Dev nem éri el a Web-Server",
+            "story": "A hétvégi asztal átrendezés után a PC-Dev jelenti, hogy nem tudja megnyitni a belső webkiszolgáló oldalát. A PC-Reception, a másik emeleten, egész délelőtt sikeresen elérte ugyanazt a szervert.",
+            "objective": "Egy HTTP-kérelem PC-Dev-ből a Web-Server felé sikeres legyen.",
+            "hints": [
+                "A kérelem soha nem hagyja el a PC-Dev-ot — nincs hova küldeni a saját alhálózatán kívülre. Ráadásul a Switch-Floor2 PC-Dev-hez tartozó portja megakadályozza azt abban, hogy elérje a Router-Edge szegmentumát.",
+                "A PC-Dev-en nincs beállított Alapértelmezett átjáró, így nem tud forgalmat irányítani a saját alhálózatán túlra. Ráadásul a Switch-Floor2 0-as portja a hibás VLAN-ban van, izolálva a PC-Dev-ot az átjáró VLAN-jától.",
+                "A PC-Dev-en állítsd az Alapértelmezett átjárót 10.0.15.254-re. A Switch-Floor2-n állítsd a 0-as portot (PC-Dev) VLAN 10-re."
+            ],
+            "explanation": "Az eszköznek a helyes VLAN-ban kell lennie ahhoz, hogy elérje a saját átjáróját, és be kell állítva lennie az Alapértelmezett átjárónak ahhoz, hogy forgalmat küldjön a helyi alhálózaton túlra. Bármelyik hiánya blokkolja az alhálózatok közötti kommunikációt, még ha a fizikai kábelen semmi nincs is."
+        },
+        "hy": {
+            "title": "PC-Dev չի կարող հասնել Web-Server-ի",
+            "story": "Շաբաթավերջի աշխատասենյակի վերադասավորումից հետո՝ PC-Dev-ը հայտնում է, որ չի կարող բացել ներքին վեբ սերվերի էջը: PC-Reception-ը, մյուս հարկում, ամբողջ առավոտ ունեցել է հաջողություն նույն սերվերին հասնելու հարցում:",
+            "objective": "Ստանալ HTTP հարցում PC-Dev-ից Web-Server-ի հաջողությունը:",
+            "hints": [
+                "Հարցումը ընդամենը չի պակետ PC-Dev-ից, այն սեփական ցանցից դուրս ուղարկելու վայր չունի: Առանձին, Switch-Floor2-ի պորտը PC-Dev-ի համար նույնպես կանխում է այն Router-Edge-ի հատվածից հասնել:",
+                "PC-Dev-ը կազմավորված չունի Լռելյայն դարպաս, ուստի այն չի կարող երթուղավորել տրաֆիկ իր սեփական ցանցից դուրս: Ավելին, Switch-Floor2-ի 0 պորտը սխալ VLAN-ում է, PC-Dev-ը մեկուսացնում է դարպասի VLAN-ից:",
+                "PC-Dev-ի վրա, սահմանել Լռելյայն դարպասը 10.0.15.254-ի: Switch-Floor2-ի վրա, սահմանել 0 պորտը (PC-Dev) 10 VLAN-ի:"
+            ],
+            "explanation": "Устройство պետք է պատկանի ճիշտ VLAN-ին տեղական դարպասին հասնելու համար, և այն պետք է ունենա կազմավորված Լռելյայն դարպաս տրաֆիկ ուղարկելու համար տեղական ցանցից դուրս: Այս երկուսից մեկի բացակայումը խոչընդոտում է ցանցից դուրս հաղորդակցությունը նույնիսկ եթե ֆիզիկական մալուխացումը լավ լինի:"
+        },
+        "is": {
+            "title": "PC-Dev getur ekki náð til Web-Server",
+            "story": "Eftir endurraðningu borðanna um helgina, PC-Dev segir að það geti ekki opnað beina vefþjóna síðu. PC-Reception, á annarri hæð, hefur getað náð sama þjóni án truflana allan morguninn.",
+            "objective": "Fá HTTP beiðni frá PC-Dev til Web-Server til að ná árangri.",
+            "hints": [
+                "Beiðnin fer aldrei frá PC-Dev — hún hefur engan stað til að senda utan eigin netsins. Sérstaklega, Port á Switch-Floor2 fyrir PC-Dev kemur einnig í veg fyrir að það nái til Router-Edge hlutans.",
+                "PC-Dev hefur enga Sjálfgefin gátt skilgreinda, þannig að það getur ekki leitt umferð umfram sitt eigið net. Að auki sitir Portnúmer 0 Switch-Floor2 í röngum VLAN, sem einangrar PC-Dev frá VLAN gáttarinnar.",
+                "Á PC-Dev, stilltu Sjálfgefin gátt á 10.0.15.254. Á Switch-Floor2, stilltu port 0 (PC-Dev) á VLAN 10."
+            ],
+            "explanation": "Tæki verður að tilheyra réttri VLAN til að ná til eigin gáttar, og það verður að hafa Sjálfgefin gátt skilgreinda til að senda umferð umfram staðbundið net. Ef annað hvort vantar, stöðvast samskipti utan nets jafnvel þótt líkamleg raxlögun sé góð."
+        },
+        "ka": {
+            "title": "PC-Dev ვერ აღწევს Web-Server-ზე",
+            "story": "კვირის ბოლოს მაგიდების გადაადგილების შემდეგ, PC-Dev ცნობობს, რომ ვერ ახერხებს შიდა ვებ სერვერის გვერდის გახსნას. PC-Reception, სხვა სართულზე, მთელი დილის განმავლობაში ერთი პრობლემაც კი არ შეხვდა იმავე სერვერზე წვდომისას.",
+            "objective": "HTTP მოთხოვნა PC-Dev-დან Web-Server-მდე დაფარული აიყოს.",
+            "hints": [
+                "მოთხოვნა ვერც კი ტოვებს PC-Dev-ს — მას არ აქვს სადმე გაგზავნის ადგილი საკუთარი ქსელის გარეთ. ცალკე, Switch-Floor2-ის პორტი PC-Dev-ისთვის ასევე აფერხებს Router-Edge-ის სეგმენტში შეღწევას.",
+                "PC-Dev-ს არ აქვს ნაგულისხმევი შლუზი კონფიგურირებული, ამიტომ ის ვერ მიმართავს ტრაფიკს საკუთარი ქსელის გარეთ. გარდა ამისა, Switch-Floor2-ის პორტი 0 არასწორ VLAN-ში დგას, რომელიც PC-Dev-ს იზოლირებს შლუზის VLAN-ისგან.",
+                "PC-Dev-ზე, დააყენეთ ნაგულისხმევი შლუზი 10.0.15.254-ზე. Switch-Floor2-ზე, დააყენეთ პორტი 0 (PC-Dev) VLAN 10-ზე."
+            ],
+            "explanation": "მოწყობილობა უნდა მიეკუთვნებოდეს სწორ VLAN-ს, რათა მიმართოს საკუთარ შლუზს, და მას უნდა ჰქონდეს ნაგულისხმევი შლუზი კონფიგურირებული, რათა ტრაფიკი გაილაპარაკოს ადგილობრივი ქსელის გარეთ. თუ რომელიმე აკლია, ქსელის გარეთ კომუნიკაცია ხელის შემშლელი რჩება, თუნდაც ფიზიკური კაბელაჟი კარგი იყოს."
+        },
+        "kk": {
+            "title": "PC-Dev Web-Server-ге жете алмайды",
+            "story": "Апта сонынан кейінгі бөлме ығдыруынан кейін PC-Dev ішкі веб-сервер бетін ача алмайтынын хабарлайды. Басқа есіктің PC-Reception барлық таңертең сол серверге қол жетіксіз қол жеткізген.",
+            "objective": "PC-Dev-тен Web-Server-ге HTTP сұрауын табысты ету.",
+            "hints": [
+                "Сұрау ешқашан PC-Dev-тан шықпайды — оның өз желісінен тыс жіберу үшін орны жоқ. Бөлек, Switch-Floor2-дің PC-Dev үшін порты оны Router-Edge сегментіне қол жеткізуге кедергі келтіреді.",
+                "PC-Dev-те Әдепкі шлюз конфигурирленбеген, сондықтан ол өз желісінен тыс трафикті бағыттай алмайды. Бұдан басқа, Switch-Floor2-дің 0 портоды қате VLAN-да орналасқан, PC-Dev-ті шлюз VLAN-ынан оқшаулайды.",
+                "PC-Dev-те Әдепкі шлюзді 10.0.15.254-ке орнатыңыз. Switch-Floor2-де 0 портты (PC-Dev) VLAN 10-ге орнатыңыз."
+            ],
+            "explanation": "Құрылғы өз шлюзіне қол жеткізу үшін дұрыс VLAN-та болуы керек және жергілік желіден тыс трафик жіберу үшін Әдепкі шлюзі конфигурирленуі керек. Екеуінің кез келгені болмаса, физикалық сым-сым жақсы болса да желі сыртындағы байланыс бөгелінуі мүмкін."
+        },
+        "km": {
+            "title": "PC-Dev មិនអាចឈានដល់ Web-Server ទេ",
+            "story": "បន្ទាប់ពីការរៀបចំឡើងវិញនៃតុក្នុងសប្ताហ៍ PC-Dev រាយការណ៍ថាវាមិនអាចបើកទំព័របណ្ណាល័យវេបខាងក្នុងបានទេ។ PC-Reception នៅលើជាន់ផ្សេងទៀត មិនមានបញ្ហាក្នុងការឈានដល់ម៉ាស៊ីនបម្រើតែមួយគត់នោះពេញលេញក្នុងរយៈពេលព្រឹក។",
+            "objective": "ធានាថាសំណើ HTTP ពី PC-Dev ទៅ Web-Server ដោះស្រាយបានដោយជោគជ័យ។",
+            "hints": [
+                "សំណើ​មិន​ធ្វើ​ឱ្យ​ចាក់​ចេញ​ពី PC-Dev ឡើយ — វា​មិន​មាន​កន្លែង​ដែល​ត្រូវ​ផ្ញើ​ឱ្យ​ឆ្ងាយ​ពី​បណ្ដាញ​របស់វា​នោះ។ ដាច់ដោយ​ឡែក ច្រក​របស់ Switch-Floor2 សម្រាប់ PC-Dev ក៏​រារាំង​វា​មិន​ឱ្យ​ឈានដល់​ផ្នែក Router-Edge ដែរ។",
+                "PC-Dev មិនមាន​ការ​កំណត់​នាំផ្លូវ​លម្លាប់​ក្រុមហ៊ុន​ទេ ដូច្នេះវា​មិន​អាច​ដឹកនាំ​ចរាចរណ៍​ឆ្ងាយ​ពី​បណ្ដាញ​របស់ខ្លួន​បាន​ទេ។ លើសពីនេះ ច្រក 0 នៃ Switch-Floor2 ឈរ​នៅក្នុង VLAN ខុស ដែលអង្គរួយ PC-Dev ពី VLAN របស់​ច្រក។",
+                "នៅលើ PC-Dev កំណត់​នាំផ្លូវ​លម្លាប់​ក្រុមហ៊ុនទៅ 10.0.15.254។ នៅលើ Switch-Floor2 កំណត់ច្រក 0 (PC-Dev) ទៅ VLAN 10។"
+            ],
+            "explanation": "ម៉ាស៊ីនមួយត្រូវតែ​ស្ថិត​នៅក្នុង VLAN ត្រឹមត្រូវដើម្បីឈានដល់​ច្រក​របស់វា​ឯង ហើយ​ត្រូវ​មាន​ការ​កំណត់​នាំផ្លូវ​លម្លាប់​ក្រុមហ៊ុន​ដែល​បាន​រៀបចំដើម្បីផ្ញើ​ចរាចរណ៍​ឆ្ងាយ​ពី​បណ្ដាញ​ក្នុងស្រុក។ ការបាត់ឱ្យបាត់​ណាមួយក្នុងចំណោមទាំងពីរបាន​រារាំង​ការ​ទាក់ទង​ឆ្ងាយ​ពី​បណ្ដាញ ទោះបីជា​ខ្សែលោហៈរូបវន្ត​ល្អដែរ។"
+        },
+        "kn": {
+            "title": "PC-Dev ವೆಬ್ ಸರ್ವರ್‌ಗೆ ತಲುಪಲು ಸಾಧ್ಯವಿಲ್ಲ",
+            "story": "ವಾರಾಂತ್ಯದ ನಂತರ ಡೆಸ್ಕ್ ಪುನರ್ವ್ಯವಸ್ಥೆಯ ನಂತರ, PC-Dev ಆಂತರಿಕ ವೆಬ್ ಸರ್ವರ್ ಪುಟವನ್ನು ತೆರೆಯಲಾಗುತ್ತಿಲ್ಲ ಎಂದು ವರದಿ ಮಾಡುತ್ತದೆ. ಬೇರೆ ಮುಖದಲ್ಲಿರುವ PC-Reception ಈ ಬೆಳಿಗ್ಗೆ ಅದೇ ಸರ್ವರ್‌ನ ಅವಧಿಯಲ್ಲಿ ಯಾವುದೇ ಸಮಸ್ಯೆ ಹೊಂದಿಲ್ಲ.",
+            "objective": "PC-Dev ಯಿಂದ Web-Server ವರೆಗೆ HTTP ವಿನಂತಿ ಯಶಸ್ವಿ ಆಗಿರಲಿ.",
+            "hints": [
+                "ವಿನಂತಿ PC-Dev ಯಿಂದ ನಿರ್ಗಮನ ಆಗುವುದಿಲ್ಲ — ಅದರ ಸ್ವಂತ ಸಬ್‌ನೆಟ್ ಆಗಿ ಕಳುಹಿಸಲು ಪಡೆಗೆ ಸ್ಥಳ ಇಲ್ಲ. ಪ್ರತ್ಯೇಕವಾಗಿ, Switch-Floor2 ನ PC-Dev ಪೋರ್ಟ್ ಇದನ್ನು Router-Edge ನ ಭಾಗಕ್ಕೆ ತಲುಪಿಸುವುದನ್ನು ತಡೆಹಿಡಿಯುತ್ತದೆ.",
+                "PC-Dev ಗೆ ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ ಸ್ವಂತ ಸಬ್‌ನೆಟ್‌ಗಿಂತ ಮೀರಿ ಟ್ರಾಫಿಕ್ ಅನ್ನು ರೂಟ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ. ಇದರ ಜೊತೆಗೆ, Switch-Floor2 ನ ಪೋರ್ಟ್ 0 ತಪ್ಪು VLAN ನಲ್ಲಿದೆ, ಗೇಟ್‌ವೇ ರ VLAN ಯಿಂದ PC-Dev ಅನ್ನು ಪ್ರತ್ಯೇಕಿಸುತ್ತದೆ.",
+                "PC-Dev ನಲ್ಲಿ, ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ 10.0.15.254 ಗೆ ಹೊಂದಿಸಿ. Switch-Floor2 ನಲ್ಲಿ, ಪೋರ್ಟ್ 0 (PC-Dev) VLAN 10 ಗೆ ಹೊಂದಿಸಿ."
+            ],
+            "explanation": "ಒಂದು ಸಾಧನವು ತನ್ನ ಸ್ವಂತ ಗೇಟ್‌ವೇಯನ್ನು ತಲುಪಲು ಸರಿಯಾದ VLAN ಗೆ ಸೇರಿರಬೇಕು, ಮತ್ತು ಇದು ಸ್ಥಳೀಯ ಸಬ್‌ನೆಟ್‌ಗಿಂತ ಮೀರಿ ಟ್ರಾಫಿಕ್ ಕಳುಹಿಸಲು ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಕೆಡಿಫಿಗರ್ ಆಗಿರಬೇಕು. ಎರಡರಲ್ಲಿ ಯಾವುದಾದರೂ ಕಳೆದುಹೋದರೆ, ಭೌತಿಕ ತಂತ್ರಪ್ರದ್ರಮೋಕ್ ತುಂಬಾ ಚೆನ್ನಾಗಿದ್ದರೂ ಸಹ ಸಬ್‌ನೆಟ್-ಹೊರಸಬ್‌ನೆಟ್ ಸಂವಹನವನ್ನು ನಿರ್ವಹಿಸುತ್ತದೆ."
+        },
+        "ky": {
+            "title": "PC-Dev Web-Server'ге жете алган жок",
+            "story": "Апта сайынкы үстөл өндөчинди өдөөктөн сонун, PC-Dev ички web server барагын ача алган жок деп кабарлайт. Башка коопадындагы PC-Reception бүтүн эсептегинде ошол сервер менен байланышта эч маселе болгон жок.",
+            "objective": "PC-Dev'тен Web-Server'ге HTTP сурануусу ийгиликтүү болсун.",
+            "hints": [
+                "Сурануу PC-Dev'тен чыга элек — анын өзүнүн подтармагынан чыгуу жерген жок. Бөлөк, Switch-Floor2'нын PC-Dev португу аны Router-Edge'тің бөлүмүнө жетүүдөн тыхуулайт.",
+                "PC-Dev'де демейки шлюз конфигурацияланбай, өткүл өзүнүн тармагынан ашык трафигин маршрут кыла алган жок. Эмеси, Switch-Floor2'нын 0 португу туура эмес VLAN'да отурса, PC-Dev'ди шлюздүн VLAN'ынан алоктойт.",
+                "PC-Dev'де демейки шлюз 10.0.15.254'ке коюңуз. Switch-Floor2'де, 0 португу (PC-Dev) VLAN 10'га коюңуз."
+            ],
+            "explanation": "Сайт өзүнүн шлюзүнө жетүү үчүн туура VLAN'да болушу керек, жана анын жергиликтүү подтармагынан ашык трафиги жөнөтүү үчүн демейки шлүз конфигурацияланышы керек. Экөө тең жок болсо, физикалык кабельдөө жакшы болсо дагы, подтармак-сыртындагы байланышты эс алууга түйөт."
+        },
+        "lo": {
+            "title": "PC-Dev ບໍ່ສາມາດເຂົ້າເຖິງ Web-Server",
+            "story": "ຫຼັງຈາກການຈັດລຽງ​ສະລະຕົກ​ໃຫມ່ຂອງ​ສາມາຍ, PC-Dev ລາຍ​ງານ​ວ່າ​ບໍ່​ສາ​ມາດ​ເປີດ​ໜ້າ web server ພາຍໃນ. PC-Reception, ຢູ່​ຢາ​ຕ່າງ, ບໍ່​ມີ​ບັນ​ຫາ​ໃນ​ການ​ເຂົ້າ​ເຖິງ​ຣ​ວ​ກັນ​ຕະຫຼອດ​ເຊົ້າ.",
+            "objective": "ເຮັດໃຫ້ສຳເລັດການ​ຮ້ອງ​ຂໍ HTTP ຈາກ PC-Dev ໄປຫາ Web-Server.",
+            "hints": [
+                "ການຮ້ອງຂໍບໍ່ເລີ່ມຕົ້ນ PC-Dev ກະ — ບໍ່ມີ​ພື້ນທີ່​ໃນ subnet ຕົວ​ເອງ. ແຕ່ຕ່າງຫາກ, ພอດ PC-Dev ຂອງ Switch-Floor2 ຍັງ​ຕ້ອງ​ ກັນ​ຈາກ​ສ່ວນ​ຂອງ Router-Edge.",
+                "PC-Dev ບໍ່​ມີ Default gateway ຕັ້ງຄ່າ, ດັ່ງນັ້ນ​ບໍ່​ສາ​ມາດ​ເສັ້ນທາງ​ໆ​ຖ້າ​ບໍ່​ເກີນ subnet ຕົວ​ເອງ. ກ່ວາ​ນັ້ນ, ພອດ 0 ຂອງ Switch-Floor2 ຢູ່​ໃນ VLAN ບໍ່​ຖືກ, ແຍກ PC-Dev ຈາກ VLAN ຂອງ gateway.",
+                "ເທິງ PC-Dev, ຕັ້ງ Default gateway ກັບ 10.0.15.254. ເທິງ Switch-Floor2, ຕັ້ງພອດ 0 (PC-Dev) ກັບ VLAN 10."
+            ],
+            "explanation": "ຣກາຣ້ຶຕັ້ງຕົວ​ຫນ້າ​ວາຕເຮ​ກັນ VLAN ຖືກ​ກະ​ປະຕິ​ບັດ​ການ gateway ຕົວ​ເອງ, ແລະ​ກະ​ຕັ້ງຄ່າ Default gateway ກະໂຄສ​ໆ​ເຊື່ອຍຸ່ທະຫາສະຊົາ​ໆ subnet ລະາ. ຖ້າ​ມີ​ກະຄ​ກະຂາ ວາ​ກະ, ເຊື່ອມາກັນ off-subnet ຍັງ ສາ​ຄະ​ທະ​ຕາມາກະຕຟີກະ​ວໍ​ຟາກັ."
+        },
+        "lt": {
+            "title": "PC-Dev negali pasiekti Web-Server",
+            "story": "Po savaitgalio biuro pertvarkymo PC-Dev praneša, kad negali atidaryti vidinį žiniatinklio serverio puslapį. PC-Reception kitoje aukšte šiandien visą laiką sėkmingai pasiekia tą patį serverį.",
+            "objective": "Siekite, kad HTTP užklausa nuo PC-Dev iki Web-Server būtų sėkminga.",
+            "hints": [
+                "Užklausa net neišeina iš PC-Dev — jai nėra kur būti siųstai iš jos savos tinklo dalies. Atskirai, Switch-Floor2 PC-Dev prievadas taip pat trukdo jai pasiekti Router-Edge atkarpą.",
+                "PC-Dev neturi sukonfigūruoto numatytojo šliuzo, todėl negali nukreipti srautų už savos tinklo dalies. Be to, Switch-Floor2 prievadas 0 yra klaidingoje VLAN, išskiriant PC-Dev iš šliuzo VLAN.",
+                "PC-Dev, nustatykite numatytąjį šliuzą į 10.0.15.254. Switch-Floor2, nustatykite prievadą 0 (PC-Dev) į VLAN 10."
+            ],
+            "explanation": "Įrenginys turi priklausyti teisingai VLAN, kad pasiektu savo šliuzą, ir jis turi sukonfigūruotą numatytąjį šliuzą srautams siųsti už savo vietinio tinklo dalies. Jei trūksta kurio nors, tai blokuoja tarpšliuzo ryšį net jei fizinis kabelis yra gerai."
+        },
+        "lv": {
+            "title": "PC-Dev nevar sasniegt Web-Server",
+            "story": "Pēc nedēļas gala biroja pārkārtošanas PC-Dev ziņo, ka nevar atvērt iekšējo tīmekļa servera lapu. PC-Reception citā stāvā visas rīta nav bijusi problēma sasniedz to pašu serveri.",
+            "objective": "Padariet HTTP pieprasījumu no PC-Dev uz Web-Server veiksmīgu.",
+            "hints": [
+                "Pieprasījums nemaz neizkļūst no PC-Dev — tam nav vietas nosūtīšanai no sava apakštīkla. Atsevišķi Switch-Floor2 PC-Dev ports to arī traucē sasniegt Router-Edge segmentu.",
+                "PC-Dev nav konfigurēta noklusējuma vārteja, tāpēc tas nevar maršrutēt datus pāri savam apakštīklam. Turklāt Switch-Floor2 ports 0 atrodas nepareizā VLAN, izolējot PC-Dev no vārtējas VLAN.",
+                "PC-Dev iestatiet noklusējuma vārtēju uz 10.0.15.254. Switch-Floor2, iestatiet portu 0 (PC-Dev) uz VLAN 10."
+            ],
+            "explanation": "Ierīcei jābūt pareizajā VLAN, lai sasniegtu savējo vārtēju, un tai jābūt konfigurētai noklusējuma vārtējai, lai nosūtītu trafikā pāri savam lokālajam apakštīklam. Ja kaut kas no tā trūkst, tas bloķē starpapakštīkla komunikāciju pat tad, kad fizisks vads ir kārtībā."
+        },
+        "mk": {
+            "title": "PC-Dev не може да достигне до Web-Server",
+            "story": "По средбениот преуредување на работни места, PC-Dev пријави дека не може да го отвори интерната веб-страна. PC-Reception, на другиот кат, без проблем успеал да го достигне истиот сервер во текот на целото утро.",
+            "objective": "Направи да успее HTTP барање од PC-Dev до Web-Server.",
+            "hints": [
+                "Барањето никогаш не го напушта PC-Dev — нема каде да се прати надвор од сопствената подмрежа. Одделно, портата на Switch-Floor2 за PC-Dev исто така го спречува од достигнување до сегментот на Router-Edge.",
+                "PC-Dev нема Default gateway конфигурирана, така што не може да ги маршрутира сообраќајот надвор од сопствената подмрежа. Покрај тоа, портата 0 на Switch-Floor2 е во погрешна VLAN, што го изолира PC-Dev од VLAN-от на гејтвејот.",
+                "На PC-Dev, постави Default gateway на 10.0.15.254. На Switch-Floor2, постави портата 0 (PC-Dev) на VLAN 10."
+            ],
+            "explanation": "Уредот мора да припаѓа на правилната VLAN за да достигне сопствен гејтвеј, и мора да има Default gateway конфигурирана за да испраћа сообраќај надвор од локална подмрежа. Недостатокот на кое било од нив го блокира комуникацијата надвор од подмрежата, дури и ако физичкото кабелирање е во ред."
+        },
+        "ml": {
+            "title": "PC-Dev ക്കാണ് Web-Server അത്ര പോകാൻ കഴിയുന്നില്ല",
+            "story": "വാരാന്ത്യത്തിനുശേഷം ഡെസ്‌ക് പുനരാഭിന്യാസത്തിനുശേഷം, PC-Dev ആന്തരിക വെബ് സെർവർ പേജ് തുറക്കാൻ കഴിയുന്നില്ലെന്ന് വിവരിച്ചു. മറ്റേ നിലയിലെ PC-Reception എ ദിവസത്തിലുടനീളം ഇതേ സെർവറിൽ എത്തിപ്പെടുന്നതിൽ എതിരെ പ്രശ്നം ഇല്ല.",
+            "objective": "PC-Dev മുതൽ Web-Server വരെ HTTP ആവശ്യം വിജയിക്കാൻ ഉണ്ടാകും.",
+            "hints": [
+                "ആവശ്യം PC-Dev നിന്ന് പോലും പോകുന്നില്ല — അതിന്റെ സ്വന്ത ശൃംഖലയ്ക്കും പുറത്ത് അയയ്‌ക്കാൻ മഹത്വം ഇല്ല. വേറെ, Switch-Floor2 ന്റെ PC-Dev യുടെ പോർട്ട് അതിനെ Router-Edge ന്റെ സെഗ്‌മെന്റിലേക്ക് എത്തുന്നത് പിടിച്ചുനിർത്തുന്നു.",
+                "PC-Dev ന് ഡിഫോൾട്ട് ഗേറ്റ്‌വേ കോൺഫിഗർ ചെയ്‌തിരിക്കുന്നില്ല, അതിനാൽ അത് അതിന്റെ സ്വന്ത ശൃംഖലയ്ക്കും പുറത്തേയ്‌ക്ക് ട്രാഫിക് റൂട്ട് ചെയ്യാൻ കഴിയുന്നില്ല. അതിനു പുറമെ, Switch-Floor2 ന്റെ പോർട്ട് 0 പിശകുള്ള VLAN ൽ വയസ്സായി, PC-Dev കെ ഗേറ്റ്‌വേ ന്റെ VLAN നിന്ന് വേർപെടുത്തുന്നു.",
+                "PC-Dev വിൽ, ഡിഫോൾട്ട് ഗേറ്റ്‌വേ 10.0.15.254 വിൽ സജ്ജമാക്കുക. Switch-Floor2 വിൽ, പോർട്ട് 0 (PC-Dev) സജ്ജമാക്കുക VLAN 10 വിൽ."
+            ],
+            "explanation": "ഒരു ഉപകരണം അതിന്റെ സ്വന്ത ഗേറ്റ്‌വേയെ എത്തിപ്പെടുന്നതിന് ശരിയായ VLAN നെ സംബന്ധിക്കേണ്ടതാണ്, കൂടാതെ അതിന്റെ പ്രാദേശിക സബ്‌നെറ്റിനതിരേകം ട്രാഫിക് അയയ്‌ക്കാൻ ഡിഫോൾട്ട് ഗേറ്റ്‌വേ കോൺഫിഗർ ചെയ്‌തിരിക്കണം. രണ്ടിൽ ഏതെങ്കിലും നഷ്ടം സബ്‌നെറ്റ് ഇതര ആശയവിനിമയം നിരോധിക്കുന്നു, വാസ്തവികമായ കേബലിംഗ് നല്ലത് ആണെങ്കിലും."
+        },
+        "mn": {
+            "title": "PC-Dev Web-Server хүрч чадахгүй байна",
+            "story": "Сүүлийн сарын мажаран ширээ шилжүүлэлтээс хойш PC-Dev дотоод вэб сервэрийн хуудсыг нээх боломжгүй байна гэж мэдээлэв. Өөр давхарт байгаа PC-Reception нь өглөөний турш ижил сервэр хүрч байсан бөгөөд асуудал байхгүй байна.",
+            "objective": "PC-Dev-ээс Web-Server хүртэл HTTP хүсэлт амжилттай болуулах.",
+            "hints": [
+                "Хүсэлт PC-Dev-ээс гарч байхгүй ч — өөрийн сүлжээнээс гаргаж явах газар байхгүй. Нөгөөтэйгүүр, Switch-Floor2 ны PC-Dev-ийн портыг Router-Edge-ийн сегмент хүрч чадалгүй байлгаж байна.",
+                "PC-Dev-т Default gateway тохируулаагүй байгаа тул өөрийн сүлжээнээс гадуур ачаалал чиглүүлэх боломжгүй. Үүнээс гадна, Switch-Floor2 ны портын 0 буруу VLAN-д байгаа нь PC-Dev-г гейтвэйн VLAN-аас тусгаарлаж байна.",
+                "PC-Dev дээр Default gateway-г 10.0.15.254-т тохируулах. Switch-Floor2 дээр портын 0 (PC-Dev)-г VLAN 10-т тохируулах."
+            ],
+            "explanation": "Уг төхөөрөмж өөрийн гейтвэй хүрч чадахын тулд зөв VLAN-д багтсан байх ёстой, мөн дотоодын сүлжээнээс гадуур ачаалал явуулахын тулд Default gateway тохируулсан байх ёстой. Аль нэгнийх нь байхгүй бол физик кабель сайн байсан ч гэдэг сүлжээнээс гадуурх харилцааг хаадаг."
+        },
+        "mr": {
+            "title": "PC-Dev हे Web-Server पर्यंत पोहोचू शकत नाही",
+            "story": "सप्ताहांताच्या डेस्क पुनर्रचनेनंतर, PC-Dev ने वेव्ह की आंतरिक वेब सर्व्हर पृष्ठ उघडू शकत नाहीत असे सांगितले. दुसऱ्या मजल्यावरील PC-Reception सकाळभर समान सर्व्हर पर्यंत पोहोचण्यात कोणतीही अडचण आली नाही.",
+            "objective": "PC-Dev पासून Web-Server पर्यंत HTTP विनंती यशस्वी करा.",
+            "hints": [
+                "विनंती PC-Dev पासून कधीच पुढे जात नाही — त्याच्या स्वतःच्या सबनेटच्या बाहेर पाठविण्याचे कोणतेही मार्ग नाही. वेगळेपणे, Switch-Floor2 चे PC-Dev चे पोर्ट त्याला Router-Edge च्या सेगमेंट पर्यंत पोहोचण्यापासून रोखतो.",
+                "PC-Dev ला डिफॉल्ट गेटवे कॉन्फिगर केले जाणे आवश्यक आहे, म्हणून हे त्याच्या स्वतःच्या सबनेटच्या बाहेर ट्रॅफिक मार्ग दिशेने दोन सक्षम नाही. शिवाय, Switch-Floor2 चे पोर्ट 0 चुकीच्या VLAN मध्ये आहे, जे PC-Dev ला गेटवे च्या VLAN पासून वेगळे करते.",
+                "PC-Dev वर, डिफॉल्ट गेटवे 10.0.15.254 वर सेट करा. Switch-Floor2 वर, पोर्ट 0 (PC-Dev) VLAN 10 वर सेट करा."
+            ],
+            "explanation": "डिव्हाइससाठी आपल्या स्वतःच्या गेटवे पर्यंत पोहोचण्यासाठी योग्य VLAN मध्ये असणे आवश्यक आहे आणि त्याचे स्थानीय सबनेटच्या पलीकडे ट्रॅफिक पाठविण्यासाठी डिफॉल्ट गेटवे कॉन्फिगर केले जाणे आवश्यक आहे. दोनपैकी एकही संपूर्ण सबनेटच्या बाहेर संप्रेषण अवरोधित करते, अगदी फिजिकल केबलिंग ठीक असले तरी."
+        },
+        "ms": {
+            "title": "PC-Dev Tidak Boleh Mencapai Web-Server",
+            "story": "Selepas susunan semula meja hujung minggu, PC-Dev melaporkan ia tidak dapat membuka halaman pelayan web dalaman. PC-Reception, di lantai lain, tidak menghadapi masalah dalam mencapai pelayan yang sama sepanjang pagi.",
+            "objective": "Jadikan permintaan HTTP daripada PC-Dev ke Web-Server berjaya.",
+            "hints": [
+                "Permintaan tidak pernah meninggalkan PC-Dev — ia tidak ada tempat untuk dihantar keluar dari subnet sendiri. Secara berasingan, port Switch-Floor2 untuk PC-Dev juga menghalanginya daripada mencapai segmen Router-Edge.",
+                "PC-Dev tidak mempunyai Get Laluan Lalai yang dikonfigurasi, jadi ia tidak dapat mengarahkan trafik melampaui subnetnya sendiri. Di samping itu, port 0 Switch-Floor2 berada dalam VLAN yang salah, mengasingkan PC-Dev daripada VLAN gerbang.",
+                "Di PC-Dev, tetapkan Get Laluan Lalai kepada 10.0.15.254. Di Switch-Floor2, tetapkan port 0 (PC-Dev) kepada VLAN 10."
+            ],
+            "explanation": "Peranti mesti berada dalam VLAN yang betul untuk mencapai gerbang sendirinya, dan ia mesti mempunyai Get Laluan Lalai yang dikonfigurasi untuk menghantar trafik melampaui subnet tempatannya. Kehilangan salah satu daripada keduanya menyekat komunikasi luar subnet walaupun pengkabelan fizikal baik-baik saja."
+        },
+        "my": {
+            "title": "PC-Dev သည် Web-Server ကို ရောက်လို့ မရသည်",
+            "story": "ရက်ဆုံးတွင် စားပွဲ ပြန်သည့်အခါ PC-Dev သည် အတွင်းပိုင်း Web-Server စာမျက်နှာကို ဖွင့်လို့ မရသည်ဟု သတင်းပို့လေသည်။ အခြား အဆင့်တွင်ရှိသော PC-Reception သည် မနက်ပိုင်းတစ်လျှwhole မကြေးမခြင်း လည်းမရှိပါ။",
+            "objective": "PC-Dev မှ Web-Server သို့ HTTP တောင်းဆိုမှု အောင်မြင်စေရန်။",
+            "hints": [
+                "တောင်းဆိုမှု သည် PC-Dev မှ ထွက်ခွာလျှင်း မကြေးမခြင်း မည်သည့် နေရာသို့မျှ မစေလို့ မရသည်။ ခွဲထွက်၍ Switch-Floor2 ၏ PC-Dev အတွက်ရှိသော port သည် Router-Edge ၏ အပိုင်းခွဲသို့ ရောက်လို့ မရအောင် စုံရိုက်နေသည်။",
+                "PC-Dev သည် default gateway မပြင်ဆင်ထားသည့အတွက် ၎င်း၏ကိုယ်ပိုင် subnet အပြင်ဘက်သို့ လမ်းကြောင်း ပြောင်းလဲ လို့မရသည်။ ထို့အပြင် Switch-Floor2 ၏ port 0 သည် အမှားအဖြစ် VLAN တွင်ရှိခြင်း PC-Dev ကို gateway ၏ VLAN မှ ခွဲထွက်စေသည်။",
+                "PC-Dev ပေါ်တွင် default gateway ကို 10.0.15.254 သို့ ချိန်ညှိပါ။ Switch-Floor2 ပေါ်တွင် port 0 (PC-Dev) ကို VLAN 10 သို့ ချိန်ညှိပါ။"
+            ],
+            "explanation": "ကိရိယာသည် ၎င်း၏ကိုယ်ပိုင် gateway သို့ ရောက်ရှိရန် မှန်ကန်သောVLAN တွင်ရှိရမည်ဖြစ်ပြီး ၎င်း၏မြေပြင် subnet အပြင်ဘက်သို့ ရောက်စေရန် default gateway ပြင်ဆင်ထားရမည်။ ဤနှစ်ခုထဲမှ တစ်ခုမျှ ပျောက်ဆုံးခြင်းသည် ရုပ်ပိုင်းဆိုင်ရာ ကြေးခြင်း ကောင်းမွန်ပါသည့်သည်ပင် off-subnet ဆက်သွယ်မှုကို ပိတ်ဆိုင်းစေသည်။"
+        },
+        "ne": {
+            "title": "PC-Dev ले Web-Server मा पुग्न सक्दैन",
+            "story": "सप्ताहान्तको डेस्क पुनर्व्यवस्थापन पछी, PC-Dev सँग आन्तरिक वेब सर्भर पृष्ठ खोल्न सक्दैन भन्ने रिपोर्ट आएको छ। अर्को तल्लामा रहेको PC-Reception ले बिहान भरि उस्तै सर्भरमा पुग्न कुनै समस्या भोगेको छैन।",
+            "objective": "PC-Dev बाट Web-Server मा HTTP अनुरोध सफल गर्नुहोस्।",
+            "hints": [
+                "अनुरोध कहिले पनि PC-Dev बाट बाहिर निस्कँदैन — यसको आफ्नै subnet बाहिर पठाउन कहिले पनि कहीं छैन। अलग रूपमा, Switch-Floor2 को PC-Dev को port पनि यसलाई Router-Edge को सेगमेन्टमा पुग्नबाट रोकी रहेको छ।",
+                "PC-Dev मा डिफल्ट गेटवे कन्फिगर गरिएको छैन, त्यसैले यसले आफ्नै subnet भन्दा बाहिरको ट्राफिक राउट गर्न सक्दैन। यसको शीर्षमा, Switch-Floor2 को port 0 गलत VLAN मा बैठेको छ, PC-Dev लाई गेटवे को VLAN बाट अलग गर्दैछ।",
+                "PC-Dev मा, डिफल्ट गेटवे लाई 10.0.15.254 मा सेट गर्नुहोस्। Switch-Floor2 मा, port 0 (PC-Dev) लाई VLAN 10 मा सेट गर्नुहोस्।"
+            ],
+            "explanation": "एक डिभाइस आफ्नै गेटवे मा पुग्नको लागि सही VLAN मा हुनु पर्छ, र यसले आफ्नो स्थानीय subnet भन्दा बाहिरको ट्राफिक पठाउनको लागि डिफल्ट गेटवे कन्फिगर गरिएको हुनु पर्छ। यदि दुवै मध्ये कुनै पनि हराएको छ भने यससँग एक पनि शारीरिक केबल ठीक छ।"
+        },
+        "nl": {
+            "title": "PC-Dev kan Web-Server niet bereiken",
+            "story": "Na de bureau-herschikking in het weekend rapporteert PC-Dev dat het de interne webserverpagina niet kan openen. PC-Reception, op een andere verdieping, had de hele ochtend geen problemen met het bereiken van dezelfde server.",
+            "objective": "Een HTTP-aanvraag van PC-Dev naar Web-Server succesvol maken.",
+            "hints": [
+                "De aanvraag verlaat PC-Dev zelfs niet — het heeft geen plaats om buiten zijn eigen subnet verzonden te worden. Bovendien zorgt de poort van Switch-Floor2 voor PC-Dev ervoor dat het Router-Edge segment niet bereikt kan worden.",
+                "PC-Dev heeft geen Standaardgateway geconfigureerd, dus het kan verkeer buiten zijn eigen subnet niet routeren. Daarnaast bevindt poort 0 van Switch-Floor2 zich in de verkeerde VLAN, waardoor PC-Dev van de gateway-VLAN wordt geïsoleerd.",
+                "Stel op PC-Dev de Standaardgateway in op 10.0.15.254. Stel op Switch-Floor2 poort 0 (PC-Dev) in op VLAN 10."
+            ],
+            "explanation": "Een apparaat moet zich in de juiste VLAN bevinden om zijn eigen gateway te bereiken, en het moet een Standaardgateway hebben geconfigureerd om verkeer buiten het lokale subnet te sturen. Als een van beiden ontbreekt, wordt communicatie buiten het subnet geblokkeerd, zelfs als de fysieke bedrading in orde is."
+        },
+        "no": {
+            "title": "PC-Dev kan ikke nå Web-Server",
+            "story": "Etter skrivebordsomarrangementet i helgen rapporterer PC-Dev at det ikke kan åpne den interne webserversiden. PC-Reception, på en annen etasje, hadde ingen problemer med å nå den samme serveren hele morgenen.",
+            "objective": "Få en HTTP-forespørsel fra PC-Dev til Web-Server til å lykkes.",
+            "hints": [
+                "Forespørselen forlater aldri PC-Dev — det har ingen plass å sendes utenfor sitt eget subnet. Separat holder Switch-Floor2s port for PC-Dev det fra å nå Router-Edge sitt segment.",
+                "PC-Dev har ingen standard gateway konfigurert, så det kan ikke rute trafikk utenfor sitt eget subnet. På toppen av det holder Switch-Floor2s port 0 seg i feil VLAN, isolerer PC-Dev fra gatewayens VLAN.",
+                "Angi standard gateway til 10.0.15.254 på PC-Dev. Sett port 0 (PC-Dev) på Switch-Floor2 til VLAN 10."
+            ],
+            "explanation": "En enhet må tilhøre riktig VLAN for å nå sin egen gateway, og den må ha en standard gateway konfigurert for å sende trafikk utenfor sitt lokale subnet. Hvis en av dem mangler, blokkeres off-subnet-kommunikasjon selv om den fysiske kablingen er fin."
+        },
+        "pa": {
+            "title": "PC-Dev ਵੈੱਬ ਸਰਵਰ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚ ਸਕਦਾ",
+            "story": "ਹਫ਼ਤੇ ਅੰਤ ਦੇ ਡੈਸਕ ਰੀਅਰੇਂਜਮੈਂਟ ਤੋਂ ਬਾਅਦ, PC-Dev ਨੇ ਰਿਪੋਰਟ ਕੀਤਾ ਕਿ ਇਹ ਅੰਦਰੂਨੀ ਵੈੱਬ ਸਰਵਰ ਪੰਨਾ ਨਹੀਂ ਖੋਲ ਸਕਦਾ। PC-Reception, ਜੋ ਦੂਜੀ ਮੰਜ਼ਿਲ 'ਤੇ ਹੈ, ਨੂੰ ਸਵੇਰ ਭਰ ਉਹੀ ਸਰਵਰ ਤੱਕ ਪਹੁੰਚਣ ਵਿੱਚ ਕੋਈ ਮੁਸ਼ਕਲ ਨਹੀਂ ਆਈ।",
+            "objective": "PC-Dev ਤੋਂ Web-Server ਤੱਕ HTTP ਬੇਨਤੀ ਸਫਲ ਬਣਾਓ।",
+            "hints": [
+                "ਬੇਨਤੀ PC-Dev ਤੋਂ ਕਦੇ ਭੇਜੀ ਹੀ ਨਹੀਂ ਜਾਂਦੀ — ਇਸਦੇ ਆਪਣੇ ਸਬਨੈੱਟ ਤੋਂ ਬਾਹਰ ਭੇਜਣ ਲਈ ਕੋਈ ਰਾਸਤਾ ਨਹੀਂ। ਵੱਖ ਤੋਂ, Switch-Floor2 ਦੇ PC-Dev ਪੋਰਟ ਨੂੰ Router-Edge ਦੇ ਸੈਗਮੈਂਟ ਤੱਕ ਪਹੁੰਚਣ ਤੋਂ ਰੋਕਦਾ ਹੈ।",
+                "PC-Dev ਕੋਲ ਕੋਈ ਡਿਫਾਲਟ ਗੇਟਵੇ ਸੰਰੂਪਿਤ ਨਹੀਂ ਹੈ, ਇਸ ਲਈ ਇਹ ਆਪਣੇ ਸਬਨੈੱਟ ਤੋਂ ਪਰੇ ਟ੍ਰੈਫਿਕ ਰੂਟ ਨਹੀਂ ਕਰ ਸਕਦਾ। ਇਸ ਤੋਂ ਇਲਾਵਾ, Switch-Floor2 ਦਾ ਪੋਰਟ 0 ਗਲਤ VLAN ਵਿੱਚ ਹੈ, ਜੋ PC-Dev ਨੂੰ ਗੇਟਵੇ ਦੇ VLAN ਤੋਂ ਅਲੱਗ ਕਰਦਾ ਹੈ।",
+                "PC-Dev 'ਤੇ, ਡਿਫਾਲਟ ਗੇਟਵੇ ਨੂੰ 10.0.15.254 'ਤੇ ਸੈੱਟ ਕਰੋ। Switch-Floor2 'ਤੇ, ਪੋਰਟ 0 (PC-Dev) ਨੂੰ VLAN 10 'ਤੇ ਸੈੱਟ ਕਰੋ।"
+            ],
+            "explanation": "ਕਿਸੇ ਵੀ ਨਿਯੁਕਤੀ ਨੂੰ ਆਪਣੇ ਗੇਟਵੇ ਤੱਕ ਪਹੁੰਚਣ ਲਈ ਸਹੀ VLAN ਵਿੱਚ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ ਇਸਦੇ ਕੋਲ ਆਪਣੇ ਸਥਾਨਕ ਸਬਨੈੱਟ ਤੋਂ ਪਰੇ ਟ੍ਰੈਫਿਕ ਭੇਜਣ ਲਈ ਡਿਫਾਲਟ ਗੇਟਵੇ ਸੰਰੂਪਿਤ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਜਨਮ ਵਿੱਚ ਜ਼ਿੰਮੇ ਨਹੀਂ ਰੋਕਦਾ ਸਿੱਧੇ ਨੇ ਤੋਂ ਬਾਹਰ ਸੰਚਾਰ ਭਾਂਡਾ ਨਵੇਂ ਬਾਹਰ ਜੋਗ ਭਾਸ਼ਾ।"
+        },
+        "pl": {
+            "title": "PC-Dev nie może osiągnąć serwera WWW",
+            "story": "Po przegrupowaniu biurek w weekend, PC-Dev zgłasza, że nie może otworzyć wewnętrznej strony serwera WWW. PC-Reception, na innym piętrze, przez cały ranek nie ma żadnych trudności z dostępem do tego samego serwera.",
+            "objective": "Sprawić, aby żądanie HTTP z PC-Dev do Web-Server powiodło się.",
+            "hints": [
+                "Żądanie nigdy nie opuszcza PC-Dev — nie ma sposobu na wysłanie go poza jego własną podsieć. Oddzielnie, port Switch-Floor2 dla PC-Dev uniemożliwia mu również dotarcie do segmentu Router-Edge.",
+                "PC-Dev nie ma skonfigurowanej bramy domyślnej, dlatego nie może kierować ruchem poza swoją podsieć. Ponadto port 0 na Switch-Floor2 znajduje się w niewłaściwej sieci VLAN, izolując PC-Dev od sieci VLAN bramy.",
+                "Na PC-Dev ustaw bramę domyślną na 10.0.15.254. Na Switch-Floor2 ustaw port 0 (PC-Dev) na sieć VLAN 10."
+            ],
+            "explanation": "Urządzenie musi należeć do prawidłowej sieci VLAN, aby dotrzeć do swojej własnej bramy, i musi mieć skonfigurowaną bramę domyślną, aby wysyłać ruch poza swoją lokalną podsieć. Brak któregokolwiek z nich blokuje komunikację poza podsiecią, nawet jeśli kablowanie fizyczne jest w porządku."
+        },
+        "pt-PT": {
+            "title": "PC-Dev não consegue alcançar o servidor web",
+            "story": "Após a reorganização das mesas no fim de semana, PC-Dev reporta que não consegue abrir a página do servidor web interno. PC-Reception, noutro andar, não teve dificuldade em aceder ao mesmo servidor durante toda a manhã.",
+            "objective": "Fazer com que um pedido HTTP de PC-Dev para Web-Server tenha sucesso.",
+            "hints": [
+                "O pedido nunca sai sequer de PC-Dev — não tem para onde ser enviado fora da sua própria sub-rede. Separadamente, a porta de Switch-Floor2 para PC-Dev também o impede de alcançar o segmento de Router-Edge.",
+                "PC-Dev não tem um gateway predefinido configurado, portanto não consegue encaminhar tráfego para além da sua própria sub-rede. Além disso, a porta 0 de Switch-Floor2 está numa VLAN incorreta, isolando PC-Dev da VLAN do gateway.",
+                "Em PC-Dev, defina o gateway predefinido como 10.0.15.254. Em Switch-Floor2, defina a porta 0 (PC-Dev) para a VLAN 10."
+            ],
+            "explanation": "Um dispositivo deve pertencer à VLAN correta para alcançar o seu próprio gateway, e deve ter um gateway predefinido configurado para enviar tráfego para além da sua sub-rede local. A falta de qualquer um destes bloqueia a comunicação fora da sub-rede, mesmo que a cablagem física esteja correta."
+        },
+        "rm": {
+            "title": "PC-Dev na po gidar a Web-Server",
+            "story": "Suenter la rearanschada da sezlinas durante la fin da cotga, PC-Dev annunzia che el na po betg avrir la pagina interna dal Server web. PC-Reception, sin l'auter stgalp, ha nagin problem da gidar a mincha il medem Server durante la matin.",
+            "objective": "Realisir che ina posta HTTP da PC-Dev a Web-Server funcziuna bain.",
+            "hints": [
+                "La posta na lascha jamai PC-Dev — ella n'ha destinaziun da vegnir tramessa ord sia propria subnet. Separadamain, il port da Switch-Floor2 per PC-Dev impedisch eli u da gidar al segment da Router-Edge.",
+                "PC-Dev na dispona da nagin default gateway configurà, per quai che el na po betg rutegar traffic pissà sua propria subnet. Anavos, il port 0 da Switch-Floor2 sa chatta en ina VLAN nuschaivla, che isolescha PC-Dev dalla VLAN dal gateway.",
+                "Sin PC-Dev, definir il default gateway a 10.0.15.254. Sin Switch-Floor2, definir il port 0 (PC-Dev) a la VLAN 10."
+            ],
+            "explanation": "Ina apparatscha sto apartegnair a la VLAN correcta per gidar al agen gateway, e sto avair ina default gateway configurada per trametter traffic pissà sia subnet locala. Sch'ina d'aquestas duas manchia, vegnir bloccadas las comunicaziuns pissà la subnet, evengia sch'il cabladi fisic es bain."
+        },
+        "ro": {
+            "title": "PC-Dev nu poate accesa serverul web",
+            "story": "După reorganizarea birourilor din weekend-ul trecut, PC-Dev raportează că nu poate deschide pagina serverului web intern. PC-Reception, la alt etaj, nu a întâmpinat nici o problemă în a accesa același server pe tot cursul dimineții.",
+            "objective": "Asigură că o cerere HTTP de la PC-Dev la Web-Server să reușească.",
+            "hints": [
+                "Cererea nu pleacă niciodată de pe PC-Dev — nu are nicio cale să fie trimisă în afara propriei sale sub-rețele. În paralel, portul de pe Switch-Floor2 pentru PC-Dev îl împiedică și pe acesta să atingă segmentul Router-Edge.",
+                "PC-Dev nu are configurat niciun gateway implicit, deci nu poate rutea trafic dincolo de propria sa sub-rețea. În plus, portul 0 de pe Switch-Floor2 se află în VLAN-ul greșit, izolând PC-Dev de VLAN-ul gateway-ului.",
+                "Pe PC-Dev, setează gateway-ul implicit la 10.0.15.254. Pe Switch-Floor2, setează portul 0 (PC-Dev) la VLAN 10."
+            ],
+            "explanation": "Un dispozitiv trebuie să aparțină VLAN-ului corect pentru a-și atinge propriul gateway, și trebuie să aibă un gateway implicit configurat pentru a trimite trafic dincolo de sub-rețeaua sa locală. Lipsa oricăruia dintre acestea blochează comunicarea dincolo de sub-rețea, chiar dacă cablajul fizic este în regulă."
+        },
+        "si": {
+            "title": "PC-Dev සර් வර් වෙත ළඟා විය නොහැක",
+            "story": "සති අන්තයෙන් පසු ඩෙස්ක් නැවත සකස් කිරීමෙන් පසු, PC-Dev එහි අභ්‍යන්තර වෙබ් සර්ვර් පිටුව විවෘත කිරීමට නොහැකි බව වාර්තා කරයි. වෙනත් බිම්තලයේ ඇති PC-Reception පෙරවරුවා එම සර්ვරයට ළඟා වීමේදී කිසිදු ගැටලුවක් ඇතුළු නැත.",
+            "objective": "PC-Dev සිට Web-Server වෙත HTTP ඉල්ලීම සාර්ථක වීමට හේතු දෙන්න.",
+            "hints": [
+                "ඉල්ලීම PC-Dev සිට පිටවී ගිය නොහැක — එය තම සබ්නෙට් එක් සිට එය යැවිය හැකි කිසිදු ස්ථානයක් නොමැත. වෙන්වෙන්ව, Switch-Floor2 හි PC-Dev සඳහා වූ පෝට් එය Router-Edge හි කොටස වෙත ළඟා විට ඉතිරි කරයි.",
+                "PC-Dev සිට පෙරනිමි ගේට්වේ සකසා නොමැත, එබැවින් එය එහි සබ්නෙට් එක ඉක්මවා ගිය ගමනාගමනය ත්‍යාග කිරීමට නොහැක. එයින් ඉතිරි ලෙස, Switch-Floor2 හි පෝට් 0 ගේට්වේ හි VLAN සිට PC-Dev ට ඉතිරි කරයි.",
+                "PC-Dev මත, පෙරනිමි ගේට්වේ 10.0.15.254 ට සකසන්න. Switch-Floor2 හි, පෝට් 0 (PC-Dev) VLAN 10 ට සකසන්න."
+            ],
+            "explanation": "ගම්‍ය වසම් ට ඉතිරි ගිය පරිවහනයට නිසි ගේට්වේ සිට සබ්නෙට් එකට ඇති බැවින් ඔබ සබ්නෙට් එකට සිටින බැවින්, එය තම ගේට්වේ ට ඇති නිසි VLAN වලට අයිති විය යුතුය. සිතිකර එකක අඩුවිට නැතිවීම ඔබේ භෞතික ගැහැණුවෙන් ඉතිරි කර ඇතිවුවද ඉතිරි සබ්නෙට් පරිවහනය වල ඉරණම ඇතිකරයි."
+        },
+        "sk": {
+            "title": "PC-Dev nemôže dosiahnuť Web Server",
+            "story": "Po preorganizovaní stolov počas víkendu PC-Dev hlási, že nemôže otvoriť stránku interného webového servera. PC-Reception na ďalšom podlaží nemala cez celé ráno žiadny problém dosiahnuť ten istý server.",
+            "objective": "Zabezpečte, aby bola HTTP požiadavka z PC-Dev na Web-Server úspešná.",
+            "hints": [
+                "Požiadavka nikdy neopustí PC-Dev — nemá kam byť odoslaná mimo jeho vlastnú sieť. Navyše port Switch-Floor2 pre PC-Dev jej bráni v dosahu segmentu Router-Edge.",
+                "PC-Dev nemá nakonfigurovanú Predvolenú bránu, preto nemôže smerovať prenosy mimo svoju sieť. Navyše port 0 na Switch-Floor2 sa nachádza v nesprávnej VLAN, čím izoluje PC-Dev od VLAN brány.",
+                "Na PC-Dev nastavte Predvolenú bránu na 10.0.15.254. Na Switch-Floor2 nastavte port 0 (PC-Dev) na VLAN 10."
+            ],
+            "explanation": "Zariadenie musí patriť do správnej VLAN, aby mohlo dosiahnuť svoju vlastnú bránu, a musí mať nakonfigurovanú Predvolenú bránu na posielanie prenosov mimo svojej lokálnej siete. Chýbanie niektorého z nich blokuje komunikáciu mimo siete, aj keď je fyzické káblovanie v poriadku."
+        },
+        "sl": {
+            "title": "PC-Dev ne more doseči Web Server",
+            "story": "Po prenosu pisarn čez vikend PC-Dev poroča, da ne more odpreti strani notranjega spletnega strežnika. PC-Reception na drugem nadstropju nima težav pri dostopu do istega strežnika ves dan.",
+            "objective": "Zagotovite, da bo zahteva HTTP z PC-Dev na Web-Server uspešna.",
+            "hints": [
+                "Zahteva nikoli ne zapusti PC-Dev — nima kje biti poslana izven njegove lastne mreže. Poleg tega port na Switch-Floor2 za PC-Dev mu onemogoča doseg segmenta Router-Edge.",
+                "PC-Dev nima nastavljenega Privzetega prehoda, zato ne more usmeriti prometa izven svoje mreže. Poleg tega je vrata 0 na Switch-Floor2 v napačni VLAN, kar izolira PC-Dev od VLAN prehoda.",
+                "Na PC-Dev nastavite Privzeti prehod na 10.0.15.254. Na Switch-Floor2 nastavite vrata 0 (PC-Dev) na VLAN 10."
+            ],
+            "explanation": "Naprava mora biti v pravilni VLAN, da doseže svoj lastni prehod, in mora imeti nastavljeni Privzeti prehod, da pošlje promet izven svoje lokalne mreže. Manjka ega od teh dveh blokira komunikacijo zunaj mreže, čeprav je fizična kabelska povezava v redu."
+        },
+        "sq": {
+            "title": "PC-Dev nuk mund të arrijë Web Server",
+            "story": "Pas riorganizimit të majteve përgjatë fundjavës, PC-Dev raporton se nuk mund të hapë faqen e serveri të brendshëm të internetit. PC-Reception, në dyshemenë tjetër, nuk pati asnjë problem për të arritur të njëjtin server gjatë gjithë mëngjesit.",
+            "objective": "Bëni që kërkesa HTTP nga PC-Dev në Web-Server të jetë e suksesshme.",
+            "hints": [
+                "Kërkesa nuk e lë kurrë PC-Dev — nuk ka asnjë mënyrë të dërgohet jashtë rrjetit të saj. Përveç kësaj, porti i Switch-Floor2 për PC-Dev e pengon atë të arrijë segmentin e Router-Edge.",
+                "PC-Dev nuk ka Porta e paracaktuar të konfiguruar, kështu që nuk mund të drejtojë trafikun jashtë rrjetit të saj. Përveç kësaj, porti 0 në Switch-Floor2 ndodhet në VLAN të gabuar, duke izoluar PC-Dev nga VLAN-i i Portës.",
+                "Në PC-Dev, vendosni Porta e paracaktuar në 10.0.15.254. Në Switch-Floor2, vendosni portin 0 (PC-Dev) në VLAN 10."
+            ],
+            "explanation": "Një pajisje duhet të përkasin VLAN-it të saktë për të arritur Portën e saj të brendshme, dhe duhet të ketë Porta e paracaktuar të konfiguruar për të dërguar trafikun jashtë rrjetit të saj lokal. Mungesa e njëra prej tyre pengon komunikimin jashtë rrjetit madje edhe nëse kabllimi fizik është në rregull."
+        },
+        "sr": {
+            "title": "PC-Dev не може доћи до Web Server",
+            "story": "После преуређења столова преко викенда, PC-Dev извештава да не може отворити страну унутрашњег веб сервера. PC-Reception, на другом спрату, није имала никаквих проблема са достизањем истог сервера током целог јутра.",
+            "objective": "Охраните захтев HTTP од PC-Dev до Web-Server да буде успешан.",
+            "hints": [
+                "Захтев никада не напушта PC-Dev — нема начина да се пошаље изван његове мреже. Поред тога, порт на Switch-Floor2 за PC-Dev га спречава да достигне сегмент Router-Edge.",
+                "PC-Dev нема конфигурисан Подразумевани мрежни пролаз, па не може усмерити саобраћај изван своје мреже. Поред тога, порт 0 на Switch-Floor2 се налази у погрешној VLAN, изолујући PC-Dev од VLAN-а пролаза.",
+                "На PC-Dev, поставите Подразумевани мрежни пролаз на 10.0.15.254. На Switch-Floor2, поставите порт 0 (PC-Dev) на VLAN 10."
+            ],
+            "explanation": "Уређај мора припадати исправној VLAN да би дошао до властитог пролаза, и мора имати конфигурисан Подразумевани мрежни пролаз да би послао саобраћај изван своје локалне мреже. Недостатак било којег од ових спречава комуникацију ван мреже чак и ако је физички кабел у реду."
+        },
+        "sv": {
+            "title": "PC-Dev kan inte nå webbservern",
+            "story": "Efter skrivbordsolcationen på helgen rapporterar PC-Dev att den inte kan öppna den interna webbserversidan. PC-Reception, på en annan våning, har inte haft några problem att nå samma server under hela morgonen.",
+            "objective": "Få en HTTP-förfrågan från PC-Dev till Web-Server att lyckas.",
+            "hints": [
+                "Förfrågan lämnar aldrig ens PC-Dev — den saknar väg för att skickas från sitt eget nät. Dessutom blockerar Switch-Floor2:s port för PC-Dev också åtkomsten till Router-Edge:s segment.",
+                "PC-Dev saknar konfigurerad Standardgateway, så den kan inte dirigera trafik bortom sitt eget nät. På toppen av det sitter Switch-Floor2:s port 0 i fel VLAN och isolerar PC-Dev från gatewayns VLAN.",
+                "På PC-Dev, ställ in Standardgateway till 10.0.15.254. På Switch-Floor2, ställ in port 0 (PC-Dev) till VLAN 10."
+            ],
+            "explanation": "En enhet måste tillhöra rätt VLAN för att nå sin egen gateway, och den måste ha en konfigurerad Standardgateway för att skicka trafik bortom sitt lokala nät. Saknar man något av dessa två blockeras kommunikation bort från nätet även om den fysiska kablingen är korrekt."
+        },
+        "sw": {
+            "title": "PC-Dev Haiwezi Kufikia Web-Server",
+            "story": "Baada ya upangaji upya wa desiki juma-juma, PC-Dev inaripoti kwamba haiwezi kufungua ukurasa wa seva ya wavuti ya ndani. PC-Reception, sakafu nyingine, haikuwa na matatizo yoyote katika kufikia seva sawa wakati mzima wa asubuhi.",
+            "objective": "Pata ombi la HTTP kutoka kwa PC-Dev kwenda Web-Server kuwa na mafanikio.",
+            "hints": [
+                "Ombi hili haliondi hata PC-Dev — haina njia ya kumtuma kutoka kwenye mtandao wake mwenyewe. Kama vile vile, port ya Switch-Floor2 kwa PC-Dev pia inauzuza kufikia sehemu ya Router-Edge.",
+                "PC-Dev haina Lango chaguo-msingi iliyosanidiwa, kwa hiyo haiwezi kuelekezaji trafiki zaidi ya mtandao wake mwenyewe. Kwa kuongeza, port 0 ya Switch-Floor2 iko katika VLAN isiyosahihi, akitenganisha PC-Dev kutoka kwa VLAN ya lango.",
+                "Kwenye PC-Dev, weka Lango chaguo-msingi kuwa 10.0.15.254. Kwenye Switch-Floor2, weka port 0 (PC-Dev) kuwa VLAN 10."
+            ],
+            "explanation": "Kifaa lazima kiwe na VLAN sahihi kufikia lango lake mwenyewe, na lazima kuwe na Lango chaguo-msingi iliyosanidiwa kumtuma trafiki zaidi ya mtandao wake wa ndani. Kukataa kwa njia yoyote kunazuza mawasiliano ya kando ya mtandao hata kama kabel ya kimwili ilivyosanidiwa vizuri."
+        },
+        "ta": {
+            "title": "PC-Dev வலை சர்வரை அடைய முடியாது",
+            "story": "வார இறுதியের பின் மேஜை மறுசீரமைப்பের பிறகு, PC-Dev உள் வலை சர்வர் பக்கத்தைத் திறக்க முடியவில்லை என்று தெரிவிக்கிறது. மற்றொரு தளத்தில் உள்ள PC-Reception, முழு காலையும் அதே சர்வரை அடைய எந்த சிரமையும் இல்லை.",
+            "objective": "PC-Dev இலிருந்து Web-Server க்கு HTTP வேண்ட்ளிக்வெட் வெற்றியடைய வேண்டும்.",
+            "hints": [
+                "வேண்ட்ளிக்வெட் PC-Dev ஐ விட்டு கூட வெளியே செல்லாது — அதன் சொந்த நெட்வொர்க்கிலிருந்து அனுப்ப வழி இல்லை. அதுபோலவே, Switch-Floor2 ன் போர்ட் PC-Dev க்கு Router-Edge ன் பகுதியை அடைவதிலிருந்து தடுக்கிறது.",
+                "PC-Dev க்கு இயல்புநிலை கேட்வே கட்டமைக்கப்படவில்லை, எனவே அது தனது சொந்த நெட்வொர்க்கிற்கு அப்பால் ট்ராஃபிக் ரூட் செய்ய முடியாது. மேலும், Switch-Floor2 ன் போர்ட் 0 தவறான VLAN ல் உள்ளது, PC-Dev ஐ கேட்வே ன் VLAN இலிருந்து பிரிக்கிறது.",
+                "PC-Dev ல், இயல்புநிலை கேட்வே ஐ 10.0.15.254 க்கு அமைக்கவும். Switch-Floor2 ல், போர்ட் 0 (PC-Dev) ஐ VLAN 10 க்கு அமைக்கவும்."
+            ],
+            "explanation": "ஒரு சாதனம் அதன் சொந்த கேட்வே அடையக் சரியான VLAN ஐ சேர்ந்திருக்க வேண்டும், மற்றும் அதன் உள்ளூர் நெட்வொர்க்குக்கு அப்பால் ட்ராஃபிக் அனுப்ப இயல்புநிலை கேட்வே கட்டமைக்க வேண்டும். இரண்டிலும் ஒன்று விடப்பட்டால், உடல் வழிமாறுதல் சரிதான்றாக இருந்தாலும் நெட்வொர்க்-வெளி கொண்டாட்டம் தடுக்கப்படும்."
+        },
+        "te": {
+            "title": "PC-Dev వెబ్ సర్వర్‌ను చేరుకోలేరు",
+            "story": "వారాంతపు డెస్క్ పునర్నిర్మాణం తర్వాత, PC-Dev అంతర్గత వెబ్ సర్వర్ పేజీని తెరవలేని旨 నివేదిస్తోంది. వేరే అంతస్థరంపై ఉన్న PC-Reception, ఉదయం అంతా ఇదే సర్వర్‌ను చేరుకోవడంలో ఏ ఇబ్బందీ ఎదుర్కోలేదు.",
+            "objective": "PC-Dev నుండి Web-Server కు HTTP అభ్యర్థన విజయవంతమైనది చేయండి.",
+            "hints": [
+                "అభ్యర్థన PC-Dev నుండి కూడా బయటకు వెళ్లదు — దాని సొంత సబ్నెట్ నుండి పంపించడానికి దానికి ఎక్కడ ఆశ్రయం లేనిది. అలాగే, Switch-Floor2 ఆ పోర్ట్ PC-Dev కోసం Router-Edge సెగ్మెంట్‌కు చేరుకోవడం నుండి కూడా నిరోధిస్తుంది.",
+                "PC-Dev చేయుటకు కాన్ఫిగర్ చేయని డిఫాల్ట్ గేట్‌వే లేనిది, కాబట్టి అది తన సొంత సబ్నెట్‌కు అతీతంగా ట్రాఫిక్‌ను మార్గం చేయలేరు. దానికి అదనంగా, Switch-Floor2 పోర్ట్ 0 తప్పు VLAN లో కూర్చోను, PC-Dev గేట్‌వే VLAN నుండి ఒక్కటిస్తుంది.",
+                "PC-Dev లో, డిఫాల్ట్ గేట్‌వేని 10.0.15.254 కు సెట్ చేయండి. Switch-Floor2 లో, పోర్ట్ 0 (PC-Dev) ను VLAN 10 కు సెట్ చేయండి."
+            ],
+            "explanation": "సాధనం దాని సొంత గేట్‌వే చేరుకోవడానికి సరైన VLAN కు చెందిన తీసుకోవాలి, మరియు దాని స్థానిక సబ్నెట్ అతీతంగా ట్రాఫిక్‌ను పంపించటకు డిఫాల్ట్ గేట్‌వే కాన్ఫిగర్ చేయవలసి ఉంటుంది. ఈ రెండిలో ఎటువంటిదీ లేనిది ఫిజికల్ కేబులింగ్ నిషిద్దమైనది అయినా సబ్నెట్‌కు వెలుపలి సంబంధాన్ని తొలగిస్తుంది."
+        },
+        "uk": {
+            "title": "PC-Dev не може досягти Web-Server",
+            "story": "Після перестановлення столів у вихідні, PC-Dev повідомляє, що не можеж відкрити сторінку внутрішнього веб-сервера. PC-Reception, на іншому поверсі, весь ранок без проблем досягав того ж сервера.",
+            "objective": "Спробуйте, щоб HTTP-запит від PC-Dev до Web-Server був успішним.",
+            "hints": [
+                "Запит навіть не залишає PC-Dev — у неї немає маршруту для відправки зі своєї власної підмережі. Крім того, порт Switch-Floor2 для PC-Dev також перешкоджає доступу до сегмента Router-Edge.",
+                "PC-Dev не має налаштованого Шлюзу за замовчуванням, тому вона не може маршрутизувати трафік за межі своєї власної підмережі. До того ж, порт 0 Switch-Floor2 знаходиться в неправильній VLAN, ізолюючи PC-Dev від VLAN шлюзу.",
+                "На PC-Dev встановіть Шлюз за замовчуванням на 10.0.15.254. На Switch-Floor2 встановіть порт 0 (PC-Dev) на VLAN 10."
+            ],
+            "explanation": "Пристрій повинен належати правильній VLAN для доступу до власного шлюзу і повинен мати налаштований Шлюз за замовчуванням для відправки трафіку за межі локальної підмережі. Якщо не вистачає будь-якого з цих двох, то комунікація за межами підмережі буде заблокована, навіть якщо фізична кабельна розводка в порядку."
+        },
+        "ur": {
+            "title": "PC-Dev ویب سرور تک نہیں پہنچ سکتا",
+            "story": "ہفتہ وار ڈیسک کی تبدیلی کے بعد، PC-Dev اندرونی ویب سرور کی صفحہ کھولنے میں ناکام ہے۔ PC-Reception، دوسری منزل پر، پوری صبح اسی سرور تک رسائی میں کوئی مسئلہ نہیں ہو رہا۔",
+            "objective": "PC-Dev سے Web-Server تک HTTP درخواست کامیاب بنائیں۔",
+            "hints": [
+                "درخواست PC-Dev سے باہر نہیں نکل سکی — اسے اپنی subnet سے باہر بھیجنے کی کوئی جگہ نہیں۔ الگ طور سے، Switch-Floor2 کی port PC-Dev کو Router-Edge کے segment تک رسائی سے روک رہی ہے۔",
+                "PC-Dev کے پاس کوئی default gateway ترتیب شدہ نہیں ہے، اس لیے یہ اپنی subnet سے آگے کی traffic کو route نہیں کر سکتا۔ اس کے علاوہ، Switch-Floor2 کی port 0 غلط VLAN میں ہے، PC-Dev کو gateway کے VLAN سے الگ کر رہی ہے۔",
+                "PC-Dev پر، default gateway کو 10.0.15.254 پر سیٹ کریں۔ Switch-Floor2 پر، port 0 (PC-Dev) کو VLAN 10 میں سیٹ کریں۔"
+            ],
+            "explanation": "کسی بھی device کو اپنی gateway تک رسائی کے لیے صحیح VLAN میں ہونا ضروری ہے، اور اسے اپنی local subnet سے آگے کی traffic بھیجنے کے لیے default gateway ترتیب شدہ ہونا چاہیے۔ اگر کوئی بھی ایک غائب ہے تو یہ off-subnet communication کو روک دیتا ہے، چاہے physical cabling ٹھیک ہو۔"
+        },
+        "zu": {
+            "title": "PC-Dev Ayikwazi Ukufinyelela ku-Web-Server",
+            "story": "Ngemuva kwe-weekend desk shuffle, PC-Dev inbikela ukuthi ayikwazi ukubukela ikhasi le-internal web server. I-PC-Reception, eflooini elingu-2, ayizange ibambe iinkinga ekufinyeleleni iserver enye umvuzo wonke.",
+            "objective": "Yenza HTTP request evela ku-PC-Dev ukuya ku-Web-Server ibe lubukhosi.",
+            "hints": [
+                "Isicelo asikho namzuza igamule PC-Dev — ayinandawo yokuthumela kude kwesibini sayo. Ngaphandle kwalokho, port ye-Switch-Floor2 ngokwe-PC-Dev iyayivimbela PC-Dev ekufinyeleleni ingxenye ka-Router-Edge.",
+                "PC-Dev ayinayo i-default gateway efakwe, ngoko ayikwazi ukulalelisa ithrafikhi ngaphaya kwesibini sayo. Phezu kwalokho, port 0 ye-Switch-Floor2 isekunyawo okungesilo, ikhangela PC-Dev ezibini se-VLAN.",
+                "Ku-PC-Dev, isethela i-default gateway yi-10.0.15.254. Ku-Switch-Floor2, isethela port 0 (PC-Dev) yi-VLAN 10."
+            ],
+            "explanation": "Idivayisi kufuneka ibe kwi-VLAN enele ukufinyelela kuma-gateway wayo, futhi kufuneka ibe ne-default gateway efakwe ukuze ithumele ithrafikhi ngaphandle kwe-subnet yayo. Ukuthola enye yalezi zinto iyavimba ukunxibelelana nge-off-subnet noma ngabe i-physical cabling ilungile."
+        },
+        "or": {
+            "title": "PC-Dev ୱେବ ସର୍ଭରକୁ ପୌଁଚିପାରେ ନାହିଁ",
+            "story": "ସପ୍ତାହାନ୍ତ ଡେସ୍କ ପୁନର୍ବ୍ୟବସ୍ଥାର ପରେ, PC-Dev ରିପୋର୍ଟ କରୁଛି ଯେ ଏହା ଆଭ୍ୟନ୍ତରୀଣ ୱେବ ସର୍ଭର ପୃଷ୍ଠା ଖୋଲିପାରେ ନାହିଁ। PC-Reception, ଅନ୍ୟ ମହାଳରେ ଥାଇ, ସେହିଦିନ ସକାଳରୁ ସେହିସର୍ଭରକୁ ପୌଁଚିବାରେ କୌଣସି ସମସ୍ୟା ଅନୁଭବ କରିନାହିଁ।",
+            "objective": "PC-Dev ରୁ Web-Server କୁ ଏକ HTTP ଅନୁରୋଧ ସଫଳ କରନ୍ତୁ।",
+            "hints": [
+                "ଅନୁରୋଧଟି PC-Dev ରୁ ଦୂରେ ଯାଏ ନାହିଁ — ଏହାର ନିଜ ସବନେଟ ବାହାରେ ପାଠାଇବାର ସ୍ଥାନ ନାହିଁ। ଅଲଗାଭାବେ, Switch-Floor2 ର PC-Dev ପାଇଁ ପୋର୍ଟ ଏହାକୁ Router-Edge ର ସେଗମେଣ୍ଟ ବାହାରେ ରଖେ।",
+                "PC-Dev ରେ ଡିଫଲ୍ଟ ଗେଟୱେ ସଂରୂପିତ ନାହିଁ, ତେଣୁ ଏହା ନିଜ ସବନେଟଠାରୁ ବେଶି ট୍ରାଫିକ ଦିଗିତ କରିପାରେ ନାହିଁ। ଏଥିସହ, Switch-Floor2 ର ପୋର୍ଟ 0 ଭୁଲ VLAN ରେ ରହିଛି, PC-Dev କୁ ଗେଟୱେ ର VLAN ରୁ ବିଚ୍ଛିନ୍ନ କରିଛି।",
+                "PC-Dev ରେ, ଡିଫଲ୍ଟ ଗେଟୱେ 10.0.15.254 ରେ ସେଟ କରନ୍ତୁ। Switch-Floor2 ରେ, ପୋର୍ଟ 0 (PC-Dev) କୁ VLAN 10 ରେ ସେଟ କରନ୍ତୁ।"
+            ],
+            "explanation": "ଏକ ডିଭାଇସ ନିଜର ଗେଟୱେ ବାହାରେ ଯିବାରେ ସଠିକ VLAN ରେ ଥାଇ ଏବଂ ଏହାର ନିଜ ସବନେଟଠାରୁ ବଡ ଟ୍ରାଫିକ ପଠାଇବାକୁ ଏକ ଡିଫଲ୍ଟ ଗେଟୱେ ସଂରୂପିତ ଥାଇ ଅଛେ। ଏଥିରୁ ଯେକୌଣସିଟି ଅଭାବ ଥିଲେ ଭୌତିକ ତାର ଠିକ ଥାଇଁ ମଧ୍ୟ ସବନେଟ ବାହାରେ ଯୋଗାଯୋଗ ବନ୍ଦ ହୋଇ ଯାଏ।"
+        }
+    }
+}
