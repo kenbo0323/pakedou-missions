@@ -1,0 +1,1337 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-22",
+    "number": 63,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.28.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.28.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.27.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.27.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "VLAN-Switch-1F",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.28.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.27.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.24.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.18.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.24.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-vlan1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Portal Unreachable From Both Floors",
+            "story": "Staff on the design and lab PCs report that Portal-01 won't load or answer at all this morning, even though it worked fine before. Both the design team and reception-side lab staff are affected.",
+            "objective": "Restore HTTP access from PC-Design to Portal-01 and ping from PC-Lab to Portal-01.",
+            "hints": [
+                "Traffic from both PC-Design and PC-Lab heading to Portal-01 stops at Router-Main, which can't find a way to deliver it.",
+                "Router-Main has no route to Portal-01 because Portal-01's own address doesn't actually belong to the 10.0.24.0 subnet it's connected to.",
+                "On Portal-01, set its port 0 address to 10.0.24.1 with mask 255.255.255.0 so it matches Router-Main's subnet."
+            ],
+            "explanation": "A device must use an address that belongs to the subnet of the link it's plugged into. Portal-01's address was outside 10.0.24.0/24, so Router-Main had no valid route to reach it, blocking traffic from every other subnet."
+        },
+        "ja": {
+            "title": "両フロアからPortalに到達できない",
+            "story": "デザイン部門とラボのPCを使うスタッフから、今朝からPortal-01が全く開かず応答もしないという報告がありました。以前は問題なく動作していました。デザインチームと受付側のラボスタッフの両方が影響を受けています。",
+            "objective": "PC-DesignからPortal-01へのHTTPアクセスと、PC-LabからPortal-01へのpingを復旧させる。",
+            "hints": [
+                "PC-DesignとPC-Labの両方からPortal-01宛てのトラフィックがRouter-Mainで止まっており、配送先を見つけられない状態です。",
+                "Portal-01自身のアドレスが、接続されている10.0.24.0のサブネットに実際には属していないため、Router-MainにはPortal-01へのルートがありません。",
+                "Portal-01のポート0のアドレスを10.0.24.1、マスクを255.255.255.0に設定し、Router-Mainのサブネットに合わせてください。"
+            ],
+            "explanation": "機器は、接続されているリンクのサブネットに属するアドレスを使用する必要があります。Portal-01のアドレスが10.0.24.0/24の範囲外だったため、Router-MainはPortal-01への有効なルートを持てず、他のすべてのサブネットからの通信がブロックされていました。"
+        },
+        "ko": {
+            "title": "두 층 모두에서 포털에 접근할 수 없음",
+            "story": "설계 및 랩 PC의 직원들이 Portal-01이 오늘 아침 로드되지 않거나 응답하지 않는다고 보고했습니다. 이전에는 정상적으로 작동했음에도 불구하고 설계 팀과 랩 접수 직원이 모두 영향을 받습니다.",
+            "objective": "PC-Design에서 Portal-01로의 HTTP 접근을 복구하고 PC-Lab에서 Portal-01로의 핑을 복구합니다.",
+            "hints": [
+                "PC-Design과 PC-Lab에서 Portal-01로 가는 트래픽이 Router-Main에서 멈추며, Router-Main은 전달할 방법을 찾을 수 없습니다.",
+                "Router-Main은 Portal-01으로의 경로가 없습니다. Portal-01의 주소가 실제로 연결된 10.0.24.0 서브넷에 속하지 않기 때문입니다.",
+                "Portal-01에서 포트 0 주소를 10.0.24.1로 설정하고 마스크를 255.255.255.0으로 설정하여 Router-Main의 서브넷과 일치하도록 합니다."
+            ],
+            "explanation": "장치는 연결된 링크의 서브넷에 속하는 주소를 사용해야 합니다. Portal-01의 주소가 10.0.24.0/24 외부에 있었기 때문에 Router-Main은 이에 도달할 유효한 경로가 없었고, 다른 모든 서브넷의 트래픽을 차단했습니다."
+        },
+        "es": {
+            "title": "Portal Inaccesible Desde Ambos Pisos",
+            "story": "El personal de las PCs de diseño y laboratorio reporta que Portal-01 no carga ni responde esta mañana, aunque funcionaba correctamente antes. Tanto el equipo de diseño como el personal de laboratorio en la recepción están afectados.",
+            "objective": "Restaurar el acceso HTTP desde PC-Design a Portal-01 y el ping desde PC-Lab a Portal-01.",
+            "hints": [
+                "El tráfico desde PC-Design y PC-Lab hacia Portal-01 se detiene en Router-Main, que no puede encontrar la forma de entregarlo.",
+                "Router-Main no tiene ruta hacia Portal-01 porque la dirección de Portal-01 no pertenece realmente a la subred 10.0.24.0 a la que está conectada.",
+                "En Portal-01, configure su dirección del puerto 0 a 10.0.24.1 con Máscara 255.255.255.0 para que coincida con la subred de Router-Main."
+            ],
+            "explanation": "Un dispositivo debe usar una dirección que pertenezca a la subred del enlace al que está conectado. La dirección de Portal-01 estaba fuera de 10.0.24.0/24, por lo que Router-Main no tenía ruta válida para alcanzarlo, bloqueando el tráfico desde todas las demás subredes."
+        },
+        "pt-BR": {
+            "title": "Portal Inacessível de Ambos os Andares",
+            "story": "Funcionários nos PCs de design e lab relatam que Portal-01 não carrega nem responde esta manhã, embora tenha funcionado bem antes. Tanto a equipe de design quanto o pessoal de laboratório do lado da recepção são afetados.",
+            "objective": "Restaurar acesso HTTP do PC-Design para Portal-01 e ping do PC-Lab para Portal-01.",
+            "hints": [
+                "Tráfego de PC-Design e PC-Lab para Portal-01 para no Router-Main, que não consegue encontrar uma forma de entregá-lo.",
+                "Router-Main não tem rota para Portal-01 porque o endereço do Portal-01 não pertence à subrede 10.0.24.0 à qual está conectado.",
+                "Em Portal-01, configure seu endereço de porta 0 para 10.0.24.1 com Máscara 255.255.255.0 para corresponder à subrede de Router-Main."
+            ],
+            "explanation": "Um dispositivo deve usar um endereço que pertença à subrede do link ao qual está conectado. O endereço de Portal-01 estava fora de 10.0.24.0/24, portanto Router-Main não tinha rota válida para alcançá-lo, bloqueando o tráfego de todas as outras subredes."
+        },
+        "de": {
+            "title": "Portal von beiden Stockwerken unerreichbar",
+            "story": "Mitarbeiter an den PCs PC-Design und PC-Lab berichten, dass Portal-01 heute Morgen überhaupt nicht lädt oder antwortet, obwohl es vorher einwandfrei funktionierte. Sowohl das Design-Team als auch die Lab-Mitarbeiter auf der Empfangsseite sind betroffen.",
+            "objective": "Stellen Sie HTTP-Zugriff von PC-Design auf Portal-01 wieder her und Ping von PC-Lab zu Portal-01.",
+            "hints": [
+                "Der Datenverkehr von PC-Design und PC-Lab zu Portal-01 stoppt bei Router-Main, der keinen Weg zum Übermitteln findet.",
+                "Router-Main hat keine Route zu Portal-01, weil Portal-01s eigene Adresse nicht zum Subnetz 10.0.24.0 gehört, zu dem es verbunden ist.",
+                "Stellen Sie auf Portal-01 die Port-0-Adresse auf 10.0.24.1 mit Maske 255.255.255.0 ein, damit sie mit dem Subnetz von Router-Main übereinstimmt."
+            ],
+            "explanation": "Ein Gerät muss eine Adresse verwenden, die zum Subnetz der Verbindung gehört, zu der es angeschlossen ist. Portal-01s Adresse lag außerhalb von 10.0.24.0/24, daher hatte Router-Main keine gültige Route, um es zu erreichen, was Datenverkehr aus jedem anderen Subnetz blockierte."
+        },
+        "fr": {
+            "title": "Portal-01 inaccessible depuis les deux étages",
+            "story": "Le personnel des PC PC-Design et PC-Lab signale que Portal-01 ne se charge pas et ne répond pas ce matin, bien qu'il ait fonctionné correctement avant. L'équipe de conception et le personnel du laboratoire côté réception sont affectés.",
+            "objective": "Restaurez l'accès HTTP de PC-Design à Portal-01 et le ping de PC-Lab à Portal-01.",
+            "hints": [
+                "Le trafic de PC-Design et PC-Lab vers Portal-01 s'arrête au Router-Main, qui ne trouve aucun moyen de le livrer.",
+                "Router-Main n'a pas de route vers Portal-01 car l'adresse de Portal-01 n'appartient pas au réseau 10.0.24.0 auquel il est connecté.",
+                "Sur Portal-01, définissez l'adresse du port 0 à 10.0.24.1 avec le masque 255.255.255.0 pour correspondre au réseau du Router-Main."
+            ],
+            "explanation": "Un appareil doit utiliser une adresse qui appartient au réseau de la liaison à laquelle il est connecté. L'adresse de Portal-01 était en dehors de 10.0.24.0/24, donc Router-Main n'avait aucune route valide pour l'atteindre, bloquant le trafic provenant de tous les autres réseaux."
+        },
+        "hi": {
+            "title": "दोनों फ़्लोर से Portal अप्राप्य",
+            "story": "डिज़ाइन और लैब पीसी पर कर्मचारी रिपोर्ट कर रहे हैं कि Portal-01 आज सुबह लोड नहीं हो रहा है या बिल्कुल प्रतिक्रिया नहीं दे रहा है, भले ही यह पहले ठीक काम करता था। डिज़ाइन टीम और रिसेप्शन-साइड लैब कर्मचारी दोनों प्रभावित हैं।",
+            "objective": "PC-Design से Portal-01 तक HTTP एक्सेस पुनर्स्थापित करें और PC-Lab से Portal-01 तक पिंग करें।",
+            "hints": [
+                "PC-Design और PC-Lab से Portal-01 की ओर जाने वाली ट्रैफिक Router-Main पर रुकती है, जो इसे डिलीवर करने का कोई रास्ता नहीं ढूंढ सकता।",
+                "Router-Main के पास Portal-01 के लिए कोई मार्ग नहीं है क्योंकि Portal-01 का अपना पता वास्तव में 10.0.24.0 सबनेट से संबंधित नहीं है जिससे यह जुड़ा हुआ है।",
+                "Portal-01 पर, पोर्ट 0 पते को 10.0.24.1 पर मास्क 255.255.255.0 के साथ सेट करें ताकि यह Router-Main के सबनेट से मेल खाए।"
+            ],
+            "explanation": "एक डिवाइस को ऐसे पते का उपयोग करना चाहिए जो उस लिंक के गंतव्य नेटवर्क से संबंधित हो जिससे वह जुड़ा हुआ है। Portal-01 का पता 10.0.24.0/24 के बाहर था, इसलिए Router-Main के पास इसे पहुंचने के लिए कोई वैध मार्ग नहीं था, जिससे हर दूसरे सबनेट से ट्रैफिक अवरुद्ध हो गया।"
+        },
+        "id": {
+            "title": "Portal Tidak Terjangkau dari Kedua Lantai",
+            "story": "Staf di PC-Design dan PC-Lab melaporkan bahwa Portal-01 tidak muat atau merespons sama sekali pagi ini, meskipun sebelumnya berfungsi dengan baik. Tim desain dan staf lab di sisi resepsi sama-sama terpengaruh.",
+            "objective": "Pulihkan akses HTTP dari PC-Design ke Portal-01 dan ping dari PC-Lab ke Portal-01.",
+            "hints": [
+                "Lalu lintas dari PC-Design dan PC-Lab menuju Portal-01 berhenti di Router-Main, yang tidak dapat menemukan cara untuk mengirimkannya.",
+                "Router-Main tidak memiliki rute ke Portal-01 karena alamat Portal-01 sendiri tidak benar-benar termasuk dalam Jaringan tujuan 10.0.24.0 tempat ia terhubung.",
+                "Di Portal-01, atur alamat port 0 ke 10.0.24.1 dengan masker 255.255.255.0 agar sesuai dengan Jaringan tujuan Router-Main."
+            ],
+            "explanation": "Perangkat harus menggunakan alamat yang termasuk dalam Jaringan tujuan dari tautan tempat perangkat tersebut tersambung. Alamat Portal-01 berada di luar 10.0.24.0/24, jadi Router-Main tidak memiliki rute yang valid untuk menjangkaunya, yang memblokir lalu lintas dari setiap Jaringan tujuan lainnya."
+        },
+        "ru": {
+            "title": "Portal недоступен с обоих этажей",
+            "story": "Сотрудники ПК PC-Design и PC-Lab сообщают, что Portal-01 не загружается и вообще не отвечает сегодня утром, хотя раньше работал нормально. Затронуты как команда дизайна, так и сотрудники лаборатории на стороне приема.",
+            "objective": "Восстановите доступ HTTP с PC-Design к Portal-01 и пинг с PC-Lab к Portal-01.",
+            "hints": [
+                "Трафик с PC-Design и PC-Lab к Portal-01 останавливается на Router-Main, который не может найти способ доставить его.",
+                "Router-Main не имеет маршрута к Portal-01, потому что собственный адрес Portal-01 не принадлежит целевой сети 10.0.24.0, к которой он подключен.",
+                "На Portal-01 установите адрес порта 0 на 10.0.24.1 с маской 255.255.255.0, чтобы он соответствовал целевой сети Router-Main."
+            ],
+            "explanation": "Устройство должно использовать адрес, принадлежащий целевой сети канала, к которому оно подключено. Адрес Portal-01 находился вне 10.0.24.0/24, поэтому Router-Main не имел действительного маршрута для его достижения, блокируя трафик со всех остальных целевых сетей."
+        },
+        "it": {
+            "title": "Portal non raggiungibile da entrambi i piani",
+            "story": "Lo staff del PC-Design e del PC-Lab segnala che Portal-01 stamattina non si carica affatto e non risponde, anche se funzionava perfettamente prima. Sia il team di progettazione che lo staff del lab lato reception sono colpiti.",
+            "objective": "Ripristinare l'accesso HTTP da PC-Design a Portal-01 e il ping da PC-Lab a Portal-01.",
+            "hints": [
+                "Il traffico da PC-Design e PC-Lab verso Portal-01 si ferma presso Router-Main, che non riesce a trovare il modo di consegnarlo.",
+                "Router-Main non ha una route verso Portal-01 perché l'indirizzo di Portal-01 non appartiene in realtà alla subnet 10.0.24.0 a cui è collegato.",
+                "Su Portal-01, imposta l'indirizzo della porta 0 a 10.0.24.1 con maschera 255.255.255.0 in modo che corrisponda alla subnet di Router-Main."
+            ],
+            "explanation": "Un dispositivo deve utilizzare un indirizzo che appartiene alla subnet del collegamento a cui è collegato. L'indirizzo di Portal-01 era al di fuori di 10.0.24.0/24, quindi Router-Main non aveva alcuna route valida per raggiungerlo, bloccando il traffico da ogni altra subnet."
+        },
+        "tr": {
+            "title": "Portal her iki kattan da erişilemez",
+            "story": "PC-Design ve PC-Lab personeli, Portal-01'in bu sabah yüklenmediğini ve hiç cevap vermediğini bildiriyor; bu sabah daha önce sorunsuz çalışmasına rağmen. Hem tasarım ekibi hem de resepsiyon tarafı lab personeli etkilenmiştir.",
+            "objective": "PC-Design'dan Portal-01'e HTTP erişimini ve PC-Lab'dan Portal-01'e ping'i geri yükleyin.",
+            "hints": [
+                "PC-Design ve PC-Lab'dan Portal-01'e giden trafik Router-Main'de durur ve Router-Main bunu teslim etmenin bir yolunu bulamaz.",
+                "Router-Main'in Portal-01'e Yönlendirme Tablosu yok çünkü Portal-01'in adresi bağlı olduğu 10.0.24.0 Hedef ağına ait değildir.",
+                "Portal-01'de, port 0 adresini 10.0.24.1 olarak 255.255.255.0 Maske ile ayarlayın, böylece Router-Main'in Hedef ağıyla eşleşir."
+            ],
+            "explanation": "Bir cihaz, bağlı olduğu bağlantının Hedef ağına ait bir adres kullanmalıdır. Portal-01'in adresi 10.0.24.0/24 dışındaydı, bu nedenle Router-Main'in buna ulaşmak için geçerli bir yolu yoktu ve başka her Hedef ağdan trafiği engelledi."
+        },
+        "th": {
+            "title": "Portal ไม่สามารถเข้าถึงได้จากทั้งสองชั้น",
+            "story": "เจ้าหน้าที่ที่ PC-Design และ PC-Lab รายงานว่า Portal-01 ไม่สามารถโหลดหรือตอบสนองเลยในเช้านี้ แม้ว่าจะใช้งานได้ดีก่อนหน้านี้ ทั้งทีมออกแบบและเจ้าหน้าที่แล็บด้านข้างการต้อนรับได้รับผลกระทบ",
+            "objective": "กู้คืนการเข้าถึง HTTP จาก PC-Design ไปยัง Portal-01 และ ping จาก PC-Lab ไปยัง Portal-01",
+            "hints": [
+                "การรับส่งข้อมูลจาก PC-Design และ PC-Lab ที่ไปยัง Portal-01 หยุดที่ Router-Main ซึ่งไม่สามารถหาวิธีการจัดส่งได้",
+                "Router-Main ไม่มีเส้นทางไปยัง Portal-01 เพราะว่าที่อยู่ของ Portal-01 ไม่ได้อยู่ในเครือข่ายปลายทาง 10.0.24.0 ที่เชื่อมต่ออยู่",
+                "บน Portal-01 ให้ตั้งค่าที่อยู่พอร์ต 0 เป็น 10.0.24.1 พร้อมมาสก์ 255.255.255.0 เพื่อให้ตรงกับเครือข่ายปลายทางของ Router-Main"
+            ],
+            "explanation": "อุปกรณ์ต้องใช้ที่อยู่ที่อยู่ในเครือข่ายปลายทางของลิงก์ที่เชื่อมต่ออยู่ ที่อยู่ของ Portal-01 อยู่นอก 10.0.24.0/24 ดังนั้น Router-Main จึงไม่มีเส้นทางที่ถูกต้องในการเข้าถึง ซึ่งจะบล็อกการรับส่งข้อมูลจากทุกเครือข่ายปลายทางอื่น"
+        },
+        "vi": {
+            "title": "Portal không thể truy cập được từ cả hai tầng",
+            "story": "Nhân viên trên PC-Design và PC-Lab báo cáo rằng Portal-01 sáng nay không tải hoặc phản hồi, mặc dù nó hoạt động tốt trước đó. Cả đội thiết kế và nhân viên phòng lab phía tiếp tân đều bị ảnh hưởng.",
+            "objective": "Khôi phục truy cập HTTP từ PC-Design đến Portal-01 và ping từ PC-Lab đến Portal-01.",
+            "hints": [
+                "Lưu lượng từ PC-Design và PC-Lab hướng đến Portal-01 dừng lại ở Router-Main, không thể tìm cách gửi đến.",
+                "Router-Main không có tuyến đường đến Portal-01 vì địa chỉ của Portal-01 không thực sự thuộc mạng đích 10.0.24.0 mà nó kết nối.",
+                "Trên Portal-01, đặt địa chỉ cổng 0 thành 10.0.24.1 với số cổng 255.255.255.0 để nó khớp với mạng đích của Router-Main."
+            ],
+            "explanation": "Một thiết bị phải sử dụng một địa chỉ thuộc mạng đích của liên kết mà nó được cắm vào. Địa chỉ của Portal-01 nằm ngoài 10.0.24.0/24, vì vậy Router-Main không có tuyến đường hợp lệ để tiếp cận nó, chặn lưu lượng từ mọi mạng đích khác."
+        },
+        "af": {
+            "title": "Portal Onbereikbaar Vanaf Beide Verdiepings",
+            "story": "Personeel op die PC-Design en PC-Lab rapporteer dat Portal-01 vanmôre nie laai of antwoord gee nie, alhoewel dit voorheen goed gewerk het. Beide die ontwerpers en die resepsie-kant laboratoriumstaf is geraak.",
+            "objective": "HTTP-toegang van PC-Design na Portal-01 en ping van PC-Lab na Portal-01 herstel.",
+            "hints": [
+                "Verkeer van PC-Design en PC-Lab na Portal-01 stop by Router-Main, wat geen manier kan vind om dit af te lewer nie.",
+                "Router-Main het geen roeteringstabel na Portal-01 nie omdat Portal-01 se adres nie werklik tot die 10.0.24.0 bestemmingsnetwerk waaraan dit gekoppel is, behoort nie.",
+                "Op Portal-01, stel sy poort 0-adres in op 10.0.24.1 met masker 255.255.255.0 sodat dit ooreenstem met Router-Main se bestemmingsnetwerk."
+            ],
+            "explanation": "'n Toestel moet 'n adres gebruik wat tot die bestemmingsnetwerk van die skakel waaraan dit gekoppel is, behoort. Portal-01 se adres was buite 10.0.24.0/24, dus Router-Main het geen geldige roeteringstafel gehad om dit te bereik nie, wat verkeer van elke ander bestemmingsnetwerk blokkeer."
+        },
+        "am": {
+            "title": "Portal-01 ከሁለቱም ፎቅ ላይ ሊደርስ አይችልም",
+            "story": "በዲዛይን እና ላብ ፒሲዎች ላይ ያሉ ሠራተኞች ይገልጻሉ በዚህ ጠዋት Portal-01 አይጫን ወይም ምንም ምላሽ አይሰጥም። ቀደም ሲል ደንበ አስተናጋጅ ቢሆንም፣ የዲዛይን ቡድንና ምርት-ጎን ላብ ሠራተኞች ተጎዳ ናቸው።",
+            "objective": "ከ PC-Design ወደ Portal-01 HTTP ዳሰስ ወደነበሱ እና ከ PC-Lab ወደ Portal-01 ping ወደነበሱ።",
+            "hints": [
+                "ከPC-Design እና PC-Lab ወደ Portal-01 የሚሄደው ትራፊክ በRouter-Main ላይ ይቆማል፣ ይህም ነገሮችን ሊያሳድር ወደ ምንም መንገድ ማግኘት ይችላል።",
+                "Router-Main ወደ Portal-01 ምንም ልኩ የለውም ምክንያቱም Portal-01 ራሱ የመድረሻ ሰለበት በ 10.0.24.0 ሴቦቅ ውስጥ ነው መደበቅ ብዙ።",
+                "በ Portal-01 ላይ፣ የ port 0 ሰለበት ስብስብ 10.0.24.1 ማስክ 255.255.255.0 ተዘጋጅ ስለዚህ Router-Main ቅንጅ ካርታ።"
+            ],
+            "explanation": "አሳሙ ብርሃነ ሥሪቱ ከሚገኙበት ሴቦቅ ጋር ተራቂ ውስጥ ያገኛ ነው። Portal-01 ሰለበት ከ 10.0.24.0/24 ውጭ ነበር፣ ስለዚህ Router-Main ወደ እሱ ሊደርስ ልክ መሪ ሌለበት ነበር፣ ከሌሎች ሴቦቅ ሁሉ ትራፊክ ሰምሞ ነበር።"
+        },
+        "ar": {
+            "title": "عدم توفر Portal من الطابقين",
+            "story": "يبلغ الموظفون على أجهزة PC-Design و PC-Lab أن Portal-01 لا يتحمل أو يستجيب على الإطلاق في هذا الصباح، على الرغم من أنه كان يعمل بشكل جيد من قبل. يتأثر كل من فريق التصميم وموظفي المختبر من جانب الاستقبال.",
+            "objective": "استرجع وصول HTTP من PC-Design إلى Portal-01 و ping من PC-Lab إلى Portal-01.",
+            "hints": [
+                "حركة المرور من PC-Design و PC-Lab التي تتجه إلى Portal-01 تتوقف عند Router-Main، والذي لا يمكنه العثور على طريقة لتسليمها.",
+                "Router-Main ليس لديه مسار إلى Portal-01 لأن عنوان Portal-01 الخاص به لا ينتمي فعلاً إلى الشبكة 10.0.24.0 المتصلة به.",
+                "على Portal-01، قم بتعيين عنوان المنفذ 0 إلى 10.0.24.1 مع قناع 255.255.255.0 حتى يتطابق مع شبكة Router-Main."
+            ],
+            "explanation": "يجب أن يستخدم الجهاز عنواناً ينتمي إلى الشبكة للارتباط الذي يتصل به. كان عنوان Portal-01 خارج 10.0.24.0/24، لذلك Router-Main ليس لديه مسار صالح للوصول إليه، مما يحجب حركة المرور من كل شبكة أخرى."
+        },
+        "az": {
+            "title": "Portal-01 hər iki mərtəbədən əlçatmaz",
+            "story": "Dizayn və laboratoriya kompüterlərindəki əməkdaşlar bu səhər Portal-01 yüklənmir və ya cavab vermir. Əvvəldən işləmiş olsa da, həm dizayn komandası həm də qəbul tərəfindəki laboratoriya əməkdaşları təsirlənib.",
+            "objective": "PC-Design-dən Portal-01-ə HTTP girişi və PC-Lab-dən Portal-01-ə ping bərpa edin.",
+            "hints": [
+                "PC-Design və PC-Lab-dən Portal-01-ə trafik Router-Main-də dayanır, o isə onu çatdırmaq üçün heç bir yol tapa bilmir.",
+                "Router-Main-in Portal-01-ə marşrutu yoxdur, çünki Portal-01-in ünvanı əslində bağlı olduğu 10.0.24.0 şəbəkəsinə daxil deyil.",
+                "Portal-01 üzərində port 0 ünvanını 10.0.24.1 olaraq mask 255.255.255.0 ilə təyin edin, beləliklə Router-Main-in şəbəkəsi uyğun gəlin."
+            ],
+            "explanation": "Cihaz bağlı olduğu linkin Təyinat şəbəkəsinə aid olan ünvanı istifadə etməlidir. Portal-01-in ünvanı 10.0.24.0/24-ün xaricində idi, buna görə de Router-Main-in buna çatmaq üçün etibarlı marşrutu olmadığı üçün hər başqa şəbəkədən trafiki blokladı."
+        },
+        "be": {
+            "title": "Portal-01 недаступны з абодвух паверхаў",
+            "story": "Работнікі на дызайн- і лабараторных ПК паведамляюць, што Portal-01 не загружаецца і не адказвае ўвогуле ў гэта раніцу, хаця раней ён добра працаваў. Паражданы і дызайн-каманда, і лабараторны персонал са стараны прыёму.",
+            "objective": "Аднавіце HTTP-доступ з PC-Design да Portal-01 і ping з PC-Lab да Portal-01.",
+            "hints": [
+                "Трафік з PC-Design і PC-Lab, накіраваны да Portal-01, спыняецца ў Router-Main, які не можа знайсці спосаб яго адправіць.",
+                "Router-Main не мае маршруту да Portal-01, паколькі адрас самога Portal-01 на самай справе не адносіцца да сеткі 10.0.24.0, да якой ён падключаны.",
+                "На Portal-01 установіце адрас порта 0 у значенне 10.0.24.1 з маскай 255.255.255.0, каб ён адпавядаў сеткі Router-Main."
+            ],
+            "explanation": "Прылада павінна выкарыстоўваць адрас, што адносіцца да сеткі вязі, да якой яна падключана. Адрас Portal-01 быў па-за 10.0.24.0/24, таму Router-Main не мела сапраўдного маршруту да яго, блакіруючы трафік з кожнай іншай сеткі."
+        },
+        "bg": {
+            "title": "Portal-01 недостъпен от двата етажа",
+            "story": "Персоналът на дизайн и лаборатория на ПК съобщават, че Portal-01 не се зарежда и не отговаря съобще в това утро, въпреки че преди работеше добре. Засегнати са както дизайн-екипа, така и лаборатория персонал от приемната страна.",
+            "objective": "Възстановете HTTP достъп от PC-Design до Portal-01 и ping от PC-Lab до Portal-01.",
+            "hints": [
+                "Трафик от PC-Design и PC-Lab, насочен към Portal-01, спира на Router-Main, който не може да намери начин да го доставиди.",
+                "Router-Main няма маршрут към Portal-01, защото адресът на Portal-01 всъщност не принадлежи на подсетката 10.0.24.0, към която е свързан.",
+                "На Portal-01 задайте адреса на порт 0 на 10.0.24.1 с маска 255.255.255.0, така че да съответства на подсетката на Router-Main."
+            ],
+            "explanation": "Устройството трябва да използва адрес, който принадлежи на подсетката на връзката, към която е свързано. Адресът на Portal-01 беше извън 10.0.24.0/24, така че Router-Main нямаше валиден маршрут до него, което блокира трафика от всяка друга подсетка."
+        },
+        "bn": {
+            "title": "দুটি ফ্লোর থেকে Portal-01 পৌঁছানো যাচ্ছে না",
+            "story": "ডিজাইন এবং ল্যাব পিসির কর্মীরা রিপোর্ট করছেন যে Portal-01 আজ সকাল থেকে লোড হচ্ছে না বা কোনো সাড়া দিচ্ছে না, যদিও এটি আগে ভালো কাজ করেছিল। ডিজাইন টিম এবং রিসেপশন পাশের ল্যাব কর্মীরা উভয়ই প্রভাবিত।",
+            "objective": "PC-Design থেকে Portal-01 এ HTTP অ্যাক্সেস এবং PC-Lab থেকে Portal-01 এ ping পুনরুদ্ধার করুন।",
+            "hints": [
+                "PC-Design এবং PC-Lab থেকে Portal-01 এর দিকে যাওয়া ট্রাফিক Router-Main এ থেমে যায়, যা এটি পৌঁছানোর কোনো উপায় খুঁজে পায় না।",
+                "Router-Main এর Portal-01 এ কোনো রুট নেই কারণ Portal-01 এর নিজের ঠিকানা আসলে যে 10.0.24.0 সাবনেটের সাথে সংযুক্ত তার অন্তর্গত নয়।",
+                "Portal-01 এ, এর পোর্ট 0 ঠিকানা 10.0.24.1 এবং মাস্ক 255.255.255.0 এ সেট করুন যাতে এটি Router-Main এর সাবনেটের সাথে মেলে।"
+            ],
+            "explanation": "একটি ডিভাইসকে এমন একটি ঠিকানা ব্যবহার করতে হবে যা এটি সংযুক্ত লিঙ্কের সাবনেটের অন্তর্গত। Portal-01 এর ঠিকানা 10.0.24.0/24 এর বাইরে ছিল, তাই Router-Main এর কাছে এটিতে পৌঁছানোর কোনো বৈধ রুট ছিল না, প্রতিটি অন্য সাবনেট থেকে ট্রাফিক ব্লক করেছিল।"
+        },
+        "ca": {
+            "title": "Portal Inabastible des de Tots dos Pisos",
+            "story": "El personal dels PC de disseny i laboratori informa que Portal-01 no es carrega ni respon avui, malgrat que funcionava perfectament abans. Tant l'equip de disseny com el personal del laboratori de la banda de recepció es veuen afectats.",
+            "objective": "Restaureu l'accés HTTP de PC-Design a Portal-01 i ping de PC-Lab a Portal-01.",
+            "hints": [
+                "El tràfic dels PC-Design i PC-Lab cap a Portal-01 s'atura a Router-Main, que no pot trobar manera d'entregar-ho.",
+                "Router-Main no té ruta a Portal-01 perquè l'adreça de Portal-01 no pertany realment a la subxarxa 10.0.24.0 a la qual està connectada.",
+                "A Portal-01, definiu l'adreça del port 0 a 10.0.24.1 amb màscara 255.255.255.0 perquè coincideixi amb la subxarxa de Router-Main."
+            ],
+            "explanation": "Un dispositiu ha d'utilitzar una adreça que pertanyi a la subxarxa de l'enllaç al qual està connectat. L'adreça de Portal-01 estava fora de 10.0.24.0/24, per la qual cosa Router-Main no tenia ruta vàlida per arribar-hi, bloqueant el tràfic de totes les altres subxarxes."
+        },
+        "cs": {
+            "title": "Portal Nedostupný z Obou Podlaží",
+            "story": "Zaměstnanci na počítačích pro návrh a laboratoř hlásí, že Portal-01 dnes ráno se nezavede ani neodpovídá, přestože předtím fungoval správně. Postiženi jsou jak tým pro návrh, tak personál laboratoře na straně recepce.",
+            "objective": "Obnovte HTTP přístup z PC-Design na Portal-01 a ping z PC-Lab na Portal-01.",
+            "hints": [
+                "Provoz z PC-Design a PC-Lab směřující k Portal-01 se zastaví na Router-Main, která nemůže najít způsob, jak jej dodat.",
+                "Router-Main nemá cestu k Portal-01, protože vlastní adresa Portal-01 ve skutečnosti nepatří do podsítě 10.0.24.0, ke které je připojena.",
+                "Na Portal-01 nastavte adresu portu 0 na 10.0.24.1 s maskou 255.255.255.0, aby odpovídala podsíti Router-Main."
+            ],
+            "explanation": "Zařízení musí používat adresu, která patří do podsítě odkazu, ke kterému je připojeno. Adresa Portal-01 byla mimo 10.0.24.0/24, takže Router-Main neměla platnou cestu, aby ji dosáhla, což blokuje provoz ze všech ostatních podsítí."
+        },
+        "da": {
+            "title": "Portal Unaccessible fra Begge Etager",
+            "story": "Personalet på design- og lab-pc'erne rapporterer, at Portal-01 ikke indlæser eller svarer i dag, selvom det fungerede fint før. Både designholdet og receptionsiden labpersonale er berørt.",
+            "objective": "Gendan HTTP-adgang fra PC-Design til Portal-01 og ping fra PC-Lab til Portal-01.",
+            "hints": [
+                "Trafik fra både PC-Design og PC-Lab mod Portal-01 stoppet ved Router-Main, som ikke kan finde en måde at levere det på.",
+                "Router-Main har ingen rute til Portal-01, fordi Portal-01's egen adresse faktisk ikke tilhører det 10.0.24.0 destinationsnetværk, den er forbundet til.",
+                "Indstil på Portal-01 dens port 0 adresse til 10.0.24.1 med maske 255.255.255.0, så det matcher Router-Main's subnet."
+            ],
+            "explanation": "En enhed skal bruge en adresse, der tilhører det destinationsnetværk, som linket den er tilsluttet til. Portal-01's adresse var uden for 10.0.24.0/24, så Router-Main havde ingen gyldig rute til at nå den, hvilket blokerede trafik fra enhver anden subnetmaske."
+        },
+        "el": {
+            "title": "Portal Δυσπρόσιτη από Όλες τις Ταρίδες",
+            "story": "Το προσωπικό στους υπολογιστές σχεδίασης και εργαστηρίου αναφέρει ότι το Portal-01 δεν φορτώνεται ή δεν αποκρίνεται καθόλου σήμερα το πρωί, ενώ λειτουργούσε άψογα πριν. Τόσο η ομάδα σχεδίασης όσο και το προσωπικό του εργαστηρίου της πλευράς υποδοχής επηρεάζονται.",
+            "objective": "Επαναφέρετε την πρόσβαση HTTP από το PC-Design στο Portal-01 και ping από το PC-Lab στο Portal-01.",
+            "hints": [
+                "Η κυκλοφορία από PC-Design και PC-Lab προς Portal-01 σταματά στο Router-Main, το οποίο δεν μπορεί να βρει τρόπο να το παραδώσει.",
+                "Το Router-Main δεν έχει διαδρομή προς Portal-01 επειδή η δική της διεύθυνση δεν ανήκει στο δίκτυο προορισμού 10.0.24.0 στο οποίο είναι συνδεδεμένο.",
+                "Στο Portal-01, ορίστε τη διεύθυνση θύρας 0 σε 10.0.24.1 με μάσκα 255.255.255.0, ώστε να ταιριάζει με το δίκτυο του Router-Main."
+            ],
+            "explanation": "Ένα δEvice πρέπει να χρησιμοποιεί μια διεύθυνση που ανήκει στο δίκτυο προορισμού της σύνδεσης στην οποία είναι συνδεδεμένο. Η διεύθυνση του Portal-01 ήταν έξω από το 10.0.24.0/24, ώστε το Router-Main να μην έχει έγκυρη διαδρομή για να το φτάσει, διακόπτοντας την κυκλοφορία από κάθε άλλο δίκτυο."
+        },
+        "et": {
+            "title": "Portaal on mõlemalt korruselt kättesaamatu",
+            "story": "Disaini- ja laboriarvutite PC-Design ja PC-Lab kasutajad teatavad, et Portal-01 ei laadi ega vasta üldse täna hommikul, kuigi see töötas varem korralikult. Nii disainimeeskond kui ka vastuvõtuteeninduse laboriosakonnal on probleemid.",
+            "objective": "Taastada HTTP-juurdepääs PC-Design-ist Portal-01-le ja ping-ühendus PC-Lab-ist Portal-01-le.",
+            "hints": [
+                "Liiklus PC-Design-ist ja PC-Lab-ist Portal-01-le peatub Router-Main kohal, millel pole viisi selle kohaletoimetamiseks.",
+                "Router-Main-il pole marsruuti Portal-01-le, sest Portal-01 enda aadress ei kuulu tegelikult alamvõrku 10.0.24.0, millega ta on ühendatud.",
+                "Seadistage Portal-01-l pordinumber 0 aadressi 10.0.24.1 masknumbriga 255.255.255.0, et see vastaks Router-Main-i alamvõrgule."
+            ],
+            "explanation": "Seade peab kasutama aadressi, mis kuulub sellesse alamvõrku, kuhu ta on ühendatud. Portal-01 aadress oli väljaspool 10.0.24.0/24-t, seega Router-Main-il pole kehtivat marsruuti selleni jõudmiseks, mis blokeeris liikluse igast teisest alamvõrgust."
+        },
+        "eu": {
+            "title": "Portala ezinegarria bi solairutan",
+            "story": "PC-Design eta PC-Lab ostalarietan lanean ari diren enpleguatuak aditzera ematen dute Portal-01 ez dagoela kargatzen eta ez dela erantzuten gaur goizean, nahiz eta lehenago ondo funtzionatzen zuen. Diseinuaren taldea eta jasotzailearen alboaren laborategiaren enpleguatuak kaltetuta daude.",
+            "objective": "Berreskuratu HTTP sarbidea PC-Design-etik Portal-01-era eta ping-a PC-Lab-etik Portal-01-era.",
+            "hints": [
+                "PC-Design-etik eta PC-Lab-etik Portal-01-era doazen trafikoa Router-Main-ean gelditzen da, eta honek ez du bide nikirik ahalbidetzeko.",
+                "Router-Main-ek ez du Portal-01-erako bidereraketa-ruta, Portal-01-ren helbideak ez duelako 10.0.24.0 sare-helmugari atxiki behar zaion sarea, bidetik konektatuta dago.",
+                "Portal-01-n, adierazi 0 atakaren helbidea 10.0.24.1 maskara-zenbakiarekin 255.255.255.0, Router-Main-aren sareari datxekita egon daitezen."
+            ],
+            "explanation": "Gailu bat helbide bat erabili behar du, haren konektatuta dauden estekaren sare-helmugari atxiki beharko zaiona. Portal-01-ren helbidea zen 10.0.24.0/24-tik at, orduan Router-Main-ek ez zuen biderekatze-ruta egokia, trafikoa inguruko sare-helmugien ganetik blokeatu baitzuen."
+        },
+        "fa": {
+            "title": "پورتال از هر دو طبقه غیرقابل دسترس است",
+            "story": "کارکنانی که در PC-Design و PC-Lab کار می‌کنند می‌گویند که Portal-01 صبح امروز بار نمی‌شود و اصلاً پاسخ نمی‌دهد، اگرچه قبل از این به خوبی کار می‌کرد. تیم طراحی و کارکنان آزمایشگاه سمت استقبال تحت تأثیر قرار گرفته‌اند.",
+            "objective": "بازیابی دسترسی HTTP از PC-Design به Portal-01 و ping از PC-Lab به Portal-01.",
+            "hints": [
+                "ترافیک از PC-Design و PC-Lab به سمت Portal-01 در Router-Main متوقف می‌شود، که نتوانسته راهی برای تحویل آن بیابد.",
+                "Router-Main مسیری به Portal-01 ندارد زیرا آدرس خود Portal-01 در واقع متعلق به شبکه 10.0.24.0 نیست که به آن متصل است.",
+                "در Portal-01، آدرس پورت 0 را به 10.0.24.1 با ماسک 255.255.255.0 تنظیم کنید تا با شبکه Router-Main مطابقت داشته باشد."
+            ],
+            "explanation": "دستگاه باید از آدرسی استفاده کند که به شبکه‌ای تعلق دارد که به آن متصل است. آدرس Portal-01 خارج از 10.0.24.0/24 بود، بنابراین Router-Main هیچ مسیر معتبری برای رسیدن به آن نداشت و ترافیک را از هر شبکه دیگری مسدود کرد."
+        },
+        "fi": {
+            "title": "Portaali ei saavuteta kummaltalakaan",
+            "story": "PC-Design- ja PC-Lab-tietokoneiden käyttäjät raportoivat, että Portal-01 ei lataudu tai vastaa lainkaan tänä aamuna, vaikka se toimi aiemmin. Sekä suunnittelutiimi että vastaanottopuolen laboratoriohenkilökunta ovat vaikutuksen alaisena.",
+            "objective": "Palauta HTTP-yhteys PC-Design-sta Portal-01-lle ja ping PC-Lab-sta Portal-01-lle.",
+            "hints": [
+                "Liikenne PC-Design-stä ja PC-Lab-sta Portal-01-lle pysähtyy Router-Main-iin, joka ei löydä tapaa toimittaa sitä.",
+                "Router-Main-lla ei ole reittiä Portal-01-lle, koska Portal-01-n oma osoite ei kuulu 10.0.24.0-verkkoon, johon se on liitetty.",
+                "Aseta Portal-01-llä portin 0 osoitteeksi 10.0.24.1 maskilla 255.255.255.0, jotta se vastaa Router-Main-in verkkoa."
+            ],
+            "explanation": "Laitteen on käytettävä osoitetta, joka kuuluu siihen verkkoon, johon se on kytketty. Portal-01-n osoite oli 10.0.24.0/24-verkon ulkopuolella, joten Router-Main-illa ei ollut pätevää reittiä siihen, mikä esti liikennettä jokaisesta muusta verkosta."
+        },
+        "fil": {
+            "title": "Portal ay Hindi Maaabot Mula sa Parehong Palapag",
+            "story": "Ang mga kawani sa PC-Design at PC-Lab ay nag-ulat na ang Portal-01 ay hindi naglo-load o tumutugon sa lahat ngayong umaga, kahit na ito ay gumagana nang maayos dati. Ang parehong design team at reception-side lab staff ay apektado.",
+            "objective": "Ibalik ang HTTP access mula sa PC-Design sa Portal-01 at ping mula sa PC-Lab sa Portal-01.",
+            "hints": [
+                "Ang traffic mula sa PC-Design at PC-Lab patungo sa Portal-01 ay tumitigil sa Router-Main, na hindi makahanap ng paraan upang ihatid ito.",
+                "Ang Router-Main ay walang route sa Portal-01 dahil ang address ng Portal-01 ay hindi talaga nabibilang sa 10.0.24.0 subnet kung saan ito konektado.",
+                "Sa Portal-01, itakda ang port 0 address sa 10.0.24.1 na may mask 255.255.255.0 upang tumugma sa subnet ng Router-Main."
+            ],
+            "explanation": "Ang device ay dapat gumamit ng address na nabibilang sa subnet ng link kung saan ito nakakonekta. Ang address ng Portal-01 ay nasa labas ng 10.0.24.0/24, kaya ang Router-Main ay walang valid route upang maabot ito, na nagblok sa traffic mula sa bawat iba pang subnet."
+        },
+        "gl": {
+            "title": "Portal Non Alcanzable Desde Ambos Pisos",
+            "story": "O persoal nos PCs de deseño e laboratorio informan de que Portal-01 non carga nin responde en absoluto esta mañá, aínda que funcionou ben antes. Ambos os equipos de deseño e o persoal do laboratorio na recepción están afectados.",
+            "objective": "Restaurar acceso HTTP desde PC-Design a Portal-01 e ping desde PC-Lab a Portal-01.",
+            "hints": [
+                "O tráfico desde PC-Design e PC-Lab cara a Portal-01 détense en Router-Main, que non pode atopar forma de entregalo.",
+                "Router-Main non ten ruta a Portal-01 porque a dirección propia de Portal-01 non pertence realmente á subred 10.0.24.0 á que está conectada.",
+                "En Portal-01, establece o enderezo do porto 0 a 10.0.24.1 coa máscara 255.255.255.0 para que coincida coa subred de Router-Main."
+            ],
+            "explanation": "Un dispositivo debe usar un enderezo que pertenza á subred da ligazón á que está conectado. O enderezo de Portal-01 estaba fora de 10.0.24.0/24, polo que Router-Main non tiña ruta válida para alcanzalo, bloqueando o tráfico desde calquera outra subred."
+        },
+        "he": {
+            "title": "פורטל בלתי נגיש משתי הקומות",
+            "story": "צוות התכנון ומעבדה מדווחים כי Portal-01 לא נטען או אינו מגיב כלל הבוקר, אם כי הוא עבד בסדר קודם לכן. הן צוות העיצוב והן צוות המעבדה בצד הקבלה מושפעים.",
+            "objective": "שחזר גישת HTTP מ-PC-Design ל-Portal-01 ו-ping מ-PC-Lab ל-Portal-01.",
+            "hints": [
+                "תעבורה מ-PC-Design ו-PC-Lab לכיוון Portal-01 עוצרת ב-Router-Main, שאינו יכול למצוא דרך להעביר אותה.",
+                "ל-Router-Main אין מסלול ל-Portal-01 כי כתובת ה-portal-01 שלו אינה שייכת בפועל לרשת 10.0.24.0 אליה היא מחוברת.",
+                "ב-Portal-01, הגדר את כתובת הפורט 0 ל-10.0.24.1 עם מסכה 255.255.255.0 כדי שתתאים לתת-רשת של Router-Main."
+            ],
+            "explanation": "התקן חייב להשתמש בכתובת השייכת לתת-רשת של הקישור אליו הוא מחובר. כתובת Portal-01 הייתה מחוץ ל-10.0.24.0/24, אז Router-Main לא היה לו מסלול תקף להגעה אליו, וחסם תעבורה מכל תת-רשת אחרת."
+        },
+        "hr": {
+            "title": "Portal nije dostupan s oba kata",
+            "story": "Osoblje na računalima za dizajn i laboratorij prijavljuje da se Portal-01 uopće ne učitava ili ne odgovara ovog jutra, iako je prije radio bez problema. Pogođeni su i tim za dizajn i laboratorijski osoblje na recepciji.",
+            "objective": "Vratite HTTP pristup s PC-Design na Portal-01 i ping s PC-Lab na Portal-01.",
+            "hints": [
+                "Promet s PC-Design i PC-Lab prema Portal-01 zaustavlja se na Router-Main, koji ne može pronaći način da ga dostavi.",
+                "Router-Main nema rute do Portal-01 jer Portal-01 vlastita adresa zapravo ne pripada podsaveznoj mreži 10.0.24.0 na koju je povezana.",
+                "Na Portal-01 postavite adresu porta 0 na 10.0.24.1 s maskom 255.255.255.0 tako da odgovara podsavezenoj mreži Router-Main."
+            ],
+            "explanation": "Uređaj mora koristiti adresu koja pripada podsavezenoj mreži veze na koju je priključen. Adresa Portal-01 bila je izvan 10.0.24.0/24, tako da Router-Main nije imao valjanu rutu da joj dosegne, čime je blokirao promet iz bilo kojeg drugog podsavestva."
+        },
+        "hu": {
+            "title": "Portál mindkét szintről nem érhető el",
+            "story": "A tervezési és labor PC-ket kezelő munkatársak azt jelzik, hogy a Portal-01 ma reggel egyáltalán nem töltődik be vagy nem válaszol, pedig korábban jól működött. Mind a tervezési csapat, mind a recepció melletti labor munkatársai érintettek.",
+            "objective": "Állítsa vissza a HTTP-hozzáférést PC-Design-ről Portal-01-re és a pingeket PC-Lab-ről Portal-01-re.",
+            "hints": [
+                "A PC-Design és PC-Lab felöl a Portal-01 felé irányuló forgalom a Router-Main helyen megáll, amely nem találja meg az érkeztetés módját.",
+                "A Router-Main nem rendelkezik útvonallal Portal-01-hez, mert a Portal-01 saját címe valójában nem tartozik a 10.0.24.0 alhálózathoz, amelyhez csatlakozik.",
+                "A Portal-01 esetében állítsa a 0 port címét 10.0.24.1-re a 255.255.255.0 maszkkal, hogy megegyezzen a Router-Main alhálózatával."
+            ],
+            "explanation": "Az eszköznek olyan címet kell használnia, amely az ahhoz csatlakoztatott hivatkozás alhálózatához tartozik. A Portal-01 címe az 10.0.24.0/24 tartományon kívül volt, így a Router-Main-nek nem volt érvényes útvonala az eléréshez, ami bármely más alhálózatról érkező forgalmat blokkolhatott."
+        },
+        "hy": {
+            "title": "Պորտալ մատչելի չէ երկու հարկերից",
+            "story": "Դիզայն և լաբորատորիայի համակարգիչների աշխատողներ հայտնել են, որ Portal-01 այս առավոտ չի բեռնվում և ընդհանրապես արձագանքում չէ, թեև նախ լավ աշխատում էր: Ինչպես դիզայն թիմը, այնպես էլ ընդունելության կողմի լաբորատորիայի անձնակազմ ազդվածություն են ունենում:",
+            "objective": "Վերականգնել HTTP մուտքը PC-Design-ից Portal-01 և ping-ը PC-Lab-ից Portal-01 դեպ:",
+            "hints": [
+                "PC-Design-ից և PC-Lab-ից Portal-01 ուղղվածու traffick-ը կանգ է առնում Router-Main-ում, որը չի կարողանում որևէ ճանապարհ գտնել դա մատակարարելու համար:",
+                "Router-Main-ը չունի Portal-01-ի հետ ուղի, քանի որ Portal-01-ի հասցեն իրականում չի պատկանում 10.0.24.0 ենթա-ցանցին, որին միացված է:",
+                "Portal-01-ում սահմանել դրա պորտ 0 հասցեն 10.0.24.1 դիմակով 255.255.255.0, որպեսզի համընկնի Router-Main-ի ենթա-ցանցի հետ:"
+            ],
+            "explanation": "Սարքը պետք է օգտագործի այն հասցեն, որը պատկանում է այն հղման ենթա-ցանցին, որին միացված է: Portal-01-ի հասցեն արտ գտնվում էր 10.0.24.0/24 հատկացումից, ուստի Router-Main-ը չուներ վավեր երթուղ՝ այն հասնելու համար, ինչը փակել էր traffic-ը ամբողջ այլ ենթա-ցանցերից:"
+        },
+        "is": {
+            "title": "Gátt ósóðin frá báðum hæðum",
+            "story": "Starfsfólk á hönnun og rannsóknastofum PCs tilkynna að Portal-01 hleðst ekki og svarar alls ekki þessi morgun, þótt það hafi virkað vel áður. Bæði hönnun teymið og móttökuhlið rannsóknarstofu starfsfólk eru fyrir áhrifum.",
+            "objective": "Endurheimta HTTP aðgang frá PC-Design til Portal-01 og ping frá PC-Lab til Portal-01.",
+            "hints": [
+                "Umferð frá báðum PC-Design og PC-Lab sem stefnir til Portal-01 stöðvast á Router-Main, sem getur ekki fundið leið til að afhenda hana.",
+                "Router-Main hefur enga leið til Portal-01 vegna þess að eigin heimilisfang Portal-01 tilheyrir ekki þeim 10.0.24.0 netinu sem það er tengt við.",
+                "Á Portal-01, stilltu port 0 heimilisfang þess á 10.0.24.1 með maska 255.255.255.0 svo það passi við net Router-Main."
+            ],
+            "explanation": "Tæki verður að nota heimilisfang sem tilheyrir netunum á tengslinu sem það er tengt við. Heimilisfang Portal-01 var utan 10.0.24.0/24, þannig að Router-Main hafði enga gilda leið til þess að ná til hennar, sem lokaði umferð frá hverju öðru neti."
+        },
+        "ka": {
+            "title": "პორტალი მიუწვდომელია ორივე სართულიდან",
+            "story": "დიზაინის და ლაბორატორიის კომპიუტერების ოპერატორებმა გაიგეს, რომ Portal-01 დღეს დილით არ იტვირთება და საერთოდ არ პასუხობს, თუმცა ადრე კარგად მუშაობდა. დიზაინის გუნდი და მიმღები მხარის ლაბორატორიის ჯამი დაზიანებულია.",
+            "objective": "აღადგინეთ HTTP წვდომა PC-Design-ից Portal-01-მდე და ping PC-Lab-ից Portal-01-მდე.",
+            "hints": [
+                "ტრაფიკი PC-Design-დან და PC-Lab-დან Portal-01-ში მიმავალი Router-Main-ზე ჩერდება, რომელიც ვერ პოულობს მისი მოწოდების გზას.",
+                "Router-Main-ს Portal-01-ისთან მარშრუტი არ აქვს, რადგან Portal-01-ის საკუთარი მისამართი სინამდვილეში არ ეკუთვნის 10.0.24.0 ქსელს, რომელზეც დაკავშირებულია.",
+                "Portal-01-ზე დააყენეთ მისი 0 პორტი მისამართი 10.0.24.1 ნიღაბით 255.255.255.0, რათა დაემთხვეს Router-Main-ის ქსელს."
+            ],
+            "explanation": "მოწყობილობამ უნდა გამოიყენოს მისამართი, რომელიც ეკუთვნის იმ ქსელის ქვეშეთი, რომელსაც იგი უკავშირდება. Portal-01-ის მისამართი იყო 10.0.24.0/24-ს გარეთ, ასე რომ Router-Main-ს მისამდე ვრცელი მარშრუტი არ ჰქონდა, რაც ყველა სხვა ქვეშეთიდან ტრაფიკს აკეტებდა."
+        },
+        "kk": {
+            "title": "Портал екі қабаттан қол жетпейді",
+            "story": "Дизайн және зертханалық компьютерлердің қызметкерлері сөйлеген, Portal-01 бүгін таңертең жүктелмейді және мүлдем жауап бермейді, бірінші өндіктерінде жақсы жұмыс істеді. Дизайн командасы да, қабылдау жағын зертханалық персоналы да әсерленді.",
+            "objective": "PC-Design-дың Portal-01-ге HTTP қол жетуін және PC-Lab-дың Portal-01-ге ping-ін қалпына келтіріңіз.",
+            "hints": [
+                "PC-Design-тен және PC-Lab-тен Portal-01-ге бағытталған трафик Router-Main-де тоқтайды, ол оны жеткізу жолын таба алмайды.",
+                "Router-Main-де Portal-01-ге маршрут жоқ, өйткені Portal-01-дің өндіктері 10.0.24.0 ұйымдастырылған ішіне шынымдалмайды, ол қосылған.",
+                "Portal-01-де оның 0 портының мекенжайын 10.0.24.1 өндіктерінде 255.255.255.0 маска арқылы орнатыңыз, осылайша Router-Main-дің ұйымдастырылғанына сәйкес келетін болуы."
+            ],
+            "explanation": "Құрылғы оған қосылған сілтеменің ұйымдастырылғанына арналған мекенжайды пайдалану керек. Portal-01-дің мекенжайы 10.0.24.0/24-тың сыртында болды, сондықтан Router-Main-де оған жету үшін жарамды маршруты болмады, бұл барлық басқа ұйымдастырылғаннан трафикті бөгетті."
+        },
+        "km": {
+            "title": "ច្រក​មិនលេចធ្វើ ដាច់​ឧបករណ៍​ ពីលើ​ច្រក​ពេល",
+            "story": "និយោជិតនៅលើ PC-Design និង PC-Lab របាយការណ៍ថា Portal-01 មិនផ្ទុក ឬឆ្លើយសម្ភាសន៍ក្នុងពេលព្រឹក ទោះបីជាវាបានដំណើរការល្អមុនគេក៏ដោយ។ ក្រុម​ការ​ងារ​ដូច​ក្នុង​ការ​ទស្សន៍​ទាយ​ក៏ដូច​ជា​លភ​ឧបករណ៍​​ដ្ឋាន​ធីប៊ូ​ដែល​គេ​បាន​ប៉ះ​ប៉ូង​។",
+            "objective": "ស្ដារលទ្ធភាព HTTP ពី PC-Design ទៅ Portal-01 ហើយ ping ពី PC-Lab ទៅ Portal-01។",
+            "hints": [
+                "ចរាចរ​រង្វាន​ពី PC-Design និង PC-Lab មានទិសដៅទៅ Portal-01 ឈប់នៅ Router-Main ដែលមិនអាចស្វាងរក វិធីដើម្បីផ្ដល់ជូនវា។",
+                "Router-Main មិនមាន មគ្គ​ទៅ Portal-01 ពីព្រោះលេខ Portal-01 មិនពិតជាធ្វើឲ្យ 10.0.24.0 បណ្ដាញគេលើឧបករណ៍ដែលពាក់ព័ន្ធ។",
+                "នៅលើ Portal-01 សូមកំណត់ដាច់ आपके 0 លេខច្រក ទៅលេខ 10.0.24.1 ដែលមាន ដាច់ 255.255.255.0 ដូច្នេះវាកាច់ Router-Main ថាមវន្ត។"
+            ],
+            "explanation": "ឧបករណ៍​ត្រូវ​ប្រើ​ដាច់​ដែល​ទាក់ទង​ទៅ​បណ្ដាញ​ដែល​ផ្តល់​ដល់។ លេខ Portal-01 មាននៅក្រៅ 10.0.24.0/24 ដូច្នេះ Router-Main មិនមានមគ្គ​ដែលបាន​ផ្ដល់​ឲ្យ​ដើម្បីឈានទៅ ដែលរារាំង​ចរាចរ​ពីបណ្ដាញ​ផ្សេងទៀត។"
+        },
+        "kn": {
+            "title": "ಎರಡೂ ಮುನ್ನಡೆಯಿಂದ Portal-01 ತಲುಪಲಿಕ್ಕೆ ಸಾಧ್ಯವಿಲ್ಲ",
+            "story": "ಡಿজೈನ್ ಮತ್ತು ಲ್ಯಾಬ್ PC ಗಳಲ್ಲಿರುವ ಸಿಬ್ಬಂದಿ ರವರು ಈ ಬೆಳಿಗ್ಗೆ Portal-01 ತುಂಬಿಕೊಳ್ಳುತ್ತಿಲ್ಲ ಅಥವಾ ಸಾಕಾರ ನೀಡುತ್ತಿಲ್ಲ ಎಂದು ವರದಿ ಮಾಡುತ್ತಿದ್ದಾರೆ, ಇದು ಮೊದಲು ಬರೀ ಸರಿಸಲಿತ್ತಿದೆ. ಡಿಜೈನ್ ಟೀಮ್ ಮತ್ತು ರಿಸೆಪ್ಷನ್-ಪಾಶ್ವೆ ಲ್ಯಾಬ್ ಸಿಬ್ಬಂದಿ ಎರಡೂ ಪ್ರಭಾವಿತವಾಗಿದೆ.",
+            "objective": "PC-Design ನಿಂದ Portal-01 ಗೆ HTTP ಪ್ರವೇಶವನ್ನು ಪುನಃಸ್ಥಾಪಿಸಿ ಮತ್ತು PC-Lab ನಿಂದ Portal-01 ಗೆ ping ಮಾಡಿ.",
+            "hints": [
+                "PC-Design ಮತ್ತು PC-Lab ಎರಡರಿಂದ Portal-01 ಗೆ ಹೋಗುವ ಟ್ರಾಫಿಕ್ Router-Main ನಲ್ಲಿ ನಿಲ್ಲುತ್ತದೆ, ಇದು ಅದನ್ನು ತಲುಪಿಸಲು ಮಾರ್ಗ ಕಂಡುಹಿಡಿಯಲಾಗುವುದಿಲ್ಲ.",
+                "Router-Main ಕ್ಕೆ Portal-01 ಗೆ ಮಾರ್ಗವಿಲ್ಲ ಏಕೆಂದರೆ Portal-01 ನ ನಿಜವಾದ ವಿಳಾಸವು ಅದು ಸಂಪರ್ಕಿತವಾಗಿರುವ 10.0.24.0 ಸಾಬ್‌ನೆಟ್‌ಗೆ ಸೇರಿಲ್ಲ.",
+                "Portal-01 ನಲ್ಲಿ, ಅದರ ಪೋರ್ಟ್ 0 ವಿಳಾಸವನ್ನು 10.0.24.1 ಕ್ಕೆ ಮಾಸ್ಕ್ 255.255.255.0 ನೊಂದಿಗೆ ಹೊಂದಿಸಿ ಇದರಿಂದ ಅದು Router-Main ನ ಸಾಬ್‌ನೆಟ್‌ಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತದೆ."
+            ],
+            "explanation": "ಸಾಧನವು ಅದು ಪ್ಲಗ್ ಮಾಡಲಾದ ಲಿಂಕ್‌ನ ಸಾಬ್‌ನೆಟ್‌ಗೆ ಸೇರಿರುವ ವಿಳಾಸವನ್ನು ಬಳಸಬೇಕು. Portal-01 ನ ವಿಳಾಸವು 10.0.24.0/24 ಯ ಹೊರಗಿತ್ತು, ಆದ್ದರಿಂದ Router-Main ಗೆ ಅದನ್ನು ತಲುಪಲು ಮಾನ್ಯ ಮಾರ್ಗ ಇರಲಿಲ್ಲ, ಇದು ಪ್ರತಿ ಬೇರೆ ಸಾಬ್‌ನೆಟ್ ನಿಂದ ಟ್ರಾಫಿಕ್ ಅನ್ನು ನಿರ್ಬಂಧಿಸಿತು."
+        },
+        "ky": {
+            "title": "Эки Этажтан Portal-01 Жетпелүү Эмес",
+            "story": "Дизайн жана лабдык компьютерлердеги ишчилер Portal-01 бүгүнкү менен жүктөлүп жаткан жокту же жооп берип жаткан жокту билдирип жатышат, бирок ал эми жана эле иштеп жаткан. Дизайн чебери жана кабыл алуу жагындагы лаб ишчилери экөө тең таасир алып жатышат.",
+            "objective": "PC-Design ден Portal-01 ге HTTP кирүүнү калыбына келтирип, PC-Lab ден Portal-01 ге ping жибирүү.",
+            "hints": [
+                "PC-Design жана PC-Lab ден Portal-01 ге барган трафик Router-Main де токтоп калат жана ал аны жеткирүүнүн жолу таба алба.",
+                "Router-Main де Portal-01 ге маршруту жок, анткени Portal-01 нун көлөмү 10.0.24.0 подсеттин узгөлөмүнө (подсеттин узгөлөмүнө) таандык эмес.",
+                "Portal-01 де, порт 0 дарегин маска 255.255.255.0 болгон 10.0.24.1 ге коюп, аны Router-Main нын подсетине дал келтирүүнүз."
+            ],
+            "explanation": "Аппарат ал подключен болгон байланыштын подсеттине таандык дарегин колдонушу керек. Portal-01 нун дарегинин 10.0.24.0/24 ыналдында болгон, ошондуктан Router-Main он же-башка баардык подсеттерден трафикти блокотоо үчүн жарамдуу маршруту жок болгон."
+        },
+        "lt": {
+            "title": "Portal-01 Nepasiekiamas iš Abiejų Aukštų",
+            "story": "Darbuotojai iš dizaino ir laboratorijos kompiuterių praneša, kad šiandien ryto Portal-01 neįsiima ar neatsakyja visai, nors anksčiau jis veikė gerai. Tiek dizaino komanda, tiek priėmimo pusės laboratorijos darbuotojai yra paveikti.",
+            "objective": "Atkurti HTTP prieigą iš PC-Design į Portal-01 ir ping iš PC-Lab į Portal-01.",
+            "hints": [
+                "Duomenys iš PC-Design ir PC-Lab einantys į Portal-01 sustoja Router-Main, kuris negali rasti kelio jį pristatyti.",
+                "Router-Main neturi maršruto į Portal-01, nes Portal-01 paties adresas tikrai nepriklauso 10.0.24.0 podsistei, prie kurios jis prijungtas.",
+                "Portal-01 nustatykite jos 0 prievado adresą į 10.0.24.1 su kaukė 255.255.255.0, kad jis sutaptų su Router-Main podsistemia."
+            ],
+            "explanation": "Įrenginys turi naudoti adresą, kuris priklauso tinklo segmento, prie kurio jis yra prijungtas. Portal-01 adresas buvo išorinis 10.0.24.0/24, todėl Router-Main neturėjo galiojančios maršruto pasiekti jį, užblokavę srautą iš kiekvieno kito podsistemio."
+        },
+        "lv": {
+            "title": "Portal-01 Nav Pieejams no Abiem Stāviem",
+            "story": "Personāls no dizaina un laboratorijas datoriem ziņo, ka Portal-01 šorīt neielas vai nereaģē vispār, lai gan tas iepriekš darbojas labi. Ietekmēti gan dizaina komanda, gan pieņemšanas puses laboratorijas personāls.",
+            "objective": "Atjaunot HTTP piekļuvi no PC-Design uz Portal-01 un ping no PC-Lab uz Portal-01.",
+            "hints": [
+                "Satiksme no PC-Design un PC-Lab, kas virzās uz Portal-01, apstājas Router-Main, kurš nevar atrast veidu to piegādāt.",
+                "Router-Main nav maršruta uz Portal-01, jo Portal-01 pašas adrese patiesībā nepieder 10.0.24.0 apakštīklam, pie kura tā ir pievienota.",
+                "Portal-01 iestatiet tā 0. portu adresi uz 10.0.24.1 ar masku 255.255.255.0, lai tā atbilstu Router-Main apakštīklam."
+            ],
+            "explanation": "Ierīce jāizmanto adrese, kas pieder saites apakštīklam, pie kura tā ir pievienota. Portal-01 adrese bija ārpus 10.0.24.0/24, tāpēc Router-Main nebija derīga maršruta, lai to sasniegtu, bloķējot satikismi no katra cita apakštīkla."
+        },
+        "mk": {
+            "title": "Портал недостижим од двата спрата",
+            "story": "Персоналот на дизајнерските и лабораториските компјутери извештува дека Portal-01 воопште не се вчитува или одговара овое утро, иако претходно функционираше добро. И дизајнерскиот тим и персоналот од лабораторијата на приемната страна се погодени.",
+            "objective": "Обнови HTTP пристап од PC-Design до Portal-01 и ping од PC-Lab до Portal-01.",
+            "hints": [
+                "Сообраќајот од PC-Design и PC-Lab насочен кон Portal-01 се запира на Router-Main, кој не може да пронајде начин да го достави.",
+                "Router-Main нема рута до Portal-01 затоа што адресата на Portal-01 всушност не припаѓа на подмрежата 10.0.24.0 на која е поврзана.",
+                "На Portal-01, постави адреса на портот 0 на 10.0.24.1 со маска 255.255.255.0 така што ќе одговара на подмрежата на Router-Main."
+            ],
+            "explanation": "Уредот мора да користи адреса која припаѓа на подмрежата на врската на која е приклучен. Адресата на Portal-01 беше надвор од 10.0.24.0/24, така што Router-Main немаше валидна рута да го достигне, блокирајќи сообраќај од секоја друга подмрежа."
+        },
+        "ml": {
+            "title": "പോർട്ടൽ രണ്ട് നിലകളിൽ നിന്നും എത്തിച്ചേരാനാകില്ല",
+            "story": "ഡിസൈൻ കമ്പ്യൂട്ടറുകളിലെയും ലാബ് കമ്പ്യൂട്ടറുകളിലെയും സ്റ്റാഫ് റിപോർട്ട് ചെയ്യുന്നത് Portal-01 ഈ പ്രഭാതത്തിൽ ഒരിക്കലും ലോഡ് ചെയ്യുകയോ പ്രതികരിക്കുകയോ ചെയ്യുന്നില്ല, എന്നിരുന്നാലും അത് മുമ്പ് നന്നായി പ്രവർത്തിച്ചിരുന്നു. ഡിസൈൻ ടീമിനും റിസെപ്ഷൻ-സൈഡ് ലാബ് സ്റ്റാഫിനും ഈ പ്രശ്നം സ്പർശിക്കുന്നു.",
+            "objective": "PC-Design മുതൽ Portal-01 വരെ HTTP ആക്സസ് പുനഃസ്ഥാപിക്കുക, PC-Lab മുതൽ Portal-01 വരെ ping ചെയ്യുക.",
+            "hints": [
+                "PC-Design കൂടാതെ PC-Lab നിന്നും Portal-01 ലേക്കുള്ള ട്രാഫിക് Router-Main ൽ നിന്നും നിലക്കുന്നു, അത് എത്തിച്ചേരാൻ വഴി കണ്ടെത്താനാകില്ല.",
+                "Router-Main ന് Portal-01 ലേക്കുള്ള മാർഗം ഇല്ല കാരണം Portal-01 ന്റെ സ്വന്തം വിലാസം യഥാർത്ഥത്തിൽ അത് ബന്ധിപ്പിച്ചിരിക്കുന്ന 10.0.24.0 സബ്നെറ്റിലൊരിക്കലും കുറിച്ചില്ല.",
+                "Portal-01 എ, അതിന്റെ പോർട്ട് 0 വിലാസ് 10.0.24.1 ൽ സെറ്റ് ചെയ്യുക 255.255.255.0 മാസ്കിനൊപ്പം അതു Router-Main ന്റെ സബ്നെറ്റിന് പൊരുത്തപ്പെടുന്നു."
+            ],
+            "explanation": "ഒരു ഉപകരണം അത് സ്പർശിക്കുന്ന ലിങ്കിന്റെ സബ്നെറ്റിൽ ഉൾപ്പെടുന്ന വിലാസം ഉപയോഗിക്കേണ്ടതുണ്ട്. Portal-01 ന്റെ വിലാസ് 10.0.24.0/24 ന് പുറത്ത് ഉണ്ടായിരുന്നു, അതിനാൽ Router-Main ന് അതിൽ എത്തിച്ചേരാൻ അർഹമായ മാർഗം ഇല്ലായിരുന്നു, ഓരോ മറ്റ് സബ്നെറ്റിൽ നിന്നും ട്രാഫിക് തടയുന്നു."
+        },
+        "mn": {
+            "title": "Портал хоёр давхарт хүрэхэд ашиглагдахгүй",
+            "story": "Дизайн болон лаб компьютеруудын ажилтнууд Portal-01 энэ өглөө ачихгүй, хариулт өгөхгүй байна гэж мэдээлж байна. Өмнө нь сайн ажилладаг байсан ч. Дизайн баг болон хүлээн авалтын талын лаб ажилтнууд эдгээр асуудлаас нөлөөлөгдөж байна.",
+            "objective": "PC-Design ээс Portal-01 хүртэл HTTP хандалтыг сэргээх, PC-Lab ээс Portal-01 хүртэл ping хийнэ үү.",
+            "hints": [
+                "PC-Design болон PC-Lab ээс Portal-01 лүү очих ачаа Router-Main дээр зогсоод байгаа бөгөөд энэ нь түүнийг явуулах аргыг олж чадахгүй байна.",
+                "Router-Main д Portal-01 рүү очих маршрут байхгүй учир нь Portal-01 дахь хаяг нь холбогдсон 10.0.24.0 дэд сүлжээнд хамаарахгүй байна.",
+                "Portal-01 дээр түүний порт 0 хаягийг 10.0.24.1 хүндэтгэнэ 255.255.255.0 маскаар Router-Main сүлжээтэй тохирч байхаар."
+            ],
+            "explanation": "Төхөөрөмж нь холбогдсон холбооны дэд сүлжээнд хамаарах хаягийг ашиглах ёстой. Portal-01 хаяг нь 10.0.24.0/24 гадна байсан тул Router-Main д түүнд хүрэх хүчинтэй маршрут байхгүй байсан бөгөөд бусад дэд сүлжээ бүрээс ачаа блокчилж байв."
+        },
+        "mr": {
+            "title": "पोर्टल दोन्ही मजल्यांवरून अप्राप्य",
+            "story": "डिজाइन आणि लॅब पीसीवरील कर्मचारीनी कळविले की Portal-01 आज सकाळी भरते किंवा उत्तर देत नाही, जरी ते यापूर्वी ठीक काम करत होते. डिजाइन टीम आणि रिसेप्शन-साइड लॅब कर्मचारी दोन्ही प्रभावित आहेत.",
+            "objective": "PC-Design ते Portal-01 पर्यंत HTTP प्रवेश पुनः स्थापित करा आणि PC-Lab ते Portal-01 पर्यंत ping करा.",
+            "hints": [
+                "PC-Design आणि PC-Lab ते Portal-01 कडे जाणारा ट्रॅफिक Router-Main वर थांबतो, जो त्याला पोहोचवण्याचा मार्ग शोधू शकत नाही.",
+                "Router-Main मध्ये Portal-01 चे मार्ग नाही कारण Portal-01 चा पत्ता 10.0.24.0 सबनेटला संबंधित नाही ज्याला तो जोडलेला आहे.",
+                "Portal-01 वर, त्याचे पोर्ट 0 पत्ता 10.0.24.1 चे मास्क 255.255.255.0 सह सेट करा जेणेकरुन ते Router-Main च्या सबनेटशी मेल खावे."
+            ],
+            "explanation": "एक उपकरण ज्या सबनेटला जोडलेले आहे त्या सबनेटला संबंधित पत्ता वापरला पाहिजे. Portal-01 चा पत्ता 10.0.24.0/24 बाहेर होता, म्हणून Router-Main मध्ये त्याला पोहोचवण्याचा वैध मार्ग नव्हता, ज्यामुळे प्रत्येक इतर सबनेट ते ट्रॅफिक अवरोधित होता."
+        },
+        "ms": {
+            "title": "Portal Tidak Dapat Dicapai Dari Kedua Lantai",
+            "story": "Kakitangan pada PC-Design dan PC-Lab melaporkan bahawa Portal-01 tidak memuatkan atau menjawab sama sekali pagi ini, walaupun ia berfungsi dengan baik sebelumnya. Kedua-dua pasukan reka bentuk dan kakitangan makmal pihak resepsi terjejas.",
+            "objective": "Pulihkan akses HTTP dari PC-Design ke Portal-01 dan ping dari PC-Lab ke Portal-01.",
+            "hints": [
+                "Trafik dari PC-Design dan PC-Lab menuju Portal-01 berhenti di Router-Main, yang tidak dapat menemukan cara untuk menghantarnya.",
+                "Router-Main tidak mempunyai laluan ke Portal-01 kerana alamat Portal-01 sebenarnya tidak termasuk dalam subnet 10.0.24.0 yang disambungkannya.",
+                "Pada Portal-01, tetapkan alamat port 0 ke 10.0.24.1 dengan topeng 255.255.255.0 supaya ia sepadan dengan subnet Router-Main."
+            ],
+            "explanation": "Sesuatu peranti mesti menggunakan alamat yang termasuk dalam subnet pautan yang dipasang. Alamat Portal-01 berada di luar 10.0.24.0/24, jadi Router-Main tidak mempunyai laluan yang sah untuk mencapainya, menyekat lalu lintas dari setiap subnet lain."
+        },
+        "ne": {
+            "title": "दुवै तलबाटबाट Portal अप्राप्य",
+            "story": "डिजाइन र ल्याब पीसीहरूमा काम गर्ने कर्मचारीहरूले आज बिहान Portal-01 लोड हुन नसकेको र कुनै पनि जवाफ नदिएको रिपोर्ट गरेका छन्, यद्यपि यो पहिले ठीक काम गरिरहेको थियो। डिजाइन टीम र रिसेप्सन-पक्षको ल्याब कर्मचारी दुवै प्रभावित छन्।",
+            "objective": "PC-Design बाट Portal-01 मा HTTP पहुँच पुनः स्थापित गर्नुहोस् र PC-Lab बाट Portal-01 मा ping गर्नुहोस्।",
+            "hints": [
+                "PC-Design र PC-Lab बाट Portal-01 को दिशामा ट्राफिक Router-Main मा रोकिन्छ, जसले यसलाई पठाउन मार्ग खोज्न सक्दैन।",
+                "Router-Main को Portal-01 मा कुनै route छैन किनभने Portal-01 को आफ्नो address वास्तवमा 10.0.24.0 सबनेटमा पर्दैन जहाँ यो जोडिएको छ।",
+                "Portal-01 मा, port 0 address लाई 10.0.24.1 र मास्क 255.255.255.0 सेट गर्नुहोस् ताकि यो Router-Main को सबनेटसँग मेल खान्छ।"
+            ],
+            "explanation": "एक डिभाइसले एक address प्रयोग गर्नुपर्छ जो यो जोडिएको लिङ्कको सबनेटमा पर्छ। Portal-01 को address 10.0.24.0/24 बाहिर थियो, त्यसैले Router-Main को यसलाई पहुँच गर्न मान्य route थिएन, जसले अन्य सबै सबनेटबाट ट्राफिक रोक्यो।"
+        },
+        "nl": {
+            "title": "Portal Onbereikbaar Van Beide Verdiepingen",
+            "story": "Personeelsleden op de design- en lab-pc's melden dat Portal-01 vanmorgen niet laadt en helemaal niet reageert, hoewel het eerder prima werkte. Zowel het designteam als het laboratoriumteam aan de receptiekant zijn getroffen.",
+            "objective": "HTTP-toegang van PC-Design naar Portal-01 herstellen en ping van PC-Lab naar Portal-01 uitvoeren.",
+            "hints": [
+                "Verkeer van zowel PC-Design als PC-Lab naar Portal-01 stopt bij Router-Main, die geen route kan vinden om het te bezorgen.",
+                "Router-Main heeft geen route naar Portal-01 omdat Portal-01's eigen adres niet werkelijk tot het subnet 10.0.24.0 behoort waarmee het verbonden is.",
+                "Stel op Portal-01 het adres van port 0 in op 10.0.24.1 met masker 255.255.255.0 zodat het overeenkomt met het subnet van Router-Main."
+            ],
+            "explanation": "Een apparaat moet een adres gebruiken dat behoort tot het subnet van de link waar het op aangesloten is. Portal-01's adres lag buiten 10.0.24.0/24, dus Router-Main had geen geldige route om het te bereiken, wat verkeer van elk ander subnet blokkeerde."
+        },
+        "no": {
+            "title": "Portal Utilgjengelig Fra Begge Etasjer",
+            "story": "Ansatte på design- og lab-pc-ene rapporterer at Portal-01 ikke lastes eller svarer i det hele tatt i dag morges, selv om det fungerte fint før. Både designteamet og resepsjon-siden labansatte er berørt.",
+            "objective": "Gjenopprett HTTP-tilgang fra PC-Design til Portal-01 og ping fra PC-Lab til Portal-01.",
+            "hints": [
+                "Trafikk fra både PC-Design og PC-Lab som går til Portal-01 stopper ved Router-Main, som ikke kan finne en måte å levere den på.",
+                "Router-Main har ingen rute til Portal-01 fordi Portal-01's egen adresse ikke faktisk tilhører 10.0.24.0-subnett den er koblet til.",
+                "Sett portnummeret 0 på Portal-01 til adressen 10.0.24.1 med maske 255.255.255.0 slik at den samsvarer med subnett til Router-Main."
+            ],
+            "explanation": "En enhet må bruke en adresse som tilhører subnett av lenken den er tilkoblet. Portal-01's adresse var utenfor 10.0.24.0/24, så Router-Main hadde ingen gyldig rute for å nå den, noe som blokkerte trafikk fra alle andre subnett."
+        },
+        "or": {
+            "title": "ଦୁଇ ମଞ୍ଜିଲରୁ Portal ଅପ୍ରାପ୍ତ",
+            "story": "ଡିଜାଇନ ଏବଂ ଲ୍ୟାବ ପିସିଗୁଡିକରେ କର୍ମଚାରୀମାନେ ରିପୋର୍ଟ କରନ୍ତି ଯେ ଆଜ ସକାଳେ Portal-01 ଲୋଡ ହୁଏ ନାହିଁ କିମ୍ବା ଏକ ବିଟ ମଧ୍ୟ ଜବାବ ଦିଏ ନାହିଁ, ଯଦିଓ ଏହା ପୂର୍ବରୁ ଠିକ ଅଛିଲା। ଡିଜାଇନ ଟିମ ଏବଂ ରିସେପସନ-ପାଶ୍ୱ ଲ୍ୟାବ କର୍ମଚାରୀ ଉଭୟ ପ୍ରଭାବିତ ହୋଇଛନ୍ତି।",
+            "objective": "PC-Design ରୁ Portal-01 କୁ HTTP ପ୍ରବେଶ ପୁନଃସ୍ଥାପନ କରନ୍ତୁ ଏବଂ PC-Lab ରୁ Portal-01 କୁ ping କରନ୍ତୁ।",
+            "hints": [
+                "PC-Design ଏବଂ PC-Lab ରୁ Portal-01 ଆଡକୁ ଧରାଧରୁ Router-Main ରେ ରୁକିଯାଏ, ଯାହା ଏହାକୁ ସରବରାହ କରିବାର ଉପାୟ ଖୋଜି ପାରେ ନାହିଁ।",
+                "Router-Main ର Portal-01 ର କୌଣସି ମାର୍ଗ ନାହିଁ କାରଣ Portal-01 ର ନିଜସ୍ୱ ଠିକାନା ବାସ୍ତବରେ 10.0.24.0 ସବନେଟ ରେ ନାହିଁ ଯାହାକୁ ଏହା ସଂଯୁକ୍ତ।",
+                "Portal-01 ରେ, ଏହାର port 0 ଠିକାନା 10.0.24.1 ମାସ୍କ 255.255.255.0 ରେ ସେଟ କରନ୍ତୁ ତାହାହେଲେ ଏହା Router-Main ର ସବନେଟ ସହିତ ମେଳ ଖାଏ।"
+            ],
+            "explanation": "ଏକ ଡିଭାଇସ ଏକ ଠିକାନା ବ୍ୟବହାର କରିବା ଆବଶ୍ୟକ ଯାହା ଲିଙ୍କର ସବନେଟରେ ଥାଏ। Portal-01 ର ଠିକାନା 10.0.24.0/24 ବାହାରେ ଥିଲା, ତେଣୁ Router-Main ର ଏହାକୁ ପହଞ୍ଚାଇବାର କୌଣସି ବୈଧ ମାର୍ଗ ନଥିଲା, ଯାହା ସମସ୍ତ ଅନ୍ୟ ସବନେଟ ରୁ ଟ୍ରାଫିକ ଅଟକାଇଦେଲା।"
+        },
+        "pa": {
+            "title": "ਦੋਨਾਂ ਫਲੋਰਾਂ ਤੋਂ ਪੋਰਟਲ ਤੱਕ ਨਾ ਪਹੁੰਚਣਯੋਗ",
+            "story": "ਡਿਜ਼ਾਈਨ ਅਤੇ ਲੈਬ ਪੀਸੀਜ਼ ਤੇ ਸਟਾਫ ਦੱਸ ਰਹੇ ਹਨ ਕਿ Portal-01 ਅੱਜ ਸਵੇਰੇ ਲੋਡ ਨਹੀਂ ਹੋ ਰਿਹਾ ਜਾਂ ਜਵਾਬ ਨਹੀਂ ਦੇ ਰਿਹਾ, ਭਾਵੇਂ ਇਹ ਪਹਿਲਾਂ ਠੀਕ ਸੀ। ਡਿਜ਼ਾਈਨ ਟੀਮ ਅਤੇ ਰਿਸੈਪਸ਼ਨ-ਪਾਸੇ ਲੈਬ ਸਟਾਫ ਦੋਨਾਂ ਨੂੰ ਅਸਰ ਪਿਆ ਹੈ।",
+            "objective": "PC-Design ਤੋਂ Portal-01 ਤੱਕ HTTP ਐਕਸੈਸ ਅਤੇ PC-Lab ਤੋਂ Portal-01 ਤੱਕ ping ਬਹਾਲ ਕਰੋ।",
+            "hints": [
+                "PC-Design ਅਤੇ PC-Lab ਤੋਂ Portal-01 ਵੱਲ ਜਾਣ ਵਾਲੀ ਟ੍ਰੈਫਿਕ Router-Main ਤੇ ਰੁਕ ਜਾਂਦੀ ਹੈ, ਜਿਹੜਾ ਇਸ ਨੂੰ ਪਹੁੰਚਾਉਣ ਦਾ ਰਸਤਾ ਨਹੀਂ ਲੱਭ ਸਕਦਾ।",
+                "Router-Main ਕੋਲ Portal-01 ਲਈ ਕੋਈ ਰੂਟ ਨਹੀਂ ਹੈ ਕਿਉਂਕਿ Portal-01 ਦਾ ਆਪਣਾ ਐਡਰੈਸ ਦਰਅਸਲ 10.0.24.0 ਸਬਨੈੱਟ ਨਾਲ ਸਬੰਧਤ ਨਹੀਂ ਹੈ ਜਿਸ ਨਾਲ ਇਹ ਜੁੜਿਆ ਹੈ।",
+                "Portal-01 ਤੇ, ਇਸ ਦੇ ਪੋਰਟ 0 ਐਡਰੈਸ ਨੂੰ 10.0.24.1 ਸੈਟ ਕਰੋ ਮਾਸਕ 255.255.255.0 ਨਾਲ ਤਾਂ ਜੋ ਇਹ Router-Main ਦੇ ਸਬਨੈੱਟ ਨਾਲ ਮੇਲ ਖਾਵੇ।"
+            ],
+            "explanation": "ਇੱਕ ਡਿਵਾਈਸ ਉਹ ਐਡਰੈਸ ਵਰਤਣਾ ਚਾਹੀਦਾ ਹੈ ਜੋ ਲਿੰਕ ਦੇ ਸਬਨੈੱਟ ਨਾਲ ਸਬੰਧਤ ਹੋਵੇ ਜਿਸ ਵਿੱਚ ਇਹ ਪਲੱਗ ਕੀਤਾ ਗਿਆ ਹੈ। Portal-01 ਦਾ ਐਡਰੈਸ 10.0.24.0/24 ਤੋਂ ਬਾਹਰ ਸੀ, ਇਸ ਲਈ Router-Main ਕੋਲ ਇਸ ਤੱਕ ਪਹੁੰਚਣ ਦਾ ਕੋਈ ਵੈਧ ਰੂਟ ਨਹੀਂ ਸੀ, ਹਰ ਦੂਸਰੇ ਸਬਨੈੱਟ ਤੋਂ ਟ੍ਰੈਫਿਕ ਨੂੰ ਬਲਾਕ ਕਰ ਰਿਹਾ ਸੀ।"
+        },
+        "pl": {
+            "title": "Portal niedostępny z obu pięter",
+            "story": "Pracownicy z PC-Design i PC-Lab zgłaszają, że Portal-01 nie ładuje się i w ogóle nie odpowiada tego ranka, mimo że wcześniej działał idealnie. Dotkniętym są zarówno zespół projektowania jak i pracownicy laboratorium po stronie recepcji.",
+            "objective": "Przywróć dostęp HTTP z PC-Design do Portal-01 i polecenie ping z PC-Lab do Portal-01.",
+            "hints": [
+                "Ruch z PC-Design i PC-Lab kierowany do Portal-01 zatrzymuje się w Router-Main, który nie potrafi znaleźć sposobu na jego dostarczenie.",
+                "Router-Main nie ma trasy do Portal-01, ponieważ adres Portal-01 w rzeczywistości nie należy do podsieci 10.0.24.0, z którą jest połączony.",
+                "Na Portal-01 ustaw adres portu 0 na 10.0.24.1 z maską 255.255.255.0, aby pasował do podsieci Router-Main."
+            ],
+            "explanation": "Urządzenie musi używać adresu należącego do podsieci połączenia, do którego jest podłączone. Adres Portal-01 był poza zakresem 10.0.24.0/24, więc Router-Main nie miał ważnej trasy do jego osiągnięcia, blokując ruch z każdej innej podsieci."
+        },
+        "pt-PT": {
+            "title": "Portal inacessível de ambos os pisos",
+            "story": "Funcionários nos PC-Design e PC-Lab relatam que Portal-01 não carrega nem responde esta manhã, apesar de ter funcionado bem antes. Tanto a equipa de design quanto o pessoal do laboratório do lado da receção foram afectados.",
+            "objective": "Restaurar o acesso HTTP de PC-Design para Portal-01 e ping de PC-Lab para Portal-01.",
+            "hints": [
+                "O tráfego de PC-Design e PC-Lab destinado a Portal-01 para no Router-Main, que não consegue encontrar uma forma de o entregar.",
+                "O Router-Main não tem rota para Portal-01 porque o endereço de Portal-01 não pertence efectivamente à subnet 10.0.24.0 à qual está conectado.",
+                "No Portal-01, defina o endereço da porta 0 para 10.0.24.1 com máscara 255.255.255.0 para corresponder à subnet do Router-Main."
+            ],
+            "explanation": "Um dispositivo deve usar um endereço que pertença à subnet da ligação em que está ligado. O endereço de Portal-01 estava fora de 10.0.24.0/24, portanto o Router-Main não tinha uma rota válida para o alcançar, bloqueando tráfego de todas as outras subnets."
+        },
+        "ro": {
+            "title": "Portal inaccesibil din ambele etaje",
+            "story": "Personalul de la PC-Design și PC-Lab raportează că Portal-01 nu se încarcă și nu răspunde deloc în această dimineață, deși a funcționat bine înainte. Atât echipa de proiectare, cât și personalul laboratorului din partea recepției sunt afectați.",
+            "objective": "Restaurează accesul HTTP de la PC-Design la Portal-01 și ping de la PC-Lab la Portal-01.",
+            "hints": [
+                "Traficul de la PC-Design și PC-Lab destinat Portal-01 se oprește la Router-Main, care nu poate găsi o cale de livrare.",
+                "Router-Main nu are o rută către Portal-01 deoarece adresa Portal-01 nu aparține de fapt subnetului 10.0.24.0 la care este conectat.",
+                "Pe Portal-01, setează adresa portului 0 la 10.0.24.1 cu mască 255.255.255.0 pentru a se potrivi cu subnetul Router-Main."
+            ],
+            "explanation": "Un dispozitiv trebuie să folosească o adresă care aparține subnetului legăturii la care este conectat. Adresa Portal-01 era în afara 10.0.24.0/24, deci Router-Main nu avea o rută validă pentru a o atinge, blocând traficul de la orice altă subnetă."
+        },
+        "si": {
+            "title": "පෝටල් දෙ මහලෙන්ම ළඟා කළ නොහැක",
+            "story": "ඩිසේන් සහ ලැබ් පීසී තිස්සේ කර්මාග්‍රහීන් වෙතින්, පෙරෙස සාර්ථකව ක්‍රියාකර තිබුණ නමුත්, Portal-01 අද උදෑසරේ පටවිය හෝ ප්‍රතිචාර දෙන්නේ නැත. ඩිසේන් කණ්ඩායම සහ ප්‍රසාරණ පැත්තේ ලැබ් කර්මාග්‍රහීන් යන දෙඅसHelper සිටින්න.",
+            "objective": "PC-Design සිට Portal-01 වෙත HTTP ප්‍රවේशය යනු නැවත සකස් කර PC-Lab සිට Portal-01 වෙත ping එක පුනයි.",
+            "hints": [
+                "PC-Design සහ PC-Lab යන දෙකෙන්ම Portal-01 වෙතට ගමනාගමනය Router-Main වෙතින් නතර වෙයි, එය එය විතරණය කිරීමට ක්‍රමයක් සොයා ගත නොහැක.",
+                "Router-Main සතුව Portal-01 වෙත ලමිනුවක් නොමැති බেවින්, Portal-01ගේ ස්වයන්ගේ ලිපිනය 10.0.24.0 සබනට සත්යයි ස්ථිතිවිද්‍යාව කරන අතරින්.",
+                "Portal-01 මත, එහි පෝට් 0 ලිපිනය 10.0.24.1 ට 255.255.255.0 මාස්ක් සමඟ සකසන්න එයින් Router-Main ගේ සබනට ගැළපෙන්න."
+            ],
+            "explanation": "උපකරණයක් සබනට සම්බන්ධ වූ සබනට අයත් ලිපිනයක් භාවිතා කළ යුතුයි. Portal-01 ගේ ලිපිනය 10.0.24.0/24 වලින් පිටතින් සිටි, එයින් Router-Main සතුව එතීට ළඟා විය හැකි ඉතිරි ගිණුම් නොසිටි, සියලු අනෙකුත් සබනින් ගමනාගමනය වැළඹීයි."
+        },
+        "sk": {
+            "title": "Portál nie je dosiahnuteľný z oboch poschodí",
+            "story": "Personál na počítačoch PC-Design a PC-Lab hlási, že Portal-01 sa dnes ráno vôbec neotváral ani neodpovedal, hoci predtým fungoval bez problémov. Sú zasiahnuté tak návrhári ako aj pracovníci v recepcii.",
+            "objective": "Obnovte prístup HTTP z PC-Design na Portal-01 a ping z PC-Lab na Portal-01.",
+            "hints": [
+                "Prevádzka z PC-Design aj PC-Lab smerujúca na Portal-01 sa zastavuje na Router-Main, ktorý nenájde cestu na jej doručenie.",
+                "Router-Main nemá trasu na Portal-01, pretože vlastná adresa Portal-01 nepatrí podsieti 10.0.24.0, na ktorú je pripojená.",
+                "Na Portal-01 nastavte adresu portu 0 na 10.0.24.1 s maskou 255.255.255.0, aby sa zhodovala s podsieťou Router-Main."
+            ],
+            "explanation": "Zariadenie musí používať adresu, ktorá patrí podsieti odkazu, na ktorý je zapojené. Adresa Portal-01 bola mimo 10.0.24.0/24, takže Router-Main nemal platnú cestu na jej dosiahnutie, čo blokuje prevádzku z každej inej podsiete."
+        },
+        "sl": {
+            "title": "Portál ni dosegljiv z obeh nadstropij",
+            "story": "Osebje na računalnikih PC-Design in PC-Lab poroča, da se Portal-01 danes zjutraj sploh ne naloži ali odzove, čeprav je pred tem deloval brez težav. Prizadeti so tako oblikovalci kot tudi osebje na strani sprejemalnega kabineta.",
+            "objective": "Obnovite dostop HTTP iz PC-Design na Portal-01 in ping iz PC-Lab na Portal-01.",
+            "hints": [
+                "Promet iz PC-Design in PC-Lab, namenjen Portal-01, se zaustavi pri Router-Main, ki ne najde poti za dostavo.",
+                "Router-Main nima маршрут do Portal-01, ker naslov Portal-01 ne pripada podmreži 10.0.24.0, na katero je priključen.",
+                "Na Portal-01 nastavite naslov vrat 0 na 10.0.24.1 z masko 255.255.255.0, da se ujema s podsmerko Router-Main."
+            ],
+            "explanation": "Naprava mora uporabljati naslov, ki pripada podmreži povezave, na katero je priključena. Naslov Portal-01 je bil zunaj 10.0.24.0/24, zato Router-Main ni imel veljavne poti do njega, kar je blokiralo promet iz vseh ostalih podsmerkov."
+        },
+        "sq": {
+            "title": "Portali i paarritshëm nga të dy katet",
+            "story": "Personeli në kompjuterët PC-Design dhe PC-Lab raporton se Portal-01 nuk ngarkohet ose nuk përgjigjet fare këtë mëngjes, megjithëse funksiononte mirë më parë. Janë të prekur si ekipi i projektimit ashtu edhe personeli i laboratorit në anën e pritjes.",
+            "objective": "Rivendosni aksesin HTTP nga PC-Design në Portal-01 dhe ping nga PC-Lab në Portal-01.",
+            "hints": [
+                "Trafiku nga PC-Design dhe PC-Lab drejt Portal-01 ndalet në Router-Main, i cili nuk mund të gjejë mënyrën për ta dërguar atë.",
+                "Router-Main nuk ka rrugë për Portal-01 sepse adresa e vetë Portal-01 nuk i përket nënrrjetit 10.0.24.0 në të cilin është lidhur.",
+                "Në Portal-01, vendosni adresën e portit 0 në 10.0.24.1 me maskën 255.255.255.0 në mënyrë që të përputhet me nënrrjetin e Router-Main."
+            ],
+            "explanation": "Një pajisjeje duhet të përdorë një adresë që i përket nënrrjetit të lidhjes ku është e lidhur. Adresa e Portal-01 ishte jashtë 10.0.24.0/24, kështu që Router-Main nuk kishte rrugë të vlefshme për ta arritur atë, duke bllokuar trafikun nga çdo nënrrjet tjetër."
+        },
+        "sr": {
+            "title": "Портал недостижан са оба спрата",
+            "story": "Особље на компјутерима PC-Design и PC-Lab извештава да Portal-01 уопште не учитава нити одговара овог јутра, иако је раније функционисао без проблема. Погођени су и тим за дизајн и особље лабораторије на страни пријема.",
+            "objective": "Обновите HTTP приступ са PC-Design на Portal-01 и ping са PC-Lab на Portal-01.",
+            "hints": [
+                "Саобраћај из PC-Design и PC-Lab усмерен ка Portal-01 заустављен је на Router-Main, која не може наћи начин да га испоручи.",
+                "Router-Main нема маршруту до Portal-01 јер адреса самог Portal-01 не припада подмрежи 10.0.24.0 на коју је повезана.",
+                "На Portal-01, поставите адресу порта 0 на 10.0.24.1 са маском 255.255.255.0 како би одговарала подмрежи Router-Main."
+            ],
+            "explanation": "Уређај мора користити адресу која припада подмрежи링 је везан. Адреса Portal-01 је била ван 10.0.24.0/24, па Router-Main није имала важећи маршрут да је достигне, што је блокирало саобраћај из сваке друге подмреже."
+        },
+        "sv": {
+            "title": "Portal Kan Inte Nås Från Båda Våningarna",
+            "story": "Personal på design- och lab-datorerna rapporterar att Portal-01 inte läses in eller svarar överhuvudtaget i morse, även om det fungerade bra förut. Både designgruppen och receptionsrelaterad labpersonal är påverkade.",
+            "objective": "Återställ HTTP-åtkomst från PC-Design till Portal-01 och ping från PC-Lab till Portal-01.",
+            "hints": [
+                "Trafik från både PC-Design och PC-Lab riktad till Portal-01 stannar vid Router-Main, som inte kan hitta ett sätt att leverera den.",
+                "Router-Main har ingen väg till Portal-01 eftersom Portal-01:s egen adress inte faktiskt tillhör det 10.0.24.0-nätverk som den är ansluten till.",
+                "Ställ in Portal-01:s port 0-adress till 10.0.24.1 med mask 255.255.255.0 så att den motsvarar Router-Main:s nätverk."
+            ],
+            "explanation": "En enhet måste använda en adress som tillhör undernätet för länken den är ansluten till. Portal-01:s adress var utanför 10.0.24.0/24, så Router-Main hade ingen giltig väg för att nå den, vilket blockerade trafik från alla andra undernät."
+        },
+        "sw": {
+            "title": "Portal Haiwezi Kupatikana Kutoka Sakafu Zote Mbili",
+            "story": "Wafanyakazi katika kompyuta za kubuni na lab wanaripoti kwamba Portal-01 haitangi au hauitikii kabisa asubuhi hii, ingawa ilikuwa ikifanya kazi vizuri hapo awali. Timu ya kubuni na wafanyakazi wa lab upande wa ukumbi wote wanaadhimika.",
+            "objective": "Rudisha kufikia HTTP kutoka PC-Design hadi Portal-01 na ping kutoka PC-Lab hadi Portal-01.",
+            "hints": [
+                "Trafiki kutoka PC-Design na PC-Lab inayoelekea Portal-01 inasimama katika Router-Main, ambayo haiwezi kupata njia ya kuifungua.",
+                "Router-Main haina njia hadi Portal-01 kwa sababu anwani ya Portal-01 yenyewe haitu tangamani mtandao wa 10.0.24.0 ambao inaungana nayo.",
+                "Kuweka anwani ya port 0 ya Portal-01 kuwa 10.0.24.1 na babu 255.255.255.0 ili iunganishe na mtandao wa Router-Main."
+            ],
+            "explanation": "Kifaa lazima kutumia anwani inayotenda mtandao wa kiungo ambacho kinaambatana nayo. Anwani ya Portal-01 ilikuwa nje ya 10.0.24.0/24, kwa hiyo Router-Main haikuwa na njia halali ya kuifikia, ambayo ilikataza trafiki kutoka kila mtandao mwingine."
+        },
+        "ta": {
+            "title": "போர்ட்டல் இரண்டு தளங்களிலிருந்தும் அணுக முடியாது",
+            "story": "ডিজাইன் மற்றும் ল்যாப் கம்‌ப్‌యూటర్‌ల పై कর्मचारীhरු रिपोर्ट गरे कि Portal-01 आज बिहान लोड वा जवाफ दिदैन, यद्यपि यो पहिले राम्रोसँग काम गरिरहेको थियो। डिजाइन टीम र रिसेप्शन-साइड ल्याब कर्मचारी दुवै प्रभावित छन्।",
+            "objective": "PC-Design बाट Portal-01 मा HTTP पहुँच पुनर्स्थापित गर्नुहोस् र PC-Lab बाट Portal-01 मा ping गर्नुहोस्।",
+            "hints": [
+                "PC-Design र PC-Lab बाट Portal-01 तर्फ जाने ट्राफिक Router-Main मा रोकिन्छ, जसले यसलाई पठाउने तरिका खोज्न सक्दैन।",
+                "Router-Main को Portal-01 मा कुनै मार्ग छैन किनभने Portal-01 को आफ्नै ठेगाना वास्तवमा यो जोडिएको 10.0.24.0 सबनेटमा सम्बन्धित छैन।",
+                "Portal-01 मा, यसको पोर्ट 0 ठेगाना 10.0.24.1 मा मास्क 255.255.255.0 को साथ सेट गर्नुहोस् ताकि यो Router-Main को सबनेटसँग मेल खाए।"
+            ],
+            "explanation": "एक उपकरणले आफ्नो जोडिएको लिङ्कको सबनेटमा सम्बन्धित एक ठेगाना प्रयोग गर्नुपर्छ। Portal-01 को ठेगाना 10.0.24.0/24 को बाहिर थियो, त्यसैले Router-Main को यसलाई पुग्न कुनै वैध मार्ग नथियो, अन्य सबै सबनेटबाट ट्राफिक रोक्दै।"
+        },
+        "uk": {
+            "title": "Портал Недоступний із Обох Поверхів",
+            "story": "Персонал на ПК дизайну та лабораторії повідомляє, що Portal-01 зовсім не завантажується і не відповідає цього ранку, хоча раніше це добре працювало. Вражені як команда дизайну, так і персонал лабораторії з боку ресепшену.",
+            "objective": "Відновіть доступ HTTP з PC-Design на Portal-01 та ping з PC-Lab на Portal-01.",
+            "hints": [
+                "Трафік з PC-Design та PC-Lab, спрямований до Portal-01, зупиняється на Router-Main, який не може знайти спосіб його доставити.",
+                "У Router-Main немає маршруту до Portal-01, оскільки власна адреса Portal-01 насправді не належить підмережі 10.0.24.0, до якої вона підключена.",
+                "На Portal-01 встановіть адресу порту 0 на 10.0.24.1 із маскою 255.255.255.0, щоб вона відповідала підмережі Router-Main."
+            ],
+            "explanation": "Пристрій повинен використовувати адресу, яка належить підмережі каналу, до якого він підключений. Адреса Portal-01 була поза межами 10.0.24.0/24, тому Router-Main не мав дійсного маршруту для її досяжності, блокуючи трафік з усіх інших підмереж."
+        },
+        "ur": {
+            "title": "دونوں منزلوں سے Portal-01 تک رسائی ممکن نہیں",
+            "story": "ڈیزائن اور لیب کے PCs پر کام کرنے والے عملہ بتا رہے ہیں کہ Portal-01 آج صبح بند نہیں ہو رہا یا جواب نہیں دے رہا، حالانکہ یہ پہلے ٹھیک تھا۔ ڈیزائن ٹیم اور reception-side لیب کے عملہ دونوں متاثر ہیں۔",
+            "objective": "PC-Design سے Portal-01 تک HTTP رسائی بحال کریں اور PC-Lab سے Portal-01 تک ping کریں۔",
+            "hints": [
+                "PC-Design اور PC-Lab سے Portal-01 کی طرف بھیجا جانے والا ٹریفک Router-Main پر رکتا ہے، جو اسے پہنچانے کا کوئی طریقہ نہیں تلاش کر سکتا۔",
+                "Router-Main کے پاس Portal-01 کا کوئی ماسل نہیں ہے کیونکہ Portal-01 کا اپنا پتہ دراصل 10.0.24.0 سب نیٹ سے تعلق نہیں رکھتا جس سے یہ جڑا ہوا ہے۔",
+                "Portal-01 پر، اس کی port 0 کے پتے کو 10.0.24.1 کر دیں mask 255.255.255.0 کے ساتھ تاکہ یہ Router-Main کے subnet سے ملے۔"
+            ],
+            "explanation": "ایک device کو ایسا پتہ استعمال کرنا چاہیے جو اس link کے subnet سے تعلق رکھتا ہو جس میں یہ جڑا ہوا ہے۔ Portal-01 کا پتہ 10.0.24.0/24 سے باہر تھا، اس لیے Router-Main کے پاس اس تک پہنچنے کا کوئی درست ماسل نہیں تھا، جو دوسرے ہر subnet سے ٹریفک کو روک رہا تھا۔"
+        },
+        "zh-CN": {
+            "title": "两层都无法访问Portal",
+            "story": "设计和实验室PC的员工报告说Portal-01今早无法加载或响应,尽管之前运行良好。设计团队和接待方实验室员工都受到影响。",
+            "objective": "恢复从PC-Design到Portal-01的HTTP访问,以及从PC-Lab到Portal-01的ping。",
+            "hints": [
+                "来自PC-Design和PC-Lab指向Portal-01的流量停在Router-Main,它无法找到传递的路由。",
+                "Router-Main没有到Portal-01的路由,因为Portal-01自身的地址不属于它所连接的10.0.24.0子网。",
+                "在Portal-01上,将其端口号0的地址设置为10.0.24.1,掩码为255.255.255.0,以匹配Router-Main的子网。"
+            ],
+            "explanation": "设备必须使用属于其连接的链路子网的地址。Portal-01的地址在10.0.24.0/24之外,所以Router-Main没有有效的路由来访问它,阻止了来自其他每个子网的流量。"
+        },
+        "zh-TW": {
+            "title": "兩層都無法訪問Portal",
+            "story": "設計和實驗室PC的員工報告說Portal-01今早無法加載或響應,儘管之前運行良好。設計團隊和接待方實驗室員工都受到影響。",
+            "objective": "恢復從PC-Design到Portal-01的HTTP訪問,以及從PC-Lab到Portal-01的ping。",
+            "hints": [
+                "來自PC-Design和PC-Lab指向Portal-01的流量停在Router-Main,它無法找到傳遞的路由。",
+                "Router-Main沒有到Portal-01的路由,因為Portal-01自身的位址不屬於它所連接的10.0.24.0子網。",
+                "在Portal-01上,將其連接埠號0的位址設定為10.0.24.1,遮罩為255.255.255.0,以符合Router-Main的子網。"
+            ],
+            "explanation": "設備必須使用屬於其連接的鏈路子網的位址。Portal-01的位址在10.0.24.0/24之外,所以Router-Main沒有有效的路由來訪問它,阻止了來自其他每個子網的流量。"
+        },
+        "gu": {
+            "title": "બંને માળોથી Portal કોલમતવ્ય",
+            "story": "ડિઝાઇન અને લૅબ PC પરના કર્મચારીઓ રિપોર્ટ કરે છે કે આ સવાર Portal-01 લોડ થતું નથી અથવા જવાબ આપતું નથી, જોકે તે પહેલા સારી રીતે કામ કરતું હતું। ડિઝાઇન ટીમ અને રિસેપ્શન-સાઇડ લૅબ સ્ટાફ બંને પ્રભાવિત છે।",
+            "objective": "PC-Design થી Portal-01 સુધી HTTP ઍક્સેસ પુનઃસ્થાપિત કરો અને PC-Lab થી Portal-01 સુધી ping પુનઃસ્થાપિત કરો।",
+            "hints": [
+                "PC-Design અને PC-Lab થી Portal-01 તરફ આવતો ટ્રાફિક Router-Main પર રોકાય છે, જે તેને વિતરણ માટે કોઈ રસ્તો શોધી શકતું નથી.",
+                "Router-Main ને Portal-01 સુધી કોઈ રૂટ નથી કારણ કે Portal-01 નો પોતાનો સરનામું વાસ્તવમાં 10.0.24.0 સબનેટનો ભાગ નથી જેની પાસે તે જોડાયેલું છે.",
+                "Portal-01 પર, તેની પોર્ટ 0 સરનામું 10.0.24.1 માસ્ક 255.255.255.0 સાથે સેટ કરો જેથી તે Router-Main ના સબનેટ સાથે મેળ ખાય."
+            ],
+            "explanation": "ઉપકરણ એવું સરનામું વાપરવું આવશ્યક છે જે તેના પ્લગ કરેલ લિંકના સબનેટનો ભાગ હોય. Portal-01 નું સરનામું 10.0.24.0/24 ની બહાર હતું, તેથી Router-Main ને તેને પહોંચવા માટે કોઈ માન્ય રૂટ હતો નહીં, જે અન્ય દરેક સબનેટ પરથી ટ્રાફિક અવરોધ્યો."
+        },
+        "lo": {
+            "title": "Portal ບໍ່ສາມາດເຂົ້າເຖິງໄດ້ຈາກທັງສອງຊັ້ນ",
+            "story": "ພະນັກງານໃນ PC-Design ແລະ PC-Lab ລາຍງານວ່າ Portal-01 ບໍ່ສາມາດໂຫຼດ ຫຼື ຕອບສະໜອງໄດ້ເລີຍໃນເຊົ້າວານນີ້ ເຖິງແມ່ນວ່າມັນໃຊ້ໄດ້ດີກ່ອນໜ້າ. ທັງທີມອອກແບບ ແລະ ພະນັກງານລະດັບການຕ້ອນຮັບ Lab ໄດ້ຮັບຜົນກະທົບ.",
+            "objective": "ຟື້ນຟູການເຂົ້າເຖິງ HTTP ຈາກ PC-Design ໄປ Portal-01 ແລະ ping ຈາກ PC-Lab ໄປ Portal-01.",
+            "hints": [
+                "ວ່າງຈາກ PC-Design ແລະ PC-Lab ກຳມະສຸພາສ Portal-01 ຢຸດຢູ່ທີ່ Router-Main ເຊິ່ງບໍ່ສາມາດຊອກຫາວິທີໃນການສົ່ງມອບໄດ້.",
+                "Router-Main ບໍ່ມີເສັ້ນທາງໄປ Portal-01 ເພາະວ່າທີ່ຢູ່ຂອງ Portal-01 ບໍ່ໄດ້ຢູ່ໃນເຄືອຂ່າຍ 10.0.24.0 ທີ່ມັນເຊື່ອມຕໍ່.",
+                "ໃນ Portal-01 ກໍານົດທີ່ຢູ່ພອດ 0 ເປັນ 10.0.24.1 ໃນ ມາສ໌ 255.255.255.0 ເພື່ອໃຫ້ກົງກັບເຄືອຂ່າຍຂອງ Router-Main."
+            ],
+            "explanation": "ອຸປະກອນ ຕ້ອງໃຊ້ທີ່ຢູ່ທີ່ຢູ່ໃນເຄືອຂ່າຍຂອງລິง໌ທີ່ມັນສຽບໃສ່. ທີ່ຢູ່ຂອງ Portal-01 ແມ່ນຢູ່ນອກ 10.0.24.0/24 ດັ່ງນັ້ນ Router-Main ບໍ່ມີເສັ້ນທາງທີ່ຖືກຕ້ອງໃນການເຂົ້າເຖິງມັນ ບລັອກຢ່າງຕໍ່ເນື່ອງຈາກທຸກເຄືອຂ່າຍອື່ນ."
+        },
+        "my": {
+            "title": "ဒုံအောက်ပိုင်းနှစ်ခုမှ Portal သို့အကြွးမရှိ",
+            "story": "ဒီဇိုင်းနှင့် Lab PC များ၏कর्मचारीઓ၏ रिपોर्ट যে ଆଜ ଖᬀคายเცา Portal-01 မဖွင့်နိုင်ပြီး ပြန်လည်ကြားမဖြေသော်လည်း အကြီးအကျယ်ကွန်ယက်ရ၏အရှေ့ဘက်အသုံးပြုသူများ",
+            "objective": "PC-Design မှ Portal-01 သို့ HTTP အက်က세स ပြန်လည်ရယူပြီး PC-Lab မှ Portal-01 သို့ ping လုပ်ပါ။",
+            "hints": [
+                "PC-Design နှင့် PC-Lab မှ Portal-01 သို့ပို့လွှတ်နေသော အကြွေးများသည် Router-Main တွင် ရပ်နှစ်သိမ့်လျက်ရှိ၊ ၎င်းသည် ပို့လွှတ်ရန် လမ်းကြောင်းမတွေ့ရှိနိုင်ပါ။",
+                "Router-Main သည် Portal-01 သို့ လမ်းကြောင်းမရှိသည်။ အကြောင်းအရာ Portal-01 ၏ လိပ်စာသည် ၎င်းဆက်သွယ်ထားသော 10.0.24.0 ကွန်ယက်ထဲ မဝင်သောကြောင့်ပါ။",
+                "Portal-01 တွင် Port နံပါတ် 0 လိပ်စာကို 10.0.24.1 အဖြစ်သတ်မှတ်ပြီး ဆက်တင် 255.255.255.0 ဖြင့် Router-Main ၏ ကွန်ယက်နှင့် ကိုက်ညီအောင်ပြုလုပ်ပါ။"
+            ],
+            "explanation": "ကွန်ယက်အစိတ်အပိုင်း သည် ၎င်းချိတ်ဆက်ထားသော လင်းထဲ ကွန်ယက်နှင့် သက်ဆိုင်သောလိပ်စာ ကိုအသုံးပြုရမည်။ Portal-01 ၏လိပ်စာသည် 10.0.24.0/24 အပြင်ဖက်တွင် ရှိသောကြောင့် Router-Main သည် ယင်းသို့ ရောက်ရှိရန် အခက်အခဲ ရှိသည့်အတွက် အခြား ကွန်ယက်များမှ အကြွေးများ အဟန့်အတားခံရသည်။"
+        },
+        "rm": {
+            "title": "Prtal betg accessibel da bals planaivels",
+            "story": "Ils collaboraturs dal PC-Design e dal PC-Lab rapporteschen che Portal-01 na charghi e na respunda betg uschè dumonda a matgina, evenb che functiunava bain avant. Ils duas equipas - quella da design e quella da recepziun dal lab - sun affectadas.",
+            "objective": "Restituir l'access HTTP da PC-Design a Portal-01 e ping da PC-Lab a Portal-01.",
+            "hints": [
+                "Il traffic da PC-Design e da PC-Lab che va a Portal-01 s'arresta a Router-Main, che na chatta betg in viadafla per lantschadir.",
+                "Router-Main n'ha nagina rait a Portal-01 perquai che l'adressa da Portal-01 na appartegn betg actualmain a la rait 10.0.24.0 nua che sa connectescha.",
+                "Configurescha porta 0 da Portal-01 cun l'adressa 10.0.24.1 e mascra 255.255.255.0 uschia che crispunda cun la rait da Router-Main."
+            ],
+            "explanation": "In apparat duai utilisar in adressa che appartegn a la rait da la connexiun nua che ses connectà. L'adressa da Portal-01 era ordaifer da 10.0.24.0/24, perquai na chatta Router-Main nagina rait valaivla per ragiunschir Portal-01, e bloccava il traffic da mintga autra rait."
+        },
+        "te": {
+            "title": "Portal అందుబాటులో లేనిది రెండు అంతస్థుల నుండి",
+            "story": "రూపకల్పన మరియు ల్యాబ్ PC ల నుండి సిబ్బంది Portal-01 లోడ్ కాలేదా ఈ ఉదయం సమాధానం ఇవ్వలేదని నివేదించారు, అయితే ఇది గతంలో బాగా పనిచేసింది. రూపకల్పన బృందం మరియు రిసెప్షన్ వైపు ల్యాబ్ సిబ్బంది రెండూ ప్రభావితమయ్యాయి.",
+            "objective": "PC-Design నుండి Portal-01 కు HTTP ఆక్సెస్ మరియు PC-Lab నుండి Portal-01 కు ping ను పునరుద్ధరించండి.",
+            "hints": [
+                "PC-Design మరియు PC-Lab నుండి Portal-01 కు వెళ్ళే ట్రాఫిక్ Router-Main వద్ద ఆగిపోతుంది, ఇది దానిని డెలివర్ చేయడానికి మార్గాన్ని కనుగొనలేదు.",
+                "Router-Main కు Portal-01 కు మార్గం లేదు ఎందుకంటే Portal-01 యొక్క చిరునామా నిజానికి 10.0.24.0 సబ్‌నెట్‌కు చెందిన దానికి సంబంధం లేనిది.",
+                "Portal-01 వద్ద, దాని పోర్ట్ 0 చిరునామాను 10.0.24.1కి మాస్క్ 255.255.255.0 సెట్ చేసి Router-Main సబ్‌నెట్‌కు సరిపోతుంది."
+            ],
+            "explanation": "ఒక ఉపకరణ తప్పనిసరిగా చేసిన లింక్ సబ్‌నెట్‌కు చెందిన చిరునామాను ఉపయోగించాలి. Portal-01 యొక్క చిరునామా 10.0.24.0/24 వెలుపల ఉంది, కాబట్టి Router-Main Portal-01కు చేరుకోవడానికి చెల్లుబాటు అయ్యే మార్గాన్ని కనుగొనలేదు, ఇతర ప్రతి సబ్‌నెట్ నుండి ట్రాఫిక్‌ను నిరోధించింది."
+        },
+        "zu": {
+            "title": "I-Portal Engenafikaziwe Kusuka Kuzimpilo Zombili",
+            "story": "Abasebenzi ku-PC-Design naku-PC-Lab babhala ingxelo yokuthi i-Portal-01 ayiladi noma ayiphenduli ekuseni, nakuba ithathe isimo esikhulu ngaphambi. Isixuku se-design kanye nabasebenzi be-lab bakamuva bobabili bathinteka.",
+            "objective": "Fophela i-HTTP access esuka ku-PC-Design kuya ku-Portal-01 naku-ping kusuka ku-PC-Lab kuya ku-Portal-01.",
+            "hints": [
+                "Ithrafiki esuka ku-PC-Design naku-PC-Lab esikhungu ku-Portal-01 imiswa ku-Router-Main, engakwazi ukuthola indlela yokuyithumela.",
+                "I-Router-Main ayinendlela kuya ku-Portal-01 ngoba ikheli le-Portal-01 likhulekile kunethiwekhi ye-10.0.24.0 lapho likonakele khona.",
+                "Ku-Portal-01, lungiselela iPORT 0 yalo ikheli 10.0.24.1 kune-i-Mask 255.255.255.0 ukuze kulingane nethiwekhi ye-Router-Main."
+            ],
+            "explanation": "Umuntu osebenzisa idivayisi kufanele asebenzise ikheli elilindeleke ku-subnet yekhoneksheni alikonakele khona. Ikheli le-Portal-01 laliphandle kwe-10.0.24.0/24, ngakho-ke i-Router-Main ayithole indlela evumelekile ukuze ifinyelele ku-Portal-01, ivincezelisa ithrafiki kusuka kunethiwekhi ngayinye."
+        }
+    }
+}
