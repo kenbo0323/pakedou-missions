@@ -1,0 +1,1325 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-23",
+    "number": 64,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "cable_unplugged"
+    ],
+    "concepts": [
+        "physical-link"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.26.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.26.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Support",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.4.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.4.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.4.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "Switch-Floor2",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.4.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.8.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Wiki-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.8.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.8.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "No Wiki for Reception",
+            "story": "Reception staff say the office Wiki page won't load on PC-Reception this morning, though nothing has been changed on their computer. The issue started suddenly.",
+            "objective": "Restore an HTTP connection from PC-Reception to Wiki-01.",
+            "hints": [
+                "The request from PC-Reception never leaves the VLAN switch — it gets no further than Switch-Floor2 on its way toward Router-HQ.",
+                "The uplink cable between Switch-Floor2 and Router-HQ is unplugged, so VLAN 10 has no physical path out to the router or the server beyond it.",
+                "Connect a cable between Switch-Floor2 and Router-HQ to restore the uplink."
+            ],
+            "explanation": "When the cable linking a VLAN switch to its router is unplugged, every VLAN relying on that uplink loses its only path out, even though devices within the switch can still reach each other. Always check physical links first when one segment loses outside access while another stays fine."
+        },
+        "ja": {
+            "title": "受付でWikiが開けない",
+            "story": "受付スタッフから、今朝PC-ReceptionでオフィスのWikiページが表示されないと報告がありました。パソコン自体には何も変更していないとのことです。問題は突然始まりました。",
+            "objective": "PC-ReceptionからWiki-01へのHTTP接続を復旧してください。",
+            "hints": [
+                "PC-Receptionからのリクエストは、VLANスイッチの外に出ていません。Router-HQへ向かう途中、Switch-Floor2から先に進めていません。",
+                "Switch-Floor2とRouter-HQ間のアップリンクケーブルが抜けているため、VLAN 10はルーターやその先のサーバーへ出る物理的な経路がありません。",
+                "Switch-Floor2とRouter-HQの間にケーブルを接続して、アップリンクを復旧してください。"
+            ],
+            "explanation": "VLANスイッチとルーターをつなぐケーブルが抜けると、そのアップリンクに頼っている全てのVLANは外部への唯一の経路を失います。ただし、スイッチ内部の端末同士は引き続き通信できます。あるセグメントだけが外部にアクセスできず、他は問題ない場合は、まず物理的な接続を確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "Wiki 接收不了",
+            "story": "前台工作人员说办公室 Wiki 页面无法在 PC-Reception 上加载，虽然他们的电脑上没有任何改动。这个问题是突然出现的。",
+            "objective": "恢复从 PC-Reception 到 Wiki-01 的 HTTP 连接。",
+            "hints": [
+                "来自 PC-Reception 的请求没有离开 VLAN 交换机，在前往 Router-HQ 的路上没有超过 Switch-Floor2。",
+                "Switch-Floor2 和 Router-HQ 之间的上行链接电缆已拔出，因此 VLAN 10 没有通往路由器或其他网络的物理路径。",
+                "在 Switch-Floor2 和 Router-HQ 之间连接一条电缆以恢复上行链接。"
+            ],
+            "explanation": "当连接 VLAN 交换机与其路由器的电缆被拔出时，依赖该上行链接的每个 VLAN 都会失去唯一的外部路径，即使交换机内的设备仍然可以彼此通信。当一个网段失去外部访问而另一个网段保持正常时，总是先检查物理链接。"
+        },
+        "zh-TW": {
+            "title": "Wiki 無法在櫃台連線",
+            "story": "前台工作人員表示辦公室 Wiki 頁面無法在 PC-Reception 上加載，雖然他們的電腦上沒有任何變更。這個問題是突然發生的。",
+            "objective": "恢復 PC-Reception 到 Wiki-01 的 HTTP 連線。",
+            "hints": [
+                "來自 PC-Reception 的請求沒有離開 VLAN 交換機，在前往 Router-HQ 的路上沒有超過 Switch-Floor2。",
+                "Switch-Floor2 和 Router-HQ 之間的上行連結電纜已拔出，因此 VLAN 10 沒有通往路由器或其他網路的實體路徑。",
+                "在 Switch-Floor2 和 Router-HQ 之間連接一條電纜以恢復上行連結。"
+            ],
+            "explanation": "當連接 VLAN 交換機與其路由器的電纜被拔出時，依賴該上行連結的每個 VLAN 都會失去唯一的外部路徑，即使交換機內的裝置仍然可以彼此通訊。當一個網段失去外部存取而另一個網段保持正常時，務必優先檢查實體連結。"
+        },
+        "ko": {
+            "title": "Wiki 수신 불가",
+            "story": "접수 직원이 PC-Reception에서 오피스 Wiki 페이지가 로드되지 않는다고 보고했습니다. 컴퓨터에는 변경 사항이 없는데도 이 문제가 발생했습니다. 문제는 갑자기 시작되었습니다.",
+            "objective": "PC-Reception에서 Wiki-01로 HTTP 연결을 복구합니다.",
+            "hints": [
+                "PC-Reception의 요청이 VLAN 스위치를 떠나지 않으며, Router-HQ로 가는 길에 Switch-Floor2를 넘어가지 않습니다.",
+                "Switch-Floor2와 Router-HQ 사이의 업링크 케이블이 분리되어 있으므로 VLAN 10은 라우터 또는 그 이상의 네트워크로 나갈 수 있는 물리적 경로가 없습니다.",
+                "Switch-Floor2와 Router-HQ 사이에 케이블을 연결하여 업링크를 복구합니다."
+            ],
+            "explanation": "VLAN 스위치를 라우터에 연결하는 케이블이 분리되면, 그 업링크에 의존하는 모든 VLAN이 유일한 외부 경로를 잃게 됩니다. 스위치 내의 장치들은 여전히 서로 통신할 수 있지만, 외부 접근은 불가능합니다. 한 네트워크 세그먼트가 외부 접근을 잃고 다른 세그먼트는 정상일 때는 항상 물리적 링크를 먼저 확인하세요."
+        },
+        "es": {
+            "title": "Sin Wiki para Recepción",
+            "story": "El personal de recepción dice que la página Wiki de la oficina no carga en PC-Reception esta mañana, aunque no se ha cambiado nada en su computadora. El problema comenzó de repente.",
+            "objective": "Restaurar la conexión HTTP desde PC-Reception a Wiki-01.",
+            "hints": [
+                "La solicitud de PC-Reception nunca sale del Switch VLAN: no llega más allá de Switch-Floor2 en su camino hacia Router-HQ.",
+                "El cable de enlace ascendente entre Switch-Floor2 y Router-HQ está desconectado, por lo que VLAN 10 no tiene ruta física hacia el enrutador o el servidor más allá.",
+                "Conecte un cable entre Switch-Floor2 y Router-HQ para restaurar el enlace ascendente."
+            ],
+            "explanation": "Cuando se desenchufa el cable que vincula un Switch VLAN a su enrutador, cada VLAN que depende de ese enlace ascendente pierde su única ruta de salida, aunque los dispositivos dentro del conmutador aún puedan comunicarse entre sí. Siempre verifique los enlaces físicos primero cuando un segmento pierda acceso externo mientras otro permanece bien."
+        },
+        "pt-BR": {
+            "title": "Sem Wiki para Recepção",
+            "story": "Os funcionários da recepção informam que a página Wiki do escritório não carrega em PC-Reception esta manhã, embora nada tenha sido alterado no computador deles. O problema começou de repente.",
+            "objective": "Restaurar a conexão HTTP de PC-Reception para Wiki-01.",
+            "hints": [
+                "A requisição de PC-Reception nunca sai do Switch VLAN — não chega além de Switch-Floor2 a caminho de Router-HQ.",
+                "O cabo de enlace ascendente entre Switch-Floor2 e Router-HQ está desconectado, portanto VLAN 10 não possui um caminho físico para o roteador ou servidor além dele.",
+                "Conecte um cabo entre Switch-Floor2 e Router-HQ para restaurar o enlace ascendente."
+            ],
+            "explanation": "Quando o cabo que conecta um Switch VLAN ao seu roteador é desconectado, cada VLAN que depende desse enlace ascendente perde seu único caminho de saída, mesmo que dispositivos dentro do switch ainda consigam se comunicar. Sempre verifique os links físicos primeiro quando um segmento perde acesso externo enquanto outro permanece funcionando bem."
+        },
+        "de": {
+            "title": "Kein Wiki für Reception",
+            "story": "Das Empfangspersonal meldet, dass die Office-Wiki-Seite heute Morgen auf PC-Reception nicht lädt, obwohl nichts an ihrem Computer geändert wurde. Das Problem ist plötzlich aufgetreten.",
+            "objective": "Stellen Sie eine HTTP-Verbindung von PC-Reception zu Wiki-01 wieder her.",
+            "hints": [
+                "Die Anfrage von PC-Reception verlässt den VLAN-Switch nicht — sie kommt nicht über Switch-Floor2 hinaus auf ihrem Weg zu Router-HQ.",
+                "Das Uplink-Kabel zwischen Switch-Floor2 und Router-HQ ist nicht angesteckt, daher hat VLAN 10 keinen physischen Weg zum Router oder zum Server dahinter.",
+                "Verbinden Sie ein Kabel zwischen Switch-Floor2 und Router-HQ, um das Uplink wiederherzustellen."
+            ],
+            "explanation": "Wenn das Kabel, das einen VLAN-Switch mit seinem Router verbindet, nicht angesteckt ist, verliert jedes VLAN, das von diesem Uplink abhängig ist, seinen einzigen Weg nach außen, obwohl Geräte innerhalb des Switches sich noch gegenseitig erreichen können. Überprüfen Sie bei Zugriffsverlust eines Segments immer zuerst die physischen Verbindungen."
+        },
+        "fr": {
+            "title": "Pas de Wiki pour la Réception",
+            "story": "Le personnel de réception signale que la page Wiki du bureau ne se charge pas sur PC-Reception ce matin, bien que rien n'ait été changé sur leur ordinateur. Le problème est apparu soudainement.",
+            "objective": "Restaurer une connexion HTTP de PC-Reception vers Wiki-01.",
+            "hints": [
+                "La demande de PC-Reception ne quitte jamais le VLAN Switch — elle n'arrive pas plus loin que Switch-Floor2 sur le chemin vers Router-HQ.",
+                "Le câble de liaison entre Switch-Floor2 et Router-HQ est débranché, donc le VLAN 10 n'a aucun chemin physique vers le routeur ou le serveur au-delà.",
+                "Connectez un câble entre Switch-Floor2 et Router-HQ pour restaurer la liaison."
+            ],
+            "explanation": "Quand le câble reliant un VLAN Switch à son routeur est débranché, chaque VLAN dépendant de cette liaison perd son seul chemin vers l'extérieur, même si les appareils au sein du commutateur peuvent toujours se joindre. Vérifiez toujours les connexions physiques d'abord quand un segment perd l'accès externe alors qu'un autre reste fonctionnel."
+        },
+        "hi": {
+            "title": "रिसेप्शन के लिए कोई विकी नहीं",
+            "story": "रिसेप्शन स्टाफ बताता है कि आज सुबह PC-Reception पर ऑफिस विकी पेज लोड नहीं हो रहा है, हालांकि उनके कंप्यूटर पर कुछ भी नहीं बदला गया है। समस्या अचानक शुरू हुई।",
+            "objective": "PC-Reception से Wiki-01 तक HTTP कनेक्शन पुनः स्थापित करें।",
+            "hints": [
+                "PC-Reception का अनुरोध VLAN Switch को नहीं छोड़ता — यह Router-HQ की ओर जाते समय Switch-Floor2 से आगे नहीं जाता।",
+                "Switch-Floor2 और Router-HQ के बीच की अपलिंक केबल अनप्लग है, इसलिए VLAN 10 के पास राउटर या उससे आगे सर्वर तक कोई भौतिक पथ नहीं है।",
+                "Switch-Floor2 और Router-HQ के बीच एक केबल कनेक्ट करें अपलिंक पुनः स्थापित करने के लिए।"
+            ],
+            "explanation": "जब VLAN Switch को उसके Router से जोड़ने वाली केबल अनप्लग होती है, तो वह प्रत्येक VLAN जो उस अपलिंक पर निर्भर है, अपना एकमात्र बाहरी पथ खो देता है, भले ही स्विच के भीतर डिवाइस एक दूसरे तक पहुंच सकते हैं। जब एक सेगमेंट बाहरी पहुंच खो देता है जबकि दूसरा ठीक रहता है तो हमेशा पहले भौतिक लिंक की जांच करें।"
+        },
+        "id": {
+            "title": "Tidak Ada Wiki untuk Resepsi",
+            "story": "Staf resepsi melaporkan bahwa halaman Wiki kantor tidak memuat di PC-Reception pagi ini, padahal tidak ada yang diubah di komputer mereka. Masalah dimulai tiba-tiba.",
+            "objective": "Pulihkan koneksi HTTP dari PC-Reception ke Wiki-01.",
+            "hints": [
+                "Permintaan dari PC-Reception tidak pernah meninggalkan VLAN Switch — tidak sampai lebih jauh dari Switch-Floor2 menuju Router-HQ.",
+                "Kabel uplink antara Switch-Floor2 dan Router-HQ tidak tersambung, jadi VLAN 10 tidak memiliki jalur fisik ke router atau server di luarnya.",
+                "Hubungkan kabel antara Switch-Floor2 dan Router-HQ untuk memulihkan uplink."
+            ],
+            "explanation": "Ketika kabel yang menghubungkan VLAN Switch ke routernya terputus, setiap VLAN yang bergantung pada uplink itu kehilangan satu-satunya jalur keluar, meskipun perangkat di dalam switch masih dapat saling menjangkau. Selalu periksa tautan fisik terlebih dahulu ketika satu segmen kehilangan akses luar sementara yang lain tetap berfungsi."
+        },
+        "ru": {
+            "title": "Нет Wiki для Приёма",
+            "story": "Сотрудники приёма сообщают, что страница офицной Wiki не загружается на PC-Reception с этого утра, хотя на их компьютере ничего не было изменено. Проблема возникла неожиданно.",
+            "objective": "Восстановите HTTP-соединение от PC-Reception к Wiki-01.",
+            "hints": [
+                "Запрос от PC-Reception никогда не покидает VLAN Switch — он не проходит дальше Switch-Floor2 на пути к Router-HQ.",
+                "Кабель восходящей линии между Switch-Floor2 и Router-HQ отключен, поэтому VLAN 10 не имеет физического пути к маршрутизатору или серверу за ним.",
+                "Подключите кабель между Switch-Floor2 и Router-HQ, чтобы восстановить восходящую линию."
+            ],
+            "explanation": "Когда кабель, связывающий VLAN Switch с его маршрутизатором, отключен, каждая VLAN, зависящая от этой восходящей линии, теряет единственный путь наружу, даже если устройства внутри коммутатора по-прежнему могут достичь друг друга. Всегда сначала проверяйте физические соединения, когда один сегмент теряет внешний доступ, а другой остаётся в порядке."
+        },
+        "it": {
+            "title": "No Wiki for Reception",
+            "story": "Il personale della Reception dice che la pagina Wiki dell'ufficio non si carica su PC-Reception questa mattina, anche se nulla è stato modificato sul loro computer. Il problema è iniziato improvvisamente.",
+            "objective": "Ripristinare una connessione HTTP da PC-Reception a Wiki-01.",
+            "hints": [
+                "La richiesta da PC-Reception non esce mai dallo VLAN switch — non va oltre Switch-Floor2 sulla strada verso Router-HQ.",
+                "Il cavo uplink tra Switch-Floor2 e Router-HQ è scollegato, quindi VLAN 10 non ha alcun percorso fisico verso il router o il server oltre esso.",
+                "Collegare un cavo tra Switch-Floor2 e Router-HQ per ripristinare l'uplink."
+            ],
+            "explanation": "Quando il cavo che collega uno VLAN switch al suo router è scollegato, ogni VLAN che dipende da quel uplink perde l'unico percorso in uscita, anche se i dispositivi all'interno dello switch possono ancora raggiungersi. Controllare sempre i collegamenti fisici per primo quando un segmento perde l'accesso esterno mentre un altro rimane intatto."
+        },
+        "tr": {
+            "title": "Reception için Wiki Yok",
+            "story": "Alım Satım bölümü, bu sabah PC-Reception üzerinde ofis Wiki sayfasının yüklenmediğini söylüyor. Bilgisayarında hiçbir değişiklik yapılmamış olmasına rağmen sorun aniden başladı.",
+            "objective": "PC-Reception'dan Wiki-01'e HTTP bağlantısını geri yükleyin.",
+            "hints": [
+                "PC-Reception'dan gelen istek asla VLAN switch'ten ayrılmıyor — Router-HQ yolunda Switch-Floor2'den daha ötesine gitmiyor.",
+                "Switch-Floor2 ve Router-HQ arasındaki uplink kablosu çıkartılmış durumda, bu yüzden VLAN 10'un router'a veya ötesindeki sunucuya giden hiçbir fiziksel yolu yok.",
+                "Switch-Floor2 ve Router-HQ arasında bir kablo bağlayarak uplink'i geri yükleyin."
+            ],
+            "explanation": "Bir VLAN switch'i router'a bağlayan kablo çıkartıldığında, o uplink'e bağlı her VLAN, switch içindeki cihazlar birbirlerine ulaşabilse bile dış dünyaya gitmek için tek yol olan bağlantısını kaybeder. Bir segment dış erişim kaybederken başka bir segment iyi durumdayken, her zaman fiziksel bağlantıları ilk olarak kontrol edin."
+        },
+        "th": {
+            "title": "Wiki ไม่มีสำหรับ Reception",
+            "story": "พนักงาน Reception บอกว่าหน้า Wiki ของสำนักงานไม่โหลดบน PC-Reception เช้านี้ แม้ว่าไม่มีการเปลี่ยนแปลงใดๆ บนคอมพิวเตอร์ของพวกเขา ปัญหาเกิดขึ้นอย่างกะทันหัน",
+            "objective": "คืนการเชื่อมต่อ HTTP จาก PC-Reception ไปยัง Wiki-01",
+            "hints": [
+                "คำขอจาก PC-Reception ไม่เคยออกจาก VLAN switch — ไม่ได้เดินทางไกลกว่า Switch-Floor2 ไปยัง Router-HQ",
+                "สายเคเบิล uplink ระหว่าง Switch-Floor2 และ Router-HQ ถูกถอดออก ดังนั้น VLAN 10 ไม่มีเส้นทางทางกายภาพออกไปยังเราเตอร์หรือเซิร์ฟเวอร์ที่ไกลออกไป",
+                "เชื่อมต่อสายเคเบิลระหว่าง Switch-Floor2 และ Router-HQ เพื่อคืนค่า uplink"
+            ],
+            "explanation": "เมื่อสายเคเบิลที่เชื่อมต่อ VLAN switch กับเราเตอร์ของมันถูกถอดออก ทุก VLAN ที่พึ่งพา uplink นั้นจะสูญเสียเส้นทางออกเพียงเส้นทางเดียว แม้ว่าอุปกรณ์ภายในสวิตช์ยังคงสามารถเข้าถึงกันและกันได้ ตรวจสอบลิงก์ทางกายภาพก่อนเสมอเมื่อส่วนหนึ่งสูญเสียการเข้าถึงภายนอก ในขณะที่อีกส่วนหนึ่งยังคงสบายดี"
+        },
+        "vi": {
+            "title": "Không có Wiki cho Reception",
+            "story": "Nhân viên Reception cho biết trang Wiki văn phòng không tải được trên PC-Reception sáng nay, mặc dù không có gì được thay đổi trên máy tính của họ. Vấn đề bắt đầu đột ngột.",
+            "objective": "Khôi phục kết nối HTTP từ PC-Reception đến Wiki-01.",
+            "hints": [
+                "Yêu cầu từ PC-Reception không bao giờ rời khỏi VLAN switch — nó không đi xa hơn Switch-Floor2 trên đường đến Router-HQ.",
+                "Cáp uplink giữa Switch-Floor2 và Router-HQ đã bị tháo ra, vì vậy VLAN 10 không có đường dẫn vật lý nào đến bộ định tuyến hoặc máy chủ phía sau nó.",
+                "Kết nối cáp giữa Switch-Floor2 và Router-HQ để khôi phục uplink."
+            ],
+            "explanation": "Khi cáp liên kết một VLAN switch với bộ định tuyến của nó bị tháo ra, mọi VLAN phụ thuộc vào uplink đó sẽ mất đi đường dẫn duy nhất của nó để đi ra ngoài, mặc dù các thiết bị trong switch vẫn có thể tiếp cận nhau. Luôn kiểm tra các liên kết vật lý trước tiên khi một đoạn mất quyền truy cập bên ngoài trong khi đoạn khác vẫn hoạt động tốt."
+        },
+        "af": {
+            "title": "Geen Wiki vir Reception",
+            "story": "Reception-personeel sê dat die kantoor Wiki-bladsy nie op PC-Reception vanmore laai nie, hoewel niks op hulle rekenaar verander is. Die probleem het skielik begin.",
+            "objective": "Herstel 'n HTTP-verbinding van PC-Reception na Wiki-01.",
+            "hints": [
+                "Die aanvraag van PC-Reception verlaat die VLAN switch nooit — dit gaan nie verder as Switch-Floor2 op sy weg na Router-HQ nie.",
+                "Die uplink-kabel tussen Switch-Floor2 en Router-HQ is ontkoppel, dus VLAN 10 het geen fisiese pad uit na die router of die bediener daarby nie.",
+                "Verbind 'n kabel tussen Switch-Floor2 en Router-HQ om die uplink te herstel."
+            ],
+            "explanation": "Wanneer die kabel wat 'n VLAN switch aan sy router koppel, ontkoppel word, verloor elke VLAN wat op daardie uplink staatmaak sy enigste weg uit, hoewel toestelle binne die switch mekaar nog steeds kan bereik. Kontroleer altyd fisiese skakels eers wanneer een segment buitekant-toegang verloor terwyl 'n ander goed bly."
+        },
+        "am": {
+            "title": "Wiki ለ Reception የለም",
+            "story": "በ PC-Reception ላይ ሥራ አስኪያጅ ጠቅላላ ገብ ገጽ በዚህ ጀmorning ሊበጅ አልቻለም፣ ምንም እንኳን በኮምፒተራቸው ላይ ምንም ነገር አልተቀየረም። ጉዳቱ ድንገተኛ ነበር።",
+            "objective": "የHTTP ግንኙነትን ከ PC-Reception ወደ Wiki-01 複原 ያድርጉ።",
+            "hints": [
+                "ከ PC-Reception ያለው ጥያቄ ከ Switch-Floor2 ውስጥ መውጫ ምንም ሊሄድ አይችልም — ወደ Router-HQ በሚሄደው መንገድ ላይ ያልተሸነ።",
+                "በ Switch-Floor2 እና Router-HQ መካከል ያለው የወደላይ ኬብል ሊለየ ስለሆነ VLAN 10 ወደ Router ወይም ከአገልግሎት በላይ ምንም አካላዊ መንገድ የለውም።",
+                "Switch-Floor2 እና Router-HQ መካከል ኬብል ያገናኙ ወደላይ ምስቅ ለመመለስ።"
+            ],
+            "explanation": "ምንም ምክሮች ለ VLAN switch ጥቅም ላይ ሲሞላ ግዙዙ ሊለየ፣ ሥራ ነገር ለ VLAN ወደ ውጭ መንገዱን ለ Router ሞላ የሚያስወግዱ ነገር ሞሊ አስወግደ ሰዎችን አውራ ስቅተ።"
+        },
+        "ar": {
+            "title": "لا توجد Wiki لـ Reception",
+            "story": "يقول موظفو الاستقبال إن صفحة Wiki للمكتب لن تحميل على PC-Reception هذا الصباح، على الرغم من عدم تغيير أي شيء على جهاز الكمبيوتر الخاص بهم. بدأت المشكلة فجأة.",
+            "objective": "استعادة اتصال HTTP من PC-Reception إلى Wiki-01.",
+            "hints": [
+                "الطلب من PC-Reception لا يترك مفتاح VLAN — لا يتجاوز Switch-Floor2 في طريقه نحو Router-HQ.",
+                "كبل الارتباط العلوي بين Switch-Floor2 و Router-HQ غير متصل، لذا VLAN 10 ليس لديه مسار فعلي إلى Router أو الخادم بعده.",
+                "قم بتوصيل كبل بين Switch-Floor2 و Router-HQ لاستعادة الارتباط العلوي."
+            ],
+            "explanation": "عندما يتم فصل الكبل الذي يربط VLAN switch بـ router، كل VLAN يعتمد على هذا الارتباط العلوي يفقد مساره الوحيد للخروج، حتى لو كانت الأجهزة داخل Switch يمكنها الوصول لبعضها البعض. تحقق دائماً من الوصلات الفيزيائية أولاً عندما يفقد جزء واحد الوصول الخارجي بينما يبقى آخر جيداً."
+        },
+        "az": {
+            "title": "Reception üçün Wiki yoxdur",
+            "story": "Reception personeli ofis Wiki səhifəsinin bu səhəbd PC-Reception üzərində yüklənməyəcəyini söyləyir, baxmayaraq ki, kompüterində heç bir şey dəyişdirilməyib. Problem birdən başlayıb.",
+            "objective": "PC-Reception-dən Wiki-01-ə HTTP bağlantısını bərpa edin.",
+            "hints": [
+                "PC-Reception-dən sorğu VLAN Switch-dən çıxmır — Switch-Floor2-dən Router-HQ tərəfində əlaqə kəsilir.",
+                "Switch-Floor2 ilə Router-HQ arasında olan yuxarı link kabeli sökülüb, buna görə VLAN 10-un router və onun kənarında olan server üçün fiziki yolu yoxdur.",
+                "Switch-Floor2 ilə Router-HQ arasında kabel qoşaraq yuxarı linki bərpa edin."
+            ],
+            "explanation": "VLAN switch-i router ilə birləşdirən kabel sökülüb, o zaman o uplink-ə əsaslanarkən hər VLAN çıxışın yeganə yolunu itirir, baxmayaraq ki, Switch daxilində cihazlar hələ də bir-birlərinə çata bilirlər. Bir seqment xarici girişi itirib, digəri isə yaxşı qaldıqda, əvvəl həmişə fiziki keçidləri yoxlayın."
+        },
+        "be": {
+            "title": "Няма Wiki для Reception",
+            "story": "Персонал Reception кажа, што схема Office Wiki не грузіцца на PC-Reception сёння раніцай, хоць нічога на іхнім кампутары не было змінена. Праблема пачалася раптам.",
+            "objective": "Прывярніце HTTP-злучэнне ад PC-Reception да Wiki-01.",
+            "hints": [
+                "Запыт ад PC-Reception не пакідае VLAN switch — не преходзіць далей Switch-Floor2 у напрамку да Router-HQ.",
+                "Кабель паўвёрткі паміж Switch-Floor2 і Router-HQ адключаны, таму VLAN 10 не мае фізічнага маршруту да маршрутизатара або сервера за ім.",
+                "Падлучыце кабель паміж Switch-Floor2 і Router-HQ каб прывярнуць паўвёрткі."
+            ],
+            "explanation": "Калі кабель, звязаны VLAN switch з маршрутизатарам, адключаны, кожны VLAN, каторы залежыць ад гэтага паўвёрткі, губляе свой адзінственны маршрут вынос, хоць прыбор у switch можа ўсё жа дасягнуць адзін адноага. Заўсёды праверце фізічныя злучэнні спачатку, калі адзін сегмент губляе зовешнему доступ, а другі астаецца добрым."
+        },
+        "bg": {
+            "title": "Няма Wiki за Reception",
+            "story": "Персоналът на Reception казва, че офис страницата на Wiki не се зарежда на PC-Reception тази сутрин, въпреки че нищо не е променено на техния компютър. Проблемът започна внезапно.",
+            "objective": "Възстановете HTTP връзка от PC-Reception към Wiki-01.",
+            "hints": [
+                "Заявката от PC-Reception не напуска VLAN switch — не стига по-далеч от Switch-Floor2 по пътя към Router-HQ.",
+                "Кабелът за връзка нагоре между Switch-Floor2 и Router-HQ е разкачен, така че VLAN 10 нямa физически път към маршрутизатора или сървърът отвъд него.",
+                "Свържете кабел между Switch-Floor2 и Router-HQ за възстановяване на връзката нагоре."
+            ],
+            "explanation": "Когато кабелът, свързващ VLAN switch към неговия маршрутизатор, е разкачен, всеки VLAN, който разчита на това връзка, губи единственият си път навън, дори и устройствата в switch да могат да се стигнат един до друг. Винаги проверете физическите връзки първо, когато един сегмент загуби външния достъп, а друг остане добър."
+        },
+        "bn": {
+            "title": "Reception-এ কোনো Wiki নেই",
+            "story": "Reception-এর কর্মীরা বলছেন যে আজ সকালে PC-Reception-এ অফিস Wiki পেজ লোড হচ্ছে না, যদিও তাদের কম্পিউটারে কিছুই পরিবর্তন করা হয়নি। সমস্যাটি হঠাৎ করে শুরু হয়েছে।",
+            "objective": "PC-Reception থেকে Wiki-01 এর কাছে একটি HTTP সংযোগ পুনরুদ্ধার করুন।",
+            "hints": [
+                "PC-Reception থেকে আসা অনুরোধ VLAN সুইচ থেকে কখনো বেরোয় না — এটি Router-HQ-এর দিকে যাওয়ার পথে Switch-Floor2-এর বাইরে যায় না।",
+                "Switch-Floor2 এবং Router-HQ এর মধ্যে থাকা আপলিংক ক্যাবল আনপ্লাগ করা আছে, তাই VLAN 10-এর রাউটার বা এর বাইরে থাকা সার্ভারে কোনো শারীরিক পথ নেই।",
+                "Switch-Floor2 এবং Router-HQ এর মধ্যে একটি ক্যাবল সংযোগ করে আপলিংক পুনরুদ্ধার করুন।"
+            ],
+            "explanation": "যখন একটি VLAN সুইচকে এর রাউটারের সাথে সংযুক্ত ক্যাবল আনপ্লাগ করা হয়, তখন সেই আপলিংকের উপর নির্ভরশীল প্রতিটি VLAN তার একমাত্র পথ হারিয়ে ফেলে, যদিও সুইচের মধ্যে থাকা ডিভাইসগুলি এখনও একে অপরের সাথে যোগাযোগ করতে পারে। যখন একটি সেগমেন্ট বাহ্যিক অ্যাক্সেস হারিয়ে ফেলে কিন্তু অন্যটি ঠিক থাকে, তখন সর্বদা শারীরিক লিঙ্ক প্রথমে পরীক্ষা করুন।"
+        },
+        "ca": {
+            "title": "Cap Wiki a Reception",
+            "story": "El personal de Reception diu que la pàgina Wiki de l'oficina no carrega a PC-Reception aquest matí, tot i que res ha canviat al seu ordinador. El problema va començar de manera sàvia.",
+            "objective": "Restaurar una connexió HTTP des de PC-Reception a Wiki-01.",
+            "hints": [
+                "La sol·licitud de PC-Reception mai abandona l'commutador VLAN — no va més lluny que Switch-Floor2 de camí cap a Router-HQ.",
+                "El cable d'enllaç entre Switch-Floor2 i Router-HQ està desconnectat, per la qual cosa VLAN 10 no té cap camí físic cap al router ni al servidor més allà.",
+                "Connecta un cable entre Switch-Floor2 i Router-HQ per restaurar l'enllaç."
+            ],
+            "explanation": "Quan el cable que enllaça un commutador VLAN al seu router està desconnectat, cada VLAN que depèn d'aquest enllaç perd el seu únic camí de sortida, tot i que els dispositius dins del commutador encara poden arribar els uns als altres. Sempre comprova els enllaços físics primer quan un segment perd l'accés exterior mentre un altre es manté.}"
+        },
+        "cs": {
+            "title": "Bez Wiki na Reception",
+            "story": "Personál Reception tvrdí, že stránka Wiki kanceláře se dnes ráno na PC-Reception nenačítá, přestože na jejich počítači se nic nezměnilo. Problém vznikl náhle.",
+            "objective": "Obnovit HTTP spojení z PC-Reception na Wiki-01.",
+            "hints": [
+                "Požadavek z PC-Reception nikdy neopustí VLAN přepínač — neprojde dále než Switch-Floor2 na cestě k Router-HQ.",
+                "Uplink kabel mezi Switch-Floor2 a Router-HQ je odpojen, takže VLAN 10 nemá fyzickou cestu k routeru nebo serveru za ním.",
+                "Připojte kabel mezi Switch-Floor2 a Router-HQ, abyste obnovili uplink."
+            ],
+            "explanation": "Když je kabel spojující VLAN přepínač s jeho routerem odpojen, každá VLAN závisející na tomto uplinku ztratí svou jedinou cestu ven, přestože zařízení v rámci přepínače si mohou stále navzájem dosáhnout. Fyzické spoje vždy kontrolujte nejdříve, když jeden segment ztratí externí přístup, zatímco jiný zůstane v pořádku."
+        },
+        "da": {
+            "title": "Ingen Wiki på Reception",
+            "story": "Personalet på Reception siger, at kontorets Wiki-side ikke indlæses på PC-Reception i morges, selvom intet er ændret på deres computer. Problemet startede pludseligt.",
+            "objective": "Gendan en HTTP-forbindelse fra PC-Reception til Wiki-01.",
+            "hints": [
+                "Anmodningen fra PC-Reception forlader aldrig VLAN-kontakten — den kommer ikke længere end Switch-Floor2 på vej mod Router-HQ.",
+                "Oplinkkablet mellem Switch-Floor2 og Router-HQ er afbrudt, så VLAN 10 har ingen fysisk sti til routeren eller serveren derover.",
+                "Forbind et kabel mellem Switch-Floor2 og Router-HQ for at gendanne oplinket."
+            ],
+            "explanation": "Når kablet, der forbinder en VLAN-kontakt til dens router, bliver afbrudt, mister hver VLAN, der er afhængig af det oplink, sin eneste vej ud, selvom enheder i kontakten stadig kan nå hinanden. Kontroller altid fysiske forbindelser først, når et segment mister ekstern adgang, mens et andet forbliver intakt."
+        },
+        "el": {
+            "title": "Χωρίς Wiki στη Λήψη",
+            "story": "Το προσωπικό της Λήψης λέει ότι η σελίδα Wiki του γραφείου δεν φορτώνει στο PC-Reception σήμερα το πρωί, αν και τίποτα δεν έχει αλλάξει στον υπολογιστή τους. Το πρόβλημα ξεκίνησε ξαφνικά.",
+            "objective": "Επαναφέρετε μια σύνδεση HTTP από PC-Reception σε Wiki-01.",
+            "hints": [
+                "Το αίτημα από PC-Reception δεν αφήνει ποτέ το VLAN switch — δεν φτάνει παραπέρα από Switch-Floor2 στο δρόμο προς Router-HQ.",
+                "Το καλώδιο uplink μεταξύ Switch-Floor2 και Router-HQ είναι αποσυνδεδεμένο, επομένως το VLAN 10 δεν έχει φυσική διαδρομή προς τον router ή το server πέρα από αυτό.",
+                "Συνδέστε ένα καλώδιο μεταξύ Switch-Floor2 και Router-HQ για να επαναφέρετε το uplink."
+            ],
+            "explanation": "Όταν το καλώδιο που συνδέει ένα VLAN switch στο δρομολογητή του είναι αποσυνδεδεμένο, κάθε VLAN που εξαρτάται από αυτό το uplink χάνει τη μόνη του διαδρομή έξω, ακόμα κι αν οι συσκευές εντός του switch μπορούν ακόμα να φτάσουν η μία την άλλη. Ελέγχετε πάντα τις φυσικές συνδέσεις πρώτα όταν ένα τμήμα χάνει την εξωτερική πρόσβαση ενώ ένα άλλο παραμένει σταθερό."
+        },
+        "et": {
+            "title": "Wiki puudub vastuvõtus",
+            "story": "Vastuvõtuosakond teatab, et täna hommikul ei laadi kontori Wiki leht PC-Reception arvutis, kuigi nende arvutis ei ole midagi muudetud. Probleem tekkis äkki.",
+            "objective": "Taastage HTTP-ühendus PC-Reception-st Wiki-01-ni.",
+            "hints": [
+                "Taotlus PC-Reception-st ei lahku kunagi VLAN-lülitist — see ei jõua kaugemale kui Switch-Floor2, kui teekonda Router-HQ poole.",
+                "Switch-Floor2 ja Router-HQ vaheline üleslingi kaabel on lahti ühendatud, nii et VLAN 10-l puudub füüsiline teekond ruuteri või selle taga oleva serverini.",
+                "Ühendage kaabel Switch-Floor2 ja Router-HQ vahele, et taastada üpslinkide ühendus."
+            ],
+            "explanation": "Kui VLAN-lüliti ja selle ruuteri vaheline kaabel on lahti ühendatud, kaotab iga üleslinki kasutav VLAN oma ainukese tee väljupoole, kuigi lüliti sees olevad seadmed saavad endiselt üksteisega ühendust võtta. Alati kontrollige füüsilisi linke esmalt, kui üks segment kaotab väljastpoole pääsu, samas kui teine jääb aktiivne.com"
+        },
+        "eu": {
+            "title": "Wikirik ez dagoela harrera",
+            "story": "Harrera-langilea diosku ordina Wikiko orria ez dela kargatzen PC-Reception-ean gaur goizean, ez bada duten ordenagailuan ezer aldatu. Arazo bat bitxiro hasi zen.",
+            "objective": "Berrezarri HTTP konexioa PC-Reception-etik Wiki-01-era.",
+            "hints": [
+                "Eskaera PC-Reception-etik ez dago inoiz VLAN-lülitu batetik uzten — ez da Switch-Floor2-tik harago joaten Router-HQ-rantz.",
+                "Switch-Floor2 eta Router-HQ arteko uplink kableak zuloa duen konektatzea, VLAN 10ak ez du bide fisiko elektrika ruterizarain edo handik harago dagoen zerbitzarain.",
+                "Konektatu kableak Switch-Floor2 eta Router-HQ artean uplink-eko konexioa berrezarritze altzera."
+            ],
+            "explanation": "VLAN-lülitu batek eta haren ruterizatak adina dagoen kableak zuloa duten konektatzean, uplink hori erabiltzen duen VLAN bakoitza bere bakarrik duen bide bat galtzen du etxera, nahiz eta lülitu berean duten seadmeak elkarri irits dezaketen. Beti egiaztatu bide fisikoak lehenbiziko lekuan segidarreko segidarrek kanpoa galtzean duten beste segidarra onetan gera dezakeen bitartean.com"
+        },
+        "fa": {
+            "title": "بدون Wiki برای پذیرش",
+            "story": "پرسنل پذیرش می‌گویند که صفحه Wiki دفتر صبح امروز روی PC-Reception بارگذاری نمی‌شود، اگرچه هیچ چیزی در کامپیوتر آنها تغییر نکرده است. این مشکل ناگهانی شروع شد.",
+            "objective": "اتصال HTTP را از PC-Reception به Wiki-01 بازیابی کنید.",
+            "hints": [
+                "درخواست از PC-Reception هرگز از سوئیچ VLAN خارج نمی‌شود — تا Switch-Floor2 در راه رفتن به سوی Router-HQ جلوتر نمی‌رود.",
+                "کابل uplink بین Switch-Floor2 و Router-HQ به هم متصل شده است، بنابراین VLAN 10 هیچ مسیر فیزیکی به روتر یا سرور فراتر از آن ندارد.",
+                "کابل بین Switch-Floor2 و Router-HQ را متصل کنید تا اتصال uplink را بازیابی کنید."
+            ],
+            "explanation": "هنگامی که کابل اتصال دهنده یک سوئیچ VLAN به روتر آن قطع شود، هر VLAN متکی بر آن uplink تنها مسیر خروج خود را از دست می‌دهد، اگرچه دستگاه‌های داخل سوئیچ می‌توانند به یکدیگر دسترسی پیدا کنند. هنگامی که یک بخش دسترسی خارج را از دست می‌دهد درحالی که دیگری خوب است، همیشه ابتدا پیوند‌های فیزیکی را بررسی کنید.com"
+        },
+        "fi": {
+            "title": "Ei Wiki vastaanotolle",
+            "story": "Vastaanottohenkilökunnan mukaan toimiston Wiki-sivu ei latautu PC-Reception-tietokoneelle tänä aamuna, vaikka heidän tietokoneessaan ei ole muutettu mitään. Ongelma alkoi yhtäkkiä.",
+            "objective": "Palauta HTTP-yhteys PC-Reception-sta Wiki-01:een.",
+            "hints": [
+                "Pyyntö PC-Reception-sta ei koskaan poistu VLAN-kytkimestä — se ei pääse Switch-Floor2:n yli matkalla Router-HQ:lle.",
+                "Switch-Floor2 ja Router-HQ välinen ylälinkkikaapeli on irrotettu, joten VLAN 10:llä ei ole fyysistä polkua reitittimeen tai sen takana olevaan palvelimeen.",
+                "Yhdistä kaapeli Switch-Floor2:n ja Router-HQ:n välille ylälinkkiyhteyden palauttamiseksi."
+            ],
+            "explanation": "Kun VLAN-kytkimen ja sen reitittimen yhdistävä kaapeli on irrotettu, jokainen kyseistä ylälinkkiä käyttävä VLAN menettää ainoat ulospääsynsä, vaikka kytkimen sisällä olevat laitteet voivat silti tavoittaa toisensa. Tarkista aina fyysiset yhteydet ensin, kun yksi segmentti menettää ulkoisen pääsyn, kun taas toinen pysyy toiminnassa.com"
+        },
+        "fil": {
+            "title": "Walang Wiki para sa Reception",
+            "story": "Ang reception staff ay nagsasabi na ang office Wiki page ay hindi nag-load sa PC-Reception ngayong umaga, kahit walang nabago sa kanilang computer. Ang problema ay biglang nagsimula.",
+            "objective": "Ibalik ang HTTP connection mula PC-Reception hanggang Wiki-01.",
+            "hints": [
+                "Ang request mula PC-Reception ay hindi kailanman umaalis sa VLAN switch — ito ay hindi umabot pa sa Switch-Floor2 sa daan tungo sa Router-HQ.",
+                "Ang uplink cable sa pagitan ng Switch-Floor2 at Router-HQ ay na-disconnect, kaya ang VLAN 10 ay walang physical path patungo sa router o sa server na higit pa.",
+                "Ikonekta ang cable sa pagitan ng Switch-Floor2 at Router-HQ upang ibalik ang uplink."
+            ],
+            "explanation": "Kapag ang cable na nag-uugnay ng VLAN switch sa router nito ay na-disconnect, bawat VLAN na umaasa sa uplink na iyon ay nawala ang tanging daan nito papalabas, kahit na ang mga device sa loob ng switch ay maaaring makarating pa sa isa't isa. Palaging suriin muna ang physical links kapag ang isang segment ay nawala ang panlabas na access habang ang iba ay nananatiling maayos.com"
+        },
+        "gl": {
+            "title": "Sen Wiki para Recepción",
+            "story": "O persoal de recepción di que a páxina Wiki da oficina non carga en PC-Reception esta mañá, aínda que nada foi cambiado no seu ordenador. O problema comezou de súpeto.",
+            "objective": "Restaurar unha conexión HTTP desde PC-Reception a Wiki-01.",
+            "hints": [
+                "A solicitude desde PC-Reception nunca sae do VLAN switch — non vai máis alá de Switch-Floor2 no seu camiño cara Router-HQ.",
+                "O cable de enlace entre Switch-Floor2 e Router-HQ está desconectado, polo que VLAN 10 non ten camiño físico cara o router ou o servidor máis aló.",
+                "Conecta un cable entre Switch-Floor2 e Router-HQ para restaurar o enlace."
+            ],
+            "explanation": "Cando o cable que une un VLAN switch ao seu router está desconectado, cada VLAN que depende dese enlace perde o seu único camiño cara fóra, aínda que os dispositivos dentro do switch aínda poidan alcanzarse entre si. Sempre comproba os enlaces físicos primeiro cando un segmento perde acceso ao exterior mentres outro segue ben."
+        },
+        "gu": {
+            "title": "રિસેપ્શન માટે કોઈ વિકી નથી",
+            "story": "રિસેપ્શન સ્ટાફ કહે છે કે ઓફિસ વિકી પૃષ્ઠ આજ સવારે PC-Reception પર લોડ થતું નથી, તેમ છતાં તેમના કમ્પ્યુટર પર કશું બદલાયું નથી. સમસ્યા અચાનક શરૂ થઈ.",
+            "objective": "PC-Reception થી Wiki-01 તરફ HTTP કનેક્શન પુનઃસ્થાપિત કરો.",
+            "hints": [
+                "PC-Reception પાસેથીનો વિનંતી ક્યારે VLAN switch છોડે નહીં — તે Switch-Floor2 કરતાં આગળ જતું નથી Router-HQ તરફ.",
+                "Switch-Floor2 અને Router-HQ વચ્ચેનો અપલિંક કેબલ અનપ્લગ કરેલો છે, તેથી VLAN 10 પાસે રાউટર અથવા તેની બહારના સર્વર તરફ કોઈ ભૌતિક પાથ નથી.",
+                "Switch-Floor2 અને Router-HQ વચ્ચે કેબલ કનેક્ટ કરો અપલિંક પુનઃસ્થાપિત કરવા માટે."
+            ],
+            "explanation": "જ્યારે VLAN switch ને તેના રાઉટર સાથે જોડનાર કેબલ અનપ્લગ હોય, તો તે અપલિંક પર આધારિત દરેક VLAN તેનો એક માત્ર બાહ્ય પાથ ગુમાવે છે, તેમ છતાં સ્વિચની અંદરની ડિવાઈસ એક બીજા સુધી પહોંચી શકે છે. જ્યારે એક સેગમેન્ટ બાહ્ય ઍક્સેસ ગુમાવે અને બીજું સારું રહે ત્યારે હંમેશા ભૌતિક લિંક્સ પહેલા તપાસો."
+        },
+        "he": {
+            "title": "אין Wiki לקבלה",
+            "story": "כוח הקבלה אומר שעמוד Wiki של המשרד לא נטען ב-PC-Reception הבוקר, למרות שלא שונה דבר במחשבם. הבעיה התחילה פתאום.",
+            "objective": "שחזר חיבור HTTP מ-PC-Reception ל-Wiki-01.",
+            "hints": [
+                "הבקשה מ-PC-Reception לא עוזבת את ה-VLAN switch — היא לא מגיעה הלאה מ-Switch-Floor2 בדרכה ל-Router-HQ.",
+                "כבל ה-uplink בין Switch-Floor2 ל-Router-HQ מנותק, כך ש-VLAN 10 אין לה נתיב פיזי ל-Router או לשרת מעבר.",
+                "חבר כבל בין Switch-Floor2 ו-Router-HQ כדי לשחזר את ה-uplink."
+            ],
+            "explanation": "כאשר כבל המחבר VLAN switch לנתב שלו מנותק, כל VLAN התלויה ב-uplink זה מאבדת את הנתיב החיצוני היחיד שלה, למרות שמכשירים בתוך ה-switch עדיין יכולים להגיע זה לזה. בדוק תמיד קישורים פיזיים תחילה כאשר קטע אחד מאבד גישה חיצונית ואחר נשאר בסדר."
+        },
+        "hr": {
+            "title": "Nema Wiki-ja za Recepciju",
+            "story": "Recepcijski djelatnici kažu da se web stranica Wiki ureda ne učitava na PC-Reception ovog jutra, iako ništa nije promijenjeno na njihovu računalu. Problem je počeo iznenada.",
+            "objective": "Obnoviti HTTP vezu sa PC-Reception prema Wiki-01.",
+            "hints": [
+                "Zahtjev od PC-Reception nikad ne napušta VLAN switch — ne ide dalje od Switch-Floor2 na putu prema Router-HQ.",
+                "Uplink kabel između Switch-Floor2 i Router-HQ je odspojen, pa VLAN 10 nema fizičke veze prema usmjerivaču ili serveru izvan njega.",
+                "Priključite kabel između Switch-Floor2 i Router-HQ kako biste obnovili uplink."
+            ],
+            "explanation": "Kada je kabel koji povezuje VLAN switch sa njegovim usmjerivačem odspojen, svaki VLAN koji se oslanja na taj uplink gubi svoju jedinu vanjsku rutu, iako uređaji unutar sklopke mogu i dalje međusobno komunicirati. Uvijek prvo provjerite fizičke veze kada jedan segment gubi vanjski pristup dok je drugi u redu."
+        },
+        "hu": {
+            "title": "Nincs Wiki a Recepciónál",
+            "story": "A recepcióban dolgozók azt mondják, hogy az iroda Wiki oldala ma reggel nem töltődik be a PC-Reception gépre, holott a számítógépüket nem módosították. A probléma hirtelen kezdődött.",
+            "objective": "Állítson vissza egy HTTP-kapcsolatot a PC-Reception és a Wiki-01 között.",
+            "hints": [
+                "A PC-Reception-ről érkező kérés soha nem hagyja el a VLAN switch-et — nem jut tovább, mint Switch-Floor2 a Router-HQ felé vezető úton.",
+                "A Switch-Floor2 és Router-HQ közötti uplink kábel le van húzva, így a VLAN 10 nem rendelkezik fizikai útvonallal az útválasztó vagy a rajta túl lévő szerver felé.",
+                "Kösse össze a Switch-Floor2 és Router-HQ közötti kábelt az uplink helyreállításához."
+            ],
+            "explanation": "Amikor a VLAN switch-t az útválasztóval összekötő kábel le van húzva, minden erre az uplinkre támaszkodó VLAN elveszíti egyetlen külső útját, bár a switch-en belüli eszközök továbbra is elérhetik egymást. Mindig először ellenőrizze a fizikai kapcsolatokat, ha az egyik szegmens elveszíti a külső hozzáférést, míg a másik jól működik."
+        },
+        "hy": {
+            "title": "Վիկի՝ ընդունելության համար",
+            "story": "Ընդունելության բաժնի աշխատակիցները ասում են, որ գրասենյակի Վիկի էջը այս առավոտ չի բեռնվում PC-Reception-ի վրա, չնայած նրա համակարգչում ոչ մի փոփոխություն չի կատարվել։ Խնդիրը հանկարծ ծագավ։",
+            "objective": "Վերականգնել HTTP կապը PC-Reception-ից Wiki-01-ին:",
+            "hints": [
+                "PC-Reception-ից ստացված հարցումը երբեք չի լeavvում VLAN անջատիչը — այն Switch-Floor2-ի գալուստ չի անցնում ճանապարհին Router-HQ-ի ուղղությամբ:",
+                "Switch-Floor2-ի և Router-HQ-ի միջև հերթ մալուխ անջատված է, ուստի VLAN 10-ին չունի Router-ի կամ դրա հետևում գտնվող սերվերի ֆիզիկական ճանապարհ:",
+                "Switch-Floor2-ի և Router-HQ-ի միջև մալուխ միացրեք՝ հերթ կապը վերականգնելու համար:"
+            ],
+            "explanation": "Երբ VLAN անջատիչը իր Router-ին կապող մալուխ անջատված է, այն Վ VLAN-ի, որոնք այդ հերթի վրա կախված են, կորցնում են իրենց միակ ելքային ճանապարհը, չնայած անջատիչի ներսում սարքերը դեռ կարող են միմյանց հետ կապ ունենալ։ Երբ մեկ հատվածը կորցնում է արտաքին մուտքը, մինչդեռ մյուսը մնում է լավ, միշտ առաջինը ստուգեք ֆիզիկական կապերը:"
+        },
+        "is": {
+            "title": "Engin Wiki fyrir móttöku",
+            "story": "Starfsmenn móttökunnar segja að veffang Wiki skrifstofunnar hlaðist ekki á PC-Reception í fyrramálið, þó að engar breytingar hafi verið gerðar á tölvu þeirra. Vandamálið kom til skyndilega.",
+            "objective": "Endurkoma HTTP tengingu frá PC-Reception til Wiki-01.",
+            "hints": [
+                "Beiðnin frá PC-Reception yfirgefur aldrei VLAN rofi — hún kemur ekki lengra en Switch-Floor2 á leiðinni til Router-HQ.",
+                "Uplink gagnlína milli Switch-Floor2 og Router-HQ er aftengd, svo VLAN 10 á engan líkamlega leið til Router-HQ eða þjónsins fyrir aftan hann.",
+                "Tengðu gagnlínu milli Switch-Floor2 og Router-HQ til að endurheimta uplink-tenginguna."
+            ],
+            "explanation": "Þegar gagnlína sem tengir VLAN rof við Router er aftengd, misfa sérhver VLAN sem treystir á þá Uplink-tengingu eina leið sína út, jafnvel þó að tæki innan rofans geti ennþá tengst hvert öðru. Athugaðu alltaf líkamlegar tengingar fyrst þegar einn hluti missir ytri aðgang en annar helst gangandi."
+        },
+        "ka": {
+            "title": "ვიკი მიმღები ფილიალისთვის",
+            "story": "მიმღები ფილიალის თანამშრომლებმა თქვეს, რომ ოფისის Wiki გვერდი არ იტვირთება PC-Reception-ზე ამ დილით, თუმცა მათი კომპიუტერში არაფერი შეიცვალა. პრობლემა თავდაპირველად გაჩნდა.",
+            "objective": "აღადგინეთ HTTP კავშირი PC-Reception-დან Wiki-01-ამდე.",
+            "hints": [
+                "PC-Reception-ის თხოვნა არასოდეს ტოვებს VLAN Switch-ს — ის Switch-Floor2-ზე აღარ მოდის Router-HQ-ისკენ მიმართულებით.",
+                "Switch-Floor2-სა და Router-HQ-ს შორის ჩართვის კაბელი გამოწერილია, ამიტომ VLAN 10-ს რაუტერისკენ ან მის მიღმა მდებარე სერვერის ფიზიკური გზა არ აქვს.",
+                "Switch-Floor2-სა და Router-HQ-ს შორის კაბელი დაკავშირეთ ჩართვის კავშირის აღსადგენად."
+            ],
+            "explanation": "როდესაც VLAN switch-ი მის რაუტერთან უკავშირე კაბელი გამოწერილია, ყველა VLAN, რომელიც ამ ჩართვაზე დამოკიდებული იყო, კარგავს თავის ერთადერთ გასასვლელ გზას, მაშინაც კი თუ switch-ის შიგნით სარკმელი ერთმანეთს დაკავშირდება. ფიზიკური კავშირების შემოწმება ყოველთვის პირველი გაკეთება უნდა იყოს, როდესაც ერთი სეგმენტი კარგავს გარე წვდომას, ხოლო მეორე კარგად ხდება."
+        },
+        "kk": {
+            "title": "Wiki қабылдау орталығының үшін",
+            "story": "Қабылдау орталығының қызметкерлері айтады, бұл таң-ертеңде PC-Reception-да кеңселік Wiki бетi жүктелмейді, олардың компьютеріне өзгерістер енгізілген болмасына қарамастан. Мәселе кенеттеп пайда болды.",
+            "objective": "PC-Reception-дан Wiki-01-ге HTTP қосылымын қалпына келтіру.",
+            "hints": [
+                "PC-Reception-дан келген сұраныс VLAN анықтағысын ешқашан тастамайды — ол Switch-Floor2 көлік жүргіндеп Router-HQ-қа бара жатқанда одан әрі барамайды.",
+                "Switch-Floor2 мен Router-HQ арасындағы жоғарғы сілтеме кабелі ажыратылған, сондықтан VLAN 10-ына маршрутизатор немесе оның артындағы сервер үшін физикалық жол жоқ.",
+                "Switch-Floor2 мен Router-HQ арасына кабель қосыңыз жоғарғы сілтеме қосылымын қалпына келтіру үшін."
+            ],
+            "explanation": "VLAN анықтағысын оның маршрутизаторына байланыстыратын кабель ажыратылғанда, сол жоғарғы сілтемеге сүйенетін әрбір VLAN өзінің ғана сыртқы жолын жояды, анықтағының ішіндегі құрылғылар бір-бірімен байланыса алса да. Бір сегмент сыртқы қатынау құлақтағанда, ал екінші сегмент жақсы болғанда, әрқашан алдымен физикалық байланыстарды тексеріңіз."
+        },
+        "km": {
+            "title": "វិគីសម្រាប់ការទទួលយក",
+            "story": "បុគ្គលិកផ្នែកទទួលយកបាននិយាយថាទំព័ដ Wiki របស់ការិយាល័យមិនផ្ទុកលើ PC-Reception ព្រឹក្សនេះទេ ទោះបីជាមិនមានការផ្លាស់ប្តូរលើកុំព្យូទ័ររបស់ពួកគេក៏ដោយ។ បញ្ហាបានកើតឡើងលម្អិត។",
+            "objective": "ស្ដារលម្អិត HTTP ពី PC-Reception ទៅ Wiki-01 ឡើងវិញ។",
+            "hints": [
+                "សំណើដ៏ទម្ងន់ពី PC-Reception មិនដែលចេញពីប្រដាប់ VLAN Switch នោះទេ — វាមិនឈានដល់ Switch-Floor2 ឡើយក្នុងផ្លូវទៅកាន់ Router-HQ។",
+                "ខ្សែក្រវ៉ាន់ត់ដែលតភ្ជាប់ Switch-Floor2 និង Router-HQ ត្រូវបានផ្តាច់ដូច្នេះ VLAN 10 មិនមានផ្លូវរូបវន្តទៅកាន់ Router ឬម៉ាស៊ីនដំបូងរបស់វាទេ។",
+                "ភ្ជាប់ខ្សែក្រវ៉ាន់ដែលស្ថិតក្នុងចន្លោះ Switch-Floor2 និង Router-HQ ដើម្បីស្ដារលម្អិត។"
+            ],
+            "explanation": "នៅពេលដែលខ្សែក្រវ៉ាន់ដែលតភ្ជាប់ VLAN switch ទៅលម៉ាស៊ីន Router ត្រូវបានផ្តាច់ VLAN ដែលពឹងផ្អែកលើលម្អិតនោះបាត់បង់ផ្លូវចេញដ៏ឯកតា ទោះបីជាឧបករណ៍នៅក្នុង switch នៅតែអាចដល់ដល់គ្នាបានក៏ដោយ។ ដូច្នេះដែលត្រូវរក្សាសា។ ជានិច្ច ពិនិត្យមើលលម្អិតរូបវន្ត ដោយលើកលែងតែឈានដល់ផ្នែកឯងក្នុងលម្អិតឯងក្នុងផ្នែក។"
+        },
+        "kn": {
+            "title": "ವಿಕಿ ರಿಸೆಪ್ಶನ್‌ಗೆ ಲಭ್ಯವಿಲ್ಲ",
+            "story": "ರಿಸೆಪ್ಶನ್ ಸ್ಟಾಫ್ ಹೇಳುತ್ತಾರೆ ಅಲ್ಲಿ ಆಫೀಸ್ ವಿಕಿ ಪುಟವು ಇಂದು ಬೆಳಿಗ್ಗೆ PC-Reception ನಲ್ಲಿ ಲೋಡ್ ಆಗುತ್ತಿಲ್ಲ, ಆದರೆ ಅವರ ಕಂಪ್ಯೂಟರ್‌ನಲ್ಲಿ ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ. ಸಮಸ್ಯೆ ಹಠಾತ್ತಾಗಿ ಪ್ರಾರಂಭವಾಯಿತು.",
+            "objective": "PC-Reception ನಿಂದ Wiki-01 ಗೆ HTTP ಸಂಪರ್ಕವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ.",
+            "hints": [
+                "PC-Reception ನಿಂದ ವಿನಂತಿ VLAN ಸ್ವಿಚ್‌ನಿಂದ ಹೊರಬರುವುದಿಲ್ಲ — ಇದು Router-HQ ದಿಕ್ಕಿಗೆ Switch-Floor2 ಗಿಂತ ಹೆಚ್ಚಿನ ದೂರ ಹೋಗುವುದಿಲ್ಲ.",
+                "Switch-Floor2 ಮತ್ತು Router-HQ ನಡುವಿನ ಅಪ್‌ಲಿಂಕ್ ಕೇಬಲ್ ತೆಗೆಯಲಾಗಿದೆ, ಆದ್ದರಿಂದ VLAN 10 ರೂಟರ್ ಅಥವಾ ಅದರ ಆಚೆಗಿರುವ ಸರ್ವರ್‌ಗೆ ಯಾವುದೇ ಭೌತಿಕ ಮಾರ್ಗ ಹೊಂದಿಲ್ಲ.",
+                "Switch-Floor2 ಮತ್ತು Router-HQ ನಡುವೆ ಕೇಬಲ್ ಸಂಪರ್ಕಿಸಿ ಅಪ್‌ಲಿಂಕ್ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಿ."
+            ],
+            "explanation": "VLAN ಸ್ವಿಚ್‌ನನ್ನು ಅದರ ರೂಟರ್‌ಗೆ ಸಂಪರ್ಕಿಸುವ ಕೇಬಲ್ ತೆಗೆಯಲಾದಾಗ, ಆ ಅಪ್‌ಲಿಂಕ್‌ನಲ್ಲಿ ಅವಲಂಬಿತವಾಗಿರುವ ಪ್ರತಿಯೊಂದು VLAN ತನ್ನ ಏಕೈಕ ಬಾಹ್ಯ ಮಾರ್ಗವನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತದೆ, ಆದರೆ ಸ್ವಿಚ್‌ನಿಂದಲೂ ಸಾಧನಗಳು ಇನ್ನೂ ಪರಸ್ಪರವನ್ನು ತಲುಪಬಹುದು. ಒಂದು ವಿಭಾಗವು ಹೊರಗಿನ ಪ್ರವೇಶವನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತಿರುವಾಗ ಮತ್ತು ಇನ್ನೊಂದು ಒಳ್ಳೆಯದಾಗಿದ್ದಾಗ ಭೌತಿಕ ಸಂಪರ್ಕಗಳನ್ನು ಮೊದಲು ಪರಿಶೀಲಿಸಿ."
+        },
+        "ky": {
+            "title": "Wiki Reception үчүн жокту",
+            "story": "Кабылдаушы штабы айтышат, бүгүн эртең менде PC-Reception боюнча офис Wiki бети жүктөлбөйт, ал эми алардын компьютеринде эч нерсе өзгөрүлгөн жок. Маселе жанданса төрт болуп пайда болду.",
+            "objective": "PC-Reception ден Wiki-01 ге HTTP байланышын калыбына келтирүү.",
+            "hints": [
+                "PC-Reception тартиби VLAN коммутаторун сыртына чыкпайт — ал Router-HQ чейин Switch-Floor2 өтүп баштагысынан ары өтпөйт.",
+                "Switch-Floor2 менен Router-HQ ортосундагы өңдемелүү кабель ажыратылган, ошондуктан VLAN 10 маршрутторуга же аны өтүнөн серверге физикалык жол жокту.",
+                "Өңдемелүүлүктү калыбына келтирүү үчүн Switch-Floor2 менен Router-HQ ортосуна кабель туташтырыңыз."
+            ],
+            "explanation": "VLAN коммутаторун анын маршруттоосуна байланыштырган кабель ажыратылганда, ошол өңдемелүүлүккө таянган ар бир VLAN анын сыртка чыгуунун бирден-бир жолун жоготот, бирок коммутатордун ичиндеги сайттар бири-бирине жетишиши мүмкүн. Бир сегмент сыртка киришин жоготкондо жана экинчи жакшы болгондо ар дайым физикалык шылтемелерди биринчи текшериңиз."
+        },
+        "lo": {
+            "title": "ບໍ່ມີ Wiki ສຳລັບ Reception",
+            "story": "ເພດຸ່ຼກພະນັກງານຮັກສາຕອນບອກວ່າໜ້າ Wiki ຂອງສາທາລະນະ ບໍ່ໂຫລດ PC-Reception ເຊົ້านີ້, ເຖິງວ່າບໍ່ມີຫຍັງທີ່ມີການປ່ຽນແປງໃນຄອມພິວເຕີຂອງພວກເຂົາ. ບັນຫາດັ່ງກ່າວຕິດຕາມມາກະທັນໄວ.",
+            "objective": "ກູ່ຄືນການເຊື່ອມຕໍ່ HTTP ຈາກ PC-Reception ໄປ Wiki-01.",
+            "hints": [
+                "ການຮ້ອງຂໍຈາກ PC-Reception ບໍ່ອອກມາຈາກ VLAN ສະວິດ — ມັນບໍ່ກ້າວໄກກວ່າ Switch-Floor2 ໄປ Router-HQ.",
+                "ສາຍ uplink ລະຫວ່າງ Switch-Floor2 ແລະ Router-HQ ຖືກຖອດອອກ, ດັ່ງນັ້ນ VLAN 10 ບໍ່ມີເສັ້ນທາງທາງກາຍະພາບໄປທາງເທa ຫຼື server ທີ່ຢູ່ເບື້ອງໜ້າ.",
+                "ເສຍບສາຍລະຫວ່າງ Switch-Floor2 ແລະ Router-HQ ເພື່ອຄື່ນ uplink."
+            ],
+            "explanation": "ເມື່ອສາຍໄຟທີ່ເຊື່ອມ VLAN ສະວິດກັບເສັ້ນທາງຖືກຫຼຸດອອກ, VLAN ທັງ VLAN ທີ່ອີງໃສ່ uplink ນັ້ນສູນເສຍເສັ້ນທາງອອກຂອງມັນເທົ່າ, ເຖິງວ່າອຸປະກອນພາຍໃນສະວິດສາມາດຈຸດຫາກັນໄດ້. ກວດສອບສາຍກາຍະພາບກ່ອນເມື່ອ segment ໜຶ່ງສູນເສຍການເຂົ້າເຖິງພາຍນອກໃນຂະນະທີ່ອື່ນດີ."
+        },
+        "lt": {
+            "title": "Nėra Wiki priėmimui",
+            "story": "Priimtuves personalas sako, kad biuro Wiki puslapis šią rytą neįkelia PC-Reception, nors jų kompiuteryje nieko nepakeista. Problema prasidėjo staiga.",
+            "objective": "Atkurti HTTP ryšį iš PC-Reception į Wiki-01.",
+            "hints": [
+                "Prašymas iš PC-Reception neišeina iš VLAN jungiklio — jis nepateka toliau nei Switch-Floor2 link Router-HQ.",
+                "Aukštyn nukreiptas kabelis tarp Switch-Floor2 ir Router-HQ yra atjungtas, todėl VLAN 10 neturi jokio fizinio kelio į maršrutizatorių ar serverį už jo ribų.",
+                "Prijunkite kabelį tarp Switch-Floor2 ir Router-HQ, kad atkurtumėte aukštyn nukreiptą ryšį."
+            ],
+            "explanation": "Kai kabelis, sujungiantis VLAN jungiklį su jo maršrutizatoriumi, yra atjungtas, kiekvienas VLAN, kuris priklauso nuo tos aukštyn nukreiptos linijos, praranda vienintelį kelią iš, nors jungiklio viduje esantys prietaisai gali pasiekti vienas kitą. Kai vienas segmentas praranda išorinį prieigą, o kitas veikia gerai, pirmiausia patikrinkite fizinius ryšius."
+        },
+        "lv": {
+            "title": "Nē Wiki recepcijā",
+            "story": "Recepcijas personāls saka, ka birojs Wiki lapa neielādējas PC-Reception šovakar, lai gan viņu datorā nekas nav mainīts. Problēma sākās pēkšņi.",
+            "objective": "Atjaunot HTTP savienojumu no PC-Reception uz Wiki-01.",
+            "hints": [
+                "Pieprasījums no PC-Reception neiznāk no VLAN komutātora — tas nepāriet ne tālāk par Switch-Floor2 ceļā uz Router-HQ.",
+                "Augšupejošais kabelis starp Switch-Floor2 un Router-HQ ir atvienots, tāpēc VLAN 10 nav fiziskiego ceļa uz maršrutētāju vai tam aiz tā esošo serveri.",
+                "Pievienojiet kabeli starp Switch-Floor2 un Router-HQ, lai atjaunotu augšupejošo savienojumu."
+            ],
+            "explanation": "Kad kabelis, kas savieno VLAN komutātoru ar tā maršrutētāju, ir atvienots, katrs VLAN, kas ir atkarīgs no šī augšupejoša savienojuma, zaudē vienīgo ceļu ārā, kaut arī ierīces komutātora iekšienē var sasniegt viena otru. Vienmēr pirmā pārbaudiet fiziskos savienojumus, ja viens segments zaudē ārējo piekļuvi, bet otrs darbojas labi."
+        },
+        "mk": {
+            "title": "Нема Wiki за Reception",
+            "story": "Персоналот на Reception вели дека страната на Office Wiki не се вчитува на PC-Reception овое утро, иако ништо не е променувано на нивниот компјутер. Проблемот се појави неожидано.",
+            "objective": "Врати HTTP конекција од PC-Reception до Wiki-01.",
+            "hints": [
+                "Барањето од PC-Reception никогаш не го напушта L2 Switch — не одлази подалеку од Switch-Floor2 на патот кон Router-HQ.",
+                "Uplink кабелот помеѓу Switch-Floor2 и Router-HQ е исклучен, па VLAN 10 нема физичка патека до рутерот или серверот надвор од него.",
+                "Поврзи кабел помеѓу Switch-Floor2 и Router-HQ за да го врати uplink-от."
+            ],
+            "explanation": "Кога кабелот што го поврзува VLAN switch со неговиот router е исклучен, секој VLAN што зависи од тој uplink го губи единствената му патека надвор, дури и ако уредите во switch-от сѐ уште можат да се достигнат едни други. Секогаш прво проверувај физички врски кога една сегмент го теми надворешниот пристап додека друга е нормална."
+        },
+        "ml": {
+            "title": "Wiki Reception-നൊപ്പം ഇല്ല",
+            "story": "Reception സ്റ്റാഫ് പറയുന്നത് ഓഫീസ് Wiki പേജ് ഈ പ്രഭാതത്തിൽ PC-Reception-ൽ ലോഡ് ആകുന്നില്ല, എങ്കിലും അവരുടെ കമ്പ്യൂട്ടറിൽ ഒന്നും മാറ്റിയിട്ടില്ല. പ്രശ്നം പെട്ടെന്ന് ആരംഭിച്ചു.",
+            "objective": "PC-Reception ഇൽ നിന്ന് Wiki-01-ലേക്ക് HTTP കണക്ഷൻ പുനഃസ്ഥാപിക്കുക.",
+            "hints": [
+                "PC-Reception ൽ നിന്നുള്ള അഭ്യർത്ഥന VLAN Switch ൽ നിന്ന് ഒരിക്കലും പുറത്തേക്ക് പോകുന്നില്ല — Router-HQ എന്നതിലേക്കുള്ള പാതയിൽ Switch-Floor2 കഴിഞ്ഞ് മുന്നേറുന്നില്ല.",
+                "Switch-Floor2 നും Router-HQ നും ഇടയിലെ അപ്‌ലിങ്ക് കേബിൾ അഴിച്ചിരിക്കുന്നു, അതിനാൽ VLAN 10-ന് റൂട്ടറിലോ അതിനപ്പുറത്തുള്ള സെർവറിലോ എത്തിച്ചേരാൻ കോൺക്രീറ്റ് പാത ഇല്ല.",
+                "Switch-Floor2 നും Router-HQ നും ഇടയിൽ കേബിൾ ബന്ധിപ്പിച്ച് അപ്‌ലിങ്ക് പുനഃസ്ഥാപിക്കുക."
+            ],
+            "explanation": "VLAN switch-ന്റെ router-നുമായി ബന്ധിപ്പിക്കുന്ന കേബിൾ അഴിച്ചുപോകുമ്പോൾ, അപ്‌ലിങ്കിനെ ആശ്രയിക്കുന്ന ഓരോ VLAN-നും അതിന്റെ ഏക പുറത്തേക്കുള്ള പാത നഷ്ടപ്പെടുന്നു, അതിനിയത്തെയും switch-ലെ ഉപകരണങ്ങൾ പരസ്പരം എത്തിച്ചേരാൻ കഴിയും. ഒരു സെഗ്‌മെന്റ് പുറത്തെ പ്രവേശനം നഷ്ടപ്പെടുമ്പോൾ മറ്റൊന്ന് സാധാരണമായിരിക്കുമ്പോൾ എല്ലായ്പ്പോഴും ആദ്യം ഫിസിക്കൽ ലിങ്കുകൾ പരിശോധിക്കുക."
+        },
+        "mn": {
+            "title": "Reception-ийн Wiki байхгүй",
+            "story": "Reception-ийн ажилтнууд энэ өглөө PC-Reception дээр Office Wiki хуудас ачаалагдахгүй байна гэж хэлдэг боловч тэдний компьютерт ямар нэгэн өөрчлөлт байхгүй. Асуудал гэнэтээр эхлэсэн.",
+            "objective": "PC-Reception ээс Wiki-01 рүү HTTP холболт сэргээх.",
+            "hints": [
+                "PC-Reception ээс ирсэн хүсэлт VLAN switch-ээс хэзээ ч гарахгүй — Switch-Floor2 ээс Router-HQ рүү явах замдаа цааш явахгүй байна.",
+                "Switch-Floor2 ба Router-HQ хоорондын uplinkийн кабель салагдсан тул VLAN 10 нь router эсвэл түүний цаад байгаа сервер хүртэл хүрэх физик замгүй.",
+                "Switch-Floor2 ба Router-HQ хоорондын кабель холбож uplinkийг сэргээх."
+            ],
+            "explanation": "VLAN switch-ийг түүний router-тэй холбосон кабель салагдсан үед, энэ uplinkээр хамаарах бүх VLAN гаралтын цорын ганц замаа алдсан байдаг, энэ чиглэлээр switch дотор байгаа төхөөрөмжүүд хоорондоо холбогдож чадсаар байна. Нэг сегмент гаралтын хүүхэлбэрийг алдсан харин нөгөө сайн байхад байнгын физик холболтыг анхлан шалга."
+        },
+        "mr": {
+            "title": "Reception साठी Wiki नाही",
+            "story": "रिसेप्शन स्टाफ म्हणतात की ऑफिस Wiki पेज आज सकाळी PC-Reception वर लोड होत नाही, जरी त्यांच्या संगणकावर काहीही बदल केले गेले नाहीत. समस्या अचानक सुरू झाली.",
+            "objective": "PC-Reception वरून Wiki-01 पर्यंत HTTP कनेक्शन पुनर्संचयित करा.",
+            "hints": [
+                "PC-Reception कडून केलेली विनंती कधीही VLAN switch छोडत नाही — Router-HQ च्या दिशेने Switch-Floor2 पेक्षा पुढे जात नाही.",
+                "Switch-Floor2 आणि Router-HQ मधील uplink केबल अनप्लग केली आहे, म्हणून VLAN 10 कडे router किंवा त्याच्या पलीकडे असलेल्या सर्व्हरला जाण्यासाठी कोणताही भौतिक मार्ग नाही.",
+                "Switch-Floor2 आणि Router-HQ मधील केबल जोडून uplink पुनर्संचयित करा."
+            ],
+            "explanation": "जेव्हा VLAN switch ला त्याच्या router ला जोडणारी केबल अनप्लग केली जाते, तेव्हा त्या uplink वर अवलंबून असलेला प्रत्येक VLAN बाहेरला एकमेव मार्ग गमावतो, तरीही switch मधील उपकरणे अजूनही एकमेकांना पोहोचू शकतात. जेव्हा एक सेगमेंट बाहेरचा प्रवेश हरवते तर दुसरा ठीक असतो तेव्हा सर्वदा प्रथम भौतिक दुवे तपासा."
+        },
+        "ms": {
+            "title": "Tiada Wiki untuk Reception",
+            "story": "Staf Reception mengatakan halaman Wiki pejabat tidak muat pada PC-Reception pagi ini, meskipun tiada apa-apa yang telah diubah pada komputer mereka. Masalah dimulai secara tiba-tiba.",
+            "objective": "Pulihkan sambungan HTTP dari PC-Reception ke Wiki-01.",
+            "hints": [
+                "Permintaan dari PC-Reception tidak pernah meninggalkan L2 Switch — ia tidak melanjutkan lebih jauh daripada Switch-Floor2 dalam perjalanan menuju Router-HQ.",
+                "Kabel uplink antara Switch-Floor2 dan Router-HQ tidak disambung, jadi VLAN 10 tidak mempunyai laluan fizikal ke router atau server di seiringnya.",
+                "Sambungkan kabel antara Switch-Floor2 dan Router-HQ untuk memulihkan uplink."
+            ],
+            "explanation": "Apabila kabel yang menghubungkan L2 Switch ke router-nya tidak disambung, setiap VLAN yang bergantung pada uplink itu kehilangan satu-satunya laluannya keluar, walaupun peranti dalam switch masih boleh mencapai satu sama lain. Sentiasa periksa pautan fizikal terlebih dahulu apabila satu segmen kehilangan akses luar manakala segmen lain masih berfungsi."
+        },
+        "my": {
+            "title": "Wiki မက ရီဆပ်ရှင်သို့",
+            "story": "ကဒေါ်တစ်ဆင့် အဖွဲ့သည် ယနေ့ မနက်ပိုင်းတွင် PC-Reception တွင် ရုံးချုပ် Wiki စာမျက်နှာ မလုံးဝစတင်မည်ကို ကြားလိုက်သည်။ သူတို့ ကွန်ပျူတာတွင် ကြီးမြတ်သောအရာ ပြောင်းလဲခြင်း မရှိသည်။ အခြေအနေမှာ ရုတ်တစ်ချင်း စတင်ခဲ့သည်။",
+            "objective": "PC-Reception မှ Wiki-01 သို့ HTTP ချိတ်ဆက်မှုကို ပြန်လည်ရယူပါ။",
+            "hints": [
+                "PC-Reception မှ အRequest သည် VLAN switch ကို ထက်မက မထွက်ပါ — Switch-Floor2 မှ Router-HQ သို့ သွားသည့်လမ်းတစ်ဆင့်သာ ရောက်သည်။",
+                "Switch-Floor2 နှင့် Router-HQ အကြား uplink ကေဗယ်သည် ချုပ်ကျစ်ထားသောကြောင့် VLAN 10 သည် ရူတာ သို့မဟုတ် ထိုအပ်ချက်ပြင်ပက ဆာဗာသို့ မည်သည့် ရုပ်ပိုင်းဆိုင်ရာ လမ်းကြောင်းမျိုး မရှိပါ။",
+                "Switch-Floor2 နှင့် Router-HQ အကြား ကေဗယ်ချိတ်ဆက်ခြင်းဖြင့် uplink ပြန်လည်ရယူပါ။"
+            ],
+            "explanation": "VLAN switch မှ Router သို့ ချိတ်ဆက်သည့် ကေဗယ်သည် ချုပ်ကျစ်ထားပါက အဆိုပါ uplink ပေါ်အခြေခံသည့် VLAN တစ်ခုစီသည် ပြင်ပသို့ ချုပ်ကျစ်သည့်တစ်ခုတည်းသော လမ်းကြောင်းဆုံးရှုံးမည်ဖြစ်သည်။ သို့သော် switch အတွင်း ကွန်ယက်မူလ များသည် အချင်းချင်း ဆက်သွယ်နိုင်ကြသည်။ တစ်ခုသည် အပ်ချက်ခွင့်သည် ရုံးချုပ်တည်ခဲ့သည့် အခါ ပြီးဆုံးသည့် လုံးဝစတင်မှုအက်ဖျော်မည်။ ရုပ်ပိုင်းဆိုင်ရာ ချိတ်ဆက်မှုများကို အဦးဆုံးစိစစ်ပါ။"
+        },
+        "ne": {
+            "title": "विकि रिसेप्सन को लागि उपलब्ध छैन",
+            "story": "रिसेप्सनका कर्मचारीहरू भन्छन् कि आज बिहान PC-Reception मा अफिस विकि पृष्ठ लोड हुन सक्दैन, यद्यपि तिनीहरूको कम्प्युटरमा कुनै पनि परिवर्तन भएको छैन। समस्या अचानक सुरु भएको छ।",
+            "objective": "PC-Reception बाट Wiki-01 मा HTTP जडान पुनः स्थापन गर्नुहोस्।",
+            "hints": [
+                "PC-Reception बाट अनुरोध VLAN स्विचलाई कहिल्यै छोडेन — यो Router-HQ तिर Switch-Floor2 भन्दा आगे जाँदैन।",
+                "Switch-Floor2 र Router-HQ बीचको अपलिंक केबल अप्लग गरिएको छ, त्यसैले VLAN 10 को राउटर वा यसपछि सर्भरमा कुनै भौतिक पथ छैन।",
+                "Switch-Floor2 र Router-HQ बीच केबल जोडेर अपलिंक पुनः स्थापन गर्नुहोस्।"
+            ],
+            "explanation": "जब VLAN स्विचलाई रूटरमा जोड्ने केबल अप्लग गरिन्छ, त्यस अपलिंकमा निर्भर हरेक VLAN आफ्नो एकमात्र बाहिर जाने पथ गुमाउँछ, यद्यपि स्विच भित्रका उपकरणहरू अझै पनि एकअर्कालाई पहुँच गर्न सक्छन्। जब एक खण्ड बाहिरी पहुँच गुमाउँछ र अर्को ठीक रहन्छ भने सधैं भौतिक लिङ्कहरू पहिले जाँचनुहोस्।"
+        },
+        "nl": {
+            "title": "Geen Wiki voor receptie",
+            "story": "Receptiemedewerkers zeggen dat de wiki-pagina van het kantoor vandaag ochtend niet wordt geladen op PC-Reception, hoewel er niets aan hun computer is gewijzigd. Het probleem begon plotseling.",
+            "objective": "Herstel een HTTP-verbinding van PC-Reception naar Wiki-01.",
+            "hints": [
+                "Het verzoek van PC-Reception verlaat de VLAN-schakelaar nooit — het gaat niet verder dan Switch-Floor2 op weg naar Router-HQ.",
+                "De uplinkkabal tussen Switch-Floor2 en Router-HQ is losgekoppeld, dus VLAN 10 heeft geen fysieke pad naar de router of de server erachter.",
+                "Verbind een kabel tussen Switch-Floor2 en Router-HQ om de uplink te herstellen."
+            ],
+            "explanation": "Wanneer de kabel die een VLAN-schakelaar met de router verbindt, losgekoppeld is, verliest elke VLAN die van die uplink afhankelijk is zijn enige pad naar buiten, ook al kunnen apparaten binnen de schakelaar elkaar nog steeds bereiken. Controleer fysieke verbindingen altijd eerst wanneer één segment buitentoegain verliest terwijl een ander goed blijft werken."
+        },
+        "no": {
+            "title": "Ingen Wiki for resepsjonen",
+            "story": "Resepsjonspersonalet sier at kontorernes Wiki-side ikke blir lastet på PC-Reception i morges, selv om ingenting er endret på datamaskinen deres. Problemet startet plutselig.",
+            "objective": "Gjenopprett en HTTP-tilkobling fra PC-Reception til Wiki-01.",
+            "hints": [
+                "Forespørselen fra PC-Reception forlater aldri VLAN-bryteren — den kommer ikke videre enn Switch-Floor2 på vei mot Router-HQ.",
+                "Uplinkkabelen mellom Switch-Floor2 og Router-HQ er koblet fra, så VLAN 10 har ingen fysisk bane ut til routeren eller serveren videre.",
+                "Koble en kabel mellom Switch-Floor2 og Router-HQ for å gjenopprette uplinkuplinken."
+            ],
+            "explanation": "Når kabelen som kobler en VLAN-bryter til routeren er koblet fra, mister hver VLAN som er avhengig av den uplinkingen sin eneste vei ut, selv om enheter i bryteren fortsatt kan nå hverandre. Kontroller alltid fysiske forbindelser først når ett segment mister utvendig tilgang mens et annet forblir bra."
+        },
+        "or": {
+            "title": "ରିସେପସନ ପାଇଁ ଉଇକି ନାହିଁ",
+            "story": "ରିସେପସନ କର୍ମଚାରୀମାନେ କହନ୍ତି ଯେ ଅଫିସ ଉଇକି ପୃଷ୍ଠା ଆଜ ସକାଳରେ PC-Reception ରେ ଲୋଡ ହୁଏ ନାହିଁ, ଯଦିଓ ସେମାନଙ୍କ କମ୍ପ୍ୟୁଟରରେ କିଛି ପରିବର୍ତ୍ତନ ହୋଇ ନାହିଁ। ସମସ୍ୟା ହଠାତ୍ ଶୁରୁ ହୋଇଥିଲା।",
+            "objective": "PC-Reception ରୁ Wiki-01 କୁ HTTP ସଂଯୋଗ ପୁନରୁଦ୍ଧାର କରନ୍ତୁ।",
+            "hints": [
+                "PC-Reception ରୁ ଅନୁରୋଧ VLAN ସ୍ୱିଚ ରୁ କଦାପି ବାହାରିବାନାହିଁ — ଏହା Router-HQ ର ଦିଗକୁ Switch-Floor2 ଠାରୁ ଆଗକୁ ଯାଏ ନାହିଁ।",
+                "Switch-Floor2 ଏବଂ Router-HQ ମଧ୍ୟରେ ଅପଲିଙ୍କ କେବଲ ଅନ୍‍ ପ୍ଲଗ ହୋଇଛି, ତେଣୁ VLAN 10 ର ରାଉଟର ବା ଏହାର ବାହାରେ ସର୍ଭରର କୌଣସି ଭୌତିକ ପଥ ନାହିଁ।",
+                "Switch-Floor2 ଏବଂ Router-HQ ମଧ୍ୟରେ ଏକ କେବଲ ସଂଯୋଗ କରି ଅପଲିଙ୍କ ପୁନରୁଦ୍ଧାର କରନ୍ତୁ।"
+            ],
+            "explanation": "ଯେତେବେଳେ VLAN ସ୍ୱିଚକୁ ତାହାର ରାଉଟରକୁ ସଂଯୋଗକାରୀ କେବଲ ଅନ୍‍ ପ୍ଲଗ କରାଯାଏ, ସେହି ଅପଲିଙ୍କ ଉପରେ ନିର୍ଭରଶୀଳ ପ୍ରତ୍ୟେକ VLAN ତାହାର ଏକମାତ୍ର ବାହିର ପଥ ହରାଏ, ଯଦିଓ ସ୍ୱିଚ ମଧ୍ୟରେ ଥିବା ଭୁକ୍ତିଗୁଡିକ ଏକ ଅନ୍ୟକୁ ପୌଁଚାଇପାରେ। ଯେତେବେଳେ ଗୋଟିଏ ସେଗମେଣ୍ଟ ବାହ୍ୟ ପ୍ରବେଶାଧିକାର ହରାଇ ଯାଏ ଏବଂ ଅନ୍ୟଟି ଠିକ ଥାଏ, ସର୍ବଦା ପ୍ରଥମେ ଭୌତିକ ସଂଯୋଗଗୁଡି ଯାଞ୍ଚ କରନ୍ତୁ।"
+        },
+        "pa": {
+            "title": "Reception ਲਈ ਕੋਈ Wiki ਨਹੀਂ",
+            "story": "Reception ਸਟਾਫ ਕਹਿ ਰਹੇ ਹਨ ਕਿ ਅੱਜ ਸਵੇਰੇ PC-Reception ਉਪਰ ਦੱਤਰ Wiki ਪੰਨਾ ਲੋਡ ਨਹੀਂ ਹੋ ਰਿਹਾ, ਹਾਲਾਂਕਿ ਉਨ੍ਹਾਂ ਦੇ ਕੰਪਿਊਟਰ ਉਪਰ ਕੋਈ ਵੀ ਤਬਦੀਲੀ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ। ਸਮੱਸਿਆ ਅਚਾਨਕ ਸ਼ੁਰੂ ਹੋਈ।",
+            "objective": "PC-Reception ਤੋਂ Wiki-01 ਵੱਲ HTTP ਕਨੈਕਸ਼ਨ ਬਹਾਲ ਕਰੋ।",
+            "hints": [
+                "PC-Reception ਤੋਂ ਬੇਨਤੀ VLAN ਸਵਿੱਚ ਨੂੰ ਕਦੀ ਨਹੀਂ ਛੱਡਦੀ — ਇਹ Router-HQ ਵੱਲ ਜਾਂਦੇ ਹੋਏ Switch-Floor2 ਤੋਂ ਅੱਗੇ ਨਹੀਂ ਜਾਂਦੀ।",
+                "Switch-Floor2 ਅਤੇ Router-HQ ਦੇ ਵਿਚਕਾਰ ਅੱਪਲਿੰਕ ਕੇਬਲ ਵਿੱਖ ਜੁੜੀ ਹੋਈ ਹੈ, ਇਸ ਲਈ VLAN 10 ਕੋਲ ਰਾਊਟਰ ਜਾਂ ਇਸ ਤੋਂ ਪਾਰ ਸਰਵਰ ਤੱਕ ਕੋਈ ਭੌਤਿਕ ਮਾਰਗ ਨਹੀਂ ਹੈ।",
+                "Switch-Floor2 ਅਤੇ Router-HQ ਦੇ ਵਿਚਕਾਰ ਇੱਕ ਕੇਬਲ ਜੋੜ ਕੇ ਅੱਪਲਿੰਕ ਨੂੰ ਬਹਾਲ ਕਰੋ।"
+            ],
+            "explanation": "ਜਦੋਂ VLAN ਸਵਿੱਚ ਨੂੰ ਇਸ ਦੇ ਰਾਊਟਰ ਨਾਲ ਜੋੜਨ ਵਾਲੀ ਕੇਬਲ ਵਿੱਖ ਜੁੜ ਜਾਂਦੀ ਹੈ, ਤਾਂ ਉਸ ਅੱਪਲਿੰਕ 'ਤੇ ਨਿਰਭਰ ਹਰ VLAN ਆਪਣਾ ਇੱਕਮਾਤਰ ਬਾਹਰੀ ਮਾਰਗ ਗੁਆ ਦਿੰਦਾ ਹੈ, ਭਾਵੇਂ ਸਵਿੱਚ ਦੇ ਅੰਦਰ ਦੇ ਯੰਤਰ ਇਕ-ਦੂਜੇ ਤੱਕ ਪਹੁੰਚ ਸਕਦੇ ਹਨ। ਜਦੋਂ ਇੱਕ ਹਿੱਸਾ ਬਾਹਰੀ ਪਹੁੰਚ ਗੁਆ ਦੇ ਪਰ ਦੂਜਾ ਠੀਕ ਰਹੇ, ਤਾਂ ਹਮੇਸ਼ਾ ਭੌਤਿਕ ਲਿੰਕਾਂ ਦੀ ਪਹਿਲਾਂ ਜਾਂਚ ਕਰੋ।"
+        },
+        "pl": {
+            "title": "Brak Wiki w Recepcji",
+            "story": "Pracownicy Recepcji mówią, że strona Wiki biura nie ładuje się na PC-Reception tego ranka, chociaż nic nie zmieniano na ich komputerze. Problem pojawił się nagle.",
+            "objective": "Przywróć połączenie HTTP z PC-Reception do Wiki-01.",
+            "hints": [
+                "Żądanie z PC-Reception nigdy nie opuszcza przełącznika VLAN — nie przedostaje się dalej niż Switch-Floor2 w kierunku Router-HQ.",
+                "Kabel uplink między Switch-Floor2 a Router-HQ jest rozłączony, więc VLAN 10 nie ma fizycznej ścieżki do routera lub serwera za nim.",
+                "Podłącz kabel między Switch-Floor2 a Router-HQ, aby przywrócić uplink."
+            ],
+            "explanation": "Gdy kabel łączący przełącznik VLAN z routerem zostanie rozłączony, każda sieć VLAN polegająca na tym uplinku traci jedyną ścieżkę wyjścia, chociaż urządzenia w przełączniku mogą się nadal wzajemnie osiągać. Zawsze najpierw sprawdź połączenia fizyczne, gdy jeden segment traci dostęp na zewnątrz, a inny funkcjonuje prawidłowo."
+        },
+        "pt-PT": {
+            "title": "Sem Wiki para Receção",
+            "story": "O pessoal da Receção diz que a página Wiki do escritório não carrega no PC-Reception esta manhã, apesar de nada ter sido alterado no seu computador. O problema começou de repente.",
+            "objective": "Restaurar uma ligação HTTP desde PC-Reception até Wiki-01.",
+            "hints": [
+                "O pedido de PC-Reception nunca sai do comutador VLAN — não ultrapassa Switch-Floor2 em direcção a Router-HQ.",
+                "O cabo de uplink entre Switch-Floor2 e Router-HQ está desligado, portanto VLAN 10 não tem caminho físico para o router ou o servidor além dele.",
+                "Ligue um cabo entre Switch-Floor2 e Router-HQ para restaurar o uplink."
+            ],
+            "explanation": "Quando o cabo que liga um comutador VLAN ao seu router é desligado, cada VLAN que depende desse uplink perde seu único caminho de saída, apesar dos dispositivos dentro do comutador ainda poderem alcançar-se mutuamente. Sempre verifique as ligações físicas primeiro quando um segmento perde acesso externo enquanto outro permanece bem."
+        },
+        "rm": {
+            "title": "Nendain Wiki per Receptziun",
+            "story": "Il persunal da la receptziun di che la pagina Wiki da l'uffizi na s'accarga bugen al mattina sin PC-Reception, schebain che nagut ha stuog a cambiar sin lur computer. Il problem ha cumanzcha d'improvis.",
+            "objective": "Restaurar ina connexiun HTTP da PC-Reception vers Wiki-01.",
+            "hints": [
+                "La dumonda da PC-Reception na schia mai il switch VLAN — ella na va naga pli zun sco Switch-Floor2 en directiun da Router-HQ.",
+                "Il cable da uplink tranter Switch-Floor2 e Router-HQ è sut, perquai che VLAN 10 n'ha buca in camin fisic vers il router u il server suenter.",
+                "Connexescha in cable tranter Switch-Floor2 e Router-HQ per restaurar il uplink."
+            ],
+            "explanation": "Sch'il cable che connexescha in switch VLAN cun sia router è sut, pierd mintga VLAN che dependa da quel uplink sia unica via ora, schebain che ils appareils en il switch po anc semper sa contactar. Controllescha adina en emprim ils connexiuns fisicas cun in segment perda l'access ora e in atter funcziuna bien."
+        },
+        "ro": {
+            "title": "Fără Wiki pentru Recepție",
+            "story": "Personalul Recepției spune că pagina Wiki a biroului nu se încarcă pe PC-Reception în această dimineață, deși nimic nu a fost schimbat pe computerul lor. Problema a apărut brusc.",
+            "objective": "Restabiliți o conexiune HTTP de la PC-Reception la Wiki-01.",
+            "hints": [
+                "Cererea de la PC-Reception nu pleacă niciodată din comutatorul VLAN — nu merge mai departe decât Switch-Floor2 în direcția Router-HQ.",
+                "Cablul de uplink dintre Switch-Floor2 și Router-HQ este deconectat, deci VLAN 10 nu are cale fizică către router sau serverul dincolo de el.",
+                "Conectați un cablu între Switch-Floor2 și Router-HQ pentru a restabili uplinkul."
+            ],
+            "explanation": "Când cablul care conectează un comutator VLAN la routerul său este deconectat, fiecare VLAN care se bazează pe acel uplink și pierde singura cale de ieșire, deși dispozitivele din comutator pot încă să se atingă reciproc. Verificați întotdeauna mai întâi legăturile fizice atunci când un segment pierde accesul extern, iar altul funcționează bine."
+        },
+        "si": {
+            "title": "Wiki ගිණුම් කර්මාන්ත ශාඛාවට නැත",
+            "story": "ගිණුම් කර්මාන්ත ශාඛාවේ කර්මීවරුන් පවසන්නේ ඔවුන්ගේ පරිගණකයට කිසිදු වෙනසක් සිදු නොවුවද PC-Reception හි පෙරවqueens් විකි පිටුව අද උදෑසනේ පූරණය නොවන බවයි. ගැටලුව හදිසිසේ ආරම්භ විය.",
+            "objective": "PC-Reception සිට Wiki-01 වෙත HTTP සংযෝගය복 කරන්න.",
+            "hints": [
+                "PC-Reception වලින් ඉල්ලීම කිසිවෙකු VLAN switch සිට එක්ස්ටර්නල් නොවේ — එය Router-HQ දෙසට Switch-Floor2 ඉවතට ඉදිරි ගමන් නොකරයි.",
+                "Switch-Floor2 සහ Router-HQ අතර යුගල කේබලය ජලය නොගැසුණු බැවින්, VLAN 10 හි සполитاءරුට හෝ එයින් සිට සර්වරයට ගිය භෞතික ගමන් නොමាතර.",
+                "Switch-Floor2 සහ Router-HQ අතර කේබලය සংවිධාන කර uplink නඩත්තු කරන්න."
+            ],
+            "explanation": "VLAN switch එක සිට එහි router වෙත සම්බන්ධ කේබලය ජලය නොගැසුණු විට, එම uplink වෙත පදනම්ගත සෑම VLAN ම එහි එකම බාහිර මාර්ගය අහිමි වේ, සතුටින්ම switch අතර උපකරණ එකෙකුට අනෙකු වෙතින් ළඟා විය හැකි වුවද. එක් SegmentForce බාහිර ප්‍රවেශය අහිමි වූ විට অනෙක තනතුරු සුකී থැවේ, භෞතික සබඳතා ප්‍රථම පරීක්ෂා කරන්න."
+        },
+        "sk": {
+            "title": "Bez Wiki pre Reception",
+            "story": "Zamestnanci Reception hovoria, že stránka kancelárskeho Wiki sa dnes ráno nenačítava na PC-Reception, hoci na ich počítači nebol vykonaný žiadny zmenu. Problém sa objavil náhle.",
+            "objective": "Obnovte HTTP pripojenie z PC-Reception na Wiki-01.",
+            "hints": [
+                "Požiadavka z PC-Reception nikdy neopustí VLAN Switch — nedostane sa ďalej ako Switch-Floor2 na ceste smerom k Router-HQ.",
+                "Kábel na vzostup medzi Switch-Floor2 a Router-HQ je odpojený, takže VLAN 10 nemá žiadnu fyzickú cestu na smerovač alebo na server za ním.",
+                "Pripojte kábel medzi Switch-Floor2 a Router-HQ, aby sa obnovil vzostup."
+            ],
+            "explanation": "Keď je kábel spájajúci VLAN Switch s jeho smerovačom odpojený, každá VLAN, ktorá sa spolieha na tento vzostup, stratí svoju jedinú cestu ven, hoci zariadenia v rámci prepínača sa môžu navzájom dosiahnuteľ. Vždy skontrolujte fyzické spojenia ako prvé, keď jeden segment stratí vonkajší prístup, zatiaľ čo iný zostáva v poriadku."
+        },
+        "sl": {
+            "title": "Ni Wiki za Reception",
+            "story": "Osebje Reception poroča, da se stran Wiki pisarne ta jutranja ne naloži na PC-Reception, čeprav na njihovem računalniku nič ni bilo spremenjeno. Težava se je pojavila nenadoma.",
+            "objective": "Obnovite HTTP povezavo z PC-Reception na Wiki-01.",
+            "hints": [
+                "Zahtevek iz PC-Reception nikoli ne zapusti L2 Switch — ne gre dlje od Switch-Floor2 na poti proti Router-HQ.",
+                "Kabel za povezavo med Switch-Floor2 in Router-HQ je odklopljen, zato Ciljno omrežje 10 nima fizične poti do usmerjevalnika ali strežnika za njim.",
+                "Povežite kabel med Switch-Floor2 in Router-HQ, da obnovite povezavo."
+            ],
+            "explanation": "Ko je kabel, ki povezuje L2 Switch z njegovim usmerjevalnikom, odklopljen, vsako omrežje Ciljno omrežje, ki se opira na to povezavo, izgubi svojo edino pot ven, čeprav lahko naprave v usmerjevalniku še vedno dosežejo druga drugo. Vedno najprej preverite fizične povezave, ko en segment izgubi zunanji dostop, drugo pa ostane v redu."
+        },
+        "sq": {
+            "title": "Pa Wiki për Reception",
+            "story": "Personeli i Reception thotë se faqja Wiki e zyrës nuk ngarkohet në PC-Reception këtë mëngjes, edhe pse asgjë nuk është ndryshuar në kompjuterin e tyre. Problemi filloi papritur.",
+            "objective": "Rivendosni lidhjen HTTP nga PC-Reception në Wiki-01.",
+            "hints": [
+                "Kërkesa nga PC-Reception nuk largohet kurrë nga L2 Switch — nuk shkon më larg se Switch-Floor2 në rrugën drejt Router-HQ.",
+                "Kablli i rrjetit midis Switch-Floor2 dhe Router-HQ është i shkëputur, kështu që Rrjeti i destinacionit 10 nuk ka rrugë fizike në rruter ose në Serverin pas tij.",
+                "Lidhni një kabllo midis Switch-Floor2 dhe Router-HQ për të rivendosur rrjetin."
+            ],
+            "explanation": "Kur kablli që lidh një L2 Switch me rruter hiqet, çdo Rrjeti i destinacionit që mbështetet në këtë rrjet humbet rrugën e tij të vetme jashtë, edhe pse pajisjet brenda L2 Switch mund të arrijmë ende njëra-tjetrën. Gjithmonë kontrolloni lidhjet fizike të parat kur një segment humbet aksesin e jashtëm, ndërsa një tjetër mbetet mirë."
+        },
+        "sr": {
+            "title": "Нема Wiki за Reception",
+            "story": "Особље Reception-а наводи да се страница Wiki канцеларије не учитава на PC-Reception овог јутра, иако ничега није промењено на њиховом рачунару. Проблем је почео нагло.",
+            "objective": "Обновите HTTP везу од PC-Reception до Wiki-01.",
+            "hints": [
+                "Захтев од PC-Reception никада не напусти L2 Switch — не иде даље од Switch-Floor2 на путу ка Router-HQ.",
+                "Кабл за повезивање између Switch-Floor2 и Router-HQ је искључен, па Одредишна мрежа 10 нема физичке путање до уретаја или Сервера иза њега.",
+                "Повежите кабл између Switch-Floor2 и Router-HQ да обновите везу."
+            ],
+            "explanation": "Када је кабл који повезује L2 Switch са његовим уретајем искључен, свака Одредишна мрежа која зависи од те везе губи своју једину путању наван, иако Клијенти унутар L2 Switch могу и даље достићи једни друге. Увек прво проверите физичке везе када један сегмент изгуби спољни приступ, а други остане добар."
+        },
+        "sv": {
+            "title": "Ingen Wiki för Reception",
+            "story": "Receptionen säger att kontorets Wiki-sida inte läses in på PC-Reception i morse, trots att ingenting har ändrats på deras dator. Problemet började plötsligt.",
+            "objective": "Återställ en HTTP-anslutning från PC-Reception till Wiki-01.",
+            "hints": [
+                "Förfrågan från PC-Reception lämnar aldrig VLAN-växeln — den kommer inte längre än Switch-Floor2 på vägen mot Router-HQ.",
+                "Uppkopplingskabeln mellan Switch-Floor2 och Router-HQ är frånkopplad, så VLAN 10 saknar fysisk väg ut till routern eller servern bortom den.",
+                "Anslut en kabel mellan Switch-Floor2 och Router-HQ för att återställa uppkopplingen."
+            ],
+            "explanation": "När kabeln som förbinder en VLAN-växel med dess router är frånkopplad, förlorar varje VLAN som förlitar sig på den uppkopplingen sin enda väg ut, även om enheter inom växeln fortfarande kan nå varandra. Kontrollera alltid fysiska anslutningar först när ett segment förlorar utomhusbegäran medan ett annat förblir intakt."
+        },
+        "sw": {
+            "title": "Hakuna Wiki kwa Pokezi",
+            "story": "Wafanyikazi wa pokezi wanasema kwamba ukurasa wa Wiki wa ofisi haupaki kwenye PC-Reception asubuhi hii, ingawa hakuna kitu kilichobadilishwa kwenye kompyuta yao. Tatizo lilianza ghafla.",
+            "objective": "Rejesha unganisho la HTTP kutoka PC-Reception hadi Wiki-01.",
+            "hints": [
+                "Ombi kutoka PC-Reception haliliki kamwe VLAN Switch — hailwengi zaidi ya Switch-Floor2 njiani kuelekea Router-HQ.",
+                "Kabel ya uplink kati ya Switch-Floor2 na Router-HQ imekatwa, kwa hiyo VLAN 10 haina njia halisi nje kwa routeri au seva iliyo zaidi yake.",
+                "Unganisha kabel kati ya Switch-Floor2 na Router-HQ ili kujerusha uplink."
+            ],
+            "explanation": "Wakati kabel inayounganisha VLAN switch kwa routeri yake imekatwa, kila VLAN inayotegemea uplink hiyo inapoteza njia yake tu nje, hata kama vifaa ndani ya switch vinaweza kufikiana. Angalia kila wakati miunganisho halisi kwanza wakati sehemu moja inapoteza upatikanaji wa nje wakati nyingine inabaki sawa."
+        },
+        "ta": {
+            "title": "விக்கி இல்லை வரவேற்பு பிரிவுக்கு",
+            "story": "வரவேற்புக் கணக்காளர்கள் கூறுகிறார்கள் அலுவலக விக்கி பக்கம் PC-Reception இல் இந்த காலையில் ஏற்றப்படவில்லை, இருப்பினும் அவர்களின் கணினியில் எதுவும் மாற்றப்படவில்லை. சிக்கல் திடீரென்று தொடங்கியது.",
+            "objective": "PC-Reception இலிருந்து Wiki-01 க்கு HTTP இணைப்பை மீட்டெடுக்கவும்.",
+            "hints": [
+                "PC-Reception இலிருந்து வரும் கோரிக்கை VLAN Switch ஐ விட்டு வெளியேறாது — Router-HQ நோக்கிய வழியில் Switch-Floor2 ஐ விட மேலே செல்லாது.",
+                "Switch-Floor2 மற்றும் Router-HQ இடையே உள்ள அபலிங்க் கேபிள் பிரிந்துவிட்டது, எனவே VLAN 10 க்கு ரூட்டர் அல்லது அதற்கு அப்பால் உள்ள சர்வர் க்கு செல்ல இயல்பு பாதை இல்லை.",
+                "Switch-Floor2 மற்றும் Router-HQ இடையே கேபிளை இணைத்து அபலிங்க் மீட்டெடுக்கவும்."
+            ],
+            "explanation": "VLAN switch ஐ அதன் ரூட்டர் உடன் இணைக்கும் கேபிள் பிரிந்துவிட்டால், அந்த அபலிங்க் மீது சார்பு படும் ஒவ்வொரு VLAN ம் அதன் வெளியேறுவதற்கான ஒரே பாதையை இழந்துவிடும், இருப்பினும் switch க்குள் உள்ள சாதனங்கள் ஒன்றைக் ஒன்று கூட அடையலாம். ஒரு பிரிவு வெளிப்புறம் அணுகல் இழந்த போது மற்றொன்று நன்றாக இருக்கும் போது எப்போதும் முதலில் உண்மையான இணைப்புகளைச் சரிபார்க்கவும்."
+        },
+        "te": {
+            "title": "రిసెప్షన్ కోసం విక్కీ లేదు",
+            "story": "రిసెప్షన్ సిబ్బంది కొలను నిర్వచించారు ఆఫీసు విక్కీ పేజీ PC-Reception న ఈ ఉదయం లోడ్ కాలేదు, గానీ వారి కంప్యూటర్‌లో ఏమీ మార్చబడలేదు. సమస్య చట్టచిర్లకు ప్రారంభమైంది.",
+            "objective": "PC-Reception నుండి Wiki-01 కు HTTP కనెక్షన్‌ను పునరుద్ధరించండి.",
+            "hints": [
+                "PC-Reception నుండి అభ్యర్థన VLAN Switch ను విడిచిపెట్టుకుండా పోలేదు — Router-HQ వైపు ఉన్న మార్గంలో Switch-Floor2 కంటే ఎక్కువకు రాకుండా ఉంది.",
+                "Switch-Floor2 మరియు Router-HQ మధ్య అపలింక్ కేబుల్ డిస్‌కనెక్ట్ చేయబడింది, కనుక VLAN 10 రూటర్ లేదా దానికి ఆవల సర్వర్ కు వెళ్లడానికి భૌతిక మార్గం లేదు.",
+                "Switch-Floor2 మరియు Router-HQ మధ్య కేబుల్‌ను కనెక్ట్ చేసి అపలింక్‌ను పునరుద్ధరించండి."
+            ],
+            "explanation": "VLAN switch ను దాని రూటర్ కు అనుసంధానించే కేబుల్ డిస్‌కనెక్ట్ చేయబడినప్పుడు, ఆ అపలింక్‌పై ఆధారపడే ప్రతిটి VLAN దాని బయటకు వెళ్లే ఏకైక మార్గాన్ని కోల్పోతుంది, గానీ స్విచ్ లోపల ఉన్న పరికరాలు ఒకదానికొకటి చేరుకోగలవు. ఒక విభాగం బయటి యాక్సెస్ కోల్పోయినప్పుడు మరొకటి చక్కగా ఉన్నప్పుడు ఎల్లప్పుడూ భౌతిక లింకులను చెక్ చేయండి."
+        },
+        "uk": {
+            "title": "Немає Wiki для Прийому",
+            "story": "Персонал прийому повідомляє, що сторінка Wiki офісу не завантажується на PC-Reception цього ранку, хоча на їхньому комп'ютері нічого не змінювалось. Проблема почалась раптово.",
+            "objective": "Відновіть HTTP-з'єднання від PC-Reception до Wiki-01.",
+            "hints": [
+                "Запит із PC-Reception ніколи не залишає VLAN Switch — він не заходить далі за Switch-Floor2 на шляху до Router-HQ.",
+                "Кабель апліка між Switch-Floor2 та Router-HQ відключений, тому VLAN 10 не має фізичного шляху до маршрутизатора або сервера за ним.",
+                "Підключіть кабель між Switch-Floor2 та Router-HQ, щоб відновити апліка."
+            ],
+            "explanation": "Коли кабель, що з'єднує VLAN switch з його маршрутизатором, відключений, кожна VLAN, що залежить від цього апліка, втрачає своєю єдиним шляхом назовні, навіть якщо пристрої всередині switch можуть ще досягати один одного. Завжди спочатку перевіряйте фізичні з'єднання, коли один сегмент втрачає зовнішній доступ, а інший залишається без змін."
+        },
+        "ur": {
+            "title": "وکی وصول کار کے لیے نہیں ہے",
+            "story": "وصول کار کے عملے کا کہنا ہے کہ آج صبح PC-Reception پر آفس وکی صفحہ لوڈ نہیں ہو رہا ہے، حالانکہ ان کے کمپیوٹر پر کوئی تبدیلی نہیں کی گئی۔ یہ مسئلہ اچانک شروع ہوا۔",
+            "objective": "PC-Reception سے Wiki-01 تک HTTP کنکشن بحال کریں۔",
+            "hints": [
+                "PC-Reception سے درخواست VLAN سوئچ سے کبھی باہر نہیں نکلتی — یہ Router-HQ کی طرف اپنے راستے میں Switch-Floor2 سے آگے نہیں جاتی۔",
+                "Switch-Floor2 اور Router-HQ کے درمیان اپ لنک کیبل غیر مربوط ہے، اس لیے VLAN 10 کے پاس روٹر یا اس سے آگے سرور تک کا کوئی جسمانی راستہ نہیں۔",
+                "Switch-Floor2 اور Router-HQ کے درمیان کیبل کو جوڑ کر اپ لنک بحال کریں۔"
+            ],
+            "explanation": "جب VLAN سوئچ کو اس کے روٹر سے جوڑنے والی کیبل غیر مربوط ہو جاتی ہے، تو ہر VLAN جو اس اپ لنک پر منحصر ہے اپنا واحد بیرونی راستہ کھو دیتا ہے، اگرچہ سوئچ کے اندر کے آلات ایک دوسرے تک رسائی حاصل کر سکتے ہیں۔ جب ایک سیگمنٹ بیرونی رسائی کھوتا ہے جبکہ دوسرا ٹھیک رہتا ہے تو ہمیشہ جسمانی روابط کو پہلے چیک کریں۔"
+        },
+        "zu": {
+            "title": "Ayikho i-Wiki ye-Reception",
+            "story": "Abasebenzi be-Reception bathi ipheji le-office Wiki ayilayiswa ku-PC-Reception ngayini kumusa, nokuba akukho okushintshiwe kukhompiyuta yabo. Inkinga yaqala ngokupipi.",
+            "objective": "Buyisela i-HTTP connection esusela ku-PC-Reception kuya ku-Wiki-01.",
+            "hints": [
+                "Isicelo esivela ku-PC-Reception asikaze sishiye i-VLAN switch — ayiqhubi ngaphezu kwe-Switch-Floor2 endlelaleni yayo eya ku-Router-HQ.",
+                "Ukwahluka kwe-cable okuxhuma i-Switch-Floor2 no-Router-HQ akuchazwa, ngakho i-VLAN 10 ayinayo indlela yomzimba yokuthatheka i-router noma iserver engaphezu kwawo.",
+                "Xhuma i-cable phakathi kwe-Switch-Floor2 no-Router-HQ ukuze ubuyisele i-uplink."
+            ],
+            "explanation": "Uma i-cable exhuma i-VLAN switch ku-router yayo ishiywa ngaphandle, wonke u-VLAN onikezelele leyo uplink ayalahlekelwa indlela yayo eyodwa yokuthatha akunze, nakuba izinhlelo zikhathalele ngaphakathi kwe-switch zikwazi ukulingana. Njalo hlola izo zixhumanisi zomzimba kuqala uma ingxenye eyodwa ayalahlekelwa ukufinyelela ngaphandle ngenkathi enye ihlale kahle."
+        }
+    }
+}
