@@ -1,0 +1,1193 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-24",
+    "number": 65,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "lb_farm",
+    "faultIds": [
+        "lb_no_backend"
+    ],
+    "concepts": [
+        "load-balancer",
+        "physical-link"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.24.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.24.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.24.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.14.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-lb1": {
+                "id": "dev-lb1",
+                "type": "LOAD_BALANCER",
+                "name": "LB-01",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-lb1-p0",
+                        "index": 0,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.14.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p1",
+                        "index": 1,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p2",
+                        "index": 2,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p3",
+                        "index": 3,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p4",
+                        "index": 4,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p5",
+                        "index": 5,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p6",
+                        "index": 6,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-lb1-p7",
+                        "index": 7,
+                        "deviceId": "dev-lb1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Shop-01",
+                "x": 80.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.14.1",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.14.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server2": {
+                "id": "dev-server2",
+                "type": "SERVER",
+                "name": "Shop-02",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server2-p0",
+                        "index": 0,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.14.2",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p1",
+                        "index": 1,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p2",
+                        "index": 2,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server2-p3",
+                        "index": 3,
+                        "deviceId": "dev-server2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.14.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-server3": {
+                "id": "dev-server3",
+                "type": "SERVER",
+                "name": "Shop-03",
+                "x": 320.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server3-p0",
+                        "index": 0,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.14.3",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p1",
+                        "index": 1,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p2",
+                        "index": 2,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server3-p3",
+                        "index": 3,
+                        "deviceId": "dev-server3",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.14.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-lb1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-lb1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-lb1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 3
+    },
+    "text": {
+        "en": {
+            "title": "No Backends Behind the Balancer",
+            "story": "The design team says the shop website has stopped answering since this morning. PC-Design loads nothing when reaching the site's address, and staff are getting worried about today's sales.",
+            "objective": "Restore an HTTP response from LB-01 when PC-Design requests the shop website.",
+            "hints": [
+                "The request from PC-Design reaches LB-01, the load balancer handling the shop address, but goes no further.",
+                "LB-01 has no backend servers it can forward traffic to — Shop-01, Shop-02 and Shop-03 are not linked to it, so there is nothing to answer the request.",
+                "On LB-01, connect cables to Shop-01, Shop-02 and Shop-03 so the load balancer can reach all three backend servers."
+            ],
+            "explanation": "A load balancer can only forward traffic to backend servers it has a physical link to. With no cables connecting LB-01 to Shop-01, Shop-02 and Shop-03, there were no backends to send requests to, so every request was dropped at the balancer."
+        },
+        "ja": {
+            "title": "ロードバランサーの先にバックエンドがない",
+            "story": "デザインチームから、今朝からショップサイトが応答しないとの報告がありました。PC-Designでサイトのアドレスにアクセスしても何も表示されず、スタッフは本日の売上を心配しています。",
+            "objective": "PC-Designがショップサイトにリクエストした際、LB-01からHTTP応答が返るようにします。",
+            "hints": [
+                "PC-Designからのリクエストは、ショップアドレスを扱うロードバランサーであるLB-01までは届いていますが、その先に進んでいません。",
+                "LB-01には転送先となるバックエンドサーバーがありません。Shop-01、Shop-02、Shop-03がLB-01に接続されていないため、リクエストに応答できるサーバーが存在しません。",
+                "LB-01で、Shop-01、Shop-02、Shop-03にケーブルを接続し、ロードバランサーが3台のバックエンドサーバーすべてに到達できるようにしてください。"
+            ],
+            "explanation": "ロードバランサーは、物理的に接続されているバックエンドサーバーにしかトラフィックを転送できません。LB-01とShop-01、Shop-02、Shop-03の間にケーブル接続がなかったため、リクエストを送る先のバックエンドが存在せず、すべてのリクエストがロードバランサーで破棄されていました。"
+        },
+        "zh-CN": {
+            "title": "负载均衡器后无后端",
+            "story": "设计团队说商店网站从今天早上就停止响应了。PC-Design 访问网站地址时无法加载任何内容，员工们对今天的销售感到担忧。",
+            "objective": "当 PC-Design 请求商店网站时，恢复 LB-01 的 HTTP 响应。",
+            "hints": [
+                "PC-Design 的请求到达了处理商店地址的负载均衡器 LB-01，但没有继续转发。",
+                "LB-01 没有可以转发流量的后端服务器 — Shop-01、Shop-02 和 Shop-03 未与其链接，因此没有任何东西可以响应请求。",
+                "在 LB-01 上连接网线到 Shop-01、Shop-02 和 Shop-03，使负载均衡器能够连接到这三个后端服务器。"
+            ],
+            "explanation": "负载均衡器只能将流量转发给它有物理连接的后端服务器。由于 LB-01 没有网线连接到 Shop-01、Shop-02 和 Shop-03，没有后端可以接收请求，因此每个请求都在均衡器处被丢弃。"
+        },
+        "zh-TW": {
+            "title": "負載平衡器後無後端伺服器",
+            "story": "設計團隊說商店網站從今天早上就停止回應了。PC-Design 存取網站地址時無法載入任何內容，員工們對今天的銷售感到擔憂。",
+            "objective": "當 PC-Design 要求商店網站時，恢復 LB-01 的 HTTP 回應。",
+            "hints": [
+                "PC-Design 的要求到達了處理商店地址的 Load Balancer LB-01，但沒有繼續轉發。",
+                "LB-01 沒有可以轉發流量的後端伺服器 — Shop-01、Shop-02 和 Shop-03 未與其連結，因此沒有任何東西可以回應要求。",
+                "在 LB-01 上連接纜線到 Shop-01、Shop-02 和 Shop-03，使 Load Balancer 能夠連接到這三個後端伺服器。"
+            ],
+            "explanation": "Load Balancer 只能將流量轉發給它有實體連接的後端伺服器。由於 LB-01 沒有纜線連接到 Shop-01、Shop-02 和 Shop-03，沒有後端可以接收要求，因此每個要求都在平衡器處被丟棄。"
+        },
+        "ko": {
+            "title": "로드 밸런서 뒤에 백엔드 없음",
+            "story": "디자인 팀은 쇼핑몰 웹사이트가 오늘 아침부터 응답을 멈췄다고 말합니다. PC-Design이 사이트 주소에 접속해도 아무것도 로드되지 않으며, 직원들은 오늘의 판매에 대해 걱정하고 있습니다.",
+            "objective": "PC-Design이 쇼핑몰 웹사이트를 요청할 때 LB-01의 HTTP 응답을 복구합니다.",
+            "hints": [
+                "PC-Design의 요청이 쇼핑몰 주소를 처리하는 Load Balancer인 LB-01에 도달하지만 더 이상 진행되지 않습니다.",
+                "LB-01에는 트래픽을 전달할 수 있는 백엔드 서버가 없습니다 — Shop-01, Shop-02 및 Shop-03이 이와 연결되어 있지 않아서 요청에 응답할 수 있는 것이 없습니다.",
+                "LB-01에서 Shop-01, Shop-02 및 Shop-03으로 케이블을 연결하여 Load Balancer가 세 개의 백엔드 서버 모두에 연결할 수 있도록 합니다."
+            ],
+            "explanation": "Load Balancer는 물리적 연결이 있는 백엔드 서버로만 트래픽을 전달할 수 있습니다. LB-01에서 Shop-01, Shop-02 및 Shop-03으로의 케이블 연결이 없었기 때문에 요청을 보낼 백엔드가 없었고, 모든 요청이 밸런서에서 삭제되었습니다."
+        },
+        "es": {
+            "title": "Sin backends detrás del balanceador",
+            "story": "El equipo de diseño dice que el sitio web de la tienda dejó de responder esta mañana. PC-Design no carga nada cuando accede a la dirección del sitio, y el personal está preocupado por las ventas de hoy.",
+            "objective": "Restaurar una respuesta HTTP desde LB-01 cuando PC-Design solicita el sitio web de la tienda.",
+            "hints": [
+                "La solicitud de PC-Design llega a LB-01, el Load Balancer que maneja la dirección de la tienda, pero no continúa.",
+                "LB-01 no tiene servidores backend a los que pueda reenviar tráfico — Shop-01, Shop-02 y Shop-03 no están vinculados a él, por lo que no hay nada que responda a la solicitud.",
+                "En LB-01, conecta cables a Shop-01, Shop-02 y Shop-03 para que el Load Balancer pueda alcanzar los tres servidores backend."
+            ],
+            "explanation": "Un Load Balancer solo puede reenviar tráfico a servidores backend que tenga un enlace físico. Sin cables conectando LB-01 a Shop-01, Shop-02 y Shop-03, no había backends para enviar solicitudes, por lo que cada solicitud fue descartada en el balanceador."
+        },
+        "pt-BR": {
+            "title": "Sem backends atrás do balanceador",
+            "story": "O time de design diz que o site da loja parou de responder desde esta manhã. PC-Design não carrega nada ao acessar o endereço do site, e a equipe está preocupada com as vendas de hoje.",
+            "objective": "Restaurar uma resposta HTTP de LB-01 quando PC-Design solicita o site da loja.",
+            "hints": [
+                "A solicitação de PC-Design chega a LB-01, o Load Balancer que trata o endereço da loja, mas não vai adiante.",
+                "LB-01 não tem servidores backend para os quais possa encaminhar tráfego — Shop-01, Shop-02 e Shop-03 não estão vinculados a ele, então não há nada para responder à solicitação.",
+                "Em LB-01, conecte cabos a Shop-01, Shop-02 e Shop-03 para que o Load Balancer possa alcançar os três servidores backend."
+            ],
+            "explanation": "Um Load Balancer só pode encaminhar tráfego para servidores backend aos quais tenha um link físico. Sem cabos conectando LB-01 a Shop-01, Shop-02 e Shop-03, não havia backends para enviar solicitações, então cada solicitação foi descartada no balanceador."
+        },
+        "de": {
+            "title": "Keine Backends hinter dem Balancer",
+            "story": "Das Design-Team teilt mit, dass die Shop-Website seit heute Morgen nicht mehr antwortet. PC-Design lädt nichts wenn die Adresse der Website aufgerufen wird, und das Personal macht sich Sorgen um die heutigen Verkäufe.",
+            "objective": "Stellen Sie eine HTTP-Antwort von LB-01 wieder her, wenn PC-Design die Shop-Website anfordert.",
+            "hints": [
+                "Die Anfrage von PC-Design erreicht LB-01, den Load Balancer für die Shop-Adresse, geht aber nicht weiter.",
+                "LB-01 hat keine Backend-Server, an die es Traffic weiterleiten kann — Shop-01, Shop-02 und Shop-03 sind nicht damit verbunden, daher gibt es nichts, das auf die Anfrage antwortet.",
+                "Verbinden Sie auf LB-01 Kabel mit Shop-01, Shop-02 und Shop-03, damit der Load Balancer alle drei Backend-Server erreichen kann."
+            ],
+            "explanation": "Ein Load Balancer kann Traffic nur an Backend-Server weiterleiten, zu denen er eine physikalische Verbindung hat. Da keine Kabel LB-01 mit Shop-01, Shop-02 und Shop-03 verbunden, gab es keine Backends zum Weiterleiten von Anfragen, daher wurde jede Anfrage am Balancer verworfen."
+        },
+        "fr": {
+            "title": "Aucun backend derrière l'équilibreur",
+            "story": "L'équipe de conception signale que le site web de la boutique ne répond plus depuis ce matin. PC-Design ne charge rien en tentant d'accéder à l'adresse du site, et le personnel s'inquiète pour les ventes d'aujourd'hui.",
+            "objective": "Rétablir une réponse HTTP de LB-01 quand PC-Design demande le site web de la boutique.",
+            "hints": [
+                "La demande de PC-Design atteint LB-01, l'équilibreur de charge gérant l'adresse de la boutique, mais ne va pas plus loin.",
+                "LB-01 n'a pas de serveurs backend vers lesquels transférer le trafic — Shop-01, Shop-02 et Shop-03 ne lui sont pas reliés, il n'y a donc rien pour répondre à la demande.",
+                "Sur LB-01, connectez des câbles à Shop-01, Shop-02 et Shop-03 pour que l'équilibreur de charge puisse atteindre tous les trois serveurs backend."
+            ],
+            "explanation": "Un équilibreur de charge ne peut transférer du trafic que vers les serveurs backend auxquels il a une liaison physique. Sans câbles reliant LB-01 à Shop-01, Shop-02 et Shop-03, il n'y avait aucun backend vers lequel envoyer les demandes, donc chaque demande a été abandonnée à l'équilibreur."
+        },
+        "hi": {
+            "title": "बैलेंसर के पीछे कोई बैकएंड नहीं",
+            "story": "डिजाइन टीम बताती है कि शॉप की वेबसाइट आज सुबह से जवाब देना बंद कर दिया है। PC-Design साइट के पते को खोलते समय कुछ भी लोड नहीं होता, और कर्मचारी आज की बिक्री को लेकर चिंतित हैं।",
+            "objective": "जब PC-Design शॉप वेबसाइट का अनुरोध करे तो LB-01 से एक HTTP प्रतिक्रिया बहाल करें।",
+            "hints": [
+                "PC-Design से अनुरोध LB-01, शॉप पते को संभालने वाले Load Balancer तक पहुँचता है, लेकिन आगे नहीं जाता।",
+                "LB-01 के पास कोई बैकएंड सर्वर नहीं है जहाँ यह ट्रैफिक भेज सके — Shop-01, Shop-02 और Shop-03 इससे जुड़े नहीं हैं, इसलिए अनुरोध का जवाब देने के लिए कुछ नहीं है।",
+                "LB-01 पर Shop-01, Shop-02 और Shop-03 से केबल जोड़ें ताकि Load Balancer तीनों बैकएंड सर्वर तक पहुँच सके।"
+            ],
+            "explanation": "एक Load Balancer केवल उन बैकएंड सर्वर को ट्रैफिक भेज सकता है जिनसे उसका भौतिक कनेक्शन है। LB-01 को Shop-01, Shop-02 और Shop-03 से जोड़ने वाली कोई केबल न होने से, अनुरोधों को भेजने के लिए कोई बैकएंड नहीं थे, इसलिए हर अनुरोध बैलेंसर पर छोड़ दिया गया।"
+        },
+        "id": {
+            "title": "Tidak Ada Backend di Belakang Balancer",
+            "story": "Tim desain mengatakan situs web toko telah berhenti merespons sejak pagi ini. PC-Design tidak memuat apa pun saat membuka alamat situs, dan staf khawatir tentang penjualan hari ini.",
+            "objective": "Pulihkan respons HTTP dari LB-01 ketika PC-Design meminta situs web toko.",
+            "hints": [
+                "Permintaan dari PC-Design mencapai LB-01, penyeimbang beban yang menangani alamat toko, tetapi tidak melanjutkan lebih jauh.",
+                "LB-01 tidak memiliki server backend yang dapat meneruskan lalu lintas — Shop-01, Shop-02 dan Shop-03 tidak terhubung kepadanya, jadi tidak ada yang dapat merespons permintaan.",
+                "Di LB-01, hubungkan kabel ke Shop-01, Shop-02 dan Shop-03 sehingga penyeimbang beban dapat menjangkau ketiga server backend."
+            ],
+            "explanation": "Penyeimbang beban hanya dapat meneruskan lalu lintas ke server backend yang memiliki tautan fisik. Tanpa kabel yang menghubungkan LB-01 ke Shop-01, Shop-02 dan Shop-03, tidak ada backend untuk mengirim permintaan, jadi setiap permintaan ditolak di balancer."
+        },
+        "ru": {
+            "title": "Нет бэкендов за балансировщиком",
+            "story": "Команда дизайна сообщает, что веб-сайт магазина перестал отвечать с этого утра. PC-Design ничего не загружает при обращении к адресу сайта, и персонал беспокоится о продажах сегодня.",
+            "objective": "Восстановите HTTP-ответ от LB-01 когда PC-Design запрашивает веб-сайт магазина.",
+            "hints": [
+                "Запрос от PC-Design доходит до LB-01, балансировщика нагрузки, обслуживающего адрес магазина, но дальше не идёт.",
+                "LB-01 не имеет бэкенд-серверов, на которые он может перенаправить трафик — Shop-01, Shop-02 и Shop-03 к нему не подключены, поэтому ответить на запрос нечему.",
+                "На LB-01 подключите кабели к Shop-01, Shop-02 и Shop-03, чтобы балансировщик нагрузки мог достичь все три бэкенд-сервера."
+            ],
+            "explanation": "Балансировщик нагрузки может перенаправлять трафик только на бэкенд-серверы, с которыми у него есть физическое соединение. Без кабелей, соединяющих LB-01 с Shop-01, Shop-02 и Shop-03, не было бэкендов для отправки запросов, поэтому каждый запрос был отброшен на балансировщике."
+        },
+        "it": {
+            "title": "Nessun backend dietro il bilanciatore",
+            "story": "Il team di design dice che il sito web del negozio ha smesso di rispondere stamattina. PC-Design non carica nulla quando raggiunge l'indirizzo del sito, e il personale è preoccupato per le vendite di oggi.",
+            "objective": "Ripristinare una risposta HTTP da LB-01 quando PC-Design richiede il sito web del negozio.",
+            "hints": [
+                "La richiesta da PC-Design raggiunge LB-01, il load balancer che gestisce l'indirizzo del negozio, ma non va oltre.",
+                "LB-01 non ha server backend a cui inoltare il traffico — Shop-01, Shop-02 e Shop-03 non sono collegati ad esso, quindi non c'è nulla per rispondere alla richiesta.",
+                "Su LB-01, collegare i cavi a Shop-01, Shop-02 e Shop-03 in modo che il load balancer possa raggiungere tutti e tre i server backend."
+            ],
+            "explanation": "Un load balancer può inoltrare il traffico solo ai server backend a cui ha un collegamento fisico. Senza cavi che collegano LB-01 a Shop-01, Shop-02 e Shop-03, non c'erano backend a cui inviare le richieste, quindi ogni richiesta è stata scartata al bilanciatore."
+        },
+        "tr": {
+            "title": "Yük Dengeleyicinin Arkasında Arka Uç Yok",
+            "story": "Tasarım ekibi, mağaza web sitesinin bu sabahtan beri yanıt vermediğini söylüyor. PC-Design siteyi açmaya çalışırken hiçbir şey yüklenmez ve personel bugünün satışları konusunda endişeli.",
+            "objective": "PC-Design mağaza web sitesi istediğinde LB-01 üzerinden HTTP yanıtı geri yükleyin.",
+            "hints": [
+                "PC-Design'den gelen istek, mağaza adresini işleyen yük dengeleyici olan LB-01'e ulaşır, ancak daha ileri gitmez.",
+                "LB-01'in trafiği iletebileceği arka uç sunucusu yoktur — Shop-01, Shop-02 ve Shop-03 buna bağlı değildir, bu nedenle isteğe yanıt verecek bir şey yoktur.",
+                "LB-01'de Shop-01, Shop-02 ve Shop-03'e kablolar bağlayın, böylece yük dengeleyici üç arka uç sunucusuna da erişebilsin."
+            ],
+            "explanation": "Bir yük dengeleyici, trafiği yalnızca fiziksel bir bağlantısı olan arka uç sunuculara iletebilir. LB-01'i Shop-01, Shop-02 ve Shop-03'e bağlayan kablolar olmadan, isteklerin gönderileceği arka uç sunucusu yoktu, bu nedenle her istek dengeleyicide bırakıldı."
+        },
+        "th": {
+            "title": "ไม่มีเซิร์ฟเวอร์ด้านหลังโหลดบาลันเซอร์",
+            "story": "ทีมออกแบบบอกว่าเว็บไซต์ร้านค้าหยุดตอบสนองตั้งแต่เช้านี้ PC-Design ไม่สามารถโหลดอะไรเมื่อเข้าถึงที่อยู่เว็บไซต์ และเจ้าหน้าที่กังวลเกี่ยวกับยอดขายวันนี้",
+            "objective": "คืนการตอบสนอง HTTP จาก LB-01 เมื่อ PC-Design ขอเว็บไซต์ร้านค้า",
+            "hints": [
+                "คำขอจาก PC-Design ถึง LB-01 ซึ่งเป็น Load Balancer ที่จัดการที่อยู่ร้านค้า แต่ไม่ไปไกลกว่านั้น",
+                "LB-01 ไม่มีเซิร์ฟเวอร์ backend ที่สามารถส่งต่อไฟล์บันทึกได้ — Shop-01, Shop-02 และ Shop-03 ไม่ได้เชื่อมต่อกับมัน ดังนั้นจึงไม่มีอะไรตอบคำขอได้",
+                "บน LB-01 เชื่อมต่อสายไฟฟ้ากับ Shop-01, Shop-02 และ Shop-03 เพื่อให้ Load Balancer สามารถเข้าถึงเซิร์ฟเวอร์ backend ทั้งสามเครื่อง"
+            ],
+            "explanation": "Load Balancer สามารถส่งต่อไฟล์บันทึกไปยังเซิร์ฟเวอร์ backend ที่มีการเชื่อมต่อทางกายภาพเท่านั้น หากไม่มีสายเคเบิลที่เชื่อมต่อ LB-01 กับ Shop-01, Shop-02 และ Shop-03 จึงไม่มีเซิร์ฟเวอร์ด้านหลังที่จะส่งคำขอไป ดังนั้นทุกคำขอจึงถูกทิ้งไว้ที่เครื่องสมดุลน้ำหนัก"
+        },
+        "vi": {
+            "title": "Không có máy chủ backend phía sau bộ cân bằng tải",
+            "story": "Nhóm thiết kế nói rằng trang web cửa hàng đã ngừng phản hồi kể từ sáng nay. PC-Design không tải được gì khi truy cập địa chỉ của trang web, và nhân viên đang lo lắng về doanh số bán hàng hôm nay.",
+            "objective": "Khôi phục phản hồi HTTP từ LB-01 khi PC-Design yêu cầu trang web cửa hàng.",
+            "hints": [
+                "Yêu cầu từ PC-Design đến LB-01, bộ cân bằng tải xử lý địa chỉ cửa hàng, nhưng không tiến xa hơn.",
+                "LB-01 không có máy chủ backend nào để nó có thể chuyển tiếp lưu lượng — Shop-01, Shop-02 và Shop-03 không được kết nối với nó, vì vậy không có gì để trả lời yêu cầu.",
+                "Trên LB-01, kết nối các cáp tới Shop-01, Shop-02 và Shop-03 để bộ cân bằng tải có thể đạt tới cả ba máy chủ backend."
+            ],
+            "explanation": "Bộ cân bằng tải chỉ có thể chuyển tiếp lưu lượng đến các máy chủ backend mà nó có kết nối vật lý. Không có cáp nối LB-01 với Shop-01, Shop-02 và Shop-03, nên không có máy chủ backend nào để gửi yêu cầu, vì vậy mọi yêu cầu đều bị loại bỏ tại bộ cân bằng tải."
+        },
+        "af": {
+            "title": "Geen backends agter die balanseraar",
+            "story": "Die ontwerpspan sê die winkelwebwerf het vanmorë opgehouden antwoord te gee. PC-Design laai niks wanneer dit die webwerf se adres bereik nie, en personeel is bekommerd oor vandag se verkope.",
+            "objective": "Herstel 'n HTTP-antwoord van LB-01 wanneer PC-Design die winkelwebwerf versoek.",
+            "hints": [
+                "Die versoek van PC-Design bereik LB-01, die laadbalanseerder wat die winkeladres hanteer, maar gaan nie verder nie.",
+                "LB-01 het geen backend-bedieners waaraan dit verkeer kan stuur nie — Shop-01, Shop-02 en Shop-03 is nie daaraan gekoppel nie, dus is daar niks om op die versoek te antwoord.",
+                "Verbind op LB-01 kabels aan Shop-01, Shop-02 en Shop-03 sodat die laadbalanseerder al drie backend-bedieners kan bereik."
+            ],
+            "explanation": "Die laadbalanseerder kan verkeer slegs na backend-bedieners stuur waaraan dit 'n fisiese verbinding het. Sonder kabels wat LB-01 met Shop-01, Shop-02 en Shop-03 verbind, was daar geen backends om versoeke na te stuur nie, dus is elke versoek by die balanseerder laat vaar."
+        },
+        "ar": {
+            "title": "عدم وجود خوادم خلف موازن الحمل",
+            "story": "يقول فريق التصميم أن موقع المتجر توقف عن الرد منذ هذا الصباح. PC-Design لا يحمل أي شيء عند الوصول إلى عنوان الموقع، والموظفون قلقون بشأن المبيعات اليوم.",
+            "objective": "استعادة استجابة HTTP من LB-01 عندما يطلب PC-Design موقع المتجر.",
+            "hints": [
+                "الطلب من PC-Design يصل إلى LB-01، موازن الحمل الذي يتعامل مع عنوان المتجر، لكنه لا يتقدم أبعد من ذلك.",
+                "LB-01 ليس لديه خوادم backend يمكنها إعادة توجيه حركة المرور إليها — Shop-01 و Shop-02 و Shop-03 غير مرتبطة به، لذا لا يوجد شيء للرد على الطلب.",
+                "على LB-01، قم بتوصيل الكابلات إلى Shop-01 و Shop-02 و Shop-03 حتى يتمكن موازن الحمل من الوصول إلى جميع خوادم backend الثلاثة."
+            ],
+            "explanation": "يمكن لموازن الحمل فقط إعادة توجيه حركة المرور إلى خوادم backend التي لها ارتباط فيزيائي بها. بدون كابلات توصل LB-01 بـ Shop-01 و Shop-02 و Shop-03، لم تكن هناك خوادم backend لإرسال الطلبات إليها، لذا تم حذف كل طلب في موازن الحمل."
+        },
+        "az": {
+            "title": "Balanslaşdırıcının Arxasında Serverlərin Olmaması",
+            "story": "Dizayn komandası deyir ki, dükan veb-saytı bu sabahdan bəri cavab vermir. PC-Design saytın ünvanına daxil olanda heç nə yükləmir, kadr isə bu gün satışlar barəsində narahatdır.",
+            "objective": "PC-Design dükan veb-saytını istəkləndikdə LB-01-dən HTTP cavabını bərpa edin.",
+            "hints": [
+                "PC-Design-dən gələn sorğu LB-01-ə (dükan ünvanını idarə edən Load Balancer), çatır, lakin daha irəli getmir.",
+                "LB-01-in trafikini yönləndirə biləcəyi backend serverləri yoxdur — Shop-01, Shop-02 və Shop-03 ona bağlı deyildir, buna görə sorğuya cavab verəcək heç nə yoxdur.",
+                "LB-01-də Shop-01, Shop-02 və Shop-03 kabelləri qoşun, belə ki, Load Balancer hər üç backend serverinə çata bilsin."
+            ],
+            "explanation": "Load Balancer yalnız fiziki bağlantısı olan backend serverlərə trafikini yönləndirə bilər. LB-01-i Shop-01, Shop-02 və Shop-03-ə birləşdirən kabel olmadığından, sorğular göndəriləcək backend serverləri yox idi, bəli bütün sorğular balancer-də atıldı."
+        },
+        "be": {
+            "title": "Няма сервераў за балансаўшчыкам",
+            "story": "Команда дызайну кажа, што вэбсайт магазіна перастаў адказваць з гэтага раніцы. PC-Design нічога не загружаецца пры обращении да адраса сайта, а сотрудникі хвалуюцца за сегоднешныя продажы.",
+            "objective": "Восстаніць HTTP адказ ад LB-01 калі PC-Design запытае вэбсайт магазіна.",
+            "hints": [
+                "Запыт ад PC-Design дасягае LB-01, балансаўшчыка нагрузкі, які кіруе адрасам магазіна, але далей не йдзе.",
+                "LB-01 не мае backend-сервераў, на якія ён мог бы перанаправіць трафік — Shop-01, Shop-02 і Shop-03 да яго не падлучаны, таму адказаць на запыт нечем.",
+                "На LB-01 падлучыце кабелі да Shop-01, Shop-02 і Shop-03, каб балансаўшчык мог адрасаваць да ўсіх трох backend-сервераў."
+            ],
+            "explanation": "Балансаўшчык нагрузкі можа перанаправіць трафік толькі на backend-сервераў, з якімі ён мае фізічнае злучэнне. Без кабеляў, якія звязваюць LB-01 з Shop-01, Shop-02 і Shop-03, нема было backend-сервераў для адправкі запытаў, таму ўсе запыты былі выкінуты ў балансаўшчыку."
+        },
+        "bg": {
+            "title": "Няма сървъри зад балансьора",
+            "story": "Екипът на дизайна казва, че уебсайтът на магазина е спрял да отговаря от сутринта. PC-Design не зарежда нищо при попит на адреса на сайта, а персоналът е загрижен за днешните продажи.",
+            "objective": "Възстановете HTTP отговор от LB-01 когато PC-Design иска уебсайта на магазина.",
+            "hints": [
+                "Запитването от PC-Design достига LB-01, балансьора на натоварването, който управлява адреса на магазина, но не преминава по-нататък.",
+                "LB-01 нямаме backend сървъри, към които може да пренасочи трафика — Shop-01, Shop-02 и Shop-03 не са свързани към него, така че няма нищо, което да отговори на запитването.",
+                "На LB-01 свържете кабелите към Shop-01, Shop-02 и Shop-03, така че балансьорът да може да достигне и трите backend сървъра."
+            ],
+            "explanation": "Балансьорът на натоварването може да пренасочва трафика само към backend сървъри, с които има физическа връзка. Без кабели, свързващи LB-01 с Shop-01, Shop-02 и Shop-03, няма были backend сървъри за изпращане на запитвания, така че всяко запитване бе отхвърлено в балансьора."
+        },
+        "bn": {
+            "title": "ব্যালান্সারের পিছনে কোনো ব্যাকএন্ড নেই",
+            "story": "ডিজাইন টিম বলেছে যে শপ ওয়েবসাইট আজ সকাল থেকে সাড়া দিচ্ছে না। PC-Design সাইটের ঠিকানায় পৌঁছানোর সময় কিছু লোড করে না এবং কর্মীরা আজকের বিক্রয় নিয়ে চিন্তিত।",
+            "objective": "PC-Design যখন শপ ওয়েবসাইট অনুরোধ করে তখন LB-01 থেকে একটি HTTP প্রতিক্রিয়া পুনরুদ্ধার করুন।",
+            "hints": [
+                "PC-Design থেকে অনুরোধ LB-01 এ পৌঁছায়, যা শপ ঠিকানা পরিচালনা করে এমন লোড ব্যালান্সার, কিন্তু আর এগিয়ে যায় না।",
+                "LB-01 এর কোনো ব্যাকএন্ড সার্ভার নেই যা ট্রাফিক ফরওয়ার্ড করতে পারে — Shop-01, Shop-02 এবং Shop-03 এটার সাথে সংযুক্ত নয়, তাই কোনো কিছু অনুরোধের জবাব দিতে পারে না।",
+                "LB-01 এ, Shop-01, Shop-02 এবং Shop-03 এর সাথে কেবল সংযুক্ত করুন যাতে লোড ব্যালান্সার তিনটি ব্যাকএন্ড সার্ভারে পৌঁছাতে পারে।"
+            ],
+            "explanation": "একটি লোড ব্যালান্সার শুধুমাত্র সেই ব্যাকএন্ড সার্ভারগুলিতে ট্রাফিক ফরওয়ার্ড করতে পারে যার সাথে এর একটি ফিজিক্যাল লিঙ্ক রয়েছে। LB-01 থেকে Shop-01, Shop-02 এবং Shop-03 এ কোনো কেবল সংযোগ না থাকায়, ব্যাকএন্ড পাঠানোর কোনো উপায় ছিল না, তাই প্রতিটি অনুরোধ ব্যালান্সারে ড্রপ করা হয়েছিল।"
+        },
+        "ca": {
+            "title": "Sense servidors de fons darrera del balancejador",
+            "story": "L'equip de disseny diu que el lloc web de la botiga ha deixat de respondre des d'aquest matí. PC-Design no carrega res quan arriba a l'adreça del lloc, i el personal està preocupat per les vendes d'avui.",
+            "objective": "Restaura una resposta HTTP des de LB-01 quan PC-Design sol·licita el lloc web de la botiga.",
+            "hints": [
+                "La sol·licitud de PC-Design arriba a LB-01, el balancejador de càrrega que gestiona l'adreça de la botiga, però no va més lluny.",
+                "LB-01 no té servidors de fons als quals pugui reenviar el trànsit — Shop-01, Shop-02 i Shop-03 no estan enllaçats, així que no hi ha res per respondre la sol·licitud.",
+                "A LB-01, connecta cables a Shop-01, Shop-02 i Shop-03 perquè el balancejador de càrrega pugui arribar als tres servidors de fons."
+            ],
+            "explanation": "Un balancejador de càrrega només pot reenvilar el trànsit als servidors de fons als quals té un enllaç físic. Sense cables que connectin LB-01 amb Shop-01, Shop-02 i Shop-03, no havia servidors de fons on enviar les sol·licituds, així que cada sol·licitud es va descartar al balancejador."
+        },
+        "cs": {
+            "title": "Bez backendů za vyrovnávačem",
+            "story": "Tým designu hlásí, že web obchodu přestal odpovídat od rána. PC-Design nic nenačte při dosažení adresy webu a zaměstnanci si dělají starosti o dnešní prodeje.",
+            "objective": "Obnovte HTTP odpověď z LB-01, když PC-Design požádá o web obchodu.",
+            "hints": [
+                "Požadavek z PC-Design dosáhne LB-01, vyrovnávače zatížení obsluhujícího adresu obchodu, ale nedojde dál.",
+                "LB-01 nemá backendové servery, na které by mohl přeposílat provoz — Shop-01, Shop-02 a Shop-03 nejsou připojeny, takže není nic, co by mohlo odpovědět.",
+                "Na LB-01 připojte kabely k Shop-01, Shop-02 a Shop-03, aby vyrovnávač zatížení mohl dosáhnout všech tří backendových serverů."
+            ],
+            "explanation": "Vyrovnávač zatížení může přeposílat provoz pouze na backendové servery, se kterými má fyzické připojení. Bez kabelů spojujících LB-01 s Shop-01, Shop-02 a Shop-03 nebylo kam poslat požadavky, takže každý požadavek byl zahozen na vyrovnávači."
+        },
+        "da": {
+            "title": "Ingen backends bag belastninsbalanceren",
+            "story": "Designholdet siger, at webstedet for butikken er stoppet med at svare siden i morges. PC-Design indlæser intet, når det når til webstedets adresse, og personalet er bekymret for dagens salg.",
+            "objective": "Gendan en HTTP-respons fra LB-01, når PC-Design anmoder om butikkens websted.",
+            "hints": [
+                "Anmodningen fra PC-Design når LB-01, belastningsbalanceren der håndterer butikkens adresse, men går ikke længere.",
+                "LB-01 har ingen backendservere, som den kan sende trafik til — Shop-01, Shop-02 og Shop-03 er ikke forbundet til den, så der er intet at svare på anmodningen.",
+                "På LB-01 skal du forbinde kabler til Shop-01, Shop-02 og Shop-03, så belastningsbalanceren kan nå alle tre backendservere."
+            ],
+            "explanation": "En belastningsbalancer kan kun sende trafik videre til backendservere, som den har en fysisk forbindelse til. Uden kabler, der forbinder LB-01 til Shop-01, Shop-02 og Shop-03, var der ingen backends at sende anmodninger til, så enhver anmodning blev droppet på balanceren."
+        },
+        "el": {
+            "title": "Χωρίς backends πίσω από τον εξισορροπητή",
+            "story": "Η ομάδα σχεδίασης λέει ότι ο ιστότοπος του καταστήματος έχει σταματήσει να απαντά από το πρωί. Το PC-Design δεν φορτώνει τίποτα όταν φτάνει στη διεύθυνση του ιστότοπου και το προσωπικό ανησυχεί για τις πωλήσεις σήμερα.",
+            "objective": "Επαναφέρετε μια HTTP απόκριση από το LB-01 όταν το PC-Design ζητά το ιστότοπο του καταστήματος.",
+            "hints": [
+                "Το αίτημα από το PC-Design φτάνει στο LB-01, τον εξισορροπητή φορτίου που χειρίζεται τη διεύθυνση του καταστήματος, αλλά δεν προχωρά περαιτέρω.",
+                "Το LB-01 δεν έχει backend servers που να μπορεί να προωθήσει κίνηση — Shop-01, Shop-02 και Shop-03 δεν είναι συνδεδεμένα σε αυτό, άρα δεν υπάρχει τίποτα να απαντήσει.",
+                "Στο LB-01, συνδέστε καλώδια με Shop-01, Shop-02 και Shop-03 ώστε ο εξισορροπητής φορτίου να μπορεί να φτάσει και τους τρεις backend servers."
+            ],
+            "explanation": "Ένας εξισορροπητής φορτίου μπορεί να προωθήσει κίνηση μόνο σε backend servers με τα οποία έχει φυσική σύνδεση. Χωρίς καλώδια που συνδέουν το LB-01 με Shop-01, Shop-02 και Shop-03, δεν υπήρχαν backends για να στείλει αιτήματα, άρα κάθε αίτημα έπεσε στον εξισορροπητή."
+        },
+        "et": {
+            "title": "Tasakaalustajal puuduvad tagaserverid",
+            "story": "Disainitiim teab, et poe veebisait on jäänud vastamast juba hommikust. PC-Design ei laadi midagi, kui jõuab saidi aadressile, ja personalil on muret tänase müügi pärast.",
+            "objective": "Taastada HTTP-vastus LB-01-st, kui PC-Design teeb poe veebisaidile päringu.",
+            "hints": [
+                "PC-Design-i päring jõuab LB-01-ni, kaubanduskeskuse aadressi hallava tasakaalustajani, kuid edasi ei liigu.",
+                "LB-01-l puuduvad tagaserverid, kuhu saaks liiklust edasi saata — Shop-01, Shop-02 ja Shop-03 ei ole sellega ühendatud, seega puudub vastuse andmiseks võimalus.",
+                "LB-01-l ühenda kaablid Shop-01-ga, Shop-02-ga ja Shop-03-ga, et tasakaalustaja saaks kõigile kolmele tagaserverile jõuda."
+            ],
+            "explanation": "Tasakaalustaja saab liiklust edasi saata ainult nende tagaserverite juurde, millega tal on füüsiline ühendus. Kuna LB-01-l puudusid kaablid Shop-01, Shop-02 ja Shop-03-ga ühendamiseks, ei olnud ühtegi tagaserveri, kuhu päringuid saata, seega kustutas tasakaalustaja iga päringu."
+        },
+        "eu": {
+            "title": "Atzealdean ez dago balantzeadoraren atzean",
+            "story": "Diseinua-taldeak aditzera ematen du dendan duen webgune bat ez dela erantzuten goizean. PC-Design ez ditu sartzen gunearen helbidean, eta enpleguak kezkatuta daude gaur egingo dituzten salmentan.",
+            "objective": "HTTP erantzuna berreskuratu LB-01-etik PC-Design dendararen webgunera eskaera egitean.",
+            "hints": [
+                "PC-Design-en eskaera LB-01-era iritsi ohi da, dendararen helbidea kudeatzen duen atzeari zenbat du, baina ez da hemendik aurrera.",
+                "LB-01-k ez ditu atzealdean zerbitzariak ahal dituen trafiko-bidarritzen — Shop-01, Shop-02 eta Shop-03 ez daude harekin lotuak, bada ez dago eska erantzuteko.",
+                "LB-01-en, lotu kablea Shop-01-era, Shop-02-ra eta Shop-03-ra, balantzatzaileak hiru atzealdean zerbitzarietara irits daitezala."
+            ],
+            "explanation": "Balantzatzaileak soilik trafiko ahal ditu atzealdean zerbitzarietara badu hari eta baliteke lotuta. LB-01-ek ez ziren kableak Shop-01, Shop-02 eta Shop-03-ra konektatzera, ez zebilela atzealdean zerbitzari bat bidaltzeko eskaera, bada balantzatzaileak bakoitza baztertu."
+        },
+        "fa": {
+            "title": "بدون سرورهای بک‌اند پشت تعادل‌کننده",
+            "story": "تیم طراحی می‌گوید که وبسایت فروشگاه از صبح دیگر پاسخ نمی‌دهد. PC-Design هنگام رفتن به آدرس سایت چیزی بارگذاری نمی‌کند و کارکنان نگران فروش امروز هستند.",
+            "objective": "بازیابی پاسخ HTTP از LB-01 هنگام درخواست PC-Design برای وبسایت فروشگاه.",
+            "hints": [
+                "درخواست از PC-Design به LB-01 (تعادل‌کننده بار که آدرس فروشگاه را مدیریت می‌کند) می‌رسد، اما بیشتر نمی‌رود.",
+                "LB-01 سرورهای بک‌اندی ندارد که بتواند ترافیک را به آن‌ها بفرستد — Shop-01, Shop-02 و Shop-03 به آن متصل نیستند، پس پاسخ ممکن نیست.",
+                "در LB-01، کابل‌ها را به Shop-01، Shop-02 و Shop-03 متصل کنید تا تعادل‌کننده بتواند به هر سه سرور بک‌اند دسترسی داشته باشد."
+            ],
+            "explanation": "تعادل‌کننده فقط می‌تواند ترافیک را به سرورهای بک‌اندی فرستد که اتصال فیزیکی داشته باشد. بدون کابل‌های اتصال LB-01 به Shop-01، Shop-02 و Shop-03، هیچ بک‌اندی برای ارسال درخواست‌ها نبود، بنابراین هر درخواست در تعادل‌کننده حذف شد."
+        },
+        "fi": {
+            "title": "Ei palvelimia tasapainottajan takana",
+            "story": "Suunnitteluryhmä sanoo, että kaupan verkkosivusto on lopettanut vastaamisen tänä aamuna. PC-Design ei lataa mitään sivuston osoitteella, ja henkilöstö on huolissaan tämän päivän myynneistä.",
+            "objective": "Palauttaa HTTP-vastaus LB-01:stä kun PC-Design pyytää kaupan verkkosivustoa.",
+            "hints": [
+                "PC-Design-pyyntö saavuttaa LB-01:n, kaupan osoitteen hallitseman kuormituksen tasapainottajan, mutta ei mene pidemmälle.",
+                "LB-01:llä ei ole palvelimia, joille se voisi lähettää liikennettä — Shop-01, Shop-02 ja Shop-03 eivät ole siihen yhteydessä, joten vastausta ei voi antaa.",
+                "Yhdistä LB-01:ssa kaapelit Shop-01:een, Shop-02:een ja Shop-03:een, jotta kuormituksen tasapainottaja voi saavuttaa kaikki kolme taustajärjestelmän palvelinta."
+            ],
+            "explanation": "Kuormituksen tasapainottaja voi lähettää liikennettä vain niihin palvelimiin, joihin sillä on fyysinen yhteys. Koska LB-01:llä ei ollut kaapeleita, jotka yhdistävät Shop-01:een, Shop-02:een ja Shop-03:een, taustajärjestelmän palvelimia ei ollut, joille pyyntöjä lähettää, joten kuormituksen tasapainottaja hylkäsi kaikki pyynnöt."
+        },
+        "fil": {
+            "title": "Walang Backends Sa Likod ng Balancer",
+            "story": "Sinabi ng design team na tumitigil ang pagsagot ng shop website simula ngayong umaga. PC-Design ay walang nakaload kapag umabot sa address ng site, at ang staff ay nag-aalala sa benta ngayong araw.",
+            "objective": "Ibalik ang HTTP response mula sa LB-01 kapag humiling ang PC-Design sa shop website.",
+            "hints": [
+                "Ang request mula sa PC-Design ay umaabot sa LB-01, ang load balancer na nag-aasikaso ng shop address, ngunit hindi umuusad pa.",
+                "LB-01 ay walang backend servers na maaari nitong i-forward ang traffic — ang Shop-01, Shop-02 at Shop-03 ay hindi konektado dito, kaya walang paraan para sagutin ang request.",
+                "Sa LB-01, ikonekta ang mga cable sa Shop-01, Shop-02 at Shop-03 upang ang load balancer ay makaabot sa lahat ng tatlong backend servers."
+            ],
+            "explanation": "Ang load balancer ay maaari lamang mag-forward ng traffic sa mga backend servers na mayroon itong physical link. Nang walang mga cable na nag-uugnay sa LB-01 sa Shop-01, Shop-02 at Shop-03, walang backends na mapadala ang mga request, kaya ang bawat request ay tinakda sa balancer."
+        },
+        "gl": {
+            "title": "Sen servadores detrás do equilibrador",
+            "story": "O equipo de deseño di que a web da tenda deixou de responder desde esta mañá. PC-Design non carga nada ao alcanzar o enderezo do sitio, e o persoal está preocupado polas vendas de hoxe.",
+            "objective": "Restaurar unha resposta HTTP de LB-01 cando PC-Design solicita a web da tenda.",
+            "hints": [
+                "A solicitude de PC-Design chega a LB-01, o equilibrador de carga que xestiona o enderezo da tenda, pero non vai máis alá.",
+                "LB-01 non ten servadores de fondo aos que poida reenviar o tráfico — Shop-01, Shop-02 e Shop-03 non están vinculados a el, así que non hai nada que responda á solicitude.",
+                "En LB-01, conecta cables a Shop-01, Shop-02 e Shop-03 para que o equilibrador de carga poida alcanzar os tres servadores de fondo."
+            ],
+            "explanation": "Un equilibrador de carga só pode reenviar tráfico aos servadores de fondo aos que teña unha conexión física. Sen cables que conecten LB-01 a Shop-01, Shop-02 e Shop-03, non había servadores de fondo aos que enviar solicitudes, polo que cada solicitude foi abandonada no equilibrador."
+        },
+        "gu": {
+            "title": "બેલેન્સર પાછળ કોઈ બેકએન્ડ નથી",
+            "story": "ડિઝાઈન ટીમ કહે છે કે શોપ વેબસાઈટ આજ સવારથી જવાબ આપવાનું બંધ કરી દીધું છે. PC-Design સાઈટના સરનામાને પહોંચતા કોઈ પણ જ લોડ કરતું નથી, અને સ્ટાફ આજના વેચાણ વિશે ચિંતિત છે.",
+            "objective": "જ્યારે PC-Design શોપ વેબસાઈટ માટે વિનંતી કરે ત્યારે LB-01 તરફથી HTTP પ્રતિક્રિયા પુનઃસ્થાપિત કરો.",
+            "hints": [
+                "PC-Design તરફથીની વિનંતી LB-01 સુધી પહોંચે છે, શોપ સરનામાને સંચાલિત કરતું લોડ બેલેન્સર, પરંતુ આગળ નહીં જાય.",
+                "LB-01 પાસે કોઈ પણ બેકએન્ડ સર્વર નથી જેને તે ટ્રાફિક આગળ કરી શકે — Shop-01, Shop-02 અને Shop-03 તેની સાથે જોડાયેલા નથી, તેથી વિનંતીનો કોઈ જવાબ નથી.",
+                "LB-01 પર Shop-01, Shop-02 અને Shop-03 સાથે કેબલ જોડો જેથી લોડ બેલેન્સર ત્રણેય બેકએન્ડ સર્વર સુધી પહોંચી શકે."
+            ],
+            "explanation": "લોડ બેલેન્સર ફક્ત તે બેકએન્ડ સર્વરને ટ્રાફિક આગળ કરી શકે છે જેની સાથે તેની ભૌતિક લિંક છે. LB-01 ને Shop-01, Shop-02 અને Shop-03 સાથે જોડતી કેબલ ન હોવાથી, વિનંતીઓ મોકલવા માટે કોઈ બેકએન્ડ સર્વર નહોતું, તેથી દરેક વિનંતી બેલેન્સર પર છોડી દેવામાં આવી."
+        },
+        "he": {
+            "title": "אין שרתים בגב המאזן",
+            "story": "צוות העיצוב אומר שאתר החנות חדל מלהגיב מהבוקר. PC-Design אינו טוען כלום כאשר מגיע לכתובת האתר, וצוות מודאג למכירות של היום.",
+            "objective": "שחזר תגובת HTTP מ-LB-01 כאשר PC-Design מבקש את אתר החנות.",
+            "hints": [
+                "הבקשה מ-PC-Design מגיעה ל-LB-01, מאזן העומס המטפל בכתובת החנות, אך לא מתקדמת הלאה.",
+                "ל-LB-01 אין שרתי גב שהוא יכול להעביר אליהם תעבורה — Shop-01, Shop-02 ו-Shop-03 אינם מחוברים אליו, כך שאין מה להגיב לבקשה.",
+                "ב-LB-01, חבר כבלים ל-Shop-01, Shop-02 ו-Shop-03 כדי שמאזן העומס יוכל להגיע לשלושת שרתי הגב."
+            ],
+            "explanation": "מאזן עומס יכול להעביר תעבורה רק לשרתי גב שיש לו קשר פיזי אליהם. ללא כבלים המחברים את LB-01 ל-Shop-01, Shop-02 ו-Shop-03, לא היו שרתי גב למענה לבקשות, ולכן כל בקשה הושלכה במאזן."
+        },
+        "hr": {
+            "title": "Nema servera iza raspodijelitelja",
+            "story": "Tim za dizajn kaže da je web stranica trgovine prestala odgovarati od jutros. PC-Design ne učitava ništa kada dosegne adresu stranice, a osobljem su prodan dnevne prodaje.",
+            "objective": "Obnovi HTTP odgovor od LB-01 kada PC-Design zatraži web stranicu trgovine.",
+            "hints": [
+                "Zahtjev od PC-Design dosegne LB-01, raspodijelitelj opterećenja koji upravlja adresom trgovine, ali se dalje ne šalje.",
+                "LB-01 nema servera na pozadini kojima može proslijediti promet — Shop-01, Shop-02 i Shop-03 nisu povezani s njim, pa nema ničega što bi odgovorilo zahtjevu.",
+                "Na LB-01, poveži kablove sa Shop-01, Shop-02 i Shop-03 kako bi raspodijelitelj opterećenja mogao dosegnuti sva tri servera na pozadini."
+            ],
+            "explanation": "Raspodijelitelj opterećenja može samo proslijediti promet serverima na pozadini s kojima ima fizičku vezu. Bez kablova koji povezuju LB-01 sa Shop-01, Shop-02 i Shop-03, nije bilo servera na pozadini kojima bi se zahtjevi slali, pa je svaki zahtjev bio odbijen na raspodijelitelju."
+        },
+        "hu": {
+            "title": "Nincs backend szerver a terheléselosztó mögött",
+            "story": "A tervezési csapat azt mondja, hogy az üzlet weboldala ma reggel leállt. A PC-Design semmit sem tölt be a hely címének elérésekor, és a személyzet aggódik a mai eladásokért.",
+            "objective": "HTTP válasz visszaállítása LB-01-ből, amikor a PC-Design lekéri az üzlet weboldalát.",
+            "hints": [
+                "A PC-Design-ból érkező kérés eléri az LB-01-et, az üzlet címét kezelő terheléselosztót, de nem megy tovább.",
+                "Az LB-01-nek nincsenek backend szerverek, amelyekre továbbíthatná a forgalmat — a Shop-01, Shop-02 és Shop-03 nincs hozzá kapcsolva, így nincs semmi, ami megválaszolná a kérést.",
+                "Az LB-01-en csatlakoztatott kábeleket a Shop-01, Shop-02 és Shop-03 szállodához, hogy a terheléselosztó el tudja érni mind a három backend szervert."
+            ],
+            "explanation": "A terheléselosztó csak azokra a backend szerverekre tudja továbbítani a forgalmat, amelyekkel fizikai kapcsolat van. Az LB-01 és a Shop-01, Shop-02, Shop-03 közötti kábel-kapcsolat hiányában nem voltak backend szerverek, amelyeknek kéréseket lehetett küldeni, ezért minden kérés eldobódott a terheléselosztónál."
+        },
+        "hy": {
+            "title": "Չկան հետևի սերվերներ բալանսատորի ետևում",
+            "story": "Դիզայն թիմը ասում է, որ խանութի վեբ-կայքը դադարել է պատասխանել այս առավոտից: PC-Design-ը ոչինչ չի բեռնում, երբ հասնում է կայքի հասցեին, և անձնակցությունը մտահոգ են այսօր վաճառքի մասին:",
+            "objective": "Վերականգնեք HTTP պատասխան LB-01-ից, երբ PC-Design-ը հայցում է խանութի վեբ-կայքը:",
+            "hints": [
+                "PC-Design-ից հայցը հասնում է LB-01-ին, բեռի բալանսատորին, որը վարում է խանութի հասցեն, բայց այն չի շարունակում:",
+                "LB-01-ի չունի հետևի սերվերներ, որոնց այն կարող է հաղորդել ուղեկցել — Shop-01, Shop-02 և Shop-03 այն կապված չեն, այնպես որ հայցին պատասխանելու համար ոչինչ չկա:",
+                "LB-01-ում կապեք մալուխները Shop-01, Shop-02 և Shop-03-ին այնպես որ բեռի բալանսատորը կարողանա հասել բոլոր երեք հետևի սերվերներին:"
+            ],
+            "explanation": "Բեռի բալանսատորը կարող է հաղորդել ուղեկցել միայն այն հետևի սերվերներին, որոնց ֆիզիկական կապ ունի: Առանց մալուխների, որոնք կապում են LB-01-ը Shop-01, Shop-02 և Shop-03-ին, հետևի սերվերներ չկային, որոնց հայցեր ուղարկել, այնպես որ յուրաքանչյուր հայց ընդամենը վրիպել էր բալանսատորում:"
+        },
+        "is": {
+            "title": "Engin netþjónar bak við jöfnunina",
+            "story": "Hönnunarteymin segir að vefsíða verslunarinnar hafi hætt að svara frá þessu morgni. PC-Design hleður engu þegar hún nær heimilisfangi síðunnar og starfsfólk eru kvíðin vegna sölu dagsins.",
+            "objective": "Endurkoma HTTP svar frá LB-01 þegar PC-Design óskar eftir vefsíðu verslunarinnar.",
+            "hints": [
+                "Beiðnin frá PC-Design nær til LB-01, jöfnunaraðila sem fer með heimilisfang verslunarinnar, en hún fer ekki lengra.",
+                "LB-01 hefur enga netþjóna bak við sig sem hún getur sent umferð til — Shop-01, Shop-02 og Shop-03 eru ekki tengdir henni, svo ekkert er til að svara beiðninni.",
+                "Á LB-01, tengdu snúrur við Shop-01, Shop-02 og Shop-03 svo jöfnunin geti náð til allra þriggja netþjóna bak við sig."
+            ],
+            "explanation": "Jöfnunaraðili getur aðeins sent umferð til netþjóna bak við sig sem hann hefur eðlilega tengingu við. Án snúra sem tengja LB-01 við Shop-01, Shop-02 og Shop-03, voru engir netþjónar bak við sig til að senda beiðnir til, svo allar beiðnir voru felldar á jöfnunaraðilanum."
+        },
+        "ka": {
+            "title": "ბალანსატორის უკან არ არის სერვერები",
+            "story": "დიზაინის გუნდი ამბობს, რომ მაღაზიის ვებსაიტი დღის სიმინდიდან შეწყვიტა პასუხის დაძლევა. PC-Design ვერაფერს ტვირთავს საიტის მისამართზე შეგნების დროს, და თანამშრომლები ფიქრობენ დღეს გაყიდვების შესახებ.",
+            "objective": "აღადგინეთ HTTP პასუხი LB-01-დან, როდესაც PC-Design მაღაზიის ვებსაიტს მოითხოვს.",
+            "hints": [
+                "მოთხოვნა PC-Design-იდან მიაღწევს LB-01-ს, დატვირთვის ბალანსატორს, რომელიც მაღაზიის მისამართს ზედამხედელობს, მაგრამ უფრო შორს არ მივიდა.",
+                "LB-01-ს არ აქვს ხელმისაწვდომი სერვერები, რომლებსაც შეიძლება ტრაფიკი გადაამისზოს — Shop-01, Shop-02 და Shop-03 მასთან არ არის დაკავშირებული, ამიტომ მოთხოვნაზე პასუხის აღმოსაჩენი ვერაფერი არ არის.",
+                "LB-01-ზე დაკავშირეთ კაბელი Shop-01, Shop-02 და Shop-03-ს, რათა დატვირთვის ბალანსატორმა შეძლოს სამივე ხელმისაწვდომი სერვერის მიღწევა."
+            ],
+            "explanation": "დატვირთვის ბალანსატორი შეიძლება ტრაფიკი გადაამისზოს მხოლოდ იმ ხელმისაწვდომ სერვერებზე, რომლებთანაც აქვს ფიზიკური კავშირი. კაბელების გარეშე, რომლებიც აკავშირებს LB-01-ს Shop-01, Shop-02 და Shop-03-ს, ხელმისაწვდომი სერვერი არ იყო, რომელზეც მოთხოვნა რომ გადაიგზავნოთ, ამიტომ ყველა მოთხოვნა ბალანსატორზე დაიძრა."
+        },
+        "kk": {
+            "title": "Балансатордың артында серверлер жоқ",
+            "story": "Дизайн коллективі мағазалық веб-сайты бүгін ертеңнен жауап бермейтінін айтады. PC-Design сайттың мекенжайына жетегенде ештеме жүктемейді және қызметкерлер бүгін сатудан батынуы туралы ойлап отыр.",
+            "objective": "LB-01 арқылы HTTP жауап қайта қалпына келтіріңіз, әйтсе де PC-Design мағазалық веб-сайтын сұрағанда.",
+            "hints": [
+                "PC-Design ішінен сұраnym LB-01 ге жетеді, мағазалық мекенжайын басқаратын жүктеме балансаторы, бірақ одан әрі өтпейді.",
+                "LB-01-де трафикті ілгерілей беретін артқы серверлері жоқ — Shop-01, Shop-02 және Shop-03 оған байланысты емес, сондықтан сұраққа жауап беретін ештеме жоқ.",
+                "LB-01 де Shop-01, Shop-02 және Shop-03 ға кабельдер қосыңыз, сондықтан жүктеме балансаторы барлық үш артқы серверге жете алады."
+            ],
+            "explanation": "Жүктеме балансаторы трафикті ғана артқы серверлерге ілгерілей бере алады, оған физикалық байланысы барында. LB-01 ді Shop-01, Shop-02 және Shop-03 қосатын кабельдердің болмауының салдарынан артқы серверлері болмаған, сондықтан сұрақтарды ілгерілей беретін болмады және балансатордағы әр сұраң құлап түсті."
+        },
+        "km": {
+            "title": "គ្មានម៉ាស៊ីនបម្រើនៅខាងក្រោយលម្អាងមូលបញ្ហា",
+            "story": "ក្រុមរចនា និយាយថាគេហទំព័ររបស់ហាងបានឈប់ឆ្លើយកម្ពស់ពីព្រឹក។ PC-Design មិនបង្ហាយលទ្ធផលនៅពេលដែលឈានដល់អាសយដ្ឋាននៃគេហទំព័រ ហើយបុគ្គលិកនៃក្រុមស្វាគមន៍គឺបារម្ភអំពីការលក់របស់ថ្ងៃនេះ។",
+            "objective": "ស្ដារលទ្ធផលHTTPមកពីLB-01នៅពេលដែលPC-Designស្នើសុំគេហទំព័របង្គាំងហាង។",
+            "hints": [
+                "ស្នើសុំពីPC-Designឈានដល់LB-01 ដែលជាលម្អាងលើកលាស់ដែលគ្រប់គ្រងលក្ខណៈអាសយដ្ឋាននៃហាង ប៉ុន្តែលាមសូន្យ។",
+                "LB-01មិនមានម៉ាស៊ីនបម្រើដែលវាអាចបញ្ជូនចរាចរណ៍ទៅលើវាបានទេ — Shop-01, Shop-02 និង Shop-03មិនភ្ជាប់ទៅវាបានទេ ដូច្នេះគ្មានអ្វីដែលក្រឡាប់ស្នើសុំនោះទេ។",
+                "នៅលើLB-01 ភ្ជាប់ខ្សែទៅ Shop-01, Shop-02 និង Shop-03 ដូច្នេះលម្អាងលើកលាស់អាចឈានដល់ម៉ាស៊ីនបម្រើផ្នែកខាងក្រោយទាំងបីយ៉ាង។"
+            ],
+            "explanation": "លម្អាងលើកលាស់អាចបញ្ជូនចរាចរណ៍ទៅម៉ាស៊ីនបម្រើផ្នែកខាងក្រោយដែលវាមានការតភ្ជាប់ឯកសារប៉ុណ្ណោះ។ ដោយគ្មានខ្សែដែលតភ្ជាប់ LB-01 ទៅ Shop-01, Shop-02 និង Shop-03 គ្មានម៉ាស៊ីនបម្រើផ្នែកខាងក្រោយដែលក្រឡាប់ស្នើសុំលើវាបានទេ ដូច្នេះស្នើសុំនីមួយៗបានធ្លាក់នៅលម្អាងលើកលាស់។"
+        },
+        "kn": {
+            "title": "ಬ್ಯಾಲೆನ್ಸರ್ ಹಿಂದೆ ಬ್ಯಾಕೆಂಡ್ ಇಲ್ಲ",
+            "story": "ಡಿজಾಯಿನ್ ಟೀಮ್ ಹೇಳುತ್ತದೆ ಶಾಪ್ ವೆಬ್‌ಸೈಟ್ ಈ ಬೆಳಿಗ್ಗೆ ಪ್ರತಿಕ್ರಿಯೆ ನೀಡುವುದು ಸ್ಥಗಿತಗೊಂಡಿದೆ. PC-Design ಸೈಟ್ನ ವಿಳಾಸಕ್ಕೆ ತಲುಪುವಾಗ ಏನನ್ನೂ ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ, ಮತ್ತು ಸಿಬ್ಬಂದಿ ಇಂದಿನ ಮಾರಾಟದ ಬಗ್ಗೆ ಚಿಂತಿತರಾಗುತ್ತಿದ್ದಾರೆ.",
+            "objective": "PC-Design ಶಾಪ್ ವೆಬ್‌ಸೈಟ್ ವನ್ನು ವಿನಂತಿಸುವಾಗ LB-01 ನಿಂದ HTTP ಪ್ರತಿಕ್ರಿಯೆ ಮರುಸ್ಥಾಪಿಸಿ.",
+            "hints": [
+                "PC-Design ನಿಂದದ ವಿನಂತಿ LB-01 ಕ್ಕೆ ತಲುಪುತ್ತದೆ, ಶಾಪ್ ವಿಳಾಸವನ್ನು ನಿರ್ವಹಿಸುವ Load Balancer, ಆದರೆ ಅದು ಹೆಚ್ಚು ಮುಂದೆ ಹೋಗುವುದಿಲ್ಲ.",
+                "LB-01 ಕ್ಕೆ ಟ್ರಾಫಿಕ್ ಫಾರ್‌ವರ್ಡ್ ಮಾಡಬಹುದಾದ ಬ್ಯಾಕೆಂಡ್ ಸರ್ವರ್ ಇಲ್ಲ — Shop-01, Shop-02 ಮತ್ತು Shop-03 ಅದರೊಂದಿಗೆ ಲಿಂಕ್ ಮಾಡಿಲ್ಲ, ಆದ್ದರಿಂದ ವಿನಂತಿಗೆ ಉತ್ತರಿಸಬೇಕಾದ ಏನೂ ಇಲ್ಲ.",
+                "LB-01 ನಲ್ಲಿ, ಕೇಬಲ್ ಗಳನ್ನು Shop-01, Shop-02 ಮತ್ತು Shop-03 ಕ್ಕೆ ಸಂಪರ್ಕಿಸಿ ಇದರಿಂದ Load Balancer ಎಲ್ಲಾ ಮೂರು ಬ್ಯಾಕೆಂಡ್ ಸರ್ವರ್‌ಗಳನ್ನು ತಲುಪಬಹುದು."
+            ],
+            "explanation": "Load Balancer ಭೌತಿಕ ಲಿಂಕ್ ಹೊಂದಿರುವ ಬ್ಯಾಕೆಂಡ್ ಸರ್ವರ್‌ಗಳಿಗೆ ಮಾತ್ರ ಟ್ರಾಫಿಕ್ ಫಾರ್‌ವರ್ಡ್ ಮಾಡಬಹುದು. LB-01 ನಿಂದ Shop-01, Shop-02 ಮತ್ತು Shop-03 ಗೆ ಸಂಪರ್ಕಿಸುವ ಕೇಬಲ್ ಇಲ್ಲದೆ, ವಿನಂತಿಗಳನ್ನು ಕಳುಹಿಸಬಹುದಾದ ಬ್ಯಾಕೆಂಡ್ ಇಲ್ಲದೆ, ಪ್ರತಿಯೊಂದು ವಿನಂತಿ ಬ್ಯಾಲೆನ್ಸರ್ ನಲ್ಲಿ ಬಿಂಬಿಸಿಲ್ಲ."
+        },
+        "ky": {
+            "title": "Балансатордун артында Backend жок",
+            "story": "Дизайн тобу лавка веб-сайтынын бүгүн таңында жооп бербөй калгандыгын айтты. PC-Design сайттын дарегине жеткенде эч нерсе жүктөлбөйт, жана кызматчылар бүгүнкү сатыштарына тынчсыз болуп жатышат.",
+            "objective": "PC-Design лавка веб-сайтын сурагенде LB-01 ден HTTP жооп калыбына келтир.",
+            "hints": [
+                "PC-Design ден барган сурак LB-01 ге жетет, лавка дарегин башкаруучу Load Balancer, бирок андан аркы жага кетпейт.",
+                "LB-01 трафикти өндүрөй турган Backend сервери жок — Shop-01, Shop-02 жана Shop-03 ага туташтырылган эмес, ошондуктан сураккага жооп бергүүнү жок.",
+                "LB-01 де, Shop-01, Shop-02 жана Shop-03 ко кабелди туташтыр ошот эле Load Balancer үч Backend сервери тең жетсин."
+            ],
+            "explanation": "Load Balancer физикалык байланыш бар Backend серверлерине гана трафикти өндүрөй алат. LB-01 ден Shop-01, Shop-02 жана Shop-03 го туташтыруучу кабел болбосо, суракты жиберүүгө болот турган Backend жок болгондуктан, ар бир сурак балансатордо түшүп каласы болгон."
+        },
+        "lo": {
+            "title": "ບໍ່ມີ Backends ຫຼັງ Balancer",
+            "story": "ທີມອອກແບບກ່າວວ່າເວບໄຊທ໌ຫ້າງສະຫມໍ ຫຸດຕົວເພາະບໍ່ຕອບສະຫນອງນັບແຕ່ເຊົ້ານີ້. PC-Design ບໍ່ສາມາດໂຫລດສິ່ງໃດໆເມື່ອເຂົ້າເຖິງທີ່ຢູ່ຂອງເວບໄຊທ໌, ແລະເຈົ້າໜ້າທີ່ກໍາລັງເປັນຫ່ວງກ່ຽວກັບການຂາຍວັນນີ້.",
+            "objective": "ເອົາຄືນ HTTP response ຈາກ LB-01 ເມື່ອ PC-Design ຂໍເວບໄຊທ໌ຫ້າງສະຫມໍ.",
+            "hints": [
+                "ການຂໍມາຈາກ PC-Design ຮອດ LB-01, Load Balancer ທີ່ຈັດການທີ່ຢູ່ຂອງຫ້າງ, ແຕ່ບໍ່ໄປໄກກວ່າ.",
+                "LB-01 ບໍ່ມີ Backend servers ທີ່ມັນສາມາດສົ່ງຕໍ່ traffic ໄປ — Shop-01, Shop-02 ແລະ Shop-03 ບໍ່ໄດ້ຖືກເຊື່ອມຕໍ່ກັບມັນ, ດັ່ງນັ້ນບໍ່ມີຫຍັງທີ່ຈະຕອບສະຫນອງຄໍາຂໍ.",
+                "ໃນ LB-01, ເຊື່ອມຕໍ່ສາຍໄຟຟ້າກັບ Shop-01, Shop-02 ແລະ Shop-03 ເພື່ອ Load Balancer ສາມາດເຂົ້າຫາສາມ Backend servers ທັງໝົດ."
+            ],
+            "explanation": "Load Balancer ສາມາດສົ່ງຕໍ່ traffic ໄປຫາ Backend servers ທີ່ມັນມີການເຊື່ອມຕໍ່ທາງກາຍະພາບເທົ່ານັ້ນ. ໂດຍບໍ່ມີສາຍໄຟຟ້າທີ່ເຊື່ອມຕໍ່ LB-01 ກັບ Shop-01, Shop-02 ແລະ Shop-03, ບໍ່ມີ backends ທີ່ຈະສົ່ງຄໍາຂໍໄປ, ດັ່ງນັ້ນທຸກຄໍາຂໍໄດ້ຖືກລົບລ້າງຢູ່ balancer."
+        },
+        "lt": {
+            "title": "Nėra Backends Balanserio nugaroje",
+            "story": "Dizaino komanda sako, kad parduotuvės svetainė nutrūko atsakyti nuo šito ryto. PC-Design nieko neįkrauna pasiekus svetainės adresą, ir darbuotojai yra sunerimę dėl šios dienos pardavimų.",
+            "objective": "Atnaujinti HTTP atsakymą iš LB-01, kai PC-Design prašo parduotuvės svetainės.",
+            "hints": [
+                "Prašymas iš PC-Design pasiekia LB-01, Load Balancer, kuris valdo parduotuvės adresą, bet toliau neina.",
+                "LB-01 neturi Backend serverių, kuriems galėtų persiųsti eismą — Shop-01, Shop-02 ir Shop-03 su juo nesusieti, todėl nėra ko atsakyti į prašymą.",
+                "LB-01, sujunk kabelius prie Shop-01, Shop-02 ir Shop-03, kad Load Balancer galėtų pasiekti visus tris Backend serverius."
+            ],
+            "explanation": "Load Balancer gali persiųsti eismą tik į Backend serverius, su kuriais turi fizinę sąsają. Be kabelių, jungiančių LB-01 su Shop-01, Shop-02 ir Shop-03, nebuvo jokių backends, kuriems būtų galima siųsti prašymus, todėl kiekvienas prašymas buvo atmestas balanseryje."
+        },
+        "lv": {
+            "title": "Nav Backends aiz Balancer",
+            "story": "Dizaina komanda saka, ka veikala vietne pārstāja atbildēt no šā rīta. PC-Design neko neielādē, piekļūstot vietnes adresei, un darbinieki ir nobažījušies par šodienas pārdošanu.",
+            "objective": "Atjaunot HTTP atbildi no LB-01, kad PC-Design pieprasa veikala vietni.",
+            "hints": [
+                "Pieprasījums no PC-Design sasniedz LB-01, Load Balancer, kas pārvalda veikala adresi, bet neiet tālāk.",
+                "LB-01 nav Backend serveru, uz kuriem tas varētu pārsūtīt trafiku — Shop-01, Shop-02 un Shop-03 nav tam pievienoti, tāpēc nav, kas atbildētu uz pieprasījumu.",
+                "LB-01 pievienojiet kabeļus Shop-01, Shop-02 un Shop-03, lai Load Balancer varētu sasniedz visus trīs Backend serverus."
+            ],
+            "explanation": "Load Balancer var pārsūtīt trafiku tikai uz Backend serveriem, kuriem tam ir fizisks savienojums. Bez kabeļiem, kas savieno LB-01 ar Shop-01, Shop-02 un Shop-03, nebija backends, uz kuriem sūtīt pieprasījumus, tāpēc katrs pieprasījums tika nolaists balanserī."
+        },
+        "mk": {
+            "title": "Нема Backend сервери зад балансерот",
+            "story": "Тимот за дизајн вели дека веб-сајтот на магазинот престанал да одговара оваа сутра. PC-Design не вчитува ништо кога ги достигнува адресата на сајтот, и персоналот е загрижен поради денешните продажби.",
+            "objective": "Восстави HTTP одговор од LB-01 кога PC-Design ја бара веб-страната на магазинот.",
+            "hints": [
+                "Барањето од PC-Design го достигнува LB-01, балансерот што обработува адреса на магазинот, но не оди понатаму.",
+                "LB-01 нема backend сервери на кои може да пренесе сообраќај — Shop-01, Shop-02 и Shop-03 не се поврзани со него, па нема ничего да одговори на барањето.",
+                "На LB-01, поврзи кабели кон Shop-01, Shop-02 и Shop-03 така што балансерот ќе може да ги достигне сите три backend сервери."
+            ],
+            "explanation": "Балансерот може да пренесе сообраќај само на backend сервери на кои има физичка врска. Без кабели што ја поврзуваат LB-01 со Shop-01, Shop-02 и Shop-03, немаше backend за да ги пренесе барањата, па секое барање беше отфрлено на балансерот."
+        },
+        "ml": {
+            "title": "ബാലൻസരിന് പിന്നിലെ ബാക്കെൻഡ് സെർവറുകൾ ഇല്ല",
+            "story": "ഡിസൈൻ ടീം പറയുന്നതനുസരിച്ച് കടയുടെ വെബ്സൈറ്റ് ഇന്നത്തെ പ്രഭാതം മുതൽ പ്രതികരിക്കുന്നത് നിലച്ചിരിക്കുന്നു. PC-Design സൈറ്റിന്റെ വിലാസത്തിലെത്തുമ്പോൾ ഒന്നുമായി ലോഡ് ചെയ്യുന്നില്ല, കാര്യവാഹകരും ഇന്നത്തെ വിൽപനയെക്കുറിച്ച് ആശങ്കാകുലരാണ്.",
+            "objective": "PC-Design കടയുടെ വെബ്സൈറ്റ് അപേക്ഷിക്കുമ്പോൾ LB-01 ൽ നിന്നുള്ള HTTP പ്രതികരണം പുനരുദ്ധരിക്കുക.",
+            "hints": [
+                "PC-Design ൽ നിന്നുള്ള അപേക്ഷ കടയുടെ വിലാസം കൈകാര്യം ചെയ്യുന്ന ലോഡ് ബാലൻസർ LB-01 ൽ എത്തിയെങ്കിലും അത് തുടർന്നുപോകുന്നില്ല.",
+                "LB-01 ന് സംഭരണം ചെയ്യാൻ കഴിയുന്ന ബാക്കെൻഡ് സെർവറുകൾ ഇല്ല — Shop-01, Shop-02, Shop-03 ഇതിനോട് ബന്ധിതമല്ലാത്തതിനാൽ അപേക്ഷയോടുത്തരം നൽകാൻ ഒന്നും ഇല്ല.",
+                "LB-01 ൽ, Shop-01, Shop-02, Shop-03 ലേക്ക് കേബിൾ ബന്ധിപ്പിച്ച് ലോഡ് ബാലൻസർ മൂന്നു ബാക്കെൻഡ് സെർവറിലും എത്താനാകുമാറ് ബന്ധിപ്പിക്കുക."
+            ],
+            "explanation": "ലോഡ് ബാലൻസർക്ക് ഭൌതിക ബന്ധമുള്ള ബാക്കെൻഡ് സെർവറുകളിലേക്ക് മാത്രം സംഭരണം ചെയ്യാനാകും. LB-01 നെ Shop-01, Shop-02, Shop-03 ലുമായി ബന്ധിപ്പിക്കുന്ന കേബിൾ ഇല്ലാതിരുന്നതിനാൽ, അപേക്ഷ ആയിരിക്കാൻ ബാക്കെൻഡ് ഇല്ലാത്തതിനാൽ, എല്ലാ അപേക്ഷയും ബാലൻസരിൽ ഉപേക്ഷിക്കപ്പെട്ടു."
+        },
+        "mn": {
+            "title": "Балансер-ын ард ямар ч Backend байхгүй",
+            "story": "Дизайн хамгаас өндөр түвшний баг дүүс дэлгүүрийн вэбсайт өнөө өглөөнөөс хариу өгөхсөө болсон гэж хэлжээ. PC-Design нь сайтын хаяг руу хүрэхэд юу ч ачаалдаггүй бөгөөд ажилтнууд өнөө өдрийн борлуулалтын талаар санаа зовж байна.",
+            "objective": "PC-Design нь дүүс дэлгүүрийн вэбсайт хүсэхэд LB-01 аас HTTP хариуг сэргээгүүлэх.",
+            "hints": [
+                "PC-Design-ын асуулт нь дүүс дэлгүүрийн хаягийг зохицуулдаг ачаалал балансер LB-01 рүү хүрэхэд цаашид явахгүй.",
+                "LB-01 нь сообщай дамжуулж болох ямар ч Backend сервер байхгүй — Shop-01, Shop-02, Shop-03 нь түүнтэй холбогдож байхгүй тул асуултанд хариу өгөх юм байхгүй.",
+                "LB-01 дээр Shop-01, Shop-02, Shop-03 уруу кабель холбож ачаалал балансер гурван Backend серверт хүрч чадахаар холбоёё."
+            ],
+            "explanation": "Ачаалал балансер нь зөвхөн ямар ч физик холбоотой Backend сервер руу сообщай дамжуулж болно. LB-01 нь Shop-01, Shop-02, Shop-03 холбогч кабель байхгүй байсан тул асуултанд явуулах ямар ч Backend байхгүй байсан тул үүгүй асуулт болгож балансер дээр унажээ."
+        },
+        "mr": {
+            "title": "बॅलेंसर मागे कोणते Backend नाहीत",
+            "story": "डिজाइन टीम म्हणते की दुकानाची वेबसाइट आज सकाळपासून उत्तर देणे बंद केले आहे. PC-Design साइटचा पत्ता पोहोचल्यावर काहीही लोड होत नाही आणि कर्मचारी आजच्या विक्रयाबद्दल चिंतित आहेत.",
+            "objective": "PC-Design जेव्हा दुकानाची वेबसाइट विनंती करते तेव्हा LB-01 पासून HTTP प्रतिसाद पुनर्संचयित करा.",
+            "hints": [
+                "PC-Design मधील विनंती दुकानाचा पत्ता हाताळणारा लोड बॅलेंसर LB-01 पर्यंत पोहोचते परंतु पुढे जात नाही.",
+                "LB-01 कडे ट्रॅफिक फॉरवर्ड करू शकणारे कोणतेही Backend सर्व्हर नाहीत — Shop-01, Shop-02 आणि Shop-03 त्यापर्यंत जोडलेले नाहीत, त्यामुळे विनंतीचे उत्तर देण्यासाठी काही नाही.",
+                "LB-01 वर, Shop-01, Shop-02 आणि Shop-03 ला केबल जोडा जेणेकरून लोड बॅलेंसर तीनही Backend सर्व्हरपर्यंत पोहोचू शकेल."
+            ],
+            "explanation": "लोड बॅलेंसर केवळ त्या Backend सर्व्हरला ट्रॅफिक फॉरवर्ड करू शकतो ज्याची शारीरिक लिंक असते. LB-01 ला Shop-01, Shop-02 आणि Shop-03 ला जोडणारी केबले नसल्यामुळे, विनंती पुरवठा करण्यासाठी कोणतेही Backend नव्हते, त्यामुळे प्रत्येक विनंती बॅलेंसर येथे टाकली गई होती."
+        },
+        "ms": {
+            "title": "Tiada Backend di Belakang Penyeimbang",
+            "story": "Tim desain mengatakan bahwa situs web toko telah berhenti merespons sejak pagi ini. PC-Design tidak memuat apa pun saat mencapai alamat situs, dan staf khawatir tentang penjualan hari ini.",
+            "objective": "Pulihkan respons HTTP dari LB-01 ketika PC-Design meminta situs web toko.",
+            "hints": [
+                "Permintaan dari PC-Design mencapai LB-01, penyeimbang beban yang menangani alamat toko, tetapi tidak berlanjut.",
+                "LB-01 tidak memiliki server Backend apa pun yang dapat meneruskan lalu lintas — Shop-01, Shop-02, dan Shop-03 tidak terhubung dengannya, jadi tidak ada yang dapat menjawab permintaan.",
+                "Pada LB-01, sambungkan kabel ke Shop-01, Shop-02, dan Shop-03 sehingga penyeimbang beban dapat menjangkau ketiga server Backend."
+            ],
+            "explanation": "Penyeimbang beban hanya dapat meneruskan lalu lintas ke server Backend yang memiliki tautan fisik. Tanpa kabel yang menghubungkan LB-01 ke Shop-01, Shop-02, dan Shop-03, tidak ada Backend untuk mengirimkan permintaan, jadi setiap permintaan dijatuhkan di penyeimbang."
+        },
+        "ne": {
+            "title": "ब्यालेन्सरको पछाडि कुनै ब्यांकएंड छैन",
+            "story": "डिजाइन टिमले भन्छ कि दोकान वेबसाइट आज बिहान देखि जवाफ दिन बन्द भएको छ। PC-Design ले साइटको पतामा पुग्दा कुनै पनि लोड हुँदैन, र कर्मचारीहरु आजको बिक्रयको बारेमा चिन्तित छन्।",
+            "objective": "PC-Design ले दोकान वेबसाइट अनुरोध गर्दा LB-01 बाट HTTP प्रतिक्रिया पुनः स्थापन गर्नुहोस्।",
+            "hints": [
+                "PC-Design बाट अनुरोध LB-01 मा पुग्छ, दोकान पतालाई हेर्ने लोड ब्यालेन्सर, तर अगाडि जाँदैन।",
+                "LB-01 सँग ट्राफिक फर्वार्ड गर्न कुनै ब्यांकएंड सर्भर छैन — Shop-01, Shop-02 र Shop-03 यससँग जोडिएका छैनन्, त्यसैले अनुरोधलाई जवाफ दिन केही छैन।",
+                "LB-01 मा, Shop-01, Shop-02 र Shop-03 मा केबलहरु जोडनुहोस् ताकि लोड ब्यालेन्सर सबै तीन ब्यांकएंड सर्भरहरुमा पुग्न सकोस्।"
+            ],
+            "explanation": "लोड ब्यालेन्सर केवल सर्भरहरुमा ट्राफिक फर्वार्ड गर्न सक्छ जससँग यसको भौतिक लिङ्क छ। LB-01 बाट Shop-01, Shop-02 र Shop-03 मा केबलहरु जोडिएको नभएकोले, अनुरोधहरु पठाउन कुनै ब्यांकएंड थिएन, त्यसैले प्रत्येक अनुरोध ब्यालेन्सरमा अलपत्र गरिएको थियो।"
+        },
+        "nl": {
+            "title": "Geen Backends Achter de Balancer",
+            "story": "Het designteam zegt dat de winkelwebsite sinds vanmorgen niet meer antwoordt. PC-Design laadt niets wanneer het het adres van de site bereikt, en het personeel maakt zich zorgen over de verkoop van vandaag.",
+            "objective": "Herstel een HTTP-reactie van LB-01 wanneer PC-Design het winkelwebsite aanvraagt.",
+            "hints": [
+                "Het verzoek van PC-Design bereikt LB-01, de load balancer die het winkeladres verwerkt, maar gaat niet verder.",
+                "LB-01 heeft geen backend-servers waarnaar het verkeer kan worden doorgestuurd — Shop-01, Shop-02 en Shop-03 zijn er niet mee verbonden, dus er is niets om op het verzoek te antwoorden.",
+                "Verbind op LB-01 kabels met Shop-01, Shop-02 en Shop-03 zodat de load balancer alle drie backend-servers kan bereiken."
+            ],
+            "explanation": "Een load balancer kan alleen verkeer doorsturen naar backend-servers waarmee het een fysieke verbinding heeft. Zonder kabels die LB-01 met Shop-01, Shop-02 en Shop-03 verbinden, waren er geen backends om verzoeken naartoe te sturen, dus elk verzoek werd bij de balancer verwijderd."
+        },
+        "no": {
+            "title": "Ingen Backends Bak Balanceren",
+            "story": "Designteamet sier at butikknettsiden har sluttet å svare siden i morges. PC-Design laster ingenting når den når nettstedet, og personalet er bekymret for dagens salg.",
+            "objective": "Gjenopprett en HTTP-respons fra LB-01 når PC-Design ber om butikknettsiden.",
+            "hints": [
+                "Forespørselen fra PC-Design når LB-01, lastbalanseren som håndterer butikkaddressen, men går ikke videre.",
+                "LB-01 har ingen backend-servere den kan videresende trafikk til — Shop-01, Shop-02 og Shop-03 er ikke koblet til den, så det er ingenting å svare på forespørselen.",
+                "Koble på LB-01 kabler til Shop-01, Shop-02 og Shop-03 slik at lastbalanseren kan nå alle tre backend-serverene."
+            ],
+            "explanation": "En lastbalancer kan kun videresende trafikk til backend-servere den har en fysisk forbindelse til. Uten kabler som forbinder LB-01 til Shop-01, Shop-02 og Shop-03, var det ingen backends å sende forespørsler til, så hver forespørsel ble droppet ved balanceren."
+        },
+        "or": {
+            "title": "ବ୍ୟାଲେନ୍ସରର ପିଛନ୍ଦରେ କୌଣସି ବ୍ୟାକଏଣ୍ଡ ନାହିଁ",
+            "story": "ଡିଜାଇନ୍ ଟିମ କହୁଛି ଯେ ଦୋକାନ ୱେବସାଇଟ ଆଜ ସକାଳ ଠାରୁ ଉତ୍ତର ଦିବା ବନ୍ଦ କରିଛି। PC-Design ସାଇଟର ଅ୍ୟାଡ୍ରେସ ପହଁଚିବାବେଳେ କିଛି ଲୋଡ ହୋଇ ନାହିଁ, ଏବଂ କର୍ମଚାରୀମାନେ ଆଜର ବିକ୍ରୟ ବିଷୟରେ ଚିନ୍ତିତ ଅଛନ୍ତି।",
+            "objective": "PC-Design ଯେତେବେଳେ ଦୋକାନ ୱେବସାଇଟ ଅନୁରୋଧ କରେ ତେତେବେଳେ LB-01 ରୁ HTTP ପ୍ରତିକ୍ରିୟା ପୁନରୁଦ୍ଧାର କରନ୍ତୁ।",
+            "hints": [
+                "PC-Design ରୁ ଅନୁରୋଧ LB-01 ରେ ପହଁଚେ, ଦୋକାନ ଅ୍ୟାଡ୍ରେସ ପରିଚାଳନା କରୁଥିବା ଲୋଡ ବ୍ୟାଲେନ୍ସର, କିନ୍ତୁ ଏଗୁଡ଼ିକ ଆଗକୁ ଯାଏ ନାହିଁ।",
+                "LB-01 ଏ ଟ୍ରାଫିକ୍ ଅଗ୍ରସର କରିବାକୁ ବ୍ୟାକଏଣ୍ଡ ସର୍ଭର ନାହିଁ — Shop-01, Shop-02 ଏବଂ Shop-03 ଏଗୁଡ଼ିକ ସହ ସଂଯୁକ୍ତ ନୁହଁ, ତେଣୁ ଅନୁରୋଧର ଉତ୍ତର ଦେବାକୁ କିଛି ନାହିଁ।",
+                "LB-01 ରେ, Shop-01, Shop-02 ଏବଂ Shop-03 ରେ କେବୁଲ୍‌ ସଂଯୁକ୍ତ କରନ୍ତୁ ଯାହାଦ୍ୱାରା ଲୋଡ ବ୍ୟାଲେନ୍ସର ତିନୋଟି ବ୍ୟାକଏଣ୍ଡ ସର୍ଭର୍‌ରେ ପହଁଚିପାରେ।"
+            ],
+            "explanation": "ଏକ ଲୋଡ ବ୍ୟାଲେନ୍ସର ଏଭଳି ସର୍ଭର୍‌ରେ ଟ୍ରାଫିକ୍ ଅଗ୍ରସର କରିପାରେ ଯେଉଁଗୁଡ଼ିକର ସହ ଏହାର ଶାରୀରିକ ସଂଯୋଗ ଅଛି। LB-01 ରୁ Shop-01, Shop-02 ଏବଂ Shop-03 ରେ କୌଣସି କେବୁଲ୍‌ ସଂଯୁକ୍ତ ନହେଦ୍ୱାରା, ଅନୁରୋଧ ପଠାଇବାକୁ କୌଣସି ବ୍ୟାକଏଣ୍ଡ ନଥିଲା, ତେଣୁ ପ୍ରତ୍ୟେକ ଅନୁରୋଧ ବ୍ୟାଲେନ୍ସରେ ଛାଡ଼ିଦିଆଯାଇଥିଲା।"
+        },
+        "pa": {
+            "title": "ਬੈਲੇਂਸਰ ਦੇ ਪਿੱਛੇ ਕੋਈ ਬੈਕਐਂਡ ਨਹੀਂ",
+            "story": "ਡਿਜ਼ਾਈਨ ਟੀਮ ਕਹਿੰਦੀ ਹੈ ਕਿ ਸ਼ਾਪ ਵੈਬਸਾਈਟ ਅੱਜ ਸਵੇਰੇ ਤੋਂ ਜਵਾਬ ਦੇਣਾ ਬੰਦ ਕਰ ਗਈ ਹੈ। PC-Design ਸਾਈਟ ਦੇ ਪਤੇ ਤਕ ਪਹੁੰਚਣ ਸਮੇ ਕੁਝ ਲੋਡ ਨਹੀਂ ਕਰਦਾ, ਅਤੇ ਸਟਾਫ ਅੱਜ ਦੀ ਵਿਕ੍ਰੀ ਲਈ ਬੇਚੈਨ ਹੈ।",
+            "objective": "ਜਦੋਂ PC-Design ਸ਼ਾਪ ਵੈਬਸਾਈਟ ਦੀ ਬੇਨਤੀ ਕਰੇ ਤਾਂ LB-01 ਤੋਂ HTTP ਜਵਾਬ ਮੁੜ ਬਹਾਲ ਕਰੋ।",
+            "hints": [
+                "PC-Design ਤੋਂ ਬੇਨਤੀ LB-01 ਤਕ ਪਹੁੰਚਦੀ ਹੈ, ਜੋ ਸ਼ਾਪ ਪਤੇ ਨੂੰ ਸੰਭਾਲਦਾ ਲੋਡ ਬੈਲੇਂਸਰ ਹੈ, ਪਰ ਅੱਗੇ ਨਹੀਂ ਜਾਂਦਾ।",
+                "LB-01 ਕੋਲ ਕੋਈ ਬੈਕਐਂਡ ਸਰਵਰ ਨਹੀਂ ਹੈ ਜਿਸ ਨੂੰ ਇਹ ਟ੍ਰੈਫਿਕ ਭੇਜ ਸਕੇ — Shop-01, Shop-02 ਅਤੇ Shop-03 ਇਸ ਨੂੰ ਜੁੜੇ ਨਹੀਂ ਹਨ, ਇਸਲਈ ਬੇਨਤੀ ਦਾ ਜਵਾਬ ਦੇਣ ਲਈ ਕੁਝ ਨਹੀਂ ਹੈ।",
+                "LB-01 ਉੱਤੇ, ਕੇਬਲ ਨੂੰ Shop-01, Shop-02 ਅਤੇ Shop-03 ਨਾਲ ਜੋੜੋ ਤਾਂ ਜੋ ਲੋਡ ਬੈਲੇਂਸਰ ਸਾਰੇ ਤਿੰਨ ਬੈਕਐਂਡ ਸਰਵਰ ਤਕ ਪਹੁੰਚ ਸਕੇ।"
+            ],
+            "explanation": "ਇੱਕ ਲੋਡ ਬੈਲੇਂਸਰ ਸਿਰਫ ਉਨ੍ਹਾਂ ਬੈਕਐਂਡ ਸਰਵਰ ਨੂੰ ਟ੍ਰੈਫਿਕ ਭੇਜ ਸਕਦਾ ਹੈ ਜਿਨ੍ਹਾਂ ਨਾਲ ਇਸ ਦਾ ਫਿਜੀਕਲ ਲਿੰਕ ਹੋ। LB-01 ਤੋਂ Shop-01, Shop-02 ਅਤੇ Shop-03 ਤਕ ਕੋਈ ਕੇਬਲ ਜੁੜੇ ਨਾ ਹੋਣ ਨਾਲ, ਬੇਨਤੀ ਭੇਜਣ ਲਈ ਕੋਈ ਬੈਕਐਂਡ ਨਹੀਂ ਸੀ, ਇਸ ਲਈ ਹਰੇਕ ਬੇਨਤੀ ਬੈਲੇਂਸਰ ਪਾਸੇ ਡਾਲ ਦਿੱਤੀ ਗਈ।"
+        },
+        "pl": {
+            "title": "Brak serwerów zaplecza za loadbalancerem",
+            "story": "Zespół projektowy mówi, że witryna sklepu przestała odpowiadać od tego ranka. PC-Design nie ładuje niczego, gdy dociera na adres witryny, a pracownicy martwią się o dzisiejszą sprzedaż.",
+            "objective": "Przywróć odpowiedź HTTP z LB-01, gdy PC-Design żąda witryny sklepu.",
+            "hints": [
+                "Żądanie z PC-Design dociera do LB-01, loadbalancera obsługującego adres sklepu, ale nie idzie dalej.",
+                "LB-01 nie ma serwerów zaplecza, do których może przekazać ruch — Shop-01, Shop-02 i Shop-03 nie są do niego podłączone, więc nie ma nic, co mogłoby odpowiedzieć na żądanie.",
+                "Na LB-01 podłącz kable do Shop-01, Shop-02 i Shop-03, aby loadbalancer mógł dotrzeć do wszystkich trzech serwerów zaplecza."
+            ],
+            "explanation": "Loadbalancer może przekazywać ruch tylko do serwerów zaplecza, z którymi ma fizyczne połączenie. Bez kabli łączących LB-01 z Shop-01, Shop-02 i Shop-03 nie było serwerów zaplecza do wysyłania żądań, więc każde żądanie zostało porzucone na loadbalancerze."
+        },
+        "pt-PT": {
+            "title": "Sem servidores de backend atrás do balanceador",
+            "story": "A equipa de design diz que o website da loja parou de responder desde esta manhã. PC-Design não carrega nada ao alcançar o endereço do site, e o pessoal fica preocupado com as vendas de hoje.",
+            "objective": "Restaurar uma resposta HTTP de LB-01 quando PC-Design solicita o website da loja.",
+            "hints": [
+                "O pedido de PC-Design chega a LB-01, o balanceador de carga que trata o endereço da loja, mas não vai mais longe.",
+                "LB-01 não tem servidores de backend para os quais possa encaminhar tráfego — Shop-01, Shop-02 e Shop-03 não estão ligados a ele, portanto não há nada para responder ao pedido.",
+                "Em LB-01, ligue os cabos a Shop-01, Shop-02 e Shop-03 para que o balanceador de carga possa alcançar todos os três servidores de backend."
+            ],
+            "explanation": "Um balanceador de carga só pode encaminhar tráfego para servidores de backend com os quais tem uma ligação física. Sem cabos a conectar LB-01 a Shop-01, Shop-02 e Shop-03, não havia backends para onde enviar pedidos, portanto cada pedido foi rejeitado no balanceador."
+        },
+        "rm": {
+            "title": "Nagina backends darronda dal balancer",
+            "story": "Il team da design di che la website dal butg na respunda pli dapi sta matina. PC-Design na chargja nossas cand ha giavischà l'indrizz dal website, ed il persunal sa preoccupa per las venditas d'ingidonn.",
+            "objective": "Restaura ina resposta HTTP da LB-01 cund che PC-Design dumonda la website dal butg.",
+            "hints": [
+                "La dumonda da PC-Design arriva a LB-01, il balancer da chargias che tractescha l'indrizz dal butg, ma na va pli avant.",
+                "LB-01 na dispunsa nagina servers backend che sa pudess transmetter il traffic — Shop-01, Shop-02 e Shop-03 na sun betg connectads ad el, perquai n'escha nossas da respunder a la dumonda.",
+                "Sch LB-01, connectescha ils cables cun Shop-01, Shop-02 e Shop-03 per che il balancer da chargias pudess arriver a tut trais backends."
+            ],
+            "explanation": "In balancer da chargias po transmetter il traffic be a backends cun quels ch'el ha ina colliaziun fisica. Senza cables che connecteschan LB-01 cun Shop-01, Shop-02 e Shop-03, n'avian backends che sa pudessian transmetter las dumondas, perquai tut dumonda es vegnida rejettada al balancer."
+        },
+        "ro": {
+            "title": "Fără servere backend în spatele balancerului",
+            "story": "Echipa de design spune că situl magazinului a încetат să răspundă de dimineață. PC-Design nu încarcă nimic la accesarea adresei site-ului, iar personalul se îngrijorează pentru vânzările de astăzi.",
+            "objective": "Restabilește un răspuns HTTP de la LB-01 când PC-Design solicită site-ul magazinului.",
+            "hints": [
+                "Cererea din PC-Design ajunge la LB-01, balancerul de sarcină care gestionează adresa magazinului, dar nu merge mai departe.",
+                "LB-01 nu are servere backend cărora să poată transmite traficul — Shop-01, Shop-02 și Shop-03 nu sunt conectate la el, deci nu există nimic pentru a răspunde cererii.",
+                "Pe LB-01, conectează cabluri la Shop-01, Shop-02 și Shop-03 pentru ca balancerul de sarcină să poată ajunge la toate trei servere backend."
+            ],
+            "explanation": "Un balancer de sarcină poate transmite trafic doar către servere backend cu care are o legătură fizică. Fără cabluri care conectează LB-01 la Shop-01, Shop-02 și Shop-03, nu existau servere backend cărora să trimiți cereri, deci fiecare cerere a fost abandonată la balancer."
+        },
+        "sk": {
+            "title": "Bez backendových serverov za Load Balancer",
+            "story": "Tím dizajnérov hovorí, že webová stránka obchodu prestala odpovedať od rána. PC-Design sa nenačítava, keď sa dostane na adresu stránky, a personál je znepokojený dnešnými predajmi.",
+            "objective": "Obnovte HTTP odpoveď z LB-01, keď PC-Design vyžiada webovú stránku obchodu.",
+            "hints": [
+                "Požiadavka z PC-Design dosahuje LB-01, Load Balancer spracúvajúci adresu obchodu, ale ide ďalej.",
+                "LB-01 nemá žiadne backendové servery, na ktoré by mohol preposielať dopravu — Shop-01, Shop-02 a Shop-03 nie sú pripojené, preto nie je nič na odpoveď.",
+                "Na LB-01 pripojte káble k Shop-01, Shop-02 a Shop-03, aby Load Balancer dostal všetky tri backendové servery."
+            ],
+            "explanation": "Load Balancer môže preposielať dopravu len na backendové servery, na ktoré má fyzické spojenie. Bez káblov spájajúcich LB-01 s Shop-01, Shop-02 a Shop-03, neboli žiadne backendy na odoslanie požiadaviek, takže každá požiadavka bola vyradená na balancere."
+        },
+        "sl": {
+            "title": "Brez zalednih strežnikov za Balanserjem",
+            "story": "Oblikovalski tim pravi, da je spletna stran trgovine prenehala odgovarjati že zjutraj. PC-Design se ne naloži, ko doseže naslov spletnega mesta, in osebje je zaskrbljeno za današnjo prodajo.",
+            "objective": "Obnovite HTTP odgovor iz LB-01, ko PC-Design zahteva spletno stran trgovine.",
+            "hints": [
+                "Zahtevek z PC-Design doseže LB-01, Balanser obremenitve, ki upravlja naslov trgovine, vendar se ne nadaljuje.",
+                "LB-01 nima zalednih strežnikov, na katere bi lahko posredoval promet — Shop-01, Shop-02 in Shop-03 niso povezani, zato ni nič za odgovor.",
+                "Na LB-01 priključite kable k Shop-01, Shop-02 in Shop-03, da Balanser obremenitve doseže vse tri zaledne strežnike."
+            ],
+            "explanation": "Balanser obremenitve lahko posreduje promet samo zalednim strežnikom, na katere ima fizično povezavo. Brez kablov, ki povezujejo LB-01 s Shop-01, Shop-02 in Shop-03, ni bilo zaledov za pošiljanje zahtevkov, zato je bil vsak zahtevek prekinjen pri balanserju."
+        },
+        "sq": {
+            "title": "Pa Backend Serverë prapa Balanserit",
+            "story": "Ekipi i dizajnit thotë se faqja e internetit të dyqanit ka ndaluar përgjigjen që këtë mëngjes. PC-Design nuk ngarkon asgjë kur arrin në adresën e faqes, dhe personeli shqetësohet për shitjet e sotme.",
+            "objective": "Rivendosni përgjigjen HTTP nga LB-01 kur PC-Design kërkon faqen e internetit të dyqanit.",
+            "hints": [
+                "Kërkesa nga PC-Design arrin në LB-01, Balansesin e ngarkesës që trajon adresën e dyqanit, por nuk shkon më tej.",
+                "LB-01 nuk ka asnjë server backend që mund ta drejtojë trafikun — Shop-01, Shop-02 dhe Shop-03 nuk janë të lidhura, prandaj nuk ka asgjë për të përgjigjur kërkesës.",
+                "Në LB-01, lidhni kabllot në Shop-01, Shop-02 dhe Shop-03 në mënyrë që Balanseri i ngarkesës të mund të arrijë të tre serverët backend."
+            ],
+            "explanation": "Një Balanser ngarkesash mund të drejton trafikun vetëm tek serverët backend të cilëve ka lidhje fizike. Pa kabllit që lidhin LB-01 me Shop-01, Shop-02 dhe Shop-03, nuk kishte backend për të dërguar kërkesa, kështu që çdo kërkesë u braktis në balanser."
+        },
+        "sr": {
+            "title": "Без позадинских сервера иза Load Balanser-а",
+            "story": "Дизајнерски тим каже да веб-страница магазина је престала одговарати од јутрос. PC-Design се не учитава када достигне адресу странице, и особље је забринуто због данашње продаје.",
+            "objective": "Обновите HTTP одговор из LB-01 када PC-Design затражи веб-страницу магазина.",
+            "hints": [
+                "Захтев из PC-Design стиже до LB-01, Load Balanser-а који управља адресом магазина, али не иде даље.",
+                "LB-01 нема позадинских сервера на које би могао преусмерити саобраћај — Shop-01, Shop-02 и Shop-03 нису повезани, па нема ничега за одговор.",
+                "На LB-01, повежите кабле на Shop-01, Shop-02 и Shop-03 како би Load Balanser могао достићи сва три позадинска сервера."
+            ],
+            "explanation": "Load Balanser може преусмерити саобраћај само позадинским серверима на које има физичку везу. Без кабала који повезују LB-01 са Shop-01, Shop-02 и Shop-03, није било позадина за слање захтева, па је сваки захтев био избачен на балансеру."
+        },
+        "sv": {
+            "title": "Ingen backends bakom belastningsfördelaren",
+            "story": "Designteamet säger att butikens webbplats har slutat svara sedan i morse. PC-Design laddar ingenting när webbplatsens adress nås, och personalen är oroliga för dagens försäljning.",
+            "objective": "Återställ ett HTTP-svar från LB-01 när PC-Design begär butikens webbplats.",
+            "hints": [
+                "Begäran från PC-Design når LB-01, belastningsfördelaren som hanterar butikens adress, men går inte längre.",
+                "LB-01 har inga backend-servrar som den kan vidarebefordra trafik till — Shop-01, Shop-02 och Shop-03 är inte kopplade till den, så det finns ingenting som kan svara på begäran.",
+                "På LB-01 ansluter du kablar till Shop-01, Shop-02 och Shop-03 så att belastningsfördelaren kan nå alla tre backend-servrar."
+            ],
+            "explanation": "En belastningsfördelares kan bara vidarebefordra trafik till backend-servrar som den har en fysisk länk till. Utan kablar som ansluter LB-01 till Shop-01, Shop-02 och Shop-03 fanns det ingen backends att skicka begäranden till, så varje begäran släpptes vid belastningsfördelaren."
+        },
+        "sw": {
+            "title": "Hakuna Backends Nyuma ya Balancer",
+            "story": "Timu ya muundo inasema kwamba tovuti ya duka imesimama kujibu tangu asubuhi. PC-Design hailodi chochote wakati inafikia anwani ya tovuti, na wafanyikazi wanajali kuhusu mauzo ya leo.",
+            "objective": "Rejesha jibu la HTTP kutoka LB-01 wakati PC-Design inaomba tovuti ya duka.",
+            "hints": [
+                "Ombi kutoka PC-Design linakuta LB-01, kigawaji cha mzigo kinachoshughulikia anwani ya duka, lakini halipendi zaidi.",
+                "LB-01 haina seva za backend ambazo inaweza kusambaza trafiki kwake — Shop-01, Shop-02 na Shop-03 hazijaambatanishwa nayo, kwa hiyo hakuna kitu kinachoweza kujibu ombi.",
+                "Kwenye LB-01, unganisha kablula kwa Shop-01, Shop-02 na Shop-03 ili kigawaji cha mzigo kiweze kufikia seva zote tatu za backend."
+            ],
+            "explanation": "Kigawaji cha mzigo kinaweza kusambaza trafiki kwa seva za backend ambazo kina kiunga cha kimwili. Bila kablula zinazounganisha LB-01 kwa Shop-01, Shop-02 na Shop-03, hakukuwa na backends za kupelea ombi, kwa hiyo kila ombi liliachwa katika kigawaji cha mzigo."
+        },
+        "ta": {
+            "title": "பேலன்சারின் பின்னால் பேக்கெண்ட்ஸ் இல்லை",
+            "story": "வடிவமைப்பு குழு கூறுகிறது, கடை இணையதளம் காலை முதல் பதிலளிக்க நிறுத்தியுள்ளது. PC-Design தளத்தின் முகவரியை அடையும் போது எதையும் ஏற்றுவதில்லை, மேலும் பணியாளர்கள் இன்றைய விற்பனை பற்றி கவலைப்படுகின்றனர்.",
+            "objective": "PC-Design கடை இணையதளத்தை கோரும் போது LB-01 இலிருந்து HTTP பதிலை복원செய்யவும்.",
+            "hints": [
+                "PC-Design இலிருந்து அனுப்பப்பட்ட கோரிக்கை LB-01 ஐ அடைகிறது, கடை முகவரியை கைவிளக்கும் Load Balancer, ஆனால் அது மேலோ செல்லாது.",
+                "LB-01 க்கு பின்வரவர்ந்து தராக்க செல்ல முடிய பேக்கெண்ட் சர்வர்கள் இல்லை — Shop-01, Shop-02 மற்றும் Shop-03 அதனுடன் இணைக்கப்படாமல் உள்ளன, எனவே கோரிக்கைக்கு பதிலளிக்க ஒன்றும் இல்லை.",
+                "LB-01 ல் Shop-01, Shop-02 மற்றும் Shop-03 க்கு கேபிள்களை இணைக்கவும் இதனால் Load Balancer மூன்று பேக்கெண்ட் சர்வர்களையும் அடையக்கூடியதாக இருக்கும்."
+            ],
+            "explanation": "Load Balancer க்கு இருக்கும் பேக்கெண்ட் சர்வர்களுக்குமாத்திரமே ட்ராபிக்கை அனுப்ப முடிகிறது. LB-01 ஐ Shop-01, Shop-02 மற்றும் Shop-03 உடன் இணைக்கும் கேபிள்கள் இல்லாமல், பின்வர்மை பேக்கெண்ட்டுக்கு அனுப்ப ஒன்றுமில்லாமல், ஒவ்வொரு கோரிக்கையையும் Load Balancer இல் நிறுத்தபட்டது."
+        },
+        "te": {
+            "title": "బేలెన్సర్ వెనుక బ్యాకెండ్‌లు లేవు",
+            "story": "డిజైన్ టీమ్ ఉదయం నుండి దుకాణ వెబ్‌సైట్ సమాధానం ఇవ్వడం ఆపివేసిందని చెప్పింది. PC-Design సైట్ చిరునామాకు చేరుకున్నప్పుడు ఏమీ లోడ్ చేయదు, మరియు సిబ్బంది నేటి విక్రయాల గురించి చింతిస్తున్నారు.",
+            "objective": "PC-Design దుకాణ వెబ్‌సైట్‌ను అభ్యర్థించినప్పుడు LB-01 నుండి HTTP ప్రతిస్పందనను పునరుద్ధరించండి.",
+            "hints": [
+                "PC-Design నుండి అభ్యర్థన LB-01, దుకాణ చిరునామాను నిర్వహించే Load Balancer‌కు చేరుకుంటుంది, కానీ ఆगे వెళ్లదు.",
+                "LB-01 ట్రాఫిక్‌ను ఫార్‌వార్డ్ చేయగల బ్యాకెండ్ సర్వర్‌లు లేవు — Shop-01, Shop-02 మరియు Shop-03 దానికి లింక్ చేయబడలేదు, కాబట్టి అభ్యర్థనకు సమాధానమివ్వడానికి ఏమీ లేదు.",
+                "LB-01 పై Shop-01, Shop-02 మరియు Shop-03 కేబిల్‌లను కనెక్ట్ చేయండి, తద్వారా Load Balancer మూడు బ్యాకెండ్ సర్వర్‌లను చేరుకోగలదు."
+            ],
+            "explanation": "Load Balancer భౌతిక లింక్ కలిగిన బ్యాకెండ్ సర్వర్‌లకు మాత్రమే ట్రాఫిక్‌ను ఫార్‌వార్డ్ చేయగలదు. LB-01 ను Shop-01, Shop-02 మరియు Shop-03 కు కనెక్ట్ చేసే కేబిల్‌లు లేకుండా, బ్యాకెండ్‌లు లేవు, కాబట్టి ప్రతి అభ్యర్థన బేలెన్సర్ వద్ద పడ్డాయి."
+        },
+        "uk": {
+            "title": "Немає тильних серверів за балансером",
+            "story": "Команда дизайну повідомляє, що веб-сайт магазину перестав відповідати з ранку. PC-Design не завантажує нічого при досягненні адреси сайту, і персонал турбується щодо продажів сьогодні.",
+            "objective": "Відновіть HTTP-відповідь від LB-01, коли PC-Design запитує веб-сайт магазину.",
+            "hints": [
+                "Запит від PC-Design досягає LB-01, балансувальника навантаження, що обслуговує адресу магазину, але далі не проходить.",
+                "LB-01 немає тильних серверів, яким він може передавати трафік — Shop-01, Shop-02 і Shop-03 не підключені до нього, тому відповідати на запит нічим.",
+                "На LB-01 підключіть кабелі до Shop-01, Shop-02 і Shop-03, щоб балансувальник навантаження міг досягти всіх трьох тильних серверів."
+            ],
+            "explanation": "Балансувальник навантаження може передавати трафік лише тим тильним серверам, до яких має фізичне з'єднання. Без кабелів, що підключають LB-01 до Shop-01, Shop-02 і Shop-03, не було тильних серверів для надсилання запитів, тому кожен запит був відхилений на балансувальнику."
+        },
+        "ur": {
+            "title": "بیلنسر کے پیچھے کوئی بیک اینڈز نہیں",
+            "story": "ڈیزائن ٹیم کہتی ہے کہ شاپ کی ویب سائٹ صبح سے جواب دینا بند کر گئی ہے۔ PC-Design سائٹ کے پتے تک پہنچتے وقت کچھ بھی لوڈ نہیں کرتا، اور عملہ آج کی فروخت کے بارے میں فکر مند ہے۔",
+            "objective": "جب PC-Design شاپ کی ویب سائٹ کی درخواست کرے تو LB-01 سے HTTP جواب حاصل کریں۔",
+            "hints": [
+                "PC-Design سے درخواست LB-01 تک پہنچتی ہے، شاپ کے پتے کو سنبھالنے والا load balancer، لیکن آگے نہیں جاتی۔",
+                "LB-01 کے پاس کوئی backend servers نہیں ہے جس کو ٹریفک بھیج سکے — Shop-01، Shop-02 اور Shop-03 اس سے منسلک نہیں ہیں، تو درخواست کا جواب دینے کے لیے کچھ بھی نہیں ہے۔",
+                "LB-01 پر، Shop-01، Shop-02 اور Shop-03 سے کیبلز منسلک کریں تاکہ load balancer تینوں backend servers تک پہنچ سکے۔"
+            ],
+            "explanation": "ایک load balancer صرف ان backend servers کو ٹریفک بھیج سکتا ہے جن کے ساتھ اس کا فزیکل لنک ہو۔ LB-01 سے Shop-01، Shop-02 اور Shop-03 تک کوئی کیبلز منسلک نہ ہونے کے ساتھ، بھیجنے کے لیے کوئی backends نہیں تھے، تو ہر درخواست balancer پر ڈال دی گئی۔"
+        },
+        "zu": {
+            "title": "Ayikho i-Backends Ngemuva kwe-Balancer",
+            "story": "Ithimba le-design lithi iwebhusayithi yeshoppu ayenzile phendula kusukela ekuseni. I-PC-Design ayilodi lutho lapho ifinyelela khona ikheli lesite, futhi abasebenzi bacalula nge-sales yamuhla.",
+            "objective": "Buyisela i-HTTP response esuka ku-LB-01 lapho i-PC-Design icela iwebhusayithi yeshoppu.",
+            "hints": [
+                "Isicelo esisuka ku-PC-Design sifinyelela ku-LB-01, i-load balancer elawula ikheli leshoppu, kodwa isiqhubeka phambili.",
+                "I-LB-01 ayinabo backend servers okungakwazi ukwelula khona ithrafikhi — Shop-01, Shop-02 ne-Shop-03 azixhunywe kuyo, ngakho ayikho into ekhona ukuphendula isicelo.",
+                "Ku-LB-01, xhuma amakhebulethi ku-Shop-01, Shop-02 ne-Shop-03 uphi i-load balancer ingakwazi ukufinyelela kubo bontathu backend servers."
+            ],
+            "explanation": "I-load balancer ingakwazi kuphonsela ithrafikhi kuphela kubo backend servers enayo i-physical link. Engenamakhebulethi axhunyiwe ku-LB-01 ukuya ku-Shop-01, Shop-02 ne-Shop-03, ayikho i-backends eyayingekho ukupeluswa kuyo, ngakho isicelo ngasinye silalwe kwi-balancer."
+        }
+    }
+}
