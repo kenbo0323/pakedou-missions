@@ -1,0 +1,1211 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-25",
+    "number": 66,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "small_office",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.5.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.5.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.5.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.5.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.30.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.30.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.30.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-switch1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-switch1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client2",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Reception Can't Reach the File Portal",
+            "story": "Staff at the reception desk report that Portal-01 has been unreachable from PC-Reception all morning. Meanwhile, nobody at Finance has mentioned any trouble reaching it.",
+            "objective": "Make an HTTP request from PC-Reception to Portal-01 succeed.",
+            "hints": [
+                "The request from PC-Reception never gets past PC-Reception itself — it is dropped before even reaching Switch-1F.",
+                "PC-Reception's default gateway is set to Portal-01's own address instead of a router, so it has nowhere valid to send off-subnet traffic.",
+                "On PC-Reception, set the default gateway to 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "A default gateway must point to a router interface on the client's own subnet, not to the remote host you are trying to reach. PC-Reception was configured with Portal-01's address as its gateway, so outbound packets to other subnets had no valid next hop and were dropped locally."
+        },
+        "ja": {
+            "title": "受付からファイルポータルに接続できない",
+            "story": "受付デスクのスタッフから、Portal-01 に PC-Reception から朝からずっとアクセスできないとの報告がありました。一方、経理部ではアクセスに問題があるという話は出ていません。",
+            "objective": "PC-Reception から Portal-01 への HTTPリクエストを成功させる。",
+            "hints": [
+                "PC-Reception からのリクエストは、PC-Reception 自体から先へ進んでおらず、Switch-1F に届く前に破棄されています。",
+                "PC-Reception のデフォルトゲートウェイが、ルーターではなく Portal-01 自身のアドレスに設定されているため、サブネット外への通信を送り出す先がありません。",
+                "PC-Reception で、デフォルトゲートウェイを 10.0.5.254(Router-Edge)に設定してください。"
+            ],
+            "explanation": "デフォルトゲートウェイには、接続先の相手ホストではなく、クライアント自身のサブネット上にあるルーターのインターフェースを指定する必要があります。PC-Reception では Portal-01 のアドレスがゲートウェイとして設定されていたため、他のサブネット宛のパケットには有効な中継先(ネクストホップ)がなく、ローカルで破棄されていました。"
+        },
+        "zh-CN": {
+            "title": "接待处无法连接文件门户",
+            "story": "接待处员工报告说 Portal-01 从今早开始就无法从 PC-Reception 访问。同时，财务部门的员工都没有提到访问它有任何问题。",
+            "objective": "使来自 PC-Reception 对 Portal-01 的 HTTP 请求成功。",
+            "hints": [
+                "来自 PC-Reception 的请求从未超过 PC-Reception 本身——它在到达 Switch-1F 之前就被丢弃了。",
+                "PC-Reception 的默认网关设置为 Portal-01 自身的地址，而不是路由器，所以它没有有效的方式来发送非本地子网的流量。",
+                "在 PC-Reception 上，将默认网关设置为 10.0.5.254（Router-Edge）。"
+            ],
+            "explanation": "默认网关必须指向与客户端相同子网上的路由器接口，而不是您要访问的远程主机。PC-Reception 被配置为使用 Portal-01 的地址作为其网关，因此发往其他子网的出站数据包没有有效的下一跳，在本地被丢弃了。"
+        },
+        "zh-TW": {
+            "title": "接待處無法連接檔案入口",
+            "story": "接待處員工報告說 Portal-01 從今早開始就無法從 PC-Reception 訪問。同時，財務部門的員工都沒有提到訪問它有任何問題。",
+            "objective": "使來自 PC-Reception 對 Portal-01 的 HTTP 請求成功。",
+            "hints": [
+                "來自 PC-Reception 的請求從未超過 PC-Reception 本身——它在到達 Switch-1F 之前就被丟棄了。",
+                "PC-Reception 的預設閘道設置為 Portal-01 自身的位址，而不是路由器，所以它沒有有效的方式來發送非本地子網的流量。",
+                "在 PC-Reception 上，將預設閘道設置為 10.0.5.254（Router-Edge）。"
+            ],
+            "explanation": "預設閘道必須指向與客戶端相同子網上的路由器介面，而不是您要訪問的遠端主機。PC-Reception 被配置為使用 Portal-01 的位址作為其閘道，因此發往其他子網的出站封包沒有有效的下一跳，在本地被丟棄了。"
+        },
+        "ko": {
+            "title": "접수대가 파일 포털에 연결할 수 없음",
+            "story": "접수대 직원들이 아침부터 Portal-01이 PC-Reception에서 접근할 수 없다고 보고했습니다. 한편, 재무팀의 누구도 이 문제에 대해 언급하지 않았습니다.",
+            "objective": "PC-Reception에서 Portal-01으로의 HTTP 요청이 성공하도록 만들기.",
+            "hints": [
+                "PC-Reception에서의 요청은 PC-Reception 자체를 넘지 못하고 Switch-1F에 도달하기 전에 삭제됩니다.",
+                "PC-Reception의 기본 게이트웨이가 라우터 대신 Portal-01 자체의 주소로 설정되어 있어서, 서브넷 외부 트래픽을 보낼 유효한 경로가 없습니다.",
+                "PC-Reception에서 기본 게이트웨이를 10.0.5.254(Router-Edge)로 설정하세요."
+            ],
+            "explanation": "기본 게이트웨이는 도달하려는 원격 호스트가 아닌 클라이언트와 같은 서브넷의 라우터 인터페이스를 가리켜야 합니다. PC-Reception이 Portal-01의 주소를 게이트웨이로 설정되어 있었기 때문에 다른 서브넷으로의 아웃바운드 패킷은 유효한 다음 홉이 없어서 로컬에서 삭제되었습니다."
+        },
+        "es": {
+            "title": "Recepción no puede alcanzar el Portal de Archivos",
+            "story": "El personal de recepción reporta que Portal-01 ha estado inaccesible desde PC-Reception toda la mañana. Mientras tanto, nadie en Finanzas ha mencionado problemas para acceder a él.",
+            "objective": "Hacer que una solicitud HTTP desde PC-Reception a Portal-01 sea exitosa.",
+            "hints": [
+                "La solicitud desde PC-Reception nunca pasa de PC-Reception mismo — se descarta antes de llegar a Switch-1F.",
+                "El gateway predeterminado de PC-Reception está configurado con la dirección de Portal-01 en lugar de un router, por lo que no tiene forma válida de enviar tráfico fuera de su subred.",
+                "En PC-Reception, configure el gateway predeterminado a 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Un gateway predeterminado debe apuntar a una interfaz de router en la subred del cliente, no al host remoto que intenta alcanzar. PC-Reception estaba configurado con la dirección de Portal-01 como su gateway, por lo que los paquetes salientes hacia otras subredes no tenían un siguiente salto válido y fueron descartados localmente."
+        },
+        "pt-BR": {
+            "title": "Recepção não consegue acessar o Portal de Arquivos",
+            "story": "Funcionários da recepção relataram que Portal-01 está inacessível desde PC-Reception a manhã toda. Enquanto isso, ninguém da Finança mencionou qualquer problema ao acessá-lo.",
+            "objective": "Fazer com que uma solicitação HTTP de PC-Reception para Portal-01 seja bem-sucedida.",
+            "hints": [
+                "A solicitação de PC-Reception nunca vai além de PC-Reception — ela é descartada antes de chegar a Switch-1F.",
+                "O gateway padrão de PC-Reception está configurado com o endereço do Portal-01 em vez de um router, então não tem um caminho válido para enviar tráfego fora de sua subrede.",
+                "Em PC-Reception, defina o gateway padrão como 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Um gateway padrão deve apontar para uma interface de router na mesma subrede do cliente, não para o host remoto que você está tentando acessar. PC-Reception estava configurado com o endereço de Portal-01 como seu gateway, portanto pacotes de saída para outras subredes não tinham um próximo salto válido e foram descartados localmente."
+        },
+        "de": {
+            "title": "Reception kann das Dateiportal nicht erreichen",
+            "story": "Mitarbeiter an der Rezeption berichten, dass Portal-01 seit heute Morgen von PC-Reception aus nicht erreichbar ist. Dagegen hat niemand aus der Finanzabteilung Probleme beim Zugriff auf Portal-01 gemeldet.",
+            "objective": "Eine HTTP-Anfrage von PC-Reception zu Portal-01 erfolgreich ausführen.",
+            "hints": [
+                "Die Anfrage von PC-Reception wird bereits bei PC-Reception selbst gestoppt — sie wird gelöscht, bevor sie Switch-1F erreicht.",
+                "Der Standard-Gateway von PC-Reception ist auf die eigene Adresse von Portal-01 eingestellt statt auf einen Router, deshalb hat der PC keine gültige Route für Verkehr außerhalb des Subnetzes.",
+                "Stellen Sie auf PC-Reception den Standard-Gateway auf 10.0.5.254 (Router-Edge) ein."
+            ],
+            "explanation": "Ein Standard-Gateway muss auf eine Router-Schnittstelle im eigenen Subnetz des Clients zeigen, nicht auf den entfernten Host, den Sie erreichen möchten. PC-Reception war mit der Adresse von Portal-01 als Gateway konfiguriert, daher hatten ausgehende Pakete zu anderen Subnetzen keinen gültigen nächsten Hop und wurden lokal gelöscht."
+        },
+        "fr": {
+            "title": "La réception ne peut pas accéder au portail de fichiers",
+            "story": "Le personnel de la réception signale que Portal-01 est inaccessible depuis PC-Reception depuis ce matin. Cependant, personne à la Finance n'a mentionné de problème pour l'atteindre.",
+            "objective": "Exécuter une requête HTTP de PC-Reception vers Portal-01 avec succès.",
+            "hints": [
+                "La requête de PC-Reception ne dépasse jamais PC-Reception lui-même — elle est supprimée avant même d'atteindre Switch-1F.",
+                "La passerelle par défaut de PC-Reception est définie sur l'adresse propre de Portal-01 au lieu d'un routeur, donc elle n'a nulle part valide où envoyer le trafic hors-subnet.",
+                "Sur PC-Reception, définissez la passerelle par défaut sur 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Une passerelle par défaut doit pointer vers une interface routeur sur le propre subnet du client, et non vers l'hôte distant que vous tentez d'atteindre. PC-Reception était configurée avec l'adresse de Portal-01 comme passerelle, donc les paquets sortants vers d'autres subnets n'avaient pas de saut suivant valide et ont été supprimés localement."
+        },
+        "hi": {
+            "title": "रिसेप्शन फाइल पोर्टल तक नहीं पहुंच सकता",
+            "story": "रिसेप्शन डेस्क के कर्मचारी रिपोर्ट करते हैं कि Portal-01 आज सुबह से PC-Reception से पहुंचने योग्य नहीं है। इस बीच, वित्त विभाग से किसी ने इसे पहुंचने में कोई परेशानी की सूचना नहीं दी है।",
+            "objective": "PC-Reception से Portal-01 तक सफल HTTP अनुरोध बनाएं।",
+            "hints": [
+                "PC-Reception से अनुरोध PC-Reception पर ही रुक जाता है — इसे Switch-1F तक पहुंचने से पहले ड्रॉप कर दिया जाता है।",
+                "PC-Reception का डिफ़ॉल्ट गेटवे राउटर की जगह Portal-01 के अपने पते पर सेट है, इसलिए उसके पास सबनेट के बाहर ट्रैफिक भेजने के लिए कोई वैध स्थान नहीं है।",
+                "PC-Reception पर डिफ़ॉल्ट गेटवे को 10.0.5.254 (Router-Edge) पर सेट करें।"
+            ],
+            "explanation": "डिफ़ॉल्ट गेटवे को क्लाइंट की अपनी सबनेट पर एक राउटर इंटरफेस की ओर इशारा करना चाहिए, उस दूरस्थ होस्ट की ओर नहीं जिसे आप पहुंचना चाहते हैं। PC-Reception को Portal-01 के पते के रूप में गेटवे के साथ कॉन्फ़िगर किया गया था, इसलिए अन्य सबनेट के लिए आउटबाउंड पैकेट के पास कोई वैध अगला हॉप नहीं था और उन्हें स्थानीय रूप से ड्रॉप कर दिया गया था।"
+        },
+        "id": {
+            "title": "Resepsi Tidak Dapat Menjangkau Portal Berkas",
+            "story": "Staf di meja resepsi melaporkan bahwa Portal-01 tidak dapat dijangkau dari PC-Reception sejak pagi ini. Sementara itu, tidak ada yang dari Keuangan melaporkan masalah dalam menjangkaunya.",
+            "objective": "Buat permintaan HTTP dari PC-Reception ke Portal-01 berhasil.",
+            "hints": [
+                "Permintaan dari PC-Reception tidak pernah melampaui PC-Reception itu sendiri — permintaan ditolak sebelum mencapai Switch-1F.",
+                "Gateway Default PC-Reception diatur ke alamat Portal-01 sendiri alih-alih router, jadi tidak memiliki tempat yang valid untuk mengirim lalu lintas di luar subnet.",
+                "Di PC-Reception, atur Gateway Default ke 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Gateway Default harus menunjuk ke antarmuka router di subnet klien sendiri, bukan ke host jarak jauh yang ingin Anda jangkau. PC-Reception dikonfigurasi dengan alamat Portal-01 sebagai gateway-nya, jadi paket keluar ke subnet lain tidak memiliki hop berikutnya yang valid dan ditolak secara lokal."
+        },
+        "ru": {
+            "title": "Ресепшен не может достичь файлового портала",
+            "story": "Персонал на ресепшене сообщает, что Portal-01 недоступен с PC-Reception с самого утра. Тем не менее, никто из отдела финансов не пожаловался на проблемы при доступе к нему.",
+            "objective": "Выполнить успешный HTTP-запрос с PC-Reception на Portal-01.",
+            "hints": [
+                "Запрос с PC-Reception не проходит дальше самого PC-Reception — он отбрасывается ещё до достижения Switch-1F.",
+                "Шлюз по умолчанию на PC-Reception установлен на собственный адрес Portal-01 вместо маршрутизатора, поэтому он не имеет действительного места для отправки трафика вне подсети.",
+                "На PC-Reception установите Шлюз по умолчанию на 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Шлюз по умолчанию должен указывать на интерфейс маршрутизатора в собственной подсети клиента, а не на удалённый хост, который вы пытаетесь достичь. PC-Reception была сконфигурирована с адресом Portal-01 в качестве шлюза, поэтому исходящие пакеты в другие подсети не имели действительного следующего узла и были отброшены локально."
+        },
+        "it": {
+            "title": "Reception non riesce a raggiungere il portale",
+            "story": "Lo staff della reception segnala che Portal-01 è irraggiungibile da PC-Reception tutta la mattina. Nel frattempo, nessuno in Finanza ha segnalato problemi nel raggiungerlo.",
+            "objective": "Far andare a buon fine una richiesta HTTP da PC-Reception a Portal-01.",
+            "hints": [
+                "La richiesta da PC-Reception non va oltre PC-Reception stesso — viene scartata prima ancora di raggiungere Switch-1F.",
+                "Il Gateway predefinito di PC-Reception è impostato sull'indirizzo di Portal-01 invece di un router, quindi non ha dove inviare il traffico fuori dalla subnet.",
+                "Su PC-Reception, impostare il Gateway predefinito a 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Un Gateway predefinito deve puntare a un'interfaccia router sulla subnet del client, non all'host remoto che si sta cercando di raggiungere. PC-Reception era configurato con l'indirizzo di Portal-01 come gateway, quindi i pacchetti in uscita verso altre subnet non avevano un next hop valido e venivano scartati localmente."
+        },
+        "tr": {
+            "title": "Reception Dosya Portalına Ulaşamıyor",
+            "story": "Resepsiyon masasındaki personel, Portal-01'e PC-Reception'dan tüm sabah ulaşılamadığını bildiriyor. Bu arada, Finans bölümünde kimse buna ulaşmakta sorun yaşadığından bahsetmiyor.",
+            "objective": "PC-Reception'dan Portal-01'e bir HTTP isteği başarıyla tamamlanmasını sağlayın.",
+            "hints": [
+                "PC-Reception'dan gelen istek PC-Reception'ın kendisini geçemiyor — Switch-1F'ye ulaşmadan önce düşürülüyor.",
+                "PC-Reception'un varsayılan ağ geçidi, bir router yerine Portal-01'in kendi adresine ayarlanmış, bu nedenle subnet dışı trafiği göndermek için geçerli bir yeri yok.",
+                "PC-Reception'da varsayılan ağ geçidini 10.0.5.254 (Router-Edge) olarak ayarlayın."
+            ],
+            "explanation": "Varsayılan ağ geçidi, ulaşmaya çalıştığınız uzak ana bilgisayara değil, istemcinin kendi alt ağında bir router arayüzüne işaret etmelidir. PC-Reception, Portal-01'in adresini ağ geçidi olarak ayarlamıştı, bu nedenle diğer alt ağlara giden giden paketlerin geçerli bir sonraki sıçraması yoktu ve yerel olarak düşürüldü."
+        },
+        "th": {
+            "title": "Reception ไม่สามารถเข้าถึง Portal ได้",
+            "story": "พนักงานที่เคาน์เตอร์ต้อนรับรายงานว่า Portal-01 ไม่สามารถเข้าถึงได้จาก PC-Reception ตั้งแต่เช้าวัน ในขณะเดียวกัน ไม่มีใครในแผนกการเงินกล่าวถึงปัญหาในการเข้าถึง",
+            "objective": "ทำให้คำขอ HTTP จาก PC-Reception ไปยัง Portal-01 สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Reception ไม่สามารถออกจาก PC-Reception ได้ — ถูกทิ้งก่อนถึง Switch-1F",
+                "เกตเวย์เริ่มต้นของ PC-Reception ถูกตั้งเป็นที่อยู่ของ Portal-01 แทนที่จะเป็น Router ดังนั้นจึงไม่มีจุดหมายที่ถูกต้องในการส่งทราฟิกนอก Subnet",
+                "บน PC-Reception ให้ตั้งเกตเวย์เริ่มต้นเป็น 10.0.5.254 (Router-Edge)"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นต้องชี้ไปยังอินเทอร์เฟซ Router บน Subnet เดียวกันของไคลเอนต์ ไม่ใช่ไปยังโฮสต์ระยะไกลที่คุณพยายามเข้าถึง PC-Reception ถูกกำหนดค่าด้วยที่อยู่ของ Portal-01 เป็น Gateway ดังนั้นแพ็กเก็ตขาออกไปยัง Subnet อื่น ๆ ไม่มี Next hop ที่ถูกต้องและถูกทิ้งในระดับท้องถิ่น"
+        },
+        "vi": {
+            "title": "Reception Không Thể Truy Cập Được Cổng Thông Tin",
+            "story": "Nhân viên lễ tân báo cáo rằng Portal-01 không thể truy cập được từ PC-Reception suốt sáng. Trong khi đó, không ai ở Bộ phận Tài chính đề cập đến bất kỳ vấn đề nào trong việc truy cập nó.",
+            "objective": "Thực hiện yêu cầu HTTP từ PC-Reception đến Portal-01 thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Reception không vượt quá chính PC-Reception — nó bị loại bỏ trước khi đến Switch-1F.",
+                "Cổng mặc định của PC-Reception được đặt thành địa chỉ của Portal-01 thay vì Router, nên nó không có nơi hợp lệ để gửi lưu lượng ngoài Subnet.",
+                "Trên PC-Reception, hãy đặt cổng mặc định thành 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Cổng mặc định phải trỏ đến giao diện Router trên Subnet của chính client đó, không phải đến máy chủ từ xa mà bạn đang cố truy cập. PC-Reception được cấu hình với địa chỉ của Portal-01 làm Gateway của nó, do đó các gói tin gửi đi đến các Subnet khác không có Hop tiếp theo hợp lệ và bị loại bỏ cục bộ."
+        },
+        "af": {
+            "title": "Resepsie kan nie die Lêer-portaal bereik nie",
+            "story": "Personeel by die ontvangsbalie meld dat Portal-01 die hele môre van PC-Reception af onbereikbaar is. Intussen het niemand in Finansies enige probleme met die bereikbaarheid daarvan gemeld.",
+            "objective": "Maak 'n HTTP-aanvraag van PC-Reception na Portal-01 suksesvol.",
+            "hints": [
+                "Die aanvraag van PC-Reception gaan nie verder as PC-Reception self nie — dit word weggegooi voordat dit selfs Switch-1F bereik.",
+                "PC-Reception se verstek-gateway is op Portal-01 se eie adres ingestel in plaas van 'n Router, dus het dit geen geldige bestemming om verkeer buite die Subnet na te stuur.",
+                "Stel op PC-Reception die verstek-gateway in as 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "'n Verstek-gateway moet na 'n Router-koppelvlak op die client se eie Subnet wys, nie na die afgeleë gasheer wat u probeer bereik nie. PC-Reception was gekonfigureer met Portal-01 se adres as sy gateway, dus het uitgaande pakkette na ander Subnette geen geldige volgende hop gehad en is plaaslik weggegooi."
+        },
+        "am": {
+            "title": "Reception በ File Portal ላይ ሊደርስ አልቻለ",
+            "story": "በ reception መደርደርያው ላይ የሚሰሩ ሰራተኞች ይላሉ፣ Portal-01 ከ PC-Reception ወሰንሶ ሙሉ ቀን ታይሮ ያለ ነው። ሆኖም በ Finance ውስጥ ምንም ሰው ወደ እሱ ለመድረስ ምንም ችግር ሲያወጡ አላይሰው።",
+            "objective": "ከ PC-Reception ወደ Portal-01 HTTP ጥያቄ ተሳክ።",
+            "hints": [
+                "ከ PC-Reception ወሰንሶ ያለ ጥያቄ PC-Reception ራሱን ሳያልፍ ይስቀያለሪ — Switch-1F ላይ መድረስ ላይ ሳትብ ይንጣለሚ።",
+                "PC-Reception ያለበት ነባሪ ጌትዌይ Portal-01 ራሱ ያለበት አድራሻ ይልቅ ሩተር ወደ ሚላክ ስለሆነ ለ off-subnet ትራፊክ ምንም ትክክለኛ ትችት ወደ ሚመላለስ ይዋለሚ።",
+                "PC-Reception ላይ ነባሪ ጌትዌይ ወደ 10.0.5.254 (Router-Edge) ያስቀይሩ።"
+            ],
+            "explanation": "ነባሪ ጌትዌይ በ ክላይንቱ ራሱ ጣቢያ ላይ ወደ ሩተር ይቅርብ መቆጣጠር እንጂ ያስተናጋጁ ሩቅ ለመድረስ ሲሞክር አይደለም። PC-Reception Portal-01 አድራሻ ያለበት ጌትዌይ ተዋወቅ ስለ ሱ ወደ ሌሎች ጣቢያዎች ወደሚላክ ቅዠት ምንም ትክክለኛ ቀጣይ ሆፕ ያላቸው ና አካላዊ ሊነዳ ይጥቀስ።"
+        },
+        "ar": {
+            "title": "قسم الاستقبال لا يصل إلى بوابة الملفات",
+            "story": "يبلغ الموظفون في مكتب الاستقبال أن Portal-01 غير متاح من PC-Reception طوال الصباح. وفي المقابل، لم يذكر أحد من قسم المالية أي مشكلة في الوصول إليه.",
+            "objective": "تنفيذ طلب HTTP ناجح من PC-Reception إلى Portal-01.",
+            "hints": [
+                "الطلب من PC-Reception لا يتجاوز PC-Reception نفسه — يتم حجبه قبل الوصول إلى Switch-1F.",
+                "البوابة الافتراضية لـ PC-Reception معيّنة على عنوان Portal-01 نفسه بدلاً من جهاز توجيه، لذا لا توجد وجهة صحيحة لحركة المرور خارج الشبكة.",
+                "على PC-Reception، عيّن البوابة الافتراضية إلى 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "يجب أن تشير البوابة الافتراضية إلى واجهة جهاز توجيه على شبكة العميل نفسها، وليس إلى المضيف البعيد الذي تحاول الوصول إليه. تم تكوين PC-Reception بعنوان Portal-01 كبوابة له، لذا فإن الحزم الصادرة إلى شبكات أخرى لم يكن لديها قفزة تالية صحيحة وتم حجبها محليًا."
+        },
+        "az": {
+            "title": "Qabulda Fayl Portalına Çatışa Bilmirsiniz",
+            "story": "Qabul masasında çalışan personel Portal-01-ə PC-Reception-dan bütün səhər boyunca çatışa bilinmədiyini bildirirlər. Eyni zamanda, Maliyyədə heç kim buna çatmaqda heç bir problemdən söz açmamışdır.",
+            "objective": "PC-Reception-dan Portal-01-ə HTTP sorğusu uğurlu olmalıdır.",
+            "hints": [
+                "PC-Reception-dan olan sorğu PC-Reception-un özünü keçə bilmir — Switch-1F-ə çatmazdan əvvəl silinir.",
+                "PC-Reception-un Defolt şlüzü Portal-01-in öz ünvanına qurulmuşdur, router yerinə, buna görə də subnetu kənarına trafik göndərmək üçün heç bir düzgün yer yoxdur.",
+                "PC-Reception-da Defolt şlüzü 10.0.5.254 (Router-Edge)-ə qurun."
+            ],
+            "explanation": "Defolt şlüz, uzaq hostdan fərqli olaraq, klientinin öz subneti üzərində router interfeysinə işarət etməlidir. PC-Reception, Portal-01-in ünvanı ilə şlüz kimi qurulmuşdu, buna görə də digər subneti-ə paket ötərmə zamanı heç bir düzgün Növbəti keçid yoxdu və yerində silinmişdi."
+        },
+        "be": {
+            "title": "Reception не можа адрасіць файловы портал",
+            "story": "Персонал на рэцэпцыі паведамляе, што Portal-01 недаступны з PC-Reception усё раніцу. Пры гэтым ніхто з фінансавага аддзела не жаліўся на праблемы з доступам.",
+            "objective": "Паспяхова выканаць HTTP-запыт з PC-Reception на Portal-01.",
+            "hints": [
+                "Запыт з PC-Reception никога не выходзіць за межы самога PC-Reception — ён блакіруецца да дасягнення Switch-1F.",
+                "Шлюз па змаўчанні PC-Reception наладжаны на адрас самога Portal-01, а не на маршрутызатар, таму няма дзе адправлять трафік за межы падсетка.",
+                "На PC-Reception усталюйце Шлюз па змаўчанні на 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Шлюз па змаўчанні павінен указваць на інтэрфейс маршрутызатара ў той жа падсетцы, а не на аддалены хост, да якога вы спрабуеце падключыцца. PC-Reception быў наладжаны з адрасам Portal-01 у якасці шлюза, таму пакеты, адпраўленыя ў іншыя падсеткі, не мелі дапусцімага наступнага переходу і блакіраваліся лакальна."
+        },
+        "bg": {
+            "title": "Рецепцията не може да стигне до портала на файлове",
+            "story": "Персоналът на рецепцията съобщава, че Portal-01 е недостъпен от PC-Reception цяло утро. Междувременно, никой от Финансов не е споменал проблем при достъпа до него.",
+            "objective": "Успешно изпратете HTTP заявка от PC-Reception към Portal-01.",
+            "hints": [
+                "Заявката от PC-Reception не преминава дори PC-Reception — тя се изхвърля преди да достигне Switch-1F.",
+                "Шлюзът по подразбиране на PC-Reception е зададен на адреса на самия Portal-01 вместо на маршрутизатор, так че няма валидно място за изпращане на трафик извън подсетката.",
+                "На PC-Reception установете Шлюзът по подразбиране на 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Шлюзът по подразбиране трябва да сочи към интерфейс на маршрутизатор в собствената подсетка на клиента, а не към отдалечения хост, който се опитвате да достигнете. PC-Reception е бил конфигуриран с адреса на Portal-01 като шлюз, така че изходящите пакети към други подсетки нямаше валиден следващ преход и бяха пуснати локално."
+        },
+        "bn": {
+            "title": "রিসেপশন ফাইল পোর্টালে পৌঁছাতে পারছে না",
+            "story": "রিসেপশন ডেস্কের কর্মীরা জানিয়েছেন যে সকাল থেকেই PC-Reception থেকে Portal-01 এ পৌঁছানো যাচ্ছে না। অন্যদিকে Finance বিভাগ থেকে এমন কোনো সমস্যার কথা শোনা যায়নি।",
+            "objective": "PC-Reception থেকে Portal-01 এ HTTP অনুরোধ সফল করুন।",
+            "hints": [
+                "PC-Reception থেকে আসা অনুরোধ PC-Reception এর বাইরেই থেমে যায় — Switch-1F এ পৌঁছানোর আগেই বাদ দেওয়া হয়।",
+                "PC-Reception এর ডিফল্ট গেটওয়ে Portal-01 এর নিজের ঠিকানায় সেট করা আছে, রাউটারে নয়, তাই সাবনেটের বাইরে ট্রাফিক পাঠানোর কোনো বৈধ উপায় নেই।",
+                "PC-Reception এ ডিফল্ট গেটওয়ে 10.0.5.254 (Router-Edge) এ সেট করুন।"
+            ],
+            "explanation": "একটি ডিফল্ট গেটওয়ে অবশ্যই ক্লায়েন্টের নিজস্ব সাবনেটে একটি রাউটার ইন্টারফেস নির্দেশ করবে, দূরবর্তী হোস্ট নয়। PC-Reception কে Portal-01 এর ঠিকানা গেটওয়ে হিসেবে কনফিগার করা হয়েছিল, তাই অন্যান্য সাবনেটে আউটবাউন্ড প্যাকেট পাঠানোর জন্য কোনো বৈধ নেক্সট হপ ছিল না এবং সেগুলো স্থানীয়ভাবে বাদ দেওয়া হয়েছিল।"
+        },
+        "ca": {
+            "title": "La Recepció no pot arribar al Portal de Fitxers",
+            "story": "El personal de la recepció informa que Portal-01 ha estat inaccessible des de PC-Reception tota la matinada. Mentre tant, ningú de Finances ha mencionat cap problema per arribar-hi.",
+            "objective": "Aconseguir que una sol·licitud HTTP desde PC-Reception a Portal-01 tingui èxit.",
+            "hints": [
+                "La sol·licitud des de PC-Reception mai surt de PC-Reception mateixa — es descarta abans d'arribar a Switch-1F.",
+                "La Passarel·la per defecte de PC-Reception està configurada a l'adreça mateixa de Portal-01 en lloc d'a un encaminador, per la qual cosa no té cap camí vàlid per enviar tràfic fora de la subxarxa.",
+                "A PC-Reception, configureu la Passarel·la per defecte a 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Una Passarel·la per defecte ha de fer referència a una interfície d'encaminador a la mateixa subxarxa del client, no a l'ordinador remot al qual intenteu arribar. PC-Reception estava configurada amb l'adreça de Portal-01 com a passarel·la, per la qual cosa els paquets de sortida cap a altres subxarxes no tenien cap salt següent vàlid i es descartaven localment."
+        },
+        "cs": {
+            "title": "Recepce nemůže dosáhnout portálu souborů",
+            "story": "Personál recepce hlásí, že Portal-01 byl nedostupný z PC-Reception celé dopoledne. Zatímco nikdo z finančního oddělení se nezmínil o žádných potížích s dosažením.",
+            "objective": "Zajistěte, aby byl HTTP požadavek z PC-Reception na Portal-01 úspěšný.",
+            "hints": [
+                "Požadavek z PC-Reception se nikdy neDostane dál než z PC-Reception samotného — je vypuštěn, než dosáhne Switch-1F.",
+                "Výchozí brána PC-Reception je nastavena na adresu samotného Portal-01 místo na směrovač, takže nemá žádnou platnou cestu pro odesílání provozu mimo podsíť.",
+                "Na PC-Reception nastavte Výchozí bránu na 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Výchozí brána musí ukazovat na rozhraní směrovače v téže podsíti jako klient, ne na vzdálený počítač, který se snažíte dosáhnout. PC-Reception byla nakonfigurována s adresou Portal-01 jako brána, takže odchozí pakety do ostatních podsítí neměly žádný platný další skok a byly vypuštěny lokálně."
+        },
+        "da": {
+            "title": "Receptionen kan ikke nå filportalen",
+            "story": "Personalet ved receptionen rapporterer, at Portal-01 har været utilgængelig fra PC-Reception hele morgen. I mellemtiden har ingen fra Økonomi nævnt problemer med at nå det.",
+            "objective": "Få en HTTP-anmodning fra PC-Reception til Portal-01 til at lykkes.",
+            "hints": [
+                "Anmodningen fra PC-Reception kommer aldrig længere end fra PC-Reception selv — den droppes før den når Switch-1F.",
+                "PC-Reception's Standardgateway er indstillet til Portal-01's egen adresse i stedet for en router, så den har ingen gyldig vej til at sende trafik uden for undernet.",
+                "På PC-Reception skal du indstille Standardgateway til 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "En Standardgateway skal pege på en routerinterface på klientens eget undernet, ikke til den fjernvært, du forsøger at nå. PC-Reception var konfigureret med Portal-01's adresse som sin gateway, så udgående pakker til andre undernets havde ingen gyldig næste hop og blev droppet lokalt."
+        },
+        "el": {
+            "title": "Η Υποδοχή δεν μπορεί να φτάσει το Πύλη Αρχείων",
+            "story": "Το προσωπικό της Υποδοχής αναφέρει ότι το Portal-01 ήταν ανεπίτρεπτο από το PC-Reception όλο το πρωί. Εν τω μεταξύ, κανείς από την Χρηματοοικονομική δεν έχει αναφέρει κανένα πρόβλημα για την πρόσβαση.",
+            "objective": "Κάντε τραγμίδη HTTP από PC-Reception σε Portal-01 επιτυχημένη.",
+            "hints": [
+                "Το αίτημα από PC-Reception δεν ξεπερνά ποτέ το ίδιο το PC-Reception — απορρίπτεται πριν φτάσει στο Switch-1F.",
+                "Η Προεπιλεγμένη πύλη του PC-Reception έχει ρυθμιστεί στη δική του διεύθυνση Portal-01 αντί για δρομολόγηση, οπότε δεν έχει έγκυρη διαδρομή για αποστολή κίνησης εκτός υποδικτύου.",
+                "Στο PC-Reception, ορίστε την Προεπιλεγμένη πύλη σε 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Μια Προεπιλεγμένη πύλη πρέπει να δείχνει σε ένα περιοδικό δρομολογητή στο δικό του υποδίκτυο του πελάτη, όχι στον απομακρυσμένο υπολογιστή που προσπαθείτε να φτάσετε. Το PC-Reception ήταν διαμορφωμένο με τη διεύθυνση Portal-01 ως πύλη, οπότε τα εξερχόμενα πακέτα σε άλλα υποδίκτυα δεν είχαν έγκυρο επόμενο βήμα (next hop) και απορρίφθησαν τοπικά."
+        },
+        "et": {
+            "title": "Reception ei saa failiportaali juurde",
+            "story": "Vastuvõtus töötavad töötajad teatavad, et Portal-01 on olnud terve hommiku PC-Receptionilt kättesaamatu. Vahepeal ei ole kellegi finantsosakonnast probleeme selle juurde pääsemisega kaebatud.",
+            "objective": "Tehke HTTP-päring PC-Receptionilt Portal-01-le edukaks.",
+            "hints": [
+                "Päring PC-Receptionilt ei pääse kunagi PC-Reception ise edasi — see kustutatakse juba enne Switch-1F-i jõudmist.",
+                "PC-Reception vaikelüüs on seatud Portal-01 enda aadressile router asemel, nii et teiste alamvõrkude liikluse jaoks pole kehtivat sihtkohta.",
+                "Seadke PC-Receptionil vaikelüüsiks 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Vaikelüüs peab osutama marsruuduri liidesele, mis asub kliendi enda alamvõrgus, mitte kuhugi kaugjuurdepääsetavale majale. PC-Reception oli konfigureeritud Portal-01 aadressi lüüsiks, nii et väljaminev liiklus teiste alamvõrkude suunas jäi jõude ja kustutataks kohalikult."
+        },
+        "eu": {
+            "title": "Reception-ek ez du faila-portala iristen",
+            "story": "Harrera-bulegoan dihardutenak Portal-01-ek ez duela Erdia osoan PC-Receptionetik iristen daitekeela esan dute. Bitartean, ez dago Finanzetan inorengandik arazo-salaketa.",
+            "objective": "HTTP eskaera PC-Receptionetik Portal-01-era arrakasta dadila.",
+            "hints": [
+                "PC-Receptionetik egindako eskaera ez da inoiz PC-Reception berarekin haratago doa — Switch-1F-i iristen baino lehen gelditzen da.",
+                "PC-Reception atebide lehenetsia Portal-01-en helbideari ezarrita dago bideragailuaren ordez, beraz ez du trafiko ez-lokal bideratzea ez du lekurik.",
+                "PC-Receptionean, ezarri atebide lehenetsia 10.0.5.254 (Router-Edge) bezala."
+            ],
+            "explanation": "Atebide lehenak bideragailuaren interfazea seinalatu behar du klientearen sare berean, ez urrun daudela ostalaria iritsi nahi duzun lekura. PC-Reception Portal-01-en helbidearekin ezarrita egon zen lehen gisa, beraz azpisareak kanpo dituzten paketeak ez zuten baliagarri hurrengoa jauzia eta tokian bertan gelditu ziren."
+        },
+        "fa": {
+            "title": "پذیرش نمی‌تواند به پورتال فایل دسترسی یابد",
+            "story": "کارمندان پذیرش گزارش می‌دهند که Portal-01 تمام صبح از PC-Reception قابل دسترسی نبوده است. در همین حال، کسی از بخش مالی درباره مشکل دسترسی به آن شکایتی نکرده است.",
+            "objective": "درخواست HTTP از PC-Reception به Portal-01 را موفق کنید.",
+            "hints": [
+                "درخواست از PC-Reception هرگز از خود PC-Reception فراتر نمی‌رود — قبل از رسیدن به Switch-1F حذف می‌شود.",
+                "دروازه پیش‌فرض PC-Reception به جای یک Router به آدرس خود Portal-01 تنظیم شده است، بنابراین برای ترافیک خارج از شبکه راه معتبری ندارد.",
+                "در PC-Reception، دروازه پیش‌فرض را 10.0.5.254 (Router-Edge) قرار دهید."
+            ],
+            "explanation": "دروازه پیش‌فرض باید به رابط یک Router در همان شبکه کلاینت اشاره کند، نه به میزبان دوری که می‌خواهید به آن برسید. PC-Reception با آدرس Portal-01 به عنوان دروازه پیکربندی شده بود، بنابراین بسته‌های خروجی به سوی شبکه‌های دیگر هیچ هاپ بعدی معتبری نداشتند و به صورت محلی حذف شدند."
+        },
+        "fi": {
+            "title": "Vastaanotto ei saa yhtyttävä tiedostopalvelimeen",
+            "story": "Vastaanotossa työskentelevät ilmoittavat, että Portal-01 on ollut koko aamun tavoittamattomissa PC-Receptionista. Sitä vastoin kukaan rahoitusosastolla ei ole ilmoittanut ongelmista sen saavuttamisessa.",
+            "objective": "Tee HTTP-pyyntö PC-Receptionista Portal-01:lle onnistuneeksi.",
+            "hints": [
+                "Pyyntö PC-Receptionista ei koskaan pääse PC-Reception itsensä ohi — se pudotetaan ennen kuin se saavuttaa Switch-1F:n.",
+                "PC-Reception oletusyhdyskäytävä on asetettu Portal-01:n omaan osoitteeseen reitittimen sijaan, joten sillä ei ole kelvollista seuraavaa hyppyä muiden aliverkkojen liikenteelle.",
+                "Aseta PC-Receptionissa oletusyhdyskäytäväksi 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Oletusyhdyskäytävän on osoitettava reitittimen rajapintaan asiakkaan omassa aliverkossa, ei etäisillä olevaan isäntään, johon yrität päästä. PC-Reception oli konfiguroitu Portal-01:n osoitteella yhdyskäytävänä, joten ulosmenevät paketit muihin aliverkkoihin menettivät kelvollisen seuraavan hyppyn ja pudotettiin paikallisesti."
+        },
+        "fil": {
+            "title": "Walang Access sa File Portal mula sa Reception",
+            "story": "Ang mga kawani sa reception desk ay nagsabi na ang Portal-01 ay hindi naaabot mula sa PC-Reception buong umaga. Samakatuwid, walang sinumang sa Finance ang nagsabing may problema sa pagkuha dito.",
+            "objective": "Gawing magtagumpay ang HTTP na hiling mula sa PC-Reception hanggang Portal-01.",
+            "hints": [
+                "Ang hiling mula sa PC-Reception ay hindi kailanman makalusot sa PC-Reception mismo — ito ay tinatanggal bago pa man makarating sa Switch-1F.",
+                "Ang default gateway ng PC-Reception ay nakatakda sa sariling address ng Portal-01 sa halip na isang router, kaya wala itong wastong susunod na sumusunod para sa off-subnet na trapiko.",
+                "Sa PC-Reception, itakda ang default gateway sa 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Ang default gateway ay dapat tumuro sa interface ng router sa sariling subnet ng client, hindi sa malayo na host na sinisikap mong maabot. Ang PC-Reception ay kinonfigura gamit ang address ng Portal-01 bilang gateway nito, kaya ang mga paketeng lumalabas sa ibang subnets ay walang wastong susunod na sumusunod at tinatanggal nang lokal."
+        },
+        "gl": {
+            "title": "A Recepción non pode conectar co Portal de Ficheiros",
+            "story": "O persoal da recepción informa que Portal-01 está inaccesible desde PC-Reception toda a mañana. Mentres tanto, ninguén en Finanzas mencionou ningunha dificultade para acceder a el.",
+            "objective": "Conseguir que unha solicitude HTTP desde PC-Reception a Portal-01 teña éxito.",
+            "hints": [
+                "A solicitude desde PC-Reception nunca vai máis alá da propia PC-Reception — cae antes de chegar a Switch-1F.",
+                "A pasarela predeterminada de PC-Reception está configurada coa dirección do propio Portal-01 en lugar dun router, polo que non ten un lugar válido para enviar tráfico fora da subrede.",
+                "En PC-Reception, estabelece a pasarela predeterminada a 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Unha pasarela predeterminada debe apuntar a unha interface do router na propia subrede do cliente, non ao host remoto ao que estás tentando acceder. PC-Reception foi configurada coa dirección de Portal-01 como sua pasarela, polo que os paquetes de saída a outras subredes non tiñan un seguinte salto válido e foron descartados localmente."
+        },
+        "gu": {
+            "title": "રિસેપ્શન પોર્ટલ-01 સુધી પહોંચી શકતું નથી",
+            "story": "રિસેપ્શન ડેસ્ક પર કર્મચારીઓ અહેવાલ આપે છે કે Portal-01 આખો સવાર PC-Reception થી અગમ્ય છે. તે દરમિયાન, Finance માં કોઈ પણ એવું કહ્યું નથી કે તેને પોર્ટલ સુધી પહોંચવામાં મુશ્કેલી આવી રહી છે.",
+            "objective": "PC-Reception થી Portal-01 સુધી HTTP વિનંતી સફળ બનાવો.",
+            "hints": [
+                "PC-Reception પાસેથીની વિનંતી PC-Reception પોતે આગળ જતી નથી — તે Switch-1F સુધી પહોંચ્યા પહેલાં જ છોડી દેવાય છે.",
+                "PC-Reception નું ડિફૉલ્ટ ગેટવે Portal-01 ના પોતાના સરનામા પર સેટ છે, રૂટર નહીં, તેથી તેની પાસે સબનેટ બહારની ટ્રાફિક મોકલવા માટે કોઈ માન્ય સ્થાન નથી.",
+                "PC-Reception પર, ડિફૉલ્ટ ગેટવે 10.0.5.254 (Router-Edge) પર સેટ કરો."
+            ],
+            "explanation": "ડિફૉલ્ટ ગેટવે ક્લાયંટ પોતાના સબનેટ પર રૂટર ઇન્ટરફેસ તરફ નિર્દેશ કરવો જોઈએ, દૂરસ્થ હોસ્ટ તરફ જે તમે પૌંછવાનો પ્રયાસ કરી રહ્યા છો તે નહીં. PC-Reception ને Portal-01 ના સરનામા સાથે તેના ગેટવે તરીકે કન્ફિગર કરવામાં આવ્યું હતું, તેથી અન્ય સબનેટ માટે આઉટબાઉન્ડ પેકેટમાં કોઈ માન્ય નેક્સ્ટ હોપ નથી અને તે સ્થાનિક રીતે છોડી દેવાયા હતા."
+        },
+        "he": {
+            "title": "הרסeption לא יכול להגיע לפורטל של הקבצים",
+            "story": "אנשי הצוות בדלפק הרסeption מדווחים כי Portal-01 אינו זמין מ-PC-Reception כל הבוקר. בינתיים, אף אחד בחשבונות לא הזכיר כל בעיה בהגעה אליו.",
+            "objective": "הפוך בקשת HTTP מ-PC-Reception ל-Portal-01 להצליח.",
+            "hints": [
+                "הבקשה מ-PC-Reception לעולם לא עוברת את ה-PC-Reception עצמה — היא מושמטת לפני הגעה ל-Switch-1F.",
+                "שער ברירת המחדל של PC-Reception מוגדר לכתובת של Portal-01 עצמה במקום לנתב, כך שאין לו מקום תקף לשלוח תעבורה מחוץ לתת-רשת.",
+                "ב-PC-Reception, הגדר את שער ברירת המחדל ל-10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "שער ברירת מחדל חייב להצביע על ממשק נתב בתת-הרשת שלו של הלקוח, לא על המארח הרחוק שאתה מנסה להגיע אליו. PC-Reception הוגדרה עם כתובת של Portal-01 כשער שלה, כך שמנות יוצאות לרשתות אחרות לא היו לנקודת הקפיצה הבאה תקפה והושמטו ברמה מקומית."
+        },
+        "hr": {
+            "title": "Recepcija ne može dosegnuti Portal datoteka",
+            "story": "Osoblje na recepcijskom pultu izvještava da je Portal-01 nedostižan s PC-Reception cijelo jutro. U međuvremenu, nitko iz Financija nije spomenuo nikakvih poteškoća pri dosezanju portala.",
+            "objective": "Učini da HTTP zahtjev s PC-Reception-a prema Portal-01 uspije.",
+            "hints": [
+                "Zahtjev s PC-Reception-a nikada ne ide dalje od samog PC-Reception-a — ispušten je prije nego što dosegne Switch-1F.",
+                "Zadani pristupnik PC-Reception-a postavljen je na adresu samog Portal-01 umjesto na usmjerivač, pa nema valjane lokacije za slanje prometa izvan podsmreže.",
+                "Na PC-Reception-u, postavi zadani pristupnik na 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Zadani pristupnik mora pokazivati na sučelje usmjerivača na klijentovoj vlastitoj podmreži, a ne na udaljenog domaćina kojeg pokušavaš dosegnuti. PC-Reception je bio konfiguriran s adresom Portal-01 kao njegovim pristupnikom, pa odlazni paketi prema drugim podmrežama nisu imali valjani sljedeći skok i bili su odbačeni lokalno."
+        },
+        "hu": {
+            "title": "A recepció nem érhet el a fájlportált",
+            "story": "A recepciós pultnál dolgozó munkatársak azt jelzik, hogy a Portal-01 az egész reggel nem elérhető a PC-Reception-ről. Közben a Pénzügyi osztályon senki nem panaszkodott arra, hogy ne tudná elérni.",
+            "objective": "Sikeresen hajts végre HTTP-kérést a PC-Reception-ről a Portal-01-hez.",
+            "hints": [
+                "A PC-Reception-ből érkező kérés sosem megy túl a PC-Reception-ön — a Switch-1F elérése előtt elvész.",
+                "A PC-Reception alapértelmezett átjárója a Portal-01 saját címére van beállítva, nem egy útválasztóra, így nincs érvényes helye a hálózaton kívüli forgalom küldésének.",
+                "A PC-Reception-nél állítsd az alapértelmezett átjárót 10.0.5.254 (Router-Edge) értékre."
+            ],
+            "explanation": "Az alapértelmezett átjárónak az ügyfél saját alhálózatán lévő útválasztó-interfészre kell mutatnia, nem az elérni próbált távoli gépre. A PC-Reception-t a Portal-01 címével konfigurálták átjáróként, ezért a más alhálózatokra irányuló kimenő csomagoknak nem volt érvényes következő ugrásuk, és helyileg eldobódtak."
+        },
+        "hy": {
+            "title": "Ընդունարանը չի կարողանում հասնել File Portal-ին",
+            "story": "Ընդունարանի սեղանի աշխատողները հայտնում են, որ Portal-01-ը անհասանելի է PC-Reception-ից ամբողջ առավոտ ընկերել: Միջինակայքում, Finance բաժնից որեւեք չի գանգատել Portal-01-ին հասնելու խնդրի մասին:",
+            "objective": "PC-Reception-ից Portal-01-ին HTTP հարցում ուղարկել հաջողությամբ:",
+            "hints": [
+                "PC-Reception-ից ստացված հարցումը երբեք չի անցնում PC-Reception-ից վեր — այն անջատվում է նույնիսկ Switch-1F-ին հասնելուց առաջ:",
+                "PC-Reception-ի Լռելյայն դարպասը կարգավորվել է Portal-01-ի սեփական հասցեի վրա՝ ռուտերի փոխարեն, ուստի այն չունի վավեր վայր անվստ-ցանցային տրաֆիկ ուղարկելու համար:",
+                "PC-Reception-ում կարգավորեք Լռելյայն դարպասը 10.0.5.254 (Router-Edge)-ի վրա:"
+            ],
+            "explanation": "Լռելյայն դարպասը պետք է ցույց տա ակ-ճի սեփական ցանցում գտնվող ռուտերի ինտերֆեյսի վրա, ոչ թե հեռավոր հոսթի վրա, որին փորձում եք հասնել: PC-Reception-ը կարգավորվել էր Portal-01-ի հասցեով որպես gateway, այնպես որ այլ ցանցերի համար դուրս գնացող փաթեթներ չունեին վավեր հաջորդ հանգույց և վերացվել էին տեղայիններում:"
+        },
+        "is": {
+            "title": "Aftaka getur ekki tengst File Portal",
+            "story": "Starfsmenn við aftöku tilkynna að Portal-01 hafi verið óaðgengilegur frá PC-Reception alla morguninn. Á meðan hefur enginn við Finance tilkynnt neina vandamál með að ná til hennar.",
+            "objective": "Fá HTTP beiðni frá PC-Reception til Portal-01 til að tekst.",
+            "hints": [
+                "Beiðnin frá PC-Reception kemst aldrei fram hjá PC-Reception sjálfri — hún er felld áður en hún nær til Switch-1F.",
+                "Sjálfgefin gátt PC-Reception er stillt á heimilisfang Portal-01 í stað routera, svo hún á engan gildan stað til að senda umferð utan nets.",
+                "Á PC-Reception skal stilla Sjálfgefna gátt á 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Sjálfgefin gátt verður að benda á routerviðmót á eigin neti viðskiptarins, ekki á fjarlæga gisti sem þú ert að reyna að ná. PC-Reception var stillt með heimilisfangi Portal-01 sem gátt sinni, svo útgöngupakkar til annarra neta höfðu engan gildan næsta hopp og voru felld á staðnum."
+        },
+        "ka": {
+            "title": "მიმღები არ შეიძლება Portal-ზე დაიწვნას",
+            "story": "მიმღების მაგიდის თანამშრომლები ცნობას აკეთებენ, რომ Portal-01 მთელი დილის განმავლობაში PC-Reception-დან მიუწვდომელია. იმავდროულად, Finance აღარ უჩნდება პრობლემა Portal-01-ზე წვდომისას.",
+            "objective": "HTTP მოთხოვნა PC-Reception-დან Portal-01-სთან ჩაატაროს წარმატებით.",
+            "hints": [
+                "PC-Reception-დან მოსული მოთხოვნა არასოდეს გადის PC-Reception-ის თავს — ის ჩერდება Switch-1F-ზე მაინც ადრე.",
+                "PC-Reception-ის ნაგულისხმევი შლუზი დაყენებულია Portal-01-ის საკუთარი მისამართის ნაცვლად, ამიტომ აქვს არასწორი გზა ქსელს გარეთ გადასაცემ რთავაზე.",
+                "PC-Reception-ზე დააყენეთ ნაგულისხმევი შლუზი 10.0.5.254 (Router-Edge)-დან."
+            ],
+            "explanation": "ნაგულისხმევი შლუზი უნდა მიუთითებდეს ზე იმ მარშრუტიზატორის ინტერფეისზე, რომელიც კლიენტის საკუთარ ქსელში მდებარეობს, არა წაკითხული ჰოსტის მისამართზე, რომელიც ცდილობთ მიაღწიოთ. PC-Reception კონფიგურირებული იყო Portal-01-ის მისამართით როგორც მის gateway, ამიტომ სხვა ქსელების გამკერძო პაკეტებმა არ ჰქონდათ სწორი შემდეგი ჰოპი და ჩერდებოდა ადგილობრივად."
+        },
+        "kk": {
+            "title": "Қабылдау Portal-ға қол жеткіздi de болмайды",
+            "story": "Қабылдау ұясындағы қызметкерлер Portal-01-ге PC-Reception-дан бүтін Tag ішінде қол жеткіздік болмағанын хабарлайды. Осы ортада Finance-дағы ешкім Portal-01-ге қол жеткіздік мәселесі болмағанын айтпайды.",
+            "objective": "PC-Reception-дан Portal-01-ге HTTP сұранысын сәтті орындатыңыз.",
+            "hints": [
+                "PC-Reception-дан келген сұраныс PC-Reception-ді өзінен әрі өтпейді — ол Switch-1F-ге дәл қол жеткізбестен тең бөлінгі.",
+                "PC-Reception-ің Әдепкі шлюзі Portal-01-ің өз мекенжайына орнатылған, router орнына, сондықтан оның ішінен ұстала сақта сақтау қалғаны жоқ.",
+                "PC-Reception-де Әдепкі шлюзі 10.0.5.254 (Router-Edge) ретінде орнатыңыз."
+            ],
+            "explanation": "Әдепкі шлюзі клиенттің өз ішінегі маршруттау құрылғысы интерфейсіне көрсетілуі керек, ұрттай хост мекенжайына емес. PC-Reception Portal-01 мекенжайы арқылы орнатылды, сондықтан басқа сақталарға шығатын пакеттердің дұрыс келесі хоп болмады және жергіліктік жерде және орындалды."
+        },
+        "kn": {
+            "title": "ರಿಸೆಪ್ಶನ್ ಫೈಲ್ ಪೋರ್ಟಲ್ ಗೆ ತಲುಪಲು ಸಾಧ್ಯವಿಲ್ಲ",
+            "story": "ರಿಸೆಪ್ಶನ್ ಡೆಸ್ಕ್‌ನಲ್ಲಿರುವ ಸ್ಟಾಫ್ ಹೇಳುತ್ತಾರೆ ಕ Portal-01 ಸಿ ಪ್ರತಿ ಬೆಳಿಗ್ಗೆ PC-Reception ಇಂದ ತಲುಪಲು ಸಾಧ್ಯವಿಲ್ಲ. ಇತರೆ ಹೆಸರಿನ, ಫಿನಾನ್ಸ್‌ನಲ್ಲಿ ಯಾರೂ ಅದನ್ನು ತಲುಪಲು ಎಂದೂ ಸಮಸ್ಯೆಯನ್ನು ಹೇಳಿಲ್ಲ.",
+            "objective": "PC-Reception ನಿಂದ Portal-01 ಗೆ HTTP ವಿನಂತಿ ಯಶಸ್ವಿಯಾಗಿ ನಿರ್ವಹಿಸಿ.",
+            "hints": [
+                "PC-Reception ಯಿಂದ ವಿನಂತಿ PC-Reception ನಿಂದಲೇ ಲೂಪ್‌ ಹಿಂತಿರುಗುತ್ತದೆ — Switch-1F ನಿಗಮನಕ್ಕೂ ಮುನ್ನವೇ ನಿರ್ಬಂಧಿತವಾಗುತ್ತದೆ.",
+                "PC-Reception ನ ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ Portal-01 ನ ಸ್ವಂತ ವಿಳಾಸಕ್ಕೆ ನಿಯೋಜಿತವಾಗಿದೆ, ರೂಟರ್‌ಗೆ ಅಲ್ಲ, ಆದ್ದರಿಂದ ಆಗ ನೆಟ್‌ವರ್ಕ್ ಟ್ರೇಫಿಕ್ ಅನ್ನು ಎಲ್ಲಿ ಕಳುಹಿಸಬೇಕೆಂದು ತಿಳಿದಿಲ್ಲ.",
+                "PC-Reception ನಲ್ಲಿ, ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಅನ್ನು 10.0.5.254 (Router-Edge) ಗೆ ಹೊಂದಿಸಿ."
+            ],
+            "explanation": "ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಕ್ಲೈಂಟ್‌ನ ಸ್ವಂತ ನೆಟ್‌ವರ್ಕ್‌ನಲ್ಲಿ ರೂಟರ್ ಇಂಟರ್‌ಫೇಸ್‌ಗೆ ತೋರಿಸಬೇಕು, ನಿಮ್ಮ ಗುಂಟುಬೆರೆ ಆತ್ಮೀಯವನ್ನು ನಿರ್ದೇಶಿಸುವುದಲ್ಲ. PC-Reception ಅನ್ನು Portal-01 ನ ವಿಳಾಸದಿಂದ ಗೇಟ್‌ವೇ ಎಂದು ಸಂರಚಿಸಲಾಯಿತು, ಆದ್ದರಿಂದ ಬಾಹ್ಯ ನೆಟ್‌ವರ್ಕ್ ಪ್ಯಾಕೆಟ್‌ಗಳು ಮಾನ್ಯವಾದ ನೆಕ್ಸ್ಟ್ ಹಾಪ್ ಇಲ್ಲ ಮತ್ತು ಸ್ಥಳೀಯವಾಗಿ ನಿರ್ಬಂಧಿತವಾಗಿದೆ."
+        },
+        "ky": {
+            "title": "Кабул алуу Файл Портал ирет боло албайт",
+            "story": "Кабул алуу столунун коллегалары Portal-01 PC-Reception ден бүтүн таңсынан жетиштирет албай жатышат деп айтышат. Ошол эле мезгилде, Финансы болімінде эч ким аны жетиштирүүдө кыйынчылык жөнүндө айтпай жатышат.",
+            "objective": "PC-Reception тан Portal-01 ге HTTP сурануу ийгиликтүү болсун.",
+            "hints": [
+                "PC-Reception тан килген сураныш PC-Reception де туратып калат — чамадан ашык Switch-1F ге жетпей бир жөн өшүрүлүп кетет.",
+                "PC-Reception нын Демейки шлюз Portal-01 нын өзүнүн дарегине коюлган, роутерге эмес, ошондуктан башка подсеттин трафигин кайта жөндөй албайт.",
+                "PC-Reception де Демейки шлюз ду 10.0.5.254 (Router-Edge) ге коюңүз."
+            ],
+            "explanation": "Демейки шлюз кліентинин өз подсетиндеги роутер интерфейсине көрсөтүшү керек, ал эми алыс хост унун дарегине эмес. PC-Reception Portal-01 нын дарегин шлюз катары коюлган, ошондуктан четки подсеттик пакеттер жарактуу ney hop жок жана жергиликти жүрөткүлүштүрүлгөн."
+        },
+        "lo": {
+            "title": "ការទាក់ទងមិនឈានដល់포ータល ឯកសារបាន",
+            "story": "បុគ្គលិកនៅលេខកូដដំណឹងរាយការណ៍ថា Portal-01 មិនអាចផ្តល់ដល់ PC-Reception ពេញលេញថ្ងៃព្រឹក។ ទន្ទឹមនឹងនោះ គ្មានអ្នកណាក្នុងផ្នែក​ហិរញ្ញវត្ថុបាននិយាយថាមានបញ្ហាក្នុងការទទួលយា។",
+            "objective": "ធ្វើឱ្យការស្នើសុំ HTTP ពី PC-Reception ទៅ Portal-01 ជោគជ័យ។",
+            "hints": [
+                "ការស្នើសុំពី PC-Reception មិនដែលលើស PC-Reception — វាត្រូវបានលុប មុនពេលឈានដល់ Switch-1F ។",
+                "Default gateway របស់ PC-Reception ត្រូវបានកំណត់ទៅលិបងាក់របស់ Portal-01 ខ្លួនវាផ្ទាល់ ដូច្នេះវាមិនមាន់នៃម្តងនៃយ៉ាងណា ដែលផ្ញើចរាចរណ៍នៃលើដែនថ្មីដែលត្រូវផ្ដល់ដូចវិធីសាស្ត្រដែលបាន។",
+                "នៅលើ PC-Reception កំណត់ default gateway ទៅ 10.0.5.254 (Router-Edge) ។"
+            ],
+            "explanation": "ដេលើ default gateway ត្រូវតែចង្អុលលើ router interface លើ subnet ដែលស្ថិតក្រោម client ដែលមិនមែនជា host រកលម្អិតដែលលើកលែងលើទាំងលូ។ PC-Reception ត្រូវបានកំណត់ដោយលិបងាក់របស់ Portal-01 ដូចជា gateway ដូច្នេះការផ្ញើរបស់ packets បាននៅក្រៅបង្រុម្មដែលមិនមាន next hop ត្រឹមត្រូវ ហើយត្រូវបានលុបក្នុងស្រុក។"
+        },
+        "lt": {
+            "title": "Priėmimas negali pasiekti failų portalą",
+            "story": "Personalo prie priėmimo stalo skelbia, kad Portal-01 nepasiekiama iš PC-Reception visą rytą. Tuo tarpu Finansų skyriuje niekas nepraneša apie problemas ją pasiekiant.",
+            "objective": "Padarykite HTTP užklausą iš PC-Reception į Portal-01 sėkmingą.",
+            "hints": [
+                "Užklausa iš PC-Reception niekada nepereina PC-Reception — ji nutraukiama dar prieš pasiekiant Switch-1F.",
+                "PC-Reception numatytasis šliuzas nustatytas į patį Portal-01 adresą, o ne maršrutizatorių, todėl jis neturi kur siųsti trafiko už podsalio ribų.",
+                "PC-Reception nustatykite numatytąjį šliuzą į 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Numatytasis šliuzas turi rodytį į maršrutizatoriaus sąsają kliento nuosavame podsalyje, o ne į nuotolinį šaltinį, į kurį bandote pasiekti. PC-Reception buvo sukonfigūruota su Portal-01 adresu kaip šliuzu, todėl išeigos paketai į kitus podsalius neturėjo galiojantį kitą šuolį ir buvo nutraukti lokaliai."
+        },
+        "lv": {
+            "title": "Recepcija nevar sasniegt faila portālu",
+            "story": "Personāls pie pieņemšanas galda ziņo, ka Portal-01 nav sasniegta no PC-Reception visu rītu. Tikmēr Finanšu departamentā neviens nav ziņojis par problēmām to sasniedzot.",
+            "objective": "Padariet HTTP pieprasījumu no PC-Reception uz Portal-01 veiksmīgu.",
+            "hints": [
+                "Pieprasījums no PC-Reception nekad nepāriet pāri PC-Reception — tas tiek svītrots pirms Switch-1F sasniegšanas.",
+                "PC-Reception noklusējuma vārteja ir iestatīta uz paša Portal-01 adresi, nevis uz maršrutētāju, tāpēc tam nav vietas, kur sūtīt trafiku ārpus apakštīkla.",
+                "PC-Reception iestatiet noklusējuma vārtēju uz 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Noklusējuma vārtējai jāpārstāv maršrutētāja sąsaja klienta savā apakštīklā, nevis uz attālo resursu, kuru mēģināt sasniegt. PC-Reception tika konfigurēta ar Portal-01 adresi kā vārtēju, tāpēc izejošie paketi uz citiem apakštīkliem nebija derīgs nākamais lēciens un tika atmesti lokāli."
+        },
+        "mk": {
+            "title": "Reception не может достичь File Portal",
+            "story": "Staff на рецепцијата пријавуваат дека Portal-01 е недостижен од PC-Reception цела утро. Меѓутоа, никој на Finance не поминал никаква проблем за да го достигне.",
+            "objective": "Направи HTTP барање од PC-Reception до Portal-01 успешно.",
+            "hints": [
+                "Барањето од PC-Reception никогаш не го надминува PC-Reception самиот себе — се пушта пред да стигне на Switch-1F.",
+                "Default gateway на PC-Reception е поставена на адреса на Portal-01 наместо на рутер, така што нема валидно место за да праќа сообраќај од надворешни подмрежи.",
+                "На PC-Reception, поставете го Default gateway на 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Default gateway мора да укажува на интерфејс на рутер на подмрежата на клиентот, а не на далечиниот хост кој се обидувате да го достигнете. PC-Reception беше конфигуриран со адреса на Portal-01 како неговиот gateway, така што пакетите излезни за други подмрежи немаа валиден следен скок и беа пушти локално."
+        },
+        "my": {
+            "title": "Reception မှ File Portal သို့ ချိတ်ဆက်ရန် မအောင်မြင်",
+            "story": "ရီချက်ရှင်းခန်းရှိ कর୍ମचारीများက Portal-01 သည် ည နံနက်ကစ၍ PC-Reception မှ ရှာဖွေလို့ မရသည်ဟု အစီရင်ခံထားသည်။ သို့သော် Finance ဌာနက ကစ သူမျိုးက ၎င်းအား ရှာဖွေရာ မည်သည့် အခက်အခဲလည်း မတွေ့ရှိရှိ။",
+            "objective": "PC-Reception မှ Portal-01 သို့ HTTP တောင်းဆိုမှု အောင်မြင်ရန်။",
+            "hints": [
+                "PC-Reception မှ တောင်းဆိုမှု PC-Reception သည်ပင် ကျော်လွန်မသွားဘဲ Switch-1F သို့ပင် ရောက်သည့်တစ်ခါမျှ မရောက်ဘဲ ပယ်ဖျက်သည်။",
+                "PC-Reception၏ လက်ခံသူ ကွန်ရက် ပူးပေါင်းများ ကို Portal-01 ၏ အမှတ်တံဆိပ်ထည့်သွင်းထားသည့် အရာအတူ သတ်မှတ်ထားသည်၊ အဲ့ ဒီလို လူမှုကွန်ယက်မှ ဆန့်ကျင်သည့် အရည်အသွေးမည်သည့် အကျိုးဆက်မျိုး မရှိ၊",
+                "PC-Reception တွင် Default Gateway ကို 10.0.5.254 (Router-Edge) သို့ သတ်မှတ်ပါ။"
+            ],
+            "explanation": "လက်ခံသူ ကွန်ရက်ပူးပေါင်းများ သည် ရီမုဒ်စက်ပုံရိယာ သို့မဟုတ် ကွန်ယက်ဆက်သူ၏ အဆင့် မရှိဘဲ ကလိုင်းယင်္ဂန်း၏ကိုယ်ပိုင် Subnet တွင် Router အင်္ဂါရပ်သို့ ညွှန်ပြရမည်သည်။ PC-Reception သည် Portal-01 ၏ အမှတ်တံဆိပ်အဖြစ် Gateway အဖြစ် ပုံမှန်သတ်မှတ်ထားသည့်အတွက် အခြား Subnet များသို့ ပြန်လည်ရောက်ရှိသည့် Packet များသည် မည်သည့် အကျိုးဆက်မျိုး မရှိဘဲ ည အလယ်တွင် ပယ်ဖျက်သည်။"
+        },
+        "ne": {
+            "title": "रिसेप्सन फाइल पोर्टलमा पहुँच गर्न सक्दैन",
+            "story": "रिसेप्सन डेस्कका कर्मचारीहरूले रिपोर्ट गरेका छन् कि Portal-01 पूरै बिहान PC-Reception बाट पहुँचयोग्य छैन। तर, Finance मा कसैले पनि यो पहुँच गर्न कुनै समस्या उल्लेख गरेका छैनन्।",
+            "objective": "PC-Reception बाट Portal-01 मा HTTP अनुरोध सफल गराउनुस्।",
+            "hints": [
+                "PC-Reception बाट अनुरोध PC-Reception मा नै रोकिन्छ — यो Switch-1F मा पनि पहुँच हुन अगाडि नै हटाइन्छ।",
+                "PC-Reception को डिफल्ट गेटवे Portal-01 को आफ्नै ठेगानामा सेट छ, ल्याउटर होइन, त्यसैले यससँग subnet बाहिर ट्राफिक पठाउन मान्य ठेगाना छैन।",
+                "PC-Reception मा, डिफल्ट गेटवे लाई 10.0.5.254 (Router-Edge) मा सेट गर्नुस्।"
+            ],
+            "explanation": "डिफल्ट गेटवे क्लायन्टको आफ्नै subnet मा ल्याउटर इन्टरफेस तर्फ औंल्याउनु पर्छ, दूरको होस्टलाई होइन जो तपाई पहुँच गर्न खोज्दै हुनुहुन्छ। PC-Reception को Portal-01 को ठेगानाको रूपमा Gateway सेट गरिएको थियो, त्यसैले अन्य subnets को लागि आउटबाउन्ड packets को कुनै मान्य नेक्स्ट हप छैन र स्थानीय रूपमा हटाइयो।"
+        },
+        "nl": {
+            "title": "Receptie kan bestandsportal niet bereiken",
+            "story": "Personeel aan de receptie meldt dat Portal-01 de hele ochtend niet bereikbaar is vanuit PC-Reception. Ondertussen heeft niemand in Finance enig probleem gemeld met het bereiken ervan.",
+            "objective": "Zorg dat een HTTP-verzoek van PC-Reception naar Portal-01 slaagt.",
+            "hints": [
+                "Het verzoek van PC-Reception stopt al bij PC-Reception zelf — het wordt verwijderd voordat het Switch-1F bereikt.",
+                "De Standaardgateway van PC-Reception is ingesteld op het eigen adres van Portal-01 in plaats van een router, dus het heeft geen geldig adres om verkeer buiten het subnet naar toe te sturen.",
+                "Stel op PC-Reception de Standaardgateway in op 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Een Standaardgateway moet verwijzen naar een routerinterface op het eigen subnet van de client, niet naar de externe host die je probeert te bereiken. PC-Reception was geconfigureerd met het adres van Portal-01 als gateway, dus uitgaande pakketten naar andere subnets hadden geen geldig vervolgadres en werden lokaal verwijderd."
+        },
+        "no": {
+            "title": "Resepsjon kan ikke nå filportalen",
+            "story": "Ansatte ved resepsjonen rapporterer at Portal-01 har vært usynlig fra PC-Reception hele formiddagen. Samtidig har ingen ved Finans nevnt noen problemer med å nå den.",
+            "objective": "Gjør en HTTP-forespørsel fra PC-Reception til Portal-01 vellykket.",
+            "hints": [
+                "Forespørselen fra PC-Reception stoppet allerede ved PC-Reception — den blir kastet før den når Switch-1F.",
+                "Standard gateway på PC-Reception er satt til Portal-01s egen adresse i stedet for en router, så den har ingen gyldig adresse å sende trafikk utenfor subnett til.",
+                "Sett Standard gateway på PC-Reception til 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "En Standard gateway må peke til et routergrensesnitt på klientens eget nett, ikke til den eksterne verten du prøver å nå. PC-Reception var konfigurert med Portal-01s adresse som gateway, så utgående pakker til andre subnett hadde ingen gyldig neste hopp og ble kastet lokalt."
+        },
+        "or": {
+            "title": "ରିସେପ୍ସନ ଫାଇଲ ପୋର୍ଟାଲ ପର୍ଯ୍ୟନ୍ତ ପହଁଚିପାରେ ନାହିଁ",
+            "story": "ରିସେପ୍ସନ ଡେସ୍କର କର୍ମଚାରୀମାନେ ରିପୋର୍ଟ କରୁଛନ୍ତି ଯେ Portal-01 ସମ୍ପୂର୍ଣ୍ଣ ସକାଳ ଧରି PC-Reception ରୁ ଅଲଙ୍ଘନୀୟ ଅଛି। ମିନିସ୍ଟ୍ରି ବିଭାଗରେ ଏହାକୁ ପୌଁଚିବାରେ କୌଣସି ସମସ୍ୟାର ଉଲ୍ଲେଖ କରିନାହାଁନ୍ତି।",
+            "objective": "PC-Reception ରୁ Portal-01 କୁ HTTP ଅନୁରୋଧ ସଫଳ କରନ୍ତୁ।",
+            "hints": [
+                "PC-Reception ରୁ ଅନୁରୋଧ PC-Reception ରେ ନିଜେ ରୋକ ଯାଏ — ଏହା Switch-1F ରେ ପହଁଚିବା ମୁଣ୍ଡୁ ଆଗରେ ଫୋପାଡି ଦିଆଯାଏ।",
+                "PC-Reception ର ଡିଫଲ୍ଟ ଗେଟୱେ Portal-01 ଦ ନିଜସ୍ୱ ଠିକାଣାକୁ ସେଟ କରାଯାଇଛି, ରାଉଟର ନୁହେଁ, ତେଣୁ ଏହାର subnet ବାହ୍ୟ ଟ୍ରାଫିକ ପଠାଇବାର କୌଣସି ବୈଧ ଠିକାଣା ନାହିଁ।",
+                "PC-Reception ରେ, ଡିଫଲ୍ଟ ଗେଟୱେକୁ 10.0.5.254 (Router-Edge) କୁ ସେଟ କରନ୍ତୁ।"
+            ],
+            "explanation": "ଡିଫଲ୍ଟ ଗେଟୱେ ରିମୋଟ ହୋଷ୍ଟ ନୁହେଁ ବରଂ କ୍ଲାଇଂଟର ନିଜର subnet ରେ ଥିବା ରାଉଟର ଇଂଟରଫେସ ଆଡକୁ ନିର୍ଦେଶ କରିବାକୁ ଆବଶ୍ୟକ। PC-Reception ଏଦ Gateway ଆକାରେ Portal-01 ର ଠିକାଣା ସହିତ କନଫିଗର କରାଯାଇଥିଲା, ତେଣୁ ଅନ୍ୟ subnet ଗୁଡ଼ିକୁ ଅଦ୍ୟାୟ packet ଗୁଡ଼ିକର ଦେଇ ନେକ୍ସଟ ହପ ନଥିଲା ଏବଂ ସେଗୁଡ଼ିକ ସ୍ଥାନୀୟ ଭାବେ ଫୋପାଡି ଦିଆଗଲା।"
+        },
+        "pa": {
+            "title": "رسيپشن فائل پورٹل تک نہیں پہنچ سکتا",
+            "story": "رسيپشن ڈیسک پر کام کرنے والے اہل کار رپورٹ کر رہے ہیں کہ Portal-01 پوری صبح سے PC-Reception سے نہیں پہنچ سکا۔ دریافت میں اب تک کوئی نہیں Portal-01 تک پہنچنے میں کوئی مسئلہ ہے۔",
+            "objective": "PC-Reception سے Portal-01 کو HTTP درخواست کریں کامیاب رہے۔",
+            "hints": [
+                "PC-Reception سے درخواست کبھی PC-Reception سے آگے نہیں جاتی — یہ Switch-1F تک پہنچنے سے پہلے ہی ختم ہو جاتی ہے۔",
+                "PC-Reception کا ڈیفاؤلٹ گیٹ وے Portal-01 کے اپنے ایڈریس پر سیٹ ہے نہ کہ راؤٹر پر، اس لیے اس کے پاس آف-سب نیٹ ٹریفک بھیجنے کے لیے کہیں جگہ نہیں۔",
+                "PC-Reception پر، ڈیفاؤلٹ گیٹ وے کو 10.0.5.254 (Router-Edge) پر سیٹ کریں۔"
+            ],
+            "explanation": "ڈیفاؤلٹ گیٹ وے کو کلائنٹ کے اپنے سب نیٹ پر ایک راؤٹر انٹرفیس کی طرف اشارہ کرنا چاہیے، نہ کہ اس دور دراز میزبان کی طرف جس تک آپ پہنچنے کی کوشش کر رہے ہیں۔ PC-Reception کو اپنے گیٹ وے کے طور پر Portal-01 کے ایڈریس کے ساتھ کنفیگر کیا گیا تھا، اس لیے دوسری سب نیٹ ٹریفک میں آنے والے پیکٹس کے پاس کوئی درست اگلا ہاپ نہیں تھا اور وہ مقامی طور پر ختم ہو گئے تھے۔"
+        },
+        "pl": {
+            "title": "Recepcja nie może dotrzeć do Portalu Plików",
+            "story": "Pracownicy recepcji zgłaszają, że Portal-01 jest niedostępny z PC-Reception od całego poranku. Tymczasem nikto z Finansów nie wspominał żadnych problemów z dotarciem do niego.",
+            "objective": "Żądanie HTTP z PC-Reception do Portal-01 powinno się powieść.",
+            "hints": [
+                "Żądanie z PC-Reception nigdy nie wychodzi poza PC-Reception — zostaje porzucone zanim dotrze do Switch-1F.",
+                "Brama domyślna na PC-Reception jest ustawiona na adres samego Portal-01 zamiast na router, więc nie ma dokąd wysłać ruch do innych podsieci.",
+                "Na PC-Reception ustaw Bramę domyślną na 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Brama domyślna musi wskazywać na interfejs routera w tej samej podsieci co klient, a nie na zdalny host, do którego próbujesz się dostać. PC-Reception była skonfigurowana z adresem Portal-01 jako jego bramy, więc pakiety wychodzące do innych podsieci nie miały prawidłowego następnego skoku i zostały porzucone lokalnie."
+        },
+        "pt-PT": {
+            "title": "Receção não consegue aceder ao Portal de Ficheiros",
+            "story": "A equipa de receção reporta que o Portal-01 está inacessível a partir de PC-Reception desde a manhã. Entretanto, ninguém das Finanças mencionou qualquer dificuldade em aceder-lhe.",
+            "objective": "Faça um pedido HTTP de PC-Reception para Portal-01 com sucesso.",
+            "hints": [
+                "O pedido de PC-Reception nunca ultrapassa PC-Reception — é descartado antes de sequer chegar a Switch-1F.",
+                "O gateway predefinido de PC-Reception está definido para o endereço do próprio Portal-01 em vez de um router, portanto não tem destino válido para enviar tráfego fora da subnet.",
+                "Em PC-Reception, defina o gateway predefinido para 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Um gateway predefinido deve apontar para uma interface de router na mesma subnet do cliente, não para o anfitrião remoto que está a tentar alcançar. PC-Reception foi configurada com o endereço de Portal-01 como seu gateway, pelo que os pacotes de saída para outras subnets não tinham próximo salto válido e foram descartados localmente."
+        },
+        "rm": {
+            "title": "La receziun na pò arrivar al Portal da Datotecas",
+            "story": "In la recepziun raportan che Portal-01 è vegnì inraschabel da PC-Reception durant il maitin intir. Dumentratschel, nuschdun dals Finances ha manzanau talas plaschair cun Portal-01.",
+            "objective": "Fa ina dumonda HTTP da PC-Reception a Portal-01 cun success.",
+            "hints": [
+                "La dumonda da PC-Reception na saja mai da PC-Reception — ella è vegnida fermada enblaz ch'ella n'è anc na arrivada a Switch-1F.",
+                "La default gateway da PC-Reception è configurada ina adresa da Portal-01 vess d'ina routa, nua ch'ella na haja vain destinaziun valid per trimetter traffic da sut-raits.",
+                "Configurescha la default gateway sin PC-Reception a 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "In default gateway sto tschentrar sin in'interface da routa sin il medem raint che il client, betg sin il host distant che ti empruevas da ragiunar. PC-Reception era configurada cun l'adresa da Portal-01 scu sia gateway, nua che ils pachets sin auter raits n'avaivan vain rait valid e furman vegnids fermads localmain."
+        },
+        "ro": {
+            "title": "Recepția nu poate accesa Portalul de Fișiere",
+            "story": "Personalul de la recepție raportează că Portal-01 este inaccesibil din PC-Reception de toată dimineața. Între timp, nimeni din Finanțe nu a menționat nicio problemă în a-l accesa.",
+            "objective": "Faceți un cerere HTTP cu succes de la PC-Reception la Portal-01.",
+            "hints": [
+                "Cererea de la PC-Reception nu merge niciodată dincolo de PC-Reception — este eliminată înainte de a ajunge măcar la Switch-1F.",
+                "Gateway-ul implicit al PC-Reception este setat la adresa proprie a Portal-01 în loc de un router, deci nu are o destinație validă pentru a trimite trafic în afara subretele.",
+                "Pe PC-Reception, setați Gateway-ul implicit la 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Un gateway implicit trebuie să indice o interfață de router pe aceeași subrețea cu clientul, nu către gazda la distanță pe care încercați să o atingeți. PC-Reception a fost configurată cu adresa Portal-01 ca gateway-ul acesteia, deci pachetele de ieșire către alte subrețele nu aveau un salt următor valid și au fost eliminate local."
+        },
+        "si": {
+            "title": "රිසිপশන් පෙට්ටි Portal ලඟට ළඟා විය නොහැක",
+            "story": "රිසිපශන් ඩෙස්කයේ කාර්ය මණ්ඩලය වාර්තා කරයි که PC-Reception සকල උදෑසනින් Portal-01 ලෙස අයිතිවලින් ගිය නොමැත. එතරම්, আর্থවිද්‍යා කිසිවක් එයට ළඟා විය නොහැක ගැන කිසිවක් සඳහන් නොකර ඇත.",
+            "objective": "PC-Reception සිට Portal-01 කරා HTTP ඉල්ලීම සාර්ථක වීම සහතික කරන්න.",
+            "hints": [
+                "PC-Reception සිට ඉල්ලීම PC-Reception හටම ඉදිරියට යන්නේ නැත — එය Switch-1F ට ළඟා වීමට පෙර ඉවතලනු ලබයි.",
+                "PC-Reception හි පෙරනිමි ගේට්වේ Portal-01 ගේ ම ඉතින්නෙකුටම සකසා ඇති බැවින් එයට subnet් ට පිටතින් ගිය ගමනාන්ත වලට නිල් පිටපතක් නොමැත.",
+                "PC-Reception ඉතින්න, පෙරනිමි ගේට්වේ 10.0.5.254 (Router-Edge) දී සකසන්න."
+            ],
+            "explanation": "පෙරනිමි ගේට්වේ ගමනාන්ත ඉතින්න සිට subnet් ඉතින්න සිට Router ඉතින්නට පෙරතුරු විය යුතු බැවින්, ඔබ ට ළඟා වීමට උත්සාහ කරන දුරස්ත ඉතින්නට නොවේ. PC-Reception Portal-01 ගේ ම ඉතින්ණු සිට පෙරනිමි ගේට්වේ ලෙස සකසා ඇති බැවින්, subnet් ට පිටතින් යන පැකට් වලට නිල් ඊළඟ හොප් නොමැති බැවින් ඉතින්නෙන් බිම සිට ඉවතලනු විය."
+        },
+        "sk": {
+            "title": "Recepcia nedokáže dosiahnuť portál",
+            "story": "Zamestnanci na recepcii hlásia, že Portal-01 je nedosiahnuteľný z PC-Reception celé ráno. Medzitým nikto z finančného oddelenia si nepostaľuje na problémy s dosahom na Portal-01.",
+            "objective": "Spravte HTTP požiadavku z PC-Reception do Portal-01 úspešnou.",
+            "hints": [
+                "Požiadavka z PC-Reception nikdy neprejde cez PC-Reception — je vyradená skôr, než by dosiahla Switch-1F.",
+                "Predvolená brána PC-Reception je nastavená na vlastnú adresu Portal-01 miesto routera, takže nemá platný smer pre prevádzku mimo podsietě.",
+                "Na PC-Reception nastavte Predvolená brána na 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Predvolená brána musí poukazovať na rozhranie routera na vlastnej podsietí klienta, nie na vzdialený hostiteľ, ktorého sa pokúšate dosiahnuť. PC-Reception bola nakonfigurovaná s adresou Portal-01 ako jej bránou, takže odchádzajúce pakety do iných podsietí nemali platný ďalší skok a boli vyradené lokálne."
+        },
+        "sl": {
+            "title": "Recepcija ne more dosegati portala",
+            "story": "Zaposleni na recepciji poročajo, da Portal-01 ni dosegljiv iz PC-Reception ves dan. Medtem pa nihče iz finančnega oddelka ni omenil nikakvih težav pri dostopu do Portal-01.",
+            "objective": "Naredite, da je HTTP zahtevek iz PC-Reception do Portal-01 uspešen.",
+            "hints": [
+                "Zahtevek iz PC-Reception nikoli ne pride naprej iz PC-Reception — izpuščen je, preden sploh doseže Switch-1F.",
+                "Privzeti prehod PC-Reception je nastavljen na Portal-01 lastni naslov namesto usmerjevalnika, zato nima veljavne poti za promet zunaj podskupine.",
+                "Na PC-Reception nastavite Privzeti prehod na 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Privzeti prehod mora kazati na vmesnik usmerjevalnika na lastni podskupini odjemalca, ne na oddaljeni gostitelja, ki ga poskušate dosegti. PC-Reception je bil konfiguriran z naslovom Portal-01 kot njegovo brano, zato imajo paketi, ki odhajajo v druge podskupine, neveljavni naslednji skok in so bili izpuščeni lokalno."
+        },
+        "sq": {
+            "title": "Recepsioni nuk arrin të aksesojë portalen",
+            "story": "Punonjësit në recepsion raportojnë se Portal-01 është i pakapshëm nga PC-Reception gjithë mëngjeset. Ndërkaq, askush në Financë nuk ka përmendur ndonjë problem në arritjen e tij.",
+            "objective": "Bëni që kërkesa HTTP nga PC-Reception në Portal-01 të jetë e suksesshme.",
+            "hints": [
+                "Kërkesa nga PC-Reception nuk kalon më tej PC-Reception — ajo është zbritur përpara se të arrijë Switch-1F.",
+                "Porta e paracaktuar e PC-Reception është vendosur në adresën e vet Portal-01 në vend të një routeri, prandaj nuk ka rrugë të vlefshme për trafikun jashtë nënrrjetit.",
+                "Në PC-Reception, vendosni Porta e paracaktuar në 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Porta e paracaktuar duhet të tregojë në një ndërfaqe të routerit në nënrrjetin e vet të klientit, jo në shërbimin e largët që përpiqeni të arritni. PC-Reception u konfigurua me adresën e Portal-01 si porta e saj, prandaj paketat dalëse në nënrrjet të tjerë nuk kishin hapi tjetër të vlefshëm dhe u hodhën lokalisht."
+        },
+        "sr": {
+            "title": "Recepsija не може достићи портал",
+            "story": "Особље на рецепцији пријављује да Portal-01 није достижан из PC-Reception целе јутра. Док су то, нико из финансија није поменуо никакве проблеме са достизањем.",
+            "objective": "Учините да је HTTP захтев из PC-Reception до Portal-01 успешан.",
+            "hints": [
+                "Захтев из PC-Reception никада не прође даље од PC-Reception — он је отпао пре него што достигне Switch-1F.",
+                "Подразумевани мрежни пролаз PC-Reception је подешен на сопствену адресу Portal-01 уместо рутера, тако да нема валидне путање за саобраћај ван потмреже.",
+                "На PC-Reception, подесите Подразумевани мрежни пролаз на 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Подразумевани мрежни пролаз мора да показује на интерфејс рутера на клијентовој сопственој потмрежи, а не на удаљену машину коју покушавате да достигнете. PC-Reception је био конфигуриран са адресом Portal-01 као његовом браном, тако да су одлазни пакети према другим потмрежама немали валидни следећи скок и били су отпадити локално."
+        },
+        "sv": {
+            "title": "Reception kan inte nå filportalen",
+            "story": "Personal vid receptionen rapporterar att Portal-01 har varit onåbar från PC-Reception hela formiddagen. Samtidigt har ingen på Ekonomi nämnt några problem med att nå den.",
+            "objective": "Gör en HTTP-begäran från PC-Reception till Portal-01 framgångsrik.",
+            "hints": [
+                "Begäran från PC-Reception går aldrig förbi PC-Reception själv — den släpps innan den ens når Switch-1F.",
+                "PC-Reception:s standardgateway är inställd på Portal-01:s egen adress istället för en router, så den saknar giltig väg för trafik utanför sitt undernät.",
+                "Ställ in standardgatewayen på PC-Reception till 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "En standardgateway måste peka på ett routergränssnitt på klientens eget undernät, inte på den fjärrvärden du försöker nå. PC-Reception var konfigurerad med Portal-01:s adress som sin gateway, så utgående paket till andra undernät saknade en giltig nästa hopp och släpptes lokalt."
+        },
+        "sw": {
+            "title": "Reception Haiwezi Kufikia Lango la Faili",
+            "story": "Wafanyikazi wa pande la kabibi wanakumbuka kuwa Portal-01 haiwezi kufikia kutoka PC-Reception asubuhi nzima. Wakati huo huo, hakuna yeyote katika Fedha aliyetaja matatizo yoyote ya kufikia hiyo.",
+            "objective": "Fanya ombi la HTTP kutoka PC-Reception kwenye Portal-01 kutumaini.",
+            "hints": [
+                "Ombi kutoka PC-Reception haliwezi kupita PC-Reception yenyewe — linaswa kabla hata kufikia Switch-1F.",
+                "Lango chaguo-msingi la PC-Reception limewekwa kwa anwani yenyewe ya Portal-01 badala ya router, kwa hiyo haina njia halali ya kutuma trafiki nje ya subnet yake.",
+                "Weka Lango chaguo-msingi kwenye PC-Reception kuwa 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Lango chaguo-msingi lazima lielekezee kiolesura cha router katika subnet sawa na mteja, si kwenye kompyuta mbali uliyojaribu kufikia. PC-Reception ilikuwa imeandaliwa na anwani ya Portal-01 kama lango lake, kwa hiyo pakiti zinazoondoka kwenye subnet nyingine haikuwa na hop inayofuata halali na ziliswa ndani."
+        },
+        "ta": {
+            "title": "ரிசெப்ஷன் போர்டலை அடைய முடியாது",
+            "story": "ஏற்பாட்டு பணியிடத்தில் உள்ள பணியாளர்கள் Portal-01 ஆனது PC-Reception இலிருந்து முழு காலையும் அடையமுடியாமல் இருந்ததாக தெரிவிக்கிறார்கள். அதே நேரத்தில், நிதி பிரிவில் யாரும் அதை அடைய எந்த சிக்கலையும் குறிப்பிடவில்லை.",
+            "objective": "PC-Reception இலிருந்து Portal-01 க்கு HTTP கோரிக்கை வெற்றிகரமாக செய்யவும்.",
+            "hints": [
+                "PC-Reception இலிருந்து வரும் கோரிக்கை PC-Reception ஐத் தாண்டிச் செல்லாது — Switch-1F அை கூட அடையும் முன் நிறுத்தப்படும்.",
+                "PC-Reception இன் இயல்புநிலை கேட்வே Portal-01 இன் சொந்த முகவரியாக அமைக்கப்பட்டுள்ளது, ரவுட்டர் அல்ல, எனவே சப்நெட் வெளியே ট்राஃபிக் அனுப்ப செல்ல எங்குமே இல்லை.",
+                "PC-Reception இல், இயல்புநிலை கேட்வேவை 10.0.5.254 (Router-Edge) என்று அமைக்கவும்."
+            ],
+            "explanation": "இயல்புநிலை கேட்வே கிளையன்ட்டின் சொந்த சப்நெட்டில் உள்ள ரவுட்டர் ইন்டरফேஸைக் குறிக்க வேண்டும், நீங்கள் அடைய முயற்சிக்கும் தொலைதூர ஹோஸ்டை அல்ல. PC-Reception தனது கேட்வேவாக Portal-01 இன் முகவரியுடன் கொண்டுவரப்பட்டதால், மற்ற சப்நெட்டுகளுக்கான வெளிச்செல்லும் பாக்கெட்டுகளுக்கு செல்ல பொருத்தமான அடுத்த ஹாப் இல்லாமல் இருந்து அவை உள்ளூரில் தடுக்கப்பட்டன."
+        },
+        "te": {
+            "title": "ఖాతా విభాగం పోర్టల్‌కు చేరుకోలేదు",
+            "story": "రిసెప్షన్ డెస్క్‌లోని సిబ్బంది Portal-01 ఉదయం నుండి PC-Reception నుండి చేరుకోలేదని నివేదించారు. ఇంతలో, ఆర్థిక విభాగంలో ఎవరూ దానిని చేరుకోవడంలో ఎటువంటి సమస్య గురించి చెప్పలేదు.",
+            "objective": "PC-Reception నుండి Portal-01 కు HTTP అభ్యర్థనను సఫలంగా చేయండి.",
+            "hints": [
+                "PC-Reception నుండి అభ్యర్థన PC-Reception నుండి కూడా దాటకుండా ఉంటుంది — ఇది Switch-1F కూడా చేరకముందే చెదిరిపోతుంది.",
+                "PC-Reception యొక్క డిఫాల్ట్ గేట్‌వే Router కి బదులుగా Portal-01 యొక్క సొంత చిరునామాకు సెట్ చేయబడింది, కనుక ఇది సబ్‌నెట్ ట్రాఫిక్ బయటకు పంపడానికి చెల్లుబాటు అయ్యే మార్గం లేదు.",
+                "PC-Reception పై, డిఫాల్ట్ గేట్‌వేను 10.0.5.254 (Router-Edge) కు సెట్ చేయండి."
+            ],
+            "explanation": "డిఫాల్ట్ గేట్‌వే ఖాతా అభ్యర్థించిన దూర హోస్ట్‌కు కాకుండా, క్లయింట్‌ యొక్క సిబ్బందిలోని Router ఇంటరফేస్‌ను చూపాలి. PC-Reception దాని గేట్‌వేగా Portal-01 యొక్క చిరునామాతో కాన్ఫిగర్ చేయబడింది, కనుక ఇతర సబ్‌నెట్‌లకు వెలువెళ్లే ప్యాకెట్‌లకు చెల్లుబాటు అయ్యే నెక్స్ట్ హాప్ లేదు మరియు అవి స్థానికంగా చెదిరిపోయాయి."
+        },
+        "uk": {
+            "title": "Рецепція не може досягти портала",
+            "story": "Персонал на рецепції повідомляє, що Portal-01 недоступний з PC-Reception протягом усього ранку. Тим часом ніхто з фінансового відділу не згадував про будь-які проблеми з доступом до нього.",
+            "objective": "Успішно виконати HTTP-запит з PC-Reception на Portal-01.",
+            "hints": [
+                "Запит з PC-Reception ніколи не проходить повз саму PC-Reception — його відкидають ще до того, як досягнути Switch-1F.",
+                "Шлюз за замовчуванням на PC-Reception встановлено на адресу самого Portal-01 замість маршрутизатора, тому немає дійсного маршруту для відправки трафіку за межи підмережі.",
+                "На PC-Reception встановіть шлюз за замовчуванням на 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Шлюз за замовчуванням має вказувати на інтерфейс маршрутизатора в тій же підмережі клієнта, а не на віддалений хост, який ви намагаєтеся досягнути. PC-Reception була налаштована з адресою Portal-01 як її шлюз, тому вихідні пакети до інших підмереж не мали дійсного наступного переходу та були відкинені локально."
+        },
+        "ur": {
+            "title": "ریسیپشن فائل پورٹل تک نہیں پہنچ سکتا",
+            "story": "ریسیپشن ڈیسک پر موجود اسٹاف نے رپورٹ کیا ہے کہ Portal-01 صبح سے PC-Reception سے رسائی سے باہر ہے۔ دریافیں کہ فنانس میں کوئی بھی اس تک پہنچنے میں کوئی مسئلہ نہیں ہے۔",
+            "objective": "PC-Reception سے Portal-01 تک HTTP درخواست کامیاب بنائیں۔",
+            "hints": [
+                "PC-Reception سے درخواست PC-Reception ہی میں رک جاتی ہے — یہ Switch-1F تک پہنچنے سے پہلے ڈالی جاتی ہے۔",
+                "PC-Reception کا ڈیفالٹ گیٹ وے Portal-01 کے اپنے پتے پر سیٹ ہے نہ کہ راؤٹر پر، اس لیے اس کے پاس آف-سب نیٹ ٹریفک بھیجنے کے لیے کوئی درست راستہ نہیں ہے۔",
+                "PC-Reception پر، ڈیفالٹ گیٹ وے کو 10.0.5.254 (Router-Edge) پر سیٹ کریں۔"
+            ],
+            "explanation": "ڈیفالٹ گیٹ وے کو کلائنٹ کے اپنے سب نیٹ پر ایک راؤٹر انٹرفیس کی طرف اشارہ کرنا چاہیے، نہ کہ اس دور کے میزبان کی طرف جس تک آپ پہنچنا چاہتے ہیں۔ PC-Reception کو Portal-01 کے پتے کے ساتھ اپنے گیٹ وے کے طور پر ترتیب دی گئی تھی، اس لیے دوسری سب نیٹ کی بیرونی پیکٹس کے پاس کوئی درست نیکسٹ ہاپ نہیں تھا اور وہ مقامی طور پر ڈالی گئیں۔"
+        },
+        "zu": {
+            "title": "Ucwaningo Alukwazi Ukufika Ku-Portal Yefayela",
+            "story": "Abasebenzi Ecalini LwokuThola Icebo (Reception) baxoxe ukuthi Portal-01 ayilungile kusukela ngo-PC-Reception osukwini lonke. Kodwa, abantu beFinance abakuyikhukhumezeli noma ubungaki.",
+            "objective": "Yenza HTTP yebiliti kusuka ku-PC-Reception ku-Portal-01 ibe nempumelelo.",
+            "hints": [
+                "Icosho elisuka ku-PC-Reception liyabuyela kuthe kho PC-Reception — liboshwa ngaphandle nokufika ku-Switch-1F.",
+                "I-default gateway ka-PC-Reception ibekwe kwindilinga ye-Portal-01, hhayi ku-Router, ngakho alinayo indlela echanekayo yokuthumela ithrafikhi ye-off-subnet.",
+                "Ku-PC-Reception, setha i-default gateway ku-10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "I-Default Gateway kufanele ikhomele kumakeshini we-Router okunethiwekhi yako, hhayi kumuntu obekude oyofuna ukufika kuye. I-PC-Reception yayimiswe ngekheli le-Portal-01 njengoMkela Wawo, ngakho amapakedi asukela kumanethiwekhi awohlukene ayenganalo i-next hop echanekayo futhi adliwa indawo."
+        },
+        "km": {
+            "title": "ការទទួលមិនអាចឈានដល់ម៉ាកយីឯក",
+            "story": "បុគ្គលិកនៅតុផ្ទទ្រexterior របាយថាមិនអាចឈានដល់ Portal-01 ពីក្នុង PC-Reception សម្រាប់រយៈពេលសព្វថ្ងៃ។ ក្នុងពេលដំណាលគ្នា មិនមាននរណាម្នាក់នៅផ្នែកហិរញ្ញវត្ថុបានរាយការលំបាកក្នុងការឈានដល់វាទេ។",
+            "objective": "សូមបង្កើតសំណើ HTTP ពីក្នុង PC-Reception ឆ្ពោះទៅ Portal-01 ដោយជោគជ័យ។",
+            "hints": [
+                "សំណើពីក្នុង PC-Reception មិនដែលឈានដល់បង្ហាយលើសពីក្នុង PC-Reception ដោយខ្លួនវា — វាត្រូវបានលុបដង្អកលាន់ពេលមុនគេថែមទាំងឈានដល់ Switch-1F។",
+                "ឧបករណ៍ផ្ទុកលំនាំដើម PC-Reception ត្រូវបានកំណត់ឱ្យ Portal-01 ឯងទៀងលើផ្នែកឯងរបស់វាផ្ទេរមិនមែនទិសដៅលម្ងាច់ដូច្នេះវាមិនមានចំណេះដឹងលម្ងាច់ដើម្បីផ្ញើចរាចរណ៍នៅពេលវេលា។",
+                "នៅលើ PC-Reception កំណត់រចនាសម្ព័ន្ធឧបករណ៍ផ្ទុកលំនាំដើម 10.0.5.254 (Router-Edge)។"
+            ],
+            "explanation": "ឧបករណ៍ផ្ទុកលំនាំដើមត្រូវតែចង្អុលទៅ router interface ឩស្សាហ៌ក្នុងក្រុម subnet របស់ client ខ្លួនឯងមិនមែនទៅ remote host ដែលអ្នកព្យាយាមឈានដល់។ PC-Reception ត្រូវបានកំណត់ដោយលេខសម្គាល់របស់ Portal-01 ជាឧបករណ៍ផ្ទុកលំនាំដើមរបស់វា ដូច្នេះការព្រូវចង្អុលចេញ subnet ផ្សេងទៀតគ្មានលំហូរដែលមានសុពលភាពនិងលុបវាលម្ងាច់។"
+        },
+        "ml": {
+            "title": "റിസെപ്ഷനിനെത്തിനെ ഫയൽ പോർട്ടലിൽ എത്താൻ കഴിയില്ല",
+            "story": "റിസെപ്ഷൻ ഡെസ്കിൽ ജോലി ചെയ്യുന്നവർ കൂട്ടിപ്പറയുന്നത് Portal-01 ഉ PC-Reception ൽനിന്ന് ഈ പകലെല്ലാം എത്താൻ കഴിയുന്നില്ലെന്നാണ്. അതേസമയം, ഫിനാൻസ് വിഭാഗത്തിൽ ആരും എത്തിൽ എത്തുന്നതിൽ യാതൊരു പ്രയാസവും പറഞ്ഞിട്ടില്ല.",
+            "objective": "PC-Reception ൽനിന്ന് Portal-01 നേക്കുള്ള HTTP അഭ്യർത്ഥന നിർവ്വഹിക്കുക.",
+            "hints": [
+                "PC-Reception ൽനിന്നുള്ള അഭ്യർത്ഥന PC-Reception തെന്നെയ്ക്കതീതം പോകുന്നില്ല — വായ Switch-1F എത്തുന്നതിനുമുൻപ് തന്നെ അത് നിർത്തിവയ്ക്കുകയാണ്.",
+                "PC-Reception ന്റെ ഡിഫോൾട്ട് ഗേറ്റ്‌വേ Portal-01 ന്റെ സ്വന്തം വിലാസത്തിലേക്ക് സജ്ജമാക്കിയിരിക്കുന്നു, അതിനാൽ അതിന് സബ്‌നെറ്റിനുപുറത്തുള്ള ട്രാഫിക് അയയ്കാൻ കഴിയുന്ന കോനോ ഇൻറ്റർഫേസ് ഇല്ല.",
+                "PC-Reception ൽ ഡിഫോൾട്ട് ഗേറ്റ്‌വേ 10.0.5.254 (Router-Edge) ആയി സജ്ജമാക്കുക."
+            ],
+            "explanation": "ഡിഫോൾട്ട് ഗേറ്റ്‌വേ ക്ലയന്റിന്റെ സ്വന്തം സബ്‌നെറ്റിലെ ഒരു Router ഇന്റർഫേസിലേക്ക് നിർദ്ദേശിക്കണം, അത് നിങ്ങൾ എത്തിയാൻ ശ്രമിക്കുന്ന റിമോട്ട് ഹോസ്റ്റിലേക്കല്ല. PC-Reception അതിന്റെ ഗേറ്റ്‌വേയായി Portal-01 ന്റെ വിലാസം ഉപയോഗിച്ച് സജ്ജമാക്കിയിരിക്കുന്നു, അതിനാൽ മറ്റ് സബ്‌നെറ്റുകളിലേക്കുള്ള ഔട്ട്‌ബൗണ്ട് പാക്കറ്റുകൾക്കൊരു സാധുവായ നെക്സ്റ്റ് ഹോപ്പ് ഇല്ല, അതിനാൽ അവ ലോക്കലായി നിർത്തിവയ്ക്കുന്നത്.}"
+        },
+        "mn": {
+            "title": "Хүлээн авах үйлчилгээ Файлын портал руу хүрч чадахгүй байна",
+            "story": "Хүлээн авах үйлчилгээний төрөлжсөн ажилтнууд Portal-01 нь PC-Reception-ээс өнөө өдөр нийт шөнөөр хүрч чадахгүй байна гэж мэдээлэх байлаа. Үүний зэрэгцээ Санхүүгийн хэлтсээс хүн ямар нэгэн асуудлын тухай мэдээлээгүй.",
+            "objective": "PC-Reception ээс Portal-01 руу HTTP асуулт явуулах.",
+            "hints": [
+                "PC-Reception ээс явуулсан асуулт PC-Reception өөрөөс хүрч чадахгүй байна — Switch-1F руу ирэхээс өмнө унтраасан.",
+                "PC-Reception ийн Default gateway нь Portal-01 ийн өөрийн хаягтай тохиргоосон байна, сүүлчийн сүлжээний ачиглалаар явуулж болохгүй.",
+                "PC-Reception ээр Default gateway-г 10.0.5.254 (Router-Edge) дээр тохируулна."
+            ],
+            "explanation": "Default gateway нь клиентийн өөрийн сүбнэтийн дотор нэг Router интерфэйс рүү чиглүүлэх ёстой, хичнээн ч төдий хүрч гаргахыг оролдож буй алсын хост руу биш. PC-Reception нь Portal-01 ийн хаягийг хүлээн авагч таныж сайн байна, иймээс гадаад сүбнэт рүү явах пакетууд хүчээ хүрэхгүй бүтсэн.}"
+        },
+        "mr": {
+            "title": "रिसेप्शन फाईल पोर्टलपर्यंत पोहोचू शकत नाही",
+            "story": "रिसेप्शन डेस्कवरील कर्मचारी सांगतात की Portal-01 संपूर्ण सकाळ PC-Reception पासून अप्राप्य आहे. दरम्यान, वित्त विभागातून एखाद्याने त्यात पोहोचण्यात काहीही अडचण नाही म्हटले.",
+            "objective": "PC-Reception मधून Portal-01 कडे HTTP विनंती यशस्वी करा.",
+            "hints": [
+                "PC-Reception कडून केलेली विनंती स्वतः PC-Reception येथेच थांबते — Switch-1F पर्यंत पोहोचण्यापूर्वीच ती टाकली जाते.",
+                "PC-Reception ची डिफॉल्ट गेटवे Portal-01 च्या स्वतःच्या पत्त्यावर सेट आहे, त्यामुळे त्याकडे अपेक्षित नेटवर्कची ट्रॅफिक पाठवण्यासाठी कोणतेही वैध गेटवे नाही.",
+                "PC-Reception वर डिफॉल्ट गेटवे 10.0.5.254 (Router-Edge) वर सेट करा."
+            ],
+            "explanation": "डिफॉल्ट गेटवे क्लायंटच्या स्वतःच्या सबनेटवरील Router इंटरफेस कडे निर्देशित केला पाहिजे, दूरवरचे होस्ट जेथे आपण पोहोचायचे आहे तेथे नव्हे. PC-Reception Portal-01 च्या पत्त्याने गेटवे म्हणून कॉन्फिगर केले होते, त्यामुळे इतर सबनेटला भेजलेले पॅकेट त्याचे वैध नेक्स्ट हॉप मिळेना आणि त्यांना स्थानिक पातळीवर टाकून दिले जाते."
+        },
+        "ms": {
+            "title": "Penerimaan Tidak Dapat Menjangkau Portal Fail",
+            "story": "Staf di meja penerimaan melaporkan bahwa Portal-01 tidak dapat dijangkau dari PC-Reception sepanjang pagi. Sementara itu, tidak ada siapa pun di Keuangan yang menyebutkan masalah apa pun dalam menjangkaunya.",
+            "objective": "Buat permintaan HTTP dari PC-Reception ke Portal-01 berjaya.",
+            "hints": [
+                "Permintaan dari PC-Reception tidak pernah melampaui PC-Reception itu sendiri — ia dijatuhkan sebelum mencapai Switch-1F.",
+                "Get Laluan Lalai PC-Reception ditetapkan ke alamat Portal-01 sendiri, bukan ke router, jadi tidak ada tujuan yang sah untuk mengirim lalu lintas di luar subnet.",
+                "Di PC-Reception, tetapkan Get Laluan Lalai ke 10.0.5.254 (Router-Edge)."
+            ],
+            "explanation": "Get Laluan Lalai harus menunjuk ke antarmuka Router di subnet klien sendiri, bukan ke host jarak jauh yang ingin Anda jangkau. PC-Reception dikonfigurasi dengan alamat Portal-01 sebagai gerbangnya, jadi paket keluar ke subnet lain tidak memiliki lompatan berikutnya yang sah dan dijatuhkan secara lokal."
+        }
+    }
+}
