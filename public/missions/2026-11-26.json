@@ -1,0 +1,1316 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-26",
+    "number": 67,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "missing_route"
+    ],
+    "concepts": [
+        "static-route"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.27.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Sapporo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Sapporo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.27.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.16.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.28.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.16.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Fukuoka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.16.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.28.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Fukuoka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.28.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.28.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Vanishing Request to the Portal",
+            "story": "Staff at the Sapporo office report that opening the company portal hosted at the Fukuoka headquarters has failed since this morning. The page never loads, and nobody can explain where the request disappears to.",
+            "objective": "Make an HTTP GET from PC-Dev to Portal-01 succeed.",
+            "hints": [
+                "The reply from Portal-01 gets dropped right at Router-Fukuoka before it can head back toward PC-Dev.",
+                "Router-Fukuoka has no routing table entry telling it how to reach PC-Dev's network, so it discards the return traffic.",
+                "On Router-Fukuoka, add a static route for network 10.0.27.0/255.255.255.0 via next hop 10.0.16.1 on port 0."
+            ],
+            "explanation": "Routers need an explicit path for every subnet they must forward to; without a static route back to the originating network, return traffic is silently dropped even if the initial request got through. Adding the missing route restores the full round trip."
+        },
+        "ja": {
+            "title": "ポータルへのリクエストが消える",
+            "story": "札幌オフィスのスタッフから、福岡本社でホストしている社内ポータルが今朝から開けないと報告がありました。ページが全く表示されず、リクエストがどこで消えているのか誰にも分かりません。",
+            "objective": "PC-Dev から Portal-01 への HTTP GET を成功させる。",
+            "hints": [
+                "Portal-01 からの応答は、PC-Dev に戻る途中の Router-Fukuoka で破棄されています。",
+                "Router-Fukuoka には PC-Dev のネットワークへの経路を示すルーティングテーブルのエントリがないため、戻りの通信を破棄してしまいます。",
+                "Router-Fukuoka で、ネットワーク 10.0.27.0/255.255.255.0 への静的ルートを、中継先(ネクストホップ) 10.0.16.1、ポート 0 で追加してください。"
+            ],
+            "explanation": "ルーターは転送先となるすべてのサブネットへの経路を明示的に持っている必要があります。発信元ネットワークへ戻る静的ルートがないと、最初のリクエストが届いていても応答は黙って破棄されてしまいます。不足しているルートを追加することで、往復の通信が正常に戻ります。"
+        },
+        "zh-CN": {
+            "title": "消失的门户请求",
+            "story": "札幌办公室的员工报告说，自今早以来，访问福冈总部托管的公司门户网站失败了。页面一直无法加载，没人能解释请求消失在了哪里。",
+            "objective": "使来自 PC-Dev 的 HTTP GET 请求到 Portal-01 成功。",
+            "hints": [
+                "来自 Portal-01 的回复在 Router-Fukuoka 处被丢弃，无法返回到 PC-Dev。",
+                "Router-Fukuoka 的路由表中没有条目告诉它如何到达 PC-Dev 的网络，因此它丢弃了返回流量。",
+                "在 Router-Fukuoka 上，为目标网络 10.0.27.0/255.255.255.0 添加一条静态路由，下一跳为 10.0.16.1，端口号为 0。"
+            ],
+            "explanation": "路由器需要为每个必须转发到的子网配置明确的路径；没有返回源网络的静态路由，即使初始请求成功，返回流量也会被静默丢弃。添加缺失的路由可以恢复完整的双向通信。"
+        },
+        "zh-TW": {
+            "title": "消失的入口網站請求",
+            "story": "札幌辦公室的員工報告說，自今早起無法訪問位於福岡總部的公司入口網站。頁面一直無法加載，沒有人能解釋請求消失到了哪裡。",
+            "objective": "使來自 PC-Dev 的 HTTP GET 請求到 Portal-01 成功。",
+            "hints": [
+                "來自 Portal-01 的回覆在 Router-Fukuoka 處被丟棄，無法返回到 PC-Dev。",
+                "Router-Fukuoka 的路由表中沒有條目告訴它如何到達 PC-Dev 的網路，因此它丟棄了返回流量。",
+                "在 Router-Fukuoka 上，為目的網路 10.0.27.0/255.255.255.0 添加一條靜態路由，下一跳為 10.0.16.1，連接埠號為 0。"
+            ],
+            "explanation": "路由器需要為每個必須轉發到的子網配置明確的路徑；沒有返回源網路的靜態路由，即使初始請求成功，返回流量也會被無聲丟棄。添加缺失的路由可以恢復完整的雙向通訊。"
+        },
+        "ko": {
+            "title": "사라진 포털 요청",
+            "story": "삿포로 사무소 직원들이 아침부터 후쿠오카 본사에서 호스팅하는 회사 포털 사이트 접속이 실패했다고 보고했습니다. 페이지가 로드되지 않으며, 요청이 어디로 사라졌는지 아무도 설명할 수 없습니다.",
+            "objective": "PC-Dev에서 Portal-01로의 HTTP GET 요청을 성공시킵니다.",
+            "hints": [
+                "Portal-01의 응답이 Router-Fukuoka에서 드롭되어 PC-Dev로 돌아가지 못합니다.",
+                "Router-Fukuoka의 라우팅 테이블에 PC-Dev 네트워크에 도달하는 방법을 알려주는 항목이 없어서 반환 트래픽을 버립니다.",
+                "Router-Fukuoka에서 목적지 네트워크 10.0.27.0/255.255.255.0에 대한 정적 경로를 다음 홉 10.0.16.1, 포트 0으로 추가합니다."
+            ],
+            "explanation": "라우터는 전달해야 하는 모든 서브넷에 대해 명시적인 경로가 필요합니다. 원본 네트워크로 돌아가는 정적 경로가 없으면 초기 요청이 성공해도 반환 트래픽이 자동으로 삭제됩니다. 누락된 경로를 추가하면 완전한 양방향 통신이 복구됩니다."
+        },
+        "es": {
+            "title": "Solicitud Desaparecida al Portal",
+            "story": "El personal de la oficina de Sapporo informa que desde esta mañana falla el acceso al portal de la empresa alojado en la sede de Fukuoka. La página nunca carga, y nadie puede explicar dónde desaparece la solicitud.",
+            "objective": "Hacer que una solicitud HTTP GET desde PC-Dev a Portal-01 sea exitosa.",
+            "hints": [
+                "La respuesta de Portal-01 se descarta en Router-Fukuoka antes de poder regresar hacia PC-Dev.",
+                "Router-Fukuoka no tiene una entrada en la tabla de rutas que le indique cómo llegar a la red de PC-Dev, por lo que descarta el tráfico de retorno.",
+                "En Router-Fukuoka, agregue una ruta estática para la red destino 10.0.27.0/255.255.255.0 mediante siguiente salto 10.0.16.1 en puerto 0."
+            ],
+            "explanation": "Los routers necesitan una ruta explícita para cada subred a la que deben reenviar tráfico; sin una ruta estática de regreso a la red originaria, el tráfico de retorno se descarta silenciosamente incluso si la solicitud inicial fue exitosa. Agregar la ruta faltante restaura el viaje de ida y vuelta completo."
+        },
+        "pt-BR": {
+            "title": "Requisição Desaparecida para o Portal",
+            "story": "Funcionários do escritório de Sapporo relatam que desde esta manhã o acesso ao portal da empresa hospedado em Fukuoka falhou. A página nunca carrega, e ninguém consegue explicar para onde a requisição desaparece.",
+            "objective": "Tornar bem-sucedido um HTTP GET de PC-Dev para Portal-01.",
+            "hints": [
+                "A resposta de Portal-01 é descartada logo em Router-Fukuoka antes de conseguir retornar para PC-Dev.",
+                "Router-Fukuoka não possui entrada na tabela de roteamento que indique como alcançar a rede de PC-Dev, então descarta o tráfego de retorno.",
+                "Em Router-Fukuoka, adicione uma rota estática para a rede destino 10.0.27.0/255.255.255.0 via próximo salto 10.0.16.1 na porta 0."
+            ],
+            "explanation": "Roteadores precisam de um caminho explícito para cada sub-rede para a qual devem encaminhar tráfego; sem uma rota estática de volta para a rede de origem, o tráfego de retorno é descartado silenciosamente mesmo que a requisição inicial tenha sucesso. Adicionar a rota ausente restaura a comunicação bidirecional completa."
+        },
+        "de": {
+            "title": "Anfrage zum Portal verschwindet",
+            "story": "Mitarbeiter des Büros Sapporo berichten, dass der Zugriff auf das Unternehmensportal, das in der Zentrale Fukuoka gehostet wird, seit heute Morgen fehlschlägt. Die Seite wird nie geladen, und niemand kann erklären, wohin die Anfrage verschwindet.",
+            "objective": "Machen Sie einen HTTP GET von PC-Dev zu Portal-01 erfolgreich.",
+            "hints": [
+                "Die Antwort von Portal-01 wird direkt bei Router-Fukuoka verworfen, bevor sie zu PC-Dev zurückkehren kann.",
+                "Router-Fukuoka hat keinen Eintrag in der Routing-Tabelle, der angibt, wie es das Netzwerk von PC-Dev erreicht, daher verwirft es den Rückverkehr.",
+                "Fügen Sie auf Router-Fukuoka eine statische Route für das Netzwerk 10.0.27.0/255.255.255.0 mit Nächster Hop 10.0.16.1 auf Portnummer 0 hinzu."
+            ],
+            "explanation": "Router benötigen einen expliziten Pfad für jedes Subnetz, das sie weiterleiten müssen; ohne eine statische Route zurück zum Ursprungsnetzwerk wird der Rückverkehr stillschweigend verworfen, selbst wenn die ursprüngliche Anfrage durchgekommen ist. Das Hinzufügen der fehlenden Route stellt die vollständige Verbindung wieder her."
+        },
+        "fr": {
+            "title": "Requête disparue vers le portail",
+            "story": "Le personnel du bureau de Sapporo signale que l'accès au portail d'entreprise hébergé au siège de Fukuoka a échoué ce matin. La page ne se charge jamais, et personne ne peut expliquer où la requête disparaît.",
+            "objective": "Réussir une requête HTTP GET de PC-Dev vers Portal-01.",
+            "hints": [
+                "La réponse de Portal-01 est abandonnée directement à Router-Fukuoka avant de pouvoir revenir vers PC-Dev.",
+                "Router-Fukuoka n'a pas d'entrée dans la Table de routage indiquant comment atteindre le réseau de PC-Dev, il abandonne donc le trafic de retour.",
+                "Sur Router-Fukuoka, ajoutez une route statique pour le Réseau de destination 10.0.27.0/255.255.255.0 avec Saut suivant 10.0.16.1 sur le Numéro de port 0."
+            ],
+            "explanation": "Les routeurs ont besoin d'un chemin explicite pour chaque sous-réseau qu'ils doivent acheminer; sans une route statique de retour vers le réseau d'origine, le trafic de retour est silencieusement abandonné même si la requête initiale a réussi. L'ajout de la route manquante restaure l'aller-retour complet."
+        },
+        "hi": {
+            "title": "पोर्टल के लिए लुप्त अनुरोध",
+            "story": "सप्पोरो कार्यालय के कर्मचारियों ने बताया कि आज सुबह से फुकुओका मुख्यालय में होस्ट किए गए कंपनी पोर्टल तक पहुंचना विफल हो गया है। पृष्ठ कभी लोड नहीं होता, और कोई भी यह नहीं समझा सकता कि अनुरोध कहां गायब हो जाता है।",
+            "objective": "PC-Dev से Portal-01 तक HTTP GET को सफल बनाएं।",
+            "hints": [
+                "Portal-01 से उत्तर Router-Fukuoka पर तुरंत हटा दिया जाता है इससे पहले कि यह PC-Dev की ओर वापस जा सके।",
+                "Router-Fukuoka के पास रूटिंग टेबल में कोई प्रविष्टि नहीं है जो PC-Dev के नेटवर्क तक पहुंचने का तरीका बताती है, इसलिए यह वापसी ट्रैफिक को हटा देता है।",
+                "Router-Fukuoka पर, नेटवर्क 10.0.27.0/255.255.255.0 के लिए अगला हॉप 10.0.16.1 पोर्ट 0 पर एक स्थिर रूट जोड़ें।"
+            ],
+            "explanation": "राउटर को हर सबनेट के लिए एक स्पष्ट पथ की आवश्यकता होती है जिसे उन्हें अग्रेषित करना चाहिए; मूल नेटवर्क तक वापसी के लिए स्थिर रूट के बिना, वापसी ट्रैफिक को चुप्पी से हटा दिया जाता है भले ही प्रारंभिक अनुरोध सफल हो गया हो। लापता रूट को जोड़ने से पूर्ण राउंड ट्रिप बहाल हो जाती है।"
+        },
+        "id": {
+            "title": "Permintaan Menghilang ke Portal",
+            "story": "Staf kantor Sapporo melaporkan bahwa akses ke portal perusahaan yang dihost di kantor pusat Fukuoka telah gagal sejak pagi hari ini. Halaman tidak pernah dimuat, dan tidak ada yang dapat menjelaskan ke mana permintaan menghilang.",
+            "objective": "Buat permintaan HTTP GET dari PC-Dev ke Portal-01 berhasil.",
+            "hints": [
+                "Balasan dari Portal-01 dijatuhkan tepat di Router-Fukuoka sebelum dapat kembali ke PC-Dev.",
+                "Router-Fukuoka tidak memiliki entri dalam Tabel Routing yang menunjukkan cara menjangkau jaringan PC-Dev, jadi itu membuang lalu lintas kembali.",
+                "Pada Router-Fukuoka, tambahkan rute statis untuk Jaringan tujuan 10.0.27.0/255.255.255.0 dengan Hop berikutnya 10.0.16.1 pada Nomor port 0."
+            ],
+            "explanation": "Router memerlukan jalur eksplisit untuk setiap subnet yang harus mereka teruskan; tanpa rute statis kembali ke jaringan asal, lalu lintas kembali diam-diam dijatuhkan bahkan jika permintaan awal berhasil. Menambahkan rute yang hilang memulihkan perjalanan pulang pergi lengkap."
+        },
+        "ru": {
+            "title": "Исчезающий запрос к порталу",
+            "story": "Сотрудники офиса Саппоро сообщают, что доступ к корпоративному порталу, размещённому в штаб-квартире Фукуоки, с этого утра не работает. Страница так и не загружается, и никто не может объяснить, куда исчезает запрос.",
+            "objective": "Выполнить HTTP GET от PC-Dev к Portal-01 успешно.",
+            "hints": [
+                "Ответ от Portal-01 отбрасывается прямо на Router-Fukuoka, прежде чем вернуться к PC-Dev.",
+                "Router-Fukuoka не имеет записи в Таблице маршрутизации, указывающей, как достичь сети PC-Dev, поэтому он отбрасывает обратный трафик.",
+                "На Router-Fukuoka добавьте статический маршрут для Целевой сети 10.0.27.0/255.255.255.0 через Следующий узел 10.0.16.1 на Номер порта 0."
+            ],
+            "explanation": "Маршрутизаторам требуется явный путь для каждой подсети, которую они должны маршрутизировать; без статического маршрута обратно в исходную сеть обратный трафик молча отбрасывается, даже если первоначальный запрос был успешным. Добавление отсутствующего маршрута восстанавливает полный цикл туда и обратно."
+        },
+        "it": {
+            "title": "La richiesta scomparsa al portale",
+            "story": "Lo staff dell'ufficio di Sapporo segnala che l'accesso al portale aziendale ospitato nella sede centrale di Fukuoka non funziona da questa mattina. La pagina non si carica mai e nessuno riesce a spiegare dove la richiesta scompaia.",
+            "objective": "Far riuscire un HTTP GET da PC-Dev a Portal-01.",
+            "hints": [
+                "La risposta da Portal-01 viene scartata proprio su Router-Fukuoka prima di poter tornare verso PC-Dev.",
+                "Router-Fukuoka non ha una voce nella Tabella di routing che gli dica come raggiungere la rete di PC-Dev, quindi scarta il traffico di ritorno.",
+                "Su Router-Fukuoka, aggiungi un percorso statico per la rete 10.0.27.0/255.255.255.0 tramite il next hop 10.0.16.1 sulla porta 0."
+            ],
+            "explanation": "I Router necessitano di un percorso esplicito per ogni subnet a cui devono inoltrare; senza un percorso statico di ritorno verso la rete di origine, il traffico di ritorno viene silenziosamente scartato anche se la richiesta iniziale fosse passata. L'aggiunta del percorso mancante ripristina il viaggio completo di andata e ritorno."
+        },
+        "tr": {
+            "title": "Portalin Kayıp İsteği",
+            "story": "Sapporo ofisindeki personel, Fukuoka merkezinde barındırılan şirket portalını açmanın bu sabahtan beri başarısız olduğunu bildiriyor. Sayfa hiçbir zaman yüklenmiyor ve kimse isteğin nereye kaybolduğunu açıklayamıyor.",
+            "objective": "PC-Dev'den Portal-01'e bir HTTP GET başarılı kılmak.",
+            "hints": [
+                "Portal-01'den gelen yanıt Router-Fukuoka'da PC-Dev'e geri dönüşünden hemen önce bırakılıyor.",
+                "Router-Fukuoka'nın PC-Dev'in ağına nasıl ulaşacağını belirten bir Yönlendirme Tablosu girişi yok, bu yüzden geri dönüş trafiğini atıyor.",
+                "Router-Fukuoka'da, 10.0.27.0/255.255.255.0 ağı için Sonraki sıçrama 10.0.16.1, port 0 üzerinden statik bir rota ekleyin."
+            ],
+            "explanation": "Yönlendiricilerin iletmeleri gereken her alt ağ için açık bir yola ihtiyacı vardır; kaynak ağa geri dönüş için statik bir rota olmadan, ilk istek geçse bile geri dönüş trafiği sessizce atılır. Eksik rotanın eklenmesi tam gidiş-dönüş yolculuğunu geri yükler."
+        },
+        "th": {
+            "title": "คำขอที่หายไปยังพอร์ทัล",
+            "story": "เจ้าหน้าที่สำนักงาน Sapporo รายงานว่าการเปิดพอร์ทัลบริษัทที่จัดโฮสต์ที่สำนักงานใหญ่ Fukuoka ล้มเหลวตั้งแต่เช้านี้ เพจไม่เคยโหลดและไม่มีใครสามารถอธิบายได้ว่าคำขอหายไปที่ไหน",
+            "objective": "ทำให้ HTTP GET จาก PC-Dev ถึง Portal-01 สำเร็จ",
+            "hints": [
+                "การตอบสนองจาก Portal-01 ถูกทิ้งไว้ที่ Router-Fukuoka ก่อนที่จะกลับไปยัง PC-Dev",
+                "Router-Fukuoka ไม่มีรายการในตารางเส้นทางที่บอกวิธีเข้าถึงเครือข่าย PC-Dev จึงทิ้งการรับส่งข้อมูลกลับ",
+                "ใน Router-Fukuoka ให้เพิ่มเส้นทางคงที่สำหรับเครือข่าย 10.0.27.0/255.255.255.0 ผ่าน ฮ็อปถัดไป 10.0.16.1 บนพอร์ต 0"
+            ],
+            "explanation": "เราเตอร์ต้องการเส้นทางที่ชัดเจนสำหรับทุกซับเน็ตที่ต้องส่งต่อ หากไม่มีเส้นทางคงที่กลับไปยังเครือข่ายต้นทาง การรับส่งข้อมูลกลับจะถูกทิ้งไปโดยเงียบ ๆ แม้ว่าคำขอเริ่มต้นจะผ่านไป การเพิ่มเส้นทางที่ขาดหายไปจะคืนการเดินทางไป-กลับทั้งหมด"
+        },
+        "vi": {
+            "title": "Yêu cầu Biến mất đến Cổng thông tin",
+            "story": "Nhân viên văn phòng Sapporo báo cáo rằng mở cổng thông tin công ty được lưu trữ tại trụ sở chính Fukuoka đã không thành công kể từ sáng nay. Trang không bao giờ tải và không ai có thể giải thích nơi yêu cầu biến mất.",
+            "objective": "Thực hiện thành công HTTP GET từ PC-Dev đến Portal-01.",
+            "hints": [
+                "Phản hồi từ Portal-01 bị xóa ngay tại Router-Fukuoka trước khi quay lại PC-Dev.",
+                "Router-Fukuoka không có mục trong Bảng định tuyến cho biết cách tiếp cận mạng PC-Dev, nên nó loại bỏ lưu lượng trở về.",
+                "Trên Router-Fukuoka, thêm tuyến tĩnh cho mạng 10.0.27.0/255.255.255.0 qua Hop tiếp theo 10.0.16.1 trên cổng 0."
+            ],
+            "explanation": "Bộ định tuyến cần đường dẫn rõ ràng cho mỗi mạng con mà chúng phải chuyển tiếp; nếu không có tuyến tĩnh quay lại mạng nguồn, lưu lượng trở về sẽ bị loại bỏ âm thầm ngay cả khi yêu cầu ban đầu đã thông qua. Thêm tuyến bị thiếu sẽ khôi phục toàn bộ chuyến đi khứ hồi."
+        },
+        "af": {
+            "title": "Verdwynende Versoek na die Portaal",
+            "story": "Personeel by die Sapporo-kantoor rapporteer dat toegang tot die maatskappyportaal wat by die Fukuoka-hoofkwartier gehuis word, sedert vanouchtend misluk. Die bladsy laai nooit en niemand kan verduidelik waar die versoek verdwyn.",
+            "objective": "Maak 'n HTTP GET van PC-Dev na Portal-01 slaag.",
+            "hints": [
+                "Die antwoord van Portal-01 word reg by Router-Fukuoka weggegooi voordat dit terug na PC-Dev kan gaan.",
+                "Router-Fukuoka het geen Roeteringstabel-inskrywing wat aan hom sê hoe om die netwerk van PC-Dev te bereik nie, dus gooi dit die terugverkeer weg.",
+                "Voeg 'n statiese roete vir netwerk 10.0.27.0/255.255.255.0 by Router-Fukuoka by via volgende hop 10.0.16.1 op poort 0."
+            ],
+            "explanation": "Roeteerders benodig 'n uitdruklike pad vir elke subnet waarheen hulle moet voorstuuur; sonder 'n statiese roete terug na die oorspronklike netwerk word terugverkeer stilswijgend weggegooi selfs al het die aanvanklike versoek slaag. Die toevoeging van die ontbrekende roete herstel die volledige heen-en-weer-tocht."
+        },
+        "am": {
+            "title": "ወደ Portal-01 የሚጠፋ ጥያቄ",
+            "story": "በሳፕሮ ቢሮ ተቀጣሪዎች በFukuoka 본부ት የታቀበቀበት ኩባንያ ፖርታል ከዛሬ ጠዋት ወዲህ ማጠፋት ተጀምሯል ሲሉ ሪፖርት ያደርጋሉ። ገጹ በጭራሽ አይጫነም እና በየት መጠፋቱን ማንም ሊገልጽ አይችልም።",
+            "objective": "PC-Dev ወደ Portal-01 የHTTP GET ጥያቄ ስኬታማ ይሆን።",
+            "hints": [
+                "Portal-01 からの応答は、Router-Fukuoka で PC-Dev 方向に返却される前に廃棄されます።",
+                "Router-Fukuoka የማዘዋወሪያ ሰንጠረዥ PC-Dev አውታረ መረብ ላይ ለመድረስ የሚናገረው ቅጥ የለበትም ስለዚህ ተመላሽ ትራፊክ ይጥላል።",
+                "Router-Fukuoka ላይ፣ ስቲቲክ 루트 አውታረ መረብ 10.0.27.0/255.255.255.0 ቀጣይ ሆፕ 10.0.16.1 ፖርት 0 ላይ ጨምር።"
+            ],
+            "explanation": "ማቀናቂወዮች ወደ ማወቅ የሚያስፈልጋቸውን ሁሉንም ሱብኔት ወደ ሚያስተላልፉ ሚናገር መንገድ ያስፈልጋቸዋል። ወደ ትክክለኛ አውታረ መረብ ስቲቲክ ኡት ሳያስገባ ተመላሽ ትራፊክ የመጀመሪያ ጥያቄ ሞልቷል ቅንጣት ጅምር ወደ ትክክለኛ አውታረ መረብ ራቅ ንዝሪት ሞልቷል።"
+        },
+        "ar": {
+            "title": "طلب مختف إلى البوابة",
+            "story": "يبلغ الموظفون في مكتب سابورو عن فشل فتح بوابة الشركة المستضافة في مقر فوكوئوكا منذ هذا الصباح. الصفحة لا تحمل أبداً، ولا أحد يستطيع تفسير أين يختفي الطلب.",
+            "objective": "جعل HTTP GET من PC-Dev إلى Portal-01 ناجحاً.",
+            "hints": [
+                "الرد من Portal-01 يتم حذفه مباشرة في Router-Fukuoka قبل أن يتمكن من العودة نحو PC-Dev.",
+                "Router-Fukuoka ليس لديه إدخال في جدول التوجيه يخبره كيفية الوصول إلى شبكة PC-Dev، لذلك يتجاهل حركة المرور العائدة.",
+                "على Router-Fukuoka، أضف مسار ثابت للشبكة 10.0.27.0/255.255.255.0 عبر القفزة التالية 10.0.16.1 على رقم المنفذ 0."
+            ],
+            "explanation": "أجهزة التوجيه تحتاج إلى مسار صريح لكل شبكة فرعية يجب عليها إعادة توجيه البيانات إليها؛ بدون مسار ثابت يعود إلى الشبكة الأصلية، يتم حذف حركة المرور العائدة بصمت حتى لو نجح الطلب الأولي. إضافة المسار المفقود تستعيد الرحلة الكاملة ذهاباً وإياباً."
+        },
+        "az": {
+            "title": "Portal-01-ə Yoğun İstək",
+            "story": "Saporo ofisinin işçiləri Fukuoka mərkəzində yerləşən şirkət portalını açmağın bu sabahdan bəri uğursuz olduğunu bildirir. Səhifə heç vaxt yüklənmir və heç kim istəyin harada yoğun olduğunu izah edə bilmir.",
+            "objective": "PC-Dev-dən Portal-01-ə HTTP GET-i uğurlu etmək.",
+            "hints": [
+                "Portal-01-dən gələn cavab Router-Fukuoka-da PC-Dev istiqamətinə qayıtmazdan əvvəl silinir.",
+                "Router-Fukuoka-da PC-Dev şəbəkəsinə necə çatacağını söyləyən marşrutlaşdırma cədvəlində giriş yoxdur, buna görə də geri qayıdan trafikini rədd edir.",
+                "Router-Fukuoka-da, 10.0.27.0/255.255.255.0 şəbəkəsi üçün statik marşrut əlavə edin, növbəti keçid 10.0.16.1, port 0."
+            ],
+            "explanation": "Marşrutlayıcılar onlara yönləndirmələri lazım olan hər bir şəbəkə üçün açıq bir yola ehtiyac duyur; mənbə şəbəkəsinə geri dönen statik marşrut olmadan, geri qayıdan trafik ilkin istək uğurlu olsa belə, səssiz şəkildə silinir. Itkin marşrutun əlavə edilməsi tam geri-qayıdan səfəri bərpa edir."
+        },
+        "be": {
+            "title": "Запыт, што зніх, да Portal-01",
+            "story": "Супрацоўнікі офіса Сапаро паведамляюць, што адкрыццё карпаратыўнага портала, размешчанага ў штаб-квартыры Фукуока, не прайшло з самага раніцы. Старонка не загружаецца, і ніхто не можа объяснить, куды падзяўся запыт.",
+            "objective": "Зрабіць HTTP GET ад PC-Dev да Portal-01 паспяхова.",
+            "hints": [
+                "Адказ ад Portal-01 адхіляюцца прямо ў Router-Fukuoka, перш чым яны могуць вярнуцца да PC-Dev.",
+                "Router-Fukuoka не мае запісу ў табліцы маршрутызацыі, які бы кажа, як дасягнуць сетка адрасата PC-Dev, таму яна адкідае зваротны трафік.",
+                "На Router-Fukuoka дадайце статычны маршрут для сеткі 10.0.27.0/255.255.255.0 з наступным пераходам 10.0.16.1 на порт 0."
+            ],
+            "explanation": "Маршрутызатарам патрэбны явны шлях для кожнай падсеткі, у якую яны павінны пераслаць; без статычнага маршруту назад да вышыннага сетка, зваротны трафік бясшумна адхіляецца, нават калі пачатковы запыт быў паспяхови. Дабаўленне адсутнічаючага маршруту вознаўляе поўны цыкл туды і назад."
+        },
+        "bg": {
+            "title": "Изчезнал запрос към Portal-01",
+            "story": "Служители на офиса в Сапоро докладват, че отварянето на корпоративния портал, хостван в главното управление на Фукуока, е неудачно от тази сутрин. Страницата никога не се зарежда и никой не може да обясни къде изчезва запросът.",
+            "objective": "Направете HTTP GET от PC-Dev към Portal-01 успешно.",
+            "hints": [
+                "Отговорът от Portal-01 се пропуска правопрямо в Router-Fukuoka, преди да се върне към PC-Dev.",
+                "Router-Fukuoka няма запис в таблица за маршрутизация, който да каже как да достигне мрежа на получателя на PC-Dev, затова отхвърля върнатия трафик.",
+                "На Router-Fukuoka добавете статичен маршрут за мрежа 10.0.27.0/255.255.255.0 през следващ преход 10.0.16.1 на номер на порт 0."
+            ],
+            "explanation": "Маршрутизаторите имат нужда от явна пътека за всяка подмрежа, към която трябва да препращат; без статичен маршрут обратно към произходната мрежа, връщаният трафик се пропуска безшумно, дори ако началният запрос е успешен. Добавянето на липсващия маршрут възстановява пълния двупосочен преход."
+        },
+        "ca": {
+            "title": "Petició que desapareix al Portal",
+            "story": "El personal de l'oficina de Sapporo informa que l'obertura del portal de l'empresa allotjat a la seu de Fukuoka ha fallat des d'aquesta matinada. La pàgina mai es carrega i ningú pot explicar on desapareix la petició.",
+            "objective": "Fer que un HTTP GET des de PC-Dev a Portal-01 tingui èxit.",
+            "hints": [
+                "La resposta de Portal-01 es descarta a Router-Fukuoka just abans de poder retornar cap a PC-Dev.",
+                "Router-Fukuoka no té cap entrada a la taula d'encaminament que li indiqui com arribar a la xarxa de PC-Dev, així que descarta el tràfic de retorn.",
+                "A Router-Fukuoka, afegiu una ruta estàtica per a la xarxa 10.0.27.0/255.255.255.0 via salt següent 10.0.16.1 al port 0."
+            ],
+            "explanation": "Els encaminadors necessiten una ruta explícita per a cada subxarxa que han de retransmetre; sense una ruta estàtica de retorn a la xarxa d'origen, el tràfic de retorn es descarta silenciosament fins i tot si la petició inicial va tenir èxit. Afegir la ruta que falta restaura el viatge d'anada i tornada complet."
+        },
+        "cs": {
+            "title": "Zmizející požadavek na portál",
+            "story": "Zaměstnanci sapporiské kanceláře hlásí, že přístup k portálu společnosti hostovanému v sapporiské centrále Fukuoka od dnešního rána selhal. Stránka se nikdy nenačte a nikdo nemůže vysvětlit, kam požadavek zmizí.",
+            "objective": "Zajistit úspěch HTTP GET z PC-Dev na Portal-01.",
+            "hints": [
+                "Odpověď z Portal-01 se zahodí přímo v Router-Fukuoka dříve, než se vrátí zpět k PC-Dev.",
+                "Router-Fukuoka nemá žádnou položku směrovací tabulky, která by mu řekla, jak dosáhnout sítě PC-Dev, takže zahazuje návratový provoz.",
+                "V Router-Fukuoka přidejte statickou trasu pro síť 10.0.27.0/255.255.255.0 přes další skok 10.0.16.1 na portu 0."
+            ],
+            "explanation": "Směrovače potřebují explicitní cestu pro každou podsíť, kterou musí předávat; bez statické trasy zpět do původní sítě se návratový provoz tiše zahazuje, i když byl počáteční požadavek úspěšný. Přidáním chybějící trasy se obnoví úplné propojení."
+        },
+        "da": {
+            "title": "Forsvindende anmodning til portalen",
+            "story": "Personale på Sapporo-kontoret rapporterer, at åbning af virksomhedsportalen på Fukuoka-hovedkvarteret har fejlet siden i morges. Siden indlæses aldrig, og ingen kan forklare, hvor anmodningen forsvinder.",
+            "objective": "Gør et HTTP GET fra PC-Dev til Portal-01 vellykket.",
+            "hints": [
+                "Svaret fra Portal-01 bliver droppet helt ved Router-Fukuoka, inden det kan vende tilbage mod PC-Dev.",
+                "Router-Fukuoka har ingen rutingtabel-post, der fortæller det, hvordan det kan nå PC-Dev's netværk, så det kasserer returtrafikken.",
+                "Tilføj en statisk route til netværk 10.0.27.0/255.255.255.0 på Router-Fukuoka via næste hop 10.0.16.1 på port 0."
+            ],
+            "explanation": "Routere har brug for en eksplicit sti for hver subnet, de skal videresende til; uden en statisk rute tilbage til det oprindelige netværk bliver returtrafikken blot droppet, selv hvis den oprindelige anmodning lykkedes. Tilføjelse af den manglende rute genskaber den fuldstændige rundtur."
+        },
+        "el": {
+            "title": "Εξαφανιζόμενη αίτηση στην πύλη",
+            "story": "Το προσωπικό του γραφείου Sapporo αναφέρει ότι το άνοιγμα της εταιρικής πύλης που φιλοξενείται στην έδρα Fukuoka έχει αποτύχει από τα ξημερώματα. Η σελίδα δεν φορτώνεται ποτέ και κανείς δεν μπορεί να εξηγήσει που εξαφανίζεται η αίτηση.",
+            "objective": "Να καταστεί επιτυχές ένα HTTP GET από PC-Dev στο Portal-01.",
+            "hints": [
+                "Η απάντηση από Portal-01 απορρίπτεται ακριβώς στο Router-Fukuoka πριν μπορέσει να επιστρέψει προς PC-Dev.",
+                "Το Router-Fukuoka δεν έχει καμία καταχώρηση πίνακα δρομολόγησης που να του λέει πώς να φτάσει το δίκτυο PC-Dev, επομένως απορρίπτει την κίνηση επιστροφής.",
+                "Στο Router-Fukuoka, προσθέστε μια στατική διαδρομή για το δίκτυο 10.0.27.0/255.255.255.0 μέσω επόμενου βήματος 10.0.16.1 στη θύρα 0."
+            ],
+            "explanation": "Τα δρομολογητές χρειάζονται μια σαφή διαδρομή για κάθε υποδίκτυο που πρέπει να προωθούν. χωρίς μια στατική διαδρομή επιστροφής στο αρχικό δίκτυο, η κίνηση επιστροφής απορρίπτεται σιωπηλά ακόμη και αν η αρχική αίτηση ήταν επιτυχής. Η προσθήκη της ελλείπουσας διαδρομής επαναφέρει το πλήρες κύκλωμα."
+        },
+        "et": {
+            "title": "Portaali kadunud päring",
+            "story": "Saporo kontoori personal teatab, et ettevõtte portaalile, mis asub Fukuoka peakontoris, pääs on tänasest hommikust alates ebaõnnestunud. Leht ei laadi kunagi ja keegi ei oska seletada, kuhu päring kaob.",
+            "objective": "Tehke HTTP GET päring PC-Dev-ilt Portal-01-le edukalt lõpule.",
+            "hints": [
+                "Portal-01-lt tulev vastus pannakse kinni kohe Router-Fukuoka-s, enne kui see PC-Dev poole tagasi suunduda saab.",
+                "Router-Fukuoka-l puudub marsruutimistabel sissekanne, mis ütleks, kuidas PC-Dev võrguni jõuda, nii et see tagasiliikluse ära visatakse.",
+                "Router-Fukuoka-sse lisage staatiline marsruut sihtvõrgu 10.0.27.0/255.255.255.0 jaoks järgmise hüppe 10.0.16.1 kaudu pordil 0."
+            ],
+            "explanation": "Ruuteritel peavad olema eksplitsiitsed teepainad iga alamvõrgu jaoks, millele nad liiklust edastama peavad; ilma staatiline marsruudita tagasi päritolu võrku, visatakse tagasiliiklus summutavalt ära isegi kui algne päring läbis. Puutuva marsruudi lisamine taastab täieliku ümbermineku."
+        },
+        "eu": {
+            "title": "Eskaria Desagertua Portala",
+            "story": "Sapporo bulegoan lanean diharduten pertsonak txostena dute. Enpresakoak portala, Fukuokako sutan errenterakoan dagoena, irekitzeak huts egin du gaur goizean. Orria ez da kargatzen inoiz eta inork ezin azaltzen deite eskaria desagertu den.",
+            "objective": "Egin HTTP GET bat PC-Dev-etik Portal-01-era ondo.",
+            "hints": [
+                "Portal-01-tik datorren erantzuna Router-Fukuoka-ko pixka bat jartzen da, PC-Dev-era itzuli aurretik.",
+                "Router-Fukuoka-k ez du bideratze-taulako sarrerarik PC-Dev-en sarea nola iritsi azaltzeko, beraz itzuleranzko trafikoa baztertu egiten du.",
+                "Router-Fukuoka-n gehitu 10.0.27.0/255.255.255.0 helmuga-sarearako bide estatiko bat 10.0.16.1 hurrengo jauziaren bidez 0 atabaka."
+            ],
+            "explanation": "Bideratzaileek bidean jarri behar dute beste behin sarean bidaltzeko behar duten azpisa batzuetarako; bide estatiko gabe itzuli den erreza saren bidera, itzuleranzko trafikoa isiltasu batean baztertu egiten da, hasierako eskaria iritsi baldin bada ere. Falta den bidea gehitzeak zikloa osoa berreskuratzen du."
+        },
+        "fa": {
+            "title": "درخواست ناپدید شونده به پورتال",
+            "story": "کارکنان دفتر ساپورو گزارش می‌دهند که باز کردن پورتال شرکت که در دفتر مرکزی فوکوئوکا میزبانی می‌شود از صبح امروز ناموفق بوده است. صفحه هرگز بارگیری نمی‌شود و کسی نمی‌تواند توضیح دهد درخواست کجا ناپدید می‌شود.",
+            "objective": "درخواست HTTP GET از PC-Dev به Portal-01 را موفق کنید.",
+            "hints": [
+                "پاسخ از Portal-01 درست در Router-Fukuoka متوقف می‌شود قبل از اینکه بتواند به سمت PC-Dev بازگردد.",
+                "Router-Fukuoka جدول مسیریابی ندارد که بگوید چطور به شبکه PC-Dev برسد، بنابراین ترافیک برگشتی را حذف می‌کند.",
+                "به Router-Fukuoka مسیر ثابتی برای شبکه 10.0.27.0/255.255.255.0 از طریق هاپ بعدی 10.0.16.1 روی پورت 0 اضافه کنید."
+            ],
+            "explanation": "روترها به یک مسیر صریح برای هر زیرشبکه‌ای که باید به آن ترافیک فرستاده شود نیاز دارند؛ بدون مسیر ثابت برگشت به شبکه مبدا، ترافیک برگشتی حتی اگر درخواست اولیه موفق شده باشد بی‌صدا حذف می‌شود. افزودن مسیر گمشده رحلة رفت و برگشت کامل را بازیابی می‌کند."
+        },
+        "fi": {
+            "title": "Kadonnut pyyntö Portaliin",
+            "story": "Sapporon toimiston henkilökunta raportoi, että yritysportaalin avaaminen, joka isännöidään Fukuokan päätoimistossa, on epäonnistunut tänä aamuna. Sivu ei koskaan lataa ja kukaan ei osaa selittää, minne pyyntö katoaa.",
+            "objective": "Tee HTTP GET-pyyntö PC-Dev-lta Portal-01-lle onnistuneesti.",
+            "hints": [
+                "Portal-01-lta saapuva vastaus pysäytetään suoraan Router-Fukuoka-ssa ennen kuin se voi palata PC-Dev:n suuntaan.",
+                "Router-Fukuoka-lla ei ole reititystaulu-merkintää, joka kertoisi kuinka päästä PC-Dev:n verkkoon, joten se hylkää paluuliikenteen.",
+                "Lisää Router-Fukuoka-lle staattinen reitti verkolle 10.0.27.0/255.255.255.0 seuraavan hypyn 10.0.16.1 kautta portissa 0."
+            ],
+            "explanation": "Reitittimet tarvitsevat selkeän polun jokaiselle aliverkolle, jolle ne joutuvat liikenteen välittämään; ilman staattista reittiä takaisin alkuperäiseen verkkoon, paluuliikenne poistetaan hiljaisesti vaikka alkuperäinen pyyntö läpäisisikin. Puuttuvan reitin lisääminen palauttaa täydellisen kaksisuuntaisen yhteyden."
+        },
+        "fil": {
+            "title": "Nawala na Kahilingan sa Portal",
+            "story": "Ang mga empleyado sa Sapporo office ay nag-ulat na ang pagbubukas ng company portal na naka-host sa Fukuoka headquarters ay nabigong-naging mula ngayong umaga. Ang pahina ay hindi kailanman nag-load, at walang makakasagot kung saan napunta ang kahilingan.",
+            "objective": "Gawing matagumpay ang HTTP GET mula PC-Dev hanggang Portal-01.",
+            "hints": [
+                "Ang tugon mula Portal-01 ay hinihinto kaagad sa Router-Fukuoka bago ito makabalik sa direksyon ng PC-Dev.",
+                "Ang Router-Fukuoka ay walang routing table entry na nagsasabi kung paano maabot ang network ng PC-Dev, kaya ito ay tinatanggal ang return traffic.",
+                "Sa Router-Fukuoka, magdagdag ng static route para sa network 10.0.27.0/255.255.255.0 sa pamamagitan ng next hop 10.0.16.1 sa port 0."
+            ],
+            "explanation": "Ang mga Router ay kailangan ng explicit na path para sa bawat subnet na dapat nilang ipadala ang traffic; nang walang static route bumalik sa originating network, ang return traffic ay tahimik na tinatanggal kahit na ang unang kahilingan ay lumampas. Ang pagdagdag ng nawawalang route ay nagbabalik ng buong round trip."
+        },
+        "gl": {
+            "title": "Solicitude Desaparecida ao Portal",
+            "story": "O persoal da oficina de Sapporo informa que abrir o portal da empresa aloxado na sede de Fukuoka fallou desde esta mañá. A páxina nunca se carga e ninguén pode explicar onde desaparece a solicitude.",
+            "objective": "Facer que un HTTP GET de PC-Dev a Portal-01 teña éxito.",
+            "hints": [
+                "A resposta de Portal-01 é descartada en Router-Fukuoka antes de poder volver cara a PC-Dev.",
+                "Router-Fukuoka non ten entrada de Táboa de enrutamento que lle diga como chegar á rede de PC-Dev, así que descarta o tráfico de retorno.",
+                "En Router-Fukuoka, engade unha ruta estática para a rede 10.0.27.0/255.255.255.0 vía seguinte salto 10.0.16.1 no porto 0."
+            ],
+            "explanation": "Os routers precisan dunha ruta explícita para cada subrede á que deban reenviar; sen unha ruta estática de volta á rede orixe, o tráfico de retorno é descartado silenciosamente aínda que a solicitude inicial chegase. Engadir a ruta que falta restaura a volta completa."
+        },
+        "gu": {
+            "title": "પોર્ટલ માટે અદૃશ્ય વિનંતી",
+            "story": "સાપોરો કાર્યાલયના કર્મચારીઓ અહેવાલ આપે છે કે ફુકુઓકા હેડક્વાર્ટર્સ પર હોસ્ટ કરાયેલી કંપનીની પોર્ટલ ખોલવામાં આજ સવારથી નિષ્ફળતા આવી છે. પૃષ્ઠ ક્યારેય લોડ થતું નથી અને કોઈ પણ વ્યક્તિ વિનંતી ક્યાં અદૃશ્ય થાય છે તે સમજાવી શકતા નથી.",
+            "objective": "PC-Dev થી Portal-01 સુધી HTTP GET સફળ કરો.",
+            "hints": [
+                "Portal-01 નું જવાબ Router-Fukuoka પર તરત જ નાખી દેવામાં આવે છે તે પહેલાં તે PC-Dev તરફ પાછું જઈ શકે.",
+                "Router-Fukuoka પાસે PC-Dev નેટવર્ક સુધી પહોંચવાનું કહે તેવી રાઉટિંગ ટેબલ એન્ટ્રી નથી, તેથી તે રિટર્ન ટ્રાફિક નાખી દે છે.",
+                "Router-Fukuoka પર, નેક્સ્ટ હોપ 10.0.16.1 પર પોર્ટ 0 પર નેટવર્ક 10.0.27.0/255.255.255.0 માટે સ્ટેટિક રૂટ ઉમેરો."
+            ],
+            "explanation": "રાઉટર્સ દરેક સબનેટ કે જેના માટે તેમણે આગળ કરવું જોઈએ તે માટે સ્પષ્ટ પાથની જરૂર છે; મૂળ નેટવર્ક તરફ સ્ટેટિક રૂટ વિના, મોકલેલ ટ્રાફિક ચુપચાપ નાખી દેવામાં આવે છે ભલે પ્રારંભિક વિનંતી સફળ થઈ હોય. ખોવાયેલ રૂટ ઉમેરવાથી સંપૂર્ણ રાઉન્ડ ટ્રિપ પુનઃસ્થાપિત થાય છે."
+        },
+        "he": {
+            "title": "בקשה שנעלמת לפורטל",
+            "story": "הצוות בסניף סאפורו מדווח כי פתיחת פורטל החברה המתארח בתאגיד הראשי בפוקואוקה נכשלה מהבוקר. הדף לעולם לא נטען, ואף אחד לא יכול להסביר לאן הבקשה נעלמת.",
+            "objective": "הפוך HTTP GET מ-PC-Dev ל-Portal-01 כדי שיצליח.",
+            "hints": [
+                "התגובה מ-Portal-01 מושמטת ממש ב-Router-Fukuoka לפני שהיא יכולה לחזור אל PC-Dev.",
+                "Router-Fukuoka אין לו ערך בטבלת ניתוב שאומר לו כיצד להגיע לרשת של PC-Dev, ולכן הוא משמיט את תעבורת ההחזרה.",
+                "ב-Router-Fukuoka, הוסף маршрут סטטי לרשת 10.0.27.0/255.255.255.0 דרך הקפיצה הבאה 10.0.16.1 בפורט 0."
+            ],
+            "explanation": "ניתובים צריכים נתיב מפורש עבור כל תת-רשת שהם חייבים להעביר אליה; ללא מסלול סטטי חזרה לרשת המקורית, תעבורת החזרה מושמטת בשקט גם אם הבקשה הראשונית עברה. הוספת המסלול החסר משחזרת את הנסיעה הלוך וחזור המלאה."
+        },
+        "hr": {
+            "title": "Izgubljena Zahtjeva za Portal",
+            "story": "Osoblje Saporo ureda izvještava da je otvaranje korporativnog portala smještenog u Fukuoka sjedištu neuspješno od jutra. Stranica se nikad ne učitava, a nitko ne može objasniti gdje zahtjeva nestaje.",
+            "objective": "Učini da HTTP GET sa PC-Dev prema Portal-01 uspije.",
+            "hints": [
+                "Odgovor od Portal-01 je odbijen na Router-Fukuoka prije nego što se mogao vratiti prema PC-Dev.",
+                "Router-Fukuoka nema stavke u Tablici usmjeravanja koja mu pokazuje kako doći do mreže PC-Dev, pa odbacuje povratni promet.",
+                "Na Router-Fukuoka, dodaj statičku rutu za mrežu 10.0.27.0/255.255.255.0 putem Sljedećeg skoka 10.0.16.1 na portu 0."
+            ],
+            "explanation": "Rutatori trebaju eksplicitan put za svaku podsrezu koju trebaju proslijediti; bez statičke rute nazad na izvornu mrežu, povratni promet se tiho odbacuje čak i ako je početna zahtjeva prošla. Dodavanjem nedostajuće rute vraća se potpuna povratna putanja."
+        },
+        "hu": {
+            "title": "Eltűnt Kérés a Portálra",
+            "story": "A Szapporo iroda személyzete azt jelenti, hogy a Fukuoka-i szálláshelyen hosztolt vállalati portál megnyitása ma reggel meghiúsult. Az oldal soha nem töltődik be, és senki sem tudja megmagyarázni, hova tűnik a kérés.",
+            "objective": "Sikeresen hajts végre HTTP GET-et a PC-Dev-ről a Portal-01-re.",
+            "hints": [
+                "A Portal-01-ből kapott válasz közvetlenül a Router-Fukuoka-nál eldobódik, mielőtt visszaindulna a PC-Dev felé.",
+                "A Router-Fukuoka Routing táblájában nincs bejegyzés, amely azt mondaná, hogyan lehet elérni a PC-Dev hálózatát, ezért eldobja a visszamenő forgalmat.",
+                "A Router-Fukuoka-n adj hozzá egy statikus útvonalat a 10.0.27.0/255.255.255.0 hálózathoz a 10.0.16.1 Következő ugrás segítségével a 0-s porton."
+            ],
+            "explanation": "Az útválasztók minden olyan alhálózathoz szükséges explicit útvonalat igényelnek, amelyhez fel kell küldeniük az adatokat; statikus útvonal nélkül a kiindulási hálózathoz, a visszamenő forgalom csendesen eldobódik, még akkor is, ha a kezdeti kérés átment. A hiányzó útvonal hozzáadása helyreállítja a teljes oda-vissza utat."
+        },
+        "hy": {
+            "title": "Հաղորդման անհետացում դեպի Portal-01",
+            "story": "Սապորո գրասենյակի անձնակազմը հաղորդում է, որ Ֆուկուոկայի հ본部-ում տեղակայված ընկերային պորտալ բացելը ձախողվել է այս առավոտից: Էջը երբեք չի բեռնվում, և ոչ ոք չի կարող բացատրել, թե որտեղ է հաղորդումը անհետանում:",
+            "objective": "Հաջողեցնել HTTP GET հարցումը PC-Dev-ից Portal-01-ին:",
+            "hints": [
+                "Portal-01-ից պատասխանը դեն է նետվում Router-Fukuoka-ի վրա, մինչև այն ետ ուղեղ կարողանա PC-Dev-ի վրա:",
+                "Router-Fukuoka-ի մոտ չկա Երթուղավորման աղյուսակի գրառում, որը ասում է, թե ինչպես հասնել PC-Dev-ի ցանցին, ուստի այն հետ տրաֆիկ դեն է նետում:",
+                "Router-Fukuoka-ի վրա ավելացրեք ստատիկ ճանապարհ 10.0.27.0/255.255.255.0 ցանցի համար հաջորդ հանգույց 10.0.16.1 միջոցով 0 պորտի վրա:"
+            ],
+            "explanation": "Երթուղավորիչներին պետք է հստակ ուղի ամեն սուբնեթի համար, որը նրանք պետք է հաղորդեն. առանց ստատիկ ճանապարհի սկզբնամիջյոց ցանցին ետ, վերադարձ տրաֆիկ ընդամենը դեն է նետվում, նույնիսկ եթե նախնական հարցումը անցել է: Բացակայող ճանապարհը ավելացնելը վերականգնում է ամբողջ շրջանաձև ճանապարհ:"
+        },
+        "is": {
+            "title": "Horfið HTTP-beiðni til Portal-01",
+            "story": "Starfsmenn við skrifstofu Sapporo tilkynna að opnun fyrirtækjaportalsins sem hýst er á höfuðstöðvum Fukuoka hefur mistekist síðan í morgun. Síðan hlaðist aldrei og engir geta skýrt hvert beiðnin hverfur.",
+            "objective": "Gera HTTP GET frá PC-Dev til Portal-01 að gangi.",
+            "hints": [
+                "Svarið frá Portal-01 er kastað beint á Router-Fukuoka áður en það getur farið aftur til PC-Dev.",
+                "Router-Fukuoka hefur enga Beinitöflu sem segir honum hvernig á að ná til netkerfis PC-Dev, svo það kastar umferð til baka.",
+                "Á Router-Fukuoka, bættu við kyrrstöðu leið fyrir net 10.0.27.0/255.255.255.0 með næstu hopp 10.0.16.1 á Portnúmer 0."
+            ],
+            "explanation": "Beinirnir þurfa skýra leið fyrir hvert undirnet sem þeir verða að beina til; án kyrrstöðu leiðar til baka til uppruna netkerfis er umferð til baka þögul drepin jafnvel þótt upphafleg beiðni kæmi fram. Að bæta við gleymdri leið endurvekur allan ferð fram og til baka."
+        },
+        "ka": {
+            "title": "მოთხოვნის გაქრობა Portal-01-ში",
+            "story": "საპოროს ოფისის თანამშრომლებმა აცნობეს, რომ ფუკუოკას ცენტრალურ ოფისში განთავსებული კომპანიის პორტალის გახსნა დღეს დილიდან ვერ ხერხდება. გვერდი არასოდეს იტვირთება და არავინ აბუნებს სად ქრება მოთხოვნა.",
+            "objective": "HTTP GET-მოთხოვნა PC-Dev-დან Portal-01-ზე წარმატებული გახადა.",
+            "hints": [
+                "Portal-01-ის პასუხი Router-Fukuoka-ზე დაკარგულია, სანამ ის PC-Dev-ზე დაბრუნდებოდა.",
+                "Router-Fukuoka-ს მარშრუტიზაციის ცხრილში აკლია ჩანაწერი, რომელიც აჩვენებს მის PC-Dev-ის დანიშნულების ქსელზე მიყვანის გზას, ამიტომ უკან მიმავალი ტრაფიკი უგულოს ტოვებს.",
+                "Router-Fukuoka-ზე დაამატე სტატიკური მარშრუტი დანიშნულების ქსელი 10.0.27.0/255.255.255.0 შემდეგი ჰოპი 10.0.16.1-ის მাধ্যმით პორტის ნომერი 0-ზე."
+            ],
+            "explanation": "მარშრუტიზატორებს სჭირდებათ ნათელი გზა ყველა დასუბნეტო, რომელიც უნდა გაიგზავნოს; სტატიკური მარშრუტის გარეშე საწყისი დანიშნულების ქსელზე, უკან მიმავალი ტრაფიკი ჩუმად კარგდება, თუნდაც საწყისი მოთხოვნა წარმატებული იყო. გაკლებული მარშრუტის დამატება აღადგენს სრულ გზას წინ და უკან."
+        },
+        "kk": {
+            "title": "Portal-01-ға ешіп кеткен сұраныс",
+            "story": "Саппоро офисінің қызметкерлері Фукуока штабында орналасқан компания порталын ашу бүгін таңнан бастап сәтсіз болғанын хабарлау. Бет ешқашан жүктелмейді және ешкім сұраныстың қайда ешіп кеткенін түсіндіре алмайды.",
+            "objective": "PC-Dev-тен Portal-01-ге HTTP GET жолдау сәтті болуы.",
+            "hints": [
+                "Portal-01-дің жауабы Router-Fukuoka-да ойылып тасталады, бұл PC-Dev-қа қайта қайтай берместіген.",
+                "Router-Fukuoka-да маршруттау кестесіндегі PC-Dev желісіне қалай жетуге болатынын айтатын жазба жоқ, сондықтан ол артқа кетіп бара жатқан трафикті ойып тастайды.",
+                "Router-Fukuoka-да 10.0.27.0/255.255.255.0 желісі үшін статикалық маршрут қосыңыз келесі хоп 10.0.16.1 арқылы 0 портта."
+            ],
+            "explanation": "Маршруттау құрылғыларына барлық түйіндеген ретінде жіберуі тиіс әрбір ішкі желі үшін ескерік беру қажет; шығу желісіне қайтаратын статикалық маршруты болмасын өмір сүргенінде қайта келе жатқан трафик тыршы тұра жоғалады, тіпті бастапқы сұраныст табыс болғанмен. Жоқ маршрутты қосу толық іздеу маршрутын қайтарады."
+        },
+        "km": {
+            "title": "ស្នើសុំដែលបាត់ទៅ Portal-01",
+            "story": "និយោជិតឯកឧត្តម Sapporo ឯកទេស រាយការណ៍ថា ការបើក ស្វាគមន៍ក្រុមហ៊ុនដែលផ្ដល់ដោយលោក Fukuoka មិនបានជោគជ័យ ពីព្រឹក។ ទំព័រមិនដែលផ្ទុកទេ ហើយគ្មាននរណាអាចពន្យល់ថាសូត្របាទយ៉ាងលេច។",
+            "objective": "ធានាថា HTTP GET ពី PC-Dev ដល់ Portal-01 ជោគជ័យ។",
+            "hints": [
+                "ការឆ្លើយឆ្លង ពី Portal-01 ត្រូវបាន ទម្លាក់នៅលើ Router-Fukuoka មុនពេលដែលវាអាចវិលត្រឡប់ទៅ PC-Dev។",
+                "Router-Fukuoka គ្មាន តារាងនាំផ្លូវ ដែលប្រាប់ថាវិធីដឹក ទៅ បណ្ដាញ PC-Dev ដូច្នេះវាបង្ហូរ ការចរាចរណ៍ត្រឡប់ទៅ។",
+                "នៅលើ Router-Fukuoka បន្ថែម ផ្លូវស្ថិរភាព សម្រាប់ បណ្ដាញ 10.0.27.0/255.255.255.0 តាមរយៈ ឡូប 10.0.16.1 លេខច្រក 0។"
+            ],
+            "explanation": "Router ត្រូវការផ្លូវច្បាស់លាស់ សម្រាប់ ដ្រាប់ ដែលពួកវាត្រូវ ដឹក; មិនគឺ ផ្លូវស្ថិរភាព ត្រឡប់ ទៅ បណ្ដាញដើម ឱ្យបាន រាងព្រាង ត្រូវបាន លុប ឥតស្ងាប់ ដែលជា សូត្របាទដើម។ ដែលបាត់ ផ្លូវ ដែលស្ដារ ពេញលេញ វេង។"
+        },
+        "kn": {
+            "title": "ಪೋರ್ಟಲ್‌ಗೆ ಮಾಸ್ತಿ ವಿನಂತಿ",
+            "story": "ಸಪ್ಪೊರೊ ಕಚೇರಿಯ ಸಿಬ್ಬಂದಿ ಫುಕುಓಕಾ ಪ್ರಧಾನ ಕಛೇರಿಯಲ್ಲಿ ಹೋಸ್ಟ್ ಮಾಡಿದ ಕಂಪನಿ ಪೋರ್ಟಲ್ ಅನ್ನು ತೆರೆಯುವುದು ಈ ಬೆಳಿಗ್ಗೆಯಿಂದ ವಿಫಲವಾಗಿದೆ ಎಂದು ವರದಿ ಮಾಡುತ್ತಾರೆ. ಪುಟವು ಎಂದಿಗೂ ಲೋಡ್ ಆಗುವುದಿಲ್ಲ ಮತ್ತು ವಿನಂತಿ ಎಲ್ಲಿ ಕಣ್ಮರೆಯಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ಯಾರೂ ವಿವರಿಸಲಾಗುವುದಿಲ್ಲ.",
+            "objective": "PC-Dev ರಿಂದ Portal-01 ಗೆ HTTP GET ನೀಡುವುದನ್ನು ಸಫಲಗೊಳಿಸಿ.",
+            "hints": [
+                "Portal-01 ರಿಂದ ಪ್ರತ್ಯುತ್ತರವನ್ನು Router-Fukuoka ಯಲ್ಲೇ ಕಳೆದುಹೋಗುತ್ತದೆ ಮತ್ತು PC-Dev ನತ್ತ ಹಿಂತಿರುಗುವಾಗ ನಿರಸ್ತ ಮಾಡಲಾಗುತ್ತದೆ.",
+                "Router-Fukuoka ನ ರೂಟಿಂಗ್ ಟೇಬಲ್‌ನಲ್ಲಿ PC-Dev ನ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಹೋಗಲು ಹೇಗೆ ಮಾಡಬೇಕೆಂದು ಹೇಳುವ ನಮೂದು ಇಲ್ಲ, ಆದ್ದರಿಂದ ಹಿಂತಿರುಗಿ ಯುವ ಟ್ರಾಫಿಕ್ ತೊರೆಯುತ್ತದೆ.",
+                "Router-Fukuoka ಯಲ್ಲಿ, ಗಮ್ಯ ನೆಟ್‌ವರ್ಕ್ 10.0.27.0/255.255.255.0 ಗೆ ನೆಕ್ಸ್ಟ್ ಹಾಪ್ 10.0.16.1 ನೆ ಪೋರ್ಟ್ 0 ನಲ್ಲಿ ಸ್ಥಾಯಿ ಮಾರ್ಗ ಸೇರಿಸಿ."
+            ],
+            "explanation": "ರೌಟರ್‌ಗಳು ಮುಂದಕ್ಕೆ ಕಳುಹಿಸಬೇಕಾದ ಪ್ರತಿಯೊಂದು ಸಬ್‌ನೆಟ್‌ಗೆ ಸ್ಪಷ್ಟವಾದ ಮಾರ್ಗದ ಅಗತ್ಯವಿದೆ; ಹಿಂತಿರುಗಿ ಯುವ ಟ್ರಾಫಿಕ್‌ಗೆ ಸಿದ್ಧವಾದ ಮಾರ್ಗ ಇಲ್ಲದೆ, ಆರಂಭಿಕ ವಿನಂತಿ ಸಲಿಂಗಿತವಾಗಿದ್ದರೂ ಹಿಂತಿರುಗಿ ಯುವ ಟ್ರಾಫಿಕ್ ಮೌನವಾಗಿ ನಿರಸ್ತ ಮಾಡಲಾಗುತ್ತದೆ. ನೆರವೆರಗೆ ನೀಡಿದ ಮಾರ್ಗ ಸೇರಿಸುವುದರಿಂದ ಸಂಪೂರ್ಣ ರೌಂಡ್ ಟ್ರಿಪ್ ಪುನಃಸ್ಥಾಪಿತವಾಗುತ್ತದೆ."
+        },
+        "ky": {
+            "title": "Портал үчүн жоголгон сориялоо",
+            "story": "Саппоро офисинин штабы Фукуока штаб-квартирасында жайгашкан компания порталын ачуу бул таң жараңдан ишке ашпай калгандыгын билдиришет. Барак эч качан жүктөлбөйт жана сориялоо кайда жоголуп кетерин эч ким түшүндүрө алган жок.",
+            "objective": "PC-Dev ден Portal-01 ге HTTP GET жасоо ийгиликтүү болсун.",
+            "hints": [
+                "Portal-01 дөн жооп Router-Fukuoka ында туура эле кулап калат жана PC-Dev ке буцай барууга жетпейт.",
+                "Router-Fukuoka нын маршруттоо таблицасында PC-Dev тармагына кантип жетеби деп айткан жазуу жок, ошондуктан артка кайткан трафик жок кылынат.",
+                "Router-Fukuoka да, кабыл алуучу тармак 10.0.27.0/255.255.255.0 үчүн кийинки түйүн 10.0.16.1 аркылуу порт 0 боюнча статикалык маршруту кошуңуз."
+            ],
+            "explanation": "Маршруткалоочулар алга жиберилиши керек болгон ар бир подтармакка ачык жол керек; баштапкы сориялоо ийгиликтүү болгон болсо да, артка кайткан маршруту болбосо артка кайткан трафик унчалык эле жок кылынат. Жетишпеген маршруту кошуу толук айланма айланган жылдырат."
+        },
+        "lo": {
+            "title": "ការស្នើដែលបាត់ទៅកាន់ Portal",
+            "story": "បុគ្គលិកនៅការិយាល័យ Sapporo ដែលរាយការណ៍ថា ការបើក Portal របស់ក្រុមហ៊ុនដែលផ្តល់ដោយការិយាល័យមេ Fukuoka បានបរាជ័យតាំងពីព្រឹក។ ទំព័រមិនដែលផ្ទុកទេ ហើយគ្មាននរណាម្នាក់អាចពន្យល់ថាកន្លែងណាដែលការស្នើដែលបាត់ទៅ។",
+            "objective": "ធានាថា HTTP GET ពី PC-Dev ទៅ Portal-01 ដោះស្រាយ។",
+            "hints": [
+                "ការឆ្លើយឆ្លង់ពី Portal-01 ត្រូវបានលុបចោលនៅ Router-Fukuoka មុនពេលវាយ៉ាងលឿន ឆ្ពោះទៅរកPC-Dev។",
+                "Router-Fukuoka គ្មានធាតុក្នុងតារាងផ្លូវប្រាប់ថាដូចម្តេចដែលផ្នែក tarmac PC-Dev របស់វាដូច្នេះ វាបដិសេធចរាចរដែលយើងបាន។",
+                "នៅលើ Router-Fukuoka បន្ថែមផ្លូវស្ថិតិៗ សម្រាប់ដែលផ្ទុកលេខ 10.0.27.0/255.255.255.0 ដែលមាននៅលើដំបូង 10.0.16.1 ហើយនៅលើផ្លូវ 0 ។"
+            ],
+            "explanation": "ឧបករណ៍ផ្លាស់ប្តូរត្រូវការផ្លូវច្បាស់លាស់សម្រាប់រាល់ដែលផ្ទុកលេខដែលយើងត្រូវការប្តូរទៅមុខ ; ដោយគ្មានផ្លូវស្ថិតៈដែលត្រឹមត្រូវចរាចរក្នុងលក្ខណៈច្រាសទៅរក បើទោះបីថាការស្នើដើម នឹងលើកឡើងក៏ដោយ ។ ការបន្ថែមផ្លូវដែលបាត់បង់ ធានាថាផ្លូវដែលមានពេលវេលាពេញលេញលេចឡើង ។"
+        },
+        "lt": {
+            "title": "Prašymas, kuris išnyko iš Portal",
+            "story": "Saporo biuro personalas pranešė, kad šios dienos iš ryto nepavyko atidaryti bendrovės portalo, kuris hostinamas Fukuokos centrinėje būstinėje. Puslapis niekada neužsikrauja ir niekas negali paaiškinti, kur prašymas dingsta.",
+            "objective": "Padarykite, kad HTTP GET iš PC-Dev į Portal-01 pavyktų.",
+            "hints": [
+                "Atsakymas iš Portal-01 patenka į Router-Fukuoka ir negrįžta link PC-Dev.",
+                "Router-Fukuoka maršrutų lentelėje nėra įrašo, kuris pasakytų, kaip pasiekti PC-Dev tinklą, todėl jis atmeta grįžtamąjį srautą.",
+                "Router-Fukuoka pridėkite statinį maršrutą tinklui 10.0.27.0/255.255.255.0 per kitą šuolį 10.0.16.1 prievade 0."
+            ],
+            "explanation": "Maršrutizatoriai turi turėti aiškią kelionę kiekvienam potninkliui, kuriame jie turi persiųsti; be statinio maršruto atgal į šaltinio tinklą, grįžtamasis srautas tyliai atmestinas, net jei pradinis prašymas sėkmingai pateikiamas. Pridėjus trūkstamą maršrutą, visas grįžtamasis žygis atnaujinamas."
+        },
+        "lv": {
+            "title": "Pazudusais Portāla pieprasījums",
+            "story": "Saporo biroja darbinieki paziņo, ka kopš šī rīta Fukuokas galvenajā bīroja mitrinātā uzņēmuma portāla atvēršana ir neizdevusies. Lapa nekad neielādējas un neviens nespēj izskaidrot, kur pieprasījums pazūd.",
+            "objective": "Veiksmīgi izpildiet HTTP GET no PC-Dev uz Portal-01.",
+            "hints": [
+                "Atbilde no Portal-01 tiek nomesta tieši Router-Fukuoka, pirms tā var griezties atpakaļ uz PC-Dev.",
+                "Router-Fukuoka maršrutēšanas tabulā nav ieraksta, kas norādītu, kā sasniegt PC-Dev tīklu, tāpēc tas atmeta atpakaļ doto satiksmi.",
+                "Router-Fukuoka pievienojiet statisko maršrutu galamērķa tīklam 10.0.27.0/255.255.255.0 caur nākamo lēcienu 10.0.16.1 portā 0."
+            ],
+            "explanation": "Maršrutētāji ir jānosaka skaidram ceļam uz katru apakštīklu, uz kuru viņiem ir jāpārsūta; bez statiskā maršruta atpakaļ uz izcelsmes tīklu, atpakaļ dotais satiksmis apklusi tiek atmests, pat ja sākotnējais pieprasījums ir veiksmīgs. Trūkstamā maršruta pievienošana atjauno pilnu turp un atpakaļ ceļojumu."
+        },
+        "mk": {
+            "title": "Исчезнување на барањето до Порталот",
+            "story": "Вработените на Сапоро канцеларијата пријавуваат дека отворањето на компанискиот портал хостиран на Фукуока седиштето не успеа од утро. Страницата никогаш не се вчитува и никој не може да објасни каде барањето исчезнува.",
+            "objective": "Направи HTTP GET од PC-Dev до Portal-01 да успее.",
+            "hints": [
+                "Одговорот од Portal-01 се отфрла право на Router-Fukuoka пред да може да се врати кон PC-Dev.",
+                "Router-Fukuoka нема статир за рутирачка табела што му кажува како да достигне мрежа на PC-Dev, па го отфрла враќачкиот сообраќај.",
+                "На Router-Fukuoka, додај статична рута за мрежа 10.0.27.0/255.255.255.0 со следен скок 10.0.16.1 на порта 0."
+            ],
+            "explanation": "Рутерите имаат потреба од експлицитна патека за секој подмрежи што мора да ја препраќаат; без статична рута назад кон мрежата која започнала, враќачкиот сообраќај се тивко отфрла дури и ако почетното барање успеа. Додавањето на недостасувачката рута го обновува полниот циклус на пакетите."
+        },
+        "ml": {
+            "title": "പോർട്ടലിലേക്കുള്ള അപ്രത്യക്ഷ അഭ്യർത്ഥന",
+            "story": "സാപ്പോറോ ഓഫീസിലെ ജീവനക്കാർ അറിയിക്കുന്നത് ഫുകുവോക്കാ സ്ഥാനാർത്ഥിയിൽ ഹോസ്റ്റ് ചെയ്ത കമ്പനി പോർട്ടൽ ഉദ്ഘാടനം ഈ പ്രഭാതം മുതൽ പരാജയപ്പെട്ടിരിക്കുന്നു. പേജ് ഒരിക്കലും ലോഡ് ചെയ്യുന്നില്ല, കൂടാതെ അഭ്യർത്ഥന എവിടെ അപ്രത്യക്ഷമാകുന്നു എന്ന് ആരും വിശദീകരിക്കാൻ കഴിയുന്നില്ല.",
+            "objective": "PC-Dev മുതൽ Portal-01 വരെ HTTP GET വിജയകരമാക്കുക.",
+            "hints": [
+                "Portal-01 ൽ നിന്നുള്ള പ്രതികരണം PC-Dev തിരികെ എത്താൻ കഴിയുന്നതിന് മുമ്പ് Router-Fukuoka ൽ അപ്രത്യക്ഷമാക്കപ്പെടുന്നു.",
+                "Router-Fukuoka-യിൽ PC-Dev ന്റെ നെറ്റ്‌വർക്കിലേക്ക് എത്തിച്ചേരാൻ പറയുന്ന റൂട്ടിംഗ് ടേബിൾ എൻട്രി ഇല്ല, അതിനാൽ റിട്ടൺ ട്രാഫിക് നിരസിക്കുന്നു.",
+                "Router-Fukuoka-യിൽ, നെക്സ്റ്റ് ഹോപ്പ് 10.0.16.1 യ ഫോർ നെറ്റ്‌വർക്ക് 10.0.27.0/255.255.255.0 പോർട്ട് 0 ൽ സ്റ്റാറ്റിക് റൂട്ട് ചേർക്കുക."
+            ],
+            "explanation": "റൂട്ടറുകൾക്ക് അവർ ഫോർവേഡ് ചെയ്യേണ്ട ഓരോ സബ്‌നെറ്റിനുമായി ഒരു സ്പষ്ട പാത ആവശ്യമാണ്; ഉത്ഭവ നെറ്റ്‌വർക്കിലേക്ക് തിരികെ ഒരു സ്റ്റാറ്റിക് റൂട്ട് ഇല്ലാതെ, പ്രാരംഭ അഭ്യർത്ഥന വിജയിച്ചാലും റിട്ടൺ ട്രാഫിക് നിശ്ശബ്ദമായി നിരസിക്കപ്പെടുന്നു. കാണാതെ പോയ റൂട്ട് ചേർക്കുന്നത് പൂർണ്ണ റൌണ്ട് ട്രിപ്പ് പുനഃസ്ഥാപിക്കുന്നു."
+        },
+        "mn": {
+            "title": "Портал руу ирэх хүсэлтийн алга болго",
+            "story": "Саппоро офисын ажилтнууд Фукуока төвийн байршилд байрлуулсан компанийн портал нээхээс энэ өглөө эхлүүлэн бүтсэн гэж мэдээлж байна. Хуудас хэзээ ч ачаалдахгүй бөгөөд хүсэлт хаашаа алга болсон болохыг хэн ч тайлбарлаж чадахгүй.",
+            "objective": "PC-Dev-ээс Portal-01 рүү HTTP GET амжилттай хийх.",
+            "hints": [
+                "Portal-01-ээс ирсэн хариу PC-Dev рүү буцаж ирэхээс өмнө Router-Fukuoka дээр шууд унадаг.",
+                "Router-Fukuoka-ийн чиглүүлэлтийн хүснэгтэд PC-Dev-ийн сүлжээнд хүрэх хэрэгцээтэй оруулга байхгүй тул буцаж ирэх трафикийг устгадаг.",
+                "Router-Fukuoka дээр, дараагийн түвшин 10.0.16.1 сүлжээ 10.0.27.0/255.255.255.0 портын 0 дээр статик маршруут нэмэх."
+            ],
+            "explanation": "Маршруутууд урсгалаа явуулах ёстой бүх дэд сүлжээнүүдийн тулд тодорхой замыг шаардана; гарах сүлжээ рүү буцах статик маршруут байхгүй бол анхны хүсэлт амжилттай байсан ч гэсэн буцаж ирэх трафик чимхэн унадаг. Дутсан маршруутыг нэмснээр бүх сумтай явагдал сэргээлэгдэнэ."
+        },
+        "mr": {
+            "title": "पोर्टलला गायब होणारी विनंती",
+            "story": "सपोरो ऑफिसातील कर्मचारी अहवाल देतात की फुकुओका मुख्यालयात होस्ट केलेल्या कंपनी पोर्टल उघडणे आज सकाळपासून अयशस्वी झाले आहे. पृष्ठ कधीही लोड होत नाही आणि विनंती कुठे गायब होते हे कोणीही समजावून सांगू शकत नाही.",
+            "objective": "PC-Dev पासून Portal-01 वर HTTP GET यशस्वी करा.",
+            "hints": [
+                "Portal-01 पासून मिळणारा प्रतिसाद PC-Dev कडे परत येण्यापूर्वी Router-Fukuoka वर थेट टाकला जातो.",
+                "Router-Fukuoka कडे राउटिंग टेबल प्रविष्टी नाही जी PC-Dev चे नेटवर्क कसे पोहोचायचे हे सांगते, त्यामुळे तो परत येणारा ट्रॅफिक टाकून देतो.",
+                "Router-Fukuoka वर, नेक्स्ट हॉप 10.0.16.1 नेटवर्क 10.0.27.0/255.255.255.0 साठी पोर्ट 0 वर स्थिर मार्ग जोडा."
+            ],
+            "explanation": "राउटरना त्यांनी फॉरवर्ड केले पाहिजे असे प्रत्येक सबनेटसाठी स्पष्ट मार्ग आवश्यक आहे; उद्भवत नेटवर्कला परत आणण्यासाठी स्थिर मार्ग नसल्यास, सुरुवातीची विनंती यशस्वी झाली तरीही परत येणारा ट्रॅफिक शांतपणे टाकला जातो. गायब असलेला मार्ग जोडल्यास संपूर्ण राउंड ट्रिप पुनरुद्धार होतो."
+        },
+        "ms": {
+            "title": "Permintaan yang Hilang ke Portal",
+            "story": "Staf di pejabat Sapporo melaporkan bahawa pembukaan portal syarikat yang dihost di ibu pejabat Fukuoka telah gagal sejak pagi ini. Halaman tidak pernah dimuat, dan tiada siapa yang dapat menjelaskan ke mana permintaan itu hilang.",
+            "objective": "Buat HTTP GET daripada PC-Dev ke Portal-01 berjaya.",
+            "hints": [
+                "Balasan daripada Portal-01 dijatuhkan terus di Router-Fukuoka sebelum ia dapat kembali ke PC-Dev.",
+                "Router-Fukuoka tidak mempunyai entri jadual penghalaan yang memberitahu cara menjangkau rangkaian PC-Dev, jadi ia membuang trafik kembali.",
+                "Di Router-Fukuoka, tambahkan laluan statik untuk rangkaian 10.0.27.0/255.255.255.0 melalui lompatan seterusnya 10.0.16.1 pada port 0."
+            ],
+            "explanation": "Penghala memerlukan laluan eksplisit untuk setiap subnet yang mesti mereka teruskan; tanpa laluan statik kembali ke rangkaian asal, trafik pulang senyap-senyap dijatuhkan walaupun permintaan awal berjaya. Menambah laluan yang hilang memulihkan perjalanan lengkap."
+        },
+        "my": {
+            "title": "Portal သို့ သွားတွေးပျောက်ခွာသည့် درخواست",
+            "story": "Sapporo ရုံး၏ कर्मचारી များသည် Fukuoka ဗဟိုချုပ်ရုံးတွင် အဆောင်သည့် ကုမ္ပဏီ portal ကို ဖွင့်ရန် ဆောင်ရွက်ချိန်တွင် ယနေ့ မနက်ပိုင်းမှစ၍ ကျ败်ဆုံးသွားကြောင်း အစီရင်ခံပြီးသည်။ စာမျက်နှာသည် ဘယ်တွေ မျှ မ load သွားပြီး၊ درخواست ကေတွေ ဘယ်ကွ ပျောက်ကွယ်သွားသည်ကို အဘယ်သူမျှ ရှင်းလင်းနိုင်ခြင်းမရှိ။",
+            "objective": "PC-Dev မှ Portal-01 သို့ HTTP GET အောင်မြင်စေရန်",
+            "hints": [
+                "Portal-01 မှ ပြန်လည်သည့် အဆင့်သည် Router-Fukuoka တွင် ရပ်တန့်ကျ၍ PC-Dev ပြန်ရောက်ရန်အတွက် ရွေ့လျားရန် မ ရှိ။",
+                "Router-Fukuoka တွင် PC-Dev ၏ ကွန်ရက်သို့ ရောက်ရှိရန် ပြောခိုင်းသည့် routing table အမှတ်တမ်း မရှိသည့်ကြောင့် ပြန်လည်သည့် ကွန်ရက်ကို ပယ်ဖျက်သည်။",
+                "Router-Fukuoka တွင် static route ကို 10.0.27.0/255.255.255.0 ကွန်ရက်အတွက် next hop 10.0.16.1 မှ port 0 ပေါ်တွင် ထည့်သွင်းပါ။"
+            ],
+            "explanation": "Router များသည် အဆင့်သတ်မှတ်ရန်ကြည့်ရှုရမည့် subnet တစ်ခုချင်းစီအတွက် स्पष्ट경로 လိုအပ်သည်။ မူလကွန်ရက်သို့ ပြန်ရောက်သည့် static route မရှိလျှင် မူလ درخواست ကျမ်းခံထဲ ကျမ်းခံထဲ သွားပါစေသည့်ပိုင်းတွင် ပြန်လည်သည့် ကွန်ရက်ကို တိတ်တိတ်ဆိတ်ဆိတ် ပယ်ဖျက်သည်။ ပျောက်ကွယ်သွားသည့် route ကို ထည့်သွင်းခြင်းသည် အျကနိုးတော် round trip ကို ပြန်လည်ရယူ သည်။"
+        },
+        "ne": {
+            "title": "पोर्टलमा लोप हुने अनुरोध",
+            "story": "Sapporoको कार्यालयका कर्मचारीहरूले Fukuoka मुख्यालयमा होस्ट गरिएको कम्पनीको पोर्टल खोल्न आज बिहान देखि असफल भएको रिपोर्ट गरेका छन्। पृष्ठ कहिले पनि लोड हुँदैन र कसैले पनि अनुरोध कहाँ गायब हुन्छ भनेर व्याख्या गर्न सक्दैनन्।",
+            "objective": "PC-Dev देखि Portal-01 मा HTTP GET सफल गर्नुहोस्।",
+            "hints": [
+                "Portal-01 बाट जवाफ Router-Fukuoka मा नै छोडिएको छ र PC-Dev तर्फ फर्कन सक्दैन।",
+                "Router-Fukuoka सँग PC-Dev को नेटवर्कमा पुग्ने तरिका बताउने राउटिङ तालिका प्रविष्टि छैन, त्यसले रिटर्न ट्राफिक फाले गएको छ।",
+                "Router-Fukuoka मा नेटवर्क 10.0.27.0/255.255.255.0 को लागि static route नेक्स्ट हप 10.0.16.1, पोर्ट 0 मा थप्नुहोस्।"
+            ],
+            "explanation": "राउटरहरूलाई सबै सबनेटहरूमा फरवर्ड गर्नुपर्ने प्रत्येकको लागि स्पष्ट मार्ग चाहिन्छ; मूल नेटवर्कमा फर्कन static route बिना, प्रारम्भिक अनुरोध सफल भए पनि रिटर्न ट्राफिक निरन्तर छोडिन्छ। हराएको रुट थपेर पूरा राउन्ड ट्रिप पुनर्स्थापन गरिन्छ।"
+        },
+        "nl": {
+            "title": "Verzoek naar de Portal verdwijnt",
+            "story": "Medewerkers op het kantoor in Sapporo berichten dat het openen van de bedrijfsportal die in Fukuoka wordt gehost sinds vanmorgen niet meer lukt. De pagina laadt nooit, en niemand kan verklaren waar het verzoek verdwijnt.",
+            "objective": "Een HTTP GET van PC-Dev naar Portal-01 laten slagen.",
+            "hints": [
+                "Het antwoord van Portal-01 wordt direct bij Router-Fukuoka geblokeerd voordat het terug naar PC-Dev kan gaan.",
+                "Router-Fukuoka heeft geen routeringstabel-item dat aangeeft hoe het het netwerk van PC-Dev bereikt, dus het verwijdert het terugverkeer.",
+                "Voeg op Router-Fukuoka een static route toe voor netwerk 10.0.27.0/255.255.255.0 via volgende hop 10.0.16.1 op poort 0."
+            ],
+            "explanation": "Routers hebben voor elk subnet waarnaar ze moeten doorsturen een expliciet pad nodig; zonder static route terug naar het herkomstnetwerk wordt terugverkeer stilzwijgend verwijderd, ook al slaagde het eerste verzoek. Het toevoegen van de ontbrekende route herstelt het volledige retourtraject."
+        },
+        "no": {
+            "title": "Forespørsel til portalen forsvinner",
+            "story": "Ansatte ved Sapporo-kontoret rapporterer at åpning av selskapets portal som ligger på Fukuoka-hovedkvarteret har mislyktes siden i morges. Siden laster aldri inn, og ingen kan forklare hvor forespørselen forsvinner.",
+            "objective": "Gjør HTTP GET fra PC-Dev til Portal-01 vellykket.",
+            "hints": [
+                "Svaret fra Portal-01 blir droppet rett ved Router-Fukuoka før det kan komme tilbake til PC-Dev.",
+                "Router-Fukuoka har ingen rutetabell-oppføring som sier hvordan den skal nå PC-Devs nettverk, så den forkaster returtrafikkken.",
+                "På Router-Fukuoka legger du til en statisk rute for nettverk 10.0.27.0/255.255.255.0 via neste hopp 10.0.16.1 på port 0."
+            ],
+            "explanation": "Rutere trenger en eksplisitt vei for hver subnet de må videresende til; uten en statisk rute tilbake til det opprinnelige nettverket droppes returtrafikken stille selv om den første forespørselen kom gjennom. Ved å legge til den manglende ruten gjenopprettes hele rundturen."
+        },
+        "or": {
+            "title": "ପୋର୍ଟାଲକୁ ଲୋପ ହୋଇଥିବା ଅନୁରୋଧ",
+            "story": "Sapporo କାର୍ଯ୍ୟାଳୟର କର୍ମଚାରୀମାନେ ରିପୋର୍ଟ କରିଛନ୍ତି ଯେ Fukuoka ମୁଖ୍ୟାଳୟରେ ହୋଷ୍ଟ କରାଯାଇଥିବା କମ୍ପାନୀ ପୋର୍ଟାଲ ଆଜ ସକାଳରୁ ଖୋଲିବାରେ ବିଫଳ ହୋଇଛି। ପୃଷ୍ଠା କଦାପି ଲୋଡ ହୋଇନଥାଏ, ଏବଂ ଅନୁରୋଧ କେଉଁଠାକୁ ଅନ୍ତର୍ଧ୍ୟାନ ହୁଏ ତାହା ମୁଣ୍ଡୋଲା ବୁଝାଇ ପାରେ ନାହିଁ।",
+            "objective": "PC-Dev ରୁ Portal-01 କୁ HTTP GET ସଫଳ କର।",
+            "hints": [
+                "Portal-01 ରୁ ଉତ୍ତର Router-Fukuoka ରେ ନଷ୍ଟ ହୋଇଯାଏ ଓ PC-Dev ତରଫକୁ ଫେରିବାରେ ବାଧାପ୍ରାପ୍ତ ହୁଏ।",
+                "Router-Fukuoka ର PC-Dev ର ନେଟୱର୍କ ପର୍ଯ୍ୟନ୍ତ ପୌଁଚେଇବା ଉପାୟ ଜଣାଇବା ରାଉଟିଂ ଟେବୁଲ ନ୍ୟୁକ୍ତି ନାହିଁ, ତେଣୁ ଏହା ରିଟର୍ନ ଟ୍ରାଫିକ୍ ଛାଡି ଦିଏ।",
+                "Router-Fukuoka ରେ ନେଟୱର୍କ 10.0.27.0/255.255.255.0 ଲାଗି static route ନେକ୍ସଟ ହପ୍ 10.0.16.1, ପୋର୍ଟ 0 ରେ ଯୋଗ କର।"
+            ],
+            "explanation": "ରାଉଟରଗୁଡିକ ତାହାକୁ ଫରୱାର୍ଡ କରିବାଲାଗିବା ପ୍ରତ୍ୟେକ ସବନେଟ ଲାଗି ସ୍ପଷ୍ଟ ରାସ୍ତା ଦରକାର; ମୂଳ ନେଟୱର୍କକୁ ଫେରିବାଲାଗିବା static route ବିନା, ପ୍ରାଥମିକ ଅନୁରୋଧ ସଫଳ ହୋଇଥିଲେ ମଧ୍ୟ ରିଟର୍ନ ଟ୍ରାଫିକ୍ ନୀରବ ରୂପେ ନଷ୍ଟ ହୁଏ। ହରିଯାଇଥିବା route ଯୋଗ କରିବା ସମ୍ପୂର୍ଣ୍ଣ round trip ପୁନରୁଦ୍ଧାର କରେ।"
+        },
+        "pa": {
+            "title": "ਪੋਰਟਲ ਲਈ ਗਾਇਬ ਹੋ ਗੁਜ਼ਾਰਸ਼",
+            "story": "ਸੈਪੋਰੋ ਦਫ਼ਤਰ ਦੇ ਸਟਾਫ ਨੇ ਰਿਪੋਰਟ ਕਿਆ ਹੈ ਕਿ ਫੁਕੁਓਕਾ ਹੈਡਕੁਆਰਟਰ ਵਿੱਚ ਹੋਸਟ ਕੀਤਾ ਗਿਆ ਕੰਪਨੀ ਪੋਰਟਲ ਖੋਲ੍ਹਣਾ ਅੱਜ ਸਵੇਰੇ ਤੋਂ ਫੇਲ ਹੋ ਗਿਆ ਹੈ। ਪੰਨਾ ਕਦੇ ਲੋਡ ਨਹੀਂ ਹੁੰਦਾ, ਅਤੇ ਕੋਈ ਵੀ ਇਹ ਨਹੀਂ ਦੱਸ ਸਕਦਾ ਕਿ ਗੁਜ਼ਾਰਸ਼ ਕਿਸ ਜਗ੍ਹਾ ਗਾਇਬ ਹੋ ਜਾਂਦੀ ਹੈ।",
+            "objective": "PC-Dev ਤੋਂ Portal-01 ਤੱਕ HTTP GET ਸਫਲ ਬਣਾਓ।",
+            "hints": [
+                "Portal-01 ਤੋਂ ਜਵਾਬ ਠੀਕ Router-Fukuoka ਵਿੱਚ ਡੁੱਪ ਹੋ ਜਾਂਦਾ ਹੈ ਪਰ ਇਹ PC-Dev ਵੱਲ ਵਾਪਸ ਜਾ ਸਕਦਾ ਹੈ।",
+                "Router-Fukuoka ਕੋਲ ਕੋਈ ਰੂਟਿੰਗ ਟੇਬਲ ਐਂਟਰੀ ਨਹੀਂ ਹੈ ਜੋ PC-Dev ਦੇ ਨੈੱਟਵਰਕ ਤੱਕ ਪਹੁੰਚਣਾ ਦੱਸੇ, ਇਸ ਲਈ ਇਹ ਵਾਪਸੀ ਟ੍ਰੈਫਿਕ ਨੂੰ ਖਾਰਜ ਕਰਦਾ ਹੈ।",
+                "Router-Fukuoka 'ਤੇ, ਮੰਜ਼ਿਲ ਨੈੱਟਵਰਕ 10.0.27.0/255.255.255.0 ਦੇ ਲਈ ਸਥਿਰ ਮਾਰਗ ਜੋੜੋ, ਨੈਕਸਟ ਹੌਪ 10.0.16.1, ਪੋਰਟ ਨੰਬਰ 0।"
+            ],
+            "explanation": "ਰਾਊਟਰਾਂ ਨੂੰ ਹਰ ਸਬਨੈੱਟ ਲਈ ਸਪਸ਼ਟ ਮਾਰਗ ਦੀ ਜ਼ਰੂਰਤ ਹੈ ਜਿਸਨੂੰ ਉਹ ਫਾਰਵਰਡ ਕਰਦੇ ਹਨ; ਸ਼ੁਰੂ ਕੁਲ ਨੈੱਟਵਰਕ ਤੱਕ ਵਾਪਸੀ ਲਈ ਸਥਿਰ ਮਾਰਗ ਦੇ ਬਿਨਾਂ, ਵਾਪਸੀ ਟ੍ਰੈਫਿਕ ਖਾਮੋਸ਼ੀ ਨਾਲ ਖਾਰਜ ਹੋ ਜਾਂਦੀ ਹੈ ਭਾਵੇਂ ਸ਼ੁਰੂਆਤੀ ਗੁਜ਼ਾਰਸ਼ ਲੰਘ ਗਈ ਹੋ। ਗਾਇਬ ਮਾਰਗ ਜੋੜਨਾ ਪੂਰੀ ਰਾਊਂਡ ਟ੍ਰਿਪ ਨੂੰ ਬਹਾਲ ਕਰਦਾ ਹੈ।"
+        },
+        "pl": {
+            "title": "Znikający Żądanie do Portalu",
+            "story": "Pracownicy biura w Sapporo zgłaszają, że otworzenie portalu firmy hostowanego w siedzibie Fukuoki nie powiodło się od rana. Strona się nigdy nie ładuje, a nikt nie może wyjaśnić, gdzie żądanie znika.",
+            "objective": "Spraw, aby HTTP GET z PC-Dev na Portal-01 się powiódł.",
+            "hints": [
+                "Odpowiedź z Portal-01 jest odrzucona właśnie na Router-Fukuoka, zanim będzie mogła wrócić do PC-Dev.",
+                "Router-Fukuoka nie ma wpisu w tablicy routingu, który mówi mu, jak dotrzeć do sieci PC-Dev, więc odrzuca zwrotny ruch.",
+                "Na Router-Fukuoka dodaj trasę statyczną dla sieci 10.0.27.0/255.255.255.0 poprzez następny skok 10.0.16.1 na numer portu 0."
+            ],
+            "explanation": "Routery potrzebują wyraźnej ścieżki dla każdej podsieci, do której muszą przesyłać; bez trasy statycznej powrotnej do sieci źródłowej, ruch zwrotny jest dyskretnie odrzucany, nawet jeśli początkowe żądanie przeszło. Dodanie brakującej trasy przywraca pełny obieg ruchu."
+        },
+        "pt-PT": {
+            "title": "Pedido Desaparecido para o Portal",
+            "story": "O pessoal do escritório de Sapporo relata que abrir o portal da empresa alojado na sede de Fukuoka falhou desde esta manhã. A página nunca carrega, e ninguém consegue explicar para onde o pedido desaparece.",
+            "objective": "Faça com que um HTTP GET de PC-Dev para Portal-01 tenha êxito.",
+            "hints": [
+                "A resposta de Portal-01 é removida logo em Router-Fukuoka antes de poder voltar para PC-Dev.",
+                "Router-Fukuoka não tem uma entrada na tabela de encaminhamento que lhe diga como alcançar a rede PC-Dev, portanto descarta o tráfego de retorno.",
+                "Em Router-Fukuoka, adicione uma rota estática para a rede 10.0.27.0/255.255.255.0 via próximo salto 10.0.16.1 na porta 0."
+            ],
+            "explanation": "Os routers precisam de um caminho explícito para cada sub-rede para a qual devem encaminhar; sem uma rota estática de volta para a rede de origem, o tráfego de retorno é descartado silenciosamente, mesmo que o pedido inicial tenha funcionado. Adicionar a rota em falta restaura a viagem completa de ida e volta."
+        },
+        "rm": {
+            "title": "Dumonda Zichiva al Portal",
+            "story": "Ils collaboraturs da l'uffizi da Sapporo rapportaivan che l'avrir dal portal da l'interpresa allogà al quartergeneral da Fukuoka n'ha nunzegà dapi la mataina. La pagina n'endrizza mai, e nitgin n'è capabel d'explicar nua che la dumonda disparescha.",
+            "objective": "Che in HTTP GET da PC-Dev a Portal-01 cuntiniescha bain.",
+            "hints": [
+                "L'octaglia da Portal-01 vegn vegnida drizzada geustamaint a Router-Fukuoka enstagl ch'ella pudess turnar a PC-Dev.",
+                "Router-Fukuoka n'ha negina intrada en la tabella da routing che le mussasscha co ch'ella sa cuntuscha tar la rait da PC-Dev, perquai che ella vaglia via il traffic da retorn.",
+                "Sil Router-Fukuoka, Agunte in'octaglia statica per la rait 10.0.27.0/255.255.255.0 via il proxim sault 10.0.16.1 sin port 0."
+            ],
+            "explanation": "Ils routers han basegn d'in camin explicite per mintgha subrait per la tgea ch'els duvan encaminar; senza in'octaglia statica retorna a la rait d'origine, il traffic da retorn vegn vegnida drizzada silenziusamaint, uschespert che la dumonda enstaglala n'entraiva ad. L'agiuntar da l'octaglia vegn a restituir il viadi inagada dal vai e dal retorn."
+        },
+        "ro": {
+            "title": "Cerere Dispărută către Portal",
+            "story": "Personalul biroului din Sapporo raportează că deschiderea portalului companiei găzduit la sediul Fukuoka a eșuat din această dimineață. Pagina nu se încarcă niciodată, iar nimeni nu poate explica unde dispare cererea.",
+            "objective": "Faceți ca un HTTP GET de la PC-Dev la Portal-01 să reușească.",
+            "hints": [
+                "Răspunsul de la Portal-01 este eliminat chiar la Router-Fukuoka înainte de a putea reveni la PC-Dev.",
+                "Router-Fukuoka nu are o intrare în tabela de rutare care să-i spună cum să ajungă la rețeaua PC-Dev, deci renunță la traficul de întoarcere.",
+                "Pe Router-Fukuoka, adăugați o rută statică pentru rețeaua 10.0.27.0/255.255.255.0 prin următorul salt 10.0.16.1 pe portul 0."
+            ],
+            "explanation": "Routerele au nevoie de o cale explicită pentru fiecare subnetă pe care trebuie să o redirecționeze; fără o rută statică înapoi la rețeaua de origine, traficul de întoarcere este eliminator în tăcere, chiar dacă cererea inițială a reușit. Adăugarea rutei lipsă restabilește călătoria completă dus-întors."
+        },
+        "si": {
+            "title": "සැකිලි වෙත අතුරුදහන් වන ඉල්ලීම",
+            "story": "සපෝරෝ කාර්යාලයේ কর্මীরা ෆුකුඔකා ස본්‍යාසකයේ ගෙනයාම් කරන ශපතයෙ පෝර්టල් විවෘත කිරීම අද උදෑසනից අසාර්ථක වී ඇතැයි වාර්තා කරයි. පිටුව කිසිවෙකු පුටුවට නොපැමිණෙයි, සහ ඉල්ලීම කොතැනට අතුරුදහන් වේ ඉහළ නොවිස්තර කරන ලදී.",
+            "objective": "PC-Dev සිට Portal-01 වෙත HTTP GET සාර්ථක කරන්න.",
+            "hints": [
+                "Portal-01 සිට ලබා ගන්නා ප්‍රතිඡන්දය Router-Fukuoka හිදී PC-Dev දෙසට ඉපිලීම සඳහා පෙර ඉවතලන්න.",
+                "Router-Fukuoka සතුව PC-Dev හි ජාලය ළඟා කරන්නේ කෙසේ ද යන්න පිලිබඳ රවුටින් වගුවෙ ඇතුළත් නොමැති අතර එය ආපසු ගමන් ගතිය සිස්‍ර කරයි.",
+                "Router-Fukuoka මත ජාලය 10.0.27.0/255.255.255.0 සඳහා ස්ථිතික මාර්গ ඊළඟ හොප් 10.0.16.1 හරහා පෝට් 0 මත එක් කරන්න."
+            ],
+            "explanation": "ඉදිරිගිය යුතු ඉදිරිගිම්කරුවරු අනුමතකරු ඉදිරිගිම්කරුවරු නියම විවෘතකරණයෙ සඳහා, ගම්ය ගම්ය ගම්ය ගතිය මිතුරු ගතිය, ගම්ය නිතර ගතිය යෝජිතකරණ නිතර ගතිය. ඉතිරි කිරීමේ මිතුරු ගතිය සඳහා ඉතිරි ගතිය සඳහා ඇතුළත් කිරීම."
+        },
+        "sk": {
+            "title": "Mizející požadavek na portál",
+            "story": "Zamestnanci kancelárie v Sappore hlásia, že otvorenie firemného portálu hostovaného v sídlo Fukuoka zlyhalo od dneška ráno. Stránka sa nikdy nenačíta a nikto nevie vysvetliť, kde požiadavka zmizne.",
+            "objective": "Vytvorte HTTP GET z PC-Dev na Portal-01 úspešne.",
+            "hints": [
+                "Odpoveď z Portal-01 je zrušená priamo na Router-Fukuoka predtým, ako sa vráti späť na PC-Dev.",
+                "Router-Fukuoka nemá záznam v Smerovacia tabuľka napovedajúci ako dosiahnuť sieť PC-Dev, takže zahodí spätný prevoz.",
+                "Na Router-Fukuoka pridajte statickú trasu pre sieť 10.0.27.0/255.255.255.0 cez Ďalší skok 10.0.16.1 na porte 0."
+            ],
+            "explanation": "Smerovače potrebujú explicitnú cestu pre každú podsieť, ktorú musia poslať; bez statickej trasy späť na originálnu sieť, spätný prevoz sa bezhlasne zahodí aj keď počiatočný požiadavka prešla. Pridanie chýbajúcej trasy obnovuje kompletný spiatočný chod."
+        },
+        "sl": {
+            "title": "Izginjajoči zahtevek portalu",
+            "story": "Zaposleni Sapporo pisarne poročajo, da se odpiranje poslovnega portala, ki ga gosti sedež v Fukuoki, od jutri jutri ne uspeva. Stran se nikoli ne naloži, in nihče ne more razložiti, kam zahtevek izgine.",
+            "objective": "Uspešno izvedite HTTP GET z PC-Dev na Portal-01.",
+            "hints": [
+                "Odgovor iz Portal-01 je spuščen tik na Router-Fukuoka preden se vrne nazaj k PC-Dev.",
+                "Router-Fukuoka nima vnosa v Usmerjevalna tabela ki bi mu povedal, kako dosegti omrežje PC-Dev, zato zavrže povratni promet.",
+                "Na Router-Fukuoka dodajte statično pot za omrežje 10.0.27.0/255.255.255.0 preko Naslednji skok 10.0.16.1 na vratih 0."
+            ],
+            "explanation": "Usmerjevalniki potrebujejo eksplicitno pot za vsako podomrežje, ki ga morajo poslati; brez statične poti nazaj na izvirno omrežje je povratni promet nemo zavrjen, čeprav je začetni zahtevek prešel. Dodajanje manjkajoče poti ponovno vzpostavi polno povratno pot."
+        },
+        "sq": {
+            "title": "Kërkesa që zhduket në portal",
+            "story": "Punonjësit e zyrës Sapporo raportojnë se hapja e portalit të kompanisë të ruajtur në selinë Fukuoka ka dështuar që këtë mëngjes. Faqja nuk ngarkohet kurrë, dhe askush nuk mund të shpjegojë se ku zhduket kërkesa.",
+            "objective": "Bëni të suksesshëm HTTP GET nga PC-Dev në Portal-01.",
+            "hints": [
+                "Përgjigja nga Portal-01 hidhet drejt në Router-Fukuoka përpara se të kthehet prapa në PC-Dev.",
+                "Router-Fukuoka nuk ka shënim në Tabela e rrugëzimit që i tregon se si të arrijë rrjetin e PC-Dev, kështu që e hedh trafikun e kthimit.",
+                "Në Router-Fukuoka, shtoni një rrugë statike për rrjetin 10.0.27.0/255.255.255.0 përmes Hapi tjetër 10.0.16.1 në portën 0."
+            ],
+            "explanation": "Shumat e rrugëzimit kanë nevojë për një rrugë të qartë për çdo nënrrjet që duhet të dërgojnë; pa një rrugë statike prapa rrjetit origjinal, trafiku i kthimit hidhet në heshtje edhe nëse kërkesa fillestare kaloi. Shtimi i rrugës që mungon rivendos udhëtimin e plotë të kthimit."
+        },
+        "sr": {
+            "title": "Захтев који нестаје у портал",
+            "story": "Запослени у Сапоро канцеларији пријављују да је отварање корпоративног портала хостованог на Фукуока седишту неуспешно од јутрос. Страна се никада не учитава, и нико не може објаснити где захтев нестаје.",
+            "objective": "Успешно извршите HTTP GET са PC-Dev на Portal-01.",
+            "hints": [
+                "Одговор са Portal-01 бива избачен управо на Router-Fukuoka пре него што се врати назад к PC-Dev.",
+                "Router-Fukuoka нема уноса у Табела рутирања која му говори како достићи мрежу PC-Dev, па зато одбацује повратни саобраћај.",
+                "На Router-Fukuoka, додајте статичку руту за мрежу 10.0.27.0/255.255.255.0 преко Следећег скока 10.0.16.1 на пристаници 0."
+            ],
+            "explanation": "Рутери су потребни експлицитна путања за сваку подмрежу коју морају да слаћу; без статичке руте назад на оригиналну мрежу, повратни саобраћај се тихо одбацује чак и ако је почетни захтев прошао. Додавање недостајуће руте враћа цео циклус повратног пута."
+        },
+        "sv": {
+            "title": "Försvunnen förfrågan till portalen",
+            "story": "Personal på Sapporokontoret rapporterar att åtkomsten till företagsportalen på huvudkontoret i Fukuoka har misslyckats sedan i morse. Sidan läses aldrig in och ingen kan förklara vart förfrågan försvinner.",
+            "objective": "Få ett HTTP GET från PC-Dev till Portal-01 att lyckas.",
+            "hints": [
+                "Svaret från Portal-01 slängs direkt vid Router-Fukuoka innan det kan väga tillbaka mot PC-Dev.",
+                "Router-Fukuoka saknar en routingtabellpost som talar om hur den når PC-Devs nätverk, så den kasserar returåtrafiken.",
+                "På Router-Fukuoka, lägg till en statisk rutt för målnätverk 10.0.27.0/255.255.255.0 via nästa hopp 10.0.16.1 på portnummer 0."
+            ],
+            "explanation": "Routrar behöver en explicit väg för varje subnät de måste vidarebefordra till; utan en statisk rutt tillbaka till ursprungsnätverket slängs returåtrafiken tyst även om den initiala förfrågan kom fram. Att lägga till den saknade rutten återställer hela rundturen."
+        },
+        "sw": {
+            "title": "Ombi Lililoanguka kwa Portal",
+            "story": "Wafanyikazi wa ofisi ya Sapporo wanaripoti kuwa kuingilia kampuni ya portal iliyoandaliwa katika makao makuu ya Fukuoka kumefeli tangu asubuhi. Ukurasa haujangi, na hakuna yeyote anayeweza kueleza mahali ambapo ombi hilo linapokelewa.",
+            "objective": "Fanya HTTP GET kutoka PC-Dev kwa Portal-01 ifanikiwe.",
+            "hints": [
+                "Jawabu kutoka kwa Portal-01 linachangiwa moja kwa moja saa Router-Fukuoka kabla haiwezi kurudi kuelekea PC-Dev.",
+                "Router-Fukuoka haina ingizo la jedwali la uelekezaji linaloeleza jinsi ya kufikia mtandao wa PC-Dev, kwa hiyo inabandika trafiki ya kurudi.",
+                "Kwenye Router-Fukuoka, ongeza njia ya tuli ya mtandao 10.0.27.0/255.255.255.0 kupitia hop inayofuata 10.0.16.1 kwenye nambari ya port 0."
+            ],
+            "explanation": "Vifanya kazi vya uelekezaji vinahitaji njia nyofu kwa kila subneti lazima kuambatanisha; bila njia ya tuli inaelekea kuelekea mtandao wa asili, trafiki ya kurudi inachangiwa kimya hata kama ombi la awali lilifikia. Kuongeza njia iliyokosekana hurejesha safari nzima ya pande zote."
+        },
+        "ta": {
+            "title": "போர்ட்டலுக்கான மறைந்துபோன வேண்டுகோள்",
+            "story": "சப்போரோ அலுவலகத்தில் உள்ள பணியாளர்கள் ফுகுওகா தலைமையகத்தில் நடத்திய நிறுவனப் போர்ட்டலைத் திறக்கும் முயற்சி இன்று காலை தோல்வியுற்றதாக தெரிவித்துள்ளனர். பக்கம் ஒருபோதும் ஏற்றப்படுவதில்லை, வேண்டுகோள் எங்கே மறைந்துவிட்டது என்பது யாரும் விளக்கமுடியவில்லை.",
+            "objective": "PC-Dev இலிருந்து Portal-01 க்கு HTTP GET வெற்றியடைய வைக்கவும்.",
+            "hints": [
+                "Portal-01 இலிருந்தான பதிலுக்கான PC-Dev ஐ நோக்கி திரும்புவதற்கு முன் Router-Fukuoka இல் வெளிவிடப்படுகிறது.",
+                "Router-Fukuoka க்கு PC-Dev இன் நெட்வொர்க்கைக் கண்டறிவதற்கான ரூட்டிங் அட்டவணை நுழைவு இல்லை, எனவே மீட்டுதல் ட்ரافிக்கை நிராகரிக்கிறது.",
+                "Router-Fukuoka வில், போர்ட் 0 இல் நெக்ஸ்ட் ஹாப் 10.0.16.1 வழி நெட்வொர்க் 10.0.27.0/255.255.255.0 க்கான நிலையான பாதையைச் சேர்க்கவும்."
+            ],
+            "explanation": "ரூட்டர்களுக்கு அவை முன்னிலைப்படுத்த வேண்டிய ஒவ்வொரு சப்நெட்டுக்கும் வெளிப்படையான பாதை தேவை; அசல் நெட்வொர்க்குக்கு திரும்பிய நிலையான பாதை இல்லாமல், ஆரம்ப வேண்டுகோள் வெற்றியடைந்த போதிலும் மீட்டுதல் ட்ரافிக் அமைதியாக நிராகரிக்கப்படுகிறது. விடுபட்ட பாதையைச் சேர்ப்பது முழு சுற்றுப்பயணத்தை மீட்டெடுக்கிறது."
+        },
+        "te": {
+            "title": "పోర్టల్‌కు అదృశ్యమైన అభ్యర్థన",
+            "story": "సప్పોరో కార్యాలయంలో సిబ్బంది ఫుకుओకా ప్రధాన కార్యాలయంలో హోస్ట్ చేయబడిన కంపెనీ పోర్టల్‌ను తెరవడం ఈ ఉదయం నుండి విఫలమైందని నివేదించారు. పేజీ ఎప్పుడూ లోడ్ కాదు, మరియు అభ్యర్థన ఎక్కడికి అదృశ్యమైందో ఎవరూ వివరించలేరు.",
+            "objective": "PC-Dev నుండి Portal-01 కు HTTP GET సफలమవ్వాలి.",
+            "hints": [
+                "Portal-01 నుండిన ప్రతిస్పందన Router-Fukuoka వద్ద తక్షణమే చేసివేయబడుతుంది PC-Dev వైపు ఇతర కంటే ఆ ముందు.",
+                "Router-Fukuoka లో PC-Dev నెట్‌వర్క్ ను చేరుకోవటానికి ఎలా చేయాలో చెప్పే రూటింగ్ టేబుల్ ఎంట్రీ లేనందున, ఇది రిటర్న్ ట్రాఫిక్‌ను విస్మరిస్తుంది.",
+                "Router-Fukuoka లో, నెక్స్ట్ హాప్ 10.0.16.1 ద్వారా పోర్ట్ సంఖ్య 0 లో నెట్‌వర్క్ 10.0.27.0/255.255.255.0 కోసం స్థితి లేని పথ జోడించండి."
+            ],
+            "explanation": "రూటర్‌లకు అవి ఫార్వర్డ్ చేయవలసిన ప్రతి సబ్‌నెట్ కోసం స్పష్టమైన పथ అవసరం; అసలు నెట్‌వర్క్ కు రూటింగ్ టేబుల్ ఎంట్రీ లేకుండా, రిటర్న్ ట్రాఫిక్ ప్రారంభ అభ్యర్థన సफలమైనప్పటికీ సైలెంట్‌గా విస్మరించబడుతుంది. లేని పధ జోడిస్తే పూర్తి రౌండ్ ట్రిప్ పునరుద్ధరించబడుతుంది."
+        },
+        "uk": {
+            "title": "Запит, що зник до Портала",
+            "story": "Співробітники офісу в Саппоро повідомляють, що доступ до корпоративного портала, який розташований у штаб-квартирі Фукуока, виявився неможливим з цього ранку. Сторінка ніколи не завантажується, і ніхто не може пояснити, куди зникає запит.",
+            "objective": "Забезпечте успіх HTTP GET запиту з PC-Dev до Portal-01.",
+            "hints": [
+                "Відповідь від Portal-01 відразу ж відкидається на Router-Fukuoka перед тим, як вона може повернутися до PC-Dev.",
+                "Router-Fukuoka не має запису в таблиці маршрутизації, який告 як досягти мережу PC-Dev, тому він відкидає зворотний трафік.",
+                "На Router-Fukuoka додайте статичний маршрут для мережи 10.0.27.0/255.255.255.0 через наступний перехід 10.0.16.1 на номер порту 0."
+            ],
+            "explanation": "Маршрутизаторам потрібна явна шляхи для кожної підмережі, яку вони повинні перенаправляти; без статичного маршруту назад до вихідної мережі зворотний трафік мовчки відкидається навіть якщо початковий запит пройшов. Додавання відсутнього маршруту відновлює повний цикл обміну."
+        },
+        "ur": {
+            "title": "Portal کو غائب درخواست",
+            "story": "سپورو آفس میں کارکنوں نے اطلاع دی ہے کہ فکوکا ہیڈکوارٹرز میں موجود کمپنی پورٹل کھولنا صبح سے ناکام ہے۔ صفحہ کبھی لوڈ نہیں ہوتا، اور کوئی بھی یہ نہیں بتا سکتا کہ درخواست کہاں غائب ہو جاتی ہے۔",
+            "objective": "PC-Dev سے Portal-01 کو HTTP GET کامیاب بنائیں۔",
+            "hints": [
+                "Portal-01 سے جواب Router-Fukuoka میں سیدھے طور پر ختم ہو جاتا ہے اس سے پہلے کہ یہ PC-Dev کی طرف واپس جا سکے۔",
+                "Router-Fukuoka کے پاس PC-Dev کے نیٹ ورک تک پہنچنے کا طریقہ بتانے والی کوئی روٹنگ ٹیبل اندراج نہیں ہے، اس لیے یہ واپسی کی ٹریفک کو مسترد کر دیتا ہے۔",
+                "Router-Fukuoka پر، نیٹ ورک 10.0.27.0/255.255.255.0 کے لیے نیکسٹ ہاپ 10.0.16.1 کے ذریعے پورٹ 0 پر ایک جامد راستہ شامل کریں۔"
+            ],
+            "explanation": "روٹرز کو ہر سب نیٹ کے لیے واضح راستے کی ضرورت ہے جس کو وہ آگے بھیجنا چاہتے ہوں؛ اصل نیٹ ورک کے لیے جامد راستہ نہ ہونے سے، واپسی کی ٹریفک خاموشی سے ختم ہو جاتی ہے یہاں تک کہ اگر ابتدائی درخواست کامیاب ہو گئی ہو۔ غائب راستہ شامل کرنے سے مکمل سفر بحال ہو جاتا ہے۔"
+        },
+        "zu": {
+            "title": "Isicelo Esipilakile kumangele iPortal",
+            "story": "Abasebenzi e-Sapporo office bavakalagela ukuthi ukuvula ikhompani iportal ebaholwe e-Fukuoka headquarters kuvikele kusukela ekuseni. Ipheji ayilayodi nhlobo, nakundlela nemuntu ongathumela ngayo isicelo siyavalekile.",
+            "objective": "Yenzani i-HTTP GET evela ku-PC-Dev kuya ku-Portal-01 inhlonipho.",
+            "hints": [
+                "Impendulo evela ku-Portal-01 ilahlwa lokhu-Router-Fukuoka ngaphambi kokuthi ibuyele ku-PC-Dev.",
+                "Router-Fukuoka ayinakho ithebula lemizila elinike indlela yokufinyelela kunetiwekhi ka-PC-Dev, ngakho-ke ilahlela uthrafikhi obuyayo.",
+                "Ku-Router-Fukuoka, engeza umzila osingqubile wenethiwekhi 10.0.27.0/255.255.255.0 ngokusebenzisa i-next hop 10.0.16.1 ku-port 0."
+            ],
+            "explanation": "Ama-Router adinga indlela ecacile yesikhungo ngasinye kufanele okuqhubekele kuyo; ngaphandle komzila osingqubile obubuyela enethiwekhi yokuqala, uthrafikhi obuyayo ulahlwa ngenxa yokuthula noma ikhono lesinqumo lesokuqala sabe selilungiselele. Ukweneza umzila owaliswele kubuyisa isikhwele esigcwele."
+        },
+        "bn": {
+            "title": "পোর্টালে অদৃশ্য অনুরোধ",
+            "story": "সাপোরো অফিসের কর্মীরা জানান যে ফুকুওকা সদর দপ্তরে হোস্ট করা কোম্পানি পোর্টাল খোলা আজ সকাল থেকেই ব্যর্থ হচ্ছে। পৃষ্ঠাটি কখনই লোড হয় না এবং কেউ ব্যাখ্যা করতে পারে না যে অনুরোধটি কোথায় চলে যায়।",
+            "objective": "PC-Dev থেকে Portal-01 এ HTTP GET সফল করুন।",
+            "hints": [
+                "Portal-01 থেকে প্রতিক্রিয়া Router-Fukuoka-তে ঠিক তখনই ড্রপ হয় যখন এটি PC-Dev এর দিকে ফিরে যেতে চায়।",
+                "Router-Fukuoka-এর রাউটিং টেবিলে PC-Dev-এর নেটওয়ার্কে পৌঁছানোর জন্য কোনো এন্ট্রি নেই, তাই এটি রিটার্ন ট্রাফিক বাতিল করে।",
+                "Router-Fukuoka-তে, নেটওয়ার্ক 10.0.27.0/255.255.255.0 এর জন্য একটি স্ট্যাটিক রুট যোগ করুন নেক্সট হপ 10.0.16.1 এ পোর্ট নম্বর 0 তে।"
+            ],
+            "explanation": "রাউটারগুলির প্রতিটি সাবনেটের জন্য একটি স্পষ্ট পথ প্রয়োজন যা তাদের ফরওয়ার্ড করতে হবে; অরিজিনাল নেটওয়ার্কে ফিরে যাওয়ার স্ট্যাটিক রুট ছাড়া, প্রাথমিক অনুরোধ সফল হলেও রিটার্ন ট্রাফিক চুপচাপ বাতিল হয়। অনুপস্থিত রুটটি যোগ করা সম্পূর্ণ রাউন্ড ট্রিপ পুনরুদ্ধার করে।"
+        }
+    }
+}
