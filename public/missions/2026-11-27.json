@@ -1,0 +1,1324 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-27",
+    "number": 68,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.26.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.26.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-East",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-East",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.26.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.2.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.21.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.2.2",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-West",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.2.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.21.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.26.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.2.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-West",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.21.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.21.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Orders Stuck on the Way to Headquarters",
+            "story": "PC-Admin at the branch office has been unable to reach the File-Server at headquarters since this morning. Staff say every order attempt just hangs until it times out.",
+            "objective": "Restore an HTTP GET from PC-Admin to File-Server so it gets a response.",
+            "hints": [
+                "The packet from PC-Admin never gets past Router-East; it is dropped there before heading toward headquarters.",
+                "Router-East has a routing entry for the File-Server's network that points out the wrong port, so no valid route exists to deliver it.",
+                "On Router-East, delete the route to 10.0.21.0/255.255.255.0 and add one for 10.0.21.0/255.255.255.0 via 10.0.2.2 on port 1."
+            ],
+            "explanation": "A static route must point out the port that actually leads toward the next-hop router. Here Router-East's route to the File-Server's subnet used the wrong outgoing port, so packets were dropped instead of forwarded toward Router-West."
+        },
+        "ja": {
+            "title": "本社へ向かう途中で止まる注文データ",
+            "story": "支社のPC-Adminが今朝から本社のFile-Serverに接続できません。スタッフによると、注文処理が毎回タイムアウトするまで止まったままになるとのことです。",
+            "objective": "PC-AdminからFile-ServerへのHTTP GETを復旧し、応答が返るようにします。",
+            "hints": [
+                "PC-Adminからのパケットは、本社に向かう途中のRouter-Eastを通過できず、そこで破棄されています。",
+                "Router-Eastには、File-Serverのネットワーク宛てのルーティングエントリがありますが、誤ったポートを指しているため、正しく届けるルートが存在しません。",
+                "Router-Eastで、10.0.21.0/255.255.255.0へのルートを削除し、中継先を10.0.2.2、ポート1とする10.0.21.0/255.255.255.0へのルートを追加してください。"
+            ],
+            "explanation": "静的ルートは、実際に次のルーターへとつながるポートを指す必要があります。今回はRouter-EastのFile-Serverのサブネット宛てのルートが誤った出力ポートを指していたため、パケットがRouter-Westへ転送されずに破棄されていました。"
+        },
+        "zh-CN": {
+            "title": "总部的订单卡住了",
+            "story": "分支办公室的 PC-Admin 从今天早上开始就无法连接到总部的 File-Server。员工表示每次订单请求都会卡住，直到超时。",
+            "objective": "恢复从 PC-Admin 到 File-Server 的 HTTP GET 请求，使其获得响应。",
+            "hints": [
+                "来自 PC-Admin 的数据包从未通过 Router-East；在前往总部之前就在此处被丢弃。",
+                "Router-East 中有一条指向 File-Server 网络的路由条目指向了错误的端口，因此不存在有效的路由来传递它。",
+                "在 Router-East 上，删除指向 10.0.21.0/255.255.255.0 的路由，然后添加一条通过 10.0.2.2 在端口 1 上到达 10.0.21.0/255.255.255.0 的路由。"
+            ],
+            "explanation": "静态路由必须指向实际通向下一跳 Router 的端口。这里 Router-East 到 File-Server 子网的路由使用了错误的出站端口，所以数据包被丢弃而不是转发到 Router-West。"
+        },
+        "zh-TW": {
+            "title": "總部的訂單卡住了",
+            "story": "分公司的 PC-Admin 從今天早上開始就無法連接到總部的 File-Server。員工表示每次訂單請求都會卡住，直到超時。",
+            "objective": "恢復從 PC-Admin 到 File-Server 的 HTTP GET 請求，使其獲得回應。",
+            "hints": [
+                "來自 PC-Admin 的封包從未通過 Router-East；在前往總部之前就在此處被捨棄。",
+                "Router-East 中有一條指向 File-Server 網路的路由項目指向了錯誤的連接埠，因此不存在有效的路由來傳送它。",
+                "在 Router-East 上，刪除指向 10.0.21.0/255.255.255.0 的路由，然後新增一條通過 10.0.2.2 在連接埠 1 上到達 10.0.21.0/255.255.255.0 的路由。"
+            ],
+            "explanation": "靜態路由必須指向實際通向下一跳 Router 的連接埠。這裡 Router-East 到 File-Server 子網的路由使用了錯誤的出站連接埠，所以封包被捨棄而不是轉發到 Router-West。"
+        },
+        "ko": {
+            "title": "본사행 주문이 멈혔어요",
+            "story": "지사의 PC-Admin이 오늘 아침부터 본사의 File-Server에 연결할 수 없습니다. 직원들은 모든 주문 시도가 중단되었다가 타임아웃될 때까지 기다린다고 말합니다.",
+            "objective": "PC-Admin에서 File-Server로의 HTTP GET을 복구하여 응답을 받도록 하세요.",
+            "hints": [
+                "PC-Admin에서 온 패킷이 Router-East를 통과하지 못하고, 본사로 향하기 전에 여기서 버려집니다.",
+                "Router-East에는 File-Server 네트워크로 가는 라우팅 항목이 있지만 잘못된 포트를 가리키므로, 이를 전달할 유효한 경로가 없습니다.",
+                "Router-East에서 10.0.21.0/255.255.255.0로의 경로를 삭제한 후, 다음 홉 10.0.2.2의 포트 1을 통해 10.0.21.0/255.255.255.0로 가는 경로를 추가하세요."
+            ],
+            "explanation": "정적 경로는 실제로 다음 홉 Router로 통하는 포트를 가리켜야 합니다. 여기서 Router-East의 File-Server 서브넷으로의 경로가 잘못된 아웃바운드 포트를 사용했기 때문에 패킷이 Router-West로 전달되지 않고 버려졌습니다."
+        },
+        "es": {
+            "title": "Órdenes Atrapadas Camino a la Sede",
+            "story": "PC-Admin en la sucursal no ha podido conectarse al File-Server en la sede desde esta mañana. El personal reporta que cada intento de orden se queda esperando hasta que se agota el tiempo.",
+            "objective": "Restaurar una solicitud HTTP GET de PC-Admin a File-Server para que obtenga una respuesta.",
+            "hints": [
+                "El paquete de PC-Admin nunca pasa Router-East; se descarta allí antes de dirigirse hacia la sede.",
+                "Router-East tiene una entrada de ruta hacia la red del File-Server que apunta al puerto incorrecto, por lo que no existe una ruta válida para entregarlo.",
+                "En Router-East, elimine la ruta a 10.0.21.0/255.255.255.0 y agregue una para 10.0.21.0/255.255.255.0 vía 10.0.2.2 en puerto 1."
+            ],
+            "explanation": "Una ruta estática debe apuntar al puerto que realmente conduce hacia el router de siguiente salto. Aquí la ruta de Router-East hacia la subred del File-Server utilizó el puerto saliente incorrecto, por lo que los paquetes se descartaban en lugar de reenviarse hacia Router-West."
+        },
+        "pt-BR": {
+            "title": "Pedidos Presos no Caminho para a Sede",
+            "story": "O PC-Admin na filial não consegue se conectar ao File-Server na sede desde esta manhã. A equipe relata que toda tentativa de pedido fica pendente até expirar.",
+            "objective": "Restaurar uma requisição HTTP GET de PC-Admin para File-Server para que receba uma resposta.",
+            "hints": [
+                "O pacote de PC-Admin nunca passa por Router-East; é descartado ali antes de seguir para a sede.",
+                "Router-East tem uma entrada de rota para a rede do File-Server apontando para a porta errada, então não existe rota válida para entregá-lo.",
+                "Em Router-East, delete a rota para 10.0.21.0/255.255.255.0 e adicione uma para 10.0.21.0/255.255.255.0 via 10.0.2.2 na porta 1."
+            ],
+            "explanation": "Uma rota estática deve apontar para a porta que realmente leva ao router de próximo salto. Aqui a rota de Router-East para a sub-rede do File-Server usou a porta de saída errada, então os pacotes eram descartados em vez de serem encaminhados para Router-West."
+        },
+        "de": {
+            "title": "Bestellungen bleiben auf dem Weg zur Zentrale stecken",
+            "story": "PC-Admin in der Zweigstelle kann seit heute Morgen nicht auf den File-Server in der Zentrale zugreifen. Das Personal berichtet, dass jeder Bestellversuch einfach hängen bleibt, bis es ein Timeout gibt.",
+            "objective": "Stelle eine HTTP GET-Anfrage von PC-Admin zum File-Server her, die eine Antwort erhält.",
+            "hints": [
+                "Das Paket von PC-Admin kommt nicht über den Router-East hinaus; es wird dort verworfen, bevor es zur Zentrale weitergeleitet wird.",
+                "Router-East hat einen Routing-Eintrag für das Netzwerk des File-Server, der auf den falschen Port verweist, deshalb existiert keine gültige Route für die Zustellung.",
+                "Auf Router-East lösche den Route zum 10.0.21.0/255.255.255.0 und füge einen für 10.0.21.0/255.255.255.0 via 10.0.2.2 auf Port 1 hinzu."
+            ],
+            "explanation": "Ein statischer Route muss auf den Port verweisen, der tatsächlich zum Nächster Hop-Router führt. Hier verwendete der Route von Router-East zum Subnetz des File-Server den falschen ausgehenden Port, deshalb wurden Pakete verworfen statt zum Router-West weitergeleitet zu werden."
+        },
+        "fr": {
+            "title": "Commandes bloquées en route vers le siège",
+            "story": "PC-Admin au bureau de succursale ne peut pas accéder au File-Server au siège depuis ce matin. Le personnel rapporte que chaque tentative de commande reste bloquée jusqu'à expiration du délai.",
+            "objective": "Restaurez une requête HTTP GET de PC-Admin vers File-Server pour qu'elle reçoive une réponse.",
+            "hints": [
+                "Le paquet de PC-Admin ne passe pas Router-East ; il est rejeté avant de se diriger vers le siège.",
+                "Router-East possède une entrée de routage pour le réseau du File-Server qui pointe vers le mauvais port, donc aucune route valide n'existe pour le livrer.",
+                "Sur Router-East, supprimez le route vers 10.0.21.0/255.255.255.0 et ajoutez-en un pour 10.0.21.0/255.255.255.0 via 10.0.2.2 sur le port 1."
+            ],
+            "explanation": "Un route statique doit pointer vers le port qui mène réellement au Saut suivant routeur. Ici le route de Router-East vers le sous-réseau du File-Server a utilisé le mauvais port sortant, donc les paquets ont été rejetés au lieu d'être redirigés vers Router-West."
+        },
+        "hi": {
+            "title": "ऑर्डर मुख्यालय जाते समय फंसे हुए हैं",
+            "story": "शाखा कार्यालय में PC-Admin इस सुबह से मुख्यालय में File-Server तक नहीं पहुंच सका है। कर्मचारी कहते हैं कि हर ऑर्डर प्रयास बस लटक जाता है जब तक टाइमआउट न हो जाए।",
+            "objective": "PC-Admin से File-Server को HTTP GET को पुनः स्थापित करें ताकि इसे प्रतिक्रिया मिले।",
+            "hints": [
+                "PC-Admin से पैकेट Router-East से आगे नहीं जाता; इसे वहां मुख्यालय की ओर जाने से पहले ड्रॉप किया जाता है।",
+                "Router-East के पास File-Server के नेटवर्क के लिए एक रूटिंग प्रविष्टि है जो गलत पोर्ट की ओर इशारा करती है, इसलिए इसे देने के लिए कोई वैध रूट मौजूद नहीं है।",
+                "Router-East पर, 10.0.21.0/255.255.255.0 के लिए रूट हटाएं और 10.0.21.0/255.255.255.0 के लिए एक जोड़ें जो 10.0.2.2 पर पोर्ट 1 के माध्यम से है।"
+            ],
+            "explanation": "एक स्थिर रूट को उस पोर्ट की ओर इशारा करना चाहिए जो वास्तव में अगला हॉप रूटर की ओर जाता है। यहां Router-East की File-Server के सबनेट की रूट गलत आउटगोइंग पोर्ट का उपयोग करती थी, इसलिए पैकेट को Router-West की ओर भेजने के बजाय ड्रॉप किया गया था।"
+        },
+        "id": {
+            "title": "Pesanan Tertahan dalam Perjalanan ke Kantor Pusat",
+            "story": "PC-Admin di kantor cabang tidak dapat menjangkau File-Server di kantor pusat sejak pagi hari ini. Staf melaporkan bahwa setiap upaya pesanan hanya tertunda hingga habis waktu.",
+            "objective": "Pulihkan HTTP GET dari PC-Admin ke File-Server sehingga mendapat respons.",
+            "hints": [
+                "Paket dari PC-Admin tidak pernah melewati Router-East; paket itu dijatuhkan di sana sebelum menuju kantor pusat.",
+                "Router-East memiliki entri routing untuk Jaringan File-Server yang menunjuk ke port yang salah, sehingga tidak ada route yang valid untuk mengirimnya.",
+                "Di Router-East, hapus route ke 10.0.21.0/255.255.255.0 dan tambahkan satu untuk 10.0.21.0/255.255.255.0 via 10.0.2.2 di port 1."
+            ],
+            "explanation": "Route statis harus menunjuk ke port yang benar-benar mengarah ke Router Hop berikutnya. Di sini route Router-East ke subnet File-Server menggunakan port keluar yang salah, sehingga paket dijatuhkan alih-alih diteruskan ke Router-West."
+        },
+        "ru": {
+            "title": "Заказы застряли на пути в штаб-квартиру",
+            "story": "PC-Admin в отделении не может получить доступ к File-Server в штаб-квартире с этого утра. Персонал сообщает, что каждая попытка заказа просто зависает до истечения времени ожидания.",
+            "objective": "Восстановите HTTP GET от PC-Admin к File-Server, чтобы она получила ответ.",
+            "hints": [
+                "Пакет от PC-Admin не проходит дальше Router-East; он отбрасывается там перед отправкой в штаб-квартиру.",
+                "Router-East имеет запись маршрутизации для Целевая сеть File-Server, которая указывает на неправильный порт, поэтому не существует действительного маршрута для его доставки.",
+                "На Router-East удалите маршрут к 10.0.21.0/255.255.255.0 и добавьте один для 10.0.21.0/255.255.255.0 через 10.0.2.2 на порте 1."
+            ],
+            "explanation": "Статический маршрут должен указывать на порт, который действительно ведет к Следующий узел маршрутизатору. Здесь маршрут Router-East к подсети File-Server использовал неправильный исходящий порт, поэтому пакеты были отброшены вместо того, чтобы быть перенаправлены на Router-West."
+        },
+        "it": {
+            "title": "Ordini bloccati verso la sede centrale",
+            "story": "PC-Admin presso la filiale non riesce a raggiungere File-Server presso la sede centrale da questa mattina. Lo staff riferisce che ogni tentativo di ordine rimane in sospeso finché non scade il timeout.",
+            "objective": "Ripristinare una richiesta HTTP GET da PC-Admin a File-Server in modo che riceva una risposta.",
+            "hints": [
+                "Il pacchetto da PC-Admin non supera mai Router-East; viene scartato lì prima di dirigersi verso la sede centrale.",
+                "Router-East ha una voce di routing per la rete di File-Server che punta sulla porta sbagliata, quindi non esiste un percorso valido per consegnarlo.",
+                "Su Router-East, elimina la rotta a 10.0.21.0/255.255.255.0 e aggiungine una per 10.0.21.0/255.255.255.0 via 10.0.2.2 sulla porta 1."
+            ],
+            "explanation": "Una rotta statica deve indicare la porta che effettivamente conduce verso il router di prossimo salto. In questo caso la rotta di Router-East verso la subnet di File-Server utilizzava la porta in uscita sbagliata, quindi i pacchetti venivano scartati invece di essere inoltrati verso Router-West."
+        },
+        "tr": {
+            "title": "Siparişler Merkez Ofise Doğru Yolda Takılı Kaldı",
+            "story": "Şube ofisindeki PC-Admin, bu sabahtan beri merkez ofisteki File-Server'a ulaşamıyor. Personel, her sipariş denemesinin zaman aşımına uğrayıncaya kadar beklediğini söylüyor.",
+            "objective": "PC-Admin'den File-Server'a yapılan bir HTTP GET isteğini geri yükleyin, böylece yanıt alır.",
+            "hints": [
+                "PC-Admin'den gelen paket hiçbir zaman Router-East'i geçmez; merkez ofise doğru gitmeden önce orada bırakılır.",
+                "Router-East'in File-Server ağı için bir yönlendirme girişi vardır ve bu giriş yanlış portu gösterir, bu nedenle bunu teslim etmek için geçerli bir rota yoktur.",
+                "Router-East üzerinde 10.0.21.0/255.255.255.0 adresine giden rotayı silin ve 10.0.21.0/255.255.255.0 adresine port 1 üzerinde 10.0.2.2 yoluyla yeni bir rota ekleyin."
+            ],
+            "explanation": "Statik bir rota, sonraki sıçrama yönlendiricisine gerçekten giden portu göstermelidir. Burada Router-East'in File-Server alt ağına giden rotası yanlış giden portu kullandığından, paketler Router-West'e iletilmek yerine bırakıldı."
+        },
+        "th": {
+            "title": "คำสั่งติดขัดบนเส้นทางไปสำนักงานใหญ่",
+            "story": "PC-Admin ที่สาขาไม่สามารถเข้าถึง File-Server ที่สำนักงานใหญ่ตั้งแต่เช้านี้ เจ้าหน้าที่กล่าวว่าการพยายามสั่งซื้อทุกครั้งติดขัดจนกว่าจะหมดเวลา",
+            "objective": "คืนสถานะ HTTP GET จาก PC-Admin ไปยัง File-Server เพื่อให้ได้รับการตอบกลับ",
+            "hints": [
+                "แพ็กเก็ตจาก PC-Admin ไม่เคยผ่าน Router-East มันถูกลบออกที่นั่นก่อนที่จะไปสู่สำนักงานใหญ่",
+                "Router-East มีรายการเส้นทางสำหรับเครือข่าย File-Server ที่ชี้ไปยังพอร์ตที่ไม่ถูกต้อง จึงไม่มีเส้นทางที่ถูกต้องเพื่อส่งมันต่อไป",
+                "บน Router-East ให้ลบเส้นทางไปยัง 10.0.21.0/255.255.255.0 แล้วเพิ่มเส้นทางสำหรับ 10.0.21.0/255.255.255.0 ฮ็อปถัดไป 10.0.2.2 ที่พอร์ต 1"
+            ],
+            "explanation": "เส้นทางแบบคงที่จะต้องชี้ไปยังพอร์ตที่นำไปยังเร้าเตอร์ฮ็อปถัดไปจริงๆ ที่นี่เส้นทางของ Router-East ไปยังซับเน็ต File-Server ใช้พอร์ตขาออกที่ไม่ถูกต้อง จึงทำให้แพ็กเก็ตถูกลบออกแทนที่จะส่งต่อไปยัง Router-West"
+        },
+        "vi": {
+            "title": "Đơn hàng Bị Mắc Kẹt Trên Đường Tới Trụ Sở Chính",
+            "story": "PC-Admin tại chi nhánh không thể kết nối với File-Server tại trụ sở chính kể từ sáng nay. Nhân viên nói rằng mỗi lần cố gắng đặt hàng đều treo cho đến khi hết thời gian chờ.",
+            "objective": "Khôi phục yêu cầu HTTP GET từ PC-Admin tới File-Server để nhận được phản hồi.",
+            "hints": [
+                "Gói tin từ PC-Admin không bao giờ vượt qua Router-East; nó bị loại bỏ ở đó trước khi đi về trụ sở chính.",
+                "Router-East có một mục định tuyến cho mạng File-Server nhưng nó chỉ đến cổng sai, do đó không có tuyến hợp lệ để chuyển tiếp.",
+                "Trên Router-East, xóa tuyến tới 10.0.21.0/255.255.255.0 và thêm tuyến cho 10.0.21.0/255.255.255.0 qua hop tiếp theo 10.0.2.2 ở cổng 1."
+            ],
+            "explanation": "Một tuyến tĩnh phải chỉ đến cổng thực sự dẫn tới bộ định tuyến hop tiếp theo. Ở đây tuyến của Router-East tới subnet File-Server sử dụng cổng gửi đi sai, do đó các gói tin bị loại bỏ thay vì chuyển tiếp tới Router-West."
+        },
+        "af": {
+            "title": "Bestellings vasgelê op pad na hoofkantoor",
+            "story": "PC-Admin by die filiaal kan nie File-Server by die hoofkantoor bereik nie sedert vanmôre. Personeel sê dat elke bestelpoging net hang tot dit uitloop.",
+            "objective": "Herstel 'n HTTP GET van PC-Admin na File-Server sodat dit 'n reaksie ontvang.",
+            "hints": [
+                "Die pakket van PC-Admin gaan nooit verby Router-East nie; dit word daar laat vaar voordat dit hoofkantoor toe gaan.",
+                "Router-East het 'n roeteringsinvoer vir File-Server se netwerk wat na die verkeerde poort wys, dus bestaan geen geldige roete om dit af te lewer nie.",
+                "Op Router-East, verwyder die roete na 10.0.21.0/255.255.255.0 en voeg een by vir 10.0.21.0/255.255.255.0 via volgende hop 10.0.2.2 op poort 1."
+            ],
+            "explanation": "'n Statiese roete moet na die poort wys wat werklik na die volgende-hop-roeteerder lei. Hier het Router-East se roete na die File-Server-subnet die verkeerde uitgaande poort gebruik, sodat pakkette laat vaar is in plaas van na Router-West uitgestuur."
+        },
+        "ar": {
+            "title": "الطلبات عالقة في الطريق إلى المقر الرئيسي",
+            "story": "لا يستطيع PC-Admin في فرع المكتب الوصول إلى File-Server في المقر الرئيسي منذ هذا الصباح. يقول الموظفون إن كل محاولة طلب تعلق فقط حتى تنتهي المهلة الزمنية.",
+            "objective": "استعادة HTTP GET من PC-Admin إلى File-Server حتى يحصل على استجابة.",
+            "hints": [
+                "الحزمة من PC-Admin لم تتجاوز أبداً Router-East؛ يتم إسقاطها هناك قبل التوجه نحو المقر الرئيسي.",
+                "Router-East يحتوي على إدخال توجيه لشبكة File-Server يشير إلى المنفذ الخاطئ، لذا لا توجد مسار صحيح لتسليمه.",
+                "على Router-East، احذف المسار إلى 10.0.21.0/255.255.255.0 وأضف واحداً لـ 10.0.21.0/255.255.255.0 عبر 10.0.2.2 على المنفذ 1."
+            ],
+            "explanation": "يجب أن يشير المسار الثابت إلى المنفذ الذي يؤدي فعلاً نحو جهاز التوجيه التالي. هنا مسار Router-East إلى subnet File-Server استخدم منفذ الخروج الخاطئ، لذا تم إسقاط الحزم بدلاً من إعادة توجيهها نحو Router-West."
+        },
+        "az": {
+            "title": "Sifarişlər Merkəzə Yolda Qalıb",
+            "story": "Budaqda PC-Admin bu sabahdan bəri File-Server-ə mərkəzə çatmağı bacarmayıb. Kadr heç bir sifariş cəhdi yalnız timeout-a qədər asılı qalıb.",
+            "objective": "PC-Admin-dən File-Server-ə HTTP GET bərpa edin ki, cavab alınsın.",
+            "hints": [
+                "PC-Admin-dən gələn paket heydər Router-East-i keçməyib; o, mərkəzə getməzdən əvvəl orada atılıb.",
+                "Router-East-də File-Server şəbəkəsi üçün yönləndirmə girişi yanlış porta işarə edir, buna görə də onu çatdırmaq üçün etibarlı marşrut yoxdur.",
+                "Router-East-də 10.0.21.0/255.255.255.0-ə olan marşrutu silin və 10.0.21.0/255.255.255.0 üçün 10.0.2.2 vasitəsilə port 1-də olanı əlavə edin."
+            ],
+            "explanation": "Statik marşrut həqiqətən Növbəti keçid routerinə aparan portu göstərməlidir. Burada Router-East-ə File-Server subnet-ə olan marşrutu yanlış gedən portu istifadə etdi, buna görə paketlər Router-West-ə yönləndirilməsi əvəzinə atıldı."
+        },
+        "be": {
+            "title": "Заказы Застряў У Дарозе да Штаб-Квартэры",
+            "story": "PC-Admin у філіялі не можа дасягнуць File-Server у штаб-квартэры з гэтага ранку. Персонал гавярыць, што любая спроба замовы прасто завіснуе да timeout.",
+            "objective": "Аднавіць HTTP GET ад PC-Admin да File-Server, каб адбыў адказ.",
+            "hints": [
+                "Пакет ад PC-Admin ніколі не прайшоў міма Router-East; ён перакінуты там перад тым, як рушыць да штаб-квартэры.",
+                "Router-East мае запіс Табліца маршрутызацыі для сеткі File-Server, который указывает на неправильный порт, поэтому нет действительного маршрута для доставки.",
+                "На Router-East, сніміце маршрут да 10.0.21.0/255.255.255.0 і дадайце адзін для 10.0.21.0/255.255.255.0 праз 10.0.2.2 на порце 1."
+            ],
+            "explanation": "Статычны маршрут павінен указывать на порт, кторый фактычна вядзе да Наступны пераход маршрутызатара. Здесь маршрут Router-East да сеткі File-Server выкарыстаў неправільны выходны порт, таму пакеты былі перакінуты замест тога, каб быць перауглёнуты на Router-West."
+        },
+        "bg": {
+            "title": "Поръчки Осакатени На Пътя До Централата",
+            "story": "PC-Admin в клонския офис не може да достигне File-Server в централата от тази сутрин. Персоналът казва, че всеки опит за поръчка просто се спира докато не изтече времето.",
+            "objective": "Възстановете HTTP GET от PC-Admin към File-Server, за да получи отговор.",
+            "hints": [
+                "Пакетът от PC-Admin никога не преминава край Router-East; той се пада там преди да се насочи към централата.",
+                "Router-East има маршрутна запис за мрежата на File-Server, която сочи към неправилния порт, така че няма валиден маршрут за доставяне.",
+                "На Router-East, изтрийте маршрута до 10.0.21.0/255.255.255.0 и добавете един за 10.0.21.0/255.255.255.0 през 10.0.2.2 на порт 1."
+            ],
+            "explanation": "Статичният маршрут трябва да сочи към портът, който действително води към Следващ преход маршрутизатора. Тук маршрутът на Router-East към подмрежата на File-Server използва неправилния изходящ порт, така че пакетите бяха пада вместо да бъдат препратени към Router-West."
+        },
+        "bn": {
+            "title": "হেডকোয়ার্টারে পথে অর্ডার আটকে গেছে",
+            "story": "শাখা অফিসে PC-Admin সকাল থেকে হেডকোয়ার্টারের File-Server এ পৌঁছাতে পারছে না। কর্মীরা বলছে প্রতিটি অর্ডার অনুরোধ ঝুলে থাকে এবং সময়শেষ হয়ে যায়।",
+            "objective": "PC-Admin থেকে File-Server এ একটি HTTP GET পুনরুদ্ধার করুন যাতে এটি একটি প্রতিক্রিয়া পায়।",
+            "hints": [
+                "PC-Admin থেকে প্যাকেটটি Router-East এর বাইরে যায় না; এটি হেডকোয়ার্টারের দিকে যাওয়ার আগে সেখানে বাদ দেওয়া হয়।",
+                "Router-East এ File-Server এর নেটওয়ার্কের জন্য একটি রাউটিং এন্ট্রি আছে যা ভুল পোর্টের দিকে নির্দেশ করে, তাই এটি সরবরাহ করার জন্য কোনো বৈধ রুট নেই।",
+                "Router-East এ, 10.0.21.0/255.255.255.0 এর রুট মুছুন এবং পোর্ট 1 এ নেক্সট হপ 10.0.2.2 এর মাধ্যমে 10.0.21.0/255.255.255.0 এর জন্য একটি নতুন রুট যোগ করুন।"
+            ],
+            "explanation": "একটি স্ট্যাটিক রুট অবশ্যই সেই পোর্টের দিকে নির্দেশ করবে যা আসলে নেক্সট-হপ রাউটারের দিকে নিয়ে যায়। এখানে Router-East এর File-Server এর সাবনেটের রুট ভুল আউটগোয়িং পোর্ট ব্যবহার করেছিল, তাই প্যাকেটগুলি Router-West এর দিকে ফরওয়ার্ড করার পরিবর্তে বাদ দেওয়া হয়েছিল।"
+        },
+        "ca": {
+            "title": "Comandes atrapades en el camí cap a la seu",
+            "story": "PC-Admin a la sucursal no ha pogut arribar a File-Server a la seu central des d'aquesta matinada. El personal diu que cada intent de comanda simplement es queda penjat fins que s'esgota el temps.",
+            "objective": "Restaura una sol·licitud HTTP GET de PC-Admin a File-Server perquè obtingui una resposta.",
+            "hints": [
+                "El paquet de PC-Admin mai no supera Router-East; es descarta allà abans de dirigir-se cap a la seu central.",
+                "Router-East té una entrada d'encaminament per a la xarxa de File-Server que apunta a la porta incorrecta, de manera que no existeix cap ruta vàlida per a lliurar-la.",
+                "A Router-East, suprimeix la ruta a 10.0.21.0/255.255.255.0 i afegeix-ne una per a 10.0.21.0/255.255.255.0 via 10.0.2.2 al port 1."
+            ],
+            "explanation": "Una ruta estàtica ha de señalar la porta que realment condueix al router del salt següent. Aquí la ruta de Router-East a la subxarxa de File-Server va utilitzar la porta de sortida incorrecta, de manera que els paquets es van descartar en lloc de ser reenviats a Router-West."
+        },
+        "cs": {
+            "title": "Objednávky uvízlé na cestě do centrály",
+            "story": "PC-Admin v pobočce nemůže od této dopoledne dosáhnout File-Server v centráře. Zaměstnanci říkají, že každý pokus o objednávku se jenom zasekne, dokud nevyprší čas.",
+            "objective": "Obnovte HTTP GET z PC-Admin na File-Server, aby obdržel odpověď.",
+            "hints": [
+                "Paket z PC-Admin nikdy neprojde dál než Router-East; je zde vynechán, než se vydá na cestu do centrály.",
+                "Router-East má položku Směrovací tabulka pro síť File-Server, která ukazuje na špatný port, takže neexistuje žádná platná cesta pro jeho doručení.",
+                "Na Router-East odstraňte trasu na 10.0.21.0/255.255.255.0 a přidejte trasu na 10.0.21.0/255.255.255.0 přes 10.0.2.2 na portu 1."
+            ],
+            "explanation": "Statická trasa musí ukazovat na port, který skutečně vede k dalšímu skoku (next-hop) routeru. Zde trasa Router-East do podsítě File-Server použila špatný výstupní port, takže pakety byly vynechány místo toho, aby byly přeposílány do Router-West."
+        },
+        "da": {
+            "title": "Ordrer hængende på vej til hovedkontor",
+            "story": "PC-Admin på filialen kan siden denne morgen ikke nå File-Server på hovedkontoret. Personalet siger, at ethvert ordreforsøg blot hænger fast, indtil det løber ud.",
+            "objective": "Gendan en HTTP GET fra PC-Admin til File-Server, så den får svar.",
+            "hints": [
+                "Pakken fra PC-Admin kommer aldrig forbi Router-East; den bliver droppet der, før den går mod hovedkontoret.",
+                "Router-East har en routingindgang for File-Servers netværk, der peger på den forkerte port, så der findes ingen gyldig rute til at levere den.",
+                "På Router-East skal du slette ruten til 10.0.21.0/255.255.255.0 og tilføje en til 10.0.21.0/255.255.255.0 via 10.0.2.2 på port 1."
+            ],
+            "explanation": "En statisk rute skal pege på den port, der faktisk fører til næste-hop-routeren. Her brugte Router-Easts rute til File-Servers subnæt den forkerte udgående port, så pakker blev droppet i stedet for at blive videresendt til Router-West."
+        },
+        "el": {
+            "title": "Παραγγελίες κολλημένες στο δρόμο προς τα κεντρικά",
+            "story": "Ο PC-Admin στο υποκατάστημα δεν μπορεί να φτάσει τον File-Server στα κεντρικά από τις πρωί. Το προσωπικό λέει ότι κάθε προσπάθεια παραγγελίας απλώς κολλάει έως ότου εξαντληθεί ο χρόνος.",
+            "objective": "Αποκαταστήστε ένα HTTP GET από PC-Admin σε File-Server ώστε να λάβει απάντηση.",
+            "hints": [
+                "Το πακέτο από PC-Admin δεν περνά ποτέ από Router-East· απορρίπτεται εκεί πριν κατευθυνθεί προς τα κεντρικά.",
+                "Το Router-East έχει μια καταχώρηση δρομολόγησης για το δίκτυο File-Server που δείχνει στη λάθος θύρα, επομένως δεν υπάρχει έγκυρη διαδρομή για την παράδοσή του.",
+                "Στο Router-East, διαγράψτε τη διαδρομή προς 10.0.21.0/255.255.255.0 και προσθέστε μία για 10.0.21.0/255.255.255.0 μέσω 10.0.2.2 στη θύρα 1."
+            ],
+            "explanation": "Μια στατική διαδρομή πρέπει να δείχνει την θύρα που οδηγεί πραγματικά στο επόμενο βήμα (next-hop) δρομολογητή. Εδώ η διαδρομή του Router-East προς το υποδίκτυο File-Server χρησιμοποίησε τη λάθος θύρα εξόδου, οπότε τα πακέτα απορρίφθηκαν αντί να προωθηθούν προς τον Router-West."
+        },
+        "et": {
+            "title": "Tellimused peatunud peakorteri poole",
+            "story": "PC-Admin filiaalikontooris ei suuda alates sellest hommikust jõuda File-Serverini peakorteris. Personal ütleb, et iga tellimuse katse peatub kuni aegumine.",
+            "objective": "Taastage HTTP GET PC-Adminilt File-Serverile nii, et see saab vastuse.",
+            "hints": [
+                "Pakett PC-Adminilt ei jõua kunagi Router-Eastist kaugemale; see kustutatakse seal enne pöördumist peakorteri poole.",
+                "Router-Eastil on marsruutimistabel File-Serveri võrgu jaoks, mis osutab valele pordinumbrile, nii et kehtivat marsruuti ei ole.",
+                "Router-Eastil kustutage marsruut 10.0.21.0/255.255.255.0 ja lisage marsruut 10.0.21.0/255.255.255.0 järgmise hüppe 10.0.2.2 poort 1 kaudu."
+            ],
+            "explanation": "Staatiline marsruut peab näitama porti, mis tegelikult viib järgmise hüppe ruuteri poole. Siin File-Serveri alamvõrgu marsruut Router-Eastil kasutas valeta väljamineva porti, seega pakettid kustutatakse selle asemel, et neid edasi marsruutida Router-Westi."
+        },
+        "fa": {
+            "title": "سفارشات در راه به مقر اصلی گیر کرده‌اند",
+            "story": "PC-Admin در دفتر شاخه از صبح امروز نتوانسته است به File-Server در مقر اصلی دسترسی پیدا کند. کارکنان می‌گویند هر تلاش سفارش منتظر می‌ماند تا مهلت‌زمان تمام شود.",
+            "objective": "بازسازی HTTP GET از PC-Admin به File-Server تا پاسخی دریافت شود.",
+            "hints": [
+                "بسته‌ای از PC-Admin هرگز از Router-East فراتر نمی‌رود؛ آنجا حذف می‌شود قبل از اینکه به سمت مقر اصلی برود.",
+                "Router-East دارای یک ورودی مسیریابی برای شبکه File-Server است که به شماره پورت اشتباه اشاره می‌کند، بنابراین هیچ مسیر معتبری وجود ندارد.",
+                "در Router-East، مسیر 10.0.21.0/255.255.255.0 را حذف کنید و یک مسیر جدید برای 10.0.21.0/255.255.255.0 از طریق هاپ بعدی 10.0.2.2 بر روی پورت 1 اضافه کنید."
+            ],
+            "explanation": "یک مسیر استاتیکی باید پورتی را نشان دهد که واقعاً به سوی روتر هاپ بعدی می‌رود. اینجا مسیر File-Server در شبکه فرعی Router-East از شماره پورت خروجی اشتباه استفاده می‌کرد، بنابراین بسته‌ها به جای اینکه به سمت Router-West ارسال شوند حذف می‌شدند."
+        },
+        "fi": {
+            "title": "Tilaukset jumissa matkalla pääkonttoriin",
+            "story": "PC-Admin haaratoimistossa ei ole pystynyt saavuttamaan File-Serveriä pääkonttorissa tänä aamuna. Henkilökunta sanoo, että jokainen tilausyritys jää odottamaan, kunnes aikakatkaisu tapahtuu.",
+            "objective": "Palauta HTTP GET PC-Administa File-Serverille niin, että se saa vastauksen.",
+            "hints": [
+                "PC-Administa lähtetävä paketti ei koskaan pääse Router-Eastin ohi; se pudotetaan siellä ennen kuin se lähtee pääkonttoriin.",
+                "Router-Eastin reititystaulu sisältää File-Serverin verkon merkinnän, joka osoittaa väärään porttinumeroon, joten kelvollista reittiä ei ole.",
+                "Router-Eastin reititystaulu: poista reitti 10.0.21.0/255.255.255.0 ja lisää reitti 10.0.21.0/255.255.255.0 seuraavan hypyn 10.0.2.2 kautta portilla 1."
+            ],
+            "explanation": "Staattisen reitin on osoitettava porttiin, joka todella johtaa seuraavan hypyn reitittäjään. Tässä File-Serverin aliverkon reitti Router-Eastissa käytti väärää lähtevää porttia, joten paketit pudotettiin sen sijaan, että ne välitettäisiin Router-Westin suuntaan."
+        },
+        "fil": {
+            "title": "Mga Order na Natigil sa Daan sa Pangunahing Opisina",
+            "story": "PC-Admin sa sangay na opisina ay hindi makaabot sa File-Server sa pangunahing opisina mula ngayong umaga. Sinasabi ng mga empleyado na bawat pagsubok ng order ay tumatagal hanggang sa mawalan ng koneksyon.",
+            "objective": "Ibalik ang HTTP GET mula sa PC-Admin sa File-Server upang makatanggap ng sagot.",
+            "hints": [
+                "Ang pakete mula sa PC-Admin ay hindi kailanman nakakalusot sa Router-East; ito ay natanggal doon bago pumunta sa pangunahing opisina.",
+                "Ang Router-East ay may entrada sa reitingong talahanayan para sa network ng File-Server na nakaturo sa maling port number, kaya walang wastong ruta.",
+                "Sa Router-East, tanggalin ang ruta sa 10.0.21.0/255.255.255.0 at magdagdag ng ruta para sa 10.0.21.0/255.255.255.0 sa pamamagitan ng 10.0.2.2 sa port 1."
+            ],
+            "explanation": "Ang isang static na ruta ay dapat ipakita ang port na tunay na humahantong sa susunod na router. Dito ang ruta ng File-Server subnet sa Router-East ay gumamit ng maling lumalabas na port, kaya ang mga pakete ay natanggal sa halip na i-forward tungo sa Router-West."
+        },
+        "gl": {
+            "title": "Pedidos atascados cara á sedes central",
+            "story": "PC-Admin na sucursal non conseguiu alcanzar File-Server na sedes central dende esta mañá. O persoal di que cada intento de pedido só se queda colgado ata que expira o tempo de espera.",
+            "objective": "Restaurar un HTTP GET desde PC-Admin a File-Server para que reciba unha resposta.",
+            "hints": [
+                "O paquete de PC-Admin nunca pasa de Router-East; é descartado alí antes de dirixirse cara á sedes central.",
+                "Router-East ten unha entrada de enrutamento para a rede de File-Server que apunta ao porto incorrecto, polo que non existe ningunha ruta válida para entregalo.",
+                "En Router-East, elimina a ruta a 10.0.21.0/255.255.255.0 e engade unha para 10.0.21.0/255.255.255.0 vía 10.0.2.2 no número de porto 1."
+            ],
+            "explanation": "Unha ruta estática debe indicar o porto que realmente conduce cara ao seguinte salto do enrutador. Aquí a ruta de Router-East cara á subrede de File-Server usaba o porto de saída incorrecto, polo que os paquetes eran descartados en lugar de ser reenviados cara a Router-West."
+        },
+        "gu": {
+            "title": "ઓર્ડરો હેડક્વાર્ટર્સ તરફ અટવાયા છે",
+            "story": "શાખા કચેરીમાં PC-Admin આજ સવાર પછી File-Server એ હેડક્વાર્ટર્સ સુધી પહોંચી શકતા નથી. કર્મચારીઓ કહે છે કે દરેક ઓર્ડરનો પ્રયાસ હેંગ થઈ જાય છે જ્યાં સુધી તે સમય સમાપ્ત ન થાય.",
+            "objective": "PC-Admin થી File-Server સુધી HTTP GET પુનઃસ્થાપિત કરો જેથી તેને પ્રતિક્રિયા મળે.",
+            "hints": [
+                "PC-Admin માંથી પેકેટ Router-East પાસે કદી આગળ નથી જાય; તે હેડક્વાર્ટર્સ તરફ જતાં પહેલા ત્યાં ક્ષતિગ્રસ્ત કરવામાં આવે છે.",
+                "Router-East પાસે File-Server ના નેટવર્ક માટે રાઉટિંગ એન્ટ્રી છે જે ખોટા પોર્ટ તરફ નિર્દેશ કરે છે, તેથી તેને સંપ્રેષણ કરવા માટે કોઈ માન્ય રૂટ અસ્તિત્વમાં નથી.",
+                "Router-East પર, 10.0.21.0/255.255.255.0 માટે રૂટ કાઢી નાખો અને નેક્સ્ટ હોપ 10.0.2.2, પોર્ટ નંબર 1 પર 10.0.21.0/255.255.255.0 માટે એક ઉમેરો."
+            ],
+            "explanation": "સ્ટેટિક રૂટ એ પોર્ટ દર્શાવવો જોઈએ જે ખરેખર નેક્સ્ટ હોપ રાઉટર તરફ જાય છે. અહીં Router-East માટે File-Server ના સબનેટ રૂટ ખોટા આઉટગોઇંગ પોર્ટનો ઉપયોગ કર્યો હતો, તેથી પેકેટો Router-West તરફ ફરોવર્ડ કરવાને બદલે ક્ષતિગ્રસ્ત કરવામાં આવતા હતા."
+        },
+        "he": {
+            "title": "הזמנות תקועות בדרך לערים ראשיות",
+            "story": "PC-Admin בסניף לא הצליחה להגיע אל File-Server בערים ראשיות מהבוקר הזה. הצוות אומר שכל ניסיון הזמנה תלוי עד שיגמר הזמן.",
+            "objective": "שחזר HTTP GET מ-PC-Admin ל-File-Server כדי שהוא יקבל תשובה.",
+            "hints": [
+                "החבילה מ-PC-Admin לעולם לא עוברת דרך Router-East; היא מושמדת שם לפני שהיא הולכת לעבר ערים ראשיות.",
+                "ל-Router-East יש כניסת ניתוב לרשת של File-Server שמצביעה ליציאה הלא נכונה, ולכן לא קיימת מסלול חוקי להסגרת.",
+                "ב-Router-East, מחק את המסלול אל 10.0.21.0/255.255.255.0 והוסף אחד ל-10.0.21.0/255.255.255.0 דרך 10.0.2.2 ב-מספר יציאה 1."
+            ],
+            "explanation": "מסלול סטטי חייב להצביע על היציאה שבעצם מובילה לכיוון הקפיצה הבאה של ה-Router. כאן המסלול של Router-East לתת-רשת של File-Server השתמש ביציאה היוצאת הלא נכונה, ולכן החבילות הושמדו במקום להיות מועברות לעבר Router-West."
+        },
+        "hr": {
+            "title": "Narudžbe zaglavljivane prema sjedištu",
+            "story": "PC-Admin u ogranku nije mogao dosegnuti File-Server u sjedištu od ovoga jutra. Zaposleni kažu da se svaki pokušaj narudžbe obesi dok se ne istek vrijeme čekanja.",
+            "objective": "Obnovite HTTP GET s PC-Admin na File-Server kako bi dobio odgovor.",
+            "hints": [
+                "Paket s PC-Admin nikada ne prođe dalje Router-East; biva odbijen tamo prije nego što se usmjeri prema sjedištu.",
+                "Router-East ima stavku usmjeravanja za mrežu File-Server koja pokazuje na pogrešan broj porta, pa ne postoji validan put za isporuku.",
+                "Na Router-East, obriši rutu do 10.0.21.0/255.255.255.0 i dodaj je za 10.0.21.0/255.255.255.0 preko 10.0.2.2 na broj porta 1."
+            ],
+            "explanation": "Statička ruta mora ukazati na broj porta koji zaista vodi prema sljedećem skoku usmjerivača. Ovdje je ruta Router-East prema podmreži File-Server koristila pogrešan odlazni broj porta, pa su paketi odbijeni umjesto da budu prosljeđeni prema Router-West."
+        },
+        "hu": {
+            "title": "Megrendelések ragadtak a főhadiszállás felé",
+            "story": "PC-Admin az ágban nem tudta elérni a File-Server főhadiszállást ma reggel óta. A személyzet azt mondja, hogy minden megrendelési kísérlet csak lefagy, amíg le nem jár az idő.",
+            "objective": "Állítsa vissza a HTTP GET-et PC-Admin-ről File-Server-re, hogy választ kapjon.",
+            "hints": [
+                "A PC-Admin-ból érkező csomag soha nem jut túl a Router-East-en; a rendszer eldobja, mielőtt a főhadiszállás felé indulna.",
+                "A Router-East rendelkezik a File-Server hálózatához vezető útválasztási bejegyzéssel, amely a hibás portra mutat, így nem létezik érvényes útvonal a kézbesítéshez.",
+                "A Router-East-en törölje a 10.0.21.0/255.255.255.0 útvonalat, és adjon hozzá egyet a 10.0.21.0/255.255.255.0 számára a 10.0.2.2 következő ugráson a portszám 1-en."
+            ],
+            "explanation": "Egy statikus útvonalnak az a portot kell mutatnia, amely ténylegesen a router következő ugrása felé vezet. Itt a Router-East útvonala a File-Server alhálózatához a helytelen kimenő portot használta, így a csomagok eldobása helyett a Router-West felé kerültek volna továbbítva."
+        },
+        "hy": {
+            "title": "Պատվերները ստուգված են ճանապարհին դեպի գլխավոր գրասենյակ",
+            "story": "PC-Admin մասնաճյուղի գրասենյակում ի վեր ամբողջ օր չի կարողանում հասնել File-Server գլխավոր գրասենյակում: Աշխատակիցները ասում են, որ յուրաքանչյուր պատվերի փորձ ուղղակի կախվում է, մինչև հաջորդ առևտուրը:",
+            "objective": "Վերականգնել HTTP GET պատասխանը PC-Admin-ից դեպի File-Server այնպես, որ այն ստանա պատասխան:",
+            "hints": [
+                "PC-Admin-ից հաղորդակցության փաթեթը երբեք չի անցնում Router-East-ից, այն մերժվում է այնտեղ, մինչ գլխավոր գրասենյակ շարժվել:",
+                "Router-East-ը ունի ցանցային մուտքի File-Server-ի կողմից, որը ուղղում է սխալ պորտ, այնպես որ հավաստի ճանապարհ չկա այն հասցնելու համար:",
+                "Router-East-ում ջնջեք 10.0.21.0/255.255.255.0 երթուղը և ավելացրեք մեկը 10.0.21.0/255.255.255.0 համար հաջորդ հանգույց 10.0.2.2, պորտ 1-ի միջոցով:"
+            ],
+            "explanation": "Ստատիկ երթուղը պետք է ցույց տա այն պորտը, որը իրականում հանգեցնում է հաջորդ հանգույց ցանցային ուղղիչին: Այստեղ Router-East-ի ճանապարհը File-Server-ի ենթացանցին օգտագործել է սխալ ելքային պորտ, այնպես որ փաթեթները մերժվել են, փոխանակ Router-West-ի ուղղությամբ ուղղորդվել:"
+        },
+        "is": {
+            "title": "Pantanir stöðvuðir á leiðinni til aðalskrifstofu",
+            "story": "PC-Admin í útibúi gat ekki náð til File-Server á aðalskrifstofu frá morgni. Starfsmenn segja að hver tilraun til að senda pöntun hangandi þar til tímamót.",
+            "objective": "Endurkoma HTTP GET frá PC-Admin til File-Server svo hún fái svar.",
+            "hints": [
+                "Pakkinn frá PC-Admin kemst aldrei fram hjá Router-East; honum er fleygt þar áður en farið er til aðalskrifstofu.",
+                "Router-East hefur beinitöflu fyrir netið File-Server sem bendir á ranga tengja, svo engin gild leið er til að afhenda hana.",
+                "Á Router-East, eyðiðu leiðinni til 10.0.21.0/255.255.255.0 og bætið við einni fyrir 10.0.21.0/255.255.255.0 í gegnum 10.0.2.2 á tengja 1."
+            ],
+            "explanation": "Kyrrstæð leið verður að benda á tengja sem raunverulega leiðir til næsta hopps ðrautarins. Hér var leið Router-East til undirnetis File-Server notuð rönga útgöngu tengja, svo pakkar voru fleyttir í stað þess að beina þeim til Router-West."
+        },
+        "ka": {
+            "title": "შეკვეთები აღკვეთილია გზაზე საფილოსთან",
+            "story": "PC-Admin ფილიალის ოფისში ვერ აღწევს File-Server-ს ცენტრალური ოფისში დღის დილიდან. კადრი ამბობს, რომ ყოველი ჩანთა ცდა უბრალოდ ჩერდება, სანამ ს დროის შესრულება.",
+            "objective": "აღადგინეთ HTTP GET PC-Admin-idan File-Server-მდე, რათა იქონიოს პასუხი.",
+            "hints": [
+                "PC-Admin-იდან გამოკითხვა არასოდეს გადის Router-East-ს; ის ჩამოაგდეს იქ, სანამ წინ წავიდა.",
+                "Router-East აქვს მარშრუტიზაციის აღნიშვა File-Server-ის ქსელისთვის, რომელიც უთითებს არასწორი პორტზე, ამიტომ ვერ არის ვალიდური გზა მისი მიწოდებისთვის.",
+                "Router-East-ზე წაშალეთ მარშრუტი 10.0.21.0/255.255.255.0-ისთვის და დაამატეთ ერთი 10.0.21.0/255.255.255.0-ისთვის შემდეგი ჰოპი 10.0.2.2, პორტი 1-ზე."
+            ],
+            "explanation": "სტატიკური მარშრუტი უნდა მიუთითოს პორტზე, რომელიც რეალურად მივყავართ შემდეგი ჰოპის მარშრუტიზატორის კუთხე. აქ Router-East-ის მარშრუტი File-Server-ის ქვესაიდებამდე გამოიყენა არასწორი გამოსასვლელი პორტი, ამიტომ პაკეტები ჩამოჩდნენ ის რომ Router-West-ს მხარდაჭერა."
+        },
+        "kk": {
+            "title": "Тапсырмалар бас офисқа барудың жолында тежеулі",
+            "story": "PC-Admin бөлінішінің кеңсесі бүтін күндіңінен бастап File-Server-ге бас officege жете алмауда. Қызметкерлер әрбір тапсырыс күші зlydən белгіленгенше ілінеді деп айтады.",
+            "objective": "HTTP GET-ті PC-Admin-ден File-Server-ге қалпына келтіру, сондықтан ол жауап алсын.",
+            "hints": [
+                "PC-Admin-дан пакет ешқашан Router-East-ты аспай қалады; бас офисқа баруға дейін оның үстінде түсіріледі.",
+                "Router-East File-Server желісі үшін маршруттау кестесіне ие, ол дұрыс емес портқа бағытталады, сондықтан оны жеткізудің жарамды маршруты жоқ.",
+                "Router-East үстінде 10.0.21.0/255.255.255.0 үшін маршрутты өшіріңіз және 10.0.21.0/255.255.255.0 үшін келесі хоп 10.0.2.2 арқылы 1 портта бір қосыңыз."
+            ],
+            "explanation": "Статистикалық маршрут келесі хоп маршруттаушысына жетіп шығатын портты көрсетуі керек. Мұнда Router-East маршруты File-Server的 подсетіне қате шығу портын пайдалады, сондықтан пакеттер Router-West-қа қарай білік берілді орнына түсіріліді."
+        },
+        "km": {
+            "title": "ការបញ្ជាទិញ ជាប់ក្នុងផ្លូវទៅការិយាល័យមេ",
+            "story": "PC-Admin នៅសាខាមិនអាចឈានដល់ File-Server នៅការិយាល័យមេចាប់តាំងពេលព្រឹក។ បុគ្គលិកថាការព្យាយាមបញ្ជាទិញនីមួយៗគ្រាន់តែព្យួរទុកដរាប់ព្時ាលផុង។",
+            "objective": "ស្ដារលម HTTP GET ពី PC-Admin ទៅ File-Server ដើម្បីឱ្យវាទទួលបានព័ត៌មានលម្អិត។",
+            "hints": [
+                "ប្រលង ពី PC-Admin មិនដែលឆ្លងកាត់ Router-East; វាត្រូវបានលុបចោលនៅទីនោះ មុនពេលទៅការិយាល័យមេ។",
+                "Router-East មាន ការនាំផ្លូវ សម្រាប់បណ្ដាញ File-Server ដែលចង្អុលលម្អិតតម្រង់ទិសលម្អិត ដូច្នេះគ្មាន ផ្លូវដែលមាន់ដែលជាក់ស្តែងដើម្បីផ្ញើវា។",
+                "នៅលើ Router-East លុបចោល ទម្រង់ផ្លូវទៅ 10.0.21.0/255.255.255.0 ហើយបន្ថែម មួយសម្រាប់ 10.0.21.0/255.255.255.0 ដោយរយៈ 10.0.2.2 នៅលេខច្រក 1។"
+            ],
+            "explanation": "ផ្លូវស្ថିតិ​ត្រូវតែចង្អុលលម្អិតលម្អិតដែលលម្អិតរ​ទៅរៀងរាល់ដើម្បីនាំ។ នៅទីនេះ ផ្លូវ Router-East ទៅ File-Server បានប្រើលម្អិតលម្អិតខុស ដូច្នេះប្រលងត្រូវបានលុបចោលជំនួស ដែលជាលម្អិតឆ្ពោះទៅ Router-West ។"
+        },
+        "kn": {
+            "title": "ಮುಖ್ಯಾಲಯಕ್ಕೆ ಹೋಗುವ ಮಧ್ಯದಲ್ಲಿ ಸ್ಥಿರವಾಗಿರುವ ಆದೇಶಗಳು",
+            "story": "ಶಾಖೆ ಕಛೇರಿಯಲ್ಲಿರುವ PC-Admin ಅನ್ನು ಈ ಬೆಳಿಗ್ಗೆ ಮುಖ್ಯಾಲಯದಲ್ಲಿರುವ File-Server ಗೆ ತಲುಪಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ. ಸಿಬ್ಬಂದಿ ಹೇಳುವ ಪ್ರತಿಟು ಆದೇಶ ಪ್ರಯತ್ನ ಸಮಯ ಮುಗಿಯುವ ತನಕ ನಿರ್ಬಂಧಿತವಾಗಿರುತ್ತದೆ.",
+            "objective": "PC-Admin ನಿಂದ File-Server ಗೆ HTTP GET ಅನ್ನು ಪುನರುದ್ಧಾರ ಮಾಡಿ ಇದರಿಂದ ಅದು ಸಪ್ರತಿಕ್ರಿಯೆ ಪಡೆಯುತ್ತದೆ.",
+            "hints": [
+                "PC-Admin ನಿಂದಾಗಿ ಪ್ಯಾಕೆಟ್ Router-East ನನ್ನು ಹೋಲಿಸಿದಾಗ ಎಂದಿಗೂ ಮುಂದಿನತೆಗೆ ಹೋಗುತ್ತಿಲ್ಲ; ಮುಖ್ಯಾಲಯದೆಡೆಗೆ ಹೋಗುವ ಮೊದಲೇ ಅದನ್ನು ಅಲ್ಲಿ ಬಿಸಿ ಹೊರಹಾಕಲಾಗುತ್ತದೆ.",
+                "Router-East ನಲ್ಲಿ File-Server ನ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ರೂಟಿಂಗ್ ನಮೂದು ತಪ್ಪು ಪೋರ್ಟ್ ಸಂಖ್ಯೆ ಹೊರತೆಗೆಯುತ್ತದೆ, ಆದ್ದರಿಂದ ಅದನ್ನು ತಲುಪಿಸಲು ಯಾವುದೇ ಸಿದ್ಧ ಮಾರ್ಗ ಇಲ್ಲ.",
+                "Router-East ನಲ್ಲಿ, 10.0.21.0/255.255.255.0 ಮಾರ್ಗ ಅಳಿಸಿ ಹಾಕಿ ಮತ್ತು ನೆಕ್ಸ್ಟ್ ಹಾಪ್ 10.0.2.2, ಪೋರ್ಟ್ ಸಂಖ್ಯೆ 1 ನೊಂದಿಗೆ 10.0.21.0/255.255.255.0 ಮಾರ್ಗ ಸೇರಿಸಿ."
+            ],
+            "explanation": "ಸ್ಥಿರ ಮಾರ್ಗ ನೆಕ್ಸ್ಟ್ ಹಾಪ್ ರೌಟರ್‌ನತ್ರ ನಿಜವಾಗಿ ಕಾಣಿಸುವ ಪೋರ್ಟ್ ಸಂಖ್ಯೆ ಸೂಚಿಸಬೇಕು. ಇಲ್ಲಿ Router-East ನ File-Server ಸಬ್‌ನೆಟ್ ಮಾರ್ಗ ತಪ್ಪು ಹೊರತೆಗೆಯುವ ಪೋರ್ಟ್ ಸಂಖ್ಯೆ ಬಳಸಿದ್ದರಿಂದ, ಪ್ಯಾಕೆಟ್‌ಗಳು Router-West ಕಡೆಗೆ ಮುಂದಿನತೆಗೆ ಮುಂದಸಿದೆ ಹೆಚ್ಚಾಗಿ ಸುಟ್ಟುಕೊಳ್ಳುತ್ತಿದೆ."
+        },
+        "ky": {
+            "title": "Буйрутмалар Борборго жылуусунда жүрүп жүргөндө",
+            "story": "Салада PC-Admin буйлентүүнүн File-Server ге бүгүн эртең менен кошо уланта бере электеген жок. Персонал сыза бир да буйруктосулуу аракеттиси убакыт өткөндөн кийин чектелет.",
+            "objective": "PC-Admin ден File-Server ге HTTP GET жылдыруусун калыбына келтир, анын жоопко жетсин.",
+            "hints": [
+                "PC-Admin жок болгон пакет Router-East ти өткөөнүн өтө өтпөйт; ал борбордук жакка чыгуудан мурун жокко чыгарылат.",
+                "Router-East File-Server тармагынын маршруттик жазуусу туура эмес портто чыгарат, андыктан аны жеткирүүнүн өтүмдүү маршруты жок.",
+                "Router-East де, 10.0.21.0/255.255.255.0 ге чейин жылуусун өчүр жана 10.0.21.0/255.255.255.0 нын ички 10.0.2.2 нче сайт боюнча портто 1ге кайра кошуулу."
+            ],
+            "explanation": "Статикалык маршруту кийинки түйүнү төмөндөйт болгон портту көрсөтүүнү керек. Ушул жерде Router-East тин File-Server сабтапторундагы маршруту туура эмес чыгуучу портту колдонду, ошондуктан пакеттер Router-West карай жылдырууунун ордуна өтүлүнгөн."
+        },
+        "lo": {
+            "title": "ຄໍາສັ່ງ застряет ໃນເສັ້ນທາງໄປຫາສໍານັກງານໃຫຍ່",
+            "story": "PC-Admin ຢູ່ສາຂາຫ້ອຍບໍ່ສາມາດໄປຮອດ File-Server ຢູ່ສໍານັກງານໃຫຍ່ຕັ້ງແຕ່ເຊົ້າມືນີ້. ເພື່ອນຮ່ວມງານກ່າວວ່າທຸກໆຄວາມພະຍາຍາມສັ່ງຊື້ອຸ້ງໃຫຍ່ຕໍ່ໄປ ຈົນກວ່າຈະໝົດເວລາ.",
+            "objective": "ຟື້ນຟູ HTTP GET ຈາກ PC-Admin ໄປຫາ File-Server ເພື່ອມັນໄດ້ຮັບການຕອບສະຫນອງ.",
+            "hints": [
+                "ກະສາກລຈາກ PC-Admin ບໍ່ເຄີຍເກີນ Router-East; ມັນຖືກວາງໄວ້ຢູ່ທີ່ນັ້ນກ່ອນທີ່ຈະໄປຫາສໍານັກງານໃຫຍ່.",
+                "Router-East ມີບັນທຶກເສັ້ນທາງສໍາລັບເຄືອຂ່າຍ File-Server ທີ່ຊີ້ໄປທາງປະตູຜິດ, ດັ່ງນັ້ນຈຶ່ງບໍ່ມີເສັ້ນທາງທີ່ຖືກຕ້ອງເພື່ອສົ່ງມັນ.",
+                "ໃນ Router-East, ລົບເສັ້ນທາງໄປ 10.0.21.0/255.255.255.0 ແລະຕື່ມເສັ້ນທາງ 10.0.21.0/255.255.255.0 ຜ່ານ 10.0.2.2 ຢູ່ພອດ 1."
+            ],
+            "explanation": "ເສັ້ນທາງທີ່ຄົງທີ່ຕ້ອງຊີ້ໄປທາງປະตູທີ່ເປັນວ່າງໆໄປຫາ ເສັ້ນທາງລັດ. ທີ່ນີ້ Router-East ເສັ້ນທາງໄປໍາພວກ File-Server ໃຊ້ປະຕູອອກຜິດພາຫຼືວ, ດັ່ງນັ້ນກະສາກລກໍາລັງໄດ້ຖືກວາງໄວ້ແທນທີ່ຈະສົ່ງຕໍ່ໄປ Router-West."
+        },
+        "lt": {
+            "title": "Užsakymai Застпаж pakeliui į Pagrindinę būstinę",
+            "story": "PC-Admin šakoje nuo šiandien ryto negali pasiekti File-Server pagrindinėje būstinėje. Personalas sako, kad kiekvienas užsakymo bandymas pakibus iki išsibaigus atidavimo laikui.",
+            "objective": "Atgaivink HTTP GET iš PC-Admin į File-Server, kad gautų atsakymą.",
+            "hints": [
+                "Paketą iš PC-Admin niekada neprasiglendžia per Router-East; jis išmetamas ten prieš nukreipiant į pagrindinę būstinę.",
+                "Router-East turi maršrutą File-Server tinklo, kuris nurodo į klaidingą prievadą, todėl nėra tinkamo maršruto jo pristatyti.",
+                "Router-East, ištrink maršrutą į 10.0.21.0/255.255.255.0 ir pridėk naują 10.0.21.0/255.255.255.0 per 10.0.2.2 1 prievade."
+            ],
+            "explanation": "Statinis maršrutas turi nurodyti prievadą, kuris iš tikrųjų veda į kito šuolio maršrutizatorių. Čia Router-East maršrutas į File-Server tinklo naudojo neteisingą išeinantį prievadą, todėl paketai buvo atmesti vietoj to, kad būtų persiunčiami Router-West."
+        },
+        "lv": {
+            "title": "Pasūtījumi застpevušies Ceļā uz Galveno biroju",
+            "story": "PC-Admin filiālē šorīt nevar sasniegt File-Server galvenajā birojā. Darbinieki saka, ka katrs pasūtījuma mēģinājums paliek pakļauts, līdz beidzas taimauts.",
+            "objective": "Atjaunot HTTP GET no PC-Admin uz File-Server, lai tas saņemtu atbildi.",
+            "hints": [
+                "Pakets no PC-Admin nekad nepāriet Router-East; tas tiek nometams tur, pirms dodas uz galveno biroju.",
+                "Router-East maršrutēšanas ieraksts File-Server tīklam norāda uz nepareizu portu, tāpēc nav derīga ceļa tas piegādāt.",
+                "Router-East dzēst ceļu uz 10.0.21.0/255.255.255.0 un pievienot ceļu uz 10.0.21.0/255.255.255.0 caur 10.0.2.2 uz portu 1."
+            ],
+            "explanation": "Statiskajam maršrutam jānonāda ports, kas faktiski ved uz nākamā lēciena maršrutētāju. Šeit Router-East ceļš uz File-Server apakštīklu izmantoja nepareizu izejošo portu, tāpēc pakas tika izmestas, nevis pārsūtītas uz Router-West."
+        },
+        "mk": {
+            "title": "Нарачки застанале во патување до Седиште",
+            "story": "PC-Admin во филијалата не може да стигне до File-Server во седиштето од утро. Вработените велат дека секој обид да нарачаат само висока јаче додека не истече време.",
+            "objective": "Обнови HTTP GET од PC-Admin до File-Server така што ќе добие одговор.",
+            "hints": [
+                "Пакетот од PC-Admin никогаш не минува покрај Router-East; се отфрла таму пред да оди кон седиштето.",
+                "Router-East има запис за рутирање за мрежата на File-Server што покажува на погрешна порта, па нема валидна маршрута за доставка.",
+                "На Router-East, избриши го маршрутот до 10.0.21.0/255.255.255.0 и додај еден за 10.0.21.0/255.255.255.0 преку 10.0.2.2 на порта 1."
+            ],
+            "explanation": "Статичкиот маршрут мора да покаже на портата која навистина води кон следниот скок. Тука маршрутот на Router-East до подмрежата на File-Server користеше погрешна излезна порта, па пакетите беа отфрлени наместо да бидат пренесени кон Router-West."
+        },
+        "ml": {
+            "title": "ഓർഡറുകൾ ആസ്ഥാനത്തിലേക്കുള്ള പാതയിൽ കുടുങ്ങിയിരിക്കുന്നു",
+            "story": "ബ്രാഞ്ച് ഓഫീസിലെ PC-Admin ആസ്ഥാനത്തിലെ File-Server-ൽ എത്തിച്ചേരാൻ കഴിയാത്ത അവസ്ഥയിലാണ് ഇന്നലെ മുതൽ. ഉദ്യോഗസ്ഥർ പറയുന്നതനുസരിച്ച് ഓരോ ഓർഡർ ശ്രമവും സമയ പരിധി കഴിയുന്നതുവരെ തൂക്കിയിരിക്കുന്നു.",
+            "objective": "PC-Admin-ൽ നിന്ന് File-Server-ലേക്ക് HTTP GET പുനഃസ്ഥാപിക്കുക അങ്ങനെ അത് പ്രതികരണം പരിപാടിയിൽ ലഭിക്കും.",
+            "hints": [
+                "PC-Admin-ൽ നിന്നുള്ള പാക്കറ്റ് Router-East-ന് കടന്നുപോകാൻ കഴിയാത്തതാണ്; അത് ആസ്ഥാനത്തിലേക്കുള്ള പാതയിലേക്ക് തെറ്റായ പോർട്ടിലെ ഭാഗാവകാശം പോകുന്നതിന് മുമ്പ് നിരസിച്ചു.",
+                "Router-East-ന് File-Server-ന്റെ നെറ്റ്‌വർക്കിനായി ഒരു റൂട്ടിംഗ് എൻട്രി ഉണ്ടാണ്, അത് തെറ്റായ പോർട്ടിലേക്ക് ചൂണ്ടിക്കാണിക്കുന്നു, അതിനാൽ ഡെലിവറിയുടെ സാധുതയുള്ള പാത ഇല്ലെന്ന്.",
+                "Router-East-ൽ 10.0.21.0/255.255.255.0 ലേക്കുള്ള റൂട്ട് ഇല്ലാതാക്കി പകരം 10.0.21.0/255.255.255.0 നെക്സ്റ്റ് ഹോപ്പ് 10.0.2.2, പോർട്ട് നമ്പർ 1 എന്നതിനായി ഒരു റൂട്ട് ചേർക്കുക."
+            ],
+            "explanation": "നിശ്ചിത റൂട്ട് അടുത്ത ഹോപ്പിലേക്ക് സത്യത്തിൽ എത്തിച്ചേരുന്ന പോർട്ടിലെ ഭാഗാവകാശം പോകേണ്ടതാണ്. ഇത്തിരെ Router-East-ന്റെ File-Server-ന്റെ സബ്‌നെറ്റിലെ റൂട്ട് തെറ്റായ ഔട്ട്‌ഗോയിംഗ് പോർട്ട് ഉപയോഗിച്ചിരുന്നതിനാൽ പാക്കറ്റുകൾ Router-West-ലേക്ക് ഫോർവേർഡ് ചെയ്യുന്നതിനുപകരായി നിരസിച്ചു."
+        },
+        "mn": {
+            "title": "Захиалга нь Төв офис руу явах замд заслогдсон",
+            "story": "Салбарын офис дахь PC-Admin өнөөөөс хойш Төв офис дахь File-Server-т холбогдож чадаагүй байна. Ажилтнууд тал бүрийн захиалга оролдлог дуусах үеэ хүлээмөөр зогсож байна гэж хэлэв.",
+            "objective": "PC-Admin-аас File-Server руу HTTP GET сэргээж, ингэснээр хариу авах боломжтой болго.",
+            "hints": [
+                "PC-Admin-ээс ирсэн пакет Router-East-ийг огтолж чадахгүй байна; энэ нь төв офис лүү явахаас өмнө буруу портоор унаж байна.",
+                "Router-East нь File-Server-ийн сүлжээний чиглүүлэлтийн оруулга буруу портоор харуулж байгаа учраас хүргүүлэх хүчинтэй маршрут байхгүй байна.",
+                "Router-East дээр 10.0.21.0/255.255.255.0 руу хүргүүлэлтийг арилгаж, 10.0.21.0/255.255.255.0, дараагийн хоп 10.0.2.2, порт 1-ээр хүргүүлэлтийг нэмнэ."
+            ],
+            "explanation": "Статик маршрут дараагийн хоп руу ойртож буй портыг зөв харуулж байх ёстой. Энд Router-East-ийн File-Server-ийн дэд сүлжээ рүү буцах маршрут буруу гадагш сугалах портыг ашигласан учраас пакетууд Router-West-т дамжуулахын оронд унаж байсан."
+        },
+        "mr": {
+            "title": "ऑर्डर मुख्यालयाकडे जाण्याच्या मार्गात अडकले",
+            "story": "शाखा कार्यालयातील PC-Admin आज सकाळपासून मुख्यालयातील File-Server पर्यंत पोहोचू शकत नाही. कर्मचारी म्हणतात की प्रत्येक ऑर्डर प्रयत्न समय संपेपर्यंत फक्त हँग होतो.",
+            "objective": "PC-Admin वरून File-Server पर्यंत HTTP GET पुनर्स्थापित करा जेणेकरून त्याला प्रतिक्रिया मिळते.",
+            "hints": [
+                "PC-Admin वरून पाकिट Router-East कडे कधीही पुढे जाऊ शकत नाही; ते मुख्यालयाकडे जाण्यापूर्वी तेथे टाकून दिले जाते.",
+                "Router-East कडे File-Server च्या नेटवर्कसाठी रूटिंग एंट्री आहे जी चुकीच्या पोर्टला निर्देशित करते, म्हणून त्याला वितरणासाठी कोणताही वैध मार्ग नाही.",
+                "Router-East वर 10.0.21.0/255.255.255.0 चा मार्ग हटवा आणि नेक्स्ट हॉप 10.0.2.2, पोर्ट क्रमांक 1 असलेला 10.0.21.0/255.255.255.0 साठी एक जोडा."
+            ],
+            "explanation": "स्थिर मार्ग नेक्स्ट हॉप की ओर खरोखर जाणारे पोर्ट निर्दिष्ट करणे आवश्यक आहे. येथे Router-East चा File-Server च्या सबनेटला मार्ग चुकीचे आउटगोइंग पोर्ट वापरत होता, म्हणून Router-West कडे अग्रेषित करण्याऐवजी पाकिट टाकून दिले गेले."
+        },
+        "ms": {
+            "title": "Pesanan Tersangkut di Jalan ke Ibu Pejabat",
+            "story": "PC-Admin di pejabat cawangan tidak dapat menjangkau File-Server di ibu pejabat sejak pagi ini. Kakitangan mengatakan setiap percubaan pesanan hanya digantung sehingga tamat masa.",
+            "objective": "Pulihkan HTTP GET dari PC-Admin ke File-Server supaya ia menerima respons.",
+            "hints": [
+                "Paket dari PC-Admin tidak pernah melepasi Router-East; ia digugurkan di sana sebelum menuju ibu pejabat.",
+                "Router-East mempunyai entri penghalaan untuk rangkaian File-Server yang menunjuk ke port yang salah, jadi tiada laluan sah untuk menghantarnya.",
+                "Di Router-East, padam laluan ke 10.0.21.0/255.255.255.0 dan tambahkan satu untuk 10.0.21.0/255.255.255.0 melalui lompatan seterusnya 10.0.2.2, nombor port 1."
+            ],
+            "explanation": "Laluan statik mesti menunjukkan port yang benar-benar membawa ke lompatan seterusnya. Di sini laluan Router-East ke subnet File-Server menggunakan port keluar yang salah, jadi paket digugurkan dan bukannya dimajukan ke Router-West."
+        },
+        "my": {
+            "title": "အမိန့်အစီအစဥ်များ ခေါင်းစီးပွဲသို့ အခြင်းအနယ်တွင် ကျန်ရှိနေသည်",
+            "story": "အညွန်းရုံးရှိ PC-Admin သည် ယနေ့မနက်ပိုင်းမှစ၍ ခေါင်းစီးပွဲရှိ File-Server သို့ ချိတ်ဆက်ရန်မကြိုးစားနိုင်ပါ။ အタッフများက အမိန့်တစ်ခုစီမျိုးသည် အချိန်ကုန်သည်အထိ ဆိတ်ခြင်းသည်ဟု ကတိပြုကြသည်။",
+            "objective": "PC-Admin မှ File-Server သို့ HTTP GET ကို လုပ်ဆောင်ပြန်ရန်နှင့် အဖြေတစ်ခု ရရှိရန်",
+            "hints": [
+                "PC-Admin မှ ပက်ကင်သည် Router-East ကို လုံးဝ မကြေးသွားပါ။ ခေါင်းစီးပွဲသို့ ရောက်သွားမတိုင်မီ မက်သည်။",
+                "Router-East တွင် File-Server ၏ ကွန်ရက်အတွက် ရုံးစာချက်ထည့်သွင်းထားသည့် အမှားတွေ့ရှိသည့် Port သို့ ညွှန်ပြသောကြောင့်၊ ၎င်းသို့ ပို့ဆောင်ရန် မှန်ကန်သောလမ်းကြောင်းမျိုးမရှိပါ။",
+                "Router-East တွင် 10.0.21.0/255.255.255.0 သို့သော်လည်း အဆင့်မှဖျက်ပါ။ ၎င်းထက်အသစ်အဆင့်တစ်ခု 10.0.21.0/255.255.255.0 မှ 10.0.2.2 ကို port 1 တွင် ထည့်သွင်းပါ။"
+            ],
+            "explanation": "ကံရာထူးစာချက်သည် ရှေ့ဆက်သည်-hop ရုံးတစ်ခုထံသို့ မှန်ကန်စွာ ပြည်သည့် Port ကို ညွှန်ပြရမည်ဖြစ်သည်။ ဤတွင် Router-East ၏ File-Server ၏အုပ်စုထံသို့သောလမ်းကြောင်းသည် အမှားတွေ့ရှိသည့် အထွက်ပို့လွှင့်ခွင့်ကိုအသုံးပြုခဲ့သောကြောင့်၊ ပက်ကင်များသည် Router-West ထံသို့ လေ့ကစ်ရန်အစား မက်သွားပါသည်။"
+        },
+        "ne": {
+            "title": "अर्डरहरू मुख्यालयको मार्गमा अलमलमा परेका छन्",
+            "story": "शाखा कार्यालयमा रहेको PC-Admin आज बिहान देखि मुख्यालयको File-Server सम्म पुग्न सक्षम छैन। कर्मचारीहरू भन्छन् कि प्रत्येक अर्डरको प्रयास समयसीमा समाप्त नभेटिसम्म रोकिएको रहेछ।",
+            "objective": "PC-Admin बाट File-Server सम्मको HTTP GET लाई पुनः कार्यशील बनाउनुहोस् ताकि यो प्रतिक्रिया पाओस्।",
+            "hints": [
+                "PC-Admin बाट आएको प्याकेट Router-East भन्दा पर कहिले पनि जाँदैन; मुख्यालयतिर जाने अगि त्यहाँ नष्ट हुन्छ।",
+                "Router-East मा File-Server को नेटवर्कको लागि राउटिङ प्रविष्टि गलत Port मा निर्देशित गरिएको छ, त्यसैले यो पठाउनको लागि वैध मार्ग छैन।",
+                "Router-East मा, 10.0.21.0/255.255.255.0 को मार्ग हटाउनुहोस् र 10.0.21.0/255.255.255.0, नेक्स्ट हप 10.0.2.2, पोर्ट 1 मा नयाँ मार्ग थप्नुहोस्।"
+            ],
+            "explanation": "स्ट्याटिक मार्गले नेक्स्ट-हप राउटरतिर जाने पोर्टलाई सही तरीकले निर्देशित गर्नुपर्छ। यहाँ Router-East को File-Server को सबनेटको मार्गले गलत बहिर्गमन पोर्ट प्रयोग गरेको कारणले, प्याकेटहरू Router-West तिर अग्रेषित हुनुको सट्टा नष्ट भएका छन्।"
+        },
+        "nl": {
+            "title": "Bestellingen komen niet bij het hoofdkantoor aan",
+            "story": "PC-Admin op het kantoor in de tak kan sinds vanmorgen niet bereiken File-Server op het hoofdkantoor. Medewerkers zeggen dat elke poging vastloopt totdat er een time-out optreedt.",
+            "objective": "Zorg dat een HTTP GET van PC-Admin naar File-Server antwoord krijgt.",
+            "hints": [
+                "Het pakket van PC-Admin komt Router-East nooit voorbij; het wordt daar verwijderd voordat het naar het hoofdkantoor gaat.",
+                "Router-East heeft een routeringsitem voor het netwerk van File-Server dat naar de verkeerde poort wijst, dus er is geen geldig pad om het af te leveren.",
+                "Verwijder op Router-East de route naar 10.0.21.0/255.255.255.0 en voeg er een toe voor 10.0.21.0/255.255.255.0 via 10.0.2.2 op poortnummer 1."
+            ],
+            "explanation": "Een statische route moet naar de poort wijzen die werkelijk naar de volgende router leidt. Hier gebruikte de route van Router-East naar het subnet van File-Server de verkeerde uitgaande poort, waardoor pakketten werden verwijderd in plaats van doorgestuurd naar Router-West."
+        },
+        "no": {
+            "title": "Ordrer blir stoppet på vei til hovedkontoret",
+            "story": "PC-Admin på avdelingen kan ikke nå File-Server på hovedkontoret siden i morges. Ansatte sier at hver ordreforsøk henger fast til det går ut på tid.",
+            "objective": "Gjør HTTP GET fra PC-Admin til File-Server fungerende igjen slik at den får svar.",
+            "hints": [
+                "Pakken fra PC-Admin kommer aldri forbi Router-East; den forkastes der før den går mot hovedkontoret.",
+                "Router-East har en ruteoppsett for File-Server sitt nettverk som peker til feil port, så det finnes ingen gyldig rute for levering.",
+                "Slett ruten til 10.0.21.0/255.255.255.0 på Router-East og legg til en for 10.0.21.0/255.255.255.0 via 10.0.2.2 på portnummer 1."
+            ],
+            "explanation": "En statisk rute må peke til porten som faktisk fører til neste hopp-router. Her brukte Router-East sin rute til File-Server sitt subnett feil utgående port, så pakker ble forkastet istedenfor videresendt til Router-West."
+        },
+        "or": {
+            "title": "ଅର୍ଡରଗୁଡ଼ିକ ମୁଖ୍ୟାଳୟକୁ ଯାଇଥିବା ରାସ୍ତାରେ ଫାସ ହୋଇ ଅଛନ୍ତି",
+            "story": "ଶାଖା କାର୍ଯ୍ୟାଳୟରେ ଥିବା PC-Admin ଆଜ ସକାଳରୁ ମୁଖ୍ୟାଳୟର File-Server ରେ ପହଞ୍ଚିବାକୁ ଅସମର୍ଥ। କର୍ମଚାରୀମାନେ କହନ୍ତି ଯେ ପ୍ରତ୍ୟେକ ଅର୍ଡର ଦ୍ୱିଧାନ୍ବିତ ହୁଏ ଯାଏ ଏଟି ସମୟ ସୀମା ଚଲିଯାଏ।",
+            "objective": "PC-Admin ରୁ File-Server ରେ HTTP GET କୁ ପୁନରାବୃତ୍ତି କର ଯାହାଦ୍ୱାରା ଏହା ପ୍ରତିକ୍ରିୟା ପାଏ।",
+            "hints": [
+                "PC-Admin ରୁ ପ୍ୟାକେଟ Router-East ମଧ୍ୟଦେଇ କଦାପି ଯାଏ ନାହିଁ; ମୁଖ୍ୟାଳୟ ଦିକକୁ ଯାଏ ତାହାପୂର୍ବେ ତାହା ସେଠାରେ ଛାଡ ହୁଏ।",
+                "Router-East ରେ File-Server ର ନେଟୱର୍କ ପାଇଁ ଏକ ରାଉଟିଂ ନିର୍ଦ୍ଦେଶ ଭୁଲ ପୋର୍ଟ ଦିଗକୁ ନିର୍ଦେଶ କରେ, ତେଣୁ ଏଟି ବିତରଣ ପାଇଁ ବୈଧ ମାର୍ଗ ନାହିଁ।",
+                "Router-East ରେ, 10.0.21.0/255.255.255.0 ର ମାର୍ଗ ଲିଭାଇ ଦିଆଯାଏ ଏବଂ 10.0.21.0/255.255.255.0 ନେକ୍ସଟ ହପ୍ 10.0.2.2, ପୋର୍ଟ ନମ୍ବର 1 ରେ ଏକ ନୂତନ ମାର୍ଗ ଯୋଗ କରନ୍ତୁ।"
+            ],
+            "explanation": "ଏକ ସ୍ଥିର ମାର୍ଗ ନେକ୍ସଟ ହପ ରାଉଟରଠାରୁ ଯାଉଥିବା ପୋର୍ଟକୁ ସଠିକଭାବେ ନିର୍ଦେଶ କରିବାକୁ ଆବଶ୍ୟକ ଅଛି। ଏଠାରେ Router-East ର File-Server ର ସବନେଟ ମାର୍ଗ ଭୁଲ ଆଉଟଗୋଇଂ ପୋର୍ଟ ବ୍ୟବହାର କରିଥିବାବେଳେ, ପ୍ୟାକେଟଗୁଡ଼ିକ Router-West ତରଫକୁ ଫରୋয়ାର୍ଡ ହୋଇବାବଦଳେ ଛାଡ ହୋଇଯାଇଥିବେ।"
+        },
+        "pa": {
+            "title": "ਆਦੇਸ਼ ਲੋਕ-ਸ਼ਾਖਾ ਤੋਂ ਮੁੱਖ ਦਫ਼ਤਰ ਤੱਕ ਅਟਕੇ ਹੋਏ",
+            "story": "ਸ਼ਾਖਾ ਦਫ਼ਤਰ ਵਿੱਚ PC-Admin ਅੱਜ ਸਵੇਰੇ ਤੋਂ File-Server ਤਕ ਪਹੁੰਚ ਨਹੀਂ ਪਾ ਸਕਿਆ ਹੈ। ਸਟਾਫ ਕਹਿ ਰਹੇ ਹਨ ਕਿ ਹਰ ਆਰਡਰ ਪ੍ਰਯਾਸ ਸਮਾਪਤ ਹੋਣ ਤੱਕ ਲਟਕਿਆ ਰਹਿੰਦਾ ਹੈ।",
+            "objective": "PC-Admin ਤੋਂ File-Server ਤੱਕ ਇੱਕ HTTP GET ਮੁੜ-ਸਥਾਪਿਤ ਕਰੋ ਤਾਂਜੋ ਇਸਨੂੰ ਇੱਕ ਜਵਾਬ ਮਿਲਦਾ ਹੈ।",
+            "hints": [
+                "PC-Admin ਤੋਂ ਪੈਕੇਟ Router-East ਤੋਂ ਅੱਗੇ ਨਹੀਂ ਜਾਂਦਾ; ਇਹ ਮੁੱਖ ਦਫ਼ਤਰ ਦਿਸ਼ਾ ਵਿੱਚ ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ ਉੱਥੇ ਖਿਲਾਰ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।",
+                "Router-East ਕੋਲ File-Server ਦੇ ਨੈੱਟਵਰਕ ਲਈ ਇੱਕ ਰੂਟਿੰਗ ਪ੍ਰਵਿਸ਼ਟੀ ਹੈ ਜੋ ਗਲਤ ਪੋਰਟ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦੀ ਹੈ, ਇਸਲਈ ਕੋਈ ਵੈਧ ਰਾਸਤਾ ਨਹੀਂ ਹੈ।",
+                "Router-East ਉੱਤੇ, 10.0.21.0/255.255.255.0 ਲਈ ਰੂਟ ਹਟਾ ਦਿਓ ਅਤੇ ਨੈਕਸਟ ਹੌਪ 10.0.2.2 ਤੇ ਪੋਰਟ 1 ਤੇ 10.0.21.0/255.255.255.0 ਲਈ ਇੱਕ ਜੋੜ ਦਿਓ।"
+            ],
+            "explanation": "ਇੱਕ ਸਥਿਰ ਮਾਰਗ ਉਸ ਪੋਰਟ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ ਜੋ ਅਸਲ ਵਿੱਚ ਨੈਕਸਟ-ਹੌਪ ਰਾਊਟਰ ਵੱਲ ਜਾਂਦਾ ਹੈ। ਇੱਥੇ Router-East ਦਾ File-Server ਦੇ ਸਬਨੈੱਟ ਲਈ ਮਾਰਗ ਗਲਤ ਆਉਟਗੋਇੰਗ ਪੋਰਟ ਵਰਤ ਰਿਹਾ ਸੀ, ਇਸਲਈ ਪੈਕੇਟ Router-West ਵੱਲ ਭੇਜੇ ਜਾਣ ਦੀ ਬਜਾਏ ਖਿਲਾਰ ਦਿੱਤੇ ਗਏ ਸਨ।"
+        },
+        "pl": {
+            "title": "Zamówienia utknęły w drodze do centrali",
+            "story": "PC-Admin w biurze oddziale nie może się połączyć z File-Server w centrali od tego ranka. Pracownicy mówią, że każda próba zlecenia zawiesza się, dopóki nie upłynie limit czasu.",
+            "objective": "Przywróć żądanie HTTP GET z PC-Admin do File-Server, aby otrzymać odpowiedź.",
+            "hints": [
+                "Pakiet z PC-Admin nigdy nie przedostaje się poza Router-East; zostaje odrzucony tam przed wysłaniem w kierunku centrali.",
+                "Router-East ma wpis routingu dla sieci File-Server, który wskazuje na zły port, więc nie istnieje prawidłowa trasa do jego dostarczenia.",
+                "W Router-East usuń trasę do 10.0.21.0/255.255.255.0 i dodaj nową trasę do 10.0.21.0/255.255.255.0 za pośrednictwem 10.0.2.2 na porcie 1."
+            ],
+            "explanation": "Trasa statyczna musi wskazywać port, który faktycznie prowadzi do routera następnego skoku. Tutaj trasa Router-East do podsieci File-Server używała niewłaściwego portu wychodzącego, dlatego pakiety były odrzucane zamiast być przekazywane do Router-West."
+        },
+        "pt-PT": {
+            "title": "Encomendas bloqueadas a caminho da sede",
+            "story": "PC-Admin na sucursal não consegue contactar File-Server na sede desde esta manhã. A equipa relata que toda a tentativa de encomenda fica suspensa até expirar o tempo limite.",
+            "objective": "Restaure um GET HTTP de PC-Admin para File-Server para que receba uma resposta.",
+            "hints": [
+                "O pacote de PC-Admin nunca passa além de Router-East; é descartado ali antes de seguir em direção à sede.",
+                "Router-East tem uma entrada de encaminhamento para a rede File-Server que aponta para a porta errada, portanto não existe uma rota válida para a entregar.",
+                "Em Router-East, elimine a rota para 10.0.21.0/255.255.255.0 e adicione uma rota para 10.0.21.0/255.255.255.0 através de 10.0.2.2 na porta 1."
+            ],
+            "explanation": "Uma rota estática deve indicar a porta que realmente leva ao router do próximo salto. Aqui, a rota de Router-East para a sub-rede File-Server usou a porta de saída errada, portanto os pacotes foram descartados em vez de serem reenviados para Router-West."
+        },
+        "rm": {
+            "title": "Ordras blucadas via da sezun",
+            "story": "PC-Admin al uffizi succursal na po raggiunter File-Server a la sezun dapi questa matina. L'equipa di lavur di lain che mintga tentativa da comanda sta suspendida enfina ch'i expira il temp max.",
+            "objective": "Restabiliain ina dumonda HTTP GET da PC-Admin a File-Server per che sustegna ina risposta.",
+            "hints": [
+                "Il pachet da PC-Admin na po mai vegnir pitschen da Router-East; vegn collà eliminà avant da cuntinuar vers la sezun.",
+                "Router-East ha ina partida da routing per la rait da File-Server che pointescha a la port noschainta, perquai na sona buc ina rota valid per l'enviar.",
+                "Sin Router-East, stizzina la rota a 10.0.21.0/255.255.255.0 e giascha insumma ina rota per 10.0.21.0/255.255.255.0 via 10.0.2.2 sin port 1."
+            ],
+            "explanation": "Ina rota statica ston indichar la port che realmain vain vers il router da proxim sault. Qua la rota da Router-East a la subnet da File-Server ha utilischa la port d'extrada noschainta, perquai che ils pachtets vegnan eliminads enstagl da vegnir transmess vers Router-West."
+        },
+        "ro": {
+            "title": "Comenzi blocate pe drumul către sediu",
+            "story": "PC-Admin de la filiala nu poate contacta File-Server din sediu de dimineață. Personalul spune că orice încercare de comandă rămâne suspendată până când expira limita de timp.",
+            "objective": "Restaurați o cerere HTTP GET de la PC-Admin la File-Server pentru a primi o răspuns.",
+            "hints": [
+                "Pachetul de la PC-Admin nu trece dincolo de Router-East; este eliminat acolo înainte de a merge spre sediu.",
+                "Router-East are o intrare de rutare pentru rețeaua File-Server care indică portul greșit, deci nu există o rută validă pentru a o livra.",
+                "Pe Router-East, ștergeți ruta la 10.0.21.0/255.255.255.0 și adăugați una pentru 10.0.21.0/255.255.255.0 prin 10.0.2.2 pe portul 1."
+            ],
+            "explanation": "O rută statică trebuie să indice portul care conduce de fapt spre routerul următorului salt. Aici ruta Router-East către subrețeaua File-Server a folosit portul de ieșire greșit, deci pachetele au fost eliminate în loc să fie redirecționate spre Router-West."
+        },
+        "sk": {
+            "title": "Objednávky zapnuté na ceste do sídla",
+            "story": "PC-Admin na pobočke si od rána nemôže dosiahnuť File-Server v sídlemnosti. Personál hovorí, že každý pokus o objednávku sa len zamrzne, kým nevyprší časový limit.",
+            "objective": "Obnovte HTTP GET z PC-Admin na File-Server, aby dostal odpoveď.",
+            "hints": [
+                "Paket z PC-Admin sa nikdy nedostane cez Router-East; pred cestou do sídla sa tam zahodí.",
+                "Router-East má smerovací záznam pre sieť File-Server, ktorý ukazuje na nesprávny port, takže neexistuje žiadna platná trasa na jeho doručenie.",
+                "Na Router-East odstráňte trasu na 10.0.21.0/255.255.255.0 a pridajte ju na 10.0.21.0/255.255.255.0 cez 10.0.2.2 na porte 1."
+            ],
+            "explanation": "Statická trasa musí označovať port, ktorý skutočne vedie k ďalšiemu skoku Router. Tu bola trasa Router-East k podsieťu File-Server použitá na nesprávný odchádzajúci port, takže sa pakety zahodili namiesto ich presmererovania na Router-West."
+        },
+        "sl": {
+            "title": "Naročila obtičena na poti v sedež",
+            "story": "PC-Admin na podružnici si od jutri ne more doseči File-Server v sedežu. Zaposleni pravijo, da se vsak poskus naročila le prične, dokler ne izteče čas.",
+            "objective": "Obnovite HTTP GET iz PC-Admin na File-Server, da dobi odgovor.",
+            "hints": [
+                "Paket iz PC-Admin nikoli ne pride mimo Router-East; tam se zavrže pred potjo v sedež.",
+                "Router-East ima usmerjevalni vnos za omrežje File-Server, ki kaže na napačna vrata, zato ni veljavne poti za dostavo.",
+                "Na Router-East izbrišite usmerjevalno pot na 10.0.21.0/255.255.255.0 in dodajte novo za 10.0.21.0/255.255.255.0 preko 10.0.2.2 na vratih 1."
+            ],
+            "explanation": "Statična usmerjevalna pot mora kazati na vrata, ki dejansko vodijo do naslednjega skoka Router. Tu je bila usmerjevalna pot Router-East do podomrežja File-Server namenjena na napačna odhodna vrata, zato so se paketi zavrzli namesto da bi bili posredovani k Router-West."
+        },
+        "sq": {
+            "title": "Porositë të bllokuar në rrugën drejt sedesë",
+            "story": "PC-Admin në zyrën degë nuk mund të arrijë File-Server në sedese qendrore nga ky mëngjes. Punonjësit thonë se çdo përpjekje porosie thjesht varet derisa të kalojë koha e pritjes.",
+            "objective": "Rikthejini HTTP GET-in nga PC-Admin në File-Server në mënyrë që të marrë një përgjigje.",
+            "hints": [
+                "Paketa nga PC-Admin nuk kalon kurrë përtej Router-East; ajo hidhet para se të shkojë drejt sedesës.",
+                "Router-East ka një hyrje rrugëzimi për rrjetin File-Server që tregon në portin e gabuar, prandaj nuk ekziston asnjë rrugë e vlefshme për të.",
+                "Në Router-East, fshini rrugën drejt 10.0.21.0/255.255.255.0 dhe shtoni një për 10.0.21.0/255.255.255.0 përmes 10.0.2.2 në portin 1."
+            ],
+            "explanation": "Një rrugë statike duhet të tregojë portin që vërtet çon drejt rrugëzimit tjetër. Këtu rruga e Router-East drejt nënrrjetit File-Server përdori portin e daljes të gabuar, kështu që paketa u hodhen në vend që të dërgohen drejt Router-West."
+        },
+        "sr": {
+            "title": "Наруџбине заглављене на путу до седишта",
+            "story": "PC-Admin на филијали од јутрос не може да достигне File-Server у централном седишту. Особље каже да се сваки покушај наруџбе једноставно замрзне док не истекне време.",
+            "objective": "Вратите HTTP GET из PC-Admin на File-Server тако да добије одговор.",
+            "hints": [
+                "Пакет из PC-Admin никад не пролази кроз Router-East; избацује се пре него што крене ка седишту.",
+                "Router-East има унос табеле рутирања за мрежу File-Server који показује на погрешан порт, па не постоји валидна рута за достављање.",
+                "На Router-East обришите маршруту до 10.0.21.0/255.255.255.0 и додајте нову за 10.0.21.0/255.255.255.0 преко 10.0.2.2 на порту 1."
+            ],
+            "explanation": "Статична маршрута мора да показује на порт који заиста води до следећег скока Router-а. Овде је маршрута Router-East-а до подмреже File-Server користила погрешан излазни порт, па су пакети избачени уместо да буду прослеђени Router-West-у."
+        },
+        "sv": {
+            "title": "Beställningar fastna på vägen till huvudkontoret",
+            "story": "PC-Admin på filialkontoret har inte kunnat nå File-Server på huvudkontoret sedan denna morgon. Personal säger att varje beställningsförsök bara hänger kvar tills det tar slut.",
+            "objective": "Återställ en HTTP GET från PC-Admin till File-Server så den får ett svar.",
+            "hints": [
+                "Paketet från PC-Admin kommer aldrig förbi Router-East; det släpps där innan det går mot huvudkontoret.",
+                "Router-East har en routingpost för File-Server:s nätverk som pekar mot fel port, så ingen giltig väg finns för att leverera den.",
+                "På Router-East, ta bort rutten till 10.0.21.0/255.255.255.0 och lägg till en för 10.0.21.0/255.255.255.0 via nästa hopp 10.0.2.2 på portnummer 1."
+            ],
+            "explanation": "En statisk väg måste peka ut den port som faktiskt leder till nästa hopp-routern. Här användes Router-East:s väg till File-Server:s subnät fel utgående port, så paketen släpptes istället för att vidarebefordras mot Router-West."
+        },
+        "sw": {
+            "title": "Maagizo Yamekwama Njiani kwa Ofisi Kuu",
+            "story": "PC-Admin katika ofisi ya tawi haiwezi kufikia File-Server katika ofisi kuu tangu asubuhi. Wafanyakazi wanasema kila jaribio la kuagiza linabaki tu mpaka itoe wakati.",
+            "objective": "Rejesha HTTP GET kutoka PC-Admin kwa File-Server ili iwe na jibu.",
+            "hints": [
+                "Paketi kutoka PC-Admin haiwezi kupita Router-East; inayangiliwa hapo kabla ya kwenda kwa ofisi kuu.",
+                "Router-East ina ingizo la uelekezaji kwa mtandao wa File-Server linaloonyesha port isiyo sahihi, kwa hiyo hakuna njia halisi ya kuliletea.",
+                "Kwenye Router-East, futa njia ya 10.0.21.0/255.255.255.0 na ongeza moja kwa 10.0.21.0/255.255.255.0 kupitia hop inayofuata 10.0.2.2 kwenye port nambari 1."
+            ],
+            "explanation": "Njia tuli lazima ionyeshe port inayoongoza kwa Router inayofuata. Hapa njia ya Router-East kwa sabu la File-Server ilitumia port isiyo sahihi ya kutoka, kwa hiyo paketi zilichukuliwa badala ya kujitayarishia kwenda kwa Router-West."
+        },
+        "ta": {
+            "title": "பிளவுவிடங்கள் தலைமுகாமுக்கு செல்லும் வழியில் சிக்கியுள்ளன",
+            "story": "கிளை அலுவலகத்தில் உள்ள PC-Admin இன்று காலை முதல் தலைமுகாமிலுள்ள File-Server ஐ அடைய முடியவில்லை. ஊழியர்கள் ஒவ்வொரு ஆர்டர் முயற்சியும் நேரம் முடிய வரை நின்றுவிடுகிறது என்கின்றனர்.",
+            "objective": "PC-Admin இலிருந்து File-Server க்கு HTTP GET ஐ மீட்டெடுத்து, அது பதிலைப் பெறுவதை உறுதிசெய்யவும்.",
+            "hints": [
+                "PC-Admin இலிருந்து வரும் பாக்கெட் Router-East ஐ கடக்கவே முடியாது; அது தலைமுகாமுக்குச் செல்வதற்கு முன்பே அங்குதான் நிறுத்தப்படுகிறது.",
+                "Router-East ற்கு File-Server ன் நெட்வொர்க்குக்கான ரூட்டிங் நுழைவு தவறான போர்ட்டை நோக்குகிறது, எனவே அதை வழங்குவதற்கு சரியான வழி இல்லை.",
+                "Router-East இல், 10.0.21.0/255.255.255.0 க்கான ரூட்டை நீக்கி, 10.0.21.0/255.255.255.0 க்கு அடுத்த ஹாப் 10.0.2.2, போர்ட் எண் 1 வழியாக ஒன்றைச் சேர்க்கவும்."
+            ],
+            "explanation": "நிலையான ரூட் உண்மையில் அடுத்த ஹாப் ரூட்டருக்கு இட்டுச் செல்லும் போர்ட்டைக் காட்டவேண்டும். இங்கே Router-East ன் File-Server ன் சாப்நெட்வொர்க்குக்கான ரூட் தவறான வெளிச்செல்லும் போர்ட்டைப் பயன்படுத்தியதால், பாக்கெட்டுகள் Router-West க்கு முன்னோக்கி அனுப்பப்படாமல் நிறுத்தப்பட்டன."
+        },
+        "te": {
+            "title": "ఆర్డర్‌లు హెడ్‌క్వార్టర్‌కు వెళ్ళే మార్గంలో చిక్కుకున్నాయి",
+            "story": "శాఖ కార్యాలయంలోని PC-Admin ఈ ఉదయం నుండి హెడ్‌క్వార్టర్‌లలోని File-Server ను చేరుకోలేకపోయింది. సిబ్బంది ప్రతి ఆర్డర్ ప్రయత్నం సమయం ముగిసే వరకు నిలిచిపోతుందని చెబుతున్నారు.",
+            "objective": "PC-Admin నుండి File-Server కు HTTP GET ను పునరుద్ధరించండి, తద్వారా అది ప్రతిస్పందన పొందుతుంది.",
+            "hints": [
+                "PC-Admin నుండి ప్యాకెట్ Router-East ను దాటి ఎక్కడికీ చేరదు; హెడ్‌క్వార్టర్‌కు వెళ్ళడానికి ముందు అక్కడే పడేస్తారు.",
+                "Router-East కి File-Server నెట్‌వర్క్‌కి రూటింగ్ ఎంట్రీ సరికాని పోర్ట్‌ను సూచిస్తుంది, కాబట్టి దాన్ని సరఫరా చేయడానికి చెల్లుబాటు అయ్యే మార్గం లేదు.",
+                "Router-East లో, 10.0.21.0/255.255.255.0 కు రూటు తొలగించండి మరియు 10.0.21.0/255.255.255.0 కు నెక్స్ట్ హాప్ 10.0.2.2, పోర్ట్ నంబర్ 1 ద్వారా ఒకటి జోడించండి."
+            ],
+            "explanation": "స్థిర రూటు నిజానికి నెక్స్ట్ హాప్ రూటర్‌కు దారితీసే పోర్ట్‌ను సూచించాలి. ఇక్కడ Router-East కి File-Server సబ్‌నెట్‌కు రూటు తప్పుడు అవుట్‌గోయింగ్ పోర్ట్‌ను ఉపయోగించింది, కాబట్టి పాకెట్‌లు Router-West కు ఫార్‌వార్డ్ చేయబడకుండా పడేసిన్నాయి."
+        },
+        "uk": {
+            "title": "Замовлення зависли на шляху до головного офісу",
+            "story": "PC-Admin у філіальному офісі не може дозвонитися до File-Server у головному офісі з цього ранку. Персонал повідомляє, що кожна спроба замовлення зависає до закінчення часу очікування.",
+            "objective": "Відновіть HTTP GET від PC-Admin до File-Server, щоб отримати відповідь.",
+            "hints": [
+                "Пакет від PC-Admin ніколи не проходить через Router-East; він відкидається там до відправки до головного офісу.",
+                "Router-East має запис маршрутизації для мережі File-Server, який указує на невірний порт, тому не існує дійсного маршруту для його доставки.",
+                "На Router-East видаліть маршрут до 10.0.21.0/255.255.255.0 та додайте новий для 10.0.21.0/255.255.255.0 через наступний перехід 10.0.2.2 на порту 1."
+            ],
+            "explanation": "Статичний маршрут повинен указувати на порт, який насправді ведет до маршрутизатора наступного переходу. Тут маршрут Router-East до підмережі File-Server використовував невірний вихідний порт, тому пакети були відкинені замість перенаправлення до Router-West."
+        },
+        "ur": {
+            "title": "ہیڈ کوارٹرز کو جانے والے آرڈرز رکے ہوئے",
+            "story": "برانچ آفس میں PC-Admin کل صبح سے File-Server کو ہیڈ کوارٹرز میں رسائی نہیں کر سکے۔ اسٹاف کہتے ہیں کہ ہر آرڈر کی کوشش معلق رہتی ہے جب تک ٹائم آؤٹ نہیں ہوتا۔",
+            "objective": "PC-Admin سے File-Server تک ایک HTTP GET کو بحال کریں تاکہ اسے جواب ملے۔",
+            "hints": [
+                "PC-Admin سے پیکٹ Router-East سے آگے نہیں جاتا؛ اسے وہاں ہیڈ کوارٹرز کی طرف بھیجنے سے پہلے ڈاپ کیا جاتا ہے۔",
+                "Router-East کے پاس File-Server کے نیٹ ورک کے لیے ایک روٹنگ ٹیبل اندراج ہے جو غلط پورٹ کی طرف اشارہ کرتا ہے، اس لیے کوئی درست راستہ موجود نہیں۔",
+                "Router-East پر، 10.0.21.0/255.255.255.0 تک کا روٹ حذف کریں اور 10.0.21.0/255.255.255.0 کے لیے نیکسٹ ہاپ 10.0.2.2، پورٹ نمبر 1 پر ایک نیا روٹ شامل کریں۔"
+            ],
+            "explanation": "ایک مقررہ روٹ کو اس پورٹ کی نشاندہی کرنی چاہیے جو اصل میں نیکسٹ ہاپ Router کی طرف جاتا ہے۔ یہاں Router-East کا File-Server کی سب نیٹ تک کا روٹ غلط آؤٹ گوئنگ پورٹ استعمال کر رہا تھا، اس لیے پیکٹ Router-West کی طرف بھیجے جانے کی بجائے ڈاپ کیے جا رہے تھے۔"
+        },
+        "zu": {
+            "title": "Ama-Order Abhubhiswe Endlangeni siye ku-Headquarters",
+            "story": "PC-Admin e-offisi yasangA unable ukufika ku-File-Server e-headquarters kusukela ngomuva. Abasebenzi bethi zonke izlhethela z-order ziyahlala zifhakela kuze kube ixesha likhone.",
+            "objective": "Buyisela i-HTTP GET esuka ku-PC-Admin iye ku-File-Server ukuze ithole impendulo.",
+            "hints": [
+                "Ipakiti esuka ku-PC-Admin ayisuki i-Router-East; ibhasiwe lapho ngaphandle kokuqondiswa kunkunzi eye-headquarters.",
+                "I-Router-East ine-routing entry yenethiwekhi ye-File-Server ephakamisela iphothi elingaziwa, ngakho azikho indlela esebenzisanayo yokuletela yona.",
+                "Ku-Router-East, susa umzila we-10.0.21.0/255.255.255.0 kwaye wengeza owodwa we-10.0.21.0/255.255.255.0 nge-next hop 10.0.2.2 ephothi 1."
+            ],
+            "explanation": "Umzila obekwe okugqwesa kumele ucacise iphothi eyisebenzisa okukhangela umzali. Lapha umzila we-Router-East we-subnet ye-File-Server wasebenzisa iphothi elingaziwa lokuphumela, ngakho amapakiti akuzalwe endlekeni ze-Router-West kunesikhundla sokuthonxwa."
+        },
+        "am": {
+            "title": "ትዕዛዞች ወደ ዋና ፅ/ቤት መሸጋገር ተቆርጡ",
+            "story": "PC-Admin በቅርንጫፍ ፅ/ቤት ውስጥ ከዛሬ ጀምሮ File-Server በዋና ዋና ቤት መድረስ ሲችል ነበር። ሰራተኞች እያንዳንዱ ትዕዛዝ ሙከራ ብቻ ተንጠልጣይ ሆኖ ጊዜው እስኪያልቅ ድረስ ይቆያል ሲሉ ይናገራሉ።",
+            "objective": "ከ PC-Admin ወደ File-Server HTTP GET ወደነበረበት በመመለስ ምላሽ ታገኙ።",
+            "hints": [
+                "ከ PC-Admin የሚመጡ ፓኬትስ Router-East ወደ ወደ ዋና ፅ/ቤት መሄድ ምንም ጊዜ አያልፉም; እዚያ ተወስደዋል።",
+                "Router-East File-Server አውታረ መረብ አስገባ routing entry አለበት ወደ ስህተት ፖርት እንደሚጠቅስ፣ ስለዚህ ትክክለኛ ማዘዋወር መንገድ አልነበረም።",
+                "በ Router-East ላይ 10.0.21.0/255.255.255.0 ወደ ሰንጠረዥ ስሌት ጠፍተው ወደ ቀጣይ ሆፕ 10.0.2.2፣ ፖርት 1 ተመሳሳይ ያክሉ።"
+            ],
+            "explanation": "ተጣጣፊ ማዘዋወር ወደ ቀጣይ ሆፕ ወደሚወስደውን ፖርት መጠቆም አለበት። እዚህ Router-East ወደ File-Server ንዑስ አውታረ መረብ ማዘዋወር የተሳሳተ ወደወት ፖርት ተጠቀመ፣ ስለዚህ ፓኬትስ ወደ Router-West ተፈናቅለው ተላልፈው።"
+        },
+        "eu": {
+            "title": "Aginduen Galera Nagusiaren Bidean",
+            "story": "PC-Admin adarkako bulegoan File-Server nagusiean elkarri ez daiteke heldu gaurko goizean. Langileak diote agindua saiatzea besterik ez dela gelditute denbora-aguren artean.",
+            "objective": "Ezarri HTTP GET bat PC-Admin tik File-Server era josatuz nortzuk saria jasotzen duten.",
+            "hints": [
+                "PC-Admin gatik sormen paketa ez da inoiz Router-East igarotzen, etxeko aurrera joan aurretik ezabatzen du.",
+                "Router-East File-Server sarea bideratzeko sarrera du baina bide gaizto portuan seinalatzen du, ez dago baliozkoa bidea balio entregatzeko.",
+                "Router-East-en, ezabatu 10.0.21.0/255.255.255.0 bideraketa eta gehitu bat 10.0.21.0/255.255.255.0 hurrengo jauzia 10.0.2.2 eta portua 1 bidez."
+            ],
+            "explanation": "Bide finkoa hurrengo jauzia benetakoari eramaten duen portuari seinalatu behar dio. Hemen Router-East-en File-Server subnetaren bidean gaizki atera portua erabili zuen, beraz paketeak bota ziren Router-West-era bidaltzean."
+        },
+        "si": {
+            "title": "ඇණවුම් ප්‍රධාන කාර්යාලයට යාම නතර විය",
+            "story": "PC-Admin ශාඛා කාර්යාලයේ සිට File-Server ප්‍රධාන කාර්යාලයට අද උදෑසරේ සිට සම්බන්ධ විය නොහැක. කර්මාන්තිකයින් පවසන්නේ සෑම ඇණවුම් උත්සාහයක්ම එය කාල ඉකුත් වන තුරු අතර ගතක්ම ගෙනයන බවයි।",
+            "objective": "PC-Admin වෙතින් File-Server වෙත HTTP GET ප්‍රතිසාද ලබා ගැනීම ស්ථාපනය කරන්න.",
+            "hints": [
+                "PC-Admin වෙතින් පැකට Router-East ඉවතට යන්නට කිසි විටෙකත් ගෙන යන්නේ නැත; එය එතැන දමා හරින්න ප්‍රධාන කාර්යාලය දෙසට යාමට පෙර.",
+                "Router-East File-Server ජාලයට විකිණීම් එකතු කිරීමක් ඇත එය වැරැද්د ගිණුම දිශාවට පෙන්වන බැවින්, එය සපයා ගැනීමට නියම ඡේදය නැත.",
+                "Router-East හි 10.0.21.0/255.255.255.0 වෙත රවුටිং මකා දමා 10.0.21.0/255.255.255.0 ඊළඟ හොප් 10.0.2.2 පෝට් 1 හි එක් කරන්න."
+            ],
+            "explanation": "ස්ථිතික රවුටිં ඊළඟ හොප් දිශාවට නියම ගිණුම සඳහා පෙන්විය යුතුය. මෙහි Router-East File-Server උප-ජාලයට රවුටිං වැරැද්ද ඉවතට ගිණුම භාවිතා කළ බැවින්, පැකට Router-West වෙත යැවීමට හෝ ඉදිරියට යැවීමට නොවේ."
+        }
+    }
+}
