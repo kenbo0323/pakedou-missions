@@ -1,0 +1,1328 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-28",
+    "number": 69,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "cable_unplugged",
+        "vlan_mismatch"
+    ],
+    "concepts": [
+        "physical-link",
+        "vlan"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.7.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.7.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.2.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.2.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.2.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.2.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "Switch-Floor2",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 30
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.2.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.27.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Web-Server",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.27.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.27.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Reception Can't Reach the Web Server",
+            "story": "The receptionist reports that the web dashboard has stopped loading on her PC since this morning. Finance, Sales, and Lab haven't said anything is wrong.",
+            "objective": "Make an HTTP request from PC-Reception to Web-Server succeed.",
+            "hints": [
+                "The request from PC-Reception never gets forwarded past Switch-Floor2, and the link between Switch-Floor2 and Router-Edge shows no traffic at all.",
+                "PC-Reception's switch port is grouped into a VLAN that has no path onward, and separately the cable between Switch-Floor2 and Router-Edge is missing.",
+                "On Switch-Floor2, set port 0 to VLAN 10, and run a cable between Switch-Floor2 and Router-Edge."
+            ],
+            "explanation": "A switch port placed in the wrong VLAN gets isolated from the rest of its intended network, even if everything else is cabled correctly. On top of that, a missing physical link between switch and router blocks all VLANs from reaching the router, not just one. Both issues had to be fixed for traffic to flow."
+        },
+        "ja": {
+            "title": "受付からWebサーバーに接続できない",
+            "story": "受付担当者から、今朝からPC上でWebダッシュボードが表示されなくなったとの報告がありました。Finance、Sales、Labからは特に問題の報告はありません。",
+            "objective": "PC-ReceptionからWeb-ServerへのHTTPリクエストを成功させてください。",
+            "hints": [
+                "PC-Receptionからのリクエストは、Switch-Floor2から先に転送されておらず、Switch-Floor2とRouter-Edge間のリンクには通信が全く流れていません。",
+                "PC-Receptionのスイッチポートは、この先に経路のないVLANに割り当てられています。それとは別に、Switch-Floor2とRouter-Edge間のケーブルも接続されていません。",
+                "Switch-Floor2でポート0をVLAN 10に設定し、Switch-Floor2とRouter-Edge間にケーブルを接続してください。"
+            ],
+            "explanation": "スイッチポートが誤ったVLANに割り当てられていると、他の設定がすべて正しくても、本来つながるはずのネットワークから孤立してしまいます。さらに、スイッチとルーター間の物理リンクが欠けていると、特定のVLANだけでなくすべてのVLANがルーターに到達できなくなります。通信を正常に流すには、この両方の問題を修正する必要がありました。"
+        },
+        "zh-CN": {
+            "title": "前台无法访问Web服务器",
+            "story": "前台员工反映，从今早开始，她的PC上无法加载Web仪表板。财务、销售和实验室部门没有报告任何问题。",
+            "objective": "使PC-Reception向Web-Server发起的HTTP请求成功。",
+            "hints": [
+                "PC-Reception发出的请求从未转发超过Switch-Floor2，Switch-Floor2和Router-Edge之间的链路完全没有流量。",
+                "PC-Reception的交换机端口属于一个没有向外路径的VLAN，同时Switch-Floor2和Router-Edge之间的网线也断了。",
+                "在Switch-Floor2上，将端口0设置为VLAN 10，并在Switch-Floor2和Router-Edge之间连接网线。"
+            ],
+            "explanation": "交换机端口被放置在错误的VLAN中会导致其与其他网络隔离，即使其他所有网线都正确连接也不例外。此外，交换机和路由器之间的物理链路缺失会阻止所有VLAN到达路由器，不只是某个特定VLAN。两个问题都必须解决才能使流量通畅。"
+        },
+        "zh-TW": {
+            "title": "前台無法連線到Web伺服器",
+            "story": "前台員工反映，自今早起，她的PC上無法載入Web儀表板。財務、銷售和實驗室部門並未報告任何問題。",
+            "objective": "使PC-Reception向Web-Server發送的HTTP請求成功。",
+            "hints": [
+                "PC-Reception發出的請求從未轉發超過Switch-Floor2，Switch-Floor2和Router-Edge之間的連結完全沒有流量。",
+                "PC-Reception的交換機連接埠所屬VLAN無向外路徑，同時Switch-Floor2和Router-Edge之間的網線亦缺失。",
+                "在Switch-Floor2上，將連接埠0設定為VLAN 10，並在Switch-Floor2和Router-Edge之間連接網線。"
+            ],
+            "explanation": "交換機連接埠被配置在錯誤的VLAN會導致其與其他網路隔離，即使其他網線連接都正確無誤也是如此。此外，交換機和路由器之間缺少實體連結會阻止所有VLAN到達路由器，不僅限於某個特定VLAN。兩個問題都必須修復才能使流量通暢。"
+        },
+        "ko": {
+            "title": "전무실이 Web 서버에 접속할 수 없음",
+            "story": "전무실 직원이 오늘 아침부터 그녀의 PC에서 Web 대시보드가 로드되지 않는다고 보고했습니다. 재무, 판매 및 실험실 부서는 문제가 없다고 보고했습니다.",
+            "objective": "PC-Reception에서 Web-Server로 HTTP 요청이 성공하도록 만들기.",
+            "hints": [
+                "PC-Reception에서 보낸 요청이 Switch-Floor2를 넘어 전달되지 않으며, Switch-Floor2와 Router-Edge 사이의 연결에는 트래픽이 전혀 없습니다.",
+                "PC-Reception의 스위치 포트가 외부로 나가는 경로가 없는 VLAN에 속해 있고, 동시에 Switch-Floor2와 Router-Edge 사이의 케이블이 끊어져 있습니다.",
+                "Switch-Floor2에서 포트 0을 VLAN 10으로 설정하고, Switch-Floor2와 Router-Edge 사이에 케이블을 연결하세요."
+            ],
+            "explanation": "스위치 포트가 잘못된 VLAN에 배치되면 다른 모든 케이블이 올바르게 연결되어 있어도 나머지 네트워크에서 격리됩니다. 더 나아가 스위치와 라우터 사이의 물리적 연결이 없으면 특정 VLAN뿐만 아니라 모든 VLAN이 라우터에 도달하지 못합니다. 트래픽이 흐르려면 두 가지 문제를 모두 해결해야 합니다."
+        },
+        "es": {
+            "title": "Recepción no puede alcanzar el Servidor Web",
+            "story": "La recepcionista reporta que el panel web dejó de cargar en su PC esta mañana. Finanzas, Ventas y Laboratorio no han reportado problemas.",
+            "objective": "Hacer que una solicitud HTTP desde PC-Reception a Web-Server sea exitosa.",
+            "hints": [
+                "La solicitud de PC-Reception nunca se reenvía más allá de Switch-Floor2, y el enlace entre Switch-Floor2 y Router-Edge no muestra tráfico en absoluto.",
+                "El puerto del switch de PC-Reception está agrupado en una VLAN que no tiene camino hacia adelante, y además el cable entre Switch-Floor2 y Router-Edge falta.",
+                "En Switch-Floor2, establezca el puerto 0 en VLAN 10 y conecte un cable entre Switch-Floor2 y Router-Edge."
+            ],
+            "explanation": "Un puerto de switch colocado en la VLAN incorrecta queda aislado del resto de su red prevista, incluso si todos los demás cables están conectados correctamente. Además, un enlace físico faltante entre el switch y el router bloquea todas las VLAN de llegar al router, no solo una. Ambos problemas tuvieron que corregirse para que el tráfico fluyera."
+        },
+        "pt-BR": {
+            "title": "Recepção não consegue acessar o Servidor Web",
+            "story": "A recepcionista relata que o painel web parou de carregar em seu PC desde esta manhã. Financeiro, Vendas e Laboratório não relataram problemas.",
+            "objective": "Fazer uma solicitação HTTP de PC-Reception para Web-Server ser bem-sucedida.",
+            "hints": [
+                "A solicitação de PC-Reception nunca é encaminhada além de Switch-Floor2, e o link entre Switch-Floor2 e Router-Edge não mostra tráfego algum.",
+                "A porta do switch de PC-Reception está agrupada em uma VLAN sem caminho adiante, e além disso o cabo entre Switch-Floor2 e Router-Edge está faltando.",
+                "Em Switch-Floor2, configure a porta 0 para VLAN 10 e passe um cabo entre Switch-Floor2 e Router-Edge."
+            ],
+            "explanation": "Uma porta de switch colocada na VLAN errada fica isolada do resto de sua rede pretendida, mesmo que todos os outros cabos estejam conectados corretamente. Além disso, um link físico ausente entre o switch e o router bloqueia todas as VLANs de chegarem ao router, não apenas uma. Ambos os problemas precisavam ser corrigidos para o tráfego fluir."
+        },
+        "de": {
+            "title": "Rezeption kann Web-Server nicht erreichen",
+            "story": "Die Rezeptionistin berichtet, dass sich das Web-Dashboard auf ihrem PC seit heute Morgen nicht mehr lädt. Finance, Sales und Lab haben nicht gemeldet, dass etwas nicht stimmt.",
+            "objective": "Eine HTTP-Anfrage von PC-Reception zu Web-Server erfolgreich ausführen.",
+            "hints": [
+                "Die Anfrage von PC-Reception wird nicht über Switch-Floor2 weitergeleitet, und die Verbindung zwischen Switch-Floor2 und Router-Edge zeigt keinen Traffic.",
+                "Der Switch-Port von PC-Reception ist in einem VLAN gruppiert, das keinen Pfad nach außen hat, und zusätzlich fehlt das Kabel zwischen Switch-Floor2 und Router-Edge.",
+                "Auf Switch-Floor2 Port 0 auf VLAN 10 stellen und ein Kabel zwischen Switch-Floor2 und Router-Edge verlegen."
+            ],
+            "explanation": "Ein Switch-Port in einem falschen VLAN wird vom Rest seines beabsichtigten Netzwerks isoliert, auch wenn alles andere korrekt verdrahtet ist. Darüber hinaus blockiert eine fehlende physische Verbindung zwischen Switch und Router alle VLANs davon ab, den Router zu erreichen, nicht nur eines. Beide Probleme mussten behoben werden, damit Traffic fließen konnte."
+        },
+        "fr": {
+            "title": "La Réception ne peut pas atteindre le Serveur Web",
+            "story": "La réceptionniste signale que le tableau de bord web n'a pas pu charger sur son PC ce matin. Les équipes Finance, Sales et Lab n'ont rien signalé d'anormal.",
+            "objective": "Faire en sorte qu'une requête HTTP de PC-Reception vers Web-Server réussisse.",
+            "hints": [
+                "La requête de PC-Reception n'est jamais transmise au-delà de Switch-Floor2, et la liaison entre Switch-Floor2 et Router-Edge ne montre aucun trafic.",
+                "Le port de commutateur de PC-Reception est groupé dans un VLAN qui n'a pas de chemin de sortie, et en outre le câble entre Switch-Floor2 et Router-Edge manque.",
+                "Sur Switch-Floor2, définissez le port 0 sur VLAN 10 et déroulez un câble entre Switch-Floor2 et Router-Edge."
+            ],
+            "explanation": "Un port de commutateur placé dans le mauvais VLAN se retrouve isolé du reste de son réseau prévu, même si tout le reste est correctement câblé. De plus, une liaison physique manquante entre le commutateur et le routeur empêche tous les VLAN d'atteindre le routeur, pas seulement un. Les deux problèmes devaient être résolus pour que le trafic circule."
+        },
+        "hi": {
+            "title": "रिसेप्शन Web-Server तक नहीं पहुंच सकता",
+            "story": "रिसेप्शनिस्ट ने बताया कि आज सुबह से उनके PC-Reception पर वेब डैशबोर्ड लोड नहीं हो रहा। Finance, Sales और Lab ने कोई समस्या की रिपोर्ट नहीं की।",
+            "objective": "PC-Reception से Web-Server तक HTTP अनुरोध सफल बनाएं।",
+            "hints": [
+                "PC-Reception का अनुरोध Switch-Floor2 से आगे कभी नहीं भेजा जाता, और Switch-Floor2 तथा Router-Edge के बीच का लिंक कोई ट्रैफिक नहीं दिखाता।",
+                "PC-Reception की स्विच पोर्ट एक VLAN में सेट है जिसका कोई आगे का पथ नहीं है, और Switch-Floor2 तथा Router-Edge के बीच का केबल भी नहीं जुड़ा है।",
+                "Switch-Floor2 पर, पोर्ट 0 को VLAN 10 पर सेट करें, और Switch-Floor2 तथा Router-Edge के बीच केबल चलाएं।"
+            ],
+            "explanation": "गलत VLAN में रखी गई स्विच पोर्ट अपने इच्छित नेटवर्क के बाकी हिस्से से अलग हो जाती है, भले ही बाकी सब कुछ सही तरीके से जुड़ा हो। इसके अलावा, स्विच और राउटर के बीच भौतिक लिंक की कमी सभी VLAN को राउटर तक पहुंचने से रोकती है, सिर्फ एक ही नहीं। ट्रैफिक प्रवाहित करने के लिए दोनों समस्याओं को ठीक करना आवश्यक था।"
+        },
+        "id": {
+            "title": "Resepsi Tidak Dapat Menjangkau Web-Server",
+            "story": "Resepsionis melaporkan bahwa dasbor web telah berhenti memuat di PC-nya sejak pagi ini. Finance, Sales, dan Lab tidak ada yang mengatakan ada masalah.",
+            "objective": "Buat permintaan HTTP dari PC-Reception ke Web-Server berhasil.",
+            "hints": [
+                "Permintaan dari PC-Reception tidak pernah diteruskan melewati Switch-Floor2, dan tautan antara Switch-Floor2 dan Router-Edge menunjukkan lalu lintas sama sekali.",
+                "Port switch PC-Reception dikelompokkan ke dalam VLAN yang tidak memiliki jalur keluar, dan terpisah kabel antara Switch-Floor2 dan Router-Edge hilang.",
+                "Di Switch-Floor2, atur port 0 ke VLAN 10, dan pasang kabel antara Switch-Floor2 dan Router-Edge."
+            ],
+            "explanation": "Port switch yang ditempatkan di VLAN yang salah terisolasi dari sisa jaringan yang dimaksud, bahkan jika semuanya lainnya terkabel dengan benar. Selain itu, tautan fisik yang hilang antara switch dan router memblokir semua VLAN agar tidak mencapai router, bukan hanya satu. Kedua masalah harus diperbaiki agar lalu lintas dapat mengalir."
+        },
+        "ru": {
+            "title": "Ресепшен не может достичь Web-Server",
+            "story": "Администратор ресепшена сообщила, что веб-панель перестала загружаться на её PC-Reception с этого утра. Finance, Sales и Lab не сообщили о проблемах.",
+            "objective": "Сделайте так, чтобы HTTP-запрос от PC-Reception к Web-Server был успешен.",
+            "hints": [
+                "Запрос от PC-Reception никогда не передается дальше Switch-Floor2, и канал связи между Switch-Floor2 и Router-Edge не показывает никакого трафика.",
+                "Порт коммутатора PC-Reception находится в VLAN, у которого нет пути вперед, и кроме того отсутствует кабель между Switch-Floor2 и Router-Edge.",
+                "На Switch-Floor2 установите порт 0 в VLAN 10 и протяните кабель между Switch-Floor2 и Router-Edge."
+            ],
+            "explanation": "Порт коммутатора, помещенный в неправильный VLAN, становится изолированным от остальной части предполагаемой сети, даже если всё остальное подключено правильно. Кроме того, отсутствующая физическая связь между коммутатором и маршрутизатором блокирует все VLAN от доступа к маршрутизатору, не только один. Обе проблемы должны были быть исправлены, чтобы трафик мог течь."
+        },
+        "it": {
+            "title": "La Reception non raggiunge il Web Server",
+            "story": "La receptionist segnala che il dashboard web ha smesso di caricarsi sul suo PC questa mattina. Finance, Sales e Lab non hanno segnalato problemi.",
+            "objective": "Fare in modo che una richiesta HTTP da PC-Reception a Web-Server abbia successo.",
+            "hints": [
+                "La richiesta da PC-Reception non viene mai inoltrata oltre Switch-Floor2, e il collegamento tra Switch-Floor2 e Router-Edge non mostra alcun traffico.",
+                "La porta dello switch di PC-Reception è raggruppata in una VLAN che non ha percorso in avanti, e separatamente il cavo tra Switch-Floor2 e Router-Edge manca.",
+                "Su Switch-Floor2, impostare la porta 0 su VLAN 10, e collegare un cavo tra Switch-Floor2 e Router-Edge."
+            ],
+            "explanation": "Una porta dello switch inserita nella VLAN sbagliata rimane isolata dal resto della sua rete prevista, anche se tutto il resto è cablato correttamente. Inoltre, un collegamento fisico mancante tra switch e router blocca tutte le VLAN dal raggiungimento del router, non solo una. Entrambi i problemi dovevano essere risolti affinché il traffico fluisse."
+        },
+        "tr": {
+            "title": "Reception Web Sunucusuna Ulaşamıyor",
+            "story": "Resepsiyon görevlisi, bu sabahtan itibaren web panosunun bilgisayarında yüklenmediğini bildiriyor. Finance, Sales ve Lab herhangi bir sorun bildirmemiştir.",
+            "objective": "PC-Reception adresinden Web-Server adresine yapılan HTTP isteğinin başarılı olmasını sağlayın.",
+            "hints": [
+                "PC-Reception adresindeki istek hiçbir zaman Switch-Floor2 ötesine iletilmez ve Switch-Floor2 ile Router-Edge arasındaki bağlantıda hiç trafik yoktur.",
+                "PC-Reception'ın switch portu ileri bir yola sahip olmayan bir VLAN içine gruplandırılmıştır ve ayrı olarak Switch-Floor2 ile Router-Edge arasındaki kablo eksiktir.",
+                "Switch-Floor2 üzerinde port 0'ı VLAN 10 olarak ayarlayın ve Switch-Floor2 ile Router-Edge arasında bir kablo bağlayın."
+            ],
+            "explanation": "Yanlış VLAN'a yerleştirilen bir switch portu, diğer her şey doğru şekilde kablolu olsa bile, amaçlanan ağının geri kalanından izole kalır. Buna ek olarak, switch ile router arasındaki eksik fiziksel bağlantı, sadece bir değil, tüm VLAN'ları routera ulaşmasından engeller. Trafiğin akması için her iki sorun da çözülmüş olması gerekiyordu."
+        },
+        "th": {
+            "title": "Reception ไม่สามารถเข้าถึง Web Server",
+            "story": "เสมียนรับสายรายงานว่าแดชบอร์ดเว็บหยุดทำงานบนพีซีของเธอตั้งแต่เช้านี้ Finance, Sales และ Lab ไม่ได้รายงานปัญหา",
+            "objective": "ทำให้คำขอ HTTP จาก PC-Reception ไปยัง Web-Server สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Reception ไม่เคยถูกส่งต่อผ่าน Switch-Floor2 และลิงก์ระหว่าง Switch-Floor2 กับ Router-Edge ไม่มีการไหลของข้อมูล",
+                "พอร์ตของสวิตช์ PC-Reception ถูกจัดกลุ่มไว้ใน VLAN ที่ไม่มีเส้นทางไปข้างหน้า และเคเบิลระหว่าง Switch-Floor2 กับ Router-Edge หายไป",
+                "บน Switch-Floor2 ตั้งค่าพอร์ต 0 เป็น VLAN 10 และเชื่อมต่อเคเบิลระหว่าง Switch-Floor2 กับ Router-Edge"
+            ],
+            "explanation": "พอร์ตสวิตช์ที่ถูกวางลงใน VLAN ที่ไม่ถูกต้องจะแยกออกจากเครือข่ายที่ตั้งใจไว้ แม้ว่าทุกอย่างอื่นจะมีการเชื่อมสายถูกต้องก็ตาม นอกจากนี้ ลิงก์ทางกายภาพที่หายไประหว่างสวิตช์และเราเตอร์จะบล็อก VLAN ทั้งหมดจากการเข้าถึงเราเตอร์ ไม่ใช่แค่อันเดียว ต้องแก้ไขปัญหาทั้งสองประการเพื่อให้ข้อมูลไหลได้"
+        },
+        "vi": {
+            "title": "Reception Không Thể Kết Nối Đến Web Server",
+            "story": "Nhân viên tiếp tân báo cáo rằng bảng điều khiển web đã ngừng tải trên PC của cô ấy kể từ sáng nay. Finance, Sales và Lab chưa báo cáo bất kỳ sự cố nào.",
+            "objective": "Tạo yêu cầu HTTP từ PC-Reception đến Web-Server thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Reception không bao giờ được chuyển tiếp vượt quá Switch-Floor2 và liên kết giữa Switch-Floor2 và Router-Edge không có lưu lượng nào.",
+                "Cổng switch của PC-Reception được nhóm vào VLAN không có đường dẫn tiếp theo, và riêng biệt cáp giữa Switch-Floor2 và Router-Edge bị mất.",
+                "Trên Switch-Floor2, đặt cổng 0 thành VLAN 10 và chạy cáp giữa Switch-Floor2 và Router-Edge."
+            ],
+            "explanation": "Cổng switch được đặt vào VLAN sai sẽ bị cô lập khỏi phần còn lại của mạng dự định của nó, ngay cả khi tất cả những thứ khác được cáp chính xác. Ngoài ra, liên kết vật lý bị mất giữa switch và router sẽ chặn tất cả VLAN không đạt được router, không phải chỉ một. Phải sửa chữa cả hai vấn đề để lưu lượng có thể lưu thông."
+        },
+        "af": {
+            "title": "Reception Kan Nie Die Web-Bediener Bereik",
+            "story": "Die resepsioniste rapporteer dat die webdashboard vanmore op haar rekenaar ophou laai. Finance, Sales en Lab het nie gerapporteer dat daar iets verkeerd is nie.",
+            "objective": "Maak 'n HTTP-aanvraag van PC-Reception na Web-Server sukseelvol.",
+            "hints": [
+                "Die aanvraag van PC-Reception word nooit verder as Switch-Floor2 deurgestuur nie, en die skakel tussen Switch-Floor2 en Router-Edge toon geen verkeer nie.",
+                "PC-Reception se skakelpoort is in 'n VLAN gegroepeer wat geen pad vorentoe het nie, en die kabel tussen Switch-Floor2 en Router-Edge ontbreek.",
+                "Stel op Switch-Floor2 poort 0 in op VLAN 10 en trek 'n kabel tussen Switch-Floor2 en Router-Edge."
+            ],
+            "explanation": "'n Skakelpoort wat in die verkeerde VLAN geplaas word, bly van die res van sy beoogde netwerk geisoleer, selfs al is alles anders korrek gekabel. Daarbenewens blokkeer 'n ontbrekende fisiese skakel tussen skakelaar en roeteerder al die VLAN's van die roeteerder, nie net een nie. Beide probleme moes reggestel word vir verkeer om te vloei."
+        },
+        "am": {
+            "title": "ሪሴፕሽን ወደ Web-Server ሊደርስ አልቻለ",
+            "story": "ሪሴፕሽናይስት ወደ ፒሲቷ ላይ ያለው የድር dashboard ከዛሬ ጥዋት ጀምሮ ሊጫን ስቁ ብላለች፡፡ የገንዘብ፣ ሽያጭ እና ላብ ዓለቢ ችግር ወሰድ ብለዋል፡፡",
+            "objective": "HTTP 요청 PC-Reception ወደ Web-Server ሥራ ላይ ይሁን::",
+            "hints": [
+                "ከ PC-Reception ያረጀው ጥያቄ ጫማ Switch-Floor2 በላይ አይቀሩ፣ እና በ Switch-Floor2 እና Router-Edge መካከል ያለ ግንኙነት ምንም ትራፊክ አይታይም::",
+                "PC-Reception ተቀላቅሎ አለ VLAN ውስጥ ምንም ደዋ ንፋስ አላትም፣ እና በተለዋወጡት ምላ ኬብል በ Switch-Floor2 እና Router-Edge መካከል ጠፍቷል::",
+                "በ Switch-Floor2 ላይ፣ ቁ 0 ወደ VLAN 10 ያስቀምጡ፣ እና ኬብል በ Switch-Floor2 እና Router-Edge መካከል ያሂዱ::"
+            ],
+            "explanation": "በ VLAN ውስጥ የተቀመጠ ስዊች ቁ ሳለ ሞርሞሪትስ ሞደል ምንም ሌላ ይመጣሉ፣ ሁሉም ሌሎች ትስስሎች ትክክለኛ ቢሆንም:: በተጨማሪም በ VLAN ሞካሞካ መጥፋት ሎ VLAN ሎ ሮተር ወጥ ሚያስገደድ ወቅቱ ሎ ሎ የ ሎ ሎ ሎ :: ሁለቱም ችግሮች ትራፊክ ሲሰሩ ሲስተሙ ተገለበጡ::"
+        },
+        "ar": {
+            "title": "المستقبل لا يستطيع الوصول إلى Web-Server",
+            "story": "أفادت الموظفة في الاستقبال بأن لوحة معلومات الويب توقفت عن التحميل على جهازها منذ هذا الصباح. لم تبلغ أي شكاوى من قسم المالية أو المبيعات أو المختبر.",
+            "objective": "جعل طلب HTTP من PC-Reception إلى Web-Server يعمل.",
+            "hints": [
+                "الطلب من PC-Reception لم يتم تمريره أبدًا عبر Switch-Floor2، وليس هناك حركة مرور على الإطلاق بين Switch-Floor2 و Router-Edge.",
+                "منفذ Switch-Floor2 المتصل بـ PC-Reception موجود في VLAN ليس لديه مسار للخروج، وبشكل منفصل الكابل بين Switch-Floor2 و Router-Edge مفقود.",
+                "على Switch-Floor2، اضبط المنفذ 0 على VLAN 10، وقم بتوصيل كابل بين Switch-Floor2 و Router-Edge."
+            ],
+            "explanation": "منفذ Switch في VLAN خاطئ يصبح معزولاً عن بقية شبكته المقصودة، حتى لو كان كل شيء آخر متصلاً بشكل صحيح. بالإضافة إلى ذلك، فإن الارتباط المادي المفقود بين Switch و Router يمنع جميع VLANs من الوصول إلى Router، وليس واحد فقط. كان يجب إصلاح كلا المشكلتين لكي تتدفق حركة المرور."
+        },
+        "az": {
+            "title": "Qabul Edilmiş Web-Server-ə Çata Bilmədi",
+            "story": "Qabul operatoru bu səhər qadından itibaren PC-ində veb panelinin yüklənməsinin dayandığını xəbər verdi. Maliyyə, Satış və Lab heç nə yanlış olduğunu demirlər.",
+            "objective": "PC-Reception-dən Web-Server-ə HTTP sorğusu uğurlu olsun.",
+            "hints": [
+                "PC-Reception-dan olan sorğu Switch-Floor2 ötəsinə heç vaxt irəli sürülmür və Switch-Floor2 ilə Router-Edge arasında heç bir trafik göstərilmir.",
+                "PC-Reception-un switch portu daha çox yola malik olmayan VLAN-da qruplaşdırılıb və ayrıca Switch-Floor2 ilə Router-Edge arasında kabel itib.",
+                "Switch-Floor2-də, port 0-ı VLAN 10-a ayarlayın və Switch-Floor2 ilə Router-Edge arasında kabel çəkin."
+            ],
+            "explanation": "Səhv VLAN-da yerləşdirilmiş switch portu, digər hər şey düzgün kabel olunsa belə, nəzərdə tutulan şəbəkəsinin qalan hissəsindən ayrı qalır. Bundan əlavə, switch və router arasındakı itib fiziki əlaqə bütün VLAN-ları routerə çatmasından blokedir, nəhayət biri deyil. Trafik axını üçün hər iki məsələni həll etmək lazım idi."
+        },
+        "be": {
+            "title": "Pryyom Ne Mozhe Dasteechas Web-Server",
+            "story": "Recepciyanistka gavaryaet, shto veb-panel prestala zahruzhacelsa na yeye PC s etaga utram. Finansy, Prodazhi i Lab nichego ne skazali ab oshybke.",
+            "objective": "Zrobiť HTTP zaproshchanne ad PC-Reception k Web-Server mozhnym.",
+            "hints": [
+                "Zapreshchanne ad PC-Reception nigdy ne peradayelsa daley ot Switch-Floor2, i svyaz mizh Switch-Floor2 i Router-Edge ne pakazyvaet nikakaga trafika.",
+                "Port Switch-Floor2, padlatany ad PC-Reception, znahodzelsa ў VLAN bez vypusknaga shlyahu, i otdelna kabel mizh Switch-Floor2 i Router-Edge terayelsa.",
+                "Na Switch-Floor2 ustanuyleté port 0 na VLAN 10 i pruvedeté kabel mizh Switch-Floor2 i Router-Edge."
+            ],
+            "explanation": "Sviyach-port, postavleny v prapalanym VLAN, stayelsa izalirovan ad reshty svayey setnky, dazhe kali usy inshyya svyazi dastatkova zdravilno nakabelovany. Kram tago, terayushchuyu fizyčnuyu svyaz mizh sviyachom i routeram blokuyelsa usiyadamnuyu VLAN ad dostupa da routera, ne tolka adnu. Oba prablemy pavinniy byli ispravleny dlya to, shtoby trafiyk mog playvuc."
+        },
+        "bg": {
+            "title": "Recepcia Ne Moje Da Dostane Web-Server",
+            "story": "Receptcionistkiata izvestyava, che panela na websayta prestana da se zarejda na neiniya kompyutar ot tazi sred. Finansi, Prodaji i Lab ne sa kazali, че neshto e greshno.",
+            "objective": "Neka HTTP zaprosa od PC-Reception do Web-Server da uspee.",
+            "hints": [
+                "Zaprosata od PC-Reception nikoga ne se prepushta vidina Switch-Floor2, i vrazkata mizdu Switch-Floor2 i Router-Edge ne pokazva nikakyv trafik.",
+                "Portyt na Switch-Floor2 na PC-Reception e grupiran v VLAN bez izkhod, i otdelno kabelyt mizdu Switch-Floor2 i Router-Edge lipsa.",
+                "Na Switch-Floor2, nastavete port 0 na VLAN 10 i povolyute kabel mizdu Switch-Floor2 i Router-Edge."
+            ],
+            "explanation": "Portyt na sviyči, postavlen v greshnia VLAN, ostava izoliran od ostatyka na predpolagaemata mreza, dazhe ako vsichko drugo e pravilno kabelirano. Kram tova, lipsvashata fizicheska vraska mizdu sviyč i router zabranava na vsiчki VLAN-ove da dostignat routera, ne samo na edna. Trябvaше da se ispravyat i dvete problemi, za da teče trafika."
+        },
+        "bn": {
+            "title": "রিসেপশন ওয়েব সার্ভারে পৌঁছাতে পারছে না",
+            "story": "রিসেপশনিস্ট জানিয়েছেন যে তার PC থেকে ওয়েব ড্যাশবোর্ড আজ সকাল থেকে লোড হচ্ছে না। ফিনান্স, সেলস এবং ল্যাব থেকে কোনো সমস্যার খবর পাননি।",
+            "objective": "PC-Reception থেকে Web-Server এ HTTP রিকোয়েস্ট সফল করুন।",
+            "hints": [
+                "PC-Reception থেকে আসা রিকোয়েস্ট Switch-Floor2 এর বাইরে এগিয়ে যায় না এবং Switch-Floor2 ও Router-Edge এর মধ্যে লিঙ্কে কোনো ট্রাফিক নেই।",
+                "PC-Reception এর সুইচ পোর্ট একটি VLAN এর সাথে গ্রুপ করা আছে যার কোনো এগিয়ে যাওয়ার পথ নেই, এবং আলাদাভাবে Switch-Floor2 ও Router-Edge এর মধ্যে ক্যাবল নেই।",
+                "Switch-Floor2 এ পোর্ট 0 কে VLAN 10 এ সেট করুন এবং Switch-Floor2 ও Router-Edge এর মধ্যে একটি ক্যাবল চালান।"
+            ],
+            "explanation": "একটি সুইচ পোর্ট যখন ভুল VLAN এ রাখা হয়, তখন বাকি নেটওয়ার্ক থেকে বিচ্ছিন্ন হয়ে যায়, এমনকি অন্য সবকিছু সঠিকভাবে সংযুক্ত থাকলেও। এর উপর ভিত্তি করে, সুইচ এবং রাউটারের মধ্যে শারীরিক লিঙ্ক না থাকলে সব VLAN এর ট্রাফিক রাউটারে পৌঁছাতে পারে না, শুধু একটি নয়। ট্রাফিক চালু করার জন্য উভয় সমস্যাই সমাধান করতে হয়েছে।"
+        },
+        "ca": {
+            "title": "La recepció no pot arribar al servidor web",
+            "story": "La receptora informa que el tauler de control web ha deixat de carregar al seu PC des d'aquesta matinada. Finances, Vendes i Laboratori no han reportat cap problema.",
+            "objective": "Feu que una sol·licitud HTTP de PC-Reception a Web-Server funcioni.",
+            "hints": [
+                "La sol·licitud de PC-Reception mai no es remet més enllà de Switch-Floor2, i l'enllaç entre Switch-Floor2 i Router-Edge no mostra cap trànsit.",
+                "El port del commutador de PC-Reception està agrupat en una VLAN sense camí cap al següent salt, i a més el cable entre Switch-Floor2 i Router-Edge falta.",
+                "A Switch-Floor2, establiu el port 0 a VLAN 10 i connecteu un cable entre Switch-Floor2 i Router-Edge."
+            ],
+            "explanation": "Un port del commutador col·locat a la VLAN incorrecta queda aïllat de la resta de la seva xarxa, fins i tot si tot els altres està cablejat correctament. A més, una connexió física que falta entre el commutador i l'encaminador bloqueja totes les VLAN perquè arribin a l'encaminador, no només una. Havien de reparar tots dos problemes perquè el trànsit circulés."
+        },
+        "cs": {
+            "title": "Recepce nemůže dosáhnout webového serveru",
+            "story": "Recepční hlásí, že se ovládací panel webu od rána na jejím počítači přestalo načítat. Finance, Prodej a Laboratoř nenahlásily žádný problém.",
+            "objective": "Zajistěte, aby se HTTP požadavek z PC-Reception na Web-Server podařil.",
+            "hints": [
+                "Požadavek z PC-Reception se nikdy nepředá dále než Switch-Floor2 a odkaz mezi Switch-Floor2 a Router-Edge neukazuje žádný provoz.",
+                "Port přepínače PC-Reception je seskupen do VLAN, která nemá cestu vpřed, a navíc chybí kabel mezi Switch-Floor2 a Router-Edge.",
+                "Na Switch-Floor2 nastavte port 0 na VLAN 10 a připojte kabel mezi Switch-Floor2 a Router-Edge."
+            ],
+            "explanation": "Port přepínače umístěný v nesprávné VLAN se izoluje od zbytku své zamýšlené sítě, i když je vše ostatní správně připojeno kabelem. Navíc chybějící fyzické spojení mezi přepínačem a směrovačem blokuje všechny VLAN, aby dosáhly směrovače, ne jen jednu. Aby tok provozu fungoval, bylo nutné vyřešit oba problémy."
+        },
+        "da": {
+            "title": "Receptionen kan ikke nå webserveren",
+            "story": "Receptionist rapporterer, at webdashboardet er stoppet med at indlæse på hendes pc siden denne morgen. Finans, Salg og Lab har ikke rapporteret nogen problemer.",
+            "objective": "Gør det muligt at sende en HTTP-anmodning fra PC-Reception til Web-Server.",
+            "hints": [
+                "Anmodningen fra PC-Reception videresendes aldrig forbi Switch-Floor2, og forbindelsen mellem Switch-Floor2 og Router-Edge viser slet ingen trafik.",
+                "PC-Reception's switchport er grupperet i et VLAN uden en vej fremad, og separat mangler kablet mellem Switch-Floor2 og Router-Edge.",
+                "På Switch-Floor2 skal du indstille port 0 til VLAN 10 og forbinde en kabel mellem Switch-Floor2 og Router-Edge."
+            ],
+            "explanation": "En switchport placeret i det forkerte VLAN bliver isoleret fra resten af sit tiltænkte netværk, selv hvis alt andet er korrekt kablet. Derudover blokerer en manglende fysisk forbindelse mellem switch og router alle VLAN'er fra at nå routeren, ikke kun en. Begge problemer måtte rettes for at trafikken kunne flyde."
+        },
+        "el": {
+            "title": "Η Recepción δεν μπορεί να φτάσει τον ιστοσελίδα Server",
+            "story": "Η υπάλληλος του ταμείου ανέφερε ότι ο ιστοσελίδα ελέγχου δεν φορτώνεται στο PC της από το πρωί. Τα τμήματα Χρηματοοικονομικών, Πωλήσεων και Εργαστηρίου δεν αναφέρουν κανένα πρόβλημα.",
+            "objective": "Κάντε επιτυχή μια αίτηση HTTP από PC-Reception σε Web-Server.",
+            "hints": [
+                "Το αίτημα από PC-Reception ποτέ δεν προωθείται πέρα από το Switch-Floor2 και το σύνδεσμο μεταξύ Switch-Floor2 και Router-Edge δεν εμφανίζει καμία κίνηση.",
+                "Η θύρα διακόπτη του PC-Reception ομαδοποιείται σε VLAN χωρίς διαδρομή προς τα εμπρός, και ξεχωριστά το καλώδιο μεταξύ Switch-Floor2 και Router-Edge λείπει.",
+                "Στο Switch-Floor2, ορίστε τη θύρα 0 σε VLAN 10 και συνδέστε ένα καλώδιο μεταξύ Switch-Floor2 και Router-Edge."
+            ],
+            "explanation": "Μια θύρα διακόπτη που τοποθετείται σε λάθος VLAN απομονώνεται από το υπόλοιπο δίκτυό της, ακόμα κι αν όλα τα άλλα είναι σωστά καλωδιωμένα. Επιπλέον, ένας χαμένος φυσικός σύνδεσμος μεταξύ διακόπτη και δρομολογητή αποκλείει όλα τα VLAN από το να φτάσουν στο δρομολογητή, όχι μόνο ένα. Και τα δύο προβλήματα έπρεπε να επιλυθούν για να ρεύσει η κίνηση."
+        },
+        "et": {
+            "title": "Vastuvõtt ei jõua veebiserverini",
+            "story": "Vastuvõtuinimene teatas, et veebikonsool on tema arvutil hommikust peale laadimise lõpetanud. Finants-, Müügi- ja Labori osakond pole midagi halvast teatanud.",
+            "objective": "Veebipäring PC-Reception'ilt Web-Server'ile peab õnnestuma.",
+            "hints": [
+                "Päring PC-Reception'ilt ei edastata kunagi Switch-Floor2 tagant edasi ja Link Switch-Floor2 ja Router-Edge vahel näitab üldse liiklust.",
+                "PC-Reception'i lülitamise port kuulub VLAN-i, millel pole edasist teed, ja lisaks puudub kaabel Switch-Floor2 ja Router-Edge vahel.",
+                "Switch-Floor2 peal seadke port 0 VLAN-i 10 ja pange kaabel Switch-Floor2 ja Router-Edge vahele."
+            ],
+            "explanation": "Lülituse port, mis on paigutatud valesse VLAN-i, isoleeritakse ülejäänud võrgust, isegi kui kõik muu on kaabliga ühendatud. Lisaks sellele blokeerib puuduv füüsiline link lülituse ja ruuteri vahel kõigil VLAN-idel ligipääsu ruuterile, mitte ainult ühel. Liikluse vooluks pidid mõlemad probleemid lahendama."
+        },
+        "eu": {
+            "title": "Jasotzaile-guneak ezin ditu Webzerbitzaria lortu",
+            "story": "Jasotzailea adierazi zuen web-agiria ez dela ikusgarritasun kargatzen nola berak bere ordenagailuan gaur goizean lotu. Enplegu-adarrak, Saltzinak eta Laborak ez dute ezer txarren hitsegiten.",
+            "objective": "HTTP eskaera PC-Reception'etik Web-Server'era lortu behar da.",
+            "hints": [
+                "PC-Reception'etik datozten eskariak ez dira Switch-Floor2 ondoren aurrera bidaltzen, eta Switch-Floor2 eta Router-Edge bitarteko loturak ez du trafikoa islatzen.",
+                "PC-Reception'en switxaren portua VLAN batera multzokatu da, ez du aurrerako biderik, eta, horrez gain, Switch-Floor2 eta Router-Edge bitarteko kablea falta dago.",
+                "Switch-Floor2 en, ezarri portua 0 VLAN 10 ra, eta jarri kablea Switch-Floor2 eta Router-Edge bitartean."
+            ],
+            "explanation": "Switxaren port bat bere VLAN okerrera ezartzen denean, isolatzen da honelako sarea nolabait, nahiz eta beste dena kablez bkulatua egon. Gainera, switxaren eta ruteraren artean badago fisiko lotura falta denean, trafikoa blokeatu egiten du guztira VLAN-etarako, ez bakarrik batentzako. Biak arazoak lausotu behar ziren trafikoa zirkulatzeko."
+        },
+        "fa": {
+            "title": "دستقبال نمی‌تواند به سرور وب دسترسی پیدا کند",
+            "story": "منشی گزارش کرد که داشبورد وب از صبح امروز بر روی رایانه‌اش بارگیری نمی‌شود. بخش‌های مالی، فروش و آزمایشگاه هیچ مشکلی گزارش نکرده‌اند.",
+            "objective": "درخواست HTTP از PC-Reception به Web-Server باید موفق شود.",
+            "hints": [
+                "درخواست از PC-Reception هرگز فراتر از Switch-Floor2 ارسال نمی‌شود و پیوند بین Switch-Floor2 و Router-Edge هیچ ترافیکی نشان نمی‌دهد.",
+                "پورت Switch در PC-Reception در VLAN قرار دارد که هیچ مسیر رفتن به جلو ندارد، و به علاوه کابل بین Switch-Floor2 و Router-Edge وجود ندارد.",
+                "روی Switch-Floor2، پورت 0 را به VLAN 10 تنظیم کنید و کابل بین Switch-Floor2 و Router-Edge را نصب کنید."
+            ],
+            "explanation": "پورت Switch که در VLAN غلط قرار گیرد، حتی اگر همه چیز دیگر صحیح متصل باشد، از شبکه جدا می‌شود. علاوه بر این، پیوند فیزیکی از دست رفته بین Switch و Router، همه VLAN‌ها را از دسترسی به Router محروم می‌کند، نه تنها یکی. برای جریان ترافیک، هر دو مشکل باید حل شود."
+        },
+        "fi": {
+            "title": "Vastaanotolla ei ole yhteyttä Web-Serveriin",
+            "story": "Vastaanottaja ilmoitti, että verkkokonsoli ei ole ladattu hänen tietokoneelleen tänä aamuna lähtien. Talous-, Myynti- ja Lab-osastot eivät ole ilmoittaneet mitään ongelmista.",
+            "objective": "HTTP-pyyntö PC-Reception'ista Web-Server'iin on onnistuttava.",
+            "hints": [
+                "Pyyntö PC-Reception'ista ei koskaan välity Switch-Floor2'n takaa, ja Switch-Floor2 ja Router-Edge'in välisen linkin liikenteessä ei näy mitään.",
+                "PC-Reception'in kytkimen portti on ryhmitelty VLAN-iin, jolla ei ole yhteyttä eteenpäin, ja lisäksi Switch-Floor2 ja Router-Edge'in välinen kaapeli puuttuu.",
+                "Aseta Switch-Floor2:ssa portti 0 VLAN-iin 10 ja asenna kaapeli Switch-Floor2:n ja Router-Edge'in välille."
+            ],
+            "explanation": "Kytkin-portti, joka on asetettu väärään VLAN-iin, eristyy lopusta verkosta, vaikka kaikki muu olisi kaapeloitu oikein. Lisäksi kytkin ja reititin välistä puuttuva fyysinen yhteys estää kaikkia VLAN-eja tavoittamasta reititintä, ei vain yhtä. Molempien ongelmien korjaamisella liikenteellä pystyi jälleen kulkemaan."
+        },
+        "fil": {
+            "title": "Ang Reception ay Hindi Maaabot ang Web Server",
+            "story": "Ang receptionist ay nag-ulat na ang web dashboard ay tumigil nang mag-load sa kanyang PC simula ngayong umaga. Ang Finance, Sales, at Lab ay walang nagsabing may problema.",
+            "objective": "Ang HTTP request mula sa PC-Reception tungo sa Web-Server ay dapat magtagumpay.",
+            "hints": [
+                "Ang request mula sa PC-Reception ay hindi kailanman napapadala pa ng Switch-Floor2, at ang link sa pagitan ng Switch-Floor2 at Router-Edge ay walang traffic na nakikita.",
+                "Ang switch port ng PC-Reception ay nabuo sa isang VLAN na walang landas pang-aabot, at bukod dito ang cable sa pagitan ng Switch-Floor2 at Router-Edge ay nawawala.",
+                "Sa Switch-Floor2, itakda ang port 0 sa VLAN 10, at ikonekta ang cable sa pagitan ng Switch-Floor2 at Router-Edge."
+            ],
+            "explanation": "Ang switch port na nakalagay sa maling VLAN ay nagiging isolated mula sa natitirang network, kahit na lahat ng iba ay naka-cable nang tama. Bilang karagdagan, ang isang nawawalang physical link sa pagitan ng switch at router ay nagha-hadlang sa lahat ng VLAN upang maabot ang router, hindi lamang isa. Parehong mga isyu ang kailangang ayusin para makaflow ang traffic."
+        },
+        "gl": {
+            "title": "A Recepción non pode chegar ao servidor web",
+            "story": "A recepcionista informa que o panel web deixou de cargarse na súa PC desde esta mañá. Finanzas, Vendas e Lab non reportan ningún problema.",
+            "objective": "Facer que unha solicitude HTTP desde PC-Reception a Web-Server funcione correctamente.",
+            "hints": [
+                "A solicitude desde PC-Reception nunca se reenvía máis alá de Switch-Floor2, e a ligazón entre Switch-Floor2 e Router-Edge non mostra tráfico ningunha.",
+                "O porto de switch de PC-Reception está agrupado nun VLAN que non ten camiño adiante, e por outro lado falta o cable entre Switch-Floor2 e Router-Edge.",
+                "En Switch-Floor2, establece o porto 0 a VLAN 10, e conecta un cable entre Switch-Floor2 e Router-Edge."
+            ],
+            "explanation": "Un porto de switch colocado nun VLAN incorrecto queda illado do resto da súa rede prevista, mesmo se todo o resto está conectado correctamente. Ademais, unha ligazón física que falta entre o switch e o router bloquea todos os VLANs para chegar ao router, non só un. Ambos os problemas tiveron que ser correxidos para que o tráfico flúa."
+        },
+        "he": {
+            "title": "הקבלה לא יכולה להגיע לשרת האינטרנט",
+            "story": "מזכירת הקבלה דיווחת שלוח המחוונים של האינטרנט הפסיק להעלות כמו בבוקר זה במחשבה שלה. פיננסיים, מכירות ולא דיווחו על שום בעיה.",
+            "objective": "בצע בקשת HTTP מ-PC-Reception ל-Web-Server בהצלחה.",
+            "hints": [
+                "הבקשה מ-PC-Reception לעולם לא מועברת מעבר ל-Switch-Floor2, וקישור בין Switch-Floor2 ו-Router-Edge כלל לא מציג תנועה.",
+                "יציאת ה-Switch של PC-Reception מקובצת ל-VLAN שאין לו נתיב קדימה, וקוד לעצמה הכבל בין Switch-Floor2 ו-Router-Edge חסר.",
+                "בחר Switch-Floor2, יציאת סט 0 ל-VLAN 10, והריצו כבל בין Switch-Floor2 ו-Router-Edge."
+            ],
+            "explanation": "יציאת Switch שהוצבה ב-VLAN טועות מבודדת משאר הרשת המיועדת שלה, גם אם כל השאר בחוטים נכונים. יתרה מכך, קישור פיזי חסר בין Switch לראוטר חוסם את כל VLAN מהגעה לראוטר, לא רק אחד. שני הבעיות היו צריכות להיות תוקנות כדי שתנועה תזרום."
+        },
+        "hr": {
+            "title": "Recepacija ne može dosegnuti web Server",
+            "story": "Recepcionist je javio da je web nadzorna ploča prestala učitavati se na njezinim PC od ovog jutra. Financije, Prodaja i Lab nisu prijavili nikakav problem.",
+            "objective": "Učinite da HTTP zahtjev od PC-Reception do Web-Server uspije.",
+            "hints": [
+                "Zahtjev od PC-Reception nikad se ne prosljeđuje dalje od Switch-Floor2, a veza između Switch-Floor2 i Router-Edge ne prikazuje nikakav promet.",
+                "Priključak Switch-a PC-Reception-a je grupiran u VLAN koji nema puta naprijed, a zasebno nedostaje kabel između Switch-Floor2 i Router-Edge.",
+                "Na Switch-Floor2, postavite priključak 0 na VLAN 10, i povucite kabel između Switch-Floor2 i Router-Edge."
+            ],
+            "explanation": "Priključak Switch-a postavljen u pogrešan VLAN biva izoliran od ostatka njegove namjenske mreže, čak i ako je sve ostalo ispravno spojeno. Pored toga, nedostajući fizički link između Switch-a i Router-a blokira sve VLAN-e od dosezanja Router-a, ne samo jedan. Oba su problema morala biti ispravljena kako bi promet protekao."
+        },
+        "hu": {
+            "title": "A recepció nem éri el a webes szerveren",
+            "story": "A recepciós jelentette, hogy a webes irányítópult már nem töltődik be az ő PC-jén ma reggeóta. A Pénzügy, Értékesítés és Labor nem jelzett semmilyen problémát.",
+            "objective": "Végezz egy HTTP-kérést PC-Reception-ról Web-Server-re sikeresen.",
+            "hints": [
+                "A PC-Reception-ról érkező kérés soha nem kerül továbbítva a Switch-Floor2 mellett, és a Switch-Floor2 és Router-Edge közötti link egyáltalán nem mutat forgalmat.",
+                "PC-Reception Kapcsoló portja olyan VLAN-ba van csoportosítva, amelyből nincs út előre, és külön hiányzik a kábel a Switch-Floor2 és Router-Edge között.",
+                "A Switch-Floor2-nél állítsa az 0 portot VLAN 10-re, és vezessen egy kábelt a Switch-Floor2 és Router-Edge között."
+            ],
+            "explanation": "Egy Kapcsoló port, amelyet rossz VLAN-ba helyeztek, elszigetelt marad a többi szándékolt hálózattól, még akkor is, ha minden más helyesen van bekötve. Ezen túl a Kapcsoló és Router közötti hiányzó fizikai link megakadályozza az összes VLAN-t abban, hogy elérjék a Router-t, nem csak egyet. Mindkét problémát meg kellett oldani, hogy a forgalom áramoljon."
+        },
+        "hy": {
+            "title": "Ընկալման կենտրոն չի կարող հասնել Web-Server",
+            "story": "Ընդունարանի օգտակարը հաղորդել է, որ վեբ-վահանակ դադարել է բեռնվել իր PC-Reception-ում այս առավոտից: Ֆինանսական, Վաճառքային և Lab բաժինները չեն հաղորդել որ-որ խնդիր լինի:",
+            "objective": "HTTP հարցում ուղարկել PC-Reception-ից Web-Server-ին և այն հաջողությամբ կատարել:",
+            "hints": [
+                "PC-Reception-ից հարցումը երբեք չի փոխանցվում Switch-Floor2-ից վեր, և Switch-Floor2-ի և Router-Edge-ի միջև հղումը ընդամենը կանգ առել չունի:",
+                "PC-Reception-ի լինակի պորտը խմբավորված է VLAN-ի մեջ, որը ընդհանուր ուղի չունի, և առանձին Switch-Floor2-ի և Router-Edge-ի միջև մալուխ բացակայում է:",
+                "Switch-Floor2-ի վրա, սահմանել պորտ 0-ը VLAN 10-ի, և միացնել մալուխ Switch-Floor2-ի և Router-Edge-ի միջև:"
+            ],
+            "explanation": "Սխալ VLAN-ի մեջ տեղադրված լինակի պորտը մեկուսացվում է իր նախատեսված ցանցից, նույնիսկ եթե ամեն ինչ այլ ճիշտ մալուխացված է: Բացի դրանից, Switch-ի և Router-ի միջև բացակայող ֆիզիկական հղումը խոչ-ընդոց է դառնում բոլոր VLAN-ներին հասնել Router-ին, ոչ թե միայն մեկին: Երկու խնդիրներ էլ հաղթահարել պետք էր, որ երթաշրջիկությունը հոսի:"
+        },
+        "is": {
+            "title": "Móttaka getur ekki náð til Web-Server",
+            "story": "Starfsmaðurinn við móttöku greinir frá því að veflýðræðisstjórnborðið hafi hætt að hlaðast á PC-Reception hennar síðan í morgun. Fjármál, Sala og Rannsóknastofa hafa ekki tilkynnt neina galla.",
+            "objective": "Gera HTTP-beiðni frá PC-Reception til Web-Server sem tekst.",
+            "hints": [
+                "Beiðnin frá PC-Reception flyst aldrei áfram fyrir ofan Switch-Floor2, og tengillinn milli Switch-Floor2 og Router-Edge sýnir endalaust umferð.",
+                "Tengill PC-Reception við Switch-Floor2 er flokkaður í VLAN sem hefur engan leið áfram, og auk þess vantar snúru milli Switch-Floor2 og Router-Edge.",
+                "Á Switch-Floor2 skal stilla tengil 0 á VLAN 10, og koppla snúru milli Switch-Floor2 og Router-Edge."
+            ],
+            "explanation": "Tengill sem settur er í ranga VLAN einangrar sig frá restningu samhengandi netkerfis síns, jafnvel þótt allt annað sé tengt rétt. Að auki lokar þróun á efnislegu tengli milli straumstöðu og leiðara öllum VLAN-um frá því að komast til leiðarans, ekki bara einni. Báðir vandamál þurftu að leysast til að umferð væru í gangi:"
+        },
+        "ka": {
+            "title": "მიმღები ვერ ჩადის Web-Server-ამდე",
+            "story": "მიმღები უთხრა, რომ ვებ-ინფოპანელი დაიკარგა PC-Reception-ზე ამ დილიდან. ფინანსებმა, გაყიდვებმა და ლაბორატორიამ არაფერი არ უთხრეს არასწორი.",
+            "objective": "HTTP მოთხოვნა PC-Reception-დან Web-Server-ისკენ წარმატებით შესრულებული.",
+            "hints": [
+                "მოთხოვნა PC-Reception-ից არასოდეს მიემართება Switch-Floor2-ის დაშორებით, და კავშირი Switch-Floor2-ს და Router-Edge-ს შორის ტრაფიკს არ აჩვენებს.",
+                "PC-Reception-ის სერთი პორტი დაჯგუფებულია VLAN-ში, რომელსაც გზა მის შემდეგ არ აქვს, ხოლო ცალკე კაბელი Switch-Floor2-სა და Router-Edge-ს შორის დაკარგულია.",
+                "Switch-Floor2-ზე დააყენეთ პორტი 0 VLAN 10-ზე, და დაქაბელეთ Switch-Floor2-ს და Router-Edge-ს შორის."
+            ],
+            "explanation": "სერთი პორტი, რომელიც დატანილია არასწორ VLAN-ში, იზოლირდება თავის წერტილოვანი ქსელის დანარჩენი ნაწილიდან, მაშინაც კი, თუ ყველაფერი სხვა სწორად არის დაკაბელებული. გარდა ამისა, ფიზიკური კავშირის არარსებობა სერთისა და მარშრუტიზატორის შორის წაკვეთავს ყველა VLAN-ს მარშრუტიზატორამდე წვდომისგან, მხოლოდ ერთი კი. უნდა მოგვარდეს ორივე პრობლემა ტრაფიკის ჩასატარებლად."
+        },
+        "kk": {
+            "title": "Қабылдау Web-Server-ге жете алмайды",
+            "story": "Қабылдау қызметінің өтінішінде веб-панель бүгін таңертең оның PC-Reception-ындағы салынуын тоқтатты деп айтты. Қаржы, сатыс және зертхана ешқандай қателік жөнінде хабарлаған жоқ.",
+            "objective": "HTTP сұрауын PC-Reception-дан Web-Server-ге сәтті аяқтау.",
+            "hints": [
+                "PC-Reception-дан сұрау Switch-Floor2-ден өтіп аймасады, және Switch-Floor2 және Router-Edge аралығындағы байланыс ешқандай трафик көрсетпейді.",
+                "PC-Reception портсы VLAN-да топталған және одан кейін ешқандай жол жоқ, сондай-ақ Switch-Floor2 және Router-Edge аралығындағы кабель жоқ.",
+                "Switch-Floor2-де 0 портын VLAN 10-ға орналастырыңыз және Switch-Floor2 және Router-Edge аралығына кабель тартыңыз."
+            ],
+            "explanation": "Қате VLAN-дағы порты ажыратылған болса, барлығы басқасы дұрыс орнатылғанында да, аромба ауырындағы барлық желілерден ажыратылады. Сондай-ақ Switch пен Router арасындағы физикалық байланыстың болмауы Router-ге жету үшін барлық VLAN-ды іздейді, бірі емес. Екі мәселеге де шешім табу қажет болды."
+        },
+        "km": {
+            "title": "ការទទួលស្វាគមន៍មិនអាចឈានដល់ Web-Server",
+            "story": "និយោជក​នៃការទទួលស្វាគមន៍​បាន​រាយការណ៍​ថា​ផ្ទាំង​បញ្ជាលេខ​ឈប់​ដឹក​នាំ​នៅ​លើ PC-Reception របស់នាង​ចាប់តាំង​ពេល​ព្រឹក។ ហិរញ្ញវត្ថុ​ការលក់​និង​ឯកសារគមនាគមន៍​មិន​បាន​ឆ្លើយ​ថា​មាន​បញ្ហា​ដែរ។",
+            "objective": "ធានាថាសូចនាករ HTTP ពី PC-Reception ទៅ Web-Server ជោគជ័យ។",
+            "hints": [
+                "សូចនាករ​ពី PC-Reception ​ឈប់​ដឹក​នាំ​ឆ្លងកាត់ Switch-Floor2​ ហើយឈមទាក់ទង​ រវាង Switch-Floor2 និង Router-Edge ​មិន​បង្ហាញ​ចរាចរ​ដែរ។",
+                " ច្រក​របស់ PC-Reception ត្រូវបាន​ដាក់​ក្នុង VLAN ដែលមិនមាន​ផ្លូវ​ទៅមុខ ហើយ​ខ្សែ​ក្រវ៉ាច់ រវាង Switch-Floor2 និង Router-Edge ​ឧបសម្ព័ន្ធ។",
+                "នៅលើ Switch-Floor2 ដាក់​ ច្រក 0 ទៅ VLAN 10 ហើយ​ស្ថាប​ខ្សែ រវាង Switch-Floor2 និង Router-Edge។"
+            ],
+            "explanation": "ច្រក ដែលដាក់ក្នុង VLAN គ្មានលក្ខណៈត្រឹមត្រូវ​ត្រូវបាន​បែងចែក​ពីផ្នែក​ដែលនៅសល់ ទោះបីជាសូចនាករទាំងអស់​ផ្សេង​ទៀត​ត្រូវបាន​ភ្ជាប់​ត្រឹមត្រូវក៏ដោយ។ ល​ើស​ពីនេះ ឈមទាក់ទង​រូបវន្ត​រវាង Switch និង Router ដែលខាតក្រោយ​បិទ VLAN ទាំងអស់​ពីការឈានដល់ Router មិនមែន​តែមួយ​ដេល។ បញ្ហា​ទាំងពីរត្រូវតែ​ដោះស្រាយ​ដែលចរាចរ​ដំណើរការ។"
+        },
+        "kn": {
+            "title": "ರಿಸೆಪ್ಷನ್ ವೆಬ್-ಸರ್ವರ್ ನಿಗಡಿಸಬೇಕಾಗಿದೆ",
+            "story": "ರಿಸೆಪ್ಷನ್‌ನ ಮಾವಲೀ ವರದಿ ಮಾಡಿಛಾನೆ ಅವರ PC-Reception ರಲ್ಲಿ ವೆಬ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಈ ಬೆಳಿಗ್ಗೆ ಲೋಡ್ ಆಗುತ್ತಿಲ್ಲ. ಫೈನಾನ್ಸ್, ಸೇಲ್ಸ್ ಮತ್ತು ಲ್ಯಾಬ್ ಕೋನೇ ಸಮಸ್ಯೆ ಇದೆ ಎಂದು ಹೇಳಿಲ್ಲ.",
+            "objective": "PC-Reception ನಿಂದ Web-Server ಗೆ HTTP ವಿನಂತಿ ಯಶಸ್ವಿಯಾಗಬೇಕು.",
+            "hints": [
+                "PC-Reception ಇಂದ ಅರಿಕೆ Switch-Floor2 ಅನ್ನು ಮೀರಿ ಮುಂದೆ ಸಾಗುತ್ತಿಲ್ಲ, ಮತ್ತು Switch-Floor2 ಮತ್ತು Router-Edge ನ ಮಧ್ಯೆ ಟ್ರಾಫಿಕ್ ನೀಡಿಲ್ಲ.",
+                "PC-Reception ಸ್ವಿಚ್ ಪೋರ್ಟ್ VLAN ನಲ್ಲಿ ಗುಂಪುಬಿಡುಕುಟ್ ಮುಂದೆ ಯಾವುದೇ ಮಾರ್ಗ ಇಲ್ಲ, ಮತ್ತು ಪ್ರತ್ಯೇಕವಾಗಿ Switch-Floor2 ಮತ್ತು Router-Edge ನ ಮಧ್ಯೆ ಕೇಬಲ್ ಕಾಣಿಸುತ್ತಿಲ್ಲ.",
+                "Switch-Floor2 ನಲ್ಲಿ, ಪೋರ್ಟ್ 0 ಅನ್ನು VLAN 10 ಗೆ ಸೆಟ್ ಮಾಡಿ, ಮತ್ತು Switch-Floor2 ಮತ್ತು Router-Edge ನಡುವೆ ಕೇಬಲ್ ಲಾಗಿಸಿ."
+            ],
+            "explanation": "ತಪ್ಪು VLAN ನಲ್ಲಿ ಇರಿಸಿದ ಸ್ವಿಚ್ ಪೋರ್ಟ್ ನಿರ್ಧಾರಿತ ನೆಟ್‌ವರ್ಕ್‌ನಿಂದ ಮೊತ್ತವಿಷ್ಟು ಪ್ರತ್ಯೇಕವಾಗುತ್ತದೆ, ಬೇರೆ ಎಲ್ಲ ಸರಳವಾಗಿ ಸಂಪರ್ಕಿತ ಆಗಿದ್ದರೆಯೂ. ಇದರ ಮೇಲಿಂದ, ಸ್ವಿಚ್ ಮತ್ತು ರೌಟರ್ ನ ಮಧ್ಯೆ ಕಾಣೆಯಿದ್ದ ಭೌತಿಕ ಸಂಪರ್ಕ ಹೊಸಿಮೂಲಕ ಒಂದನೇ VLAN ನಿಂದ ರೌಟರ್ ಪ್ರವೇಶವನ್ನು ನಿಷೇಧಿಸುತ್ತದೆ. ಟ್ರಾಫಿಕ್ ಹರಿದಾಗ ಎರಡೂ ಸಮಸ್ಯೆ ಸರಿಪಡಿಸಬೇಕಿತ್ತು."
+        },
+        "ky": {
+            "title": "Кабылдоосу Web-Server ге жетпей жатат",
+            "story": "Кабылдоо борборунун машынисы бүгүн таңга чейин Web-Server га байланыш орнотуу ажырап калган экенин билдирди. Финансы, Сатуу жана Лаб адам бир нерседе ката бар деп айтпайышпат.",
+            "objective": "PC-Reception тан Web-Server ге HTTP сурамдоо ийгиликүү болушу керек.",
+            "hints": [
+                "PC-Reception дан сорот Switch-Floor2 өткөп ары барбайт, жана Switch-Floor2 менен Router-Edge нын ортосундагы байланышта трафик болбойт.",
+                "PC-Reception нын сояр порту VLAN ында сакталган жана ары барбайт, жана Switch-Floor2 менен Router-Edge нын ортосундагы кабель жокко чыгат.",
+                "Switch-Floor2 де, 0-портун VLAN 10 га орнотуп, Switch-Floor2 менен Router-Edge нын ортосуна кабель тартыңыз."
+            ],
+            "explanation": "Туура эмес VLAN де жайгашкан сояр порту калgan сөздөрү бүтүнүнө чегинен алын бөлөнүп кетет, нын өзгөчөлүгү каалоосу сакталса дагы. Ошондой эле физикалык байланыш сояр менен маршруткочунун ортосында жокко чыккан учурда, биринчи VLAN эмес, бисинчи VLAN маршруткочуга барышпайт. Трафик агышы үчүн эки маселеге туура келүүсү керек."
+        },
+        "lo": {
+            "title": "ສະຖານຮັບຕ້ອນບໍ່ສາມາດຮອດ Web-Server ໄດ້",
+            "story": "ເພື່ອນເຮັດວຽກສະຖານຮັບຕ້ອນລາຍງານວ່າ ແຜງທຳມະຊາດ web ໄດ້ຫຼຸດຖອຍບໍ່ໂຫຼດຢູ່ PC-Reception ຂອງນາງມາຕັ້ງແຕ່ເຊົ້າວັນນີ້. Finance, Sales ແລະ Lab ບໍ່ໄດ້ເວົ້າວ່າມີຫຍັງຜິດພາດ.",
+            "objective": "ຮ້ອງຂໍ HTTP ຈາກ PC-Reception ໄປຍັງ Web-Server ຕ້ອງສຳເລັດ.",
+            "hints": [
+                "ຄຳຮ້ອງຂໍຈາກ PC-Reception ບໍ່ໄດ້ສົ່ງຕໍ່ເກີນ Switch-Floor2 ໄປ, ແລະ ລິ້ງລະຫວ່າງ Switch-Floor2 ແລະ Router-Edge ບໍ່ມີການສົ່ງຂໍ້ມູលເລີຍ.",
+                "ພອດ switch ຂອງ PC-Reception ຖືກລວມເປັນ VLAN ທີ່ບໍ່ມີເສັ້ນທາງໄປໜ້າ, ແລະແຍກຕ່າງຫາກ ສາຍໄຟ ລະຫວ່າງ Switch-Floor2 ແລະ Router-Edge ຫາຍໄປ.",
+                "ໃນ Switch-Floor2, ກໍານົດພອດ 0 ເປັນ VLAN 10, ແລະ ວາງສາຍໄຟລະຫວ່າງ Switch-Floor2 ແລະ Router-Edge."
+            ],
+            "explanation": "ພອດ switch ທີ່ວາງໄວ້ໃນ VLAN ທີ່ບໍ່ຖືກຕ້ອງຈະໄດ້ຮັບການໂດດ​ໄວ້ຈາກສ່ວນທີ່ເຫລືອຂອງເຄືອຂ່າຍທີ່ຕັ້ງໃຈ, ເຖິງວ່າທຸກສິ່ງອື່ນ ໆ ກໍາລັງເດີນລ. ນອກຈາກນີ້, ລິ້ງຟີຊິກາວທີ່ຫາຍໄປລະຫວ່າງ switch ແລະ router ຈະຂັດຂວາງ VLAN ທັງໝົດຈາກການຮອດ router, ບໍ່ພຽງແຕ່ຫນຶ່ງ. ບັນຫາທັງສອງລາຍການຕ້ອງໄດ້ຮັບການແກ້ໄຂເພື່ອໃຫ້ການສົ່ງຂໍ້ມູນໄຫລວ່າງ."
+        },
+        "lt": {
+            "title": "Registratūra negali pasiekti Web-Server",
+            "story": "Registratūros darbuotoja praneša, kad web prietaisų sąsaja negraiža kraunama jos PC-Reception nuo šios ryto. Finansai, Pardavimas ir Laboratorija nepranešė, kad kažkas bloga.",
+            "objective": "HTTP užklausa iš PC-Reception iki Web-Server turi būti sėkminga.",
+            "hints": [
+                "Užklausa iš PC-Reception niekada nepersiųsta per Switch-Floor2 toliau, ir nuoroda tarp Switch-Floor2 ir Router-Edge nepermeta jokios eismo.",
+                "PC-Reception jungties prievadas yra sugrupuotas į VLAN, kurie nėra kelio į priekį, ir atskirai tarp Switch-Floor2 ir Router-Edge kabelis neradingas.",
+                "Switch-Floor2, nustatykite prievadą 0 į VLAN 10, ir paleiskite kabelį tarp Switch-Floor2 ir Router-Edge."
+            ],
+            "explanation": "Jungties prievadas, padėtas į klaidingą VLAN, tampa izoliuotas nuo likusio savo ketinamo tinklo, net jei viskas kita yra teisingai sujungta. Be to, trūkstanti fizinė nuoroda tarp jungties ir maršrutizatoriaus blokuoja visus VLAN nuo prieigos prie maršrutizatoriaus, ne tik vieną. Abi problemos turėjo būti išspręstos, kad srautas galėtų tekėti."
+        },
+        "lv": {
+            "title": "Uzņemšana nevar sasniegt Web-Server",
+            "story": "Uzņemšanas darbiniece ziņo, ka tīmekļa panelis pārstāja ielādēties viņas PC-Reception kopš šī rīta. Finanšu, Pārdošanas un Laboratorijas nodaļas nav pieminējušas nevienu problēmu.",
+            "objective": "HTTP pieprasījums no PC-Reception uz Web-Server jābūt veiksmīgam.",
+            "hints": [
+                "Pieprasījums no PC-Reception nekad netiek pārsūtīts caur Switch-Floor2 tālāk, un savienojums starp Switch-Floor2 un Router-Edge neparāda nekādu satiksmi.",
+                "PC-Reception slēdža ports ir grupēts VLAN, kuram nav ceļa uz priekšu, un atsevišķi kabelis starp Switch-Floor2 un Router-Edge pazūd.",
+                "Switch-Floor2 iestatiet portu 0 uz VLAN 10, un palaist kabeli starp Switch-Floor2 un Router-Edge."
+            ],
+            "explanation": "Slēdža ports, kas novietots nepareizā VLAN, kļūst izolēts no pārējas paredzamā tīkla, pat ja viss pārējais ir savienots pareizi. Turklāt trūkstošā fiziskā saite starp slēdzi un maršrutētāju bloķē visus VLAN no prieigos pie maršrutētāja, ne tikai vienu. Lai satiksme varētu plūst, bija jāatrisina abas problēmas."
+        },
+        "mk": {
+            "title": "Пријемната не може да достави до Web-Server",
+            "story": "Пријемната рапортира дека веб-таблата престана да се вчитува на нејзиниот PC-Reception оттогаш наутро. Финансиите, Продажбата и Лабораторијата не рекоа дека нешто не е во ред.",
+            "objective": "Направете HTTP барање од PC-Reception до Web-Server да успее.",
+            "hints": [
+                "Барањето од PC-Reception никогаш не се препраќа покрај Switch-Floor2, и врската помеѓу Switch-Floor2 и Router-Edge не показува сообраќај.",
+                "PC-Reception-ската портска група е групирана во VLAN што нема патека понатаму, и одделно кабелот помеѓу Switch-Floor2 и Router-Edge недостасува.",
+                "На Switch-Floor2, поставете порта 0 на VLAN 10, и поврзете кабел помеѓу Switch-Floor2 и Router-Edge."
+            ],
+            "explanation": "Порта на switch поставена во погрешен VLAN се изолира од остатокот на неговата намерена мрежа, дури и ако сè друго е кабелирано правилно. Покрај тоа, недостатокот на физичка врска помеѓу switch и router ги блокира сите VLAN-и од достапување до router, а не само еден. Обе проблеми требаше да бидат поправени за да тече сообраќајот."
+        },
+        "ml": {
+            "title": "റിസെപ്ഷൻ വെബ്-സെർവറിലേക്ക് എത്താൻ കഴിയുന്നില്ല",
+            "story": "റിസെപ്ഷനിസ്ട് റിപോർട്ട് ചെയ്യുന്നത് ഉഴുപ്പ് മുതൽ PC-Reception-ലെ വെബ് ഡാഷ്‌ബോർഡ് ലോഡ് ചെയ്യുന്നത് നിലച്ചിരിക്കുന്നു എന്നാണ്. ഫിനാൻസ്, സെയിൽസ്, ലാബ് എന്നിവയിൽ നിന്ന് സാധാരണയായി പ്രശ്നമൊന്നും കേൾപ്പെട്ടിട്ടില്ല.",
+            "objective": "PC-Reception-ൽ നിന്ന് Web-Server ലേക്കുള്ള HTTP അഭ്യർത്ഥന വിജയകരമാക്കുക.",
+            "hints": [
+                "PC-Reception-ൽ നിന്നുള്ള അഭ്യർത്ഥന Switch-Floor2-നേക്കാൾ അപ്പുറത്തേക്ക് ഫോർവേർഡ് ചെയ്യപ്പെടുന്നില്ല, കൂടാതെ Switch-Floor2 നും Router-Edge നും ഇടയിലുള്ള ലിങ്കിൽ യാതൊരു ട്രാഫിക്കും കാണപ്പെടുന്നില്ല.",
+                "PC-Reception-ന്റെ സ്വിച്ച് പോർട്ട് ഒരു VLAN-ലെ ഗ്രൂപ്പ് ചെയ്തിരിക്കുന്നു, അതിന് മുന്നോട്ടുള്ള പാത ഇല്ല, കൂടാതെ Switch-Floor2 നും Router-Edge നും ഇടയിലുള്ള കേബിൾ നഷ്ടപ്പെട്ടിരിക്കുന്നു.",
+                "Switch-Floor2-ൽ, പോർട്ട് 0 നെ VLAN 10 ലേക്ക് സജ്ജീകരിക്കുക, കൂടാതെ Switch-Floor2 നും Router-Edge നും ഇടയിൽ ഒരു കേബിൾ എടുപ്പിക്കുക."
+            ],
+            "explanation": "വിപരീത VLAN-ലെ സ്വിച്ച് പോർട്ട് തന്റെ ഉദ്ദേശ്യമായ നെറ്റ്‌വർക്കിന്റെ ബാക്കി ഭാഗത്ത് നിന്ന് ഒറ്റപ്പെടിപ്പോകുന്നു, എന്നിരുന്നാലും മറ്റെല്ലാം കേബിൾ ചെയ്തിട്ടുണ്ടെങ്കിലും. അതുപോലെ, സ്വിച്ച് നും റൂട്ടർ നും ഇടയിൽ കൈപ്പിടിയില്ലെങ്കിൽ, എല്ലാ VLAN-കൾ റൂട്ടറിലേക്ക് എത്തുന്നത് തടയുന്നു, ഒരെണ്ണം മാത്രമല്ല. ട്രാഫിക് ഒഴുകുന്നതിന് രണ്ടുപ്രശ്നങ്ങളും പരിഹരിക്കേണ്ടതായിരുന്നു."
+        },
+        "mn": {
+            "title": "Дүүргээн Web-Server-ээс хол байна",
+            "story": "Дүүргэлүүлэгч PC-Reception дээр өнөө өглөөнөөс вэб цахилгаан самбар ачаалагдахаа болиулсан гэж мэдээлэв. Санхүүгийн, борлуулалтын болон лабораторийн хэлтэс ямар нэг асуудал байгаа гэж хэлээгүй байна.",
+            "objective": "PC-Reception-ээс Web-Server-ээс HTTP хүсэлт амжилтатай болгох.",
+            "hints": [
+                "PC-Reception-ээс хүсэлт Switch-Floor2-ээс цааш шилжүүлэгдэхгүй байгаа бөгөөд Switch-Floor2 ба Router-Edge хоорондох холбоо ямар ч хөдөлгөөн үзүүлэхгүй байна.",
+                "PC-Reception-н сюитш портын бүлэг эргүүлэх замгүй VLAN-д бүлэглэгдсэн байдаг бөгөөд Switch-Floor2 ба Router-Edge хоорондох кабель дутаа байна.",
+                "Switch-Floor2 дээр 0-р портыг VLAN 10-т тохируулж, Switch-Floor2 ба Router-Edge хоорондох кабель зур."
+            ],
+            "explanation": "Өөр VLAN-д байрлуулсан сүлжээний портын нэг хэсэг зөв кабель төлөвлөлтөөс үл хамааран үлдсэн сүлжээнээс тусгаарлагдана. Үүний дээр сүлжээний төрөл болон маршруутчи хоорондох биет холбоо дутаа байхад нэгийнхээ биш бүх VLAN-уудыг маршруутчид хүрэхээс хорьож байна. Эргүүлэх хөдөлгөөний хувьд хоёр асуудлыг шийдэх шаардлагатай байв."
+        },
+        "mr": {
+            "title": "रिसेप्शन Web-Server पर्यंत पोचू शकत नाही",
+            "story": "रिसेप्शनिस्टने अहवाल केले आहे की PC-Reception वरील वेब डॅशबोर्ड आज सकाळपासून लोड होणे बंद झाले आहे. आर्थिक, विक्रय आणि प्रयोगशाळेने असे काहीही म्हटले नाही की काहीतरी चुकीचे आहे.",
+            "objective": "PC-Reception वरून Web-Server पर्यंत HTTP विनंती यशस्वी करा.",
+            "hints": [
+                "PC-Reception वरून विनंती Switch-Floor2 च्या पलीकडे अग्रेषित होत नाही, आणि Switch-Floor2 आणि Router-Edge मधील दुवा कोणताही ट्रॅफिक दर्शवत नाही.",
+                "PC-Reception चे स्विच पोर्ट एक VLAN मध्ये गटबद्ध आहे ज्याकडे पुढे जाण्याचा मार्ग नाही, आणि वेगळ्या करून Switch-Floor2 आणि Router-Edge मधील केबल हरवली आहे.",
+                "Switch-Floor2 वर, पोर्ट 0 ला VLAN 10 वर सेट करा, आणि Switch-Floor2 आणि Router-Edge मधील केबल चालू करा."
+            ],
+            "explanation": "एका खोट्या VLAN मध्ये ठेवलेला स्विच पोर्ट त्याच्या इच्छित नेटवर्कच्या बाकीच्या भागापासून अलगीकृत होतो, जरी इतर सर्वकाही योग्यरित्या केबलीकृत असले तरीही. याव्यतिरिक्त, स्विच आणि राउटर दरम्यान गहाळ शारीरिक दुवा सर्व VLAN-ना राउटरपर्यंत पोचण्यापासून रोखते, केवळ एक नाही. ट्रॅफिक प्रवाहित करण्यासाठी दोन्ही समस्यांचे निराकरण करणे आवश्यक होते."
+        },
+        "ms": {
+            "title": "Penerimaan Tidak Dapat Menjangkau Web-Server",
+            "story": "Penerima melaporkan bahawa papan pemuka web telah berhenti memuat di PC-Reception sejak pagi ini. Kewangan, Penjualan, dan Lab tidak melaporkan ada masalah.",
+            "objective": "Buat permintaan HTTP dari PC-Reception ke Web-Server berjaya.",
+            "hints": [
+                "Permintaan dari PC-Reception tidak pernah dimajukan melampaui Switch-Floor2, dan pautan antara Switch-Floor2 dan Router-Edge menunjukkan tiada lalu lintas sama sekali.",
+                "Port suis PC-Reception dikelompokkan ke dalam VLAN yang tidak mempunyai jalan ke hadapan, dan secara berasingan kabel antara Switch-Floor2 dan Router-Edge hilang.",
+                "Pada Switch-Floor2, tetapkan port 0 ke VLAN 10, dan pasang kabel antara Switch-Floor2 dan Router-Edge."
+            ],
+            "explanation": "Port suis yang ditempatkan di VLAN yang salah terisolasi dari sisa rangkaian yang dimaksudkan, walaupun segalanya lain dikabel dengan betul. Selain itu, sambungan fizikal yang hilang antara suis dan penolak menyekat semua VLAN daripada mencapai penolak, bukan hanya satu. Kedua-dua isu terpaksa diperbaiki untuk lalu lintas mengalir."
+        },
+        "my": {
+            "title": "Reception မှ Web Server ကို ရောက်ရှိ၍မရခြင်း",
+            "story": "လက်ခံရန်အရာရှိက သူမ၏ PC ပေါ်ရှိ ဝဘ်ဒက်ရှ်ဘုတ်ဒ ယနေ့နံနက်ပိုင်းကစ စ ချိန်းခွင့်ပြုမှုမှုတွင် ရပ်တန့်သွားသည်ဟု အစီရင်ခံပြီးသည်။ ငွေရေးသွင်းခွင့်၊ ရောင်းချ ခွင့်နှင့် ဓာတ်ခွဲခွင့်တွင် အဘယ်သည့်အရာမျ ကျေးဇူး မဟုတ်သည်ဟု အစီရင်ခံခြင်းမရှိ။",
+            "objective": "PC-Reception မှ Web-Server သို့ HTTP တောင်းဆိုမှုကို အောင်မြင်စေရန်။",
+            "hints": [
+                "PC-Reception မှ သည်တောင်းဆိုမှုကို Switch-Floor2 ကျော်လွန်၍ မည်သည့်အရာမျ ကျေးဇူး မဟုတ်သည်ဖြင့် Switch-Floor2 နှင့် Router-Edge အကြား ကြိုးသည် လုံးဝ ကြိုးပွန်းခြင်းမရှိ။",
+                "PC-Reception ၏ switch port သည် အဆင့်မြင့် နည်းလမ်းမရှိသည့် VLAN သို့ စုစည်းထားပြီးသည်။ ထို့အပြင် Switch-Floor2 နှင့် Router-Edge အကြား ကြိုးသည် ပျက်ကွက်သွားပြီးသည်။",
+                "Switch-Floor2 ပေါ်တွင် port 0 ကို VLAN 10 သို့ သတ်မှတ်ပြီးသည်။ ထို့အပြင် Switch-Floor2 နှင့် Router-Edge အကြား ကြိုးကို လုပ်ဆောင်ပြီးသည်။"
+            ],
+            "explanation": "switch port ကို မှားတွေ့ရှိသည့် VLAN သို့ တည်ထောင်သည်ရှိသည်။ အခြားအရာအားလုံးသည် ကြိုးပွန်းခြင်းမှ ကင်းလွတ်သည်ဖြင့် ကျေးဇူး မဟုတ်သည်။ ထို့အပြင် switch နှင့် router အကြား ကြိုးသည် ပျက်ကွက်သွားပြီးသည်။ ဒါမှ traffic သည် router သို့ ရောက်ရှိ၍ မရရှိသည်။ အဆင့်မြင့် ကွန်ရက်များသည် အဆင့်မြင့် နည်းလမ်းများ မရှိသည့်ကြောင့် အဆင့်မြင့် ကွန်ရက်များ အားလုံးမှ ရောက်ရှိ၍ မရရှိသည်။ traffic သည် အဆင့်မြင့် ကွန်ရက်များ အားလုံးမှ router သို့ ရောက်ရှိ၍ မရရှိသည်။ အဆင့်မြင့် ကွန်ရက်များ အားလုံးမှ traffic သည် router သို့ ရောက်ရှိ၍ မရရှိသည်။ ကွန်ရက်များသည် အဆင့်မြင့် နည်းလမ်းများ မရှိသည့်ကြောင့် အဆင့်မြင့် ကွန်ရက်များ အားလုံးမှ ရောက်ရှိ၍ မရရှိသည်။ အဆင့်မြင့် ကွန်ရက်များ အားလုံးမှ traffic သည် router သို့ ရောက်ရှိ၍ မရရှိသည်။ ကွန်ရက်များသည် အဆင့်မြင့် နည်းလမ်းများ မရှိသည့်ကြောင့် အဆင့်မြင့် ကွန်ရက်များ အားလုံးမှ ရောက်ရှိ၍ မရရှိသည်။"
+        },
+        "ne": {
+            "title": "Reception Web-Server सम्म पुग्न सक्दैन",
+            "story": "रिसेप्शनिस्टले रिपोर्ट गरेकी छिन् कि उनको PC मा वेब ड्यासबोर्ड आज बिहान देखि लोड हुन बन्द भएको छ। वित्त, बिक्रय र ल्याबले कुनै समस्या भएको कुरा भनेका छैनन्।",
+            "objective": "PC-Reception बाट Web-Server मा HTTP अनुरोध सफल गर्नुहोस्।",
+            "hints": [
+                "PC-Reception बाट अनुरोध Switch-Floor2 भित्र नै रोकिन्छ र Switch-Floor2 तथा Router-Edge बीचको लिङ्क मा कुनै ट्राफिक छैन।",
+                "PC-Reception को switch port गलत VLAN मा छ जसको अगाडी कुनै मार्ग छैन, र Switch-Floor2 तथा Router-Edge बीचको तार पनि हराएको छ।",
+                "Switch-Floor2 मा port 0 लाई VLAN 10 मा सेट गर्नुहोस्, र Switch-Floor2 तथा Router-Edge बीच तार जोडिनुहोस्।"
+            ],
+            "explanation": "अनुचित VLAN मा राखिएको switch port अबस्र सम्पूर्ण नेटवर्कबाट अलग रहन्छ, यदि अन्य सबै तार सही छन् भने पनि। यो समस्या हल गर्न दुवै सुधार गर्नुपर्दछ।"
+        },
+        "nl": {
+            "title": "Reception kan Web-Server niet bereiken",
+            "story": "De receptionist meldt dat het webdashboard sinds vanochtend niet meer laadt op haar PC. Financiën, Verkoop en Lab hebben gemeld dat alles goed werkt.",
+            "objective": "Een HTTP-verzoek van PC-Reception naar Web-Server laten slagen.",
+            "hints": [
+                "Het verzoek van PC-Reception wordt niet doorgestuurd voorbij Switch-Floor2, en de koppeling tussen Switch-Floor2 en Router-Edge vertoont helemaal geen verkeer.",
+                "De switch-poort van PC-Reception zit in een VLAN zonder verdere verbinding, en bovendien ontbreekt het kabel tussen Switch-Floor2 en Router-Edge.",
+                "Stel op Switch-Floor2 poort 0 in op VLAN 10, en verbind Switch-Floor2 en Router-Edge met een kabel."
+            ],
+            "explanation": "Een switch-poort in het verkeerde VLAN geplaatst, wordt geïsoleerd van de rest van het netwerk, zelfs als al het andere goed aangeloten is. Daarbovenop blokkeert een ontbrekende fysieke verbinding tussen switch en router al het verkeer naar de router. Beide problemen moesten worden opgelost om verkeer door te laten."
+        },
+        "no": {
+            "title": "Reception kan ikke nå Web-Server",
+            "story": "Resepsjonisten rapporterer at webdashbordet sluttet å laste på hennes PC i morges. Økonomi, Salg og Lab har ikke rapportert noen problemer.",
+            "objective": "Gjør en HTTP-forespørsel fra PC-Reception til Web-Server velykket.",
+            "hints": [
+                "Forespørselen fra PC-Reception blir ikke videresendt forbi Switch-Floor2, og forbindelsen mellom Switch-Floor2 og Router-Edge viser ingen trafikk i det hele tatt.",
+                "PC-Reception sin switch-port er i en VLAN uten utgangsvei, og dessuten mangler kabelen mellom Switch-Floor2 og Router-Edge.",
+                "På Switch-Floor2 setter du port 0 til VLAN 10, og drar en kabel mellom Switch-Floor2 og Router-Edge."
+            ],
+            "explanation": "En switch-port plassert i feil VLAN blir isolert fra resten av nettverket, selv om alt annet er kablet riktig. I tillegg blokkerer en manglende fysisk forbindelse mellom switch og router all trafikk til routeren. Begge problemer måtte løses for at trafikken skulle flyte."
+        },
+        "or": {
+            "title": "Reception Web-Server ତକ ପହଁଚି ପାରୁ ନାହିଁ",
+            "story": "ରିସେପ୍ସନିଷ୍ଟ ରିପୋର୍ଟ କଲେ ଯେ ତାଙ୍କ PC ରେ ଥିବା ୱେବ ଡ୍ୟାସବୋର୍ଡ ଆଜ ସକାଳ ଠାରୁ ଲୋଡ ହୋଇ ନାହିଁ। ଅର୍ଥ, ବିକ୍ରୟ ଏବଂ ଲ୍ୟାବ୍ ଦଳ କୌଣସି ଅସୁବିଧାର କଥା ଜଣାଇ ନାହାଁନ୍ତି।",
+            "objective": "PC-Reception ରୁ Web-Server କୁ HTTP ଅନୁରୋଧ ସଫଳ କର।",
+            "hints": [
+                "PC-Reception ରୁ ଅନୁରୋଧ Switch-Floor2 ର ବାହାରକୁ ଯାଏ ନାହିଁ ଏବଂ Switch-Floor2 ଓ Router-Edge ମଧ୍ୟରେ କୌଣସି ଟ୍ରାଫିକ୍ ନାହିଁ।",
+                "PC-Reception ର switch port ଏକ ଭୁଲ VLAN ରେ ଅଛି ଯାହାର ଅଗ୍ରଗତିର ରାସ୍ତା ନାହିଁ, ଏବଂ Switch-Floor2 ଓ Router-Edge ମଧ୍ୟରେ ତାର ହଦିଏ ନାହିଁ।",
+                "Switch-Floor2 ରେ port 0 କୁ VLAN 10 ରେ ସେଟ୍ କର ଏବଂ Switch-Floor2 ଓ Router-Edge ମଧ୍ୟରେ ତାର ଜୋଡ଼।"
+            ],
+            "explanation": "Switch port କୁ ଭୁଲ VLAN ରେ ରଖିଲେ ତାହା ବାକି ନେଟୱର୍କ ରୁ ଅଲଗ ହୋଇ ଯାଏ, ଯଦିଓ ଅନ୍ୟ ସବୁକିଛି ଠିକ୍ ଭାବେ କନେକ୍ଟ ହୋଇଥାଏ। ଏଥିସହ Switch ଏବଂ Router ମଧ୍ୟରେ ତାର ନ ଥିଲେ ସମସ୍ତ VLAN ର ଟ୍ରାଫିକ୍ ରୁକ ଯାଏ। ନେଟୱର୍କ ଚଳଚଳ କରାଇବା ପାଇଁ ଉଭୟ ସମସ୍ୟାର ସମାଧାନ ଆବଶ୍ୟକ।"
+        },
+        "pa": {
+            "title": "ਰਿਸੈਪਸ਼ਨ ਵੈਬ ਸਰਵਰ ਤਕ ਨਹੀਂ ਪਹੁੰਚ ਸਕਦਾ",
+            "story": "ਰਿਸੈਪਸ਼ਨਿਸਟ ਦੀ ਰਿਪੋਰਟ ਹੈ ਕਿ ਉਸ ਦੇ PC-Reception 'ਤੇ ਵੈਬ ਡੈਸ਼ਬੋਰਡ ਅੱਜ ਸਵੇਰ ਤੋਂ ਲੋਡ ਹੋਣਾ ਬੰਦ ਹੋ ਗਿਆ ਹੈ। ਫਿਨਾਂਸ, ਸੇਲਜ਼, ਅਤੇ ਲੈਬ ਨੇ ਕੋਈ ਮਸਲਾ ਨਹੀਂ ਦੱਸਿਆ ਹੈ।",
+            "objective": "PC-Reception ਤੋਂ Web-Server ਨੂੰ HTTP ਬੇਨਤੀ ਸਫਲ ਬਣਾਓ।",
+            "hints": [
+                "PC-Reception ਦੀ ਬੇਨਤੀ Switch-Floor2 ਤੋਂ ਅੱਗੇ ਫਾਰਵਰਡ ਨਹੀਂ ਹੁੰਦੀ, ਅਤੇ Switch-Floor2 ਅਤੇ Router-Edge ਦੇ ਵਿਚਕਾਰ ਲਿੰਕ 'ਤੇ ਕੋਈ ਟ੍ਰੈਫਿਕ ਨਹੀਂ ਦਿਖਾਈ ਦਿੰਦਾ।",
+                "PC-Reception ਦਾ ਸਵਿਚ ਪੋਰਟ ਇੱਕ VLAN ਵਿੱਚ ਗਰੁੱਪ ਕੀਤਾ ਗਿਆ ਹੈ ਜਿਸਦਾ ਕੋਈ ਅੱਗੇ ਦਾ ਮਾਰਗ ਨਹੀਂ ਹੈ, ਅਤੇ ਵੱਖਰੇ ਤੌਰ 'ਤੇ Switch-Floor2 ਅਤੇ Router-Edge ਵਿਚਕਾਰ ਕੇਬਲ ਗਾਇਬ ਹੈ।",
+                "Switch-Floor2 'ਤੇ, ਪੋਰਟ 0 ਨੂੰ VLAN 10 'ਤੇ ਸੈੱਟ ਕਰੋ, ਅਤੇ Switch-Floor2 ਅਤੇ Router-Edge ਦੇ ਵਿਚਕਾਰ ਕੇਬਲ ਚਲਾਓ।"
+            ],
+            "explanation": "ਜੇ ਸਵਿਚ ਪੋਰਟ ਗਲਤ VLAN ਵਿੱਚ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਇਹ ਬਾਕੀ ਨੈੱਟਵਰਕ ਤੋਂ ਵੱਖ ਹੋ ਜਾਂਦਾ ਹੈ, ਭਾਵੇਂ ਬਾਕੀ ਸਭ ਕੁਝ ਸਹੀ ਢੰਗ ਨਾਲ ਕੇਬਲ ਕੀਤਾ ਗਿਆ ਹੋਵੇ। ਇਸ ਤੋਂ ਇਲਾਵਾ, ਸਵਿਚ ਅਤੇ ਰਾؤਟਰ ਦੇ ਵਿਚਕਾਰ ਪਾਠਮੁੱਲ ਲਿੰਕ ਗਾਇਬ ਹੋਣਾ ਸਾਰੀਆਂ VLAN ਨੂੰ ਰਾؤਟਰ ਤਕ ਪਹੁੰਚਣ ਤੋਂ ਰੋਕਦਾ ਹੈ, ਸਿਰਫ ਇੱਕ ਨਹੀਂ। ਟ੍ਰੈਫਿਕ ਵਹਿਣ ਲਈ ਦੋਨਾਂ ਮਸਲਿਆਂ ਨੂੰ ਠੀਕ ਕਰਨਾ ਲਾਜ਼ਮੀ ਸੀ।"
+        },
+        "pl": {
+            "title": "Recepcja nie może osiągnąć Web Server",
+            "story": "Recepcjonistka mówi, że deska rozdzielcza strony internetowej przestała się ładować na jej komputerze od rana. Dział Finansów, Sprzedaży i Laboratorium nie zgłaszają żadnych problemów.",
+            "objective": "Spraw, aby żądanie HTTP z PC-Reception do Web-Server powiodło się.",
+            "hints": [
+                "Żądanie z PC-Reception nigdy nie jest przekazywane poza Switch-Floor2, a łącze między Switch-Floor2 a Router-Edge nie wykazuje ruchu.",
+                "Port switcha PC-Reception jest zgrupowany w sieci VLAN bez ścieżki do przodu, a ponadto brakuje kabla między Switch-Floor2 a Router-Edge.",
+                "Na Switch-Floor2 ustaw port 0 na VLAN 10 i wyciągnij kabel między Switch-Floor2 a Router-Edge."
+            ],
+            "explanation": "Port switcha umieszczony w niewłaściwej sieci VLAN zostaje odizolowany od reszty swojej sieci, nawet jeśli wszystko inne jest podłączone poprawnie. Ponadto brakujące fizyczne połączenie między switchem a routerem blokuje wszystkie sieci VLAN przed dotarciem do routera, a nie tylko jedną. Obie problemy musiały zostać rozwiązane, aby ruch mógł przepływać."
+        },
+        "pt-PT": {
+            "title": "Receção não consegue alcançar o Web Server",
+            "story": "A recepcionista reporta que o painel web parou de carregar no seu PC desde esta manhã. Finanças, Vendas e Laboratório não reportam problemas.",
+            "objective": "Faça um pedido HTTP de PC-Reception para Web-Server com sucesso.",
+            "hints": [
+                "O pedido de PC-Reception nunca é encaminhado para além de Switch-Floor2, e a ligação entre Switch-Floor2 e Router-Edge não mostra tráfego algum.",
+                "A porta de switch de PC-Reception está agrupada numa VLAN sem caminho adiante, e separadamente o cabo entre Switch-Floor2 e Router-Edge está em falta.",
+                "Em Switch-Floor2, configure a porta 0 para VLAN 10 e puxe um cabo entre Switch-Floor2 e Router-Edge."
+            ],
+            "explanation": "Uma porta de switch colocada na VLAN errada fica isolada do resto da sua rede destinada, mesmo que tudo o resto esteja cabado corretamente. Além disso, uma ligação física em falta entre o switch e o router bloqueia todas as VLANs de chegarem ao router, e não apenas uma. Ambas as questões tiveram de ser corrigidas para o tráfego fluir."
+        },
+        "rm": {
+            "title": "Receziun na po betg arrivar a Web-Server",
+            "story": "La receziun rapporta che il dashbord dal web ha stuì da chargia sin siu PC daspö glinscheivla. Finanziuns, Vendita e Laboratori n'han nagin problem.",
+            "objective": "Fai che ina dumonda HTTP da PC-Reception a Web-Server vegnia bain-tgera.",
+            "hints": [
+                "La dumonda da PC-Reception n'è mai inoltrada dapro Switch-Floor2, e la colliaziun entras Switch-Floor2 e Router-Edge na mussa nagin traffic.",
+                "La port dal switch da PC-Reception è gruppada en ina VLAN senza via avant, e separadamaint manca il cabl entras Switch-Floor2 e Router-Edge.",
+                "Vul a dir a Switch-Floor2 la port 0 sin VLAN 10 e posa in cabl entras Switch-Floor2 e Router-Edge."
+            ],
+            "explanation": "Ina port dal switch che stetscha en la fagliaVLAN betg currecta vegn isolada dal rest da sia rait, evengia che tut l'oter saja cabler correctamaint. Ulteriuramaint, ina colliaziun fisica che manca entras switch e router blochescha tut las VLAN da vegnir a glisten al router, betg mo ina. Entramabs las dumondas bevan vegnir resoluidas pervi che il traffic pudess fluir."
+        },
+        "ro": {
+            "title": "Recepția nu poate ajunge la Web Server",
+            "story": "Recepționera raportează că panoul de bord web a încetat să se încarce pe PC-ul ei din dimineață. Finanțe, Vânzări și Laborator nu raportează probleme.",
+            "objective": "Realizați o cerere HTTP de la PC-Reception la Web-Server cu succes.",
+            "hints": [
+                "Cererea din PC-Reception nu este niciodată transmisă dincolo de Switch-Floor2, iar legătura dintre Switch-Floor2 și Router-Edge nu arată niciun trafic.",
+                "Portul switchului PC-Reception este grupat într-o VLAN care nu are cale înainte, iar separat, cablul dintre Switch-Floor2 și Router-Edge lipsește.",
+                "Pe Switch-Floor2, setați portul 0 la VLAN 10 și introduceți un cablu între Switch-Floor2 și Router-Edge."
+            ],
+            "explanation": "Un port de switch plasat în VLAN-ul greșit devine izolat de restul rețelei sale destinate, chiar dacă totul altceva este conectat corect. În plus, o legătură fizică lipsă între switch și router blochează toate VLAN-urile de a ajunge la router, nu doar una. Ambele probleme au trebuit să fie remediate pentru ca traficul să curgă."
+        },
+        "si": {
+            "title": "ගැනුම් කර්මාන්තයට වෙබ් සර්වරයට ළඟා විය නොහැක",
+            "story": "ගැනුම් කර්මාන්තිකයා පිළිතුරු දෙයි, ඇයගේ පසුගිය මාසයෙන් තිස්සේ ඇයගේ PC-Reception වල වෙබ් ඩැશ්බෝර්ඩ ඉදිරිපත් කිරීම නවතී ගොස් තිබේ. ආර්థික, විකිරීම් සහ ল සිටින කිසිවෙකු කිසිවක් වැරදිහउ ඇතැයි නොවසා ඇත.",
+            "objective": "PC-Reception සිට Web-Server වෙත HTTP ඉල්ලීම සාර්ථක කරන්න.",
+            "hints": [
+                "PC-Reception සිට එන ඉල්ලීම Switch-Floor2 ඉක්මවා කිසිවිටෙක යොමු නොවන අතර, Switch-Floor2 සහ Router-Edge අතර බැඳුම් කිසිවිටෙක ගමන් සපයා ඇත.",
+                "PC-Reception ගේ ස්විච් පෝට් එක VLAN එකක සමුහයෙන් ඇත එයට පසුකර යෑමට කිසිවක් නැති අතර, අනුකූලව Switch-Floor2 සහ Router-Edge අතර කේබ්ල නැත.",
+                "Switch-Floor2 වල, පෝට් 0 VLAN 10 වෙත සකසන්න, සහ Switch-Floor2 සහ Router-Edge අතර කේබ්ල ධාවනය කරන්න."
+            ],
+            "explanation": "ස්විච් පෝට් එක සරිලන් VLAN එකක තබාගෙන ඉතිරි ජාලයෙන් හුදකාකරගෙනතිබුණි, අනුකූලව වෙනත් සමස්ත සිතින්න. එ හැර එක්කෝ, ස්විච් සහ රවුටර් අතර ශාරීරිකතාවය විසින් බාධා ගිනි, අවශ්ය නොවෙයි. හැම ගිනි ඉක්මවා යෑම් තිබුණි ගමන් ගිණිතින්."
+        },
+        "sk": {
+            "title": "Recepcia nedokáže dosiahnuť webový server",
+            "story": "Recepčná pracovníčka hlási, že webový panel sa od dnešného rána prestala načítavať na jej PC-Reception. Financie, Predaj a Lab nehlásili žiadne problémy.",
+            "objective": "Zabezpečiť, aby bol HTTP požiadavka z PC-Reception na Web-Server úspešná.",
+            "hints": [
+                "Požiadavka z PC-Reception nikdy neprejde ďalej cez Switch-Floor2 a spojenie medzi Switch-Floor2 a Router-Edge nemá žiaden premávku.",
+                "Port Switch-Floor2 priradený k PC-Reception patrí do VLAN bez cesty ďalej a súčasne chýba kábel medzi Switch-Floor2 a Router-Edge.",
+                "Na Switch-Floor2 nastavte port 0 do VLAN 10 a položte kábel medzi Switch-Floor2 a Router-Edge."
+            ],
+            "explanation": "Port prepínača umiestnený v nesprávnej VLAN je izolovaný od zvyšku svojej zamýšľanej siete, aj keď je všetko ostatné správne zapojené. Navyše chýbajúce fyzické spojenie medzi prepínačom a smerovačom blokuje všetky siete VLAN pred dosahom smerovača, nielen jednu. Oba problémy bolo potrebné vyriešiť, aby premávka tiekla."
+        },
+        "sl": {
+            "title": "Recepcija ne more dostopati do spletnega strežnika",
+            "story": "Receptorka poroča, da se je nadzorna plošča na njeni PC-Reception od jutra prenehala nalagati. Finance, Prodaja in Laboratorij niso sporočili nobenih težav.",
+            "objective": "Zagotovite, da je HTTP zahtevek iz PC-Reception na Web-Server uspešen.",
+            "hints": [
+                "Zahtevek z PC-Reception se nikoli ne posreduje prek Switch-Floor2, povezava med Switch-Floor2 in Router-Edge pa nima nobene premeta.",
+                "Vrata Switch-Floor2, povezana s PC-Reception, so v VLAN-u brez naprej, poleg tega pa manjka kabel med Switch-Floor2 in Router-Edge.",
+                "Na Switch-Floor2 nastavite vrata 0 na VLAN 10 in povežite kabel med Switch-Floor2 in Router-Edge."
+            ],
+            "explanation": "Vrata stikala, postavljena v napačnem VLAN-u, so ločena od ostalega namenskega omrežja, čeprav je vse ostalo pravilno povezano. Poleg tega fyzična povezava med stiklom in usmerjevalnikom blokira vse VLAN-e pred dosegom usmerjevalnika, ne le enega. Obe težavi sta morali biti odpravljeni, da je pretok prometa potekal."
+        },
+        "sq": {
+            "title": "Recepsioni nuk mund të arrijë në serverin e uebit",
+            "story": "Recepcionisti raporton se panoja e kontrollit të uebit ka ndaluar të ngarkohet në PC-Reception-n e saj që që këtë mëngjes. Financa, Shitjet dhe Laboratori nuk kanë raportuar ndonjë problem.",
+            "objective": "Bëni që kërkesa HTTP nga PC-Reception në Web-Server të ketë sukses.",
+            "hints": [
+                "Kërkesa nga PC-Reception nuk kalohet kurrë përtej Switch-Floor2 dhe lidhja midis Switch-Floor2 dhe Router-Edge nuk tregon asnjë trafik.",
+                "Porti i Switch-Floor2 i lidhur me PC-Reception është në një VLAN pa rrugë përpara dhe në të njëjtën kohë kablli midis Switch-Floor2 dhe Router-Edge mungon.",
+                "Në Switch-Floor2, vendosni portin 0 në VLAN 10 dhe lidhni kabllin midis Switch-Floor2 dhe Router-Edge."
+            ],
+            "explanation": "Një port i ndërprerësit i vendosur në një VLAN të gabuar mbetet i izoluar nga pjesa tjetër e rrjetit të tij të synuar, edhe nëse gjithçka tjetër është e lidhur në mënyrë korrekte. Përveç kësaj, një lidhje fizike që mungon midis ndërprerësit dhe rrugëzuesit bllokon të gjitha VLAN-et nga arritja e rrugëzuesit, jo vetëm një. Të dyja çështjet duhej të zgjidhen që trafiku të rrjedhë."
+        },
+        "sr": {
+            "title": "Рецепција не може доћи до веб сервера",
+            "story": "Рецепционерка јавља да се вебовска контролна панела престала учитавати на њеном PC-Reception од јутос. Финансије, Продаја и Лабораторијум нису пријавили никакве проблеме.",
+            "objective": "Учините да HTTP захтев са PC-Reception на Web-Server успе.",
+            "hints": [
+                "Захтев са PC-Reception се никада не прослеђује даље кроз Switch-Floor2, а веза између Switch-Floor2 и Router-Edge показује нултрафик.",
+                "Порт Switch-Floor2 придружен PC-Reception је у VLAN-у без пута даље, а истовремено недостаје кабл између Switch-Floor2 и Router-Edge.",
+                "На Switch-Floor2, подесите порт 0 на VLAN 10 и повезите кабл између Switch-Floor2 и Router-Edge."
+            ],
+            "explanation": "Порт換 смештена у погрешан VLAN остаје изолована од остатка своје намене мреже, чак и ако је све остало исправно повезано. Поред тога, недостајућа физичка веза између換 и рутера блокира све VLAN-е од достизања рутера, не само један. Оба проблема су требала бити решена да би саобраћај текао."
+        },
+        "sv": {
+            "title": "Receptionen kan inte nå webbservern",
+            "story": "Receptionen rapporterar att webbinstrumentpanelen har slutat att läsa in på hennes PC sedan i morse. Ekonomi, Försäljning och Lab har inte sagt att något är fel.",
+            "objective": "Gör så att en HTTP-förfrågan från PC-Reception till Web-Server lyckas.",
+            "hints": [
+                "Förfrågan från PC-Reception vidarebefordras aldrig förbi Switch-Floor2, och länken mellan Switch-Floor2 och Router-Edge visar ingen trafik alls.",
+                "PC-Receptions switchport är grupperad i ett VLAN som saknar väg vidare, och separat saknas kabeln mellan Switch-Floor2 och Router-Edge.",
+                "På Switch-Floor2 ställer du port 0 till VLAN 10, och drar en kabel mellan Switch-Floor2 och Router-Edge."
+            ],
+            "explanation": "En switchport placerad i fel VLAN blir isolerad från resten av sitt avsedda nätverk, även om allt annat är rätt kablat. Dessutom blockerar en saknad fysisk länk mellan switch och router all trafik från alla VLAN från att nå routern, inte bara en. Båda problemen var tvungna att åtgärdas för att trafiken skulle kunna flöda."
+        },
+        "sw": {
+            "title": "Pokea haiwezi kufikia Web-Server",
+            "story": "Receptionist anayefanya kazi anajiji kwamba dashboard ya wavuti imesimama kupakia kwenye PC yake tangu asubuhi. Fedha, Mauzo, na Lab hawajasema kuna kitu kibaya.",
+            "objective": "Fanya ombi la HTTP kutoka PC-Reception kwa Web-Server liwe na mafanikio.",
+            "hints": [
+                "Ombi kutoka PC-Reception haliyai na ubao hadi Switch-Floor2, na kiunga kati ya Switch-Floor2 na Router-Edge hakionyeshi trafiki yoyote.",
+                "Lango la Switch la PC-Reception limepangwa katika VLAN ambayo haina njia ya kuendelea, na tofauti kebo kati ya Switch-Floor2 na Router-Edge haipo.",
+                "Kwenye Switch-Floor2, weka lango 0 kwa VLAN 10, na zama kebo kati ya Switch-Floor2 na Router-Edge."
+            ],
+            "explanation": "Lango la Switch lililowekwa katika VLAN mbaya linatekamatika kutokana na sehemu nyingine ya mtandao uliotaka, hata kama yote jingine imeunganishwa vizuri. Zaidi ya hayo, kiunga cha haba cha mwili kati ya switch na router kinazuia trafiki zote kutoka kwa VLAN wote kufikia router, si moja tu. Matatizo yote mawili yaliyokuwa haja kutatuliwa kwa trafiki kuenezwa."
+        },
+        "ta": {
+            "title": "வரவேற்பு Web-Server ஐ அடைய முடியவில்லை",
+            "story": "வரவேற்பு பிரতிநிதி தெரிவிக்கிறார் வலை டாஷ்போர்ட் அவரது PC இல் இன்று காலை தேதிக்குப் பிறகு நேரம் மாறவில்லை. நிதி, விற்பனை மற்றும் ল்যாப் எதுவும் தவறாக இல்லை என்று கூறவில்லை.",
+            "objective": "PC-Reception இலிருந்து Web-Server க்கு HTTP கோரிக்கை வெற்றிகரமாக செய்யவும்.",
+            "hints": [
+                "PC-Reception இலிருந்து கோரிக்கை Switch-Floor2 க்கு அப்பால் முன்னணி பாய்கிறது, மற்றும் Switch-Floor2 மற்றும் Router-Edge இடையே சேதம் எந்த ட்ராஃபிக்கும் உள்ளடக்கவில்லை.",
+                "PC-Reception இன் சுவிட்ச் பোர்ட் VLAN இல் நேரடி பாதையில்லாமல் குழுக்குள் நிறையுள்ளது, மற்றும் Switch-Floor2 மற்றும் Router-Edge இடையே கேபிள் விலக்கினார்.",
+                "Switch-Floor2 இல், போர்ட் 0 ஐ VLAN 10 க்கு அமைக்கவும், மற்றும் Switch-Floor2 மற்றும் Router-Edge இடையே கேபிள் இயக்கவும்."
+            ],
+            "explanation": "ஒரு சுவிட்ச் போர்ட் தவறான VLAN இல் வைக்கப்பட்ட மற்ற அனைத்து சரியாக கேபிள் செய்யப்பட்டாலும் பாக்கி மாப்பிள் நிறுவனத்திலிருந்து உள்ளடங்கிய வேறுபாட்டுறுவாக பிரிந்து விட்டிருக்கும். மேலும் மாற்றாக சுவிட்ச் மற்றும் முழுமாய் இடையே மற்ற பொதிய இணைப்பை நீக்கும் அனைத்து VLAN களை வழியேயாக பெறுவதை தடுக்கும் மற்றும் ஒன்று மாத்திரம் அல்ல. ট्rraffic ॉflow செய்ய இரு பிரச्नை நிலை வேண்டிய வெறுதல் வேண்டும்."
+        },
+        "te": {
+            "title": "రిసెప్షన్ Web-Server కి చేరుకోలేనిది",
+            "story": "రిసెప్షన్ ఎమ్ప్లాయీ ఈ ఉదయం నుండి ఆమె PC పై వెబ్ డ్యాష్‌బోర్డ్ లోడ్ చేయడం ఆగిపోయిందని నివేదించారు. ఫైనాన్స్, సేల్స్ మరియు లాబ్ ఏదీ తప్పు కాలేదని చెప్పలేదు.",
+            "objective": "PC-Reception నుండి Web-Server కు HTTP అభ్యర్థన సफల చేయండి.",
+            "hints": [
+                "PC-Reception నుండి అభ్యర్థన Switch-Floor2 క్రింద ఎక్కువ ఫార్వార్డ్ చేయబడదు, మరియు Switch-Floor2 మరియు Router-Edge మధ్య లింక్ మొత్తం ట్రాఫిక్‌ను చూపించదు.",
+                "PC-Reception యొక్క స్విచ్ పోర్ట్ ఎటువంటి మార్గం లేని VLAN లో గ్రూప్ చేయబడింది, మరియు విడిగా Switch-Floor2 మరియు Router-Edge మధ్య కేబల్ లేదు.",
+                "Switch-Floor2 పై, పోర్ట్ 0 ను VLAN 10 కు సెట్ చేయండి, మరియు Switch-Floor2 మరియు Router-Edge మధ్య కేబల్ నడపండి."
+            ],
+            "explanation": "తప్పు VLAN లో ఉంచిన స్విచ్ పోర్ట్ ఇతర సమస్తం సరిగా కేబుల్ చేయబడినప్పటికీ దాని ఉద్దేశించిన నెట్‌వర్క్ నుండి ఇతరత్రా ఉంటుంది. అప్పుడు, స్విచ్ మరియు రౌటర్ మధ్య లేని భౌతిక లింక్ రౌటర్ కు అందించినటువంటి VLAN నుండి ట్రాఫిక్‌ను నిరోధిస్తుంది, కేవలం ఒకటి కాదు. ట్రాఫిక్ ప్రవహం చేయడానికి రెండు సమస్యలు నిర్ధారించవలసి ఉంది."
+        },
+        "uk": {
+            "title": "Рецепція не може дістатися Web-Server",
+            "story": "Рецепціоніст повідомляє, що веб-панель припинила завантажуватися на її ПК з цього ранку. Фінанси, Продажі та Лаб не повідомили про проблеми.",
+            "objective": "Зробіть так, щоб HTTP-запит із PC-Reception на Web-Server був успішним.",
+            "hints": [
+                "Запит із PC-Reception не передається дальше Switch-Floor2, і канал між Switch-Floor2 та Router-Edge зовсім не показує трафіку.",
+                "Порт комутатора PC-Reception сполучений з VLAN, у якого немає вихідного шляху, і окремо відсутній кабель між Switch-Floor2 та Router-Edge.",
+                "На Switch-Floor2 встановіть порт 0 на VLAN 10 та прокладіть кабель між Switch-Floor2 та Router-Edge."
+            ],
+            "explanation": "Порт комутатора, розміщений у неправильному VLAN, ізолюється від решти його призначеної мережі, навіть якщо все інше правильно кабелізовано. Крім того, відсутній фізичний канал між комутатором та маршрутизатором блокує весь трафік з усіх VLAN від досягнення маршрутизатора, а не лише одного. Обидві проблеми потребували виправлення, щоб трафік міг протікати."
+        },
+        "ur": {
+            "title": "ریسپشن ویب سرور تک نہیں پہنچ سکتا",
+            "story": "رسپشنسٹ کی اطلاع ہے کہ ویب ڈیش بورڈ اس صبح سے اس کے PC پر لوڈ نہیں ہو رہا۔ فنانس، سیلز اور لیب نے کوئی مسئلہ نہیں بتایا۔",
+            "objective": "PC-Reception سے Web-Server تک HTTP درخواست کو کامیاب بنائیں۔",
+            "hints": [
+                "PC-Reception سے درخواست Switch-Floor2 کے آگے منتقل نہیں ہو رہی، اور Switch-Floor2 اور Router-Edge کے درمیان لنک میں کوئی ٹریفک نہیں ہے۔",
+                "PC-Reception کے سوئچ پورٹ کو ایک VLAN میں گروپ کیا گیا ہے جس کے آگے کا کوئی راستہ نہیں ہے، اور علیحدہ طور پر Switch-Floor2 اور Router-Edge کے درمیان کیبل غائب ہے۔",
+                "Switch-Floor2 پر، پورٹ 0 کو VLAN 10 میں سیٹ کریں، اور Switch-Floor2 اور Router-Edge کے درمیان کیبل لگائیں۔"
+            ],
+            "explanation": "ایک سوئچ پورٹ جو غلط VLAN میں رکھا ہو تو باقی نیٹ ورک سے الگ تھلگ ہو جاتا ہے، چاہے باقی سب کچھ ٹھیک طریقے سے کیبل شدہ ہو۔ اس کے علاوہ، سوئچ اور Router کے درمیان ایک غائب فزیکل لنک تمام VLANs کو Router تک پہنچنے سے روکتا ہے، نہ کہ صرف ایک۔ ٹریفک بہنے کے لیے دونوں مسائل کو حل کرنا پڑا۔"
+        },
+        "zu": {
+            "title": "Reception Ayikwazi Ukufinyelela Web-Server",
+            "story": "Umshesheli wereception wabikeza ukuthi i-dashboard yeweb ayilowezi ngokusuka kumusa. I-Finance, i-Sales, ne-Lab azikubikezi ukuthi kukhona okungcono.",
+            "objective": "Ukuqinisekisa ukuthi HTTP request kusuka ku-PC-Reception kuya ku-Web-Server iphumele.",
+            "hints": [
+                "I-request kusuka ku-PC-Reception ayithuthukiswa ngaphandle kwe-Switch-Floor2, futhi lokhu kusandul woba kusandul esewele Switch-Floor2 no-Router-Edge akukho traffic.",
+                "I-port ye-PC-Reception e-switch ibhange kwi-VLAN engenayo indlela yokuya phambili, bese i-cable phakathi kwe-Switch-Floor2 no-Router-Edge iyalala.",
+                "Ku-Switch-Floor2, setha i-port 0 kwi-VLAN 10, bese usebenzisa i-cable phakathi kwe-Switch-Floor2 no-Router-Edge."
+            ],
+            "explanation": "I-port ye-switch ethathwe kwi-VLAN engeyiyo iyahlukaniselwa kunethiwekhi yayo eyalindeleke, noma ngabe yonke enye into ikhabelwe ngendlela efanele. Ngaphezu kwalokho, i-link engekhona phakathi kweswitchi ne-router ivimbela zonke i-VLAN ukufinyelela kuthiRouter, hhayi enye kuphela. Yomibili amazinga ayengaziphakamisela ukuze i-traffic ihlele."
+        },
+        "gu": {
+            "title": "રિસેપ્શન વેબ સર્વરને પહોંચી શકતું નથી",
+            "story": "રિસેપ્શનિસ્ટ જણાવે છે કે તેણીના PC પર વેબ ડેશબોર્ડ આજ સવારથી લોડ થવું બંધ થઈ ગયું છે. ફાયનાન્સ, સેલ્સ અને લેબે કોઈ સમસ્યાની જાણ કરી નથી.",
+            "objective": "PC-Reception થી Web-Server પર HTTP વિનંતી સફળ બને તે માટે.",
+            "hints": [
+                "PC-Reception પાસેથીની વિનંતી Switch-Floor2 ની બહાર આગળ જતી નથી, અને Switch-Floor2 અને Router-Edge વચ્ચેની લિંક પર કોઈ ટ્રાફિક દેખાતું નથી.",
+                "PC-Reception ના સ્વિચ પોર્ટને ગોઠવવામાં આવેલ VLAN માં આગળ જવાનો કોઈ રસ્તો નથી, અને અલગથી Switch-Floor2 અને Router-Edge વચ્ચેનો કેબલ ખોવાયો છે.",
+                "Switch-Floor2 પર, પોર્ટ 0 ને VLAN 10 પર સેટ કરો, અને Switch-Floor2 અને Router-Edge વચ્ચે કેબલ ચલાવો."
+            ],
+            "explanation": "ખોટા VLAN માં મૂકવામાં આવેલ સ્વિચ પોર્ટ પોતાના અંગેતા નેટવર્કથી અલગ થઈ જાય છે, ભલે બાકી બધું કેબલ કર્યું હોય. તેના પર, સ્વિચ અને રાઉટર વચ્ચેનો લાક્ષણિક લિંક ખોવાયો હોય તો તમામ VLAN્સ રાઉટર સુધી પહોંચતા અટકાય છે, માત્ર એક જ નહીં. બંને સમસ્યાનો સમાધાન કરવો પડ્યો હોય તો જ ટ્રાફિક વહે છે."
+        }
+    }
+}
