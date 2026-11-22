@@ -1,0 +1,1324 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-29",
+    "number": 70,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_subnet"
+    ],
+    "concepts": [
+        "subnet"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.8.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.8.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-Tokyo",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Tokyo",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.8.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.7.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.13.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.7.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Osaka",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.7.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.13.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.8.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.7.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Osaka",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "File-Server",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.20.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.13.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-router1",
+            "dev-router2"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Finance Can't Reach the File Server",
+            "story": "Staff in Finance report that opening files on the Osaka file server has failed all morning. PC-Finance shows no response at all when they try.",
+            "objective": "Get an HTTP GET from PC-Finance to File-Server to succeed.",
+            "hints": [
+                "Trace the request from PC-Finance: it never gets past Router-Tokyo, which reports it has nowhere to send the packet.",
+                "Router-Tokyo has no route for the destination address because File-Server is not actually sitting in the 10.0.13.0 subnet it should belong to.",
+                "On File-Server, set port 0 to address 10.0.13.1 with mask 255.255.255.0."
+            ],
+            "explanation": "File-Server's address was outside the subnet Router-Osaka advertises a route for, so Router-Tokyo had no path to reach it. Matching the server's address and mask to its real subnet lets the existing static routes work correctly."
+        },
+        "ja": {
+            "title": "経理部がFile-Serverに接続できない",
+            "story": "経理部のスタッフから、午前中ずっと大阪のファイルサーバー上のファイルを開けないという報告がありました。PC-Financeからアクセスしても、まったく応答がない状態です。",
+            "objective": "PC-FinanceからFile-ServerへのHTTP GETを成功させること。",
+            "hints": [
+                "PC-Financeからのリクエストを追跡すると、Router-Tokyoを越えられていません。Router-Tokyoはパケットの送り先がないと報告しています。",
+                "File-Serverが本来属するべき10.0.13.0のサブネットに実際には存在していないため、Router-Tokyoには宛先アドレスへのルートがありません。",
+                "File-Serverで、ポート0のアドレスを10.0.13.1、マスクを255.255.255.0に設定してください。"
+            ],
+            "explanation": "File-Serverのアドレスが、Router-Osakaがルートを広告しているサブネットの範囲外になっていたため、Router-Tokyoはそこへ到達する経路を持てませんでした。サーバーのアドレスとマスクを実際のサブネットに一致させることで、既存の静的ルートが正しく機能するようになります。"
+        },
+        "zh-CN": {
+            "title": "Finance 无法连接到文件服务器",
+            "story": "Finance 部门员工报告说整个上午都无法打开 Osaka 文件服务器上的文件。PC-Finance 在尝试连接时完全没有收到任何响应。",
+            "objective": "让 PC-Finance 向 File-Server 发送 HTTP GET 请求成功。",
+            "hints": [
+                "从 PC-Finance 追踪请求：它从未越过 Router-Tokyo，Router-Tokyo 报告没有地方可以发送该数据包。",
+                "Router-Tokyo 没有到达目标地址的路由，因为 File-Server 实际上不在它应该属于的 10.0.13.0 子网中。",
+                "在 File-Server 上，将端口 0 设置为地址 10.0.13.1，掩码为 255.255.255.0。"
+            ],
+            "explanation": "File-Server 的地址在 Router-Osaka 通告路由的子网之外，所以 Router-Tokyo 没有到达它的路径。将服务器的地址和掩码与其真实子网相匹配可以让现有的静态路由正常工作。"
+        },
+        "zh-TW": {
+            "title": "Finance 無法連線到檔案伺服器",
+            "story": "Finance 部門員工報告整個上午都無法打開 Osaka 檔案伺服器上的檔案。PC-Finance 在嘗試連線時完全沒有收到任何回應。",
+            "objective": "讓 PC-Finance 向 File-Server 發送 HTTP GET 請求成功。",
+            "hints": [
+                "從 PC-Finance 追蹤要求：它從未超過 Router-Tokyo，Router-Tokyo 報告沒有地方可以發送該封包。",
+                "Router-Tokyo 沒有到達目的地位址的路由，因為 File-Server 實際上不在它應該屬於的 10.0.13.0 子網中。",
+                "在 File-Server 上，將連接埠 0 設定為位址 10.0.13.1，遮罩為 255.255.255.0。"
+            ],
+            "explanation": "File-Server 的位址在 Router-Osaka 通告路由的子網之外，所以 Router-Tokyo 沒有到達它的路徑。將伺服器的位址和遮罩與其真實子網相符可以讓現有的靜態路由正常運作。"
+        },
+        "ko": {
+            "title": "Finance 가 File-Server 에 연결할 수 없음",
+            "story": "Finance 부서 직원들이 오사카 파일 서버의 파일을 열 수 없다고 보고했습니다. PC-Finance 는 연결 시도 시 응답이 없습니다.",
+            "objective": "PC-Finance 에서 File-Server 로의 HTTP GET 요청이 성공하도록 하기",
+            "hints": [
+                "PC-Finance 의 요청을 추적하면 Router-Tokyo 를 넘어가지 못합니다. Router-Tokyo 는 패킷을 보낼 곳이 없다고 보고합니다.",
+                "Router-Tokyo 에 목적지 주소로의 경로가 없습니다. File-Server 가 실제로 속해야 할 10.0.13.0 서브넷에 있지 않기 때문입니다.",
+                "File-Server 에서 포트 0 을 주소 10.0.13.1 로, 마스크 255.255.255.0 으로 설정하세요."
+            ],
+            "explanation": "File-Server 의 주소는 Router-Osaka 가 광고하는 경로의 서브넷 외부에 있었으므로 Router-Tokyo 는 이에 도달할 경로가 없었습니다. 서버의 주소와 마스크를 실제 서브넷과 일치하도록 하면 기존의 정적 경로가 올바르게 작동합니다."
+        },
+        "es": {
+            "title": "Finance no puede llegar al Servidor de archivos",
+            "story": "El personal de Finance reporta que abrir archivos en el servidor de archivos de Osaka ha fallado toda la mañana. PC-Finance no muestra respuesta alguna cuando lo intentan.",
+            "objective": "Lograr que un HTTP GET desde PC-Finance a File-Server sea exitoso.",
+            "hints": [
+                "Rastrear la solicitud desde PC-Finance: nunca pasa de Router-Tokyo, que reporta no tener dónde enviar el paquete.",
+                "Router-Tokyo no tiene ruta para la dirección destino porque File-Server no está realmente en la subred 10.0.13.0 donde debería estar.",
+                "En File-Server, establecer el puerto 0 con dirección 10.0.13.1 y máscara 255.255.255.0."
+            ],
+            "explanation": "La dirección de File-Server estaba fuera de la subred para la cual Router-Osaka anuncia una ruta, por lo que Router-Tokyo no tenía camino para alcanzarla. Hacer coincidir la dirección y máscara del servidor con su subred real permite que las rutas estáticas existentes funcionen correctamente."
+        },
+        "pt-BR": {
+            "title": "Finance não consegue alcançar o Servidor de Arquivos",
+            "story": "Funcionários do Finance informam que abrir arquivos no servidor de arquivos de Osaka falhou o dia todo. PC-Finance não mostra resposta alguma quando tentam.",
+            "objective": "Conseguir que um HTTP GET de PC-Finance para File-Server seja bem-sucedido.",
+            "hints": [
+                "Rastreie a solicitação de PC-Finance: ela nunca passa de Router-Tokyo, que informa não ter para onde enviar o pacote.",
+                "Router-Tokyo não tem rota para o endereço destino porque File-Server não está realmente na subnet 10.0.13.0 onde deveria estar.",
+                "Em File-Server, defina a porta 0 para endereço 10.0.13.1 com máscara 255.255.255.0."
+            ],
+            "explanation": "O endereço de File-Server estava fora da subnet para a qual Router-Osaka anuncia uma rota, então Router-Tokyo não tinha caminho para alcançá-lo. Fazer com que o endereço e máscara do servidor correspondam à sua subnet real permite que as rotas estáticas existentes funcionem corretamente."
+        },
+        "de": {
+            "title": "Finance kann File-Server nicht erreichen",
+            "story": "Mitarbeiter aus Finance berichten, dass das Öffnen von Dateien auf dem Osaka-File-Server den ganzen Morgen fehlschlägt. PC-Finance zeigt überhaupt keine Reaktion bei dem Versuch.",
+            "objective": "Einen HTTP GET von PC-Finance zu File-Server erfolgreich durchführen.",
+            "hints": [
+                "Verfolgen Sie die Anfrage von PC-Finance: sie geht nie über Router-Tokyo hinaus, das meldet, dass es keinen Platz hat, das Paket zu senden.",
+                "Router-Tokyo hat keine Route für die Zieladresse, da File-Server nicht wirklich im Subnetz 10.0.13.0 sitzt, dem es angehören sollte.",
+                "Setzen Sie auf File-Server Port 0 auf die Adresse 10.0.13.1 mit Maske 255.255.255.0."
+            ],
+            "explanation": "Die Adresse von File-Server war außerhalb des Subnetzes, für das Router-Osaka eine Route bewirbt, daher hatte Router-Tokyo keinen Pfad, um es zu erreichen. Das Anpassen der Adresse und Maske des Servers an sein echtes Subnetz ermöglicht den korrekten Betrieb der vorhandenen statischen Routen."
+        },
+        "fr": {
+            "title": "Finance ne peut pas atteindre File-Server",
+            "story": "Le personnel Finance signale que l'accès aux fichiers du serveur Osaka a échoué toute la matinée. PC-Finance n'affiche aucune réponse lors de la tentative.",
+            "objective": "Réussir une requête HTTP GET de PC-Finance vers File-Server.",
+            "hints": [
+                "Tracez la requête depuis PC-Finance : elle ne dépasse jamais Router-Tokyo, qui signale qu'il n'a nulle part où envoyer le paquet.",
+                "Router-Tokyo n'a pas de route pour l'adresse de destination car File-Server ne se trouve pas réellement dans le Réseau de destination 10.0.13.0 auquel il devrait appartenir.",
+                "Sur File-Server, configurez le port 0 à l'adresse 10.0.13.1 avec le Masque 255.255.255.0."
+            ],
+            "explanation": "L'adresse de File-Server était en dehors du Réseau de destination pour lequel Router-Osaka annonce une route, donc Router-Tokyo n'avait aucun chemin pour l'atteindre. L'adaptation de l'adresse et du Masque du serveur à son vrai Réseau de destination permet aux routes statiques existantes de fonctionner correctement."
+        },
+        "hi": {
+            "title": "Finance File-Server तक नहीं पहुंच सकता",
+            "story": "Finance विभाग के कर्मचारी रिपोर्ट करते हैं कि Osaka फ़ाइल सर्वर पर फ़ाइलें खोलना पूरी सुबह विफल रहा है। PC-Finance प्रयास करने पर कोई प्रतिक्रिया नहीं दिखाता।",
+            "objective": "PC-Finance से File-Server को HTTP GET सफलतापूर्वक प्राप्त करना।",
+            "hints": [
+                "PC-Finance से अनुरोध को ट्रेस करें: यह Router-Tokyo से आगे कभी नहीं जाता, जो बताता है कि पैकेट भेजने के लिए इसके पास कहीं नहीं है।",
+                "Router-Tokyo के पास गंतव्य पते के लिए कोई मार्ग नहीं है क्योंकि File-Server वास्तव में 10.0.13.0 सबनेट में नहीं बैठा है जहां उसे होना चाहिए।",
+                "File-Server पर पोर्ट 0 को पते 10.0.13.1 पर मास्क 255.255.255.0 के साथ सेट करें।"
+            ],
+            "explanation": "File-Server का पता उस सबनेट के बाहर था जिसके लिए Router-Osaka एक मार्ग विज्ञापित करता है, इसलिए Router-Tokyo के पास इसे पहुंचने का कोई रास्ता नहीं था। सर्वर के पते और मास्क को इसके वास्तविक सबनेट से मिलाना मौजूदा स्थैतिक मार्गों को सही ढंग से काम करने देता है।"
+        },
+        "id": {
+            "title": "Finance Tidak Dapat Menjangkau File-Server",
+            "story": "Staf Finance melaporkan bahwa pembukaan file di server file Osaka gagal sepanjang pagi. PC-Finance tidak menunjukkan respons sama sekali saat mereka mencoba.",
+            "objective": "Dapatkan HTTP GET dari PC-Finance ke File-Server berhasil.",
+            "hints": [
+                "Lacak permintaan dari PC-Finance: tidak pernah melewati Router-Tokyo, yang melaporkan tidak memiliki tempat untuk mengirim paket.",
+                "Router-Tokyo tidak memiliki rute untuk alamat tujuan karena File-Server tidak berada di Jaringan tujuan 10.0.13.0 tempat seharusnya berada.",
+                "Di File-Server, atur Port 0 ke alamat 10.0.13.1 dengan Nomor port 255.255.255.0."
+            ],
+            "explanation": "Alamat File-Server berada di luar Jaringan tujuan yang diiklankan Router-Osaka, sehingga Router-Tokyo tidak memiliki jalan untuk mencapainya. Mencocokkan alamat dan Nomor port server dengan Jaringan tujuan sebenarnya memungkinkan rute statis yang ada berfungsi dengan benar."
+        },
+        "ru": {
+            "title": "Finance не может достичь File-Server",
+            "story": "Сотрудники Finance сообщают, что открытие файлов на файловом сервере Osaka не удалось все утро. PC-Finance не показывает никакого ответа при попытке подключения.",
+            "objective": "Выполнить HTTP GET от PC-Finance к File-Server успешно.",
+            "hints": [
+                "Отследите запрос от PC-Finance: он никогда не проходит дальше Router-Tokyo, которые сообщает, что у него нет маршрута для отправки пакета.",
+                "Router-Tokyo не имеет маршрута для целевого адреса, потому что File-Server фактически не находится в целевой сети 10.0.13.0, к которой он должен принадлежать.",
+                "На File-Server установите порт 0 на адрес 10.0.13.1 с маской 255.255.255.0."
+            ],
+            "explanation": "Адрес File-Server был вне целевой сети, для которой Router-Osaka объявляет маршрут, поэтому Router-Tokyo не имел пути для её достижения. Согласование адреса и маски сервера с его реальной целевой сетью позволяет существующим статическим маршрутам работать правильно."
+        },
+        "it": {
+            "title": "Finance non riesce a raggiungere il File Server",
+            "story": "Lo staff Finance segnala che l'apertura dei file dal server file di Osaka non ha funzionato tutta la mattina. PC-Finance non risponde affatto quando ci provano.",
+            "objective": "Far funzionare una richiesta HTTP GET da PC-Finance a File-Server.",
+            "hints": [
+                "Traccia la richiesta da PC-Finance: non va mai oltre Router-Tokyo, che segnala di non avere dove inviare il pacchetto.",
+                "Router-Tokyo non ha una route per l'indirizzo di destinazione perché File-Server non si trova nella subnet 10.0.13.0 dove dovrebbe stare.",
+                "Su File-Server, imposta la porta 0 all'indirizzo 10.0.13.1 con Maschera 255.255.255.0."
+            ],
+            "explanation": "L'indirizzo di File-Server era fuori dalla subnet per cui Router-Osaka pubblicizza una route, quindi Router-Tokyo non aveva un percorso per raggiungerlo. Allineando l'indirizzo e la Maschera del server alla subnet reale consente alle route statiche esistenti di funzionare correttamente."
+        },
+        "tr": {
+            "title": "Finance Dosya Sunucusuna Ulaşamıyor",
+            "story": "Finance bölümündeki personel, Osaka dosya sunucusundaki dosyaları açmanın tüm sabah başarısız olduğunu bildiriyor. PC-Finance, denediklerinde hiç yanıt vermiyor.",
+            "objective": "HTTP GET isteğini PC-Finance'ten File-Server'a başarıyla ulaştırmak.",
+            "hints": [
+                "PC-Finance'ten gelen isteği takip edin: hiçbir zaman Router-Tokyo'yu geçemez, o da paketin nereye gönderileceğini bilmediğini rapor eder.",
+                "Router-Tokyo hedef adres için bir Yönlendirme Tablosu girişine sahip değildir çünkü File-Server aslında bulunması gereken 10.0.13.0 Hedef ağında değildir.",
+                "File-Server'da, port 0'ı 10.0.13.1 adresine ve Maske 255.255.255.0 olarak ayarlayın."
+            ],
+            "explanation": "File-Server'ın adresi, Router-Osaka'nın bir rota tanıttığı Hedef ağ dışındaydı, bu nedenle Router-Tokyo'nun buna ulaşmak için bir yolu yoktu. Sunucu adresini ve Maskesini gerçek Hedef ağ ile eşleştirmek, mevcut statik rotaların doğru şekilde çalışmasını sağlar."
+        },
+        "th": {
+            "title": "Finance ไม่สามารถเข้าถึงเซิร์ฟเวอร์ไฟล์ได้",
+            "story": "พนักงาน Finance รายงานว่าการเปิดไฟล์บนเซิร์ฟเวอร์ไฟล์ Osaka ล้มเหลวตลอดเช้า PC-Finance ไม่ตอบสนองเลยเมื่อพวกเขาพยายาม",
+            "objective": "ทำให้ HTTP GET จาก PC-Finance ไปยัง File-Server สำเร็จ",
+            "hints": [
+                "ติดตามคำขอจาก PC-Finance: ไม่เคยผ่าน Router-Tokyo ซึ่งรายงานว่าไม่มีที่ที่จะส่งแพ็กเก็ต",
+                "Router-Tokyo ไม่มีเส้นทางสำหรับเครือข่ายปลายทาง เพราะ File-Server ไม่ได้อยู่ในเครือข่ายปลายทาง 10.0.13.0 ที่ควรจะอยู่",
+                "บน File-Server ให้ตั้งค่าพอร์ต 0 เป็นที่อยู่ 10.0.13.1 ที่มีมาสก์ 255.255.255.0"
+            ],
+            "explanation": "ที่อยู่ของ File-Server อยู่นอกเครือข่ายปลายทางที่ Router-Osaka โฆษณาเส้นทาง ดังนั้น Router-Tokyo จึงไม่มีเส้นทางที่จะเข้าถึง การจับคู่ที่อยู่และมาสก์ของเซิร์ฟเวอร์กับเครือข่ายปลายทางจริงจะทำให้เส้นทางสถิตที่มีอยู่ทำงานได้อย่างถูกต้อง"
+        },
+        "vi": {
+            "title": "Finance Không Thể Kết Nối Đến Máy Chủ Tệp",
+            "story": "Nhân viên Finance báo cáo rằng mở tệp trên máy chủ tệp Osaka đã thất bại cả buổi sáng. PC-Finance không có phản hồi khi họ cố gắng.",
+            "objective": "Thực hiện HTTP GET từ PC-Finance đến File-Server thành công.",
+            "hints": [
+                "Theo dõi yêu cầu từ PC-Finance: nó không bao giờ vượt qua Router-Tokyo, cái mà báo cáo nó không có nơi nào để gửi gói tin.",
+                "Router-Tokyo không có định tuyến cho mạng đích vì File-Server thực tế không ở trong mạng đích 10.0.13.0 nơi nó nên ở.",
+                "Trên File-Server, đặt cổng 0 thành địa chỉ 10.0.13.1 với số cổng 255.255.255.0."
+            ],
+            "explanation": "Địa chỉ của File-Server nằm ngoài mạng đích mà Router-Osaka quảng cáo một định tuyến, vì vậy Router-Tokyo không có đường dẫn để tiếp cận nó. Khớp địa chỉ và số cổng của máy chủ với mạng đích thực tế cho phép các định tuyến tĩnh hiện có hoạt động chính xác."
+        },
+        "af": {
+            "title": "Finance kan nie die Lêerbediener bereik nie",
+            "story": "Personeel in Finance meld dat lêers van die Osaka-lêerbediener oopmaak die hele môre misluk het. PC-Finance gee geen reaksie wanneer hulle probeer nie.",
+            "objective": "Kry HTTP GET van PC-Finance na File-Server werk.",
+            "hints": [
+                "Volg die versoek van PC-Finance: dit kom nooit verder as Router-Tokyo nie, wat rapporteer dat dit nie weet waarheen die pakket gestuur moet word nie.",
+                "Router-Tokyo het geen roete vir die bestemmingsnetwerk nie omdat File-Server nie eintlik in die bestemmingsnetwerk 10.0.13.0 sit waar dit hoort nie.",
+                "Op File-Server, stel poort 0 in op adres 10.0.13.1 met Masker 255.255.255.0."
+            ],
+            "explanation": "File-Server se adres was buite die bestemmingsnetwerk waarvoor Router-Osaka 'n roete adverteer, dus Router-Tokyo het geen pad om dit te bereik nie. Deur die bediener se adres en Masker aan sy werklike bestemmingsnetwerk aan te pas, kan die bestaande statiese roetes korrek werk."
+        },
+        "am": {
+            "title": "Finance PC በ File Server ላይ ሊደርስ አልቻለ",
+            "story": "Finance ክፍሉ ሰራተኞች በ Osaka ያለውን File Server ላይ ፋይሎችን መክፈት ሙሉ ንግግ ሰአት ብርታት ታጥበው ነው። PC-Finance ሲሞክር በጭራሽ ምንም ምላሽ አያሳይም።",
+            "objective": "ከ PC-Finance የ HTTP GET ወደ File-Server ተስፋ ተወጣ።",
+            "hints": [
+                "ጥያቄውን PC-Finance ከ ተከታትል: Router-Tokyo ሰላል ስለዚህ ፓኬቱን ለመላክ ስሌ የሌለበት",
+                "Router-Tokyo ለመድረሻ አድራሻ ማዘዋወሪያ የለበት ምክንያቱም File-Server በ 10.0.13.0 ስብስብ ውስጥ ሊገኝ ስለሚችል ነው።",
+                "File-Server ላይ port 0 ን ወደ አድራሻ 10.0.13.1 ከ mask 255.255.255.0 ያዘጋጁ።"
+            ],
+            "explanation": "File-Server አድራሻ Router-Osaka ማዘዋወሪያ ያስተላልፈው ስብስብ ውጭ ነበር ስለዚህ Router-Tokyo ለመድረስ መንገድ አልነበረበት። የ server አድራሻ እና mask ከትክክለኛ ስብስብ ጋር መተርጎም በቅድሚያ የተወሰኑ ማዘዋወሪያዎች በትክክል ይሠሩ ይወቅሳሉ።"
+        },
+        "ar": {
+            "title": "Finance لا يمكنه الوصول إلى File Server",
+            "story": "يبلغ الموظفون في Finance عن فشل فتح الملفات على خادم Osaka طوال الصباح. جهاز PC-Finance لا يظهر أي استجابة عندما يحاولون.",
+            "objective": "جعل HTTP GET من PC-Finance إلى File-Server ينجح.",
+            "hints": [
+                "تتبع الطلب من PC-Finance: لا يتجاوز أبداً Router-Tokyo، الذي يبلغ أنه لا يوجد مكان لإرسال الحزمة.",
+                "Router-Tokyo لا يملك مسار للعنوان الوجهة لأن File-Server ليس في الشبكة 10.0.13.0 التي يجب أن يكون فيها.",
+                "على File-Server، قم بتعيين المنفذ 0 للعنوان 10.0.13.1 مع القناع 255.255.255.0."
+            ],
+            "explanation": "كان عنوان File-Server خارج الشبكة التي يعلن Router-Osaka مسار لها، لذلك لم يكن لدى Router-Tokyo مسار للوصول إليه. مطابقة عنوان الخادم والقناع مع الشبكة الفعلية تسمح للمسارات الثابتة الموجودة بالعمل بشكل صحيح."
+        },
+        "az": {
+            "title": "Finance File Server-ə Çata Bilmir",
+            "story": "Finance şöbəsinin işçiləri Osaka faylı serverində faylları açılmasının bütün səhər uğursuz olduğunu hesab edir. PC-Finance Cəhd etdikdə heç bir cavab vermir.",
+            "objective": "PC-Finance-dən File-Server-ə HTTP GET sorğusunu uğurlu etmək.",
+            "hints": [
+                "PC-Finance-dən sorğunu izləyin: heç vaxt Router-Tokyo-dan keçmir, o bilirir ki, paketi göndərəcəyi yer yoxdur.",
+                "Router-Tokyo təyinat ünvanı üçün marşrut yoxdur çünki File-Server həqiqətən 10.0.13.0 şəbəkəsində yerləşmir.",
+                "File-Server-də port 0-ı 10.0.13.1 ünvanına maska 255.255.255.0 ilə təyin edin."
+            ],
+            "explanation": "File-Server ünvanı Router-Osaka elan etdiyi marşrutun olmadığı şəbəkədən kənarda idi, buna görə Router-Tokyo-nun onu əldə etmək yolu yox idi. Serverinin ünvanı və maskasını real şəbəkəsinin ünvanı ilə uyğunlaşdırmaq mövcud statik marşrutların düzgün işləməsinə imkan verir."
+        },
+        "be": {
+            "title": "Finance не можа дасягнуць File Server",
+            "story": "Персонал Finance паведамляе пра адказ адкрыцця файлаў на Osaka File Server ўсё раніцы. PC-Finance не дае ніякага адказу, калі яны спрабуюць.",
+            "objective": "Убедзіцеся, што HTTP GET з PC-Finance да File-Server успешны.",
+            "hints": [
+                "Адследзіце запыт з PC-Finance: ён ніколі не прайдзе мімо Router-Tokyo, які паведамляе, што не ведаe адзінае месца для адпраўкі пакета.",
+                "Router-Tokyo не мае маршруту для адрасу адрасата, бо File-Server фактычна не знаходзіцца ў сетцы 10.0.13.0, дзе ён павінен быць.",
+                "На File-Server усталюйце порт 0 на адрас 10.0.13.1 з маскай 255.255.255.0."
+            ],
+            "explanation": "Адрас File-Server знаходзіўся па-за сеткай, для якой Router-Osaka абвяшчае маршрут, таму Router-Tokyo не мела пути да яго. Прывядзенне ў адпаведнасць адраса і маскі сервера да яго рэальнай сеткі дазваляе існуючым статычным маршрутам працаваць правільна."
+        },
+        "bg": {
+            "title": "Finance не може да достигне File Server",
+            "story": "Персоналът на Finance докладва за неуспех при отваряне на файлове на Osaka File Server целия работен ден. PC-Finance не показва отговор, когато опитват.",
+            "objective": "Осигурете успешност на HTTP GET от PC-Finance към File-Server.",
+            "hints": [
+                "Проследете заявката от PC-Finance: никога не преминава Router-Tokyo, който докладва, че няма къде да праща пакета.",
+                "Router-Tokyo няма маршрут за адреса на получателя, защото File-Server всъщност не се намира в мрежата 10.0.13.0, където трябва да бъде.",
+                "На File-Server установете порт 0 към адрес 10.0.13.1 с маска 255.255.255.0."
+            ],
+            "explanation": "Адресът на File-Server беше извън мрежата, за която Router-Osaka обявява маршрут, затова Router-Tokyo нямаше пътека до него. Привеждане на адреса и маската на сървъра в съответствие с реалната мрежа позволява съществуващите статични маршрути да работят правилно."
+        },
+        "bn": {
+            "title": "Finance থেকে File Server-এ অ্যাক্সেস করা যাচ্ছে না",
+            "story": "Finance বিভাগের কর্মীরা জানিয়েছেন যে Osaka file server থেকে ফাইল খোলা সকাল থেকেই ব্যর্থ হচ্ছে। PC-Finance কোন প্রতিক্রিয়া দিচ্ছে না।",
+            "objective": "PC-Finance থেকে File-Server-এ HTTP GET সফল করতে হবে।",
+            "hints": [
+                "PC-Finance থেকে request ট্রেস করুন: এটি Router-Tokyo পার হতে পারছে না, যেখানে কোন route নেই।",
+                "Router-Tokyo-র কাছে গন্তব্য ঠিকানার জন্য কোন route নেই কারণ File-Server আসলে 10.0.13.0 সাবনেটে নেই।",
+                "File-Server-এ port 0 কে address 10.0.13.1 এবং mask 255.255.255.0 সেট করুন।"
+            ],
+            "explanation": "File-Server-এর ঠিকানা সেই সাবনেটের বাইরে ছিল যার route Router-Osaka এডভারটাইজ করে, তাই Router-Tokyo-র কোন পথ ছিল না। Server-এর ঠিকানা এবং mask কে সঠিক সাবনেটের সাথে মিলিয়ে দিলে বিদ্যমান static routes সঠিকভাবে কাজ করবে।"
+        },
+        "ca": {
+            "title": "Finance no pot arribar al servidor de fitxers",
+            "story": "El personal de Finance informa que l'obertura de fitxers al servidor de fitxers Osaka ha fallat durant tota la matinada. PC-Finance no mostra cap resposta.",
+            "objective": "Aconseguir que una GET HTTP des de PC-Finance a File-Server funcioni.",
+            "hints": [
+                "Rastregueu la sol·licitud des de PC-Finance: mai no arriba més enllà de Router-Tokyo, que reporta que no té cap lloc on enviar el paquet.",
+                "Router-Tokyo no té cap ruta per a l'adreça de destinació perquè File-Server no es troba realment a la subxarxa 10.0.13.0 on hauria de ser.",
+                "A File-Server, establiu el port 0 a l'adreça 10.0.13.1 amb màscara 255.255.255.0."
+            ],
+            "explanation": "L'adreça de File-Server estava fora de la subxarxa per a la qual Router-Osaka adverteix una ruta, així que Router-Tokyo no tenia un camí per arribar-hi. Ajustant l'adreça i la màscara del servidor a la seva subxarxa real permet que les rutes estàtiques existents funcionin correctament."
+        },
+        "cs": {
+            "title": "Finance se nemůže připojit k souborovému serveru",
+            "story": "Zaměstnanci oddělení Finance hlásí, že otevírání souborů na serverech Osaka se celé dopoledne nezdařilo. PC-Finance vůbec neodpovídá.",
+            "objective": "Dosáhnout úspěšného HTTP GET z PC-Finance na File-Server.",
+            "hints": [
+                "Trasujte požadavek z PC-Finance: nikdy se nedostane dál než Router-Tokyo, který hlásí, že nemá kam paket poslat.",
+                "Router-Tokyo nemá cestu pro cílovou adresu, protože File-Server ve skutečnosti není v síti 10.0.13.0, kde by měl být.",
+                "Na File-Server nastavte port 0 na adresu 10.0.13.1 s maskou 255.255.255.0."
+            ],
+            "explanation": "Adresa File-Server byla mimo podsíť, pro kterou Router-Osaka inzeruje cestu, takže Router-Tokyo neměl cestu k jejímu dosažení. Sladění adresy serveru a masky se skutečnou podsítí umožňuje správné fungování stávajících statických tras."
+        },
+        "da": {
+            "title": "Finance kan ikke nå filserveren",
+            "story": "Personalet på Finance rapporterer, at åbning af filer på Osaka-filserveren har slået fejl hele formiddagen. PC-Finance viser slet ingen respons.",
+            "objective": "Få en HTTP GET fra PC-Finance til File-Server til at lykkes.",
+            "hints": [
+                "Spor anmodningen fra PC-Finance: den kommer aldrig videre end Router-Tokyo, som rapporterer, at den ikke har noget sted at sende pakken hen.",
+                "Router-Tokyo har ingen rute for destinationsadressen, fordi File-Server faktisk ikke findes i det 10.0.13.0-netværk, hvor den burde være.",
+                "Indstil port 0 på File-Server til adressen 10.0.13.1 med masken 255.255.255.0."
+            ],
+            "explanation": "File-Servers adresse var uden for det netværk, som Router-Osaka annoncerer en rute for, så Router-Tokyo havde ingen vej til at nå den. Hvis serveres adresse og maske matches med det rigtige netværk, fungerer de eksisterende statiske ruter korrekt."
+        },
+        "el": {
+            "title": "Η Finance δεν μπορεί να φτάσει τον διακομιστή αρχείων",
+            "story": "Το προσωπικό της Finance αναφέρει ότι το άνοιγμα αρχείων στον διακομιστή αρχείων Osaka έχει αποτύχει όλο το πρωί. Το PC-Finance δεν δίνει καμία απόκριση.",
+            "objective": "Να επιτύχει ένα HTTP GET από PC-Finance σε File-Server.",
+            "hints": [
+                "Ιχνηλατήστε το αίτημα από PC-Finance: δεν φτάνει ποτέ πέρα από Router-Tokyo, το οποίο αναφέρει ότι δεν έχει πού να στείλει το πακέτο.",
+                "Ο Router-Tokyo δεν έχει δρομολόγηση για τη διεύθυνση προορισμού επειδή ο File-Server δεν βρίσκεται στο δίκτυο 10.0.13.0 όπου θα έπρεπε να είναι.",
+                "Στον File-Server, ορίστε τη θύρα 0 στη διεύθυνση 10.0.13.1 με μάσκα 255.255.255.0."
+            ],
+            "explanation": "Η διεύθυνση του File-Server ήταν εκτός του δικτύου για το οποίο ο Router-Osaka διαφημίζει δρομολόγηση, οπότε ο Router-Tokyo δεν είχε διαδρομή για να φτάσει σε αυτό. Η αντιστοίχιση της διεύθυνσης και της μάσκας του διακομιστή με το σωστό δίκτυο επιτρέπει στις υπάρχουσες στατικές διαδρομές να λειτουργούν σωστά."
+        },
+        "et": {
+            "title": "Raamatupidamine ei saa ühendust failiserveriga",
+            "story": "Raamatupidamise osakonna töötajad teatavad, et failide avamine Osaka failiserverist on kogu hommikul ebaõnnestunud. PC-Finance ei näita üldse vastuseisu, kui nad proovivad.",
+            "objective": "Saada HTTP GET päring PC-Finance'ist File-Server'isse edukalt.",
+            "hints": [
+                "Jälgi taotlust PC-Finance'ist: see ei saa kunagi Router-Tokyo-st edasi, mis teatab, et sellel pole kuhugi paketti saata.",
+                "Router-Tokyo-l puudub marsruut sihtkohale, kuna File-Server ei asu tegelikult 10.0.13.0 alamvõrgus, kuhu ta peaks kuuluma.",
+                "File-Server'is määra port 0 aadressile 10.0.13.1 maskiga 255.255.255.0."
+            ],
+            "explanation": "File-Server'i aadress oli väljaspool alamvõrku, mille jaoks Router-Osaka kuulutab marsruutimistabeli kirjet, seega Router-Tokyo-l puudus tee selle juurde. Serveri aadressi ja maski vastavusse viimine tema tegeliku alamvõrguga võimaldab olemasolevatel staatilistel marsruutidel õigesti toimida."
+        },
+        "eu": {
+            "title": "Finantza ez du ateak iritsi fitxategi-zerbitzaria",
+            "story": "Finantza departamentuko enpleguak txosten egiten dute Osaka fitxategi-zerbitzaria irekitzea ez dela funtzionatzen goizean. PC-Finance ez dago erantzunerik ematen probatzen duten bakoitzean.",
+            "objective": "HTTP GET bat PC-Finance tik File-Server ra arrakastaz bidali.",
+            "hints": [
+                "Jarraitu eskaera PC-Finance tik: ez da Router-Tokyo iragaten, zeina dio ez duela tokirik paketea bidali.",
+                "Router-Tokyo k ez du bidea helmugara, File-Server ez baita 10.0.13.0 sarea hementara egon behar du.",
+                "File-Server en port 0 ezarri 10.0.13.1 helbidean maskara 255.255.255.0 rekin."
+            ],
+            "explanation": "File-Server en helbidea Router-Osaka marka duen sarea ez zen, beraz Router-Tokyo k ez zuen biderik. Zerbitzariaren helbidea eta maskara benetako sarean bat etortzeak existing static routes-ak ondo funtzionatzen ditu."
+        },
+        "fa": {
+            "title": "بخش مالی نمی‌تواند به فایل سرور دسترسی پیدا کند",
+            "story": "کارمندان بخش مالی گزارش می‌دهند که باز کردن فایل‌ها از سرور فایل اسکا تمام صبح ناموفق بوده است. PC-Finance هیچ پاسخی نمی‌دهد وقتی آن‌ها سعی می‌کنند.",
+            "objective": "ارسال HTTP GET از PC-Finance به File-Server با موفقیت انجام شود.",
+            "hints": [
+                "درخواست را از PC-Finance دنبال کنید: هرگز از Router-Tokyo عبور نمی‌کند، که گزارش می‌دهد جایی برای ارسال بسته ندارد.",
+                "Router-Tokyo برای آدرس مقصد مسیری ندارد چون File-Server در شبکه 10.0.13.0 واقعا نیست که باید در آن باشد.",
+                "در File-Server، پورت 0 را به آدرس 10.0.13.1 با ماسک 255.255.255.0 تنظیم کنید."
+            ],
+            "explanation": "آدرس File-Server خارج از شبکه‌ای بود که Router-Osaka برای آن مسیر اعلان می‌کند، بنابراین Router-Tokyo هیچ مسیری برای رسیدن به آن نداشت. تطبیق آدرس و ماسک سرور با شبکه واقعی‌اش اجازه می‌دهد که مسیرهای استاتیکی موجود به درستی کار کنند."
+        },
+        "fi": {
+            "title": "Rahoitus ei pysty yhteyteen tiedostopalvelimeen",
+            "story": "Rahoitusosaston henkilöstö ilmoittaa, että tiedostojen avaaminen Osaka-tiedostopalvelimelta on epäonnistui koko aamun. PC-Finance ei vastaa lainkaan kun he yrittävät.",
+            "objective": "Lähettää HTTP GET-pyyntö PC-Finance'sta File-Server'ille onnistuneesti.",
+            "hints": [
+                "Jäljitä pyyntö PC-Finance'sta: se ei koskaan pääse Router-Tokyo'n ohi, joka ilmoittaa, ettei sillä ole minnekään lähettää pakettia.",
+                "Router-Tokyo'lla ei ole reittiä kohdeosotteeseen, koska File-Server ei oikeastaan ole 10.0.13.0 aliverkossa, johon sen pitäisi kuulua.",
+                "File-Server'issa aseta portti 0 osoitteeseen 10.0.13.1 maskilla 255.255.255.0."
+            ],
+            "explanation": "File-Server'in osoite oli sen aliverkon ulkopuolella, jolle Router-Osaka julkaisee reititykseen taulukkokirjauksen, joten Router-Tokyo'lla ei ollut polkua siihen. Palvelimen osoitteen ja maskin sovittaminen sen todelliseen aliverkkoon sallii nykyisten staattisten reittien toimia oikein."
+        },
+        "fil": {
+            "title": "Hindi Makaabot ng Finance sa File Server",
+            "story": "Ang mga tauhan sa Finance ay nag-ulat na ang pagbubukas ng mga file sa Osaka file server ay nabigo sa buong umaga. Ang PC-Finance ay walang tugon kahit kailan sinisikap nila.",
+            "objective": "Magsumite ng matagumpay na HTTP GET mula PC-Finance papunta File-Server.",
+            "hints": [
+                "Subaybayan ang kahilingan mula PC-Finance: hindi ito kailanman lampas sa Router-Tokyo, na nag-ulat na wala itong lugar para ipadala ang pakete.",
+                "Walang ruta ang Router-Tokyo para sa destination address dahil ang File-Server ay hindi tunay na nasa 10.0.13.0 subnet kung saan dapat ito.",
+                "Sa File-Server, itakda ang port 0 sa address 10.0.13.1 na may mask 255.255.255.0."
+            ],
+            "explanation": "Ang address ng File-Server ay nasa labas ng subnet na ina-advertise ng Router-Osaka para sa routing, kaya walang landas ang Router-Tokyo upang maabot ito. Ang pagtutugma ng address at mask ng server sa aktwal na subnet nito ay nagbibigay-daan sa mga umiiral na static route na gumana nang tama."
+        },
+        "gl": {
+            "title": "Finance non pode chegar ao servidor de ficheiros",
+            "story": "O persoal de Finanzas informa que abrir ficheiros no servidor de ficheiros de Osaka fallou toda a mañá. PC-Finance non mostra ningunha resposta cando o intentan.",
+            "objective": "Conseguir que un HTTP GET de PC-Finance a File-Server teña éxito.",
+            "hints": [
+                "Rastrexe a solicitude de PC-Finance: nunca vai máis alá de Router-Tokyo, que informa que non ten onde enviar o paquete.",
+                "Router-Tokyo non ten ningunha ruta para o enderezo de destino porque File-Server non está realmente na subrede 10.0.13.0 onde debería estar.",
+                "En File-Server, configure o porto 0 con enderezo 10.0.13.1 e máscara 255.255.255.0."
+            ],
+            "explanation": "O enderezo de File-Server estaba fora da subrede para a que Router-Osaka anuncia unha ruta, polo que Router-Tokyo non tiña un camiño para alcanzalo. Facer coincidir o enderezo e a máscara do servidor coa súa subrede real permite que as rutas estáticas existentes funcionen correctamente."
+        },
+        "gu": {
+            "title": "ફાયનાન્સ ફાઇલ સર્વર સુધી પહોંચી શકતું નથી",
+            "story": "ફાયનાન્સમાં સ્ટાફ જણાવે છે કે ઓસાકા ફાઇલ સર્વર પર ફાઇલો ખોલવાનું આખો સવાર નિષ્ફળ રહ્યું છે. PC-Finance જ્યારે તેમ પ્રયાસ કરે છે ત્યારે કોઈ પ્રતિક્રિયા બતાવતું નથી.",
+            "objective": "PC-Finance થી File-Server સુધી HTTP GET સફળ કરો.",
+            "hints": [
+                "PC-Finance થી વિનંતીને ટ્રેસ કરો: તે Router-Tokyo ને આગળ જતું નથી, જે અહેવાલ આપે છે કે પાસે પોર્ટ 0 પર 10.0.13.1 સાથે માસ્ક 255.255.255.0 સેટ કરો.",
+                "Router-Tokyo પાસે ગંતવ્ય સરનામા માટે કોઈ રુટ નથી કારણ કે File-Server ખરેખર 10.0.13.0 સબનેટમાં નથી જ્યાં તે હોવું જોઈએ.",
+                "File-Server પર, પોર્ટ 0 ને સરનામું 10.0.13.1 અને માસ્ક 255.255.255.0 સાથે કોન્ફિગર કરો."
+            ],
+            "explanation": "File-Server નો સરનામું તે સબનેટની બહાર હતું જે Router-Osaka રુટ માટે જાહેર કરે છે, તેથી Router-Tokyo પાસે તેને પહોંચવાનો કોઈ રસ્તો નહોતો. સર્વરનાં સરનામું અને માસ્કને તેના વાસ્તવિક સબનેટ સાથે મેળવવું હાલના સ્ટેટિક રુટ્સને યોગ્ય રીતે કાર્ય કરવા દે છે."
+        },
+        "he": {
+            "title": "הכספים לא יכולים להגיע לשרת הקבצים",
+            "story": "הצוות בכספים מדווח כי פתיחת קבצים בשרת הקבצים של אוסקה נכשלה כל הבוקר. PC-Finance לא מראה שום תגובה כשהם מנסים.",
+            "objective": "הפוך HTTP GET מ-PC-Finance ל-File-Server להצליח.",
+            "hints": [
+                "עקוב אחר הבקשה מ-PC-Finance: היא לעולם לא חוצה את Router-Tokyo, המדווח שאין לו לאן לשלוח את החבילה.",
+                "Router-Tokyo אין לו מסלול לכתובת היעד כי File-Server אינו ממוצא בתת-הרשת 10.0.13.0 שלה היה צריך להיות.",
+                "ב-File-Server, הגדר את היציאה 0 לכתובת 10.0.13.1 עם מסכה 255.255.255.0."
+            ],
+            "explanation": "כתובת ה-File-Server הייתה מחוץ לתת-הרשת שעבורה Router-Osaka מודיע מסלול, לכן Router-Tokyo לא הייתה לו דרך להגיע אליה. התאמת כתובת ומסכה של השרת לתת-הרשת האמיתית שלו מאפשרת למסלולים סטטיים קיימים לעבוד כראוי."
+        },
+        "hr": {
+            "title": "Financije ne mogu dosegnuti datotečni server",
+            "story": "Osoblje iz Financija izvještava da otvaranje datoteka na osakcskom datotečnom serveru nije uspjelo cijelo jutro. PC-Finance ne pokazuje nikakav odgovor kada pokušavaju.",
+            "objective": "Uspješna HTTP GET zahtjev od PC-Finance do File-Server.",
+            "hints": [
+                "Pratite zahtjev od PC-Finance: nikada ne ide dalje od Router-Tokyo, koji izvještava da nema kamo poslati paket.",
+                "Router-Tokyo nema rutu za odredišnu adresu jer File-Server zapravo nije u podsitemi 10.0.13.0 gdje bi trebao biti.",
+                "Na File-Server, postavite port 0 na adresu 10.0.13.1 s maskom 255.255.255.0."
+            ],
+            "explanation": "Adresa File-Server bila je izvan podsiteme za koju Router-Osaka oglašava rutu, zato Router-Tokyo nije imao putanju da je dosegne. Usklađivanjem adrese i maske servera s njegovom stvarnom podsitemi omogućite da postojeće statičke rute funkcioniraju ispravno."
+        },
+        "hu": {
+            "title": "A Pénzügyi nem tudja elérni a fájlkiszolgálót",
+            "story": "A Pénzügyi személyzete jelenti, hogy az Osaka fájlkiszolgálón lévő fájlok megnyitása egész reggel meghiúsult. A PC-Finance semmilyen válaszra sem reagál, amikor megpróbálnak.",
+            "objective": "Sikeres HTTP GET készítése a PC-Finance-ből a File-Server felé.",
+            "hints": [
+                "Nyomozza végig a kérést a PC-Finance-ből: soha nem jutja túl a Router-Tokyo-t, amely azt jelenti, hogy nincs hova küldenie a csomagnak.",
+                "Router-Tokyo nem rendelkezik az cél-címhez vezető útvonallal, mivel a File-Server valójában nem a 10.0.13.0 alhálózaton van, ahol kellene lennie.",
+                "A File-Server-en állítsa az 0-ás portot a 10.0.13.1 címre 255.255.255.0 maszkkal."
+            ],
+            "explanation": "A File-Server címe azon az alhálózaton kívül volt, amelyhez a Router-Osaka útvonalat hirdet, ezért a Router-Tokyo nem tudott rá vezető utat találni. A kiszolgáló címének és maszkjának a valós alhálózatához igazítása lehetővé teszi a meglévő statikus útvonalak helyes működését."
+        },
+        "hy": {
+            "title": "Ֆինանսը չի կարողանում մուտք գործել ֆայլերի սերվեր",
+            "story": "Ֆինանսական բաժնի աշխատողները հայտնում են, որ Osaka-ի ֆայլերի սերվերից ֆայլեր բացելը ամբողջ առավոտ ձախողվել է: PC-Finance-ը ընդհանրապես պատասխան չի տալիս, երբ նրանք փորձում են:",
+            "objective": "Հաջողեցնել HTTP GET հարցումը PC-Finance-ից դեպի File-Server:",
+            "hints": [
+                "Հետևեք հարցմանը PC-Finance-ից. այն երբեք չի անցնում Router-Tokyo-ից, որը հայտնում է, որ այն չգիտի, որտեղ ուղարկել փաթեթը:",
+                "Router-Tokyo-ն չունի երթուղ նպատակակետ հասցեի համար, քանի որ File-Server-ը իրականում ընկած չէ 10.0.13.0 ենթացանցում, որտեղ պետք է լինի:",
+                "File-Server-ի վրա հանգեցրեք պորտ 0-ը 10.0.13.1 հասցեի վրա և 255.255.255.0 դիմակով:"
+            ],
+            "explanation": "File-Server-ի հասցեն находился դրսում ենթացանցից, որի համար Router-Osaka երթուղ է գովազդում, այդ իսկ պատճառով Router-Tokyo-ն չուներ ուղի այն հասնելու համար: Սերվերի հասցեն և դիմակը իր իսկական ենթացանցին համապատասխանեցնելով, գոյություն ունեցող ստատիկ երթուղիները ճիշտ կերպով գործում են:"
+        },
+        "is": {
+            "title": "Fjármál geta ekki náð File-Server",
+            "story": "Starfsmenn fjármáladeild tilkynna að það hefur ekki gengið að opna skrár á File-Server í Osaka allt morguninn. PC-Finance svarar alls ekki þegar þeir reyna.",
+            "objective": "Gera HTTP GET beiðni frá PC-Finance til File-Server sem gangi vel.",
+            "hints": [
+                "Rekjaðu beiðnina frá PC-Finance: hún fer aldrei fram úr Router-Tokyo, sem tilkynnir að hún viti ekki hvert á að senda pakkann.",
+                "Router-Tokyo hefur enga leið fyrir alaleið vegna þess að File-Server situr ekki í 10.0.13.0 neti eins og hann ætti að vera.",
+                "Á File-Server skal stilla tengju 0 á heimilisfang 10.0.13.1 með mösku 255.255.255.0."
+            ],
+            "explanation": "Heimilisfang File-Server-s var utan netsins sem Router-Osaka auglýsir leið fyrir, svo Router-Tokyo átti enga leið til að ná til hennar. Ef heimilisfang og maska netþjónsins passa við sitt raunverulega net, virka núverandi kyrrstæðar leiðir á réttan hátt."
+        },
+        "ka": {
+            "title": "ფინანსი ვერ აკავშირდება File-Server-ს",
+            "story": "ფინანსის განყოფილების თანამშრომლებმა აცნობეს, რომ ოსაკაში File-Server-ში ფайლების გახსნა მთელი დილის განმავლობაში ვერ მოხერხდა. PC-Finance აბსოლუტურად არ პასუხობს, როდესაც ისინი ცდილობენ.",
+            "objective": "შესაძლებელი გახადე HTTP GET მოთხოვნა PC-Finance-იდან File-Server-ზე.",
+            "hints": [
+                "გაიხილე მოთხოვნა PC-Finance-იდან: იგი მხოლოდ Router-Tokyo-თან ჩერდება, რომელიც აცხადებს, რომ პაკეტი არ იცის სად გაუზიოს.",
+                "Router-Tokyo-ს არ აქვს მარშრუტი დანიშნულების მისამართისთვის, რადგან File-Server სინამდვილეში არ იმყოფება 10.0.13.0 ქსელში, სადაც უნდა იყოს.",
+                "File-Server-ზე დააყენე პორტი 0 მისამართით 10.0.13.1 და ნიღაბით 255.255.255.0."
+            ],
+            "explanation": "File-Server-ის მისამართი ჰქონდა დოდებული ქსელის გარეთ, რომელი მარშრუტს აცხადებს Router-Osaka, ამიტომ Router-Tokyo-ს არ ჰქონდა გზა მას მიღწევისთვის. სერვერის მისამართი და ნიღაბი მის რეალური ქსელთან შეთავსებით, არსებული სტატიკური მარშრუტები სწორად მუშაობენ."
+        },
+        "kk": {
+            "title": "Қаржы File-Server-ге қол жеткізе алмады",
+            "story": "Қаржы бөлімінің қызметшілері Osaka-дағы File-Server-ден файлды ашу сәттілігінің барлық таңғы сәтсіз болғанын хабарлайды. PC-Finance онда тартады деп аталғанда ешқандай жауап бермейді.",
+            "objective": "PC-Finance-тен File-Server-ге HTTP GET сұрауын табысты жасау.",
+            "hints": [
+                "PC-Finance-тен сұраудың жолын ізде: ол Router-Tokyo-ны ешқашан танымаса құрылмады, ол пакетті қайда жіберу керектігін білмейді деп хабарлайды.",
+                "Router-Tokyo-ның мұрағат мекенжайының бағыттау маршруты жоқ, себебі File-Server шын мәнінде 10.0.13.0 ішінде болуы керек болатын ұлы желісінде емес.",
+                "File-Server-де 0 портын 10.0.13.1 мекенжайымен және 255.255.255.0 маскасымен орнатыңыз."
+            ],
+            "explanation": "File-Server мекенжайы Router-Osaka ешегетіп жатқан маршруттың сыртында болды, сондықтан Router-Tokyo-ның оған жету жолы болмады. Серверінің мекенжайын және маскасын оның нақты ұлы желісімен сәйкестендіру арқылы ағымды статистикалық маршруттар дұрыс жұмыс істейді."
+        },
+        "km": {
+            "title": "ផ្នែកហិរញ្ញវត្ថុមិនអាចឈានដល់ File-Server",
+            "story": "បុគ្គលិកផ្នែកហិរញ្ញវត្ថុរាយការណ៍ថា ការបើកឯកសារលើម៉ាស៊ីនបម្រើឯកសារ Osaka មិនបានជោគជ័យពេញមួយព្រឹក។ PC-Finance មិនឆ្លើយឡើយ នៅពេលដែលពួកគេព្យាយាម។",
+            "objective": "ធានាថាដំណើរការ HTTP GET ពី PC-Finance ទៅ File-Server ដោះស្រាយបាន។",
+            "hints": [
+                "ដោះស្រាយលម្អិតសំណើពី PC-Finance៖ វាមិនដែលឆ្លងកាត់ Router-Tokyo ឡើយ ដែលរាយការណ៍ថាវាមិនដឹងថាត្រូវផ្ញើកញ្ចប់នៅឯណា។",
+                "Router-Tokyo មិនមាន ការនាំផ្លូវ សម្រាប់អាសយដ្ឋានលម្អិត ព្រោះថា File-Server មិនបានស្ថិតក្នុងបណ្ដាញ 10.0.13.0 ដែលវាគួរតែ។",
+                "នៅលើ File-Server ដាក់ ច្រក 0 ទៅលើអាសយដ្ឋាន 10.0.13.1 ដោយប្រើនម័ល 255.255.255.0។"
+            ],
+            "explanation": "អាសយដ្ឋាននៃ File-Server ស្ថិតក្រៅបណ្ដាញដែល Router-Osaka ផ្សាយលម្អិត ការនាំផ្លូវ ដូច្នេះ Router-Tokyo មិនមាន ផ្លូវ ដែលអាចឈានដល់វាបាន។ ដោយផ្គូផ្គង អាសយដ្ឋាននិងនម័ល របស់ម៉ាស៊ីនបម្រើទៅបណ្ដាញពិតប្រាកដរបស់វា លទ្ធផល ត្រូវដែនកំណត់ឋិតិវន្ត ដែលមាននៅ ដំណើរការត្រឹមត្រូវ។"
+        },
+        "kn": {
+            "title": "ಫಿನಾನ್ಸ್ ಫೈಲ್ ಸರ್ವರ್ ತಕ್ಕೆ ತಲುಪಲು ವಿಫಲ",
+            "story": "ಫಿನಾನ್ಸ್ ವಿಭಾಗದ ಸಿಬ್ಬಂದಿ ಓಸಾಕಾ ಫೈಲ್ ಸರ್ವರ್‌ನಲ್ಲಿ ಫೈಲ್‌ಗಳನ್ನು ತೆರೆಯುವುದು ಸಂಪೂರ್ಣ ಬೆಳಿಗ್ಗೆ ವಿಫಲವಾಗಿದೆ ಎಂದು ವರದಿ ಮಾಡುತ್ತಾರೆ. PC-Finance ಪ್ರಯತ್ನ ಮಾಡಿದಾಗ ಯಾವುದೇ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ತೋರಿಸುತ್ತಿಲ್ಲ.",
+            "objective": "PC-Finance ನಿಂದ File-Server ಗೆ HTTP GET ಸಾಫಲ್ಯಕರವಾಗಿ ಸಮೆತ್ತುವುದನ್ನು ಪಡೆಯಿರಿ.",
+            "hints": [
+                "PC-Finance ನಿಂದ ವಿನಂತಿಯನ್ನು ಟ್ರೇಸ್ ಮಾಡಿ: ಇದು Router-Tokyo ಅನ್ನು ಅತಿಕ್ರಮಿಸುತ್ತದೆ, ಇದು ಪ್ಯಾಕೆಟ್‌ಅನ್ನು ಎಲ್ಲಿಗೆ ಕಳುಹಿಸಬೇಕೆಂದು ತಿಳಿದಿಲ್ಲ ಎಂದು ವರದಿ ಮಾಡುತ್ತದೆ.",
+                "Router-Tokyo ಗಮ್ಯ ವಿಳಾಸಕ್ಕೆ ಯಾವುದೇ ರೂಟ್ ಹೊಂದಿಲ್ಲ ಏಕೆಂದರೆ File-Server ಅನ್ನು ನಿಜವಾಗಿಯೂ 10.0.13.0 ಸಬ್‌ನೆಟ್‌ನಲ್ಲಿ ಇರಲಿಲ್ಲ.",
+                "File-Server ನಲ್ಲಿ, ಪೋರ್ಟ್ 0 ಅನ್ನು ವಿಳಾಸ 10.0.13.1 ಮೂಲಕ ಮಾಸ್ಕ್ 255.255.255.0 ಯೊಂದಿಗೆ ಹೊಂದಿಸಿ."
+            ],
+            "explanation": "File-Server ನ ವಿಳಾಸವು Router-Osaka ಪ್ರಸ್ತಾಪಿಸುವ ರೂಟ್‌ನ ಹೊರಗಿತ್ತು, ಆದ್ದರಿಂದ Router-Tokyo ಅದನ್ನು ತಲುಪಲು ಮಾರ್ಗವನ್ನು ಹೊಂದಿರಲಿಲ್ಲ. ಸರ್ವರ್‌ನ ವಿಳಾಸ ಮತ್ತು ಮಾಸ್ಕ್ ಅನ್ನು ಅದರ ನಿಜವಾದ ಸಬ್‌ನೆಟ್‌ಗೆ ಹೊಂದಿಸುವುದರಿಂದ ಹೆಚ್ಚಲೇಬೇಕಾದ ಸ್ಥಾಯಿ ಮಾರ್ಗಗಳು ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತವೆ."
+        },
+        "ky": {
+            "title": "Finance сервер тиркөөгө жетпей жатат",
+            "story": "Finance бөлүмү өндүрүшкү файлдарын Osaka сервере ачуу ийндүүнүн жок деп айтып жатышат. PC-Finance каалаганда жок деп жооп берет.",
+            "objective": "PC-Finance ден File-Server ге HTTP GET ийгүүлүүгө жеткиргиле.",
+            "hints": [
+                "PC-Finance ден сурома сыз: ал эч качан Router-Tokyo ды өтпөйт, анын пакетти жеберер жери жок деп айтып жатат.",
+                "Router-Tokyo ар кандай маршруту жок, анткени File-Server чынында 10.0.13.0 подсетте жок.",
+                "File-Server де, порт 0 нын адреси 10.0.13.1 маска 255.255.255.0 менен орнотуңуз."
+            ],
+            "explanation": "File-Server адреси Router-Osaka маршруту сунуштаган диапазондун сыртында болгон, ошондуктан Router-Tokyo ага барар жолу жок болгон. Серверди туура адресте жана маска менен коёо эле курч маршруттарды туура иштетет."
+        },
+        "lo": {
+            "title": "Finance ບໍ່ສາມາດເຂົ້າຫາ File Server",
+            "story": "ພະນັກງານ Finance ລາຍງານວ່າການເປີດໄຟລ໌ໃນ Osaka file server ລົ້ມເຫຼວຕະຫຼອດເຊົ້າ. PC-Finance ບໍ່ສະແດງຄໍາຕອບເລີຍເມື່ອພວກເຂົາພະຍາຍາມ.",
+            "objective": "ເຮັດໃຫ້ HTTP GET ຈາກ PC-Finance ໄປຫາ File-Server ປະສົບຜົນສຳເລັດ.",
+            "hints": [
+                "ກວດຫາ ຄໍາຂໍຈາກ PC-Finance: ມັນບໍ່ເຄີຍເກີນ Router-Tokyo ກວ່າ ເຊິ່ງລາຍງານວ່າບໍ່ມີບ່ອນສໍາລັບສົ່ງ ແພັກເກັດ.",
+                "Router-Tokyo ບໍ່ມີເສັ້ນທາງໄປຍັງທີ່ຢຸ່ມ ແທ້ຈິງແລ້ວ File-Server ບໍ່ໄດ້ຢູ່ໃນເຄືອຂ່າຍ 10.0.13.0 ທີ່ມັນຄວນເປັນ.",
+                "ເທິງ File-Server, ກໍານົດ port 0 ກັບທີ່ຢຸ່ມ 10.0.13.1 ດ້ວຍ mask 255.255.255.0."
+            ],
+            "explanation": "ທີ່ຢຸ່ມຂອງ File-Server ຢູ່ນອກເຄືອຂ່າຍທີ່ Router-Osaka ໄດ້ໂຄສະນາເສັ້ນທາງ, ດັ່ງນັ້ນ Router-Tokyo ຈຶ່ງບໍ່ມີເສັ້ນທາງທີ່ຈະໄປຫາມັນ. ການທໍາໃຫ້ທີ່ຢຸ່ມແລະ mask ຂອງ server ກົງກັບເຄືອຂ່າຍທີ່ແທ້ຈິງຂອງມັນ, ເສັ້ນທາງທີ່ກໍານົດໄວ້ຊ້ຳຈະເຮັດວຽກໄດ້ຖືກຕ້ອງ."
+        },
+        "lt": {
+            "title": "Finansai negali pasiekti failų serverio",
+            "story": "Finansų skyriaus darbuotojai praneša, kad failų atidarymas Osaka failų serveryje nepavyko visą rytą. PC-Finance šiaip neatsakyti, kai jie bandydavo.",
+            "objective": "Padarykite, kad HTTP GET iš PC-Finance į File-Server pavyktų.",
+            "hints": [
+                "Sekite užklausą iš PC-Finance: ji niekada nepraeina Router-Tokyo, kuris praneša, kad nežino, kur siųsti paketą.",
+                "Router-Tokyo neturi maršruto paskirties adresui, nes File-Server iš tikrųjų nėra 10.0.13.0 tinkle, kuriame jis turėtų būti.",
+                "File-Server nustatykite portą 0 prie adreso 10.0.13.1 su kaukė 255.255.255.0."
+            ],
+            "explanation": "File-Server adresas buvo už tinklo, kurio maršrutą skelbia Router-Osaka, ribų, todėl Router-Tokyo neturėjo kelio jo pasiekti. Suderinus serverio adresą ir kaukę su jo tikruoju tinklu, esami statiniai maršrutai pradeda veikti teisingai."
+        },
+        "lv": {
+            "title": "Finanses nevar sasniegt failu serveri",
+            "story": "Finansu departamenta darbinieki ziņo, ka failu atversana Osaka failu serverī visu riitu ir bijusi nesekmiga. PC-Finance vispār nereagē, kad viņi mēģina.",
+            "objective": "Panāc, lai HTTP GET no PC-Finance uz File-Server izdotos.",
+            "hints": [
+                "Izsekojiet pieprasijumu no PC-Finance: tas nekad nepāriet Router-Tokyo, kurs ziņo, ka tam nav vietas, kur sūtit paketi.",
+                "Router-Tokyo nav maršruta galamērķa adresei, jo File-Server faktiski neatrodas 10.0.13.0 apakstinklā, kuram tam būtu jāpieder.",
+                "File-Server iestatiet portu 0 uz adresi 10.0.13.1 ar masku 255.255.255.0."
+            ],
+            "explanation": "File-Server adrese bija ārpus tīkla, kuram Router-Osaka sludina maršrutu, tāpēc Router-Tokyo nevarēja to sasniegt. Salāgojot servera adresi un masku ar tā patieso apakstīklu, esošie statiskaie maršruti sāk darboties pareizi."
+        },
+        "mk": {
+            "title": "Finance не може да достигне до File Server",
+            "story": "Персоналот од Finance пријавува дека отворањето на датотеки на Osaka file server не успеа целиот здравин. PC-Finance не прикажува никаков одговор кога се обидуваат.",
+            "objective": "Направи HTTP GET од PC-Finance до File-Server да успее.",
+            "hints": [
+                "Пронајди го пакетот од PC-Finance: никогаш не поминува Router-Tokyo, кој пријавува дека нема каде да го испрати.",
+                "Router-Tokyo нема рута за одредишната адреса бидејќи File-Server всушност не се наоѓа во поднежата 10.0.13.0 каде што треба да припаѓа.",
+                "На File-Server, постави порта 0 на адреса 10.0.13.1 со Маска 255.255.255.0."
+            ],
+            "explanation": "Адресата на File-Server била надвор од поднежата за која Router-Osaka рекламира рута, па Router-Tokyo немаше патека да ја достигне. Усклађувањето на адресата и маската на серверот со неговата вистинска поднежа ги прави постојните статички рути да функционираат правилно."
+        },
+        "ml": {
+            "title": "Finance ഫയൽ സെർവറിലേക്ക് എത്താൻ കഴിയുന്നില്ല",
+            "story": "Finance വിഭാഗത്തിലെ സ്റ്റാഫ് Osaka ഫയൽ സെർവറിലെ ഫയലുകൾ തുറക്കുന്നത് നാളെല്ലാം പരാജയപ്പെട്ടതായി വിവരിക്കുന്നു. PC-Finance ശ്രമിക്കുമ്പോൾ യാതൊരു പ്രതികരണവും കാണിക്കുന്നില്ല.",
+            "objective": "PC-Finance മുതൽ File-Server വരെയുള്ള HTTP GET വിജയിക്കാൻ ഉണ്ടാക്കുക.",
+            "hints": [
+                "PC-Finance മുതൽ അഭ്യർത്ഥന പിന്തുടരുക: ഇത് Router-Tokyo കടന്ന് പോകുന്നില്ല, അത് പാക്കറ്റ് അയയ്ക്കാൻ എവിടെയും ഇല്ലെന്ന് റിപ്പോർട്ട് ചെയ്യുന്നു.",
+                "Router-Tokyo ന് ലക്ഷ്യ വിലാസത്തിന് ഒരു മാർഗ്ഗവുമില്ല കാരണം File-Server യഥാർത്ഥത്തിൽ 10.0.13.0 സബ്നെറ്റിലല്ല.",
+                "File-Server ൽ, പോർട്ട് 0 നെ 10.0.13.1 വിലാസത്തിലും മാസ്ക് 255.255.255.0 ഉപയോഗിച്ച് സജ്ജമാക്കുക."
+            ],
+            "explanation": "File-Server ന്റെ വിലാസ Router-Osaka പ്രാധാന്യത്തോടെ പ്രഖ്യാപിക്കുന്ന റൂട്ടിന്റെ പരിധിക്കു പുറത്താണ്, അതിനാൽ Router-Tokyo ന് അതിലേക്ക് എത്താനുള്ള പാത ഇല്ലായിരുന്നു. സെർവറിന്റെ വിലാസവും മാസ്കും അതിന്റെ യഥാർത്ഥ സബ്നെറ്റുമായി പൊരുത്തപ്പെടുത്തുന്നത് നിലവിലുള്ള സ്റ്റാറ്റിക് റൂട്ടുകൾ ശരിയായി പ്രവർത്തിക്കാൻ അനുവദിക്കുന്നു."
+        },
+        "mn": {
+            "title": "Finance File-Server-т холбогдож чадахгүй",
+            "story": "Finance хэсгийн ажилтнууд Osaka file server-ийн файлуудыг нээхэд өглөөдөр бүхэлдээ сүтэл болсон гэж мэдээлэв. PC-Finance оролдоход ямар нэг хариу үзүүлэхгүй байна.",
+            "objective": "PC-Finance-ээс File-Server-т хүрэх HTTP GET амжилттай болгох.",
+            "hints": [
+                "PC-Finance-ээс хүсэлтийг дөрөвлүүлэх: энэ нь Router-Tokyo-г хэзээ ч давж чадахгүй бөгөөд пакетыг илгээх үл юм гэж мэдээлэв.",
+                "Router-Tokyo-д хүлээн авагч сүлжээний аршив байхгүй учир нь File-Server үнэндээ байх ёстой 10.0.13.0 сабсүлжээнд байхгүй.",
+                "File-Server-т 0 портыг 10.0.13.1 хаяг ба маск 255.255.255.0-ээр сонгох."
+            ],
+            "explanation": "File-Server-ийн хаяг Router-Osaka сунгаж буй маршрутын гадна байсан тул Router-Tokyo-т түүнд хүрэх замгүй байв. Сервер хаягыг маск болон түүний бодит сабсүлжээтэй таарах нь одоо байгаа статик маршрутуудыг зөв ажиллуулах боломж өгнө."
+        },
+        "mr": {
+            "title": "Finance ला File Server पर्यंत पोहोचू शकत नाही",
+            "story": "Finance मधील कर्मचारी अहवाल देतात की Osaka फाइल सर्व्हरवरील फाइलं उघडणे संपूर्ण सकाळ अयशस्वी झाली. PC-Finance जेव्हा प्रयत्न करतात तेव्हा कोणताही प्रतिसाद दाखवत नाही.",
+            "objective": "PC-Finance ते File-Server पर्यंत HTTP GET यशस्वी करा.",
+            "hints": [
+                "PC-Finance पासून विनंती ट्रेस करा: ती Router-Tokyo पेक्षा पुढे कधीही जात नाही, जो पाकेट कोठे पाठवायचे हे आहे असे अहवाल देतो.",
+                "Router-Tokyo कडे गंतव्य पत्त्यासाठी कोणताही मार्ग नाही कारण File-Server प्रत्यक्षात 10.0.13.0 सबनेटमध्ये नाही.",
+                "File-Server वर, पोर्ट 0 ला 10.0.13.1 पत्त्यावर मास्क 255.255.255.0 सेट करा."
+            ],
+            "explanation": "File-Server चा पता Router-Osaka ने जाहिर केलेल्या मार्गाच्या बाहेर होता, म्हणून Router-Tokyo कडे त्यापर्यंत पोहोचण्याचा मार्ग नव्हता. सर्व्हरचे पते आणि मास्क त्याच्या खरे सबनेटशी जुळवून देणे विद्यमान स्टॅटिक मार्ग योग्यरित्या कार्य करू देते."
+        },
+        "ms": {
+            "title": "Finance Tidak Boleh Mencapai File Server",
+            "story": "Staf di Finance melaporkan bahawa pembukaan fail di pelayan fail Osaka telah gagal sepanjang pagi. PC-Finance tidak menunjukkan sebarang respons ketika mereka cuba.",
+            "objective": "Buat HTTP GET daripada PC-Finance ke File-Server berjaya.",
+            "hints": [
+                "Jejak permintaan daripada PC-Finance: ia tidak pernah melepasi Router-Tokyo, yang melaporkan ia tidak mempunyai tempat untuk menghantar paket.",
+                "Router-Tokyo tidak mempunyai laluan untuk alamat destinasi kerana File-Server sebenarnya tidak berada dalam rangkaian kecil 10.0.13.0 yang sepatutnya.",
+                "Pada File-Server, tetapkan port 0 ke alamat 10.0.13.1 dengan topeng 255.255.255.0."
+            ],
+            "explanation": "Alamat File-Server berada di luar rangkaian kecil yang Router-Osaka mengiklankan laluan, jadi Router-Tokyo tidak mempunyai jalan untuk mencapainya. Memadankan alamat dan topeng pelayan ke rangkaian kecil sebenarnya membolehkan laluan statik yang ada berfungsi dengan betul."
+        },
+        "ne": {
+            "title": "Finance File-Server तक पहुँच्न सकदैन",
+            "story": "Finance मा काम गर्ने कर्मचारीहरुले Osaka मा भएको File-Server मा फाइलहरु खोल्न सकेका छैनन्। PC-Finance कहिल्यै जवाफ दिदैन।",
+            "objective": "PC-Finance बाट File-Server को लागि HTTP GET सफल गर्नुहोस्।",
+            "hints": [
+                "PC-Finance बाट अनुरोध ट्रेस गर्नुहोस्: यो Router-Tokyo भन्दा आगे कहिल्यै जादैन, जसले भन्छ कि यसको पठाउन को ठाँउ छैन।",
+                "Router-Tokyo को लागि गन्तव्य ठेगानाको लागि कुनै मार्ग छैन किनकि File-Server 10.0.13.0 subnet मा छैन।",
+                "File-Server मा, port 0 को लागि ठेगाना 10.0.13.1 र मास्क 255.255.255.0 सेट गर्नुहोस्।"
+            ],
+            "explanation": "File-Server को ठेगाना Router-Osaka ले विज्ञापन गरेको subnet बाहिर थियो, त्यसैले Router-Tokyo को कोनो मार्ग थिएन। सर्भरको ठेगाना र मास्कलाई यसको वास्तविक subnet सँग मिलाउँदा मौजूदा स्थिर मार्गहरु सही ढङ्गले काम गर्दछन्।"
+        },
+        "nl": {
+            "title": "Finance kan File-Server niet bereiken",
+            "story": "Medewerkers van Finance kunnen bestanden op de Osaka File-Server niet meer openen. PC-Finance geeft helemaal geen respons wanneer ze proberen verbinding te maken.",
+            "objective": "Een HTTP GET van PC-Finance naar File-Server moet slagen.",
+            "hints": [
+                "Traceer het verzoek van PC-Finance: het gaat nooit verder dan Router-Tokyo, die zegt dat het geen bestemming voor het pakket heeft.",
+                "Router-Tokyo heeft geen route voor het doeladres omdat File-Server niet in het subnet 10.0.13.0 zit waar het zou moeten.",
+                "Stel op File-Server port 0 in op adres 10.0.13.1 met Masker 255.255.255.0."
+            ],
+            "explanation": "Het adres van File-Server lag buiten het subnet waarvoor Router-Osaka een route adverteert, dus Router-Tokyo had geen pad om het te bereiken. Door het adres en masker van de server op het juiste subnet in te stellen, werken de bestaande statische routes correct."
+        },
+        "no": {
+            "title": "Finance kan ikke nå File-Server",
+            "story": "Ansatte i Finance rapporterer at de ikke har fått åpnet filer på File-Server i Osaka hele formiddagen. PC-Finance gir ingen respons når de forsøker.",
+            "objective": "Få en HTTP GET fra PC-Finance til File-Server til å lykkes.",
+            "hints": [
+                "Spor forespørselen fra PC-Finance: den kommer aldri forbi Router-Tokyo, som sier at den har ingen rute for pakken.",
+                "Router-Tokyo har ingen rute for måladressen fordi File-Server ikke ligger i subnet 10.0.13.0 som den burde.",
+                "På File-Server setter du port 0 til adresse 10.0.13.1 med Maske 255.255.255.0."
+            ],
+            "explanation": "File-Servers adresse lå utenfor subnettet som Router-Osaka annonserer en rute for, så Router-Tokyo hadde ingen vei til å nå det. Når du får serverens adresse og maske til å passe med det riktige subnettet, fungerer de eksisterende statiske rutene korrekt."
+        },
+        "or": {
+            "title": "Finance File-Server ତକ ପହଂଚିପାରନ୍ତି ନାହିଁ",
+            "story": "Finance ବିଭାଗର କର୍ମଚାରୀମାନେ ରିପୋର୍ଟ କରୁଛନ୍ତି ଯେ Osaka ର ଫାଇଲ ସର୍ଭର ରେ ଫାଇଲ ଖୋଲିବା ସମୁଦାୟ ସକାଳ ବିଫଳ ହୋଇଛି। PC-Finance ତୃଣ ରେସପନ୍ସ ଦେଖାଯାଇ ନାହିଁ।",
+            "objective": "PC-Finance ରୁ File-Server ରେ HTTP GET ସଫଳ କରନ୍ତୁ।",
+            "hints": [
+                "PC-Finance ରୁ ଅନୁରୋଧ ଟ୍ରେସ କରନ୍ତୁ: ଏହା Router-Tokyo ରୁ ଆଗକୁ ନିକଟେ ଯାଇନି, ଯାହା ରିପୋର୍ଟ କରେ ଯେ ଏହାର ପ୍ୟାକେଟ ପଠାଇବାର ଠାଉ ନାହିଁ।",
+                "Router-Tokyo ରେ ଗନ୍ତବ୍ୟ ଠିକଣାର ନେକଟ ହପ୍ ନାହିଁ କାରଣ File-Server ପ୍ରକୃତରେ 10.0.13.0 ସବନେଟ ରେ ନାହିଁ।",
+                "File-Server ରେ, ପୋର୍ଟ 0 କୁ ଠିକଣା 10.0.13.1 ଏବଂ ମାସ୍କ 255.255.255.0 ସହିତ ସେଟ କରନ୍ତୁ।"
+            ],
+            "explanation": "File-Server ର ଠିକଣା Router-Osaka ଦ୍ୱାରା ବିଜ୍ଞାପିତ ସବନେଟ ବାହାରେ ଥିଲା, ତେଣୁ Router-Tokyo ରେ ଏହାକୁ ପହଂଚିବା ପାଇଁ କୌଣସି ରାସ୍ତା ନଥିଲା। ସର୍ଭରର ଠିକଣା ଏବଂ ମାସ୍କକୁ ଏହାର ବାସ୍ତବ ସବନେଟ ସହ ମେଳାଇବା ଦ୍ୱାରା, ବିଦ୍ୟମାନ ସ୍ଥିର ମାର୍ଗଗୁଡିକ ସଠିକ ଭାବରେ କାମ କରେ।"
+        },
+        "pa": {
+            "title": "Finance File-Server تک رسائی نہیں کر سکتا",
+            "story": "Finance میں کارمند رپورٹ کر رہے ہیں کہ Osaka فائل سرور پر فائلیں کھولنا پوری صبح ناکام ہو گیا ہے۔ جب وہ کوشش کرتے ہیں تو PC-Finance کوئی جواب نہیں دیتا۔",
+            "objective": "PC-Finance سے File-Server تک HTTP GET کو کامیاب بنائیں۔",
+            "hints": [
+                "PC-Finance سے درخواست کو ٹریس کریں: یہ Router-Tokyo سے آگے نہیں جاتی، جو رپورٹ کرتا ہے کہ اس کے پاس پیکٹ بھیجنے کے لیے کوئی راستہ نہیں ہے۔",
+                "Router-Tokyo کے پاس منزل کے پتے کے لیے کوئی راستہ نہیں ہے کیونکہ File-Server درحقیقت 10.0.13.0 سبنیٹ میں نہیں ہے جہاں اسے ہونا چاہیے۔",
+                "File-Server پر، پورٹ 0 کو ایڈریس 10.0.13.1 کے ساتھ ماسک 255.255.255.0 پر سیٹ کریں۔"
+            ],
+            "explanation": "File-Server کا پتہ اس سبنیٹ سے باہر تھا جس کے لیے Router-Osaka ایک راستہ تشہیر کرتا ہے، اس لیے Router-Tokyo کے پاس اس تک پہنچنے کا کوئی راستہ نہیں تھا۔ سرور کے پتے اور ماسک کو اس کی حقیقی سبنیٹ سے ملا کر موجودہ جامد راستے صحیح طریقے سے کام کرتے ہیں۔"
+        },
+        "pl": {
+            "title": "Finance nie może dotrzeć do File-Server",
+            "story": "Pracownicy z Finansów zgłaszają, że otwieranie plików na serwerze plików w Osace nie powiedzie się przez całe rano. PC-Finance w ogóle nie odpowiada, gdy spróbują.",
+            "objective": "Uzyskaj pomyślne HTTP GET z PC-Finance do File-Server.",
+            "hints": [
+                "Śledź żądanie z PC-Finance: nigdy nie przechodzi poza Router-Tokyo, który zgłasza, że nie ma dokąd wysłać pakiet.",
+                "Router-Tokyo nie ma trasy dla adresu docelowego, ponieważ File-Server w rzeczywistości nie znajduje się w sieci 10.0.13.0, do której powinien należeć.",
+                "Na File-Server ustaw port 0 na adres 10.0.13.1 z maską 255.255.255.0."
+            ],
+            "explanation": "Adres File-Server znajdował się poza podsiecią, dla której Router-Osaka ogłasza trasę, więc Router-Tokyo nie miał ścieżki, aby do niego dotrzeć. Dopasowanie adresu i maski serwera do jego rzeczywistej sieci pozwala istniejącym trasą statycznym pracować prawidłowo."
+        },
+        "pt-PT": {
+            "title": "Finance não consegue alcançar File-Server",
+            "story": "O pessoal de Finanças reporta que abrir ficheiros no servidor de ficheiros de Osaka falhou a manhã toda. PC-Finance não responde de forma alguma quando tentam.",
+            "objective": "Obtenha um HTTP GET bem-sucedido de PC-Finance para File-Server.",
+            "hints": [
+                "Rastreie o pedido de PC-Finance: nunca passa Router-Tokyo, que relata não ter para onde enviar o pacote.",
+                "Router-Tokyo não tem rota para o endereço de destino porque File-Server não está realmente na subnet 10.0.13.0 onde deveria estar.",
+                "Em File-Server, defina a porta 0 para o endereço 10.0.13.1 com máscara 255.255.255.0."
+            ],
+            "explanation": "O endereço de File-Server estava fora da subnet para a qual Router-Osaka anuncia uma rota, portanto Router-Tokyo não tinha um caminho para o alcançar. Ao fazer coincidir o endereço e máscara do servidor com a sua subnet real, as rotas estáticas existentes funcionam correctamente."
+        },
+        "rm": {
+            "title": "Finance na po arrivar a File-Server",
+            "story": "Collaborateurs da finanzas rapportan che l'avrir da datotecas sin il server da datotecas d'Osaka n'è betg reischi durant tutta la matina. PC-Finance n'answer betg, sch'ellas tenteschan.",
+            "objective": "Obten in HTTP GET cun success da PC-Finance a File-Server.",
+            "hints": [
+                "Tracescha la dumonda da PC-Finance: ella n'arriva mai pà da Router-Tokyo, che rapporta chi n'ha nundaina via per trametter il pachot.",
+                "Router-Tokyo na po nundaina ruta per l'adressa destinaziun pervi che File-Server n'è betg veramente en la rait 10.0.13.0 nua che duess esser.",
+                "Sin File-Server, configurescha port 0 cun adressa 10.0.13.1 e mascra 255.255.255.0."
+            ],
+            "explanation": "L'adressa da File-Server era ordaifer da la rait per la cauntil Router-Osaka annunzia in'ruta, pervi che Router-Tokyo na veva nulla via per l'arrivar. Sche l'adressa e la mascra dal server scrispundan a sia rait reala, funcionan las rutas static existentas correctamain."
+        },
+        "ro": {
+            "title": "Finance nu poate ajunge la File-Server",
+            "story": "Personalul din Finanțe raportează că deschiderea fișierelor pe serverul de fișiere Osaka a eșuat toată dimineața. PC-Finance nu răspunde deloc atunci când încearcă.",
+            "objective": "Realizați un HTTP GET cu succes de la PC-Finance la File-Server.",
+            "hints": [
+                "Urmăriți cererea de la PC-Finance: nu trece niciodată de Router-Tokyo, care raportează că nu are locul unde să trimită pachetul.",
+                "Router-Tokyo nu are rută pentru adresa de destinație deoarece File-Server nu se află de fapt în rețeaua 10.0.13.0 căreia ar trebui să îi aparțină.",
+                "Pe File-Server, setați portul 0 la adresa 10.0.13.1 cu mască 255.255.255.0."
+            ],
+            "explanation": "Adresa File-Server era în afara rețelei pentru care Router-Osaka anunță o rută, deci Router-Tokyo nu avea o cale pentru a o atinge. Potrivirea adresei și măștii serverului cu rețeaua sa reală permite ca rutele statice existente să funcționeze corect."
+        },
+        "si": {
+            "title": "Finance File Server වෙත ළඟා විය නොහැක",
+            "story": "Finance කාර්යාංශයේ කর්මීවරු Osaka file server හි ගිණුම් විවෘත කිරීම උදෑසර පුරාම අසफල වී ඇතැයි වාර්තා කරයි. PC-Finance එය උත්සාහ කරන විට නිරුතර ප්‍රතිඵලයක් නොපෙන්වයි.",
+            "objective": "PC-Finance සිට File-Server වෙත HTTP GET 요청 සාර්ථක කරන්න.",
+            "hints": [
+                "PC-Finance සිට ඉල්ලීම ට්‍රේස් කරන්න: එය Router-Tokyo ඉවතට කිසි විටෙකත් යන්න ලබන්න, එය පැකේටුව යැවිය යුතු ස්ථානයක් නැතැයි වාර්තා කරයි.",
+                "Router-Tokyo සඳහා ගමනාන්ත ලිපිනය සඳහා කිසිදු මාර්ගයක් නැත, මන්ද File-Server එය ඉපිද යුතු 10.0.13.0 උප-ජාලයේ සිටින්න ඇත.",
+                "File-Server හි, port 0 දිගේ 10.0.13.1 ලිපිනය 255.255.255.0 මාස්ක් සමඟ සකසන්න."
+            ],
+            "explanation": "File-Server ගේ ලිපිනය Router-Osaka දැනුම් දෙන ලඟා ගිය ලෙසින් එක්කෝ ඉවතින්න විය, එබැවින් Router-Tokyo එතරම් ලඟා ගිය යන්න නිසි පෙතක් තිබුණු නැත. සේවාදායකයාගේ ලිපිනය සහ මාස්ක්, එහි ඉපිද යුතු උප-ජාලයට ගැලපෙන්න නිශ්චිත මාර්ග නිසි වෙතින් ක්‍රියා කිරීම ඉඩ දෙයි."
+        },
+        "sk": {
+            "title": "Finance sa nemôže dostať na súbor servera",
+            "story": "Zamestnanci z Finance oznamujú, že otvorenie súborov na Osaka file server selhalo celé ráno. PC-Finance pri pokuse vôbec nereaguje.",
+            "objective": "Dosiahnite úspešnosť HTTP GET z PC-Finance na File-Server.",
+            "hints": [
+                "Vysledujte požiadavku z PC-Finance: nikdy neprekročí Router-Tokyo, ktorý hlási, že nemá kam poslať paket.",
+                "Router-Tokyo nemá cestu na cieľovú adresu, pretože File-Server nie je v podsieti 10.0.13.0, do ktorej by mal patriť.",
+                "Na File-Server nastavte port 0 na adresu 10.0.13.1 s maskou 255.255.255.0."
+            ],
+            "explanation": "Adresa File-Server bola mimo podsiete, pre ktorú Router-Osaka oznamuje cestu, takže Router-Tokyo nemala cestu k nej. Zosúladenie adresy a masky servera s jeho skutočnou podsieťou umožňuje, aby existujúce statické cesty fungovali správne."
+        },
+        "sl": {
+            "title": "Finance se ne more dosopati do datotečnega strežnika",
+            "story": "Zaposleni v Finance poročajo, da je odpiranje datotek na Osaka datotečnem strežniku vse jutro padal. PC-Finance se sploh ne odziva pri poskusu.",
+            "objective": "Dosegli HTTP GET iz PC-Finance na File-Server uspešno.",
+            "hints": [
+                "Sledite zahtevku iz PC-Finance: nikoli ne pride preko Router-Tokyo, ki poroča, da nima tega, komu poslati paket.",
+                "Router-Tokyo nima poti do ciljnega naslova, ker File-Server ni v podseči 10.0.13.0, kamor bi moral spadati.",
+                "Na File-Server nastavite vrata 0 na naslov 10.0.13.1 z masko 255.255.255.0."
+            ],
+            "explanation": "Naslov File-Server je bil zunaj podsete, za katero Router-Osaka napoveduje pot, zato Router-Tokyo ni imela poti do nje. Uskladitev naslova in maske strežnika z njegovo pravo podsečjo omogoči pravilno delovanje obstoječih statičnih poti."
+        },
+        "sq": {
+            "title": "Finance nuk mund të arrijë në File Server",
+            "story": "Punonjësit nga Finance raportojnë se hapja e skedareve në serverin e skedarëve Osaka ka dështuar gjatë mëngjesit. PC-Finance nuk përgjigjet aspak kur ata kërkojnë.",
+            "objective": "Merrni një HTTP GET nga PC-Finance në File-Server me sukses.",
+            "hints": [
+                "Gjurmoni kërkesën nga PC-Finance: ajo nuk kalon kurrë përtej Router-Tokyo, i cili raporton se nuk ka asnjë vend për ta dërguar paketin.",
+                "Router-Tokyo nuk ka rrugë për adresën e destinacionit sepse File-Server nuk ndodhet në podsistemën 10.0.13.0 ku duhet të ndodhej.",
+                "Në File-Server, vendosni portun 0 në adresën 10.0.13.1 me maskën 255.255.255.0."
+            ],
+            "explanation": "Adresa e File-Server ishte jashtë nënrrjetit për të cilin Router-Osaka reklamohet një rrugë, kështu që Router-Tokyo nuk kishte një rrugë për ta arritur atë. Përputhja e adresës dhe maskës së serverit me nënrrjetin e tij të vërtetë lejon që rrezet statike ekzistuese të funksionojnë si duhet."
+        },
+        "sr": {
+            "title": "Finance не може да приступи датотечном серверу",
+            "story": "Запослени из Finance пријављују да отварање датотека на Osaka датотечном серверу није успело читав дан. PC-Finance се уопште не одазива када покушају.",
+            "objective": "Успешно преноси HTTP GET од PC-Finance до File-Server.",
+            "hints": [
+                "Пратите захтев од PC-Finance: никад не прошли даље Router-Tokyo, који пријављује да нема куда да пошаље пакет.",
+                "Router-Tokyo нема рутe за одредишну адресу јер File-Server није у подмрежи 10.0.13.0 где би требало да буде.",
+                "На File-Server поставите порт 0 на адресу 10.0.13.1 са маском 255.255.255.0."
+            ],
+            "explanation": "Адреса File-Server била је изван подмреже за коју Router-Osaka најављује маршруту, тако да Router-Tokyo није имала пут за њу. Поклапање адресе и маске сервера са његовом правом подмрежом омогућава да постојеће статичне маршрута раде правилно."
+        },
+        "sv": {
+            "title": "Ekonomi kan inte nå filservern",
+            "story": "Personal i Ekonomi rapporterar att åtkomst till filer på Osakafilservern har misslyckats hela förmiddagen. PC-Finance visar ingen respons alls när de försöker.",
+            "objective": "Få en HTTP GET från PC-Finance till File-Server att lyckas.",
+            "hints": [
+                "Spåra förfrågan från PC-Finance: den kommer aldrig förbi Router-Tokyo, som rapporterar att den inte har någonstans att skicka paketet.",
+                "Router-Tokyo har ingen route för måladressen eftersom File-Server faktiskt inte sitter i det 10.0.13.0-subnät det borde höra till.",
+                "På File-Server ställer du port 0 till adress 10.0.13.1 med mask 255.255.255.0."
+            ],
+            "explanation": "File-Server hade en adress utanför det subnät som Router-Osaka annonserade en route för, så Router-Tokyo hade ingen väg för att nå den. Genom att matcha serverns adress och mask till sitt verkliga subnät fungerar de befintliga statiska routerna korrekt."
+        },
+        "sw": {
+            "title": "Fedha Haiwezi Kufikia Seva ya Faili",
+            "story": "Wafanyakazi wa Fedha wanaripoti kuwa kufungua faili kwenye seva ya faili Osaka umekosea asubuhi yote. PC-Finance haionyeshi jibu lolote wakati wanajaribu.",
+            "objective": "Pata HTTP GET kutoka PC-Finance hadi File-Server ifanike.",
+            "hints": [
+                "Fuatilia ombi kutoka PC-Finance: haiwezi kuutana Router-Tokyo, ambayo inaripoti kuwa haina mahali pa kutuma paketi.",
+                "Router-Tokyo haina uelekezaji kwa anwani lengwa kwa sababu File-Server si kweli katika mtandao wa 10.0.13.0 inayostakiwa kuwa nayo.",
+                "Kwenye File-Server, weka port 0 kwa anwani 10.0.13.1 na maska 255.255.255.0."
+            ],
+            "explanation": "Anwani ya File-Server ilikuwa nje ya mtandao ambao Router-Osaka alinuia uelekezaji, kwa hivyo Router-Tokyo haikuwa na njia ya kuifikia. Kulingana anwani na maska ya seva na mtandao wake halisi kunafanya uelekezaji imara unaokadiri kafanya kazi ipasavyo."
+        },
+        "ta": {
+            "title": "நிதி கோப்பு சர்வரை அடைய முடியவில்லை",
+            "story": "நிதி பிரிவு பணியாளர்கள் ஒசாகா கோப்பு சர்வரில் கோப்புகளைத் திறப்பது காலை முழுவதும் தோல்வியடைந்ததாக தெரிவிக்கின்றனர். PC-Finance முயற்சிக்கும் போது எந்த பதিலும் இல்லை.",
+            "objective": "PC-Finance இலிருந்து File-Server க்கு HTTP GET வெற்றிபெற வேண்டும்.",
+            "hints": [
+                "PC-Finance இலிருந்து கோரிக்கையைக் கண்டறிக: இது Router-Tokyo ஐ கடந்து செல்லாது, இது பாக்கெட்டை அனுப்ப எங்கும் இல்லை என்று தெரிவிக்கிறது.",
+                "Router-Tokyo க்கு சேருமிட முகவரிக்கான ரூட் இல்லை, ஏனெனில் File-Server உண்மையில் 10.0.13.0 சாப்ட்நெட்டிற்குள் உட்கார்ந்திருக்கவில்லை.",
+                "File-Server இல், போர்ட் 0 ஐ முகவரி 10.0.13.1 க்கும் மாஸ்க் 255.255.255.0 க்கும் அமைக்கவும்."
+            ],
+            "explanation": "File-Server இன் முகவரி Router-Osaka விளம்பரம் செய்யும் சாப்ட்நெட்டுக்கு வெளியே இருந்தது, எனவே Router-Tokyo அதை அடைய வழி இல்லை. சர்வரின் முகவரி மற்றும் மாஸ்க்கை அதன் நிஜ சாப்ட்நெட்டுக்கு பொருத்துவது বিদ்யமான நிலையான ரூட்களை சரியாக செயல்பட அனுமதிக்கிறது."
+        },
+        "te": {
+            "title": "ఆర్థిక విభాగం ఫైల్ సర్వర్‌ను చేరుకోలేదు",
+            "story": "ఆర్థిక విభాగం సిబ్బంది ఒసాకా ఫైల్ సర్వర్‌లోని ఫైల్‌లను తెరవడం ఉదయం పూర్తిగా విఫలమయ్యారని నివేదిస్తున్నారు. PC-Finance ప్రయత్నించినప్పుడు ఎటువంటి ప్రతిస్పందన లేదు.",
+            "objective": "PC-Finance నుండి File-Server కు HTTP GET విజయవంతమయ్యాలి.",
+            "hints": [
+                "PC-Finance నుండి అభ్యర్థనను ట్రేస్ చేయండి: ఇది Router-Tokyo ను దాటి ఎక్కడికి విడిపోదు, ఇది పాకెట్‌ను పంపటానికి ఎక్కడు లేదని నివేదిస్తుంది.",
+                "Router-Tokyo దగమ్య నెట్‌వర్క్ కోసం ఎటువంటి రూట్‌ను కలిగిలేదు, ఎందుకంటే File-Server వాస్తవానికి 10.0.13.0 సాబ్‌నెట్‌లో ఉండవలసిన విధంగా లేదు.",
+                "File-Server పై, పోర్ట్ 0 ను చిరునామా 10.0.13.1 మరియు మాస్క్ 255.255.255.0 కు సెట్ చేయండి."
+            ],
+            "explanation": "File-Server యొక్క చిరునామా Router-Osaka ప్రకటించిన సాబ్‌నెట్‌కు బాहरে ఉంది, కనుక Router-Tokyo దానిని చేరుకోవటానికి ఎటువంటి మార్గం లేదు. సర్వర్ యొక్క చిరునామా మరియు మాస్క్‌ను దాని నిజ సాబ్‌నెట్‌కు సరిపోయేలా చేయడం ఉపస్థితమైన స్థిర రూట్‌లను సరిగ్గా పనిచేయడానికి అనుమతిస్తుంది."
+        },
+        "uk": {
+            "title": "Фінанси не можуть дозволити доступ до файлового сервера",
+            "story": "Персонал відділу Фінансів повідомляє, що доступ до файлів на файловому сервері Osaka впав протягом усього ранку. PC-Finance не реагує, коли вони намагаються отримати доступ.",
+            "objective": "Запит HTTP GET з PC-Finance на File-Server має бути успішним.",
+            "hints": [
+                "Простежте запит з PC-Finance: він ніколи не пройде через Router-Tokyo, яка повідомляє, що вона не знає, куди надіслати пакет.",
+                "Router-Tokyo немає маршруту для мережи призначення, тому що File-Server фактично не розташована в підмережі 10.0.13.0, де вона мала б бути.",
+                "На File-Server установіть порт 0 на адресу 10.0.13.1 з маскою 255.255.255.0."
+            ],
+            "explanation": "Адреса File-Server знаходилась за межами підмережі, для якої Router-Osaka оголошує маршрут, тому Router-Tokyo не мала шляху до неї. Узгодження адреси та маски сервера з його реальною підмережею дозволяє існуючим статичним маршрутам працювати правильно."
+        },
+        "ur": {
+            "title": "Finance فائل سرور تک نہیں پہنچ سکتا",
+            "story": "Finance میں اسٹاف رپورٹ کرتے ہیں کہ Osaka فائل سرور پر فائلیں کھولنا پورا صبح ناکام رہا ہے۔ جب وہ کوشش کرتے ہیں تو PC-Finance کوئی جواب نہیں دیتا۔",
+            "objective": "PC-Finance سے File-Server پر HTTP GET کو کامیاب بنائیں۔",
+            "hints": [
+                "PC-Finance سے درخواست کو ٹریس کریں: یہ Router-Tokyo کے آگے کبھی نہیں جاتا، جو رپورٹ کرتا ہے کہ اس کے پاس پیکٹ بھیجنے کی کوئی جگہ نہیں۔",
+                "Router-Tokyo کے پاس منزل پتے کے لیے کوئی راستہ نہیں ہے کیونکہ File-Server درحقیقت 10.0.13.0 سبنیٹ میں نہیں ہے جہاں یہ ہونا چاہیے۔",
+                "File-Server پر، پورٹ 0 کو پتہ 10.0.13.1 اور ماسک 255.255.255.0 کے ساتھ سیٹ کریں۔"
+            ],
+            "explanation": "File-Server کا پتہ اس سبنیٹ کے باہر تھا جس کے لیے Router-Osaka ایک ریٹ کا اشتہار دیتا ہے، تو Router-Tokyo کے پاس اس تک پہنچنے کا کوئی راستہ نہیں تھا۔ سرور کے پتے اور ماسک کو اس کی اصل سبنیٹ سے ملانے سے موجودہ جامد ریٹس صحیح طریقے سے کام کرتے ہیں۔"
+        },
+        "zu": {
+            "title": "I-Finance Ayikwazi Ukufinyelela ku-File Server",
+            "story": "Abasebenzi ku-I-Finance babulisa ukuthi ukuvula amafayili ku-Osaka file server kuhlulekile umhlangano wonke. Nxa bazama, i-PC-Finance ayibuyiseli impendulo.",
+            "objective": "Yenza ukuthi i-HTTP GET kusuka ku-PC-Finance kuya ku-File-Server iphumelele.",
+            "hints": [
+                "Loloza isicelo kusuka ku-PC-Finance: ayikaze idlule i-Router-Tokyo, enazisa ukuthi inayo indawo yokuthunyelela ipakithi.",
+                "I-Router-Tokyo ayinayo indlela yesipeshele ye-destination address ngoba i-File-Server akumele ihlale ku-10.0.13.0 subnet lapho kumele ihlale khona.",
+                "Ku-File-Server, setha iphothi 0 kuyi-address 10.0.13.1 ene-mask 255.255.255.0."
+            ],
+            "explanation": "I-address ye-File-Server yayingaphandle kwe-subnet i-Router-Osaka eyalengeza indlela yayo kuyo, ngakho i-Router-Tokyo ayinayo indlela yokuyefinyelela. Ukudibanisa i-address ye-server kanye ne-mask yayo kuye-subnet yayo yobo owesifazane kuvumela izindlela eziphelele zestatic ukuthi zisebenze ngendlela efanele."
+        },
+        "my": {
+            "title": "Finance သည် File Server ကို ချိတ်ဆက်၍မရ",
+            "story": "Finance အဖွဲ့ရှိ ၀န်ထမ်းများသည် Osaka file server တွင် ဖိုင်များ ဖွင့်ရန် ကြိုးပွဲ မနက်ပိုင်းစ၍ ကျ败်ခဲ့ကြသည်။ PC-Finance သည် ကြိုးပွဲသည့်အခါ အလယ့်တုံ့ပြန်မှု မရှိသည်။",
+            "objective": "PC-Finance မှ File-Server သို့ HTTP GET ကြိုးပွဲ အောင်မြင်စေရန်",
+            "hints": [
+                "PC-Finance မှ ကြိုးပွဲကို လှိုင်းဆက်ကြည့်ပါ - ၎င်းသည် Router-Tokyo ကိုမလွန်သွားကြောင်း အစီရင်ခံ၍ Packet ပို့ရန်နေရာ မရှိသည်။",
+                "Router-Tokyo သည် လက်ခံသူ လိပ်စာအတွက် ကွန်ရက်လမ်းကြောင်း မရှိသည်။ အကြောင်းအရာမှာ File-Server သည် အမှန်အစ実 10.0.13.0 サブネット နယ်ပယ်တွင် မရှိသည်။",
+                "File-Server ပေါ်တွင် port 0 ကို လိပ်စာ 10.0.13.1 နှင့် mask 255.255.255.0 အဖြစ် သတ်မှတ်ပါ။"
+            ],
+            "explanation": "File-Server အလိပ်စာသည် Router-Osaka မှ ကြေးငြေးစည်သည့် ကွန်ရက်လမ်းကြောင်း၏ အပြင်ဘက်တွင် ရှိသည့်အတွက် Router-Tokyo သည် ၎င်းသို့ ရောက်ရှိရန် လမ်းကြောင်း မရှိသည်။ Server အလိပ်စာ နှင့် mask ကို အမှန်အစ သည့်サブネット နယ်ပယ်နှင့် ကိုက်ညီသည့်အခါ ရှိပြီးသားဖြစ်သည့် static routes များ မှန်ကန်စွာ အလုပ်လုပ်သည်။"
+        }
+    }
+}
