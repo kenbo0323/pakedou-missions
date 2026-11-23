@@ -1,0 +1,1140 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-11-30",
+    "number": 71,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "internet_edge",
+    "faultIds": [
+        "missing_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Dev",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.24.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-1F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.24.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "203.0.113.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-internet1": {
+                "id": "dev-internet1",
+                "type": "INTERNET",
+                "name": "fujibit.com",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-internet1-p0",
+                        "index": 0,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "203.0.113.10",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p1",
+                        "index": 1,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p2",
+                        "index": 2,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-internet1-p3",
+                        "index": 3,
+                        "deviceId": "dev-internet1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": [],
+                    "domainName": "fujibit.com"
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-internet1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-internet1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-internet1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-internet1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The Website That Won't Load",
+            "story": "A sales rep set up a new workstation, PC-Dev, this morning and now can't open the company's website, fujibit.com, no matter how many times she refreshes.",
+            "objective": "Get an HTTP request from PC-Dev to successfully reach fujibit.com.",
+            "hints": [
+                "The request never even leaves PC-Dev's own settings — it doesn't make it past the client itself toward Router-HQ.",
+                "PC-Dev has no default gateway configured, so it has no idea how to send traffic destined outside its own local network.",
+                "On PC-Dev, set the default gateway to 10.0.24.254 so it knows to forward outbound traffic to Router-HQ."
+            ],
+            "explanation": "Any device trying to reach an address outside its own subnet needs a default gateway — the router that forwards traffic onward. Without one configured, the client drops the packet before it can even try, since it doesn't know where to send traffic bound for the internet."
+        },
+        "ja": {
+            "title": "表示されないウェブサイト",
+            "story": "今朝、営業担当者が新しいワークステーション PC-Dev をセットアップしましたが、何度更新しても会社のウェブサイト fujibit.com を開くことができません。",
+            "objective": "PC-Dev からの HTTP リクエストが fujibit.com に正しく到達できるようにします。",
+            "hints": [
+                "リクエストは PC-Dev 自身の設定から一歩も外に出ていません。Router-HQ に向かう前に、クライアント自体で止まっています。",
+                "PC-Dev にはデフォルトゲートウェイが設定されていないため、自分のローカルネットワーク外へ向かう通信をどう送ればよいか分かりません。",
+                "PC-Dev で、デフォルトゲートウェイを 10.0.24.254 に設定し、外部宛ての通信を Router-HQ に転送できるようにしてください。"
+            ],
+            "explanation": "自分のサブネット外のアドレスに通信しようとする機器には、通信を転送してくれるルーターであるデフォルトゲートウェイが必要です。これが設定されていないと、クライアントはインターネット宛ての通信をどこに送ればよいか分からず、送信を試みる前にパケットを破棄してしまいます。"
+        },
+        "zh-CN": {
+            "title": "无法加载的网站",
+            "story": "销售代表今天早上为PC-Dev设置了一个新工作站，现在无论刷新多少次都无法打开公司网站fujibit.com。",
+            "objective": "获取从PC-Dev发出的HTTP请求，使其成功到达fujibit.com。",
+            "hints": [
+                "该请求甚至从未离开PC-Dev的设置——它没有通过Client本身向Router-HQ传递。",
+                "PC-Dev没有配置默认网关，所以它不知道如何发送流量到自己本地网络之外的地方。",
+                "在PC-Dev上，将默认网关设置为10.0.24.254，以便它知道如何将出站流量转发到Router-HQ。"
+            ],
+            "explanation": "任何试图到达自己子网之外地址的设备都需要一个默认网关——将流量转发到其他地方的Router。如果没有配置一个，Client会在数据包到达互联网之前就将其丢弃，因为它不知道应该将流量发往何处。"
+        },
+        "zh-TW": {
+            "title": "無法載入的網站",
+            "story": "銷售代表今天早上為PC-Dev設定了一個新工作站，現在無論重新整理多少次都無法打開公司網站fujibit.com。",
+            "objective": "取得從PC-Dev發出的HTTP要求，使其成功到達fujibit.com。",
+            "hints": [
+                "該要求甚至從未離開PC-Dev的設定——它沒有通過Client本身向Router-HQ傳遞。",
+                "PC-Dev沒有設定預設閘道，所以它不知道如何發送流量到自己本地網路之外的地方。",
+                "在PC-Dev上，將預設閘道設定為10.0.24.254，以便它知道如何將出站流量轉發到Router-HQ。"
+            ],
+            "explanation": "任何嘗試到達自己子網之外位址的裝置都需要一個預設閘道——將流量轉發到其他地方的Router。如果沒有設定一個，Client會在資料包到達網際網路之前就將其丟棄，因為它不知道應該將流量發往何處。"
+        },
+        "ko": {
+            "title": "로드되지 않는 웹사이트",
+            "story": "영업 담당자가 오늘 아침 PC-Dev라는 새 워크스테이션을 설정했는데, 지금 아무리 새로고침해도 회사 웹사이트 fujibit.com을 열 수 없습니다.",
+            "objective": "PC-Dev에서 보낸 HTTP 요청이 fujibit.com에 성공적으로 도달하도록 합니다.",
+            "hints": [
+                "요청이 PC-Dev의 설정을 벗어나지 못했습니다. 즉, Client 자체를 거쳐 Router-HQ로 전달되지 않았습니다.",
+                "PC-Dev에 기본 게이트웨이가 설정되어 있지 않아서 자신의 로컬 네트워크 외부의 트래픽을 보낼 방법을 모릅니다.",
+                "PC-Dev에서 기본 게이트웨이를 10.0.24.254로 설정하여 출발 트래픽을 Router-HQ로 전달하도록 합니다."
+            ],
+            "explanation": "자신의 서브넷 외부의 주소에 접근하려는 모든 장치는 기본 게이트웨이가 필요합니다. 기본 게이트웨이는 트래픽을 다른 곳으로 전달하는 Router입니다. 기본 게이트웨이가 없으면, Client은 인터넷으로 가는 패킷이 도달하기 전에 그것을 버립니다. 왜냐하면 트래픽을 어디로 보낼지 알 수 없기 때문입니다."
+        },
+        "es": {
+            "title": "El sitio web que no carga",
+            "story": "Un representante de ventas configuró esta mañana una nueva estación de trabajo, PC-Dev, y ahora no puede abrir el sitio web de la empresa, fujibit.com, sin importar cuántas veces recargue.",
+            "objective": "Conseguir que una solicitud HTTP desde PC-Dev llegue correctamente a fujibit.com.",
+            "hints": [
+                "La solicitud ni siquiera deja la configuración del propio PC-Dev — no llega más allá del Client en dirección a Router-HQ.",
+                "PC-Dev no tiene un gateway predeterminado configurado, así que no sabe cómo enviar tráfico destinado fuera de su propia red local.",
+                "En PC-Dev, establece el gateway predeterminado a 10.0.24.254 para que sepa cómo reenviar el tráfico saliente a Router-HQ."
+            ],
+            "explanation": "Cualquier dispositivo que intente alcanzar una dirección fuera de su propia subred necesita un gateway predeterminado — el Router que reenvía el tráfico hacia adelante. Sin uno configurado, el Client descarta el paquete antes de intentarlo, ya que no sabe dónde enviar el tráfico destinado a Internet."
+        },
+        "pt-BR": {
+            "title": "O site que não carrega",
+            "story": "Um representante de vendas configurou uma nova estação de trabalho, PC-Dev, esta manhã e agora não consegue abrir o site da empresa, fujibit.com, não importa quantas vezes atualize.",
+            "objective": "Conseguir que uma solicitação HTTP de PC-Dev chegue com sucesso a fujibit.com.",
+            "hints": [
+                "A solicitação nunca sai das configurações do próprio PC-Dev — ela não passa nem pelo Client em direção ao Router-HQ.",
+                "PC-Dev não tem um gateway padrão configurado, então não sabe como enviar tráfego destinado a redes fora de sua rede local.",
+                "Em PC-Dev, defina o gateway padrão para 10.0.24.254 para que ele saiba reencaminhar o tráfego de saída para Router-HQ."
+            ],
+            "explanation": "Qualquer dispositivo tentando alcançar um endereço fora de sua própria subrede precisa de um gateway padrão — o Router que reencaminha o tráfego adiante. Sem um configurado, o Client descarta o pacote antes de tentar, já que não sabe para onde enviar o tráfego destinado à Internet."
+        },
+        "de": {
+            "title": "Die Website, die nicht geladen wird",
+            "story": "Eine Verkaufsvertreterin hat heute Morgen eine neue Workstation, PC-Dev, eingerichtet und kann jetzt die Website des Unternehmens, fujibit.com, nicht öffnen, egal wie oft sie aktualisiert.",
+            "objective": "Dafür sorgen, dass eine HTTP-Anfrage von PC-Dev erfolgreich fujibit.com erreicht.",
+            "hints": [
+                "Die Anfrage verlässt nicht einmal PC-Dev's eigene Einstellungen — sie kommt nicht weiter als zum Client selbst in Richtung Router-HQ.",
+                "PC-Dev hat kein Standard-Gateway konfiguriert, daher weiß es nicht, wie es Datenverkehr außerhalb seines eigenen lokalen Netzwerks senden soll.",
+                "Stellen Sie auf PC-Dev das Standard-Gateway auf 10.0.24.254 ein, damit es weiß, dass es ausgehenden Datenverkehr an Router-HQ weitergeleitet soll."
+            ],
+            "explanation": "Jedes Gerät, das eine Adresse außerhalb seines eigenen Subnetzes erreichen möchte, benötigt ein Standard-Gateway — den Router, der den Datenverkehr weiterleitet. Ohne konfiguriertes Standard-Gateway verwirft der Client das Paket, bevor es versuchen kann, da er nicht weiß, wohin der für das Internet bestimmte Datenverkehr gesendet werden soll."
+        },
+        "fr": {
+            "title": "Le site Web qui ne se charge pas",
+            "story": "Une représentante commerciale a configuré une nouvelle station de travail, PC-Dev, ce matin et ne peut maintenant pas ouvrir le site Web de l'entreprise, fujibit.com, peu importe le nombre de fois où elle actualise.",
+            "objective": "Faire en sorte qu'une requête HTTP de PC-Dev atteigne avec succès fujibit.com.",
+            "hints": [
+                "La requête ne quitte même pas les paramètres propres de PC-Dev — elle n'arrive pas au-delà du client lui-même en direction de Router-HQ.",
+                "PC-Dev n'a pas de passerelle par défaut configurée, il ne sait donc pas comment envoyer le trafic destiné en dehors de son propre réseau local.",
+                "Sur PC-Dev, réglez la passerelle par défaut sur 10.0.24.254 pour qu'il sache comment transférer le trafic sortant vers Router-HQ."
+            ],
+            "explanation": "Tout appareil essayant d'atteindre une adresse en dehors de son propre sous-réseau a besoin d'une passerelle par défaut — le routeur qui transfère le trafic. Sans passerelle configurée, le client rejette le paquet avant même de pouvoir essayer, car il ne sait pas où envoyer le trafic destiné à Internet."
+        },
+        "hi": {
+            "title": "वह वेबसाइट जो लोड नहीं हो रही है",
+            "story": "एक बिक्रय प्रतिनिधि ने आज सुबह एक नया वर्कस्टेशन, PC-Dev, सेट अप किया और अब कंपनी की वेबसाइट, fujibit.com को नहीं खोल सकती, चाहे वह कितनी भी बार रिफ्रेश करे।",
+            "objective": "PC-Dev से एक HTTP अनुरोध को सफलतापूर्वक fujibit.com तक पहुंचाएं।",
+            "hints": [
+                "अनुरोध PC-Dev की अपनी सेटिंग्स को भी नहीं छोड़ता — यह क्लायंट से आगे Router-HQ की ओर नहीं जाता।",
+                "PC-Dev में कोई डिफ़ॉल्ट गेटवे कॉन्फ़िगर नहीं है, इसलिए यह नहीं जानता कि अपने स्वयं के स्थानीय नेटवर्क के बाहर के ट्रैफ़िक को कैसे भेजना है।",
+                "PC-Dev पर डिफ़ॉल्ट गेटवे को 10.0.24.254 पर सेट करें ताकि यह जाने कि आउटबाउंड ट्रैफ़िक को Router-HQ में कैसे अग्रेषित करना है।"
+            ],
+            "explanation": "कोई भी उपकरण जो अपने स्वयं के सबनेट के बाहर के किसी पते तक पहुंचने का प्रयास कर रहा है, उसे एक डिफ़ॉल्ट गेटवे की आवश्यकता है — वह राउटर जो ट्रैफ़िक को आगे भेजता है। बिना कॉन्फ़िगर किए गए, क्लायंट पैकेट को छोड़ देता है इससे पहले कि वह कोशिश कर सके, क्योंकि इंटरनेट के लिए नियत ट्रैफ़िक को कहां भेजना है यह नहीं जानता।"
+        },
+        "id": {
+            "title": "Situs Web yang Tidak Mau Dimuat",
+            "story": "Seorang perwakilan penjualan menyiapkan workstation baru, PC-Dev, pagi ini dan sekarang tidak dapat membuka situs web perusahaan, fujibit.com, berapa pun banyak kali dia menyegarkannya.",
+            "objective": "Pastikan permintaan HTTP dari PC-Dev berhasil mencapai fujibit.com.",
+            "hints": [
+                "Permintaan tidak pernah meninggalkan pengaturan PC-Dev sendiri — tidak sampai ke luar klien menuju Router-HQ.",
+                "PC-Dev tidak memiliki Gateway Default yang dikonfigurasi, jadi tidak tahu cara mengirim lalu lintas yang ditujukan di luar jaringan lokal miliknya.",
+                "Pada PC-Dev, atur Gateway Default ke 10.0.24.254 sehingga tahu cara meneruskan lalu lintas keluar ke Router-HQ."
+            ],
+            "explanation": "Perangkat apa pun yang mencoba menjangkau alamat di luar subnet miliknya memerlukan Gateway Default — router yang meneruskan lalu lintas. Tanpa yang dikonfigurasi, klien menghapus paket sebelum bisa mencoba, karena tidak tahu ke mana mengirim lalu lintas yang ditujukan untuk internet."
+        },
+        "ru": {
+            "title": "Сайт, который не загружается",
+            "story": "Представитель отдела продаж установил новую рабочую станцию, PC-Dev, этим утром и теперь не может открыть веб-сайт компании, fujibit.com, сколько бы она ни обновляла страницу.",
+            "objective": "Обеспечить, чтобы HTTP-запрос от PC-Dev успешно достиг fujibit.com.",
+            "hints": [
+                "Запрос не покидает даже собственные настройки PC-Dev — он не выходит дальше самого клиента в сторону Router-HQ.",
+                "PC-Dev не имеет настроенного шлюза по умолчанию, поэтому не знает, как отправлять трафик, предназначенный вне его собственной локальной сети.",
+                "На PC-Dev установите шлюз по умолчанию на 10.0.24.254, чтобы он знал, как перенаправлять исходящий трафик к Router-HQ."
+            ],
+            "explanation": "Любое устройство, пытающееся достичь адреса вне собственной подсети, нуждается в шлюзе по умолчанию — маршрутизаторе, который перенаправляет трафик дальше. Без настроенного шлюза клиент отбрасывает пакет, прежде чем он сможет даже попытаться, поскольку не знает, куда отправить трафик, предназначенный для интернета."
+        },
+        "it": {
+            "title": "Il Sito Web Che Non Si Carica",
+            "story": "Una responsabile vendite ha configurato una nuova workstation, PC-Dev, questa mattina e ora non riesce ad aprire il sito aziendale fujibit.com, non importa quante volte ricarica la pagina.",
+            "objective": "Fare in modo che una richiesta HTTP da PC-Dev raggiunga con successo fujibit.com.",
+            "hints": [
+                "La richiesta non esce nemmeno dalle impostazioni di PC-Dev — non arriva oltre il client stesso verso Router-HQ.",
+                "PC-Dev non ha un gateway predefinito configurato, quindi non sa come inviare il traffico destinato al di fuori della sua rete locale.",
+                "Su PC-Dev, imposta il gateway predefinito a 10.0.24.254 in modo che sappia di inoltrare il traffico in uscita a Router-HQ."
+            ],
+            "explanation": "Qualsiasi dispositivo che tenta di raggiungere un indirizzo al di fuori della propria subnet ha bisogno di un gateway predefinito — il router che inoltra il traffico. Senza uno configurato, il client scarta il pacchetto prima ancora di provare, poiché non sa dove inviare il traffico destinato a internet."
+        },
+        "tr": {
+            "title": "Yüklenemeyen Web Sitesi",
+            "story": "Bir satış temsilcisi bu sabah yeni bir workstation olan PC-Dev'i kurdu ve artık şirketin web sitesi fujibit.com'u açamıyor, kaç kez yenilese de.",
+            "objective": "PC-Dev'den bir HTTP isteğinin fujibit.com'a başarıyla ulaşmasını sağlayın.",
+            "hints": [
+                "İstek PC-Dev'in kendi ayarlarından bile çıkmıyor — client'in kendisinden Router-HQ'ya doğru ilerlemez.",
+                "PC-Dev'in yapılandırılmış bir varsayılan ağ geçidi yok, bu nedenle kendi yerel ağının dışında hedeflenen trafiği nasıl göndereceğini bilmiyor.",
+                "PC-Dev'de varsayılan ağ geçidini 10.0.24.254 olarak ayarlayın, böylece giden trafiği Router-HQ'ya iletmeyi bilecektir."
+            ],
+            "explanation": "Kendi alt ağının dışında bir adresi hedefleyen herhangi bir cihazın bir varsayılan ağ geçidi gerekir — trafiği ileten router. Biri yapılandırılmadan, client cihaz paketi düşürür çünkü internete gidecek trafiği nereye göndereceğini bilmez."
+        },
+        "th": {
+            "title": "เว็บไซต์ที่โหลดไม่ได้",
+            "story": "เจ้าหน้าที่ขายเซลส์ตั้งค่า workstation ใหม่ PC-Dev ในเช้านี้ และตอนนี้เธอไม่สามารถเปิดเว็บไซต์ของบริษัท fujibit.com ได้ ไม่ว่าจะรีเฟรชกี่ครั้งก็ตาม",
+            "objective": "ทำให้คำขอ HTTP จาก PC-Dev ถึง fujibit.com ได้สำเร็จ",
+            "hints": [
+                "คำขอไม่ได้ออกจากการตั้งค่า PC-Dev เอง — มันไม่ไปไกลกว่า client เองไปยัง Router-HQ",
+                "PC-Dev ไม่มีเกตเวย์เริ่มต้นที่ตั้งค่าไว้ ดังนั้นจึงไม่รู้วิธีส่งการไหลข้อมูลที่ปลายทางอยู่นอกเครือข่ายท้องถิ่น",
+                "บน PC-Dev ให้ตั้งเกตเวย์เริ่มต้นเป็น 10.0.24.254 เพื่อให้มันรู้ว่าจะส่งต่อการไหลข้อมูลขาออกไปยัง Router-HQ"
+            ],
+            "explanation": "อุปกรณ์ใดๆ ที่พยายามเข้าถึงที่อยู่นอกเครือข่ายย่อยของตัวเองต้องใช้เกตเวย์เริ่มต้น — เราเตอร์ที่ส่งต่อการไหลข้อมูล หากไม่มีการตั้งค่า client จะทิ้งแพ็กเก็ต เนื่องจากไม่รู้ว่าจะส่งการไหลข้อมูลที่กำหนดไปยังอินเทอร์เน็ตไปที่ใด"
+        },
+        "vi": {
+            "title": "Trang Web Không Tải Được",
+            "story": "Một nhân viên bán hàng đã thiết lập workstation mới PC-Dev sáng nay và bây giờ không thể mở trang web fujibit.com của công ty, không quan trọng cô ấy làm mới bao nhiêu lần.",
+            "objective": "Tạo yêu cầu HTTP từ PC-Dev thành công đến fujibit.com.",
+            "hints": [
+                "Yêu cầu không bao giờ rời khỏi cài đặt của chính PC-Dev — nó không vượt qua client để đi đến Router-HQ.",
+                "PC-Dev không có cổng mặc định được cấu hình, vì vậy nó không biết cách gửi lưu lượng đến ngoài mạng cục bộ của nó.",
+                "Trên PC-Dev, hãy đặt cổng mặc định thành 10.0.24.254 để nó biết cách chuyển tiếp lưu lượng gửi đi đến Router-HQ."
+            ],
+            "explanation": "Bất kỳ thiết bị nào cố gắng truy cập địa chỉ ngoài subnet của nó cần một cổng mặc định — bộ định tuyến chuyển tiếp lưu lượng. Nếu không có cái được cấu hình, client sẽ hủy gói tin trước khi thậm chí có thể thử, vì nó không biết gửi lưu lượng lên Internet đến đâu."
+        },
+        "af": {
+            "title": "Die Webwerf Wat Nie Laai",
+            "story": "Op die oggend het 'n verkoopsverteenwoordiger 'n nuwe werkstasie, PC-Dev, opgestel en kan nou nie die maatskappy se werf fujibit.com oopmaak nie, ongeag hoe dikwels sy dit verfris.",
+            "objective": "Maak seker dat 'n HTTP-versoek van PC-Dev suksesvol fujibit.com bereik.",
+            "hints": [
+                "Die versoek verlaat nie eers PC-Dev se eie instellings nie — dit kom nie verder as die kliënt self na Router-HQ.",
+                "PC-Dev het geen verstek-gateway ingesteld nie, so dit weet nie hoe dit verkeer wat buite sy eie plaaslike netwerk bestem is, stuur.",
+                "Stel die verstek-gateway op PC-Dev in op 10.0.24.254 sodat dit weet om uitgaande verkeer na Router-HQ deur te stuur."
+            ],
+            "explanation": "Enige toestel wat probeer om 'n adres buite sy eie subnet te bereik, benodig 'n verstek-gateway — die router wat verkeer voorstuuur. Sonder een ingesteld, laat die kliënt die pakket val voordat dit kan probeer, want dit weet nie waarheen dit verkeer wat na die internet bestem is, moet stuur nie."
+        },
+        "am": {
+            "title": "ሸክላ ያልተሰሩ ድረ ገጽ",
+            "story": "አንድ የሽያጭ ተወካይ ዛሬ ጣቢያ PC-Dev አዘጋጁ ታህሳስ ወደ ንግዱ ድረ ገጽ fujibit.com ፣ በላይ ምን ያህል ሞግቷታል ።",
+            "objective": "ከ PC-Dev ወደ fujibit.com በተሳካ ሁኔታ HTTP ጥያቄ ደርስ።",
+            "hints": [
+                "ጥያቄው ከ PC-Dev ራሱ ቅንብሮች አያልፍም — Router-HQ ወደ ሚወስደው ወደ ፊትዮ ሳይወስድ ።",
+                "PC-Dev ምንም ነባሪ ጌትዌይ አልተዘጋጀም ፣ ስለዚህ የራሱ የአካል 네트워크ውጭ ትራፊክ አይልክ ።",
+                "በ PC-Dev ላይ ነባሪ ጌትዌይ ወደ 10.0.24.254 ተዘጋጁ ፣ ወደ Router-HQ ወደ ወጪ ትራፊክ ያዙ ።"
+            ],
+            "explanation": "ከራሱ ንዑስ ቀረጣ ውጭ አድራሻ ለመድረስ ሞክር ማንኛውም устройство ነባሪ ጌትዌይ ያስፈልገዋል — ትራፊክ ወደ ፊትዮ ያካሂደ የማዘዋወሪያ ። ያለ ተዘጋጀ ፣ ክライેंট ፓኬቱ ከታች ቀደም ሳይሞክር ፣ ምክንያቱም አይ interნেট ፈታድ ትራፊክ ከሚልክበት ቦታ አያውቅም ።"
+        },
+        "ar": {
+            "title": "موقع الويب الذي لن يتحمل",
+            "story": "قام ممثل مبيعات بإعداد محطة عمل جديدة، PC-Dev، هذا الصباح ولا يمكنه الآن فتح موقع الشركة، fujibit.com، بغض النظر عن عدد مرات التحديث.",
+            "objective": "احصل على طلب HTTP من PC-Dev للوصول بنجاح إلى fujibit.com.",
+            "hints": [
+                "الطلب لا يغادر حتى إعدادات PC-Dev الخاصة — فهو لا يمر حتى ما وراء العميل نفسه نحو Router-HQ.",
+                "PC-Dev لا يحتوي على بوابة افتراضية محتفظ بها، لذا فإنها لا تعرف كيفية إرسال حركة المرور الموجهة خارج شبكتها المحلية الخاصة.",
+                "على PC-Dev، قم بتعيين البوابة الافتراضية إلى 10.0.24.254 حتى تعرف أنه يجب إعادة توجيه حركة المرور الصادرة إلى Router-HQ."
+            ],
+            "explanation": "أي جهاز يحاول الوصول إلى عنوان خارج نطاقه الفرعي الخاص يحتاج إلى بوابة افتراضية — جهاز التوجيه الذي يعيد توجيه حركة المرور للأمام. بدون تكوين واحد، يسقط العميل الحزمة قبل أن يحاول حتى، لأنه لا يعرف أين يرسل حركة المرور المخصصة للإنترنت."
+        },
+        "az": {
+            "title": "Yükləməyən Veb Saytı",
+            "story": "Bir satış nümayəndəsi bu sabah yeni bir iş istasyonu olan PC-Dev qurdu və indi şirkətin veb saytı fujibit.com-ı aça bilmir, neçə dəfə yeniləsə də.",
+            "objective": "PC-Dev-dən HTTP sorğusunun fujibit.com-a uğurla çatması",
+            "hints": [
+                "Sorğu hətta PC-Dev qurğularından belə çıxmır — Router-HQ tərəfinə doğru klient özündən kənara çıxmır.",
+                "PC-Dev-in defolt şlüzü yoxdur, buna görə de o, öz yerli şəbəkəsindən kənara yönəldirilmiş trafikləri göndərmə bilinmir.",
+                "PC-Dev-də defolt şlüzü 10.0.24.254-ə qoyun ki, o, giden trafikini Router-HQ-ya yönləndirmə biləsin."
+            ],
+            "explanation": "Öz subneti xaricinə bir ünvana çatmağa cəhd edən hər hansı bir cihaz defolt şlüzə ehtiyac duyar — trafikləri irəli göndərən router. Biri qurulub olmadan, klient paketi cəhd etməyə hətta başlamazdan əvvəl düşürür, çünki internet üçün nəzərdə tutulan trafikləri hara göndərəcəyini bilmir."
+        },
+        "be": {
+            "title": "Вэб-сайт, які не загружаецца",
+            "story": "Прадавец наладзіў новую рабочую станцыю PC-Dev гэтым ранейшым і цяпер не можа адкрыць вэб-сайт кампаніі fujibit.com, нягледзячы на тое, сколькі разоў ён абнаўляе.",
+            "objective": "Атрымаўце HTTP-запыт ад PC-Dev да fujibit.com пасечнай.",
+            "hints": [
+                "Запыт нават не пакідае ўласныя налады PC-Dev — ён не мінуе самога клієнта да Router-HQ.",
+                "PC-Dev не мае сканфігураванага шлюза па змаўчанні, таму ён не ведае, як пасляць трафік назначаны за межы яго ўласнай лакальнай сеткі.",
+                "На PC-Dev выстаўце шлюз па змаўчанні на 10.0.24.254, каб ён ведаў, як пасляць вынікаючы трафік да Router-HQ."
+            ],
+            "explanation": "Любы прыстасаванне, якое спрабуе досягнуць адрас за межамі яго ўласнай падсеткі, потребуе шлюза па змаўчанні — маршрутызатар, які пасыла трафік далей. Без адной сканфігарванай, клієнт опускае пакет да таго, як ён нават спрабуе, таму што ён не ведае, куды пасляць трафік для Інтэрнэту."
+        },
+        "bg": {
+            "title": "Уебсайт, който не се зарежда",
+            "story": "Търговски представител настрои нова работна станция, PC-Dev, тази сутрин и сега не може да отвори уебсайта на компанията, fujibit.com, независимо колко пъти опреснява.",
+            "objective": "Получете HTTP заявка от PC-Dev, за да достигне успешно fujibit.com.",
+            "hints": [
+                "Заявката дори не напуска собствените настройки на PC-Dev — не преминава дори край самия клиент към Router-HQ.",
+                "PC-Dev няма конфигуриран шлюз по подразбиране, така че не знае как да праща трафик, насочен извън собствената му локална мрежа.",
+                "На PC-Dev задайте шлюза по подразбиране на 10.0.24.254, за да знае да перенасочи изходящия трафик към Router-HQ."
+            ],
+            "explanation": "Всяко устройство, което се опитва да достигне адрес извън собствената му подмрежа, се нуждае от шлюз по подразбиране — маршрутизатор, който прехвърля трафика напред. Без конфигуриран такъв, клиентът пада пакета преди дори да опита, тъй като не знае къде да праща трафик предназначен за интернет."
+        },
+        "bn": {
+            "title": "যে ওয়েবসাইট লোড হবে না",
+            "story": "একজন বিক্রয় প্রতিনিধি আজ সকালে একটি নতুন কর্মকেন্দ্র, PC-Dev, সেটআপ করেছেন এবং এখন কোম্পানির ওয়েবসাইট, fujibit.com, খুলতে পারছেন না, যতবার রিফ্রেশ করুন না কেন।",
+            "objective": "PC-Dev থেকে একটি HTTP অনুরোধ সফলভাবে fujibit.com এ পৌঁছান।",
+            "hints": [
+                "অনুরোধ কখনও PC-Dev এর নিজস্ব সেটিংস ছাড়িয়ে যায় না — এটি ক্লায়েন্ট নিজেই Router-HQ এর দিকে এগিয়ে যায় না।",
+                "PC-Dev এর কোনো ডিফল্ট গেটওয়ে কনফিগার করা নেই, তাই এটি জানে না কিভাবে নিজের স্থানীয় নেটওয়ার্কের বাইরে ট্রাফিক পাঠাতে হয়।",
+                "PC-Dev এ, ডিফল্ট গেটওয়ে 10.0.24.254 এ সেট করুন যাতে এটি জানে Router-HQ এ আউটবাউন্ড ট্রাফিক ফরওয়ার্ড করতে হয়।"
+            ],
+            "explanation": "যেকোনো ডিভাইস যা তার নিজস্ব সাবনেটের বাইরে একটি ঠিকানায় পৌঁছাতে চায় তার একটি ডিফল্ট গেটওয়ে প্রয়োজন — সেই রাউটার যা ট্রাফিক এগিয়ে পাঠায়। কনফিগার না করলে, ক্লায়েন্ট প্যাকেট ড্রপ করে দেয় এমনকি চেষ্টা করার আগেই, কারণ এটি জানে না ইন্টারনেটের জন্য বাউন্ড ট্রাফিক কোথায় পাঠাতে হয়।"
+        },
+        "ca": {
+            "title": "El lloc web que no es carrega",
+            "story": "Un venedor va configurar una nova estació de treball, PC-Dev, aquest matí i ara no pot obrir el lloc web de l'empresa, fujibit.com, per moltes vegades que ho refresque.",
+            "objective": "Aconseguir que una sol·licitud HTTP de PC-Dev arribi correctament a fujibit.com.",
+            "hints": [
+                "La sol·licitud mai no abandona les pròpies configuracions de PC-Dev — no arriba ni a passar del client cap a Router-HQ.",
+                "PC-Dev no té cap Passarel·la per defecte configurada, així que no sap com enviar tràfic destinat fora de la seva xarxa local pròpia.",
+                "A PC-Dev, estableix la Passarel·la per defecte a 10.0.24.254 perquè sàpiga que ha de reenviar el tràfic sortint a Router-HQ."
+            ],
+            "explanation": "Qualsevol dispositiu que intenti arribar a una adreça fora de la seva pròpia subxarxa necessita una Passarel·la per defecte — l'encaminador que rereenvia el tràfic. Sense una configurada, el client deixa caure el paquet abans ni de provar-ho, ja que no sap on enviar el tràfic destinat a internet."
+        },
+        "cs": {
+            "title": "Webová stránka, která se nenačítá",
+            "story": "Obchodní zástupce nastavil dnes ráno novou pracovní stanici, PC-Dev, a teď nemůže otevřít webové stránky společnosti, fujibit.com, bez ohledu na to, kolikrát je osvěží.",
+            "objective": "Dosáhněte toho, aby byl HTTP požadavek z PC-Dev úspěšně doručen na fujibit.com.",
+            "hints": [
+                "Požadavek nikdy neopustí vlastní nastavení PC-Dev — neprojde ani přes klienta směrem k Router-HQ.",
+                "PC-Dev nemá nakonfigurovanou žádnou Výchozí bránu, takže neví, jak poslat provoz určený mimo jeho vlastní místní síť.",
+                "Na PC-Dev nastavte Výchozí bránu na 10.0.24.254, aby věděl, že má poslat odchozí provoz do Router-HQ."
+            ],
+            "explanation": "Každé zařízení, které se pokouší dosáhnout adresy mimo svou vlastní podsíť, potřebuje Výchozí bránu — směrovač, který provoz přepošle. Bez ní klient paket vůbec vypustí, protože neví, kam poslat provoz určený do internetu."
+        },
+        "da": {
+            "title": "Webstedet, der ikke indlæses",
+            "story": "En sælger opsatte en ny arbejdsstation, PC-Dev, i morges, og kan nu ikke åbne virksomhedens websted, fujibit.com, uanset hvor mange gange hun opdaterer.",
+            "objective": "Få en HTTP-anmodning fra PC-Dev til at nå fujibit.com.",
+            "hints": [
+                "Anmodningen forlader aldrig PC-Dev's egne indstillinger — den kommer ikke engang ud af klienten mod Router-HQ.",
+                "PC-Dev har ingen Standardgateway konfigureret, så den ved ikke, hvordan man sender trafik bestemt uden for dens eget lokale netværk.",
+                "På PC-Dev skal du indstille Standardgateway til 10.0.24.254, så den ved, at den skal sende udgående trafik til Router-HQ."
+            ],
+            "explanation": "Enhver enhed, der forsøger at nå en adresse uden for sit eget subnet, har brug for en Standardgateway — den router, der videresender trafik. Uden en konfigureret dropper klienten pakken, før den engang kan forsøge, fordi den ikke ved, hvor den skal sende trafik beregnet til internettet."
+        },
+        "el": {
+            "title": "Ο ιστότοπος που δεν φορτώνει",
+            "story": "Ένας αντιπρόσωπος πωλήσεων ρύθμισε μια νέα σταθμό εργασίας, PC-Dev, σήμερα το πρωί και τώρα δεν μπορεί να ανοίξει τον ιστότοπο της εταιρείας, fujibit.com, όσες φορές και να τον ανανεώσει.",
+            "objective": "Κάντε ώστε ένα HTTP αίτημα από το PC-Dev να φτάσει με επιτυχία στο fujibit.com.",
+            "hints": [
+                "Το αίτημα δεν φεύγει ποτέ από τις δικές του ρυθμίσεις PC-Dev — δεν περνά ούτε από τον ίδιο τον Client προς το Router-HQ.",
+                "Το PC-Dev δεν έχει Προεπιλεγμένη πύλη ρυθμισμένη, επομένως δεν ξέρει πώς να στείλει κίνηση που προορίζεται για έξω από το δίκτυό του.",
+                "Στο PC-Dev, ορίστε την Προεπιλεγμένη πύλη στο 10.0.24.254 ώστε να ξέρει ότι πρέπει να προωθήσει την εξερχόμενη κίνηση στο Router-HQ."
+            ],
+            "explanation": "Οποιαδήποτε συσκευή που προσπαθεί να φτάσει σε μια διεύθυνση έξω από το δικό της δίκτυο χρειάζεται μια Προεπιλεγμένη πύλη — τον δρομολογητή που προωθεί την κίνηση. Χωρίς μια ρυθμισμένη, ο Client απορρίπτει το πακέτο πριν καν προσπαθήσει, γιατί δεν ξέρει πού να στείλει την κίνηση που προορίζεται για το διαδίκτυο."
+        },
+        "eu": {
+            "title": "Webgunea ez da kargatzen",
+            "story": "Salgai-ordezkari batek goizean lan-estazio berria, PC-Dev, konfiguratu zuen eta orain ezin ditu irekitzeko enpresaren webgunea, fujibit.com, ez den kezka askotan.",
+            "objective": "HTTP eskaera baten segurua PC-Dev-etik fujibit.com-ra sartu behar duelarik.",
+            "hints": [
+                "Eskaera ez dago nahi dituzte PC-Dev beraren ezarpenetan — ez du hitz egiten kliente beraren aurrean, Router-HQ-ra.",
+                "PC-Dev-ek ez du Atebide lehenetsia konfiguratu, beraz ez du ideia nola bideratu trafikoa bere sare lokal-tik kanpo.",
+                "PC-Dev-en, ezarri Atebide lehenetsia 10.0.24.254-ra, beraz jakin du trafikoa igortzea Router-HQ-ra."
+            ],
+            "explanation": "Edozein sare barnean helbide batean sartu nahi duen gailu batek Atebide lehenetsia behar du — trafikoa aurrera bidratzen duen enruatzailea. Gabe, bezeroa paketea bota aurretik osoa, ez du dakite non bideratu trafikoa internetarako."
+        },
+        "fa": {
+            "title": "وبسایتی که بارگیری نمی‌شود",
+            "story": "یک نماینده فروش صبح امروز ایستگاه کار جدیدی به نام PC-Dev را راه‌اندازی کرد و اکنون نمی‌تواند وبسایت شرکت، fujibit.com را باز کند، مهم نیست چند بار صفحه را تازه‌سازی کند.",
+            "objective": "اطمینان حاصل کنید که درخواست HTTP از PC-Dev با موفقیت به fujibit.com برسد.",
+            "hints": [
+                "درخواست حتی از تنظیمات خود PC-Dev خارج نمی‌شود — حتی از کلاینت خود فراتر نمی‌رود به سمت Router-HQ.",
+                "PC-Dev دروازه پیش‌فرض پیکربندی‌شده ندارد، بنابراین نمی‌داند چگونه ترافیک خارج از شبکه محلی خود را ارسال کند.",
+                "در PC-Dev، دروازه پیش‌فرض را به 10.0.24.254 تنظیم کنید تا بداند ترافیک خروجی را به Router-HQ ارسال کند."
+            ],
+            "explanation": "هر دستگاهی که سعی کند به آدرسی خارج از زیرشبکه خود برسد، به دروازه پیش‌فرض نیاز دارد — روتری که ترافیک را جلو می‌برد. بدون آن، کلاینت بسته را حتی قبل از تلاش برای ارسال می‌اندازد، زیرا نمی‌داند ترافیک اینترنتی را کجا ارسال کند."
+        },
+        "fi": {
+            "title": "Verkkosivusto ei lataudu",
+            "story": "Myyntiedustaja konfiguroi uuden työaseman PC-Dev tänä aamuna ja ei nyt pysty avaamaan yrityksen verkkosivustoa fujibit.com riippumatta siitä, kuinka monta kertaa hän päivittää sivua.",
+            "objective": "Varmista, että HTTP-pyyntö PC-Dev-iltä saavuttaa onnistuneesti fujibit.com-palvelun.",
+            "hints": [
+                "Pyyntö ei edes poistu PC-Dev omista asetuksista — se ei pääse eteenpäin klientista itsestään Router-HQ-ta kohti.",
+                "PC-Dev-lla ei ole määritettyä Oletusyhdyskäytävää, joten se ei tiedä, miten lähettää liikennettä oman paikallisverkkonsa ulkopuolelle.",
+                "PC-Dev-lla aseta Oletusyhdyskäytävä arvoksi 10.0.24.254, jotta se osaa lähettää lähtevän liikenteen eteenpäin Router-HQ-lle."
+            ],
+            "explanation": "Mikä tahansa laite, joka yrittää tavoittaa osoitetta oman aliverkkonsa ulkopuolella, tarvitsee Oletusyhdyskäytävän — reitittimen, joka välittää liikennettä eteenpäin. Ilman sitä asiakas pudottaa paketin jo ennen kuin se edes yrittää, koska se ei tiedä, minne internettiin tarkoitetun liikenteen pitäisi lähteä."
+        },
+        "fil": {
+            "title": "Ang Website na Hindi Nag-load",
+            "story": "Isang sales rep ay nag-setup ng bagong workstation, PC-Dev, ngayong umaga at ngayon ay hindi makabuksan ang website ng kumpanya, fujibit.com, gaano man karaming beses na i-refresh.",
+            "objective": "Siguraduhin na ang HTTP request mula sa PC-Dev ay matagumpay na umabot sa fujibit.com.",
+            "hints": [
+                "Ang request ay hindi nawala pa sa sariling mga setting ng PC-Dev — hindi ito umaabot lampas sa client mismo tungo sa Router-HQ.",
+                "PC-Dev ay walang naka-configure na default gateway, kaya ito ay walang ideya kung paano magpadala ng traffic na patungo sa labas ng sariling lokal na network.",
+                "Sa PC-Dev, itakda ang default gateway sa 10.0.24.254 upang ito ay alam kung paano magpadala ng outbound traffic sa Router-HQ."
+            ],
+            "explanation": "Anumang device na nagsisikap na maabot ang isang address sa labas ng sariling subnet ay kailangan ng default gateway — ang router na nagpapadala ng traffic sa unahan. Nang wala ito, ang client ay nagsasayang ng packet bago pa ito subukan, dahil hindi ito alam kung saan magpadala ng traffic na naglalayong para sa internet."
+        },
+        "gl": {
+            "title": "A web que non carga",
+            "story": "Un representante de ventas configurou esta mañá unha nova estación de traballo, PC-Dev, e agora non pode abrir o sitio web da empresa, fujibit.com, non importa cantas veces recargue.",
+            "objective": "Conseguir que unha solicitude HTTP desde PC-Dev chegue correctamente a fujibit.com.",
+            "hints": [
+                "A solicitude nunca sae da configuración propia de PC-Dev — non pasa máis alá do cliente cara a Router-HQ.",
+                "PC-Dev non ten configurada ningunha Pasarela predeterminada, así que non sabe como enviar tráfico destinado fóra da súa propia rede local.",
+                "En PC-Dev, establece a Pasarela predeterminada a 10.0.24.254 para que saiba reenviar o tráfico de saída cara a Router-HQ."
+            ],
+            "explanation": "Calquera dispositivo que intente alcanzar un enderezo fóra da súa propia subrede necesita unha Pasarela predeterminada — o enrutador que reenvía o tráfico. Sen ela configurada, o cliente descarta o paquete antes incluso de intentalo, xa que non sabe onde enviar o tráfico destinado a internet."
+        },
+        "gu": {
+            "title": "વેબસાઇટ જે લોડ નહીં થાય",
+            "story": "વિક્રય પ્રતિનિધિએ આજની સવારે નতુન વર્કસ્ટેશન, PC-Dev, સેટ કર્યું હતું અને હવે કોમ્પનીની વેબસાઇટ, fujibit.com, ખોલી શકતું નથી, ભલે તે કેટલી વાર રિફ્રેશ કરે.",
+            "objective": "PC-Dev થી HTTP વિનંતી fujibit.com ને સફળતાથી પહોંચાવો.",
+            "hints": [
+                "વિનંતી ક્યારેય પણ PC-Dev ની પોતાની સેટિંગ્સમાંથી નીકળતી નથી — તે ક્લાયંટ પોતે Router-HQ તરફ આગળ જતી નથી.",
+                "PC-Dev પાસે ડિફૉલ્ટ ગેટવે કોન્ફિગર કરેલું નથી, તેથી તેને તેના પોતાના સ્થાનિક નેટવર્કની બહાર ટ્રાફિક કેવી રીતે મોકલવું તે ખબર નથી.",
+                "PC-Dev પર, ડિફૉલ્ટ ગેટવે ને 10.0.24.254 પર સેટ કરો જેથી તે આઉટબાઉન્ડ ટ્રાફિક Router-HQ તરફ ફોરવર્ડ કરવાનું જાણે."
+            ],
+            "explanation": "કોઈ પણ ઉપકરણ જે તેના પોતાના સબનેટની બહાર કોઈ સરનામું સુધી પહોંચવાનો પ્રયાસ કરે છે તેને ડિફૉલ્ટ ગેટવે ની જરૂર છે — તે રાઉટર જે ટ્રાફિક આગળ મોકલે છે. તેના વિના કોન્ફિગર કર્યા વિના, ક્લાયંટ પેકેટ પણ પ્રયાસ કરતાં પહેલા પોતે છોડી દે છે, કારણ કે તેને ઈન્ટરનેટ માટે નિર્ધારિત ટ્રાફિક ક્યાં મોકલવું તે ખબર નથી."
+        },
+        "he": {
+            "title": "האתר שלא נטען",
+            "story": "נציג מכירות הגדיר בבוקר זה תחנת עבודה חדשה, PC-Dev, וכעת היא לא יכולה לפתוח את האתר של החברה, fujibit.com, לא משנה כמה פעמים היא מרעננת.",
+            "objective": "הבטח שבקשת HTTP מ-PC-Dev תגיע בהצלחה ל-fujibit.com.",
+            "hints": [
+                "הבקשה אף פעם לא עוזבת את ההגדרות של PC-Dev עצמו — היא לא עוברת הלאה מהקליינט כלפי Router-HQ.",
+                "ל-PC-Dev אין שער ברירת מחדל מוגדר, כך שהוא לא יודע איך לשלוח תעבורה המיועדת מחוץ לרשת המקומית שלו.",
+                "ב-PC-Dev, הגדר את שער ברירת מחדל ל-10.0.24.254 כך שהוא יידע להעביר תעבורה יוצאת ל-Router-HQ."
+            ],
+            "explanation": "כל מכשיר שמנסה להגיע לכתובת מחוץ לתת-הרשת שלו צריך שער ברירת מחדל — הנתב שמעביר תעבורה הלאה. ללא הגדרה זו, הקליינט זורק את החבילה עוד לפני שהוא מנסה, כי הוא לא יודע לאן לשלוח תעבורה שמיועדת לאינטרנט."
+        },
+        "hr": {
+            "title": "Web stranica koja se ne učitava",
+            "story": "Prodajni predstavnik postavio je ovo jutro novu radnu stanicu, PC-Dev, i sada ne može otvoriti web stranicu tvrtke, fujibit.com, bez obzira koliko puta osvježi.",
+            "objective": "Osiguraj da HTTP zahtjev iz PC-Dev-a uspješno dosegne fujibit.com.",
+            "hints": [
+                "Zahtjev nikad ne napušta vlastite postavke PC-Dev-a — ne ide dalje od klijenta prema Router-HQ.",
+                "PC-Dev nema konfiguriran zadani pristupnik, pa ne zna kako poslati promet namijenjen izvan svoje lokalne mreže.",
+                "Na PC-Dev-u postavi zadani pristupnik na 10.0.24.254 kako bi znao proslijediti odlazni promet prema Router-HQ."
+            ],
+            "explanation": "Bilo koji uređaj koji pokušava dosegnuti adresu izvan vlastite podrežje trebao bi zadanu pristupnik — usmjerivač koji prosljeđuje promet dalje. Bez toga konfiguriranog, klijent odbacuje paket čak i prije nego što pokuša, jer ne zna kamo poslati promet namijenjen internetu."
+        },
+        "hu": {
+            "title": "A webhely, amely nem tölt be",
+            "story": "Egy értékesítési képviselő regisztrált egy új munkaállomást, PC-Dev-et ezen a reggelen, és most nem tudja megnyitni a vállalat weboldalát, fujibit.com, nem számít, hányszor frissít.",
+            "objective": "Biztosítsd, hogy a PC-Dev-ből érkező HTTP-kérés sikeresen elérje a fujibit.com-ot.",
+            "hints": [
+                "A kérés soha nem hagyja el a PC-Dev saját beállításait — nem jut el a kliens mellett a Router-HQ felé.",
+                "PC-Dev nem rendelkezik konfigurált alapértelmezett átjáróval, így nem tudja, hogyan küldjön forgalmat a helyi hálózatán kívülre.",
+                "A PC-Dev-en állítsd az alapértelmezett átjárót 10.0.24.254-re, hogy tudja átirányítani a kimenő forgalmat a Router-HQ felé."
+            ],
+            "explanation": "Minden olyan eszköz, amely a saját alhálózatán kívüli címet próbál elérni, alapértelmezett átjáróra van szükség — az az útválasztó, amely a forgalmat továbbítja. E nélkül konfigurálva a kliens a csomagot még a kísérlet előtt eldönti, mivel nem tudja, hova küldje az internetre szánt forgalmat."
+        },
+        "hy": {
+            "title": "Կայքը, որը չի բեռնվում",
+            "story": "Վաճառքի ներկայացուցիչը այս առավոտ նոր աշխատասենյակ PC-Dev կարգավորեց, և այժմ ընկերության fujibit.com կայքը չի կարողանում բացել, անկախ նրանից, թե քանի անգամ է նա թարմացրել:",
+            "objective": "HTTP요청이 PC-Dev에서 fujibit.com에 성공적으로 도달하도록 합니다.",
+            "hints": [
+                "Հայցումը երբեք PC-Dev-ի սեփական կարգավորումներից դուրս չի գալիս — այն Router-HQ-ի ուղղությամբ հաճախորդից անցնել չի կարողանում:",
+                "PC-Dev-ում ծագման լռելյայն դարպաս կարգավորված չէ, ուստի այն չգիտի, թե ինչպես ուղարկել տրաֆիկ իր սեփական տեղական ցանցից դուրս:",
+                "PC-Dev-ում տեղադրեք Լռելյայն դարպաս 10.0.24.254՝ որպեսզի այն իմանա ելքային տրաֆիկը Router-HQ-ին փոխանցել:"
+            ],
+            "explanation": "Ցանկացած устройство, որը փորձում է հասնել իր սեփական ենթացանցից դուրս գտնվող հասցեին, անհրաժեշտ է Լռելյայն դարպաս — Router, որը տրաֆիկն ավելի հեռու փոխանցում է: Առանց այն կարգավորվածի, հաճախորդը փաթեթ գցում է այն前, քանի որ չգիտի, թե որտեղ ուղարկել ինտերնետի համար նախատեսված տրաֆիկ:"
+        },
+        "is": {
+            "title": "Vefsíðan sem hlaðst ekki",
+            "story": "Sölufulltrúi setti upp nýja vinnustöð, PC-Dev, í morgun og getur nú ekki opnað vefsíðu fyrirtækisins, fujibit.com, sama hversu oft hún endurhleður.",
+            "objective": "Fá HTTP-beiðni frá PC-Dev til að ná með góðum árangri til fujibit.com.",
+            "hints": [
+                "Beiðnin fer aldrei einu sinni frá eigin stillingum PC-Dev — hún getur ekki farið framhjá Client sjálfu í átt að Router-HQ.",
+                "PC-Dev hefur enga Sjálfgefin gátt skilgreinda, svo hún veit ekki hvernig á að senda umferð sem er ætluð utan eigin staðbundins nets.",
+                "Á PC-Dev, stilltu Sjálfgefin gátt á 10.0.24.254 svo hún viti að senda útleidd umferð til Router-HQ."
+            ],
+            "explanation": "Allt tæki sem reynir að ná til heimilisfangs utan eigin undirnets þarf Sjálfgefin gátt — Router sem sendir umferð áfram. Án þess stillt, fellir Client pakkann áður en hann getur einu sinni reynt, vegna þess að hann veit ekki hvert á að senda umferð til internetsins."
+        },
+        "ka": {
+            "title": "ვებსაიტი, რომელიც არ იტვირთება",
+            "story": "გაყიდვების წარმომადგენელმა დღეს დილით ახალი სამუშაო სტანცია PC-Dev დააყენა და ახლა ვერ ხსნის კომპანიის ვებსაიტს fujibit.com, რამდენჯერაც არ უნდა განაახლოს.",
+            "objective": "HTTP მოთხოვნა PC-Dev-დან წარმატებით მიაღწიოს fujibit.com-ს.",
+            "hints": [
+                "მოთხოვნა PC-Dev-ის საკუთარი პარამეტრებიდან ვერ გადის — ის Client-ის თავიდან Router-HQ-ის მიმართულებით ვერ წლის.",
+                "PC-Dev-ს ნაგულისხმევი შლუზი არ აქვს კონფიგურირებული, ამიტომ არ იცის თუ როგორ უნდა გაუგზავნოს ტრაფიკი თავის ლოკალური ქსელის გარეთ.",
+                "PC-Dev-ზე დააყენეთ ნაგულისხმევი შლუზი 10.0.24.254 რომ იცოდეს გამომავალი ტრაფიკი Router-HQ-ზე გაიგზავნოს."
+            ],
+            "explanation": "ნებისმიერი მოწყობილობა, რომელიც ცდილობს მიაღწიოს მისი საკუთარი ქვექსელის გარეთ მდებარე მისამართას, საჭიროებს ნაგულისხმევი შლუზს — Router-ს, რომელიც ტრაფიკს შემდგომ გადაამისამართებს. ის კონფიგურირებული არ რომელი იყოს, Client-ი ზღვარი უშვებს, სანამ იგი კი სცადოს, რადგან არ იცის სად გაუგზავნოს ინტერნეტში განკუთვნილი ტრაფიკი."
+        },
+        "kk": {
+            "title": "Жүктелмейтін веб-сайт",
+            "story": "Сатыс өкілі бүгін ғана жаңа жұмыс станциясы PC-Dev орнатты және енді компанияның веб-сайты fujibit.com ашыла алмайды, қанша рет қайта жүктемесе де.",
+            "objective": "HTTP сұрауы PC-Dev-ден fujibit.com-ға сәтті жетуі керек.",
+            "hints": [
+                "Сұрау PC-Dev-тің өндіктеулерінен ешқашан шықпайды — ол Client-тен Router-HQ-ға ешқашан өтпейді.",
+                "PC-Dev-де Әдепкі шлюз конфигурленбеген, сондықтан ол өз жергілік желісінен тысқары трафикті қалай жіберу керектігін білмейді.",
+                "PC-Dev-де Әдепкі шлюзді 10.0.24.254 пен орнатыңыз, сонда ол шығыс трафигін Router-HQ-ға жібере алады."
+            ],
+            "explanation": "Өз ішкі желісінен тысқары адресте қол жеткіліктен ретінде өндіктеуді талап ететін барлық құрылғы — трафикті әрі қарай жіберетін Router. Ол конфигурленбегенде, Client пакетті шешіп тастайды, тіпті оның интернетке арналған трафикті қайда жіберу керектігін білмегендіктен."
+        },
+        "km": {
+            "title": "គេហទំព័ររឹងមែនដែលមិនបង្ហាញ",
+            "story": "តំណាងលក់បានដំឡើងស្ថានីយ័របស់ការងារថ្មី PC-Dev នៅម្ងាយដំបូង ហើយឥឡូវមិនអាចបើកគេហទំព័រ fujibit.com របស់ក្រុមហ៊ុនបានទេ ឥលូវដែលលើកឡើងវិញប៉ុណ្ណាក៏ដោយ។",
+            "objective": "ធានាថាសូचનា HTTP ពី PC-Dev បានឈានដល់ fujibit.com ដោយជោគជ័យ។",
+            "hints": [
+                "សូចនាបង្ហាញមិនដែលចាកចេញពីការកំណត់របស់ PC-Dev ទេ — វាមិនបង្វលលើសពី Client ដោយឯងក្រោយ Router-HQ ឡើយ។",
+                "PC-Dev គ្មានម៉ាស៊ីនម៉ាយលំនាំដើម ដែលបង្ហាញថា វាមិនដឹងថាដំបូងអាចផ្ញើចរាចរដែលខាងក្រៅបណ្ដាញក្នុងស្ទង់របស់វាបានគ។",
+                "នៅលើ PC-Dev ដែលបង្ហាញលំនាំដើម 10.0.24.254 ដូច្នេះវាដឹងថាបង្ហូរចរាចរក្រៅទៅ Router-HQ។"
+            ],
+            "explanation": "ឧបករណ៍ណាដែលព្យាយាមឈានដល់អាសយដ្ឋាននៅខាងក្រៅបណ្ដាញរងរបស់វា ត្រូវការម៉ាស៊ីនម៉ាយលំនាំដើម — Router ដែលផ្ញើចរាចរដោយលម្អិត។ ដោយគ្មាននិងកំណត់ Client កាត់បង្គប់ដំណើរការ មុនវាព្យាយាមដែលក្មេង ដោយសារតែវាមិនដឹងថាកន្លែងផ្ញើចរាចរសម្រាប់អ៊ីន្ធারណេតទេ។"
+        },
+        "kn": {
+            "title": "ಲೋಡ್ ಆಗುತ್ತಿಲ್ಲದ ವೆಬ್‌ಸೈಟ್",
+            "story": "ಒಂದು ಮಾರಾಟ ಪ್ರತಿನಿಧಿ ಈ ಬೆಳಿಗ್ಗೆ ಹೊಸ ವರ್ಕ್‌ಸ್ಟೇಶನ್ PC-Dev ಅನ್ನು ಸೆಟ್ಅಪ್ ಮಾಡಿದಳು ಮತ್ತು ಈಗ ಎಂದಿಗೂ ಕಂಪನಿಯ ವೆಬ್‌ಸೈಟ್ fujibit.com ತೆರೆಯಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ, ಎಷ್ಟು ಬಾರಿ ರಿಫ್ರೆಶ್ ಮಾಡಿದರೂ.",
+            "objective": "PC-Dev ನಿಂದ HTTP ವಿನಂತಿ fujibit.com ಗೆ ಯಶಸ್ವಿಯಾಗಿ ತಲುಪುವಂತೆ ಮಾಡಿ.",
+            "hints": [
+                "ವಿನಂತಿ ಎಮ್ಮೆ PC-Dev ಮತ್ತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬಿಡುವುದಿಲ್ಲ — ಅದು Router-HQ ಕಡೆ ಪ್ರಯಾಣ ಮಾಡುವುದೆ ಅರ್ಧದಿಂದ Client ನನ್ನು ಮೀರುವುದಿಲ್ಲ.",
+                "PC-Dev ನಲ್ಲಿ ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಸಂರೂಪಿತವಾಗಿಲ್ಲ, ಆದ್ದರಿಂದ ಅದಕ್ಕೆ ತನ್ನ ಸ್ವಂತ ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್ ಹೊರಗೆ ಟ್ರಾಫಿಕ್ ಕಳುಹಿಸುವುದು ಹೇಗೆ ಎಂದು ತಿಳಿದಿಲ್ಲ.",
+                "PC-Dev ನಲ್ಲಿ, ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ 10.0.24.254 ಗೆ ಸೆಟ್ ಮಾಡಿ, ಆದ್ದರಿಂದ ಅದಕ್ಕೆ Router-HQ ಗೆ ಅಲೆಕೂ ಟ್ರಾಫಿಕ್ ಫಾರ್‌ವರ್ಡ್ ಮಾಡುವುದು ಎಂದು ತಿಳಿಯುತ್ತದೆ."
+            ],
+            "explanation": "ತನ್ನ ಸ್ವಂತ ಸಬ್‌ನೆಟ್ ಹೊರಗೆ ವಿಳಾಸವನ್ನು ತಲುಪಲು ಪ್ರಯತ್ನಿಸುವ ಯಾವುದೇ ಸಾಧನವು ಒಂದು ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಬೇಕಾಗುತ್ತದೆ — ಟ್ರಾಫಿಕ್ ಅನ್ನು ಮುಂದಕ್ಕೆ ಫಾರ್‌ವರ್ಡ್ ಮಾಡುವ ರೂಟರ್. ಒಂದೂ ಸಂರೂಪಿತವಾಗದಿದ್ದರೆ, Client ಅದನ್ನು ಮುಂದೆ ಸಂಪ್ರೇಷಣೆಗೆ ಪ್ರಯತ್ನಿಸುವುದಕ್ಕೆ ಮುನ್ನಾದಿದ್ದರೂ ಪ್ಯಾಕೆಟ್ ಅನ್ನು ಬಿಡುಗಟ್ಟುತ್ತದೆ, ಇಂಟರನೆಟ್‌ಗೆ ಬೇಕಾದ ಟ್ರಾಫಿಕ್ ಎಲ್ಲಿಗೆ ಕಳುಹಿಸುವುದು ಎಂದು ತಿಳಿದಿರುವುದಿಲ್ಲ."
+        },
+        "ky": {
+            "title": "Жүктөлбөй жаткан Веб-сайт",
+            "story": "Сатуу өкүлү бүгүн эртеде жаңы иш станциясы PC-Dev орнотуп, ошол эле учурда компаниянын веб-сайты fujibit.com ачуу мүмкүн эмес, канча жолу жаңыртса да.",
+            "objective": "PC-Dev дан HTTP сурамтамасы fujibit.com ге ийгиликтүү жетишүүн камсыз кылуу.",
+            "hints": [
+                "Сурамтама эч качан PC-Dev нын өзүнүн жөндөөлөрүнөн чыкпайт — ал Clientтен туман Router-HQ га карай өтпөйт.",
+                "PC-Dev дө Демейки шлюз жөндөлгөн эмес, ошондуктан ал өзүнүн жергиликтүү тармагынан тышкаркы трафикти кантип жөнөтүүнү билбейт.",
+                "PC-Dev дө Демейки шлюзду 10.0.24.254 кага коюңуз, ошондо ал трафикти Router-HQ га алдын ала жилүүнү билет."
+            ],
+            "explanation": "Өз подсетинен тышкаркы дарегине жетүүгө аракет кылган каалаган аппарат Демейки шлюз керек — трафикти алдын ала жилүүчү маршруттер. Эч бирөө жөндөлбөсө, Client пакетти узундубай түшүрөт, анткени ал интернетке керектүү трафикти кайда жөнөтүүнү билбейт."
+        },
+        "lo": {
+            "title": "ເວັບໄຊທ໌ທີ່ບໍ່ໂຫຼດ",
+            "story": "ຜູ້ຕາງລາຍການຂາຍໄດ້ຕັ້ງຄ່າວຽກສະຖານີໃໝ່ PC-Dev ເມື່ອເຊົ້າວັນນີ້ ແລະຕອນນີ້ບໍ່ສາມາດເປີດເວັບໄຊທ໌ຂອງບໍລິສັດ fujibit.com ໄດ້, ບໍ່ວ່າຈະໂຫຼດຄືນສະ ຈັກເທື່ອ.",
+            "objective": "ເຮັດໃຫ້ HTTP ຄຳຮ້ອງຈາກ PC-Dev ເຖິງ fujibit.com ສໍາເລັດ.",
+            "hints": [
+                "ຄຳຮ້ອງບໍ່ເຄີຍອອກຈາກການຕັ້ງຄ່າ PC-Dev — ມັນບໍ່ຜ່ານ Client ໄປຫາ Router-HQ.",
+                "PC-Dev ບໍ່ມີ default gateway ຕັ້ງຄ່າ, ດັ່ງນັ້ນມັນບໍ່ຮູ້ວ່າຈະສົ່ງトラaffic ໄປນອກເຄືອຂ່າຍທ້ອງຖິ່ນຂອງມັນໄດ້ແນວໃດ.",
+                "ເທິງ PC-Dev, ກໍານົດ default gateway ເປັນ 10.0.24.254 ເພື່ອໃຫ້ມັນຮູ້ວ່າຈະສົ່ງ traffic ອອກໄປຫາ Router-HQ."
+            ],
+            "explanation": "ອຸປະກອນໃດໜຶ່ງທີ່ພະຍາຍາມເຖິງທີ່ຢູ່ນອກ subnet ຂອງມັນເອງຕ້ອງການ default gateway — router ທີ່ສົ່ງ traffic ໄປຂ້າງໜ້າ. ໂດຍບໍ່ມີຕົວໜຶ່ງທີ່ກໍານົດ, Client ຈະຫຼຸດຂະຫນາດ packet ກ່ອນທີ່ມັນຈະລອງ, ເພາະວ່າມັນບໍ່ຮູ້ວ່າຈະສົ່ງ traffic bound for ໄປຫາອິນເຕີເນັດໄດ້ໃສ."
+        },
+        "lt": {
+            "title": "Svetainė, kuri nebesinčitina",
+            "story": "Pardavimų atstovas šiandien ryte nustatė naują darbo stotį PC-Dev, bet dabar negali atidaryti bendrovės svetainės fujibit.com, nepaisant to, kiek kartų ją atnaujina.",
+            "objective": "Pasikrėpus, kad HTTP užklausa iš PC-Dev sėkmingai pasiektų fujibit.com.",
+            "hints": [
+                "Užklausa niekada net neišeina iš PC-Dev nustatymų — ji nepragleda Client paties Router-HQ link.",
+                "PC-Dev neturi sukonfigūruoto numatytojo šliuzo, todėl nežino, kaip siųsti srautą už savo vietinio tinklo ribų.",
+                "Nustatykite numatytąjį šliuzą PC-Dev į 10.0.24.254, kad jis žinotų, kaip persiųsti srauto duomenis į Router-HQ."
+            ],
+            "explanation": "Bet kuris įrenginys, bandantis pasiekti adresą už savojo podsinklo, reikalingas numatytasis šliuzas — maršrutizatorius, kuris persiųsti srautą toliau. Be to, konfigūruota, kliento įrenginys nutrauktų paketą, pirm nei bandytų jį siųsti toliau, nes nežino, kur siųsti iš interneto skirtą srautą."
+        },
+        "lv": {
+            "title": "Mājaslapa, kura neielādējas",
+            "story": "Pārdošanas pārstāvis šorīt iestatīja jauno darbstaciju PC-Dev, taču tagad nevar atvērt uzņēmuma mājaslapi fujibit.com, neatkarīgi no tā, cik reizes to atsvaidzina.",
+            "objective": "Padarīt, lai HTTP pieprasījums no PC-Dev veiksmīgi sasniegtu fujibit.com.",
+            "hints": [
+                "Pieprasījums nekad nepamatt PC-Dev paša iestatījumus — tas nepāriet pāri Client pašam uz Router-HQ.",
+                "PC-Dev nav konfigurēta noklusējuma vārteja, tāpēc tas nezin, kā sūtīt satiksmi ārpus paša lokālā tīkla.",
+                "Uz PC-Dev iestatiet noklusējuma vārtejau uz 10.0.24.254, lai tas zinātu, kā pārsūtīt izejošo satikni uz Router-HQ."
+            ],
+            "explanation": "Jebkuram ierīcei, kas mēģina sasniegt adresi ārpus paša apakštīkla, ir nepieciešama noklusējuma vārteja — maršrutētājs, kas pārsūta satikni tālāk. Bez konfigurētas vārtējas, klients atmestulī paketi pirms tam, kad tas varētu pat mēģināt nosūtīt, jo nezin, kur nosūtīt satikni, kas paredzēts internetam."
+        },
+        "mk": {
+            "title": "Веб-страната која не се вчитува",
+            "story": "Еден продажен претставник постави ново работно место, PC-Dev, утре во утро и сега не може да ја отвори веб-страната на компанијата, fujibit.com, без разлика колку пати да ја освежи.",
+            "objective": "Направи так што HTTP барање од PC-Dev успешно ќе стигне до fujibit.com.",
+            "hints": [
+                "Барањето никогаш не го напушта PC-Dev - не стигна ни до Router-HQ.",
+                "PC-Dev нема Default gateway конфигуриран, па не знае како да испрати сообраќај намален надвор од сопствената локална мрежа.",
+                "На PC-Dev, подесии Default gateway на 10.0.24.254 за да знае да го пренасочи исходниот сообраќај до Router-HQ."
+            ],
+            "explanation": "Секој уред кој се обидува да достигне адреса надвор од сопствениот подмрежа има потреба од Default gateway - маршрутизаторот кој го пренасочува сообраќајот. Без една конфигурирана, клиентот го отфрла пакетот пред да можи да опроба, бидејќи не знае каде да го испрати сообраќајот наменет за интернет."
+        },
+        "ml": {
+            "title": "വെബ്സൈറ്റ് ലോഡ് ചെയ്യാൻ കഴിയാത്തത്",
+            "story": "ഒരു സെയിൽസ് പ്രതിനിധി ഈ പ്രഭാതം PC-Dev, എന്ന പുതിയ വർക്കസ്ടേഷൻ സജ്ജീകരിച്ചു, കാണുന്നത് സ്വയം കമ്പനിയുടെ വെബ്സൈറ്റ് fujibit.com എത്ര തവണ റിഫ്രെഷ് ചെയ്താലും തുറക്കാൻ കഴിയാത്തതാണ്.",
+            "objective": "PC-Dev എന്നതിൽ നിന്നുള്ള HTTP അഭ്യർത്ഥന fujibit.com എന്നതിൽ വിജയകരമായി എത്തിക്കുക.",
+            "hints": [
+                "അഭ്യർത്ഥന ഒരിക്കലും PC-Dev തെറ്റായ ക്ലയന്റ് സെറ്റിംഗ് വിട്ടതില്ല — അത് Router-HQ വരെ കൂടി എത്തിയില്ല.",
+                "PC-Dev ന് ഡിഫോൾട്ട് ഗേറ്റ്‌വേ കോൺഫിഗർ ചെയ്തിട്ടില്ല, അതിനാൽ അതിന് സ്വന്തം പ്രാദേശിക നെറ്റ്‌വർക്കിന് പുറത്തുള്ള ട്രാഫിക് അയയ്ക്കാൻ അറിയില്ല.",
+                "PC-Dev സെ ഡിഫോൾട്ട് ഗേറ്റ്‌വേ 10.0.24.254 ആയി സജ്ജീകരിച്ച് വരുന്ന ട്രാഫിക്ക് Router-HQ ലേക്ക് അയയ്ക്കാൻ അറിയേണ്ടതായി തിരുത്തുക."
+            ],
+            "explanation": "സ്വന്തം സബ്നെറ്റിന് പുറത്തുള്ള ഒരു വിലാസത്തിൽ എത്താൻ ശ്രമിക്കുന്ന ഏത് ഉപകരണത്തിനും ഡിഫോൾട്ട് ഗേറ്റ്‌വേ ആവശ്യമാണ് — ട്രാഫിക് അയച്ചുവിടുന്ന റൗട്ടർ. സമന്വയിച്ചില്ലെങ്കിൽ, ക്ലയന്റ് ഇന്റർനെറ്റിന്റെ ട്രാഫിക്ക് എവിടെയോ അയയ്ക്കാൻ അറിയില്ലാത്തതിനാൽ പാക്കറ്റ് നിരസിച്ച് നിൽക്കും."
+        },
+        "mn": {
+            "title": "Вэбсайт ачигдахгүй байна",
+            "story": "Борлуулалтын төлөөлөгч өнөө өглөө PC-Dev нэртэй шинэ ажлын станцыг суулгасан ба одоо компанийн вэбсайт fujibit.com-г хэдэн удаа сэргээлэлт хийлээ гэхэд нээж чадахгүй байна.",
+            "objective": "PC-Dev аас HTTP хүсэлтийг fujibit.com хүрэхэд нь амжилттай болгох.",
+            "hints": [
+                "Хүсэлт PC-Dev өөрийн тохиргоо эс орхож хаашаа явахгүй байна — Router-HQ рүү ямар ч хүрэхгүй.",
+                "PC-Dev Default gateway тохируулаагүй байна, тиймээс энэ нь өөрийн орон нутгийн сүлжээнээс гадна ачааллыг хэрхэн явуулахаа мэдэхгүй.",
+                "PC-Dev дээр Default gateway-г 10.0.24.254 руу тохируулж Router-HQ рүү ачааллыг шилжүүлэхээр сэрэмжүүлэх."
+            ],
+            "explanation": "Аливаа төхөөрөмж өөрийн дэд сүлжээнээс гадуур байрлах хаягт хүрэхийг оролдох үед Default gateway шаардлагатай — энэ нь сүлжээг ачааллыг явуулдаг маршрутчилагч юм. Хэрэв энэ тохируулаагүй байвал, клиент интернет рүү явуулах ачааллыг хаашаа явуулахаа мэдэхгүй байхад пакетыг орхих хөдөлгөөн хийдэг."
+        },
+        "mr": {
+            "title": "वेबसाइट लोड होत नाही",
+            "story": "विक्रय प्रतिनिधीने आज सकाळी नव्या वर्कस्टेशन PC-Dev सेट अप केले आणि आता कंपनीची वेबसाइट fujibit.com कितीही वेळा रीफ्रेश करून उघडू शकत नाही.",
+            "objective": "PC-Dev वरून HTTP विनंती fujibit.com पर्यंत यशस्वीपणे पोहोचवा.",
+            "hints": [
+                "विनंती PC-Dev च्या स्वत:च्या सेटिंग्ज सोडून निघत ही नाही — ती Router-HQ पर्यंत पोहोचत ही नाही.",
+                "PC-Dev वर डिफॉल्ट गेटवे कॉन्फिगर केलेले नाही, म्हणून तो स्वतःच्या स्थानिक नेटवर्कच्या बाहेरची ट्रॅफिक कसे पाठवायची हे जाणत नाही.",
+                "PC-Dev वर डिफॉल्ट गेटवे 10.0.24.254 वर सेट करा जेणेकरून तो बाहेरचा ट्रॅफिक Router-HQ पर्यंत पाठवू शकेल."
+            ],
+            "explanation": "कोणताही उपकरण जो स्वतःच्या सबनेटच्या बाहेरला पत्ता मिळवण्याचा प्रयत्न करत आहे त्याला डिफॉल्ट गेटवे लागतो — एक राउटर जो ट्रॅफिक पुढे पाठवतो. एक कॉन्फिगर न केलेला, क्लायंट इंटरनेटचा ट्रॅफिक कुठे पाठवायचा हे जाणत नसल्याने पॅकेट सोडून देतो."
+        },
+        "ms": {
+            "title": "Laman Web Tidak Muat",
+            "story": "Wakil jualan menyiapkan stesen kerja baharu, PC-Dev, pagi ini dan kini tidak dapat membuka laman web syarikat, fujibit.com, berapa kali pun dia menyegarnya.",
+            "objective": "Dapatkan permintaan HTTP dari PC-Dev untuk berjaya mencapai fujibit.com.",
+            "hints": [
+                "Permintaan tidak pernah meninggalkan tetapan PC-Dev sendiri — ia tidak sampai ke Router-HQ.",
+                "PC-Dev tidak mempunyai Get Laluan Lalai yang dikonfigurasi, jadi ia tidak tahu cara menghantar lalu lintas yang bertujuan ke luar rangkaian tempatannya sendiri.",
+                "Di PC-Dev, tetapkan Get Laluan Lalai kepada 10.0.24.254 supaya ia tahu untuk memajukan lalu lintas keluar ke Router-HQ."
+            ],
+            "explanation": "Mana-mana peranti yang cuba mencapai alamat di luar subnet sendiri memerlukan Get Laluan Lalai — penghalaan yang memajukan lalu lintas. Tanpa satu yang dikonfigurasi, klien menjatuhkan paket sebelum ia dapat mencuba, kerana ia tidak tahu ke mana untuk menghantar lalu lintas yang ditujukan untuk internet."
+        },
+        "ne": {
+            "title": "वेबसाइट जो लोड हुन सक्दैन",
+            "story": "एक बिक्रय प्रतिनिधिले आज बिहान नयाँ कार्यस्टेशन PC-Dev सेट अप गरिन् र अब कुनै पनि पटक ताज़ा गर्दा पनि कम्पनीको वेबसाइट fujibit.com खोल्न सक्दैनन्।",
+            "objective": "PC-Dev बाट HTTP अनुरोध सफलतापूर्वक fujibit.com सम्म पुग्नुस्।",
+            "hints": [
+                "अनुरोध PC-Dev को आफ्नै सेटिङ भित्र कहिलै पनि छोडिएन — यो Router-HQ तिर क्लायन्ट आफैं पार गर्दैन।",
+                "PC-Dev सँग डिफल्ट गेटवे कन्फिगर गरिएको छैन, त्यसकारण यसलाई यसको आफ्नै स्थानीय नेटवर्क बाहिर गन्तब्य ट्राफिक कसरी पठाउने भनी थाहा छैन।",
+                "PC-Dev मा डिफल्ट गेटवे 10.0.24.254 मा सेट गर्नुस् ताकि यसलाई आउटबाउन्ड ट्राफिक Router-HQ मा अगाडी बढाउन थाहा होस्।"
+            ],
+            "explanation": "आफ्नै सबनेट बाहिर कुनै पनि ठेगाना पुग्न खोज्ने कुनै पनि डिभाइससँग डिफल्ट गेटवे चाहिन्छ — यो राउटर हो जसले ट्राफिक अगाडि बढाउँछ। बिना कन्फिगर गरि, क्लायन्टले प्याकेट ड्रप गर्छ किनभने यसलाई इन्टरनेटको लागि ट्राफिक कहाँ पठाउने थाहा छैन।"
+        },
+        "nl": {
+            "title": "De website die niet laadt",
+            "story": "Een verkoopvertegenwoordiger heeft vanmorgen een nieuw werkstation PC-Dev ingericht en kan nu het websitebedrijf fujibit.com niet openen, hoe vaak ze ook ververst.",
+            "objective": "Een HTTP-aanvraag van PC-Dev krijgen die met succes fujibit.com bereikt.",
+            "hints": [
+                "Het verzoek verlaat PC-Dev's eigen instellingen nooit — het passeert de klant zelf niet naar Router-HQ.",
+                "PC-Dev heeft geen Standaardgateway geconfigureerd, dus het weet niet hoe het verkeer dat buiten zijn eigen lokale netwerk is bestemd, moet verzenden.",
+                "Stel op PC-Dev de Standaardgateway in op 10.0.24.254 zodat het weet dat het verkeer naar buiten moet worden doorgestuurd naar Router-HQ."
+            ],
+            "explanation": "Elk apparaat dat een adres buiten zijn eigen subnet wil bereiken, heeft een Standaardgateway nodig — de router die verkeer doorstuurt. Zonder deze geconfigureerd, laat de klant het pakket los voordat het zelfs maar kan proberen, omdat het niet weet waar het verkeer voor internet moet verzenden."
+        },
+        "no": {
+            "title": "Nettstedet som ikke laster",
+            "story": "En salgsrepresentant opprettet en ny arbeidsstasjon, PC-Dev, denne morgenen og kan nå ikke åpne selskapets nettsted fujibit.com uansett hvor mange ganger hun oppdaterer.",
+            "objective": "Få en HTTP-forespørsel fra PC-Dev til å nå fujibit.com.",
+            "hints": [
+                "Forespørselen forlater aldri PC-Dev's egne innstillinger — den passerer ikke selv klienten mot Router-HQ.",
+                "PC-Dev har ingen Standard gateway konfigurert, så den vet ikke hvordan den skal sende trafikk til destinasjoner utenfor sitt eget lokale nettverk.",
+                "Sett Standard gateway til 10.0.24.254 på PC-Dev slik at den vet hvordan den skal videresende utgående trafikk til Router-HQ."
+            ],
+            "explanation": "Ethvert apparat som prøver å nå en adresse utenfor sitt eget nett, trenger en Standard gateway — rutteren som videresender trafikk. Uten en konfigurert, dropper klienten pakken før den engang kan prøve, fordi den ikke vet hvor den skal sende internetttrafikk."
+        },
+        "or": {
+            "title": "ଯେଉଁ ୱେବସାଇଟ୍ ଲୋଡ ହୁଏ ନାହିଁ",
+            "story": "ଏକ ବିକ୍ରୟ ପ୍ରତିନିଧି ଆଜ ସକାଳରେ ନୂତନ କାର୍ଯ୍ୟକ୍ଷେତ୍ର PC-Dev ସ୍ଥାପନ କରିଛନ୍ତି ଏବଂ ଏବେ ସମ୍ଭବ ନୁହେଁ ଯେ କମ୍ପାନୀର ୱେବସାଇଟ fujibit.com ଖୋଲୁ, ସେ ଯେତେ ଥର ରିଫ୍ରେଶ କରନ୍ତୁ।",
+            "objective": "PC-Dev ରୁ HTTP ଅନୁରୋଧ ସଫଳତାର ସହ fujibit.com ରେ ପହଞ୍ଚୁ।",
+            "hints": [
+                "ଅନୁରୋଧ PC-Dev ର ନିଜସ୍ব ସେଟିଂସ୍ ଛାଡି ନୁହେଁ — ଏହା ନିଜେ କ୍ଲାଏଣ୍ଟ ନିକଟ Router-HQ ତକ ଯାଇ ନାହିଁ।",
+                "PC-Dev ର ଡିଫଲ୍ଟ ଗେଟୱେ କନ୍ଫିଗର ନାହିଁ, ତେଣୁ ଏହାର ନିଜର ସ୍ଥାନୀୟ ନେଟୱର୍କ ବାହ୍ୟ ଟ୍ରାଫିକ କିପରି ପଠାଏ ତାହା ଜାଣେ ନାହିଁ।",
+                "PC-Dev ରେ ଡିଫଲ୍ଟ ଗେଟୱେ 10.0.24.254 ରେ ସେଟ୍ କରନ୍ତୁ ଯାହାଫଳରେ ଏହା ଜାଣେ ଯେ Router-HQ କୁ ଆଉଟବାଉଣ୍ଡ ଟ୍ରାଫିକ ଫରୱାର୍ଡ କିପରି କରେ।"
+            ],
+            "explanation": "ନିଜର ସବନେଟ ବାହ୍ୟ ଏକ ଠିକଣାରେ ପହଞ୍ଚିବାକୁ ଚେଷ୍ଟା କରୁଥିବା ଯେକୌଣସି ଡିଭାଇସ୍ ର ଡିଫଲ୍ଟ ଗେଟୱେ ଆବଶ୍ୟକ — ଏହା ରାଉଟର ଯାହା ଟ୍ରାଫିକ ଅଗ୍ରଗତି ଘଟାଏ। ବିନା କନ୍ଫିଗର ନକଲେ, କ୍ଲାଏଣ୍ଟ ପ୍ୟାକେଟ୍ ଛାଡି ଦେଇଥାଏ ଯାହାକୁ ମଧ୍ୟ ଚେଷ୍ଟା କରିପାରଦ, କାରଣ ଏହାର ଇଣ୍ଟରନେଟ୍ ଟ୍ରାଫିକ୍ ତଦନୁସାରେ କମ୍ ଜାଣେ।"
+        },
+        "pa": {
+            "title": "ਵਹ ਵੈਬਸਾਈਟ ਜੋ ਲੋਡ ਨਹੀਂ ਹੋਵੇਗੀ",
+            "story": "ਇੱਕ ਸੇਲਜ਼ ਪ੍ਰਤੀਨਿਧੀ ਨੇ ਅੱਜ ਸਵੇਰੇ ਇੱਕ ਨਵਾ ਵਰਕਸਟੇਸ਼ਨ, PC-Dev, ਸੈਟ ਅਪ ਕੀਤਾ ਅਤੇ ਹੁਣ ਕੰਪਨੀ ਦੀ ਵੈਬਸਾਈਟ, fujibit.com, ਖੋਲ ਨਹੀਂ ਸਕਦਾ, ਭਾਵੇਂ ਉਹ ਕਿੰਨੀ ਵੀ ਵਾਰ ਰਿਫ੍ਰੈਸ਼ ਕਰੇ।",
+            "objective": "PC-Dev ਤੋਂ ਇੱਕ HTTP ਬੇਨਤੀ ਨੂੰ ਸਫਲਤਾ ਨਾਲ fujibit.com ਤੱਕ ਪਹੁੰਚਣਾ ਹੈ।",
+            "hints": [
+                "ਬੇਨਤੀ PC-Dev ਦੀਆਂ ਆਪਣੀਆਂ ਸੈਟਿੰਗਾਂ ਤੋਂ ਵੀ ਬਾਹਰ ਨਹੀਂ ਜਾਂਦੀ — ਇਹ Router-HQ ਵੱਲ ਕਲਾਇੰਟ ਤੋਂ ਅੱਗੇ ਨਹੀਂ ਜਾਂਦੀ।",
+                "PC-Dev ਕੋਲ ਕੋਈ ਡਿਫਾਲਟ ਗੇਟਵੇ ਸੈਟ ਨਹੀਂ ਹੈ, ਇਸ ਲਈ ਉਸ ਕੋਲ ਆਪਣੇ ਲੋਕਲ ਨੈੱਟਵਰਕ ਤੋਂ ਬਾਹਰ ਦੀ ਟ੍ਰੈਫਿਕ ਭੇਜਣ ਦਾ ਕੋਈ ਪਤਾ ਨਹੀਂ ਹੈ।",
+                "PC-Dev ਉੱਤੇ, ਡਿਫਾਲਟ ਗੇਟਵੇ ਨੂੰ 10.0.24.254 'ਤੇ ਸੈਟ ਕਰੋ ਤਾਂ ਜੋ ਇਹ Router-HQ ਨੂੰ ਬਾਹਰ ਵੱਲ ਜਾਣ ਵਾਲੀ ਟ੍ਰੈਫਿਕ ਫਾਰਵਰਡ ਕਰਨਾ ਜਾਣੇ।"
+            ],
+            "explanation": "ਕੋਈ ਵੀ ਡਿਵਾਈਸ ਜੋ ਆਪਣੇ ਸਬਨੈੱਟ ਤੋਂ ਬਾਹਰ ਦੇ ਪਤਿਆ ਤਕ ਪਹੁੰਚਣਾ ਚਾਹੁੰਦਾ ਹੈ, ਉਸ ਨੂੰ ਇੱਕ ਡਿਫਾਲਟ ਗੇਟਵੇ ਦੀ ਜ਼ਰੂਰਤ ਹੈ — ਉਹ ਰਾؤਟਰ ਜੋ ਟ੍ਰੈਫਿਕ ਨੂੰ ਅੱਗੇ ਭੇਜਦਾ ਹੈ। ਬਿਨਾਂ ਇਸ ਦੇ ਸੈਟ ਅਪ ਕੀਤੇ, ਕਲਾਇੰਟ ਪੈਕੇਟ ਨੂੰ ਗਿਰਾ ਦਿੰਦਾ ਹੈ ਪਹਿਲਾਂ ਹੀ, ਕਿਉਂਕਿ ਉਸ ਕੋਲ ਇੰਟਰਨੈੱਟ ਲਈ ਟ੍ਰੈਫਿਕ ਕਿੱਥੇ ਭੇਜਣਾ ਹੈ ਦਾ ਪਤਾ ਨਹੀਂ ਹੈ।"
+        },
+        "pl": {
+            "title": "Strona, która się nie załaduje",
+            "story": "Przedstawiciel handlowy skonfigurował dziś rano nową stację roboczą, PC-Dev, i teraz nie może otworzyć strony internetowej firmy, fujibit.com, bez względu na to, ile razy ją odświeża.",
+            "objective": "Zapewnić, aby żądanie HTTP z PC-Dev pomyślnie dotarło do fujibit.com.",
+            "hints": [
+                "Żądanie nigdy nawet nie opuszcza ustawień samego PC-Dev — nie przechodzi dalej poza samego klienta w kierunku Router-HQ.",
+                "PC-Dev nie ma skonfigurowanej bramy domyślnej, więc nie wie, jak wysyłać ruch przeznaczony poza jego własną sieć lokalną.",
+                "Na PC-Dev ustaw bramę domyślną na 10.0.24.254, aby wiedział, jak przesyłać ruch wychodzący do Router-HQ."
+            ],
+            "explanation": "Każde urządzenie próbujące osiągnąć adres poza własną podsiecią potrzebuje bramy domyślnej — routera, który przesyła ruch dalej. Bez tego skonfigurowanego klient porzuca pakiet zanim nawet spróbuje, ponieważ nie wie, gdzie wysłać ruch przeznaczony dla internetu."
+        },
+        "pt-PT": {
+            "title": "O Website Que Não Carrega",
+            "story": "Um representante de vendas configurou uma nova estação de trabalho, PC-Dev, esta manhã e agora não consegue abrir o website da empresa, fujibit.com, não importa quantas vezes atualize.",
+            "objective": "Garantir que um pedido HTTP de PC-Dev atinja com sucesso fujibit.com.",
+            "hints": [
+                "O pedido nunca sequer sai das definições de PC-Dev — não passa nem pela interface do Cliente em direção ao Router-HQ.",
+                "PC-Dev não tem um gateway predefinido configurado, portanto não sabe como enviar tráfego destinado a redes fora da sua própria rede local.",
+                "Em PC-Dev, defina o gateway predefinido para 10.0.24.254 para que saiba encaminhar o tráfego de saída para Router-HQ."
+            ],
+            "explanation": "Qualquer dispositivo que tente alcançar um endereço fora da sua própria subnet precisa de um gateway predefinido — o router que encaminha o tráfego adiante. Sem um configurado, o cliente descarta o pacote antes de sequer tentar, pois não sabe para onde enviar o tráfego destinado à internet."
+        },
+        "rm": {
+            "title": "La pagina che na carga",
+            "story": "In representant da vendita ha configurà stgir matgin ina staziun da lavur nova, PC-Dev, e nu po betg pli avrir la pagina da la firma, fujibit.com, sco savens che ella las refresca.",
+            "objective": "Garantir che ina dumonda HTTP da PC-Dev envesta cun success a fujibit.com.",
+            "hints": [
+                "La dumonda na surtschaia mai ni dals parameters d'in PC-Dev — ella na passescha betg passà il Client in direcziun dil Router-HQ.",
+                "PC-Dev na dispona betg dad in default gateway configurà, perquai na saja betg co trametter traffic orientà sin las retschs lura da sia retschga locala.",
+                "Sin PC-Dev, configurescha il default gateway a 10.0.24.254, uschia saja able dad instruir il traffic outbound al Router-HQ."
+            ],
+            "explanation": "Tut apparatus che vul ragiuner in'adresscha en dadora da sia propria subnet dovra ina basa da routing — il router che trametta il traffic ora avant. Senza l'avair configurà, il Client drizzla il paket gia avant, perquai na saja betg nua da trametter traffic per l'internet."
+        },
+        "ro": {
+            "title": "Site-ul care nu se încarcă",
+            "story": "Un reprezentant de vânzări a configurat o nouă stație de lucru, PC-Dev, în această dimineață și acum nu poate deschide site-ul companiei, fujibit.com, indiferent de câte ori reîmprospătează.",
+            "objective": "Asigurați că o cerere HTTP din PC-Dev ajunge cu succes la fujibit.com.",
+            "hints": [
+                "Cererea nu pleacă nici măcar din setările proprii ale PC-Dev — nu trece de Client spre Router-HQ.",
+                "PC-Dev nu are un gateway implicit configurat, deci nu știe cum să trimită trafic destinat rețelelor din afara propriei rețele locale.",
+                "Pe PC-Dev, setați gateway-ul implicit la 10.0.24.254 pentru ca să știe să transmită traficul de ieșire către Router-HQ."
+            ],
+            "explanation": "Orice dispozitiv care încearcă să atingă o adresă din afara propriei subrețele are nevoie de un gateway implicit — routerul care transmite traficul mai departe. Fără o configurare, clientul renunță la pachet chiar înainte de a încerca, deoarece nu știe unde să trimită traficul destinat internetului."
+        },
+        "si": {
+            "title": "වෙබ් අඩවිය ගොඩ නගා නොගන්න",
+            "story": "විකුණුම් නියෝජිතයෙක් අද උදෑසරේ නව ගබඩා ඉඩවරණ පටිපාටි PC-Dev සකසා ගත් අතර, කර්මාන්තස්ථාන ගිණුම් වෙබ් අඩවිය fujibit.com එක විවෘත කිරීමට උපකාර නොමැත.",
+            "objective": "PC-Dev වෙතින් HTTP ඉල්ලීම් කිරීම සාර්ථක ලෙස fujibit.com දක්වා ළඟා වීම.",
+            "hints": [
+                "ඉල්ලීම PC-Dev හි නිවාසිතරු සැකසුම් ඇතුළත ඉතිරි නොවේ — එය ගනුදෙනුකරු දිගටම Router-HQ සිට ඉදිරි දිකින්න නොයි.",
+                "PC-Dev සඳහා පෙරනිමි ගේට්වේ සකසා නොමැත, එබැවින් එයට ස්ථානීය ජාලයෙන් ඉතිරි ගමනාන්ත සඳහා ගතිවේගය යැවිය යුතු ආකාරය නොදනී.",
+                "PC-Dev හි, පෙරනිමි ගේට්වේ 10.0.24.254 ට නියමිත කරන්න එවිට එය Router-HQ ට බාහිරාකාර ගතිවේගය යැවිය යුතු ආකාරය දනී."
+            ],
+            "explanation": "ඉහළ සඳහා සඳහා ගිය ලිපිනයකින් පිටත ඉහළ ඉතිරි ඉතිරි ඉතිරි දිකින්න ඇත — ගතිවේගය ඉදිරි දිකින්න ශිල්පයි. බාහිරාකාර ගතිවේගය යැවිය යුතු ආකාරය නොදනු වන බැවින්, ගිණුම් ගිණුම් විවෘත කිරීමට උපකාර නොමැති බැවින්, ගිණුම් ගිණුම් විවෘත කිරීමට උපකාර නොමැත."
+        },
+        "sk": {
+            "title": "Webová stránka, ktorá sa nenačítava",
+            "story": "Obchodný zástupca dnes ráno nastavil novú pracovnú stanicu PC-Dev a teraz nemôže otvoriť webovú stránku spoločnosti fujibit.com, bez ohľadu na to, koľkokrát ju obnoví.",
+            "objective": "Zabezpečte, aby bola požiadavka HTTP z PC-Dev úspešne doručená na fujibit.com.",
+            "hints": [
+                "Požiadavka nikdy neopustí vlastné nastavenia PC-Dev — nemôže sa dostať za klient smerom k Router-HQ.",
+                "PC-Dev nemá nakonfigurovanú predvolenú bránu, takže nevie, ako poslať prevádzku určenú mimo jej vlastnej miestnej siete.",
+                "Na PC-Dev nastavte predvolenú bránu na 10.0.24.254, aby vedela poslať odchádzajúcu prevádzku na Router-HQ."
+            ],
+            "explanation": "Každé zariadenie, ktoré sa snaží dosiahnuť adresu mimo svojej vlastnej podsete, potrebuje predvolenú bránu — smerovač, ktorý prepáša prevádzku ďalej. Bez nakonfigurovania jej vyhodí paket predtým, ako by to mohlo skúsiť, pretože nevie, kam poslať prevádzku určenú pre internet."
+        },
+        "sl": {
+            "title": "Spletna stran se ne naloži",
+            "story": "Prodajni predstavnik je danes zjutraj nastavil novo delovno postajo PC-Dev in sedaj ne more odpreti spletne strani podjetja fujibit.com, ne glede na to, kolikokrat jo osveži.",
+            "objective": "Prepričajte, da je zahteva HTTP s PC-Dev uspešno dosežena fujibit.com.",
+            "hints": [
+                "Zahteva nikoli ne zapusti lastnih nastavitev PC-Dev — se ne premakne mimo klienta proti Router-HQ.",
+                "PC-Dev nima konfiguriranega privzetega prehoda, zato ne ve, kako poslati promet namenjen zunaj njegove lastne krajevne omrežje.",
+                "Na PC-Dev nastavite privzeti prehod na 10.0.24.254, da ve, kako poslati odhajajoči promet k Router-HQ."
+            ],
+            "explanation": "Vsako napraavo, ki želi doseči naslov zunaj svoje lastne podsete, potrebuje privzeti prehod — usmejevalnik, ki promet prepusti naprej. Brez nastavljanja ga klient zavrne paket, preden bi to sploh lahko poskusil, ker ne ve, kam poslati promet namenjen internetu."
+        },
+        "sq": {
+            "title": "Faqja e Internetit që nuk ngarkohej",
+            "story": "Një përfaqësues shitjesh vendosi një stacion pune të ri, PC-Dev, këtë mëngjes dhe tani nuk mund të hapë faqen e internetit të kompanisë, fujibit.com, sa herë të zgjidhet.",
+            "objective": "Siguroni që një kërkesë HTTP nga PC-Dev të arrijë me sukses fujibit.com.",
+            "hints": [
+                "Kërkesa nuk e lë as vetë cilësimet e PC-Dev — nuk kalon përtej klientit drejt Router-HQ.",
+                "PC-Dev nuk ka portën e paracaktuar të konfiguruar, kështu që nuk di si të dërgojë trafikun e caktuar jashtë rrjetit të tij lokal.",
+                "Në PC-Dev, vendosni portën e paracaktuar në 10.0.24.254 në mënyrë që të dijë se si të përpara trafikun dalës tek Router-HQ."
+            ],
+            "explanation": "Çdo pajisje që përpiqet të arrijë një adresë jashtë nënrrjetit të tij ka nevojë për një portë paracaktuar — një rrugëzues që përjashton trafikun përpara. Pa të konfiguruar, klienti hedh paketën përpara se të mund të provojë, sepse nuk di se ku të dërgojë trafikun e dërguar për internetin."
+        },
+        "sr": {
+            "title": "Веб страница која се не учитава",
+            "story": "Продајни представник је подесио нову радну станицу PC-Dev овог јутра и сада не може отворити веб страницу компаније fujibit.com, без обзира колико пута је освежи.",
+            "objective": "Обезбедите да HTTP захтев са PC-Dev успешно стигне до fujibit.com.",
+            "hints": [
+                "Захтев никада не напусти PC-Dev властитих подешавања — не пролази даље од клијента према Router-HQ.",
+                "PC-Dev нема подразумеваног мрежног пролаза конфигурисаног, тако да не зна како послати саобраћај намењен ван његове властите локалне мреже.",
+                "На PC-Dev подесите подразумевани мрежни пролаз на 10.0.24.254 тако да зна да упути одлазни саобраћај ка Router-HQ."
+            ],
+            "explanation": "Свака уређаја која покушава да достигне адресу изван своје сопствене подмреже треба подразумевани мрежни пролаз — рутер који прослеђује саобраћај даље. Без конфигурисања, клијент избацује пакет пре него што може покушати, јер не зна где послати саобраћај намењен интернету."
+        },
+        "sv": {
+            "title": "Webbplatsen som inte vill läsas in",
+            "story": "En säljare ställde upp en ny arbetsstation, PC-Dev, i morse och kan nu inte öppna företagets webbplats, fujibit.com, oavsett hur många gånger hon uppdaterar.",
+            "objective": "Få en HTTP-förfrågan från PC-Dev att nå fujibit.com.",
+            "hints": [
+                "Förfrågan lämnar aldrig PC-Dev:s egna inställningar — den kommer inte förbi själva klienten mot Router-HQ.",
+                "PC-Dev har ingen Standardgateway konfigurerad, så den vet inte hur man skickar trafik avsedd för nätverk utanför sitt eget lokala nätverk.",
+                "Ställ in Standardgateway till 10.0.24.254 på PC-Dev så den vet att vidarebefordra utgående trafik till Router-HQ."
+            ],
+            "explanation": "Alla enheter som försöker nå en adress utanför sitt eget subnät behöver en Standardgateway — routern som vidarebefordrar trafiken. Utan en sådan konfigurerad släpper klienten paketet innan det ens kan försöka, eftersom den inte vet var den ska skicka trafik avsedd för internet."
+        },
+        "sw": {
+            "title": "Wavuti Ambayo Haiinui",
+            "story": "Mwakilishi wa mauzo aliboresha kituo kipya cha kazi, PC-Dev, asubuhi hii na sasa haiwezi kufungua wavuti ya kampuni, fujibit.com, haijalishi ni mara ngapi anayoandaa tena.",
+            "objective": "Pata ombi la HTTP kutoka kwa PC-Dev kusambuke fujibit.com.",
+            "hints": [
+                "Ombi hilo haliwezi hata kuondoka katika mipangilio yenyewe ya PC-Dev — halikamatii mteja mwenyewe kuelekea Router-HQ.",
+                "PC-Dev haina Lango chaguo-msingi iliyoandaliwa, kwa hivyo haitambui jinsi ya kutuma trafiki inayolenga mtandao nje ya mtandao wake ndani.",
+                "Jifuni Lango chaguo-msingi hadi 10.0.24.254 kwenye PC-Dev ili ijue kusambaza trafiki ya nje kuelekea Router-HQ."
+            ],
+            "explanation": "Kila kifaa kinachojaribu kusambuka anwani nje ya subneti yake mwenyewe kinahitaji Lango chaguo-msingi — ruta ambayo inatuma trafiki mbele. Bila hii iliyoandaliwa, mteja hutupa pakiti kabla haijaweza hata kujaribu, kwa sababu haitambui mahali pa kutumia trafiki inayolenga mtandao wa dunia.}"
+        },
+        "ta": {
+            "title": "பதிவேற்ற முடியாத இணையதளம்",
+            "story": "விற்பனை பிரতিநிதி இன்று காலை PC-Dev என்ற புதிய வேலை நிலையத்தை அமைத்தார், ஆனால் இப்போது fujibit.com, நிறுவனத்தின் வலைத்தளத்தை திறக்க முடியவில்லை, எத்தனை முறை புதுப்பிக்கப் பார்த்தாலும் முடியாது.",
+            "objective": "PC-Dev இலிருந்து HTTP கோரிக்கை fujibit.com சேருமிடத்திற்கு வெற்றிகரமாக சென்றுவிட வேண்டும்.",
+            "hints": [
+                "கோரிக்கை PC-Dev இன் சொந்த அமைப்புக்களிலேயே வெளிவரவில்லை — அது தன்னிய வாடிக்கையாளரையே Router-HQ நோக்கி செல்லலில்லை.",
+                "PC-Dev இக்கு இயல்புநிலை கேட்வே அமைக்கப்படவில்லை, எனவே அதன் சொந்த உள்ளூர் நெட்வொர்க்கிற்கு வெளியே போக வேண்டிய ட்ராஃபிக் அனுப்பவது எப்படி என்று தெரியாது.",
+                "PC-Dev இல் இயல்புநிலை கேட்வே ஐ 10.0.24.254 க்கு அமைக்கவும், அதனால் அது வெளிச்செல்லும் ட்ராஃபிக்கை Router-HQ க்கு எடுத்து செல்ல அறிந்துகொள்ளும்."
+            ],
+            "explanation": "அதன் சொந்த சாபநெட்டுக்கு வெளியே உள்ள முகவரி சேருமிட முயற்சிக்கும் யாவு இயல்புநிலை கேட்வே தேவைப்படும் — ட்ராஃபிக் மேலாக மாற்றும் ரூட்டர். இது இல்லாமல் வடிவமைக்கப்பட்டால், பாக்கெட் முயற்சிக்கவே முடியாமல் வாடிக்கையாளரால் கைவிடப்படுகிறது, ஏனெனில் அது இணையத்திற்கு நியமிக்கப்பட்ட ட்ராஃபிக் எங்கே அனுப்ப வேண்டும் என்று தெரியாது."
+        },
+        "te": {
+            "title": "లోడ్ కాని ఆన్‌లైన్‌సైట్",
+            "story": "విక్రయ ప్రతినిధి ఈ ఉదయం PC-Dev అనే కొత్త వర్కస్టేషన్‌ను సెట్ చేసింది, కానీ ఇప్పుడు కంపెనీ వెబ్‌సైట్ fujibit.com ను ఎంతమాత్రం పేజీను రీఫ్రెష్ చేసినా తెరవలేకపోయింది.",
+            "objective": "PC-Dev నుండి HTTP అభ్యర్థన fujibit.com వద్దకు విజయవంతంగా చేరుకోవాలి.",
+            "hints": [
+                "అభ్యర్థన PC-Dev యొక్క స్వంత సెట్టింగ్‌ల నుండి కూడా బయటకు రాదు — ఇది Router-HQ వైపు క్లయింట్‌ను కూడా దాటి పోదు.",
+                "PC-Dev కు డిఫాల్ట్ గేట్‌వే కాన్ఫిగర్ చేయబడలేదు, కాబట్టి దాని స్వంత స్థానిక నెట్‌వర్క్ బయటకు గమ్యం చేసిన ట్రాఫిక్‌ను ఎలా పంపాలో తెలియదు.",
+                "PC-Dev పై డిఫాల్ట్ గేట్‌వే ను 10.0.24.254కు సెట్ చేయండి, తద్వారా అది బయటకు వెళ్లే ట్రాఫిక్‌ను Router-HQ కు ఫార్వార్డ్ చేయాలని తెలుసుకుంటుంది."
+            ],
+            "explanation": "దాని స్వంత సబ్‌నెట్ బయటకు చిరునామా చేరుకోవడానికి ప్రయత్నిస్తున్న ఏదైనా పరికరానికి డిఫాల్ట్ గేట్‌వే అవసరం — ట్రాఫిక్‌ను ముందుకు పంపే రూటర్. కాన్ఫిగర్ చేయకుండా, ఇంటర్నెట్‌కు బంధించిన ట్రాఫిక్‌ను ఎక్కడ పంపాలో తెలియనందున క్లయింట్ ప్రయత్నించే ముందే పాకెట్‌ను విడుదల చేస్తుంది."
+        },
+        "uk": {
+            "title": "Сайт, який не завантажується",
+            "story": "Менеджер продажів цього ранку встановив нову робочу станцію PC-Dev, а тепер не може відкрити веб-сайт компанії fujibit.com, як би багато разів вона не оновлювала сторінку.",
+            "objective": "Забезпечити успішну передачу HTTP-запиту з PC-Dev до fujibit.com.",
+            "hints": [
+                "Запит не залишає навіть власних параметрів PC-Dev — він не проходить повз саму клієнтку в напрямку Router-HQ.",
+                "На PC-Dev не налаштований Шлюз за замовчуванням, тому вона не знає, як передавати трафік, призначений для мереж поза своєю локальною мережею.",
+                "На PC-Dev встановіть Шлюз за замовчуванням на 10.0.24.254, щоб вона знала, як перенаправляти вихідний трафік до Router-HQ."
+            ],
+            "explanation": "Будь-якому пристрою, що намагається досягти адреси поза своєю підмережею, потрібен Шлюз за замовчуванням — маршрутизатор, що перенаправляє трафік далі. Без такої налаштування клієнтка скидає пакет до того, як навіть спробує, оскільки не знає, куди передавати трафік, призначений для Інтернету."
+        },
+        "ur": {
+            "title": "جو ویب سائٹ لوڈ نہیں ہوگی",
+            "story": "ایک سیلز نمائندے نے آج صبح ایک نیا ورک سٹیشن، PC-Dev، سیٹ اپ کیا اور اب وہ کمپنی کی ویب سائٹ، fujibit.com، نہیں کھول سکتی، چاہے وہ کتنی بار تازہ کریں۔",
+            "objective": "PC-Dev سے ایک HTTP درخواست کو کامیابی سے fujibit.com تک پہنچانا ہے۔",
+            "hints": [
+                "یہ درخواست PC-Dev کی اپنی ترتیبات سے باہر نہیں نکلتی — یہ خود کلائنٹ سے آگے Router-HQ کی طرف نہیں جاتی۔",
+                "PC-Dev میں کوئی ڈیفالٹ گیٹ وے کنفیگر نہیں ہے، اس لیے اسے نہیں معلوم کہ اپنے اپنے لوکل نیٹ ورک سے باہر کی ٹریفک کو کیسے بھیجا جائے۔",
+                "PC-Dev پر، ڈیفالٹ گیٹ وے کو 10.0.24.254 پر سیٹ کریں تاکہ یہ جانے کہ باہر نکلنے والی ٹریفک کو Router-HQ کو کیسے بھیجا جائے۔"
+            ],
+            "explanation": "کوئی بھی ڈیوائس جو اپنے سبنیٹ سے باہر کسی ایڈریس تک پہنچنا چاہتا ہے، اسے ڈیفالٹ گیٹ وے کی ضرورت ہے — وہ راؤٹر جو ٹریفک کو آگے بھیجتا ہے۔ اس کے بغیر کنفیگر کیے، کلائنٹ پیکٹ کو ڈراپ کر دیتا ہے اس سے پہلے کہ یہ کوشش بھی کر سکے، کیونکہ اسے انٹرنیٹ کے لیے بندھی ہوئی ٹریفک کو کہاں بھیجنا ہے، یہ نہیں معلوم۔"
+        },
+        "zu": {
+            "title": "Iwebsite Engakwazi Ukulodalwa",
+            "story": "Isithunywa sokuventhwa sihlele i-workstation entsha, PC-Dev, nangomusa futhi ngoku akunakwazi ukuvula iwebsite yenkampani, fujibit.com, noma ngabe yinsuku ekaningana.",
+            "objective": "Sicela ukuthi i-HTTP request kusuka PC-Dev ifinyelele ngokulungile ku-fujibit.com.",
+            "hints": [
+                "Isikhalo asikuthi siphume ngaphandle kwezilungiselelo zika-PC-Dev — akuphumeleli kuyo ku-Router-HQ.",
+                "PC-Dev ayinayo i-default gateway econfigured, ngakho ayazi ukuthi ingayiphi indlela yokuthumela izifakazi ezisiwe kwenethiwekhi yayo yokubukela.",
+                "Ku-PC-Dev, hlela i-default gateway kuya 10.0.24.254 upakamani ukuthi yazi ukuthumela izifakazi zasekhaya ku-Router-HQ."
+            ],
+            "explanation": "Noma yimuphi umsebenzi ozama ukumfika kwekheli ngaphandle kwi-subnet yayo, udinga i-default gateway — i-router ethumulela izifakazi kwezinye izindawo. Ngaphandle kwayo econfigured, umkliyente uwisulele ipaketi ngaphambi kokuba nganele nokuzama, ngoba ayazi ukuthi iyiphi indlela yokuthumela izifakazi ezisiwe kwe-inthaneti."
+        },
+        "et": {
+            "title": "Veebisait, mis ei laadi",
+            "story": "Müügiesindaja seadis täna hommikul uue tööjaamase PC-Dev ja nüüd ei saa ta avada ettevõtte veebisaiti fujibit.com, hoolimata mitmetest värskendamiskatseid.",
+            "objective": "Tagada, et HTTP päring PC-Dev-ilt jõuab edukalt fujibit.com-i.",
+            "hints": [
+                "Päring ei lahku isegi PC-Dev enda seadistustest — see ei jõua kliendist edasi Router-HQ suunas.",
+                "PC-Dev-il pole Vaikelüüsi konfigureeritud, nii et tal pole aimugi, kuidas saata liiklust oma kohaliku võrgu väljapoole.",
+                "Määra PC-Dev-il Vaikelüüsiks 10.0.24.254, et see teaks Vaikelüüsit edastada väljaminevat liiklust Router-HQ-le."
+            ],
+            "explanation": "Iga seade, mis püüab jõuda oma alamvõrgu väljapoole asuvale aadressile, vajab Vaikelüüsi — ruuterit, mis edastab liikluse edasi. Ilma selleta konfigureerituna langeb klient paketi enne, kui see üldse püüab, kuna ta ei tea, kuhu saata interneti jaoks mõeldud liiklus."
+        },
+        "my": {
+            "title": "မည်သည့်အခါမျ သို့ မည်သည့်ကမ္ဘာ့စာမျက်နှာမှ မ ကြည့်ရှုနိုင်",
+            "story": "ရောင်းချသူ၏ကိုယ်စားလှယ်တစ်ဦးသည် ယနေ့ နံနက်တွင် PC-Dev ဆိုသည့်ကွန်ပျူတာသစ်ကို စနစ်ထည့်သွင်းခဲ့ပြီး၊ ကုမ္ပဏီ၏ ဝက်ဘ်ဆိုက် fujibit.com ကို ဖွင့်ကြည့်နိုင်ရန်မရှိသည့်အတွက် ထပ်မံရီလုဒ်ပြုလုပ်ခဲ့ပါသည်။",
+            "objective": "PC-Dev မှ HTTP တောင်းခံမှု fujibit.com သို့ အောင်မြင်စွာ ရောက်ရှိစေရန်။",
+            "hints": [
+                "အဆိုပါတောင်းခံမှု PC-Dev ၏ကိုယ်ပိုင်အပြင်ဆင်းချက်မှ ထွက်ခွာမည်မဟုတ်ပြီး၊ Client မှ Router-HQ သို့ မည်သည့်အခါမျ ကျေးဇူးပြု၍ မသွားပါ။",
+                "PC-Dev တွင် Default Gateway သည် ဆက်တင်ထားခြင်းမရှိသည့်အတွက် ၎င်း၏ကိုယ်ပိုင် ကွန်ရက်ပြင်ပသို့ ပေးပို့ရန် မည်သည့်အခါမျ ကျေးဇူးပြု၍ မသိရှိပါ။",
+                "PC-Dev တွင် Default Gateway ကို 10.0.24.254 သို့ ဆက်တင်ပြီး၊ ပုံမှန်အားဖြင့် အပြင်ဆင်းချက်ကွန်ရက်သို့ Router-HQ သို့ ကျေးဇူးပြု၍ ပေးပို့ရန် သိရှိစေရန်ပြုလုပ်ပါ။"
+            ],
+            "explanation": "အဆိုပါကွန်ပျူတာမှ ၎င်း၏ကိုယ်ပိုင် Subnet ပြင်ပသို့ သွားလိုစွာ ကြိုးပမ်းလိုပါက Default Gateway လိုအပ်သည်—ကွန်ရက်ပေးပို့သူ။ ၎င်းမကြိုးပမ်းထားခြင်းမရှိပါက Client သည် အဆိုပါ Packet ကို အရင်ကွန်ရက်သို့ မည်သည့်အခါမျ ကျေးဇူးပြု၍ မသွားပြီး၊ အင်တာနက်သို့ မည်သည့်အခါမျ ကျေးဇူးပြု၍ မသွားပါ။"
+        }
+    }
+}
