@@ -1,0 +1,1213 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-12-01",
+    "number": 72,
+    "difficulty": 2,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dmz_web",
+    "faultIds": [
+        "acl_deny"
+    ],
+    "concepts": [
+        "firewall",
+        "acl"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Reception",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.25.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.25.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Edge",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.25.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "ipAddress": "10.0.6.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-firewall1": {
+                "id": "dev-firewall1",
+                "type": "FIREWALL",
+                "name": "FW-01",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-firewall1-p0",
+                        "index": 0,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p1",
+                        "index": 1,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p2",
+                        "index": 2,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-firewall1-p3",
+                        "index": 3,
+                        "deviceId": "dev-firewall1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.6.1",
+                            "protocol": "HTTP"
+                        },
+                        {
+                            "action": "PERMIT",
+                            "srcIp": "*",
+                            "dstIp": "10.0.6.1",
+                            "dstPort": 80
+                        },
+                        {
+                            "action": "DENY",
+                            "srcIp": "*",
+                            "dstIp": "10.0.6.1"
+                        }
+                    ],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-waf1": {
+                "id": "dev-waf1",
+                "type": "WAF",
+                "name": "WAF-Front",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-waf1-p0",
+                        "index": 0,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p1",
+                        "index": 1,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p2",
+                        "index": 2,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-waf1-p3",
+                        "index": 3,
+                        "deviceId": "dev-waf1",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.6.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.6.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-firewall1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-firewall1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-firewall1-p1",
+                "targetPortId": "dev-waf1-p0",
+                "sourceDeviceId": "dev-firewall1",
+                "targetDeviceId": "dev-waf1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-waf1-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-waf1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/api/users?id=1' OR '1'='1",
+                "body": ""
+            },
+            "expect": "blocked"
+        },
+        {
+            "id": "c3",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "blocked"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-waf1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The Blocked Portal",
+            "story": "Reception staff say the Portal-01 web page has stopped loading on PC-Reception since this morning, though it used to work fine for browsing the portal.",
+            "objective": "Restore web access from PC-Reception to Portal-01 so the page loads successfully.",
+            "hints": [
+                "The web request from PC-Reception never gets past FW-01 on its way to Portal-01.",
+                "FW-01 has an ACL rule that specifically denies HTTP traffic heading to Portal-01's address, catching the request before any permit rule can apply.",
+                "On FW-01, delete the ACL rule that denies HTTP from any source to 10.0.6.1, so the lower permit rule for port 80 can take effect."
+            ],
+            "explanation": "Firewall ACLs are read top to bottom and the first match wins. A deny rule placed above a permit rule for the same traffic will always block it, even if a permit rule exists further down. Removing the overly broad deny rule let the intended permit rule take effect."
+        },
+        "ja": {
+            "title": "ブロックされたポータル",
+            "story": "受付スタッフによると、今朝からPC-ReceptionでPortal-01のWebページが読み込めなくなったとのことです。これまではポータルの閲覧に問題はありませんでした。",
+            "objective": "PC-ReceptionからPortal-01へのWebアクセスを復旧し、ページが正常に読み込まれるようにします。",
+            "hints": [
+                "PC-Reception からの Web リクエストは、Portal-01 へ向かう途中で FW-01 を通過できていません。",
+                "FW-01には、Portal-01のアドレス宛てのHTTPトラフィックを明示的に拒否するACLルールがあり、許可ルールが適用される前にリクエストを遮断しています。",
+                "FW-01 で、送信元を問わず 10.0.6.1 宛ての HTTP を拒否する ACL ルールを削除してください。これにより、下にあるポート80用の許可ルールが有効になります。"
+            ],
+            "explanation": "ファイアウォールのACLルールは上から順に読まれ、最初に一致したルールが適用されます。同じ通信に対して許可ルールより上に拒否ルールがあると、下に許可ルールがあっても必ず遮断されてしまいます。この広すぎる拒否ルールを削除したことで、本来の許可ルールが機能するようになりました。"
+        },
+        "zh-CN": {
+            "title": "被阻止的门户网站",
+            "story": "前台工作人员说自今早以来，PC-Reception 上的 Portal-01 网页无法加载，虽然过去浏览该门户网站时工作正常。",
+            "objective": "恢复从 PC-Reception 到 Portal-01 的网络访问，使页面能成功加载。",
+            "hints": [
+                "来自 PC-Reception 的网络请求在前往 Portal-01 的途中被 FW-01 阻止。",
+                "FW-01 有一条 ACL 规则专门拒绝发送到 Portal-01 地址的 HTTP 流量，该规则在任何允许规则生效之前捕获请求。",
+                "在 FW-01 上，删除拒绝来自任何源到 10.0.6.1 的 HTTP 的 ACL 规则，以使较低的端口 80 允许规则生效。"
+            ],
+            "explanation": "防火墙 ACL 规则从上往下逐条读取，首个匹配的规则获胜。如果拒绝规则放在相同流量的允许规则之上，即使下方存在允许规则，它也会一直阻止流量。删除那条过于宽泛的拒绝规则后，预期的允许规则就能生效。"
+        },
+        "zh-TW": {
+            "title": "遭到阻擋的入口網站",
+            "story": "前台工作人員表示自今早起，PC-Reception 上的 Portal-01 網頁無法載入，雖然過去瀏覽該入口網站時運作正常。",
+            "objective": "恢復從 PC-Reception 到 Portal-01 的網路存取，使頁面能成功載入。",
+            "hints": [
+                "來自 PC-Reception 的網路請求在前往 Portal-01 的途中被 FW-01 擋住。",
+                "FW-01 有一條 ACL 規則特別拒絕發送至 Portal-01 位址的 HTTP 流量，該規則在任何允許規則生效前捕捉請求。",
+                "在 FW-01 上，刪除拒絕來自任何來源到 10.0.6.1 的 HTTP 的 ACL 規則，以使較低的連接埠 80 允許規則生效。"
+            ],
+            "explanation": "防火牆 ACL 規則從上而下逐條讀取，第一個符合的規則獲勝。若拒絕規則置於相同流量的允許規則之上，即使下方存在允許規則，它也會一直阻擋流量。刪除那條過於寬泛的拒絕規則後，預期的允許規則就能生效。"
+        },
+        "ko": {
+            "title": "차단된 포털",
+            "story": "접수 직원들은 오늘 아침부터 PC-Reception에서 Portal-01 웹 페이지가 로드되지 않는다고 말하고 있습니다. 과거에는 포털 사이트 탐색이 잘 작동했었습니다.",
+            "objective": "PC-Reception에서 Portal-01으로의 웹 접근을 복구하여 페이지가 성공적으로 로드되도록 합니다.",
+            "hints": [
+                "PC-Reception의 웹 요청이 Portal-01으로 가는 길에 FW-01에서 멈춥니다.",
+                "FW-01에는 Portal-01 주소로 향하는 HTTP 트래픽을 특별히 거부하는 ACL 규칙이 있으며, 허용 규칙이 적용되기 전에 요청을 차단합니다.",
+                "FW-01에서 모든 소스에서 10.0.6.1로 향하는 HTTP를 거부하는 ACL 규칙을 삭제하여 아래의 포트 80 허용 규칙이 적용되도록 합니다."
+            ],
+            "explanation": "방화벽 ACL은 위에서 아래로 읽으며 첫 번째 일치 규칙이 적용됩니다. 같은 트래픽의 허용 규칙 위에 거부 규칙을 놓으면 아래에 허용 규칙이 있더라도 항상 그 트래픽을 차단합니다. 너무 광범위한 거부 규칙을 제거하면 의도한 허용 규칙이 적용될 수 있습니다."
+        },
+        "es": {
+            "title": "El Portal Bloqueado",
+            "story": "El personal de recepción dice que la página web de Portal-01 ha dejado de cargarse en PC-Reception desde esta mañana, aunque solía funcionar bien para navegar por el portal.",
+            "objective": "Restaurar el acceso web desde PC-Reception a Portal-01 para que la página se cargue correctamente.",
+            "hints": [
+                "La solicitud web de PC-Reception nunca pasa por FW-01 en su camino hacia Portal-01.",
+                "FW-01 tiene una regla ACL que rechaza específicamente el tráfico HTTP dirigido a la dirección de Portal-01, capturando la solicitud antes de que pueda aplicarse ninguna regla de permiso.",
+                "En FW-01, elimine la regla ACL que rechaza HTTP desde cualquier origen a 10.0.6.1, para que la regla de permiso inferior del puerto 80 pueda aplicarse."
+            ],
+            "explanation": "Los ACL del firewall se leen de arriba a abajo y la primera coincidencia gana. Una regla de rechazo colocada por encima de una regla de permiso para el mismo tráfico siempre lo bloqueará, incluso si existe una regla de permiso más abajo. Eliminar la regla de rechazo demasiado amplia permitió que se aplicara la regla de permiso prevista."
+        },
+        "pt-BR": {
+            "title": "O Portal Bloqueado",
+            "story": "O pessoal da recepção diz que a página web de Portal-01 parou de carregar em PC-Reception desde esta manhã, embora costumasse funcionar bem para navegar no portal.",
+            "objective": "Restaurar o acesso web de PC-Reception a Portal-01 para que a página seja carregada com sucesso.",
+            "hints": [
+                "A solicitação web de PC-Reception nunca passa por FW-01 a caminho de Portal-01.",
+                "FW-01 possui uma regra ACL que nega especificamente o tráfego HTTP destinado ao endereço de Portal-01, capturando a solicitação antes que qualquer regra de permissão possa ser aplicada.",
+                "Em FW-01, delete a regra ACL que nega HTTP de qualquer origem para 10.0.6.1, para que a regra de permissão inferior da porta 80 possa ser aplicada."
+            ],
+            "explanation": "ACLs do firewall são lidas de cima para baixo e a primeira correspondência vence. Uma regra de negação colocada acima de uma regra de permissão para o mesmo tráfego sempre o bloqueará, mesmo que exista uma regra de permissão mais abaixo. Remover a regra de negação muito ampla permitiu que a regra de permissão desejada fosse aplicada."
+        },
+        "de": {
+            "title": "Das blockierte Portal",
+            "story": "Mitarbeiter der Rezeption berichten, dass die Webseite von Portal-01 seit heute Morgen auf PC-Reception nicht mehr lädt, obwohl sie früher einwandfrei zum Durchsuchen des Portals funktionierte.",
+            "objective": "Stellen Sie den Webzugriff von PC-Reception auf Portal-01 wieder her, damit die Seite erfolgreich geladen wird.",
+            "hints": [
+                "Die Webanfrage von PC-Reception kommt nicht über FW-01 hinaus auf ihrem Weg zu Portal-01.",
+                "FW-01 hat eine ACL-Regel, die HTTP-Traffic speziell zu Portal-01s Adresse verweigert und die Anfrage abfängt, bevor eine Permit-Regel greifen kann.",
+                "Löschen Sie auf FW-01 die ACL-Regel, die HTTP von einer beliebigen Quelle zu 10.0.6.1 verweigert, damit die darunter liegende Permit-Regel für Port 80 wirken kann."
+            ],
+            "explanation": "Firewall-ACLs werden von oben nach unten gelesen und die erste Übereinstimmung gewinnt. Eine Deny-Regel, die über einer Permit-Regel für denselben Traffic platziert ist, wird immer blockieren, auch wenn eine Permit-Regel weiter unten existiert. Das Entfernen der zu breit gefassten Deny-Regel ließ die beabsichtigte Permit-Regel wirken."
+        },
+        "fr": {
+            "title": "Le portail bloqué",
+            "story": "Le personnel de la réception rapporte que la page web de Portal-01 a cessé de charger sur PC-Reception depuis ce matin, bien qu'elle fonctionnait correctement auparavant pour parcourir le portail.",
+            "objective": "Restaurez l'accès web de PC-Reception à Portal-01 afin que la page se charge correctement.",
+            "hints": [
+                "La demande web de PC-Reception ne dépasse jamais FW-01 sur son chemin vers Portal-01.",
+                "FW-01 a une règle ACL qui refuse spécifiquement le trafic HTTP vers l'adresse de Portal-01, interceptant la demande avant qu'une règle de permission ne puisse s'appliquer.",
+                "Sur FW-01, supprimez la règle ACL qui refuse HTTP de n'importe quelle source à 10.0.6.1, afin que la règle de permission inférieure pour le port 80 prenne effet."
+            ],
+            "explanation": "Les ACL des pare-feu sont lues de haut en bas et la première correspondance gagne. Une règle de refus placée au-dessus d'une règle de permission pour le même trafic le bloquera toujours, même si une règle de permission existe plus bas. La suppression de la règle de refus trop large a permis à la règle de permission prévue de prendre effet."
+        },
+        "hi": {
+            "title": "अवरुद्ध पोर्टल",
+            "story": "रिसेप्शन कर्मचारियों का कहना है कि Portal-01 वेब पेज आज सुबह से PC-Reception पर लोड नहीं हो रहा है, हालांकि यह पहले पोर्टल ब्राउज़ करने के लिए ठीक से काम करता था।",
+            "objective": "PC-Reception से Portal-01 तक वेब एक्सेस बहाल करें ताकि पेज सफलतापूर्वक लोड हो।",
+            "hints": [
+                "PC-Reception से वेब अनुरोध Portal-01 की ओर जाते समय कभी FW-01 से आगे नहीं जाता है।",
+                "FW-01 के पास एक ACL नियम है जो विशेष रूप से Portal-01 के पते पर जाने वाली HTTP ट्रैफिक को अस्वीकार करता है, किसी भी अनुमति नियम के लागू होने से पहले अनुरोध को पकड़ता है।",
+                "FW-01 पर, ACL नियम को हटाएं जो किसी भी स्रोत से 10.0.6.1 तक HTTP को अस्वीकार करता है, ताकि पोर्ट 80 के लिए निचला अनुमति नियम प्रभावी हो सके।"
+            ],
+            "explanation": "फ़ायरवॉल ACL को ऊपर से नीचे तक पढ़ा जाता है और पहला मैच जीतता है। एक ही ट्रैफिक के लिए अनुमति नियम के ऊपर रखा गया एक अस्वीकार नियम हमेशा इसे ब्लॉक करेगा, भले ही आगे एक अनुमति नियम मौजूद हो। बहुत व्यापक अस्वीकार नियम को हटाने से इच्छित अनुमति नियम प्रभावी हुआ।"
+        },
+        "id": {
+            "title": "Portal yang Diblokir",
+            "story": "Staf penerimaan melaporkan bahwa halaman web Portal-01 berhenti dimuat di PC-Reception sejak pagi ini, padahal sebelumnya berfungsi dengan baik untuk menjelajahi portal.",
+            "objective": "Pulihkan akses web dari PC-Reception ke Portal-01 agar halaman dapat dimuat dengan sukses.",
+            "hints": [
+                "Permintaan web dari PC-Reception tidak pernah melewati FW-01 dalam perjalanannya ke Portal-01.",
+                "FW-01 memiliki aturan ACL yang secara khusus menolak lalu lintas HTTP menuju alamat Portal-01, menangkap permintaan sebelum aturan izin dapat diterapkan.",
+                "Di FW-01, hapus aturan ACL yang menolak HTTP dari sumber mana pun ke 10.0.6.1, sehingga aturan izin yang lebih rendah untuk port 80 dapat berlaku."
+            ],
+            "explanation": "ACL Firewall dibaca dari atas ke bawah dan kecocokan pertama yang menang. Aturan penolakan yang ditempatkan di atas aturan izin untuk lalu lintas yang sama akan selalu memblokir, bahkan jika aturan izin ada lebih jauh ke bawah. Menghapus aturan penolakan yang terlalu luas memungkinkan aturan izin yang dimaksudkan untuk berlaku."
+        },
+        "ru": {
+            "title": "Заблокированный портал",
+            "story": "Сотрудники стойки регистрации сообщают, что веб-страница Portal-01 перестала загружаться на PC-Reception с этого утра, хотя раньше она работала нормально для просмотра портала.",
+            "objective": "Восстановите веб-доступ с PC-Reception на Portal-01, чтобы страница загружалась успешно.",
+            "hints": [
+                "Веб-запрос с PC-Reception никогда не проходит дальше FW-01 на пути к Portal-01.",
+                "FW-01 имеет правило ACL, которое специально запрещает HTTP-трафик, направляющийся на адрес Portal-01, перехватывая запрос до того, как смогут применяться разрешающие правила.",
+                "На FW-01 удалите правило ACL, которое запрещает HTTP с любого источника на 10.0.6.1, чтобы нижнее разрешающее правило для порта 80 могло вступить в силу."
+            ],
+            "explanation": "Правила ACL брандмауэра читаются сверху вниз, и первое совпадение выигрывает. Правило отрицания, размещённое выше правила разрешения для того же трафика, всегда будет блокировать, даже если правило разрешения существует ниже. Удаление слишком широкого правила отрицания позволило действовать предполагаемому правилу разрешения."
+        },
+        "it": {
+            "title": "Il Portale Bloccato",
+            "story": "Lo staff della Reception riferisce che la pagina web di Portal-01 ha smesso di caricarsi su PC-Reception da questa mattina, anche se prima funzionava bene per la navigazione del portale.",
+            "objective": "Ripristina l'accesso web da PC-Reception a Portal-01 affinché la pagina si carichi correttamente.",
+            "hints": [
+                "La richiesta web da PC-Reception non riesce a passare FW-01 sulla strada verso Portal-01.",
+                "FW-01 ha una Regola ACL che nega specificamente il traffico HTTP verso l'indirizzo di Portal-01, bloccando la richiesta prima che possa applicarsi una regola di permesso.",
+                "Su FW-01, elimina la Regola ACL che nega HTTP da qualsiasi origine a 10.0.6.1, affinché la regola di permesso inferiore per la porta 80 possa avere effetto."
+            ],
+            "explanation": "Le Regole ACL del Firewall vengono lette dall'alto verso il basso e il primo risultato corrisponde. Una regola di negazione posta prima di una regola di permesso per lo stesso traffico lo bloccherà sempre, anche se una regola di permesso esiste più in basso. La rimozione della regola di negazione troppo ampia ha permesso l'applicazione della regola di permesso prevista."
+        },
+        "tr": {
+            "title": "Engellenen Portal",
+            "story": "Resepsiyon personeli, bu sabahtan beri Portal-01 web sayfasının PC-Reception üzerinde yüklenmesinin durduğunu söylüyor, ancak daha önce portale göz atmak için iyi çalışıyordu.",
+            "objective": "PC-Reception'dan Portal-01'e web erişimini geri yükle, böylece sayfa başarıyla yüklensin.",
+            "hints": [
+                "PC-Reception'dan gelen web isteği Portal-01'e gitmek için FW-01'i asla geçemez.",
+                "FW-01'in, Portal-01 adresine yönelik HTTP trafiğini özel olarak reddeden ve herhangi bir izin kuralı uygulanmadan önce isteği yakalayan bir ACL Kuralı vardır.",
+                "FW-01 üzerinde, herhangi bir kaynaktan 10.0.6.1'e HTTP'yi reddeden ACL Kuralı'nı sil, böylece port 80 için alt izin kuralı geçerli olabilir."
+            ],
+            "explanation": "Firewall ACL Kuralları yukarıdan aşağıya okunur ve ilk eşleşme kazanır. Aynı trafik için bir izin kuralının üzerine yerleştirilen bir reddetme kuralı, daha aşağıda bir izin kuralı bulunsa bile trafiği her zaman engelleyecektir. Aşırı geniş reddetme kuralının kaldırılması, amaçlanan izin kuralının geçerli olmasını sağladı."
+        },
+        "th": {
+            "title": "พอร์ทัลที่ถูกบล็อก",
+            "story": "เจ้าหน้าที่ต้อนรับรายงานว่าหน้าเว็บ Portal-01 หยุดโหลดบน PC-Reception ตั้งแต่เช้านี้ แม้ว่าก่อนหน้านี้ใช้ได้ดีในการท่องเบราว์พอร์ทัล",
+            "objective": "คืนการเข้าถึงเว็บจาก PC-Reception ไปยัง Portal-01 เพื่อให้หน้าโหลดได้สำเร็จ",
+            "hints": [
+                "คำขอเว็บจาก PC-Reception ไม่สามารถผ่าน FW-01 ไปยัง Portal-01 ได้",
+                "FW-01 มีกฎ ACL ที่ปฏิเสธทราฟิก HTTP ที่ไปยังที่อยู่ของ Portal-01 โดยเฉพาะ ดักจับคำขอก่อนที่กฎอนุญาตใดๆ จะถูกนำไปใช้",
+                "บน FW-01 ให้ลบกฎ ACL ที่ปฏิเสธ HTTP จากแหล่งใดๆ ไปยัง 10.0.6.1 เพื่อให้กฎอนุญาตที่ต่ำกว่าสำหรับพอร์ต 80 สามารถมีผลบังคับใช้ได้"
+            ],
+            "explanation": "กฎ ACL ของ Firewall อ่านจากบนลงล่างและการแข่งขันครั้งแรกชนะ กฎปฏิเสธที่วางไว้เหนือกฎอนุญาตสำหรับทราฟิกเดียวกันจะถูกบล็อกเสมอ แม้ว่ากฎอนุญาตจะมีอยู่ต่ำกว่า การลบกฎปฏิเสธที่กว้างเกินไปทำให้กฎอนุญาตที่ตั้งใจไว้สามารถมีผลบังคับใช้ได้"
+        },
+        "vi": {
+            "title": "Cổng Thông Tin Bị Chặn",
+            "story": "Nhân viên Lễ tân cho biết trang web Portal-01 đã dừng tải trên PC-Reception kể từ sáng nay, mặc dù trước đây nó hoạt động tốt để duyệt cổng thông tin.",
+            "objective": "Khôi phục quyền truy cập web từ PC-Reception đến Portal-01 để trang tải thành công.",
+            "hints": [
+                "Yêu cầu web từ PC-Reception không bao giờ vượt qua FW-01 trên đường đến Portal-01.",
+                "FW-01 có Quy tắc ACL cụ thể từ chối lưu lượng HTTP đến địa chỉ của Portal-01, bắt yêu cầu trước khi bất kỳ quy tắc cho phép nào có thể được áp dụng.",
+                "Trên FW-01, xóa Quy tắc ACL từ chối HTTP từ bất kỳ nguồn nào đến 10.0.6.1, để quy tắc cho phép thấp hơn cho cổng 80 có thể có hiệu lực."
+            ],
+            "explanation": "Các Quy tắc ACL của Firewall được đọc từ trên xuống dưới và khớp đầu tiên sẽ thắng. Quy tắc từ chối được đặt trên quy tắc cho phép cho cùng một lưu lượng sẽ luôn chặn nó, ngay cả khi có quy tắc cho phép ở phía dưới. Việc loại bỏ quy tắc từ chối quá rộng đã cho phép quy tắc cho phép dự định có hiệu lực."
+        },
+        "af": {
+            "title": "Die Geblokkeerde Portaal",
+            "story": "Ontvangsperls-personeel sê dat die Portal-01-webblad se oplaai op PC-Reception vanmore stop het, hoewel dit voorheen goed gewerk het om die portaal te blaai.",
+            "objective": "Herstel webtogang van PC-Reception na Portal-01 sodat die bladsy suksesvol laai.",
+            "hints": [
+                "Die webversoek van PC-Reception kom nooit verby FW-01 op pad na Portal-01.",
+                "FW-01 het 'n ACL-reël wat HTTP-verkeer na Portal-01 se adres spesifiek weier, en die versoek vang voor enige toestaan-reël kan toepas.",
+                "Verwyder op FW-01 die ACL-reël wat HTTP van enige bron na 10.0.6.1 weier, sodat die laer toestaan-reël vir poort 80 kan werk."
+            ],
+            "explanation": "Firewall ACL-reëls word van bo na onder gelees en die eerste ooreenkoms wen. 'n Weier-reël bo 'n toestaan-reël vir dieselfde verkeer sal dit altyd blokkeer, selfs as 'n toestaan-reël verder onder bestaan. Die verwydering van die oormatig breë weier-reël het toegelaat dat die bedoelde toestaan-reël van krag word."
+        },
+        "am": {
+            "title": "የታገደው ፖርታል",
+            "story": "የባህር ዳርgate ሠራተኞች ይህ ጣቢያ Portal-01 ይ ፒሲ-ተቀበልi በ PC-Reception ላይ ወደ ታች ስለወደወ የተከታታይ በጄኔሪ ወደጅምር ስለወደወ ሠራ።",
+            "objective": "ከ PC-Reception ወደ Portal-01 ያለውን ድረ-ገጽ ብቃት ወደ ነበር ሥርዓት ያክስቡ።",
+            "hints": [
+                "ከ PC-Reception ያለው ድረ-ገጽ ጥያቄ ወደ Portal-01 ጤናንዋ ፈታሔ FW-01 ያለፈ አይደለም።",
+                "FW-01 HTTP ትራፊቅ Portal-01 አድራሻ ወደ አገናኘ አስገድድ ሥርዓት ይ ACL ደንብ አለበት። ከ ተከታታይ ተጨምሮ ደንብ በቅዳምት ሪዓሰብ।",
+                "FW-01 ላይ፣ ACL ደንብ ሔ ወደ 10.0.6.1 HTTP ተከዳደ ብስ ማስወገድ፣ ደምሩ ሔ ወደ ፖርት 80 ተጨምሮ ደንብ ሥርዓት ሊፈታ ከፊል።"
+            ],
+            "explanation": "Firewall ACLs ወደ ታች ወደ ላይ ሔ ቅደም ተክተል ሔ ሕዝብ ሔ ወደ ሔ ሔ የተወሰነ ወዳጄ ሥርዓት። ሔ ሔ ወደ ታች ያለ ተከዳደ ደንብ ብ ፈታ ሔ ዳሉ ተመሳሳይ ትራፊቅ ሔ ሥርዓት ሔ ሔ ሔ ሔ ሔ።"
+        },
+        "ar": {
+            "title": "البوابة المحظورة",
+            "story": "قال موظفو الاستقبال أن صفحة Portal-01 توقفت عن التحميل على PC-Reception منذ هذا الصباح، بينما كانت تعمل بشكل جيد في السابق.",
+            "objective": "استعيد الوصول إلى الويب من PC-Reception إلى Portal-01 لتحميل الصفحة بنجاح.",
+            "hints": [
+                "طلب الويب من PC-Reception لا يتجاوز FW-01 في الطريق إلى Portal-01.",
+                "يحتوي FW-01 على قاعدة ACL تحظر حركة HTTP باتجاه عنوان Portal-01، مما يوقف الطلب قبل أن تتمكن أي قاعدة سماح من التطبيق.",
+                "على FW-01، احذف قاعدة ACL التي تحظر HTTP من أي مصدر إلى 10.0.6.1، بحيث يمكن لقاعدة السماح السفلية على المنفذ 80 أن تصبح فعالة."
+            ],
+            "explanation": "يتم قراءة قوائم ACL للجدار الناري من الأعلى إلى الأسفل، والقاعدة الأولى المطابقة تنتصر. ستؤدي قاعدة الحظر الموضوعة فوق قاعدة السماح لحركة المرور نفسها دائماً إلى حظرها، حتى لو كانت هناك قاعدة سماح أسفل. أدى حذف قاعدة الحظر الموسعة جداً إلى تطبيق قاعدة السماح المقصودة."
+        },
+        "az": {
+            "title": "Bloklanmış Portal",
+            "story": "Qəbul görevlileri deyirlər ki, Portal-01 veb səhifəsi bu səhər PC-Reception tərəfində yükləməyi dayandırmışdır, baxmayaraq ki, əvvəllər portal üçün yaxşı işləyirdi.",
+            "objective": "PC-Reception tərəfindən Portal-01-ə veb giriş bərpa edin ki, səhifə uğurla yüklənsən.",
+            "hints": [
+                "PC-Reception tərəfindən olan veb sorğusu Portal-01-ə getmə yolunda FW-01-i keçməyinə heç vaxt çatmır.",
+                "FW-01-də Portal-01 ünvanına istiqamətlənən HTTP trafikini xüsusi olaraq rədd edən ACL qaydası var, bu qaydanın istənilən icazə etmə qaydası tətbiq olmamazdan əvvəl sorğunu tutması.",
+                "FW-01 üzərində, 10.0.6.1-ə hər hansı mənbədən HTTP-ni rədd edən ACL qaydaını silin, belə ki, 80 portunda aşağıdakı icazə etmə qaydası işləməsinə başlaya bilsin."
+            ],
+            "explanation": "Firewall ACL-ləri yuxarıdan aşağıya oxunur və ilk matç qazanır. Eyni trafikə icazə verən qaydanın üstündə yerləşdirilən rədd qaydası həmişə bloklaşdıracaq, hərəsində bir icazə verən qaydası mövcud olsa da. Çox geniş rədd qaydaını silmək nəzərdə tutulan icazə verən qaydanın tətbiqini etməyə imkan verdi."
+        },
+        "be": {
+            "title": "Забаронины Портал",
+            "story": "Персанал рэцэпцыі кажа, што вэб-старонка Portal-01 перастала загружацца на PC-Reception са сьцяг раніцы, хаця раней гэта добра функцыянавала для праглядання портала.",
+            "objective": "Вяргніце вэб-доступ з PC-Reception да Portal-01, каб старонка загружалася паспяхова.",
+            "hints": [
+                "Вэб-запыт з PC-Reception никуды не пройдзе мімо FW-01 у дарозе да Portal-01.",
+                "FW-01 мае правіл ACL, які чітка забараняюць HTTP-трафік да адраса Portal-01, перахоплівая запыт да таго, як любое правіл дазволу зможа прымяніцца.",
+                "На FW-01 выдаліце правіл ACL, якое забараняе HTTP з любога крыніцы да 10.0.6.1, каб нітчэйшае правіл дазволу для порта 80 змагло набыць сілу."
+            ],
+            "explanation": "Firewall ACL чытаюцца сверху вніз, і першаг адпаведзь перамагае. Правіл заборан, размешчанае над правілом дазволу для адногавіча трафіку, заўсёды будзе яго блакаваць, нават калі правіл дазволу існуе ніжэй. Выдаленне прадмерна шырокага правіла заборан дазволіла прыняцца прызначанаму правілу дазволу."
+        },
+        "bg": {
+            "title": "Блокираният портал",
+            "story": "Персоналът на рецепцията казва, че веб страницата на Portal-01 престана да се зарежда на PC-Reception от тази сутрин, макар че преди това работеше добре.",
+            "objective": "Възстановете уеб достъпа от PC-Reception към Portal-01, така че страницата да се зарежда успешно.",
+            "hints": [
+                "Уеб заявката от PC-Reception никога не минава FW-01 по пътя към Portal-01.",
+                "FW-01 има правило ACL, което специално отхвърля HTTP трафик към адреса на Portal-01, улавяйки заявката преди да може да се приложи някакво разрешително правило.",
+                "На FW-01 изтрийте правилото ACL, което отхвърля HTTP от всеки източник към 10.0.6.1, така че долното разрешително правило за порт 80 да начине да действа."
+            ],
+            "explanation": "Правилата за Firewall ACL се четат отгоре надолу и първото съвпадение печели. Правило за отхвърляне поставено над правило за разрешаване на същия трафик винаги ще го блокира, дори ако по-долу съществува правило за разрешаване. Изтриването на твърде широкото правило за отхвърляне позволи на предвиденото правило за разрешаване да начине действие."
+        },
+        "bn": {
+            "title": "অবরুদ্ধ পোর্টাল",
+            "story": "রিসেপশন কর্মীরা বলছেন যে আজ সকাল থেকে PC-Reception এ Portal-01 ওয়েব পেজ লোড হচ্ছে না, যদিও আগে এটি পোর্টাল ব্রাউজ করার জন্য ভালো কাজ করত।",
+            "objective": "PC-Reception থেকে Portal-01 এ ওয়েব অ্যাক্সেস পুনরুদ্ধার করুন যাতে পেজটি সফলভাবে লোড হয়।",
+            "hints": [
+                "PC-Reception থেকে ওয়েব রিকোয়েস্ট Portal-01 এর দিকে যাওয়ার সময় FW-01 এর বাইরে যায় না।",
+                "FW-01 এ একটি ACL নিয়ম আছে যা Portal-01 এর ঠিকানায় HTTP ট্রাফিক নির্দিষ্টভাবে অস্বীকার করে, যেকোনো অনুমতি নিয়ম প্রয়োগ করার আগে রিকোয়েস্টকে ধরে ফেলে।",
+                "FW-01 এ, 10.0.6.1 এ যেকোনো উৎস থেকে HTTP অস্বীকার করা ACL নিয়মটি মুছুন, যাতে পোর্ট 80 এর জন্য নিম্নতর অনুমতি নিয়মটি কার্যকর হতে পারে।"
+            ],
+            "explanation": "ফায়ারওয়াল ACL গুলি উপরে থেকে নিচে পড়া হয় এবং প্রথম ম্যাচ জয়ী হয়। একই ট্রাফিকের জন্য অনুমতি নিয়মের উপরে রাখা অস্বীকার নিয়ম সর্বদা এটি ব্লক করবে, এমনকি আরও নিচে একটি অনুমতি নিয়ম বিদ্যমান থাকলেও। অতিরিক্ত বিস্তৃত অস্বীকার নিয়মটি সরিয়ে ফেলা অভিপ্রেত অনুমতি নিয়মটি কার্যকর হতে দেয়।"
+        },
+        "ca": {
+            "title": "El portal bloquejat",
+            "story": "El personal de recepció diu que la pàgina web Portal-01 ha deixat de carregar-se a PC-Reception des d'aquesta matinada, tot i que solia funcionar bé per navegar pel portal.",
+            "objective": "Restaureu l'accés web des de PC-Reception a Portal-01 perquè la pàgina es carregui correctament.",
+            "hints": [
+                "La sol·licitud web de PC-Reception mai no passa per FW-01 de camí a Portal-01.",
+                "FW-01 té una Regles ACL que nega específicament el tràfic HTTP dirigit a l'adreça de Portal-01, capturant la sol·licitud abans que cap Regles ACL de permís pugui aplicar-se.",
+                "A FW-01, suprimiu la Regles ACL que nega HTTP de qualsevol origen a 10.0.6.1, perquè la Regles ACL de permís inferior per al port 80 pugui tenir efecte."
+            ],
+            "explanation": "Les Regles ACL del Firewall es llegeixen de dalt a baix i el primer resultat guanya. Una Regles ACL de negació col·locada per sobre d'una Regles ACL de permís per al mateix tràfic sempre la blocarà, fins i tot si existeix una Regles ACL de permís més avall. Suprimir la Regles ACL de negació massa ampla va permetre que la Regles ACL de permís prevista fes efecte."
+        },
+        "cs": {
+            "title": "Zablokovaný portál",
+            "story": "Personál recepce hlásí, že webová stránka Portal-01 se od této dopoledne přestala načítat na PC-Reception, přestože předtím fungovala dobře pro procházení portálu.",
+            "objective": "Obnovte webový přístup z PC-Reception na Portal-01, aby se stránka úspěšně načetla.",
+            "hints": [
+                "Webový požadavek z PC-Reception se nikdy nedostane kolem FW-01 na cestě k Portal-01.",
+                "FW-01 má Pravidla ACL, které konkrétně odmítají provoz HTTP směřující na adresu Portal-01, zachycuje požadavek dříve, než může platit nějaké povolující Pravidla ACL.",
+                "Na FW-01 odstraňte Pravidla ACL, které odmítá HTTP z libovolného zdroje na 10.0.6.1, aby nižší povolující Pravidla ACL pro port 80 mohla platit."
+            ],
+            "explanation": "Pravidla ACL Firewally se čtou shora dolů a první shoda vyhrává. Pravidla ACL odmítnutí umístěné nad povolujícím Pravidla ACL pro stejný provoz vždy zablokuje, i když existuje povolující Pravidla ACL dále dolů. Odstranění příliš obecného pravidla zamítnutí umožnilo účinnost zamýšleného povolujícího pravidla."
+        },
+        "da": {
+            "title": "Blokkeret portal",
+            "story": "Receptionsmedarbeidere siger, at Portal-01-websiden er holdt op med at indlæse på PC-Reception siden denne morgen, selvom det plejer at fungere fint til portalgennemgang.",
+            "objective": "Gendan webadgang fra PC-Reception til Portal-01, så siden indlæses korrekt.",
+            "hints": [
+                "Webforespørgslen fra PC-Reception kommer aldrig forbi FW-01 på vej til Portal-01.",
+                "FW-01 har en ACL-regler, der specifikt benægter HTTP-trafik rettet mod Portal-01-adressen og fanger anmodningen, før nogen tillad-regler kan anvendes.",
+                "Slet på FW-01 de ACL-regler, der benægter HTTP fra enhver kilde til 10.0.6.1, så den lavere tillad-regler for port 80 kan træde i kraft."
+            ],
+            "explanation": "Firewall-ACL-regler læses fra top til bund, og det første match vinder. En nægtelsesregel placeret over en tillad-regel for samme trafik vil altid blokere den, selv hvis der findes en tillad-regel længere nede. Fjernelse af den alt for bred nægtelsesregel tillod, at den tilsigtede tillad-regel trådte i kraft."
+        },
+        "el": {
+            "title": "Η φραγμένη πύλη",
+            "story": "Το προσωπικό της ρεσεψιόν λέει ότι η ιστοσελίδα Portal-01 έχει σταματήσει να φορτώνεται στο PC-Reception από σήμερα το πρωί, αν και συνήθως λειτουργούσε καλά για περιήγηση στην πύλη.",
+            "objective": "Επαναφέρετε την πρόσβαση ιστού από PC-Reception σε Portal-01, ώστε η σελίδα να φορτώνεται με επιτυχία.",
+            "hints": [
+                "Το αίτημα ιστού από PC-Reception δεν περνά ποτά από FW-01 στο δρόμο προς Portal-01.",
+                "Το FW-01 διαθέτει Κανόνες ACL που αποδεικνύει συγκεκριμένα την κυκλοφορία HTTP που κατευθύνεται στη διεύθυνση του Portal-01, παγιδεύοντας το αίτημα πριν να ισχύσει κανένας κανόνας επιτρέπεται.",
+                "Στο FW-01, διαγράψτε τους Κανόνες ACL που αποδεικνύει HTTP από οποιαδήποτε πηγή στο 10.0.6.1, ώστε ο κατώτερος κανόνας επιτρέπεται για θύρα 80 να ισχύσει."
+            ],
+            "explanation": "Οι Κανόνες ACL του Firewall διαβάζονται από πάνω προς τα κάτω και το πρώτο ταίριασμα κερδίζει. Ένας κανόνας αποδεικνύει τοποθετημένος πάνω από έναν κανόνα επιτρέπεται για την ίδια κυκλοφορία θα το εμποδίσει πάντα, ακόμη και αν υπάρχει κανόνας επιτρέπεται πιο κάτω. Η αφαίρεση του υπερβολικά ευρέος κανόνα αποδεικνύει επέτρεψε στον προορισμό κανόνα επιτρέπεται να ισχύσει."
+        },
+        "et": {
+            "title": "Blokeeritud portaal",
+            "story": "Vastuvõtuosakonna töötajad ütlevad, et Portal-01 veebileht ei laadi PC-Reception'is enam homikust peale, kuigi see töötas varem hästi portaali sirvimiseks.",
+            "objective": "Taastage veebipääs PC-Reception'ist Portal-01'ele, et leht laadiks edukalt.",
+            "hints": [
+                "Veebiparalus PC-Reception'ist ei jõua FW-01 juures edasi teel Portal-01'ele.",
+                "FW-01-l on ACL-reegel, mis konkreetselt keelustab HTTP-liikluse Portal-01 aadressile, pidades taotluse kinni enne kui ükski lubamisreegel saab kehtida.",
+                "Kustutage FW-01-l ACL-reegel, mis keelustab HTTP-i mis tahes allikast aadressile 10.0.6.1, et alumine lubamisreegel pordinumbrile 80 saaks kehtida."
+            ],
+            "explanation": "Tulemüüri ACL-reegleid loetakse ülevalt allapoole ja esimene vaste võidab. Keeldumisreegel, mis asetatakse lubamisreegli foolie sama liikluse jaoks, blokeerib selle alati, isegi kui lubamisreegel eksisteerib kaugemal allpool. Liiga laiaulatusliku keeldumisreegli eemaldamine võimaldas kavatsetud lubamisreegeli kehtida."
+        },
+        "eu": {
+            "title": "Atakoa blokeatua",
+            "story": "Harrera-langileak diotenez, Portal-01 webgunea ez da kargatzen PC-Reception-ean gaur goizean, nahiz eta portalean nabigatzeko ondo aritzen zen.",
+            "objective": "Berreskuratu web-sarbidea PC-Reception-etik Portal-01-era, orria arrakastaz kargatzen den.",
+            "hints": [
+                "PC-Reception-etik datorren web-eskaera ez da FW-01-ean pasatzen Portal-01-era bidean.",
+                "FW-01-ean ACL araua dago, zehazki HTTP trafikoa Portal-01-en helbideara negar egiten duena, eskaera atxikitzen duena baimenak araua aplikatu ahal izan baino lehen.",
+                "FW-01-ean, ezabatu ACL araua, iturri guztietan HTTP negar egiten duena 10.0.6.1-en helbideara, beherago dagoen baimena-araua ataka-zenbakira 80 aplikatu ahal izateko."
+            ],
+            "explanation": "Sutegiaren ACL-arauak goitik beherantz irakurtzen dira eta lehenengo batasunak irabazten du. Baimena-arauaren gainean jarri den negar-araua beti blokeatuko du, nahiz eta baimena-araua beheago egon. Gehiegizko negar-araua ezabatuz, baimena-araua aplikatu ahal izango da."
+        },
+        "fa": {
+            "title": "درگاه مسدود",
+            "story": "کارکنان پذیرش می‌گویند صفحه وب Portal-01 از صبح دیگر روی PC-Reception بارگیری نمی‌شود، اگرچه قبلاً برای مرور درگاه به خوبی کار می‌کرد.",
+            "objective": "دسترسی وب را از PC-Reception به Portal-01 بازیابی کنید تا صفحه با موفقیت بارگیری شود.",
+            "hints": [
+                "درخواست وب از PC-Reception هرگز از FW-01 نمی‌گذرد تا به Portal-01 برسد.",
+                "FW-01 دارای قانون ACL است که به طور خاص ترافیک HTTP به آدرس Portal-01 را رد می‌کند و درخواست را قبل از اجرای قانون اجازه دهی تحت نظارت می‌دارد.",
+                "در FW-01، قانون ACL را که ترافیک HTTP از هر منبع به 10.0.6.1 را رد می‌کند حذف کنید، تا قانون اجازه‌دهی پایین‌تر برای شماره پورت 80 اثربخش شود."
+            ],
+            "explanation": "قوانین ACL دیوار آتش از بالا به پایین خوانده می‌شوند و اولین تطابق برنده است. یک قانون رد که بالای قانون اجازه‌دهی برای ترافیک یکسان قرار گیرد، همیشه آن را مسدود می‌کند، حتی اگر قانون اجازه‌دهی پایین‌تر وجود داشته باشد. حذف قانون رد بیش از حد گسترده، اجازه داد قانون مورد نظر اثربخش شود."
+        },
+        "fi": {
+            "title": "Estetty portaali",
+            "story": "Vastaanottotoimiston henkilökunta kertoo, että Portal-01 -verkkosivua ei enää lataudu PC-Reception-laitteella tänä aamuna, vaikka se toimi aiemmin hyvin portaalin selaamiseen.",
+            "objective": "Palauta verkkoyhte PC-Reception-laitteelta Portal-01-laitteelle, jotta sivu latautuu onnistuneesti.",
+            "hints": [
+                "Verkkopyyntö PC-Reception-laitteelta ei pääse FW-01-laitteen läpi matkalla Portal-01-laitteelle.",
+                "FW-01-laitteessa on ACL-sääntö, joka erityisesti estää HTTP-liikenteen Portal-01-laitteen osoitteeseen ja pysäyttää pyynnön ennen kuin mikään sallintasääntö voi vaikuttaa.",
+                "Poista FW-01-laitteesta ACL-sääntö, joka estää HTTP-liikennettä mistä tahansa lähteestä osoitteeseen 10.0.6.1, jotta alempi sallintasääntö porttinumeroon 80 voi vaikuttaa."
+            ],
+            "explanation": "Palomuurin ACL-säännöt luetaan ylhäältä alaspäin ja ensimmäinen osuma voittaa. Sallintasääntöä edeltävä kieltosääntö samalle liikenteelle estää sen aina, vaikka sallintasääntö olisikin alempana. Liian laajan kieltosääntöjen poistaminen salli halutun sallintasäännön vaikuttaa."
+        },
+        "fil": {
+            "title": "Nakabalot na Portal",
+            "story": "Ang mga staff ng Reception ay nagsasabi na ang Portal-01 webpage ay hindi na nag-load sa PC-Reception simula ngayong umaga, bagaman ito ay gumagana nang maayos para sa pag-browse ng portal dati.",
+            "objective": "Ibalik ang web access mula sa PC-Reception hanggang Portal-01 upang ang page ay matagumpay na mag-load.",
+            "hints": [
+                "Ang web request mula sa PC-Reception ay hindi kailanman nakakaabot ng FW-01 sa daan patungo sa Portal-01.",
+                "Ang FW-01 ay may ACL Rule na partikular na nag-deny ng HTTP traffic patungo sa Portal-01 address, hinahadlang ang request bago ang kahit anong permit rule ay maaaring mag-apply.",
+                "Sa FW-01, burahin ang ACL Rule na nag-deny ng HTTP mula sa kahit anong source patungo 10.0.6.1, upang ang mas mababang permit rule para sa port number 80 ay maaaring mag-effect."
+            ],
+            "explanation": "Ang Firewall ACL ay binabasa mula sa itaas tungo sa ibaba at ang unang match ay nanalo. Ang deny rule na inilagay sa ibabaw ng permit rule para sa parehong traffic ay palaging hahadlang sa ito, kahit may permit rule pa sa mas mababa. Ang pag-alis ng labis na malawak na deny rule ay nagpahintulot sa nilalayong permit rule na mag-take effect."
+        },
+        "gl": {
+            "title": "O Portal Bloqueado",
+            "story": "O persoal de recepción di que a páxina web de Portal-01 deixou de cargar en PC-Reception desde esta mañá, aínda que antes funcionaba ben para navegar polo portal.",
+            "objective": "Restaurar o acceso web desde PC-Reception a Portal-01 para que a páxina cargue correctamente.",
+            "hints": [
+                "A petición web desde PC-Reception nunca vai máis alá de FW-01 no seu camiño cara a Portal-01.",
+                "FW-01 ten unha regra ACL que nega específicamente o tráfico HTTP cara á dirección de Portal-01, interceptando a petición antes de que calquera regra de permiso poida aplicarse.",
+                "En FW-01, elimina a regra ACL que nega HTTP desde calquera orixe a 10.0.6.1, para que a regra de permiso inferior para o porto 80 poida ter efecto."
+            ],
+            "explanation": "As ACL do Firewall léense de arriba a abaixo e a primeira coincidencia gana. Unha regra de denegación colocada por encima dunha regra de permiso para o mesmo tráfico sempre o bloqueará, aínda que exista unha regra de permiso máis abaix. Eliminar a regra de denegación demasiado ampla permitiu que a regra de permiso prevista tivese efecto."
+        },
+        "gu": {
+            "title": "બ્લોક્ડ પોર્ટલ",
+            "story": "રિસેપશન સ્ટાફ કહે છે કે Portal-01 વેબ પેજ આજ સવારથી PC-Reception પર લોડ થવાનું બંધ કરી દીધું છે, જોકે તે પહેલાં પોર્ટલ બ્રાઉઝ કરવા માટે સારી રીતે કામ કરતું હતું.",
+            "objective": "PC-Reception થી Portal-01 સુધી વેબ ઍક્સેસ પુનઃસ્થાપિત કરો જેથી પૃષ્ઠ સફળતાપૂર્વક લોડ થાય.",
+            "hints": [
+                "PC-Reception પાસેથીનો વેબ વિનંતી Portal-01 તરફ જતા માર્ગમાં FW-01 ને આગળ કદી જતી નથી.",
+                "FW-01 પાસે એક ACL નિયમ છે જે ખાસ રીતે Portal-01ના સરનામા તરફ HTTP ટ્રાફિક નકારી કાઢે છે, કોઈ પણ પરવાનગીનો નિયમ લાગુ થઈ શકે તે પહેલાં વિનંતીને પકડે છે.",
+                "FW-01 પર, ACL નિયમ કાઢો જે કોઈ પણ સ્ત્રોત થી 10.0.6.1 તરફ HTTP ને નકારી કાઢે છે, જેથી પોર્ટ 80 માટે નીચલો પરવાનગીનો નિયમ અસર કરી શકે."
+            ],
+            "explanation": "Firewall ACL ઓ ટોચથી નીચે સુધી વાંચવામાં આવે છે અને પ્રથમ મેળ જીતી જાય છે. સમાન ટ્રાફિક માટે પરવાનગીનો નિયમની ઉપર મૂકેલો નકાર નિયમ હંમેશા તેને બ્લોક કરી દેશે, ભલે આગળ એક પરવાનગીનો નિયમ હોય. અતિશય વ્યાપક નકાર નિયમને દૂર કરવાથી હેતુઈ પરવાનગીનો નિયમ અસર કરી શક્યો."
+        },
+        "he": {
+            "title": "הפורטל החסום",
+            "story": "צוות הקבלה אומר שדף האתר של Portal-01 הפסיק להיטען ב-PC-Reception מהבוקר, אם כי בעבר זה עבד בסדר לגלישה בפורטל.",
+            "objective": "שחזר גישת אינטרנט מ-PC-Reception ל-Portal-01 כדי שהדף יטען בהצלחה.",
+            "hints": [
+                "בקשת האינטרנט מ-PC-Reception אף פעם לא עוברת FW-01 בדרכה ל-Portal-01.",
+                "ל-FW-01 יש כלל ACL שמעכב באופן ספציפי תנועת HTTP לכתובת של Portal-01, ותופס את הבקשה לפני שכלל היתר יכול להיות בתוקף.",
+                "ב-FW-01, מחק את כלל ה-ACL שמעכב HTTP מכל מקור ל-10.0.6.1, כדי שכלל ההיתר התחתון למספר יציאה 80 יוכל להיות בתוקף."
+            ],
+            "explanation": "כללי ACL של Firewall נקראים מלמעלה למטה והתאמה ראשונה מנצחת. כלל אי-התחייבות שהוצב מעל כלל התחייבות לתנועה זהה תמיד יחסום אותו, גם אם כלל התחייבות קיים למטה. הסרת כלל האי-התחייבות הרחב מדי אפשרה לכלל ההתחייבות המכוונן להיכנס לתוקף."
+        },
+        "hr": {
+            "title": "Blokirana Portal",
+            "story": "Osoblje na recepciji kaže da se web stranica Portal-01 nije mogla učitati na PC-Reception od jutros, iako je prije dobro radila za pretraživanje portala.",
+            "objective": "Obnovite web pristup s PC-Reception na Portal-01 kako bi se stranica uspješno učitala.",
+            "hints": [
+                "Zahtjev za web sa PC-Reception nikada ne prolazi dalje od FW-01 na putu prema Portal-01.",
+                "FW-01 ima pravilo ACL-a koje specifično odbija HTTP promet prema adresi Portal-01, hvatajući zahtjev prije nego što se bilo koje dozvoljeno pravilo može primijeniti.",
+                "Na FW-01, obrišite pravilo ACL-a koje odbija HTTP iz bilo kojeg izvora na 10.0.6.1, kako bi donje dozvoljeno pravilo za broj porta 80 moglo stupiti na snagu."
+            ],
+            "explanation": "Firewall ACL pravila se čitaju od vrha prema dnu, a prvi pronađeni uzorak pobjeđuje. Pravilo odbijanja postavljeno iznad pravila dopuštanja za isti promet će ga uvijek blokirati, čak i ako dozvoljeno pravilo postoji dalje dolje. Uklanjanje previše širokoga pravila odbijanja omogućilo je da namjerno dozvoljeno pravilo stupa na snagu."
+        },
+        "hu": {
+            "title": "A Blokkolt Portal",
+            "story": "A recepcióS személyzet azt mondja, hogy a Portal-01 weboldalának betöltése PC-Reception eszközön ma reggel óta leállt, holott korábban jól működött a portál böngészéséhez.",
+            "objective": "Állítsa vissza a webes hozzáférést PC-Reception-ról Portal-01-re, hogy az oldal sikeresen betöltődjön.",
+            "hints": [
+                "A PC-Reception-ról érkező webes kérés sosem halad túl az FW-01-en a Portal-01 felé vezető útjában.",
+                "Az FW-01-nek van egy ACL-szabálya, amely kifejezetten megtagadja a HTTP forgalmat a Portal-01 címe felé, és elfogja a kérést, mielőtt bármely engedélyezési szabály érvénybe léphetne.",
+                "Az FW-01-en törölje azt az ACL-szabályt, amely megtagadja a HTTP-t bármely forrásból a 10.0.6.1 felé, hogy az alacsonyabb szintű engedélyezési szabály a 80-as portszámra érvénybe lépjen."
+            ],
+            "explanation": "A Firewall ACL-szabályok felülről lefelé olvasódnak, és az első találat nyer. Az engedélyezési szabály fölé helyezett megtagadási szabály ugyanezre a forgalomra mindig blokkolni fogja azt, még akkor is, ha az engedélyezési szabály létezik lejjebb. Az túlságosan tág megtagadási szabály eltávolítása lehetővé tette az előirányzott engedélyezési szabály érvénybevételét."
+        },
+        "hy": {
+            "title": "Փակված դրամական",
+            "story": "Ընդունման աշխատակցիցները ասում են, որ Portal-01 վեբ էջը այլևս չի բեռնվում PC-Reception-ից այս առավոտից, թեև նախկինում այն լավ գործում էր պորտալ բացելու համար։",
+            "objective": "Վերականգնեք վեբ մուտքը PC-Reception-ից Portal-01, որպեսզի էջը հաջողությամբ բեռնվի։",
+            "hints": [
+                "PC-Reception-ից վեբ հարցումը երբեք չի անցնում FW-01-ից, որ ուղղվեր Portal-01-ի շարժին:",
+                "FW-01-ում կա ACL կանոն, որը հատուկ մերժում է HTTP տրաֆիկը Portal-01-ի հասցեին, որ բռնում է հարցումը մինչև որևէ թույլատրման կանոն կիրառվի:",
+                "FW-01-ում ջնջեք ACL կանոնը, որը մերժում է HTTP-ն ցանկացած աղբյուրից մինչև 10.0.6.1, որպեսզի ստորև գտնվող 80 պորտի թույլատրման կանոնը կարողանա գործել:"
+            ],
+            "explanation": "Firewall ACL-ները կարդացվում են վերևից ներքև, և առաջին համընկումը հաղթում է: Թույլատրման կանոնից վեր տեղադրված մերժման կանոնը միշտ կբլոկավորի այն տրաֆիկը, նույնիսկ եթե ստորև գոյություն ունի թույլատրման կանոն: Չափազանց լայն մերջման կանոնը հեռացնելը թույլ տվեց ցանկալի թույլատրման կանոնին աշխատել:"
+        },
+        "is": {
+            "title": "Lokað gátt",
+            "story": "Starfsmenn við móttöku segja að vefur Portal-01 hafi hætt að hlaðast á PC-Reception síðan í morgun, þó að hann hafi áður virkaðo vel til að opna gáttina.",
+            "objective": "Endurheimtu vefaðgang frá PC-Reception til Portal-01 svo síðan hlaðist með góðum árangri.",
+            "hints": [
+                "Vefbeiðni frá PC-Reception fer aldrei fram hjá FW-01 á leiðinni til Portal-01.",
+                "FW-01 er með ACL-reglu sem beinir hafnar HTTP-umferð til heimilisfangs Portal-01, sem grípur beiðnina áður en nein leyfiregla getur átt við.",
+                "Á FW-01, eyðidu ACL-reglunni sem hafnar HTTP frá hvaða uppruna sem er til 10.0.6.1, svo leyfireglan fyrir tengi 80 geti átt við."
+            ],
+            "explanation": "Firewall ACL-reglur eru lesnar ofan til og fyrsti samsvörun græðir. Hafnarregla sem er sett fyrir ofan leyfireglu fyrir sömu umferð mun alltaf loka henni, jafnvel þó að leyfiregla sé til staðar lengra niður. Fjarlæging á of breiðri hafnarreglu leyfði ætlaðri leyfireglu að gilda."
+        },
+        "ka": {
+            "title": "დაბლოკირებული პორტალი",
+            "story": "მიმღები პერსონალი ამბობს, რომ Portal-01 ვებ გვერდი შეწყვიტა ჩატვირთვა PC-Reception-იდან დღის დილიდან, თუმცა ადრე კარგად მუშაობდა პორტალის ჩახსნისთვის.",
+            "objective": "აღდგინეთ ვებ წვდომა PC-Reception-იდან Portal-01-მდე, რათა გვერდი წარმატებით ჩატვირთოს.",
+            "hints": [
+                "ვებ მოთხოვნა PC-Reception-იდან არასოდეს გარდის FW-01-ს Portal-01-ის მიმართულებით.",
+                "FW-01-ში აქვს ACL წესი, რომელიც კონკრეტულად უარყოფს HTTP ტრაფიკს Portal-01-ის მისამართზე, მოთხოვნა დაჭერილია ნებისმიერი ნების წესამდე.",
+                "FW-01-ზე წაშალეთ ACL წესი, რომელიც უარყოფს HTTP-ს ნებისმიერი წყაროდან 10.0.6.1-მდე, რათა მცირე ნების წესი პორტი 80-ისთვის შეიძლებოს ძალაში შევიდეს."
+            ],
+            "explanation": "Firewall ACL-ები იკითხება ზემოდან ქვემოთ და პირველი მატჩი გამარჯვებული. უარყოფის წესი, რომელიც დაყენებულია იმავე ტრაფიკის ნების წესის ზემოთ, ყოველთვის დაბლოკავს მას, თუნდაც ნების წესი არსებობს უფრო დაბლა. უზედმეტო ფართო უარყოფის წესის ამოღება საშუნებას მისცა მიზნობრივ ნების წესს ძალაში შევიდეს."
+        },
+        "kk": {
+            "title": "Бөгелінген портал",
+            "story": "Қабылдау қызметтерінің қызметкерлері Portal-01 веб-парақты PC-Reception-ден осы таңның басында ашылмай қалғанын айтады, бірақ бұрын портальды ашу үшін өте жақсы жұмыс істеген еді.",
+            "objective": "PC-Reception-ден Portal-01-ге веб қатынасын қалпына келтіріңіз, сонда парақ сәтті жүктелсін.",
+            "hints": [
+                "PC-Reception-ден веб сұрауы Portal-01-ге қарай FW-01-ді ешқашан өтпейді.",
+                "FW-01-де Portal-01-ің мекенжайына бағытталған HTTP трафигін қайтарадым болды деп айтып тұрған ACL ережесі бар, сұрауы кез келген рұқсат ережесінің алдында ұсталып қалады.",
+                "FW-01-де 10.0.6.1-ге кез келген көзінен HTTP-ні қайтаратын ACL ережесін өшіріңіз, сонда 80 порты үшін төмен рұқсат ережесі негіз ала алсын."
+            ],
+            "explanation": "Firewall ACL ережелері жоғарыдан төмен ұқ орындалады және бірінші сәйкестіктің жеңісін қабылдайды. Рұқсат ережесінің үстіне орналастырылған қайтару ережесі әрқашан оны бөгейді, тіпті төмен рұқсат ережесі болса да. Шамадан артық кең қайтару ережесін жою ұйғарылған рұқсат ережесінің негіз ала алуына мүмкіндік берді."
+        },
+        "km": {
+            "title": "ច្រកដែលត្រូវបាន​ឡុក",
+            "story": "បុគ្គលិកផ្នែកទ្រទ្រង់ឧបត្ថម្ភបាននិយាយថាលម្អាតវេបសាយ Portal-01 បានឈប់ផ្ទុកលើ PC-Reception ចាប់តាំងពីព្រឹក ទោះបីជាវាដើរល្អដើម្បីបើកលម្អាតក៏ដោយ។",
+            "objective": "ស្ដារលម្អាតវេបពី PC-Reception ទៅ Portal-01 ដែលលម្អាតក្នុងលក្ខណៈសម្រេច។",
+            "hints": [
+                "សំណើវេបពី PC-Reception មិនដែលឆ្លងកាត់ FW-01 នៅលើផ្លូវទៅ Portal-01 ទេ។",
+                "FW-01 មាន ច្បាប់ ACL ដែលបដិសេធគេហទ្រាប់ HTTP ដែលផ្ទុកទៅលេខសម្គាល់របស់ Portal-01 ដោយចាប់សំណើមុនពេលច្បាប់ឱ្យការណាមួយអាចអនុវត្ត។",
+                "លុបច្បាប់ ACL នៅលើ FW-01 ដែលបដិសេធ HTTP ពីប្រភពណាមួយទៅ 10.0.6.1 ដូច្នេះច្បាប់ឱ្យការខាងក្រោមសម្រាប់ច្រក 80 អាចមានផលប៉ះពាល់។"
+            ],
+            "explanation": "ច្បាប់ Firewall ACL អានពីលើទៅក្រោម ហើយលេចឡើងដំបូងឈរឈរ។ ច្បាប់បដិសេធដែលដាក់នៅលើច្បាប់ឱ្យការសម្រាប់ចរាចរដូចគ្នា នឹងតែងតែដាក់វាលើដេក ទោះបីជាច្បាប់ឱ្យការមាននៅលើក៏ដោយ។ ការលុបច្បាប់បដិសេធដ៏ធំធេងបានអនុញ្ញាតឱ្យច្បាប់ឱ្យការគោលបំណងលើដេក។"
+        },
+        "kn": {
+            "title": "ನಿರೋಧಿತ ಪೋರ್ಟಲ್",
+            "story": "ರಿಸೆಪ್ಶನ್ ಸಿಬ್ಬಂದಿ ಹೇಳುತ್ತಾರೆ ಎಂದರೆ Portal-01 ವೆಬ್ ಪುಟವು ಇಂದು ಬೆಳಿಗ್ಗೆ ಮೊದಲಿನಿಂದ PC-Reception ನಲ್ಲಿ ಲೋಡ್ ಆಗಬೇಕು ಬೆಳೆಯುತ್ತಿತ್ತು, ನಿನ್ನೆ ಪೋರ್ಟಲ್ ಬ್ರೌಜಿಂಗ್‌ಗೆ ಬರಮೊಸಣೆ ಕೆಲಸ ಮಾಡುತ್ತಿತ್ತು.",
+            "objective": "PC-Reception ಇಂದ Portal-01 ಗೆ ವೆಬ್ ಪ್ರವೇಶವನ್ನು ಮರಳಿ ಸ್ಥಾಪಿಸಿ ಇದರ ಪುಟವು ಯಶಸ್ವಿಯಾಗಿ ಲೋಡ್ ಆಗುತ್ತದೆ.",
+            "hints": [
+                "PC-Reception ಇಂದ ವೆಬ್ ವಿನಂತಿ FW-01 ಮೀರಿ Portal-01 ಗೆ ಹೋಗುವ ಹಾದಿಯಲ್ಲಿ ಎಂದಿಗೂ ಹೋಗುವುದಿಲ್ಲ.",
+                "FW-01 ಹೊಂದಿದೆ ACL ನಿಯಮ ಇದು ನಿರ್ದಿಷ್ಟವಾಗಿ HTTP ವಹನವನ್ನು ನಿರೋಧಿಸುತ್ತದೆ Portal-01 ನ ವಿಳಾಸಕ್ಕೆ, ಮೇಲೆ ಪರವಾನಗಿ ನಿಯಮದ ಮೊದಲ ವಿನಂತಿ ಸರಿಪಡಿಸುತ್ತದೆ.",
+                "FW-01 ನಲ್ಲಿ, ACL ನಿಯಮವನ್ನು ಭಿನ್ನವಾಗಿ ಎರಡೋ ಮೂಲದಿಂದ HTTP ನಿರೋಧಿಸುತ್ತದೆ 10.0.6.1 ಗೆ, ಪೋರ್ಟ್ ಸಂಖ್ಯೆ 80 ಗಾಗಿ ಕೆಳಗಿನ ಪರವಾನಗಿ ನಿಯಮ ಪರಿಣಾಮ ಹೊಡೆಯಲು ಸಕ್ತೆ."
+            ],
+            "explanation": "Firewall ACL ಅನುಕ್ರಮವಾಗಿ ಮೇಲಿನ ಕೆಳಗಿನ ಪ್ರಥಮ ಪಾತ್ರವನ್ನು ಓದಲಾಗುತ್ತದೆ. ಪರವಾನಗಿ ನಿಯಮದ ಮೇಲೆ ಮಾಡಿದ ನಿರೋಧ ನಿಯಮ ಪರವಾನಗಿದ ನಿಯಮ ಹೆಚ್ಚಿನ ಹೆಚ್ಚಿನ ವಹನವನ್ನು ಎಲ್ಲಾ ನಿರೋಧಿಸುತ್ತದೆ ಹಾಗೂ ಮೇಲೆ ಪರವಾನಗಿ ನಿಯಮ ಬೇರೆ ಮುಖ್ಯವಾಗಿ ಹೊಡೆಯಬಲ್ಲ. ವಿಸ್ತೃತ ನಿರೋಧ ನಿಯಮ ತೆಗೆದುಹಾಕುವುದರ ಮೂಲಕ ಅದಿಯ ಮುಂದಿನ ಪರವಾನಗಿ ನಿಯಮ ಪರಿಣಾಮ ಹೊಡೆಯಬಲ್ಲ."
+        },
+        "ky": {
+            "title": "Блокирленген портал",
+            "story": "Кабылдагычтын иштеп жатканы Portal-01 веб-сайты бүгүн мөңгүнөмөнө PC-Reception эсептегисинде жүктөлбөй калган дейришет. Мурун портальга өтүү өндүрүм иштей берген.",
+            "objective": "PC-Reception эсептегисинен Portal-01 ге веб-каттамын калыбына келтиргиле, сайт ийгиликтүү жүктөлсүн.",
+            "hints": [
+                "PC-Reception эсептегисинен веб-сөзү FW-01 аркасынан Portal-01 багытында эч качан өтпөйт.",
+                "FW-01 дең ACL эрежелери болуп саналат, HTTP кыймылын Portal-01 дүнгө өзгөчө жокко чыгарат, мүмкүн болгон эрежеси өтөөнү мындайлык туруучу.",
+                "FW-01 эсептегисинде, ACL эрежесин өтөмөнүн 10.0.6.1 эсептегисине жокко чыгарган нерсеси өстөй, ошондо порт 80 төмөнкү мүмкүн болгон эрежеси иштей берет."
+            ],
+            "explanation": "Firewall ACL окуу эрежелери сорунан төмөнкүчүнө, биринчи жооп ойнойт. Мүмкүн болгон эрежеси жогору корсоток жокко чыгарган эрежесі өтпөс, мүмкүн болгон эрежеси төмөнкү болсо дагы. Өтпөс эрежеси өтөмөнүн өстөй, мүмкүн болгон эрежеси төмөнкү иштей беринет."
+        },
+        "lo": {
+            "title": "ປະตູ Portal ທີ່ຖືກບລັອກ",
+            "story": "ຣพະนักງາน Reception ບອກວ່າ Portal-01 ໃບເວັບ ຫຼາຍເທື່ອບໍ່ສາມາດໂຫລດໃສ່ PC-Reception ມື້ນີ້ ເຖິງວ່າ ມໍ່ກ່ອນ ໃຊ້ເວັບໄຊທ໌ ໄດ້ດີຕໍ່ໆ.",
+            "objective": "ກູ້ຄືນ ການບໍລິການ ເວັບ ຈາກ PC-Reception ໄປຫາ Portal-01 ເພື່ອໃຫ້ໂຫລດຫນ້າໄດ້ສຳເລັດ.",
+            "hints": [
+                "ການຮ້ອງຂໍ ເວັບ ຈາກ PC-Reception ບໍ່ສາມາດໜີຜ່າມາ FW-01 ໄປຫາ Portal-01 ໄດ້.",
+                "FW-01 ມີ ກົດ ACL ທີ່ປະຕິເສດ HTTP ໄປຫາ Portal-01 ໂດຍສະເພາະ, ກິດ ກ່ອນ ກົດຂໍ ຕໍ່ໄປນ້ອຍ ເທື່ອມາຫື່ປະຕຽ.",
+                "ກໍາ FW-01, ລົບ ກົດ ACL ທີ່ປະຕິເສດ HTTP ມາຈາກ ຮຸ 10.0.6.1, ເພື່ອໃຫ້ ກົດ ເບິ່ງ ພອດ 80 ທີ່ຕ່ໍາ ເຮັດໜ້າ."
+            ],
+            "explanation": "Firewall ACL ອ່ານ ກົດ ຈາກ ເທິງ ຫາ ລຸ່ມ, ກົດ ທຳອິດ ກໍ ກຳນົດ ຄວາມເໜີ. ກົດ ປະຕິເສດ ວາງໄວ້ ເທິງ ກົດ ເບິ່ງ ກະ ປະຕຸລາ ກະ ມືດັງກ່າວ ກໍ ກອນ ກົດ ເບິ່ງ ທີ່ດຳເນີນການ ລຸ່ມ ກະ ກໍາຍາກ. ການລົບ ກົດ ປະຕິເສດ ທີ່ກວ້າງ ໃຫຍ່ ເຮັດໃຫ້ ກົດ ເບິ່ງ ທີ່ກຳນົດໄວ້ ເຮັດໜ້າ."
+        },
+        "lt": {
+            "title": "Užblokuotas portalas",
+            "story": "Priimamojo personalo darbuotojai sako, kad Portal-01 interneto puslapas pradėjo nebesisiunčiamas į PC-Reception šią rytą, nors anksčiau jis normaliai veikė peržvelgiant portalą.",
+            "objective": "Atkurti interneto prieigą iš PC-Reception į Portal-01, kad puslapis sėkmingai užsikrautų.",
+            "hints": [
+                "Interneto užklausa iš PC-Reception niekada nepereina per FW-01 keliu į Portal-01.",
+                "FW-01 turi ACL taisyklę, kuri konkrečiai atmeta HTTP eismą į Portal-01 adresą, sustabdydama užklausą prieš bet kurie leisti taisyklę.",
+                "Nuo FW-01, panaikinkite ACL taisyklę, kuri atmeta HTTP iš bet kurio šaltinio į 10.0.6.1, kad žemesnė leisti taisyklė portu 80 galėtų veikti."
+            ],
+            "explanation": "Firewall ACL yra skaitomos iš viršaus į apačią, o pirmasis atitikimas lemia rezultatą. Atmetimo taisyklė, padėta virš leisti taisyklės tam pačiam eismui, visada jį užblokuos, net jei toliau žemiau yra leisti taisyklė. Pašalinę pernelyg plačią atmetimo taisyklę, leisti taisyklė galėjo veikti."
+        },
+        "lv": {
+            "title": "Bloķētais portāls",
+            "story": "Uzņemšanas personāls ziņo, ka Portal-01 tīmekļa lapā nav notiek ielāde PC-Reception no šī rīta, lai arī iepriekš tā pamatā darbojās portāla pārlūkošanai.",
+            "objective": "Atjaunojiet tīmekļa piekļuvi no PC-Reception uz Portal-01, lai lapa veiksmīgi ielādētos.",
+            "hints": [
+                "Tīmekļa pieprasījums no PC-Reception nekad neiziet cauri FW-01 ceļā uz Portal-01.",
+                "FW-01 ir ACL noteikums, kas skaidri noraidīs HTTP satiksmi uz Portal-01 adresi, apturot pieprasījumu pirms jebkāda atļaut noteikuma.",
+                "FW-01, izdzēsiet ACL noteikumu, kas noraidīs HTTP no jebkāda avota uz 10.0.6.1, lai zemāk esošais atļaut noteikums portam 80 varētu darboties."
+            ],
+            "explanation": "Firewall ACL tiek lasīti no augšas uz leju, un pirmais atbilstība nosaka rezultātu. Noraidījuma noteikums, kas novietots virs atļaut noteikuma tam pašam satiksmei, vienmēr to bloķēs, pat ja tālāk atrodas atļaut noteikums. Noņemot pārlieku plašo noraidījuma noteikumu, atļaut noteikums varēja darboties."
+        },
+        "mk": {
+            "title": "Блокирана Портала",
+            "story": "Персоналот на рецепцијата вели дека веб-страницата Portal-01 престана да се вчитува на PC-Reception од утро, иако претходно работеше добро за прелистување на порталот.",
+            "objective": "Восстанови веб-пристап од PC-Reception до Portal-01 така што страницата ќе се вчита успешно.",
+            "hints": [
+                "Веб-барањето од PC-Reception никогаш не го минува FW-01 на патот до Portal-01.",
+                "FW-01 има ACL правило која конкретно блокира HTTP сообраќај до адресата на Portal-01, криејќи го барањето пред да може да се примени ниеden дозволено правило.",
+                "На FW-01, избриши го ACL правилото кое го блокира HTTP од какојземен извор до 10.0.6.1, така што доземното дозволено правило за порта 80 ќе може да се примени."
+            ],
+            "explanation": "Firewall ACLs се читаат од врв до дно и првиот допар побеђува. Правило за блокирање поставено над дозволено правило за ист сообраќај ќе го блокира заувек, дури и ако постои дозволено правило подалеку надалеку. Отстранување на превише широко правило за блокирање дозволи намереното дозволено правило да се примени."
+        },
+        "ml": {
+            "title": "തടയപ്പെട്ട പോർട്ടൽ",
+            "story": "സ്വീകരണ സ്റ്റാഫ് പറയുന്നതനുസരിച്ച് Portal-01 വെബ്‌പേജ് ഈ രാവിലെ മുതൽ PC-Reception-ൽ ലോഡ് ചെയ്യുന്നത് നിലച്ചിരിക്കുന്നു, എന്നിരുന്നാലും പോർട്ടൽ ബ്രൗസ് ചെയ്യുന്നതിന് ഇത് നന്നായി പ്രവർത്തിച്ചിരുന്നു.",
+            "objective": "PC-Reception-ൽ നിന്ന് Portal-01-ലേക്കുള്ള വെബ് ആക്സസ് പുനഃസ്ഥാപിക്കുക, അങ്ങനെ പേജ് വിജയകരമായി ലോഡ് ചെയ്യപ്പെടും.",
+            "hints": [
+                "PC-Reception-ൽ നിന്നുള്ള വെബ് അഭ്യർത്ഥന എന്നെങ്കിലും FW-01-ന് കടന്ന് Portal-01-ലേക്ക് എത്തില്ല.",
+                "FW-01-ന് ഒരു ACL നിയമം ഉണ്ട്, അത് Portal-01-ന്റെ വിലാസത്തിലേക്കുള്ള HTTP ട്രാഫിക്ക് വിലക്കുകയും അനുമതി നിയമം പ്രയോഗിക്കാൻ കഴിയുന്നതിന് മുമ്പ് അഭ്യർത്ഥന പിടിച്ചിരിക്കുകയും ചെയ്യുന്നു.",
+                "On FW-01, 10.0.6.1-ലേക്കുള്ള ഏതെങ്കിലും ഉറവിൽ നിന്നുള്ള HTTP വിലക്കുന്ന ACL നിയമം ഇല്ലാതാക്കുക, അങ്ങനെ പോർട്ട് 80-നുള്ള താഴെയുള്ള അനുമതി നിയമം പ്രാബല്യത്തിൽ വരും."
+            ],
+            "explanation": "Firewall ACL നിയമങ്ങൾ മുകളിൽ നിന്ന് താഴേക്ക് വായിക്കുന്നു, ആദ്യ പൊരുത്തം വിജയിക്കുന്നു. ഒരേ ട്രാഫിക്കിനുള്ള അനുമതി നിയമത്തിന് മുകളിൽ വയ്ക്കുന്ന വിലക്കൽ നിയമം ഇത് കൂടുതൽ താഴെ അനുമതി നിയമം ഉണ്ടെങ്കിലും ഇത് എപ്പോഴും തടയും. അത്യന്തം വിപുലമായ വിലക്കൽ നിയമം നീക്കംചെയ്യുന്നത് ഉദ്ദേശിച്ച അനുമതി നിയമം പ്രാബല്യത്തിൽ വരാൻ അനുവദിച്ചു."
+        },
+        "mn": {
+            "title": "Хаалгасан Портал",
+            "story": "Хүлээцэлийн ажилтнууд Portal-01 вэб хуудас энэ өглөө PC-Reception-ээс ачаалахаа болсон гэж хэлдэг, гэхдээ энэ нь портал үзэх үйлчилгээнд сайн ажилладаг байсан.",
+            "objective": "PC-Reception-ээс Portal-01-ийн вэб хүртэл хүрэх баталгаа сэргээж, хуудас амжилттай ачаалагдана.",
+            "hints": [
+                "PC-Reception-ээс ирсэн вэб хүсэлт Portal-01 руу явах үед FW-01-ийг хэзээ ч давдаггүй.",
+                "FW-01 нь Portal-01-ийн хаягруу явж буй HTTP урсгалыг тусгайлан хүлээж, дөрвөлжин дүрэм хэрэглэхээс өмнө хүсэлтийг барьдаг ACL дүрэмтэй.",
+                "FW-01-ээс 10.0.6.1 хаягруу ямар ч эх сурвалжаас ирсэн HTTP-г үгүйсгэх ACL дүрмийг устгаж, портын 80-ны доошоо зөвшөөрлийн дүрмийг хүчинтэй болго."
+            ],
+            "explanation": "Firewall ACL дүрмүүд дээрээс доош уншигдаж, эхний таарал ялагдана. Ижил трафикийн зөвшөөрөлтэй дүрэмээс дээр байрласан үгүйсгэх дүрэм хүлээлгүйхэн доошоо зөвшөөрлийн дүрэм байсан ч гэсэн түүнийг ямагт хаах болно. Хэтэрхий өргөн хүрээтэй үгүйсгэх дүрмийг арилгаснаар зорилтот зөвшөөрлийн дүрэм хүчинтэй болов."
+        },
+        "mr": {
+            "title": "अवरोधित पोर्टल",
+            "story": "रिसेप्शन कर्मचाऱ्यांनी सांगितले की Portal-01 वेब पेज आज सकाळपासून PC-Reception वर लोड होणे बंद झाले आहे, जरी ते पूर्वी पोर्टल ब्राउজ करण्यासाठी चांगले काम करत होते.",
+            "objective": "PC-Reception वरून Portal-01 पर्यंत वेब प्रवेश पुनः स्थापित करा जेणेकरून पेज यशस्वीरित्या लोड होईल.",
+            "hints": [
+                "PC-Reception वरून येणारी वेब विनंती Portal-01 पर्यंत जाताना FW-01 कधीही ओलांडत नाही.",
+                "FW-01 कडे एक ACL नियम आहे जो Portal-01 च्या पत्त्यावर जाणारी HTTP ट्राफिक विशेषत: नाकारतो, कोणतेही परवानगी नियम लागू होण्यापूर्वी विनंती पकडतो.",
+                "FW-01 वर, 10.0.6.1 पर्यंत कोणत्याही स्रोतापासून HTTP नाकारणारा ACL नियम हटवा, जेणेकरून पोर्ट 80 साठी खालचा परवानगी नियम लागू होईल."
+            ],
+            "explanation": "Firewall ACL नियम वरून खाली वाचले जातात आणि पहिला जुळणारा नियम जिंकतो. परमिट नियमाच्या वर ठेवलेला नकार नियम समान ट्राफिकसाठी, जरी खाली परमिट नियम असला तरी ते नेहमीच अवरोधित करेल. अत्यंत व्यापक नकार नियम हटवून, हेतूचा परमिट नियम प्रभावी होऊ शकला."
+        },
+        "ms": {
+            "title": "Portal yang Disekat",
+            "story": "Staf Penerimaan mengatakan halaman web Portal-01 telah berhenti dimuat pada PC-Reception sejak pagi ini, walaupun ia biasanya berfungsi dengan baik untuk melayari portal.",
+            "objective": "Pulihkan akses web dari PC-Reception ke Portal-01 supaya halaman dimuat dengan berjaya.",
+            "hints": [
+                "Permintaan web dari PC-Reception tidak pernah melepasi FW-01 dalam perjalanannya ke Portal-01.",
+                "FW-01 mempunyai peraturan ACL yang secara khusus menafikan trafik HTTP yang menuju alamat Portal-01, menangkap permintaan sebelum sebarang peraturan kebenaran dapat diterapkan.",
+                "Pada FW-01, padamkan peraturan ACL yang menafikan HTTP daripada mana-mana sumber ke 10.0.6.1, supaya peraturan kebenaran bawahan untuk port 80 dapat berkuat kuasa."
+            ],
+            "explanation": "ACL Firewall dibaca dari atas ke bawah dan kecocokan pertama menang. Peraturan penolakan yang ditempatkan di atas peraturan kebenaran untuk trafik yang sama akan selalu menyekatnya, walaupun peraturan kebenaran wujud lebih jauh ke bawah. Membuang peraturan penolakan yang terlalu luas membenarkan peraturan kebenaran yang ditujukan untuk berkuat kuasa."
+        },
+        "my": {
+            "title": "အဆုပ်ခံထားသည့် Portal",
+            "story": "ကဒီမတ္တမနက်ပိုင်းကစ၍ PC-Reception မှ Portal-01 ဝက်ဘ်စာမျက်နှာသည် အင်္ဂါယ်မဖွင့်သည်ဟု လက်ခံမှုအဆင့်တွင် အလုပ်သမားများက ကော်ပ်ပီကြသည်။ ရှေ့ကတော့ Portal ကို ရှာဖွေခွင့်ရှိခဲ့သည်။",
+            "objective": "PC-Reception မှ Portal-01 သို့ ကွန်ယက်ဆက်သွယ်မှုပြန်လည်ရယူ၍ စာမျက်နှာကို အောင်မြင်စွာ အင်္ဂါယ်ဖွင့်ပါ။",
+            "hints": [
+                "PC-Reception မှ ကွန်ယက်တောင်းခံမှု FW-01 ကိုမှ Portal-01 သို့သွားလည်း ကျော်သွားလိုက်သည်။",
+                "FW-01 တွင် Portal-01 လိပ်စာသို့ HTTP လှုပ်ရှားမှုကို ရည်ရွယ်ချက်ရှိသည့် အဖျက်အမူကို ACL စည်းမျဉ်းများ ရှိသည်။ ခွင့်ပြုမှုစည်းမျဉ်းများမ ရောက်ရှိမှီ တောင်းခံမှုကို ဖမ်းဆည်းထားသည်။",
+                "FW-01 တွင် အရင်းအမြစ်မည်သည့်အရာမှ 10.0.6.1 သို့ HTTP ကိုအဖျက်သည့် ACL စည်းမျဉ်းများကို ဖျက်ပါ။ အဆင့်နိမ့်သော port 80 ခွင့်ပြုမှုစည်းမျဉ်းများ ရောက်ရှိစေရန်။"
+            ],
+            "explanation": "Firewall ACLs များကို အပေါ်မှအောက်သို့ ဖတ်ပြီး အဆုံးတွင် ကိုက်ညီသည့်တစ်ခုက အနိုင်ရ။ အခွင့်ပြုမှုစည်းမျဉ်းများအပေါ်တွင် ကျေးဇူးပြုမှုစည်းမျဉ်းများ ထည့်သွင်းထားလျှင် အဆင့်နိမ့်သောအခွင့်ပြုမှုစည်းမျဉ်းများ ရောက်ရှိစေရန်။"
+        },
+        "ne": {
+            "title": "अवरुद्ध Portal",
+            "story": "Portal-01 को वेब पृष्ठ आज बिहानदेखि PC-Reception मा लोड हुन बन्द भएको छ भनी रिसेप्शन कर्मचारीले बताएका छन्। पहिले portal को लागि ब्राउज गर्न राम्रो काम गरिरहेको थियो।",
+            "objective": "PC-Reception बाट Portal-01 मा वेब पहुँच पुनः स्थापित गर्नुहोस् ताकि पृष्ठ सफलतापूर्वक लोड होस्।",
+            "hints": [
+                "PC-Reception बाट आएको वेब अनुरोध FW-01 बाट Portal-01 तर्फ कहिले पनि आगे बढ्दैन।",
+                "FW-01 मा एक ACL नियम छ जसले Portal-01 को ठेगाना तर्फ HTTP ट्रैफिक विशेष रूपमा अस्वीकार गर्छ र कुनै पनि अनुमति नियम लागु हुनुअघि अनुरोध पकडिन्छ।",
+                "FW-01 मा, कुनै पनि स्रोतबाट 10.0.6.1 मा HTTP अस्वीकार गर्ने ACL नियम हटाउनुहोस्, ताकि port 80 को निम्न अनुमति नियम प्रभावी हुन सक्छ।"
+            ],
+            "explanation": "Firewall ACL नियमहरू ऊपरदेखि तलसम्म पढिन्छन् र पहिलो मेलको नियम जित्छ। अनुमति नियमको माथि रखिएको अस्वीकार नियमले सधैं ट्रैफिकलाई अवरुद्ध गर्छ, यदि तलको अनुमति नियम पनि छ भने पनि। यो व्यापक अस्वीकार नियम हटाएर, अभिप्रेत अनुमति नियम प्रभावी भयो।"
+        },
+        "nl": {
+            "title": "De Geblokkeerde Portal",
+            "story": "Receptiemedewerkers zeggen dat de webpagina van Portal-01 sinds vanmorgen niet meer laadt op PC-Reception, hoewel het voorheen goed werkte voor het bladeren door de portal.",
+            "objective": "Herstel webtoegang van PC-Reception naar Portal-01 zodat de pagina succesvol wordt geladen.",
+            "hints": [
+                "Het webverzoek van PC-Reception gaat nooit voorbij FW-01 op weg naar Portal-01.",
+                "FW-01 heeft een ACL-regel die HTTP-verkeer naar Portal-01's adres specifiek weigert en het verzoek onderschept voordat een Poortinstellingen-regel kan werken.",
+                "Verwijder op FW-01 de ACL-regel die HTTP van elke bron naar 10.0.6.1 weigert, zodat de lagere Poortinstellingen-regel voor poort 80 van kracht kan worden."
+            ],
+            "explanation": "Firewall ACL-regels worden van boven naar beneden gelezen en de eerste overeenkomst wint. Een weigerregel boven een toestemmingsregel voor hetzelfde verkeer blokkeert dit altijd, zelfs als er verder beneden een toestemmingsregel bestaat. Het verwijderen van deze brede weigerregel stelde de beoogde toestemmingsregel in staat."
+        },
+        "no": {
+            "title": "Den Blokkerte Portalen",
+            "story": "Resepsjonspersonalet sier at Portal-01-nettsiden har sluttet å laste på PC-Reception siden i morges, selv om den pleide å fungere fint for å bla gjennom portalen.",
+            "objective": "Gjenopprett internettilgang fra PC-Reception til Portal-01 slik at siden lastes inn.",
+            "hints": [
+                "Nettforespørselen fra PC-Reception kommer aldri forbi FW-01 på vei til Portal-01.",
+                "FW-01 har en ACL-regel som spesifikt nekter HTTP-trafikk til Portal-01s adresse, og fanger forespørselen før noen tillatte regel kan brukes.",
+                "Slett ACL-regelen på FW-01 som nekter HTTP fra hvilken som helst kilde til 10.0.6.1, slik at den lavere tillatte regelen for port 80 kan tre i kraft."
+            ],
+            "explanation": "Firewall ACL-regler leses fra topp til bunn og den første treff vinner. En nekt-regel plassert over en tillatt-regel for samme trafikk vil alltid blokkere den, selv om en tillatt-regel finnes lenger nede. Hvis du fjerner den altfor breie nekt-regelen, kan den tilsiktede tillatt-regelen tre i kraft."
+        },
+        "or": {
+            "title": "ଅବରୋଧିତ Portal",
+            "story": "ରିସେପ୍ସନ କର୍ମଚାରୀମାନେ କହୁଛନ୍ତି ଯେ Portal-01 ୱେବ ପୃଷ୍ଠା ଆଜ ସକାଳରୁ PC-Reception ରେ ଲୋଡ ହେବା ବନ୍ଦ କରିଦେଇଛି, ଯଦିଓ ଏହା ପୂର୍ବରେ portal ବ୍ରାଉଜ୍ କରିବା ପାଇଁ ଭଲ ରେ କାମ କରୁଥିଲା।",
+            "objective": "PC-Reception ରୁ Portal-01 କୁ ୱେବ ପ୍ରବେଶ ପୁନରୁଦ୍ଧାର କରନ୍ତୁ ଯାହାଦ୍ୱାରା ପୃଷ୍ଠା ସଫଳତାର ସହିତ ଲୋଡ ହୋଇଯାଏ।",
+            "hints": [
+                "PC-Reception ରୁ ଆସିଥିବା ୱେବ ଅନୁରୋଧ Portal-01 ରେ ଯାଉଁ ରାସ୍ତାରେ FW-01 ମାଧ୍ୟମକୁ କଦେ ନଯାଏ।",
+                "FW-01 ରେ ଏକ ACL ନିୟମ ରହିଛି ଯାହାକି Portal-01 ର ଠିକାଣା ଆଡକୁ HTTP ଟ୍ରାଫିକ୍ ନିର୍ଦ୍ଦିଷ୍ଟ ରୂପରେ ଅସ୍ବୀକୃତି କରେ, ଅନୁରୋଧକୁ ଯେକୌଣସି ଅନୁମତି ନିୟମ ପ୍ରୟୋଗ ହେବାପୂର୍ବେ ଧରିରଖେ।",
+                "FW-01 ରେ, ଯେକୌଣସି ଉତ୍ସରୁ 10.0.6.1 ରେ HTTP ମାନିକୋ ଆଦେଶ କରୁଥିବା ACL ନିୟମ ବିଲୋପ କରନ୍ତୁ, ଯାହାଦ୍ୱାରା ପୋର୍ଟ 80 ର ନିମ୍ନ ଅନୁମତି ନିୟମ ପ୍ରଭାବ ଫେଳିପାରେ।"
+            ],
+            "explanation": "Firewall ACL ନିୟମଗୁଡ଼ିକ ଉପରୁ ନିମ୍ନକୁ ପଢାଯାଏ ଏବଂ ପ୍ରଥମ ମେଳ ଜେତେ। ସମାନ ଟ୍ରାଫିକ୍ ପାଇଁ ଏକ ଅସ୍ବୀକୃତି ନିୟମ ଏକ ଅନୁମତି ନିୟମର ଉପରେ ରଖାଯାଇ ଏହାକୁ ସର୍ବଦା ଅବରୋଧ କରିବ, ଯଦିଓ ଏକ ଅନୁମତି ନିୟମ ତଳେ ବିଦ୍ୟମାନ ରହେ। ଏହି ବିସ୍ତୃତ ଅସ୍ବୀକୃତି ନିୟମ ବିଲୋପ କରିବାଦ୍ୱାରା, ଅଭିପ୍ରେତ ଅନୁମତି ନିୟମ ପ୍ରଭାବଶାଳୀ ହଲା।"
+        },
+        "pa": {
+            "title": "ਬਲਾਕ ਕੀਤਾ ਹੋਆ ਪੋਰਟਲ",
+            "story": "ਰਿਸੈਪਸ਼ਨ ਸਟਾਫ ਦਾ ਕਹਿਣਾ ਹੈ ਕਿ Portal-01 ਵੈੱਬ ਪੰਨਾ ਅੱਜ ਸਵੇਰ ਤੋਂ PC-Reception ਤੇ ਲੋਡ ਹੋਣਾ ਬੰਦ ਹੋ ਗਿਆ ਹੈ, ਹਾਲਾਂਕਿ ਇਹ ਪੋਰਟਲ ਬ੍ਰਾਊਜ਼ਿੰਗ ਲਈ ਠੀਕ ਕੰਮ ਕਰਦਾ ਸੀ।",
+            "objective": "PC-Reception ਤੋਂ Portal-01 ਤੱਕ ਵੈੱਬ ਐਕਸੇਸ ਮੁੜ ਬਹਾਲ ਕਰੋ ਤਾਂ ਜੋ ਪੰਨਾ ਸਫਲਤਾ ਨਾਲ ਲੋਡ ਹੋ ਜਾਵੇ।",
+            "hints": [
+                "PC-Reception ਤੋਂ ਵੈੱਬ ਰਿਕਵੈਸਟ FW-01 ਤੋਂ ਕਦੇ ਵੀ Portal-01 ਤੱਕ ਨਹੀਂ ਪਹੁੰਚਦੀ।",
+                "FW-01 ਕੋਲ ਇੱਕ ACL ਨਿਯਮ ਹੈ ਜੋ ਖਾਸ ਤੌਰ ਤੇ Portal-01 ਦੇ ਪਤੇ ਤੱਕ HTTP ਟ੍ਰੈਫਿਕ ਨੂੰ ਰੋਕਦਾ ਹੈ, ਮੰਗ ਨੂੰ ਕਿਸੇ ਵੀ ਪਰਮਿਟ ਨਿਯਮ ਤੋਂ ਪਹਿਲਾਂ ਫੜਦਾ ਹੈ।",
+                "FW-01 ਤੇ, ACL ਨਿਯਮ ਮਿਟਾਓ ਜੋ ਕਿਸੇ ਵੀ ਸਰੋਤ ਤੋਂ 10.0.6.1 ਤੱਕ HTTP ਨੂੰ ਰੋਕਦਾ ਹੈ, ਤਾਂ ਜੋ ਪੋਰਟ 80 ਲਈ ਨੀਚਲਾ ਪਰਮਿਟ ਨਿਯਮ ਲਾਗੂ ਹੋ ਸਕੇ।"
+            ],
+            "explanation": "Firewall ACLs ਨੂੰ ਉੱਪਰ ਤੋਂ ਹੇਠਾਂ ਪੜ੍ਹਿਆ ਜਾਂਦਾ ਹੈ ਅਤੇ ਪਹਿਲਾ ਮੈਚ ਜਿੱਤ ਜਾਂਦਾ ਹੈ। ਇੱਕ deny ਨਿਯਮ ਜੋ ਉਸੇ ਟ੍ਰੈਫਿਕ ਲਈ permit ਨਿਯਮ ਤੋਂ ਉੱਪਰ ਰੱਖਿਆ ਜਾਵੇ ਇਸ ਨੂੰ ਹਮੇਸ਼ਾ ਬਲਾਕ ਕਰੇਗਾ, ਭਾਵੇਂ ਹੇਠਾਂ ਇੱਕ permit ਨਿਯਮ ਮੌਜੂਦ ਹੋ। ਬਹੁਤ ਵਿਆਪਕ deny ਨਿਯਮ ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਲੱਖਿਤ permit ਨਿਯਮ ਲਾਗੂ ਹੋ ਸਕਿਆ।"
+        },
+        "pl": {
+            "title": "Zablokowany portal",
+            "story": "Personel recepcji mówi, że strona Portal-01 przestała się ładować na PC-Reception od rana, choć wcześniej bezproblemowo działała do przeglądania portalu.",
+            "objective": "Przywróć dostęp internetowy z PC-Reception do Portal-01, aby strona załadowała się pomyślnie.",
+            "hints": [
+                "Żądanie internetowe z PC-Reception nigdy nie przechodzi przez FW-01 na drodze do Portal-01.",
+                "FW-01 ma regułę ACL, która konkretnie odmawia ruchu HTTP kierującego się na adres Portal-01, przechwytując żądanie zanim jakakolwiek reguła pozwalająca może zadziałać.",
+                "Na FW-01 usuń regułę ACL, która odmawia HTTP z dowolnego źródła do 10.0.6.1, aby niżej położona reguła pozwalająca na port 80 mogła zadziałać."
+            ],
+            "explanation": "Zapory sieciowe ACL odczytywane są od góry do dołu i pierwsza zgodność wygrywa. Reguła deny umieszczona nad regułą permit dla tego samego ruchu zawsze go zablokuje, nawet jeśli reguła permit istnieje poniżej. Usunięcie zbyt szerokiej reguły deny umożliwiło zadziałanie zamierzonej reguły permit."
+        },
+        "pt-PT": {
+            "title": "O Portal Bloqueado",
+            "story": "A equipa de receção diz que a página web Portal-01 deixou de carregar no PC-Reception desde esta manhã, embora funcionasse bem para navegação no portal.",
+            "objective": "Restaure o acesso web de PC-Reception para Portal-01 para que a página carregue com sucesso.",
+            "hints": [
+                "O pedido web de PC-Reception nunca passa por FW-01 no caminho para Portal-01.",
+                "FW-01 tem uma regra ACL que especificamente nega tráfego HTTP com destino ao endereço do Portal-01, capturando o pedido antes que qualquer regra de permissão possa aplicar-se.",
+                "Em FW-01, elimine a regra ACL que nega HTTP de qualquer origem para 10.0.6.1, para que a regra de permissão inferior na porta 80 possa vigorar."
+            ],
+            "explanation": "As ACLs da Firewall são lidas de cima para baixo e a primeira correspondência vence. Uma regra de negação colocada acima de uma regra de permissão para o mesmo tráfego bloqueá-lo-á sempre, mesmo que exista uma regra de permissão mais abaixo. A remoção da regra de negação demasiado abrangente permitiu que a regra de permissão pretendida vigore."
+        },
+        "rm": {
+            "title": "Il portal bloccà",
+            "story": "Il persunal da la recepziun di che la pagina web Portal-01 n'ha betg pli chargà sin PC-Reception dapi matgina, numnain ch'ella ha funcziunà bain per la navigaziun dal portal.",
+            "objective": "Restaurescha l'access web da PC-Reception a Portal-01 per che la pagina chargia cun success.",
+            "hints": [
+                "La dumonda web da PC-Reception n'arriva mai dapro da FW-01 sin la via davers Portal-01.",
+                "FW-01 ha ina regla ACL che danegia spezificamain il traffic HTTP destinà a l'adressa da Portal-01, interrupent la dumonda avant che ina regla da permissiun possia uss vegnir applitgada.",
+                "Sil FW-01, stizzescha la regla ACL che danegia HTTP da tge qualseviglia funtauna tar 10.0.6.1, per che la regla da permissiun pli bassa per port 80 possia vegnir applitgada."
+            ],
+            "explanation": "Ils ACL dal Firewall vegnan lexids dad augn a giez e l'emprem match vensch. Ina regla da deniaziun situada sur ina regla da permissiun per il medem traffic sto sequer bloccaila, era sch'ina regla da permissiun exista pli zuppa. L'allontanament da la regla da deniaziun tro largia ha permess che la regla da permissiun intentada pudescha vegnir applitgada."
+        },
+        "ro": {
+            "title": "Portalul blocat",
+            "story": "Personalul recepției spune că pagina web Portal-01 a încetat să se încarce pe PC-Reception din această dimineață, deși funcționa bine pentru navigarea pe portal.",
+            "objective": "Restabiliți accesul web de la PC-Reception la Portal-01 pentru ca pagina să se încarce cu succes.",
+            "hints": [
+                "Cererea web de la PC-Reception nu trece niciodată pe lângă FW-01 în drumul către Portal-01.",
+                "FW-01 are o regulă ACL care neagă în mod specific traficul HTTP cu destinație la adresa Portal-01, interceptând cererea înainte ca orice regulă de permis să poată fi aplicată.",
+                "Pe FW-01, ștergeți regula ACL care neagă HTTP de la orice sursă la 10.0.6.1, pentru ca regula de permis inferioară pentru portul 80 să poată avea efect."
+            ],
+            "explanation": "ACL-urile Firewall sunt citite de sus în jos și primul meci câștigă. O regulă de negare plasată deasupra unei reguli de permis pentru același trafic îl va bloca întotdeauna, chiar dacă o regulă de permis există mai jos. Eliminarea regulii de negare prea largi a permis ca regula de permis dorită să aibă efect."
+        },
+        "si": {
+            "title": "අවහිර කරන ලද පෝටල්",
+            "story": "ප්‍රතිඡ්ඡ කර්මාන්තිකයින් පැවසීයේ PC-Reception හි Portal-01 වෙබ් පිටුව අද උදෑසන සිට පූරණය වීම නතර වී ඇති බවයි, මෙයින් පෙර එය පෝටල් බ්‍රවුස් කිරීම සඳහා හොඳින් ක්‍රියා කළ නමුත්.",
+            "objective": "PC-Reception සිට Portal-01 වෙත වෙබ් ප්‍රවේශ සම්පූර්ණ කිරීම එවිට පිටුව සফලව පූරණය වේ.",
+            "hints": [
+                "PC-Reception සිට ඇති වෙබ් ඉල්ලීම Portal-01 වෙත එහි ගමන් පාඩුවේදී FW-01 ඉක්මවා නොයන්න.",
+                "FW-01 හිට Portal-01 ගේ ලිපිනයට යන HTTP ගතිලේශ විශේෂයෙන් ප්‍රතික්ෂේප කරන ACL නීතියක් ඇත, එය කිසිදු අවසර නීතියක් ක්‍රියා කිරීමට පෙර ඉල්ලීම ගිඩ ගස්.",
+                "FW-01 හි, 10.0.6.1 වෙත ඕනෑම මූලාකරණයෙන් HTTP ප්‍රතික්ෂේප කරන ACL නීතිය මකා දමන්න, එවිට පෝට් 80 සඳහා පහළ අවසර නීතිය ක්‍රියාත්මක විය හැකි."
+            ],
+            "explanation": "Firewall ACL ඉහළ සිට පහළට කියවනු ලබන අතර පළමු ගැලපිම ජයග්‍රාහී වෙයි. එකම ගතිලේශය සඳහා අවසර නීතියට ඉහළින් ස්ථාපිත ප්‍රතික්ෂේප නීතිය සෑම විටම එය අවහිර කරනු ඇත, පහළින් තවත් අවසර නීතියක් පවතින නමුත්. අතිශય පුළුල් ප්‍රතික්ෂේප නීතිය ඉවත් කිරීම අපේක්ෂිත අවසර නීතිය ක්‍රියාත්මක වීමට ඉඩ දුන්."
+        },
+        "sk": {
+            "title": "Blokovaný portál",
+            "story": "Personál recepcie vraví, že webová stránka Portal-01 prestala načítavať na PC-Reception od rána, hoci predtým fungovala dobre na prehliadanie portálu.",
+            "objective": "Obnovte webový prístup z PC-Reception na Portal-01, aby sa stránka úspešne načítala.",
+            "hints": [
+                "Webový dopyt z PC-Reception nikdy neprejde cez FW-01 na ceste k Portal-01.",
+                "FW-01 má pravidlo Pravidlá ACL, ktoré špeciálne zakazuje HTTP prenos smerujúci na adresu Portal-01 a zachytáva dopyt pred akýmkoľvek pravidlom povolenia.",
+                "Na FW-01 odstráňte pravidlo Pravidlá ACL, ktoré zakazuje HTTP z akéhokoľvek zdroja na 10.0.6.1, aby mohlo platiť nižšie pravidlo povolenia pre číslo portu 80."
+            ],
+            "explanation": "Firewallové Pravidlá ACL sa čítajú zhora nadol a prvá zhoda vyhráva. Pravidlo Zaslané umiestnené nad pravidlom Povolenie pre rovnaký prenos bude vždy blokovať, aj keď pravidlo Povolenie existuje nižšie. Odstránenie príliš širokého pravidla Zaslané umožnilo nadobudnutie účinnosti zamýšľaného pravidla Povolenie."
+        },
+        "sl": {
+            "title": "Blokiran portal",
+            "story": "Zaposleni na recepciji pravijo, da se spletna stran Portal-01 od tega jutra ne naloži več na PC-Reception, čeprav je prej delala dobro za brskanje po portalu.",
+            "objective": "Obnovite spletni dostop s PC-Reception do Portal-01, da se stran uspešno naloži.",
+            "hints": [
+                "Spletna zahteva z PC-Reception nikoli ne gre mimo FW-01 na poti do Portal-01.",
+                "FW-01 ima Pravila ACL, ki posebej zavrne HTTP promet do naslova Portal-01 in prestreže zahtevo pred katerimkoli pravilom dovoljenja.",
+                "Na FW-01 izbrišite Pravila ACL, ki zavrne HTTP s kateregakoli izvora na 10.0.6.1, da lahko začne veljati nižje pravilo dovoljenja za Številka vrat 80."
+            ],
+            "explanation": "Pravila ACL požarnega zidu se berejo od zgoraj navzdol in prva ujemanja zmaga. Pravilo zavrnitve, postavljeno nad pravilom dovoljenja za isti promet, bo vedno blokiralo, tudi če nižje obstaja pravilo dovoljenja. Odstranitev preširoko postavljenega pravila zavrnitve je omogočila uveljavljanje nameravanega pravila dovoljenja."
+        },
+        "sq": {
+            "title": "Portali i bllokuar",
+            "story": "Personeli i recepcjonit thotë se faqja e portalit Portal-01 ka ndalur se ngarkuari në PC-Reception që këtë mëngjes, megjithëse më parë punonte mirë për të shfletuar portalin.",
+            "objective": "Rivendosni aksesin në internet nga PC-Reception në Portal-01 në mënyrë që faqja të ngarkohet me sukses.",
+            "hints": [
+                "Kërkesa e internetit nga PC-Reception nuk kalon kurrë FW-01 në rrugën drejt Portal-01.",
+                "FW-01 ka një Rregullat ACL që në mënyrë specifike mohon trafikun HTTP drejt adresës Portal-01, duke kapur kërkesën para se të zbatohet ndonjë rregull lejon.",
+                "Në FW-01, fshini Rregullat ACL që mohon HTTP nga ndonjë burim në 10.0.6.1, kështu që rregulli më i ulët i lejimit për Numri i portit 80 mund të hyjë në fuqi."
+            ],
+            "explanation": "Rregullat ACL të Firewall lexohen nga lart poshtë dhe fitimi i parë në përputhje. Një rregull mospajimi i vendosur mbi rregullin e lejon për të njëjtin trafik do të bllokojë gjithmonë atë, edhe nëse ekziston një rregull lejoni më poshtë. Heqja e rregullit të mospajimit shumë të gjerë lejoi të zbatohet rregulla e synuar e lejon."
+        },
+        "sr": {
+            "title": "Блокиран портал",
+            "story": "Особље рецепције каже да су веб странице Portal-01 престале да се учитавају на PC-Reception од јутрос, мада су раније добро радиле за прегледање портала.",
+            "objective": "Обновите вебски приступ са PC-Reception на Portal-01 тако да се страница успешно учита.",
+            "hints": [
+                "Веб захтев са PC-Reception никад не пройде поред FW-01 на путу до Portal-01.",
+                "FW-01 има Правила ACL која специјално забрањују HTTP саобраћај усмерен на адресу Portal-01, хватајући захтев пре него што било које правило дозволе може да буде примењено.",
+                "На FW-01, обришите Правила ACL која забрањују HTTP из било ког извора на 10.0.6.1, тако да нижа правила дозволе за Број порта 80 може да буде примењено."
+            ],
+            "explanation": "Правила ACL заштитног зида се читају од врха ка дну и прво подударање побеђује. Правило забране постављено изнад правила дозволе за исти саобраћај ће увек блокирати, чак и ако правило дозволе постоји даље доле. Уклањање превише широког правила забране допустило је да намеравано правило дозволе буде примењено."
+        },
+        "sv": {
+            "title": "Portalen blockerad",
+            "story": "Receptionspersonalen säger att webbsidan Portal-01 inte längre laddas på PC-Reception sedan denna morgon, trots att den brukade fungera utmärkt för att bläddra på portalen.",
+            "objective": "Återställ webåtkomst från PC-Reception till Portal-01 så att sidan laddas framgångsrikt.",
+            "hints": [
+                "Webförfrågan från PC-Reception kommer aldrig förbi FW-01 på vägen till Portal-01.",
+                "FW-01 har en ACL-regel som specifikt nekar HTTP-trafik till Portal-01:s adress och fångar förfrågan innan någon permit-regel kan tillämpas.",
+                "På FW-01, ta bort ACL-regeln som nekar HTTP från valfri källa till 10.0.6.1, så att den nedre permit-regeln för port 80 kan träda i kraft."
+            ],
+            "explanation": "Firewall ACL-regler läses från topp till botten och den första matchningen vinner. En deny-regel placerad ovanför en permit-regel för samma trafik blockerar alltid den, även om en permit-regel finns längre ned. Om man tar bort den alltför bred deny-regeln kan den avsedda permit-regeln träda i kraft."
+        },
+        "sw": {
+            "title": "Lango iliyofungwa",
+            "story": "Wafanyikazi wa pongezi wanasema kwamba ukurasa wa Portal-01 haukujifunza tena kwenye PC-Reception tangu asubuhi hii, ingawa kawaida kufanya kazi vizuri kwa kusezesha portali.",
+            "objective": "Rejesha ufikiaji wa wavuti kutoka PC-Reception kwenda Portal-01 ili ukurasa lifunzwe kwa ufanisi.",
+            "hints": [
+                "Ombi la wavuti kutoka PC-Reception halilali kamwe kupita FW-01 njiani kwenda Portal-01.",
+                "FW-01 ina kanuni ya ACL inayonaa kukataa HTTP traffic inayoelekea kwenye anwani ya Portal-01, na kukamata ombi kabla ya kanuni yoyote ya kuruhusu.",
+                "Kwenye FW-01, futa kanuni ya ACL inayokataa HTTP kutoka kwa chanzo chochote kwenda 10.0.6.1, ili kanuni ya chini ya kuruhusu kwa port 80 iweze kusambaza."
+            ],
+            "explanation": "Kanuni za ACL za Firewall zinasomwa kutoka juu hadi chini na mechi ya kwanza huvuta. Kanuni ya kukataa iliyowekwa juu ya kanuni ya kuruhusu kwa trafiki sawa itasumbuza kila wakati, hata kama kanuni ya kuruhusu iko zaidi. Kuondoa kanuni ya kukataa isiyokususu kuliloa kanuni ya kuruhusu inayokusudiwa ijifunzwe."
+        },
+        "ta": {
+            "title": "முடக்கப்பட்ட போர்டல்",
+            "story": "ரிசப்ஷன் ஊழியர்கள் Portal-01 வலைப்பக்கம் இந்த காலை முதல் PC-Reception-இல் ஏற்றப்படுவதை நிறுத்திவிட்டுள்ளது என்று கூறுகின்றனர், இருப்பினும் அது போர்டல் உலாவவதற்கு நன்றாக செயல்பட்டது.",
+            "objective": "PC-Reception-இல் இருந்து Portal-01-க்கு வலை அணுகல் மீட்டெடுக்கவும், பக்கம் வெற்றிகரமாக ஏற்றப்படும்.",
+            "hints": [
+                "PC-Reception-இல் இருந்து வரும் வலை கோரிக்கை Portal-01-க்கு செல்லும் வழியில் FW-01-ஐ ஒருபோதும் கடக்கவில்லை.",
+                "FW-01-ல் Portal-01-ன் முகவரிக்கு செல்லும் HTTP போக்குவரத்தை குறிப்பாக மறுக்கும் ACL விதி உள்ளது, அனுமதி விதி பயன்படுத்தப்படுவதற்கு முன் கோரிக்கையை பிடிக்கிறது.",
+                "On FW-01-ல், 10.0.6.1-க்கு எந்த ஆதாரத்திலிருந்தும் HTTP-ஐ மறுக்கும் ACL விதியை நீக்கவும், இதனால் போர்ட் 80-க்கான குறைந்த அனுமதி விதி செயல்பட முடியும்."
+            ],
+            "explanation": "ஃபயர்வால் ACL விதிகள் மேலிருந்து கீழாக வாசிக்கப்படுகின்றன மற்றும் முதல் பொருத்தம் வெற்றி பெறுகிறது. ஒரே போக்குவரத்திற்கான அனுமதி விதির மேலே வைக்கப்பட்ட மறுப்பு விதி, மேலும் கீழே அனுமதி விதி இருந்தாலும் எப்போதும் அதை தடை செய்கும். அதிக பரந்த மறுப்பு விதியை நீக்குவது, நோக்கம் கொண்ட அனுமதி விதி செயல்பட அனுமதிக்கிறது."
+        },
+        "te": {
+            "title": "నిరోధించిన పోర్టల్",
+            "story": "రిసెప్షన్ సిబ్బంది Portal-01 వెబ్‌ పేజీ ఈ ఉదయం నుండి PC-Reception పై లోడ్ కాబోవటం ఆపివేయబడిందని చెప్పారు, అయితే ఇది పోర్టల్‌ను విహారణ చేయడానికి బాగా కూడా ఉపయోగించేవారు.",
+            "objective": "PC-Reception నుండి Portal-01 వరకు వెబ్‌ ఆక్సెస్‌ పునరుద్ధరించండి, తద్వారా పేజీ విజయవంతంగా లోడ్ అవుతుంది.",
+            "hints": [
+                "PC-Reception నుండి వెబ్‌ అభ్యర్థన Portal-01 వైపు ఎన్నటికీ FW-01ని దాటుకోవటం లేదు.",
+                "FW-01కు Portal-01 చిరునామాకు వెళ్లే HTTP ట్రాఫిక్‌ను ప్రత్యేకంగా తిరస్కరించే ACL నియమం ఉంది, ఏ అనుమతి నియమం కూడా వర్తించకముందే అభ్యర్థనను సంగ్రహిస్తుంది.",
+                "FW-01 పై, 10.0.6.1కు ఏ ఆధారం నుండి అయినా HTTP ను తిరస్కరించే ACL నియమాన్ని తొలగించండి, తద్వారా పోర్ట్ 80 కోసం దిగువ అనుమతి నియమం ప్రభావవంతమవుతుంది."
+            ],
+            "explanation": "ఫైర్‌వాల్ ACL నియమాలు పై నుండి దిగువకు చదువుతారు మరియు మొదటి సరిపోలిక విజయం సాధిస్తుంది. అదే ట్రాఫిక్‌కు అనుమతి నియమానికి పైన ఉంచిన తిరస్కరణ నియమం, తరువాతకు అనుమతి నియమం ఉన్నప్పటికీ ఎప్పుడూ దానిని నిరోధిస్తుంది. విస్తృత తిరస్కరణ నియమాన్ని తొలగించడం ఉద్దేశ్య అనుమతి నియమాన్ని ప్రభావవంతం చేసింది."
+        },
+        "uk": {
+            "title": "Заблокований портал",
+            "story": "Персонал ресепшену говорить, що веб-сторінка Portal-01 перестала завантажуватися на PC-Reception з цього ранку, хоча раніше вона добре працювала для перегляду портала.",
+            "objective": "Відновіть веб-доступ з PC-Reception до Portal-01, щоб сторінка успішно завантажувалася.",
+            "hints": [
+                "Веб-запит з PC-Reception ніколи не проходить повз FW-01 на шляху до Portal-01.",
+                "На FW-01 є правило ACL, яке конкретно блокує HTTP-трафік, спрямований на адресу Portal-01, перехоплюючи запит до застосування будь-якого дозволяючого правила.",
+                "На FW-01 видаліть правило ACL, яке блокує HTTP з будь-якого джерела на 10.0.6.1, щоб нижче розташоване дозволяюче правило для порту 80 могло вступити в силу."
+            ],
+            "explanation": "Правила ACL брандмауера читаються зверху вниз, і першу відповідність виграє. Правило блокування, розташоване вище дозволяючого правила для того ж трафіку, завжди його блокуватиме, навіть якщо дозволяюче правило існує далі. Видалення надто широкого правила блокування дозволило призначеному дозволяючому правилу вступити в силу."
+        },
+        "ur": {
+            "title": "بند شدہ پورٹل",
+            "story": "استقبالیہ کے عملے کو کہنا ہے کہ Portal-01 کا ویب صفحہ PC-Reception پر صبح سے لوڈ ہونا بند ہوگیا ہے، اگرچہ یہ پہلے پورٹل براؤز کرنے کے لیے ٹھیک کام کرتا تھا۔",
+            "objective": "PC-Reception سے Portal-01 تک ویب رسائی بحال کریں تاکہ صفحہ کامیابی سے لوڈ ہو۔",
+            "hints": [
+                "PC-Reception سے ویب درخواست کبھی بھی FW-01 کے پار Portal-01 تک نہیں پہنچتی۔",
+                "FW-01 کے پاس ایک ACL اصول ہے جو Portal-01 کے ایڈریس کی طرف جانے والی HTTP ٹریفک کو مخصوص طور پر مسترد کرتا ہے، اور اس سے پہلے درخواست کو روک دیتا ہے کہ کوئی اجازت کا اصول لاگو ہو سکے۔",
+                "FW-01 پر، اس ACL اصول کو حذف کریں جو کسی بھی ذریعہ سے 10.0.6.1 تک HTTP کو مسترد کرتا ہے، تاکہ پورٹ 80 کے لیے نیچے والا اجازت کا اصول لاگو ہو سکے۔"
+            ],
+            "explanation": "Firewall ACLs کو اوپر سے نیچے کی طرف پڑھا جاتا ہے اور پہلی میچ جیت جاتی ہے۔ اگر مسترد کرنے والا اصول اجازت کے اصول سے اوپر رکھا جائے تو وہ ہمیشہ ٹریفک کو روک دے گا، چاہے نیچے اجازت کا اصول موجود ہو۔ بہت زیادہ وسیع مسترد کرنے والے اصول کو ہٹانے سے مطلوبہ اجازت کا اصول لاگو ہوگیا۔"
+        },
+        "zu": {
+            "title": "I-Portal Evaliwe",
+            "story": "Abasebenzi basesidlangalaleni bathi ipheji lewebhu ye-Portal-01 ayilayalaji ku-PC-Reception kusukela ekuseni, yize yayisebenza ngokumathe ekusebenziseni i-portal.",
+            "objective": "Vuselela ukufinyelela kwewebhu kusuka ku-PC-Reception kuya ku-Portal-01 ukuze ipheji ilayade ngempumelelo.",
+            "hints": [
+                "Isicelo sewebhu esivela ku-PC-Reception asikaze sidlula ku-FW-01 endleleni ethatha ku-Portal-01.",
+                "FW-01 ineemithetho ye-ACL ekho evimbela ikhethi le-HTTP ethatha ku-akhawunti ye-Portal-01, ihlanganiselwa nesikhalo ngaphambi kokuba noma iyiphi imithetho evumela ingasebenza.",
+                "Ku-FW-01, cima umthetho we-ACL ovimbela i-HTTP kvela nanoma yiphi inhloko ethakela 10.0.6.1, uze umthetho ovumela we-port 80 ongezansi akwazi ukusebenza."
+            ],
+            "explanation": "I-Firewall ACLs ifundwa kusuka phezulu kuya phansi futhi ukunqoba kwokuqala kuyaphumelela. Umthetho ovimbela obekwe ngenhla komthetho ovumela umthwalana ofanayo uzoba bukhali ngaso lonke isikhathi, noma nabe umthetho ovumela ukhona ezansi. Ukususa umthetho ovimbela obanzi kakhulu kubanzi komthetho ovumela ozofunekayo ukusebenza."
+        }
+    }
+}
