@@ -1,0 +1,1323 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-12-02",
+    "number": 73,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_default_gateway"
+    ],
+    "concepts": [
+        "default-gateway"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.18.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.11.1",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.18.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.9.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.11.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.9.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Branch",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.9.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.11.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.18.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.9.1",
+                            "portIndex": 0
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Branch",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.11.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.11.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "The Portal That Won't Load",
+            "story": "PC-Admin's user has been trying since this morning to open Portal-01, but the page never loads, no matter how many times they retry.",
+            "objective": "Restore an HTTP GET from PC-Admin to Portal-01 so it gets a response.",
+            "hints": [
+                "The packet never leaves PC-Admin's own segment — it stalls right at PC-Admin before reaching Switch-HQ or Router-HQ.",
+                "PC-Admin's default gateway is set to Portal-01's own address (10.0.11.1), which is a server, not a router, so PC-Admin cannot forward outbound traffic through it.",
+                "On PC-Admin, change the default gateway to 10.0.18.254, which is Router-HQ's address on PC-Admin's local subnet."
+            ],
+            "explanation": "A default gateway must be a router reachable on the device's own subnet, not the final destination's address. PC-Admin pointed its gateway at Portal-01 itself, so it had no router to hand off distant traffic to. Setting the gateway to Router-HQ fixes the path."
+        },
+        "ja": {
+            "title": "開かないポータル",
+            "story": "PC-Adminの利用者は今朝からPortal-01を開こうとしていますが、何度試してもページが読み込まれません。",
+            "objective": "PC-AdminからPortal-01へのHTTP GETを復旧し、応答が返ってくるようにします。",
+            "hints": [
+                "パケットはPC-Admin自身のセグメントから出て行けず、Switch-HQやRouter-HQに届く前にPC-Adminのところで止まっています。",
+                "PC-Adminのデフォルトゲートウェイが、ルーターではなくサーバーであるPortal-01自身のアドレス(10.0.11.1)に設定されているため、PC-Adminは外部宛ての通信をそこへ転送できません。",
+                "PC-Adminで、デフォルトゲートウェイをRouter-HQのアドレスであり、PC-Adminのローカルサブネット上にある10.0.18.254に変更します。"
+            ],
+            "explanation": "デフォルトゲートウェイには、最終的な宛先のアドレスではなく、自分自身のサブネット上で到達できるルーターを指定する必要があります。PC-AdminはゲートウェイにPortal-01自身を指定していたため、遠くの宛先への通信を渡すルーターがありませんでした。ゲートウェイをRouter-HQに設定し直すことで、通信経路が正しくなります。"
+        },
+        "zh-CN": {
+            "title": "无法加载的门户",
+            "story": "PC-Admin 的用户从今天早上开始尝试打开 Portal-01，但页面一直无法加载，无论重试多少次都没有反应。",
+            "objective": "恢复从 PC-Admin 到 Portal-01 的 HTTP GET 请求，使其获得响应。",
+            "hints": [
+                "该数据包从未离开 PC-Admin 自己的网段——它在 PC-Admin 处停止，无法到达 Switch-HQ 或 Router-HQ。",
+                "PC-Admin 的默认网关被设置为 Portal-01 自己的地址（10.0.11.1），这是一个 Server，而不是 Router，所以 PC-Admin 无法通过它转发出站流量。",
+                "在 PC-Admin 上，将默认网关改为 10.0.18.254，这是 Router-HQ 在 PC-Admin 本地子网上的地址。"
+            ],
+            "explanation": "默认网关必须是可在设备自己的子网上访问的 Router，而不是最终目标的地址。PC-Admin 将其网关指向了 Portal-01 本身，所以它没有 Router 来转发远程流量。将网关设置为 Router-HQ 可以修复路径。"
+        },
+        "zh-TW": {
+            "title": "無法加載的入口網站",
+            "story": "PC-Admin 的用戶從今天早上開始嘗試打開 Portal-01，但頁面一直無法加載，無論重試多少次都沒有反應。",
+            "objective": "恢復從 PC-Admin 到 Portal-01 的 HTTP GET 請求，使其獲得響應。",
+            "hints": [
+                "該數據包從未離開 PC-Admin 自己的網段——它在 PC-Admin 處停止，無法到達 Switch-HQ 或 Router-HQ。",
+                "PC-Admin 的預設閘道被設置為 Portal-01 自己的地址（10.0.11.1），這是一個 Server，而不是 Router，所以 PC-Admin 無法通過它轉發出站流量。",
+                "在 PC-Admin 上，將預設閘道改為 10.0.18.254，這是 Router-HQ 在 PC-Admin 本機子網上的地址。"
+            ],
+            "explanation": "預設閘道必須是可在設備自己的子網上訪問的 Router，而不是最終目標的地址。PC-Admin 將其閘道指向了 Portal-01 本身，所以它沒有 Router 來轉發遠程流量。將閘道設置為 Router-HQ 可以修復路徑。"
+        },
+        "ko": {
+            "title": "로드되지 않는 포털",
+            "story": "PC-Admin의 사용자가 오늘 아침부터 Portal-01을 열려고 시도하고 있지만, 아무리 많이 재시도해도 페이지가 로드되지 않습니다.",
+            "objective": "PC-Admin에서 Portal-01로의 HTTP GET을 복구하여 응답을 받도록 합니다.",
+            "hints": [
+                "패킷이 PC-Admin의 자신의 세그먼트에서 절대 나가지 않습니다 — PC-Admin에서 멈춰 Switch-HQ 또는 Router-HQ에 도달할 수 없습니다.",
+                "PC-Admin의 기본 게이트웨이가 Portal-01 자신의 주소(10.0.11.1)로 설정되어 있으며, 이는 Server이지 Router가 아니므로 PC-Admin이 아웃바운드 트래픽을 통해 전달할 수 없습니다.",
+                "PC-Admin에서 기본 게이트웨이를 10.0.18.254로 변경하세요. 이것은 PC-Admin의 로컬 서브넷에서 Router-HQ의 주소입니다."
+            ],
+            "explanation": "기본 게이트웨이는 최종 목적지의 주소가 아니라 디바이스 자신의 서브넷에서 도달 가능한 Router여야 합니다. PC-Admin이 자신의 게이트웨이를 Portal-01 자체로 지정했으므로 원격 트래픽을 전달할 Router가 없었습니다. 게이트웨이를 Router-HQ로 설정하면 경로가 수정됩니다."
+        },
+        "es": {
+            "title": "El portal que no carga",
+            "story": "El usuario de PC-Admin ha estado intentando desde esta mañana abrir Portal-01, pero la página nunca carga, sin importar cuántas veces lo reintente.",
+            "objective": "Restaurar una solicitud HTTP GET desde PC-Admin a Portal-01 para que obtenga una respuesta.",
+            "hints": [
+                "El paquete nunca sale del segmento propio de PC-Admin — se detiene en PC-Admin antes de llegar a Switch-HQ o Router-HQ.",
+                "La Gateway predeterminada de PC-Admin está configurada en la dirección del propio Portal-01 (10.0.11.1), que es un Server, no un Router, por lo que PC-Admin no puede reenviar tráfico saliente a través de ella.",
+                "En PC-Admin, cambie la Gateway predeterminada a 10.0.18.254, que es la dirección de Router-HQ en la subred local de PC-Admin."
+            ],
+            "explanation": "Una Gateway predeterminada debe ser un Router accesible en la subred propia del dispositivo, no la dirección del destino final. PC-Admin apuntó su gateway a Portal-01 mismo, por lo que no tenía ningún Router para pasar el tráfico distante. Configurar la gateway a Router-HQ arregla la ruta."
+        },
+        "pt-BR": {
+            "title": "O portal que não carrega",
+            "story": "O usuário de PC-Admin vem tentando desde esta manhã abrir o Portal-01, mas a página nunca carrega, não importa quantas vezes tente novamente.",
+            "objective": "Restaurar um HTTP GET de PC-Admin para Portal-01 para que receba uma resposta.",
+            "hints": [
+                "O pacote nunca sai do próprio segmento do PC-Admin — ele para no PC-Admin antes de chegar ao Switch-HQ ou Router-HQ.",
+                "O Gateway padrão do PC-Admin está configurado para o endereço do próprio Portal-01 (10.0.11.1), que é um Server, não um Router, portanto PC-Admin não pode encaminhar tráfego de saída através dele.",
+                "No PC-Admin, altere o Gateway padrão para 10.0.18.254, que é o endereço do Router-HQ na subrede local de PC-Admin."
+            ],
+            "explanation": "Um Gateway padrão deve ser um Router acessível na própria subrede do dispositivo, não o endereço do destino final. PC-Admin apontou seu gateway para o próprio Portal-01, então não tinha nenhum Router para encaminhar tráfego distante. Configurar o gateway para Router-HQ corrige o caminho."
+        },
+        "de": {
+            "title": "Das Portal, das sich nicht lädt",
+            "story": "Der Benutzer von PC-Admin versucht seit heute Morgen, Portal-01 zu öffnen, aber die Seite lädt nie, egal wie oft er es versucht.",
+            "objective": "Ein HTTP GET von PC-Admin zu Portal-01 wiederherstellen, damit es eine Antwort erhält.",
+            "hints": [
+                "Das Paket verlässt nie PC-Admins eigenes Segment — es bleibt gleich bei PC-Admin stecken, bevor es Switch-HQ oder Router-HQ erreicht.",
+                "Der Standard-Gateway von PC-Admin ist auf die eigene Adresse von Portal-01 (10.0.11.1) eingestellt, die ein Server ist, kein Router, daher kann PC-Admin keinen ausgehenden Datenverkehr über sie leiten.",
+                "Ändern Sie auf PC-Admin den Standard-Gateway zu 10.0.18.254, die Adresse von Router-HQ auf PC-Admins lokalem Subnetz."
+            ],
+            "explanation": "Ein Standard-Gateway muss ein Router sein, der im eigenen Subnetz des Geräts erreichbar ist, nicht die Adresse des endgültigen Ziels. PC-Admin wies sein Gateway auf Portal-01 selbst hin, daher hatte es keinen Router, um entfernten Datenverkehr weiterzuleiten. Das Setzen des Gateways auf Router-HQ behebt den Pfad."
+        },
+        "fr": {
+            "title": "Le portail qui refuse de charger",
+            "story": "L'utilisateur de PC-Admin tente depuis ce matin d'ouvrir Portal-01, mais la page ne se charge jamais, peu importe le nombre de tentatives.",
+            "objective": "Rétablir une requête HTTP GET de PC-Admin vers Portal-01 pour qu'elle reçoive une réponse.",
+            "hints": [
+                "Le paquet ne quitte jamais le propre segment de PC-Admin — il s'arrête à PC-Admin avant d'atteindre Switch-HQ ou Router-HQ.",
+                "La passerelle par défaut de PC-Admin est définie sur l'adresse de Portal-01 lui-même (10.0.11.1), qui est un Server, pas un Router, donc PC-Admin ne peut pas acheminer le trafic sortant.",
+                "Sur PC-Admin, modifiez la passerelle par défaut en 10.0.18.254, l'adresse de Router-HQ sur le sous-réseau local de PC-Admin."
+            ],
+            "explanation": "Une passerelle par défaut doit être un Router accessible sur le sous-réseau de l'appareil, pas l'adresse de la destination finale. PC-Admin avait pointé sa passerelle vers Portal-01 lui-même, donc il n'avait aucun Router pour transférer le trafic distant. Définir la passerelle sur Router-HQ corrige le chemin."
+        },
+        "hi": {
+            "title": "वह पोर्टल जो लोड नहीं होगा",
+            "story": "PC-Admin के उपयोगकर्ता आज सुबह से Portal-01 खोलने का प्रयास कर रहे हैं, लेकिन पृष्ठ कभी लोड नहीं होता, चाहे वह कितनी भी बार पुनः प्रयास करें।",
+            "objective": "PC-Admin से Portal-01 तक एक HTTP GET को पुनः स्थापित करें ताकि इसे प्रतिक्रिया मिले।",
+            "hints": [
+                "पैकेट PC-Admin के अपने सेगमेंट को कभी नहीं छोड़ता — यह PC-Admin पर ही अटक जाता है, Switch-HQ या Router-HQ तक नहीं पहुंचता।",
+                "PC-Admin का डिफ़ॉल्ट गेटवे Portal-01 के अपने पते (10.0.11.1) पर सेट है, जो एक Server है, राउटर नहीं, इसलिए PC-Admin बाहरी ट्रैफिक को इसके माध्यम से नहीं भेज सकता।",
+                "PC-Admin पर, डिफ़ॉल्ट गेटवे को 10.0.18.254 में बदलें, जो PC-Admin की स्थानीय सबनेट पर Router-HQ का पता है।"
+            ],
+            "explanation": "एक डिफ़ॉल्ट गेटवे एक राउटर होना चाहिए जो डिवाइस की अपनी सबनेट पर पहुंचा जा सके, अंतिम गंतव्य का पता नहीं। PC-Admin ने अपना गेटवे Portal-01 पर ही निर्देशित किया, इसलिए उसके पास दूर के ट्रैफिक को भेजने के लिए कोई राउटर नहीं था। गेटवे को Router-HQ पर सेट करने से पथ ठीक हो जाता है।"
+        },
+        "id": {
+            "title": "Portal yang Tidak Muat",
+            "story": "Pengguna PC-Admin telah mencoba sejak pagi ini untuk membuka Portal-01, tetapi halaman tidak pernah dimuat, tidak peduli berapa kali mereka mencoba lagi.",
+            "objective": "Pulihkan HTTP GET dari PC-Admin ke Portal-01 agar mendapatkan respons.",
+            "hints": [
+                "Paket tidak pernah meninggalkan segmen PC-Admin sendiri — paket itu terhenti di PC-Admin sebelum mencapai Switch-HQ atau Router-HQ.",
+                "Gateway Default PC-Admin diatur ke alamat Portal-01 sendiri (10.0.11.1), yang merupakan Server, bukan Router, sehingga PC-Admin tidak dapat meneruskan lalu lintas keluar melaluinya.",
+                "Pada PC-Admin, ubah Gateway Default menjadi 10.0.18.254, yaitu alamat Router-HQ di subnet lokal PC-Admin."
+            ],
+            "explanation": "Gateway Default harus berupa Router yang dapat dijangkau di subnet perangkat itu sendiri, bukan alamat tujuan akhir. PC-Admin mengarahkan gateway-nya ke Portal-01 sendiri, jadi tidak memiliki Router untuk meneruskan lalu lintas jauh. Mengatur gateway ke Router-HQ memperbaiki jalurnya."
+        },
+        "ru": {
+            "title": "Портал, который не загружается",
+            "story": "Пользователь PC-Admin пытается с утра открыть Portal-01, но страница никогда не загружается, независимо от количества повторных попыток.",
+            "objective": "Восстановить HTTP GET от PC-Admin к Portal-01, чтобы получить ответ.",
+            "hints": [
+                "Пакет никогда не покидает собственный сегмент PC-Admin — он застревает в PC-Admin перед тем, как достичь Switch-HQ или Router-HQ.",
+                "Шлюз по умолчанию PC-Admin установлен на собственный адрес Portal-01 (10.0.11.1), который является Server, а не Router, поэтому PC-Admin не может маршрутизировать исходящий трафик через него.",
+                "На PC-Admin измените Шлюз по умолчанию на 10.0.18.254, адрес Router-HQ в локальной подсети PC-Admin."
+            ],
+            "explanation": "Шлюз по умолчанию должен быть Router, доступный в собственной подсети устройства, а не адресом конечного назначения. PC-Admin указал свой шлюз на сам Portal-01, поэтому у него не было Router для передачи удаленного трафика. Установка шлюза на Router-HQ исправляет маршрут."
+        },
+        "it": {
+            "title": "Il Portale Che Non Si Carica",
+            "story": "L'utente di PC-Admin sta cercando da questa mattina di aprire Portal-01, ma la pagina non si carica mai, indipendentemente da quante volte riprovano.",
+            "objective": "Ripristina un HTTP GET da PC-Admin a Portal-01 in modo che riceva una risposta.",
+            "hints": [
+                "Il pacchetto non esce mai dal proprio segmento di PC-Admin — si blocca proprio su PC-Admin prima di raggiungere Switch-HQ o Router-HQ.",
+                "Il Gateway predefinito di PC-Admin è impostato sull'indirizzo di Portal-01 stesso (10.0.11.1), che è un Server, non un Router, quindi PC-Admin non può inoltare il traffico in uscita attraverso esso.",
+                "Su PC-Admin, cambia il Gateway predefinito a 10.0.18.254, che è l'indirizzo di Router-HQ sulla subnet locale di PC-Admin."
+            ],
+            "explanation": "Un Gateway predefinito deve essere un Router raggiungibile sulla subnet del dispositivo, non l'indirizzo della destinazione finale. PC-Admin ha indirizzato il suo gateway verso Portal-01 stesso, quindi non aveva alcun Router per trasferire il traffico lontano. Impostare il gateway su Router-HQ risolve il percorso."
+        },
+        "tr": {
+            "title": "Yüklemeyen Portal",
+            "story": "PC-Admin kullanıcısı bu sabahtan beri Portal-01'i açmaya çalışıyor, ancak kaç kez yeniden denerlerse deneysinler sayfa asla yüklenmez.",
+            "objective": "PC-Admin'den Portal-01'e bir HTTP GET isteği gönderilerek yanıt alınmasını sağla.",
+            "hints": [
+                "Paket PC-Admin'in kendi segmentinden çıkmaz — PC-Admin'de takılı kalır ve Switch-HQ veya Router-HQ'ya ulaşamaz.",
+                "PC-Admin'in varsayılan ağ geçidi Portal-01'in kendi adresine (10.0.11.1) ayarlanmıştır; bu bir Server'dır, Router değildir, bu nedenle PC-Admin giden trafiği bu yol üzerinden iletemiyor.",
+                "PC-Admin'de varsayılan ağ geçidini 10.0.18.254 olarak değiştir; bu Router-HQ'nın PC-Admin'in yerel ağında adresidir."
+            ],
+            "explanation": "Varsayılan ağ geçidi, cihazın kendi ağında ulaşılabilir bir Router olmalıdır, final hedefin adresi değil. PC-Admin ağ geçidini Portal-01'in kendisine yönlendirdi, bu nedenle uzak trafiği aktaracak bir Router'ı yoktu. Ağ geçidini Router-HQ'ya ayarlamak sorunu çözer."
+        },
+        "th": {
+            "title": "พอร์ทัลที่ไม่โหลด",
+            "story": "ผู้ใช้ของ PC-Admin พยายามเปิด Portal-01 ตั้งแต่เช้านี้ แต่หน้าไม่เคยโหลด ไม่ว่าจะลองกี่ครั้ง",
+            "objective": "ฟื้นฟู HTTP GET จาก PC-Admin ไปยัง Portal-01 เพื่อให้ได้รับการตอบสนอง",
+            "hints": [
+                "แพ็กเก็ตไม่ออกจากส่วนของ PC-Admin — ติดอยู่ที่ PC-Admin ก่อนถึง Switch-HQ หรือ Router-HQ",
+                "เกตเวย์เริ่มต้นของ PC-Admin ถูกตั้งเป็นที่อยู่ของ Portal-01 เอง (10.0.11.1) ซึ่งเป็น Server ไม่ใช่ Router ดังนั้น PC-Admin จึงไม่สามารถส่งต่อการรับส่งข้อมูลขาออกผ่านทาง นี้",
+                "บน PC-Admin เปลี่ยนเกตเวย์เริ่มต้นเป็น 10.0.18.254 ซึ่งเป็นที่อยู่ของ Router-HQ บนเครือข่ายท้องถิ่นของ PC-Admin"
+            ],
+            "explanation": "เกตเวย์เริ่มต้นต้องเป็น Router ที่สามารถเข้าถึงได้บนเครือข่ายของอุปกรณ์ ไม่ใช่ที่อยู่ของปลายทางสุดท้าย PC-Admin ชี้เกตเวย์ของตนไปที่ Portal-01 เอง ดังนั้นจึงไม่มี Router ในการส่งต่อการรับส่งข้อมูลที่ไกลออกไป การตั้งเกตเวย์เป็น Router-HQ จะแก้ไขเส้นทาง"
+        },
+        "vi": {
+            "title": "Cổng Thông Tin Không Tải",
+            "story": "Người dùng PC-Admin đã cố gắng mở Portal-01 kể từ sáng nay, nhưng trang không bao giờ tải được, dù có thử bao nhiêu lần.",
+            "objective": "Khôi phục HTTP GET từ PC-Admin đến Portal-01 để nhận được phản hồi.",
+            "hints": [
+                "Gói tin không rời khỏi phân đoạn của PC-Admin — nó bị kẹt ngay tại PC-Admin trước khi đến Switch-HQ hoặc Router-HQ.",
+                "Cổng mặc định của PC-Admin được đặt thành địa chỉ của Portal-01 (10.0.11.1), đó là một Server chứ không phải Router, vì vậy PC-Admin không thể chuyển tiếp lưu lượng đi ra qua nó.",
+                "Trên PC-Admin, hãy thay đổi cổng mặc định thành 10.0.18.254, đó là địa chỉ của Router-HQ trên mạng con cục bộ của PC-Admin."
+            ],
+            "explanation": "Cổng mặc định phải là Router có thể truy cập được trên mạng con của thiết bị, không phải địa chỉ đích cuối cùng. PC-Admin đã trỏ cổng của nó đến Portal-01, vì vậy nó không có Router để chuyển tiếp lưu lượng từ xa. Đặt cổng thành Router-HQ sẽ khắc phục đường dẫn."
+        },
+        "af": {
+            "title": "Die Portaal Wat Nie Laai",
+            "story": "PC-Admin se gebruiker probeer al vandag oggend om Portal-01 oop te maak, maar die bladsy laai nooit, ongeag hoe baie keer hulle herprobeer.",
+            "objective": "Herstel 'n HTTP GET van PC-Admin na Portal-01 sodat dit 'n antwoord ontvang.",
+            "hints": [
+                "Die pakket verlaat PC-Admin se eie segment nooit — dit beknor reg op PC-Admin voordat dit Switch-HQ of Router-HQ bereik.",
+                "PC-Admin se verstek-gateway is ingestel op Portal-01 se eie adres (10.0.11.1), wat 'n Server is, nie 'n Router nie, dus kan PC-Admin uitgaande verkeer nie daarheen stuur nie.",
+                "Op PC-Admin, verander die verstek-gateway na 10.0.18.254, wat Router-HQ se adres op PC-Admin se plaaslike subnet is."
+            ],
+            "explanation": "'n Verstek-gateway moet 'n Router wees wat bereikbaar is op die toestel se eie subnet, nie die eindbestemming se adres nie. PC-Admin het sy gateway na Portal-01 self gewys, dus het dit geen Router gehad om ver verkeer te stuur nie. Die gateway na Router-HQ stel in, los die probleem op."
+        },
+        "ar": {
+            "title": "البوابة التي لن تُحمّل",
+            "story": "كان مستخدم PC-Admin يحاول منذ هذا الصباح فتح Portal-01، لكن الصفحة لا تُحمل أبداً، بغض النظر عن عدد مرات إعادة المحاولة.",
+            "objective": "استعد HTTP GET من PC-Admin إلى Portal-01 حتى يحصل على استجابة.",
+            "hints": [
+                "الحزمة لا تترك قطاع PC-Admin الخاص به — تتوقف في PC-Admin قبل الوصول إلى Switch-HQ أو Router-HQ.",
+                "البوابة الافتراضية في PC-Admin مضبوطة على عنوان Portal-01 الخاص (10.0.11.1)، وهو خادم وليس موجهاً، لذلك لا يمكن لـ PC-Admin إعادة توجيه حركة المرور الخارجية من خلاله.",
+                "في PC-Admin، غيّر البوابة الافتراضية إلى 10.0.18.254، وهو عنوان Router-HQ على الشبكة المحلية لـ PC-Admin."
+            ],
+            "explanation": "يجب أن تكون البوابة الافتراضية موجهاً يمكن الوصول إليه على شبكة الجهاز الخاصة، وليس عنوان الوجهة النهائية. أشار PC-Admin بوابته إلى Portal-01 نفسه، لذلك لم يكن لديه موجه لتسليم حركة المرور البعيدة إليه. تعيين البوابة إلى Router-HQ يصحح المسار."
+        },
+        "az": {
+            "title": "Yüklənməyən Portal",
+            "story": "PC-Admin istifadəçisi bu sabahdan bəri Portal-01-i açmağa cəhd edirdi, lakin səhifə heç vaxt yüklənmir, nə qədər sıradan keçirsə də.",
+            "objective": "PC-Admin-dən Portal-01-ə HTTP GET bərpa edin ki, cavab alsın.",
+            "hints": [
+                "Paket PC-Admin-ın öz seqmentini tərk etmir — Switch-HQ və ya Router-HQ-ya çatmamadan PC-Admin-da dayanır.",
+                "PC-Admin-ın Defolt şlüzü Portal-01-ın öz ünvanına (10.0.11.1) təyin edilib, bu bir server-dir, router deyil, buna görə PC-Admin-ın uzaq trafiki yönləndirə bilməz.",
+                "PC-Admin-da Defolt şlüzü 10.0.18.254-ə dəyişin, bu Router-HQ-ın PC-Admin-ın lokal şəbəkəsindəki ünvanıdır."
+            ],
+            "explanation": "Defolt şlüz cihazın öz şəbəkəsində əlçatan router olmalıdır, yoxsa son məqsədyanın ünvanı. PC-Admin şlüzünü Portal-01-ə yönəltdiyindən, uzaq trafiki göndərəcək router yoxdu. Şlüzü Router-HQ-ya təyin etmək yolu düzəldir."
+        },
+        "be": {
+            "title": "Портал, які не загружаецца",
+            "story": "Карыстальнік PC-Admin спробу адкрыць Portal-01 з самага раніцы, але старонка ніколі не загружаецца, нягледзячы на тое, як часта пераспрабуюць.",
+            "objective": "Аднавіце HTTP GET з PC-Admin на Portal-01, каб ён атрымаў адказ.",
+            "hints": [
+                "Пакет не пакідае ўласны сегмент PC-Admin — ён спыняецца ў PC-Admin перад тым, як дасягнуць Switch-HQ ці Router-HQ.",
+                "Шлюз па змаўчанні PC-Admin пастаўлены на ўласны адрас Portal-01 (10.0.11.1), што з'яўляецца сервером, а не маршрутызатарам, таму PC-Admin не можа перанаўляць вынікаючы трафік.",
+                "На PC-Admin змяніце Шлюз па змаўчанні на 10.0.18.254, што з'яўляецца адрасам Router-HQ у лакальнай сетцы PC-Admin."
+            ],
+            "explanation": "Шлюз па змаўчанні павінен быць маршрутызатарам, дасяжным у сетцы прылады, а не адрасам канчатковай адрасата. PC-Admin паказаў шлюз на Portal-01 сам, таму ў яго не было маршрутызатара для пераадрасавання далёкага трафіку. Уста ўку шлюзу на Router-HQ адпраўляе шлях."
+        },
+        "bg": {
+            "title": "Портала, който не се зарежда",
+            "story": "Потребителят на PC-Admin се опитва от тази сутрин да отвори Portal-01, но страницата никога не се зарежда, независимо колко пъти се опитват отново.",
+            "objective": "Възстановете HTTP GET от PC-Admin към Portal-01, за да получи отговор.",
+            "hints": [
+                "Пакетът никога не напуска собствения сегмент на PC-Admin — спира в PC-Admin, преди да достигне Switch-HQ или Router-HQ.",
+                "Шлюзът по подразбиране на PC-Admin е зададен на собствения адрес на Portal-01 (10.0.11.1), който е сервър, а не маршрутизатор, така че PC-Admin не може да пренасочи изходящ трафик през него.",
+                "На PC-Admin променете Шлюзът по подразбиране на 10.0.18.254, което е адресът на Router-HQ в локалната мрежа на PC-Admin."
+            ],
+            "explanation": "Шлюзът по подразбиране трябва да бъде маршрутизатор, достижим в собствената мрежа на устройството, а не адресът на крайния адресат. PC-Admin сочеше своя шлюз към Portal-01 самия, така че нямаше маршрутизатор, към който да предаде отдалечения трафик. Задаването на шлюза на Router-HQ поправя пътя."
+        },
+        "bn": {
+            "title": "যে পোর্টাল লোড হচ্ছে না",
+            "story": "PC-Admin এর ব্যবহারকারী আজ সকাল থেকেই Portal-01 খোলার চেষ্টা করছেন, কিন্তু পৃষ্ঠাটি কখনও লোড হয় না, যতবারই তারা পুনরায় চেষ্টা করুক না কেন।",
+            "objective": "PC-Admin থেকে Portal-01 এ একটি HTTP GET পুনরুদ্ধার করুন যাতে এটি একটি প্রতিক্রিয়া পায়।",
+            "hints": [
+                "প্যাকেটটি কখনও PC-Admin এর নিজস্ব সেগমেন্ট ছাড়ায় না — এটি Switch-HQ বা Router-HQ এ পৌঁছানোর আগে PC-Admin এ আটকে যায়।",
+                "PC-Admin এর ডিফল্ট গেটওয়ে Portal-01 এর নিজস্ব ঠিকানা (10.0.11.1) এ সেট করা আছে, যা একটি সার্ভার, রাউটার নয়, তাই PC-Admin এটির মাধ্যমে আউটবাউন্ড ট্রাফিক এগিয়ে দিতে পারে না।",
+                "PC-Admin এ, ডিফল্ট গেটওয়েটি 10.0.18.254 এ পরিবর্তন করুন, যা PC-Admin এর স্থানীয় সাবনেটে Router-HQ এর ঠিকানা।"
+            ],
+            "explanation": "একটি ডিফল্ট গেটওয়ে একটি রাউটার হতে হবে যা ডিভাইসের নিজস্ব সাবনেটে পৌঁছানো যায়, চূড়ান্ত গন্তব্যের ঠিকানা নয়। PC-Admin তার গেটওয়েটি Portal-01 এর দিকে নির্দেশ করেছিল, তাই এর কাছে দূরবর্তী ট্রাফিক হস্তান্তরের জন্য কোনও রাউটার ছিল না। গেটওয়েটি Router-HQ এ সেট করা পথটি ঠিক করে।"
+        },
+        "ca": {
+            "title": "El Portal que no carrega",
+            "story": "L'usuari de PC-Admin ha estat intentant des d'aquesta matinada obrir Portal-01, però la pàgina mai carrega, no importa quantes vegades tornin a intentar-ho.",
+            "objective": "Restaura una petició HTTP GET de PC-Admin a Portal-01 perquè rebi una resposta.",
+            "hints": [
+                "El paquet mai surt del segment propi de PC-Admin — es queda atraptat a PC-Admin abans d'arribar a Switch-HQ o Router-HQ.",
+                "La Passarel·la per defecte de PC-Admin està configurada a la pròpia adreça de Portal-01 (10.0.11.1), que és un Server, no un Router, per tant PC-Admin no pot reenviar el tràfic sortint a través d'ella.",
+                "A PC-Admin, canvia la Passarel·la per defecte a 10.0.18.254, que és l'adreça de Router-HQ a la subxarxa local de PC-Admin."
+            ],
+            "explanation": "Una Passarel·la per defecte ha de ser un Router que es pugui arribar a la subxarxa pròpia del dispositiu, no l'adreça de destinació final. PC-Admin va dirigir la seva Passarel·la cap a Portal-01 mateix, així que no tenia cap Router per transmetre el tràfic distant. Configurar la Passarel·la a Router-HQ corregeix el camí."
+        },
+        "cs": {
+            "title": "Portál, který se nenačítá",
+            "story": "Uživatel PC-Admin se od rána snaží otevřít Portal-01, ale stránka se nikdy nenačte, bez ohledu na to, kolikrát se pokusí znovu.",
+            "objective": "Obnovit HTTP GET z PC-Admin na Portal-01 tak, aby obdržel odpověď.",
+            "hints": [
+                "Paket nikdy neopustí vlastní segment PC-Admin — uvízne právě na PC-Admin dříve, než dosáhne Switch-HQ nebo Router-HQ.",
+                "Výchozí brána PC-Admin je nastavena na vlastní adresu Portal-01 (10.0.11.1), což je Server, nikoli Router, takže PC-Admin nemůže přeposílat odchozí provoz přes něj.",
+                "Na PC-Admin změňte Výchozí bránu na 10.0.18.254, což je adresa Router-HQ v místní podsíti PC-Admin."
+            ],
+            "explanation": "Výchozí brána musí být Router, který je dosažitelný v собственной podsíti zařízení, nikoli adresa konečného cíle. PC-Admin nasměroval svou bránu na samotný Portal-01, takže neměl Router pro předání vzdáleného provozu. Nastavení brány na Router-HQ cestu opraví."
+        },
+        "da": {
+            "title": "Portalen, der ikke indlæses",
+            "story": "Brugeren på PC-Admin har forsøgt siden denne morgen at åbne Portal-01, men siden indlæses aldrig, uanset hvor mange gange de prøver igen.",
+            "objective": "Gendan en HTTP GET fra PC-Admin til Portal-01, så den får et svar.",
+            "hints": [
+                "Pakken forlader aldrig PC-Admin's eget segment — den sidder fast på PC-Admin, før den når Switch-HQ eller Router-HQ.",
+                "PC-Admin's Standardgateway er indstillet til Portal-01's egen adresse (10.0.11.1), som er en Server, ikke en Router, så PC-Admin kan ikke videresende udgående trafik gennem den.",
+                "På PC-Admin skal du ændre Standardgateway til 10.0.18.254, som er Router-HQ's adresse på PC-Admin's lokale subnet."
+            ],
+            "explanation": "En Standardgateway skal være en Router, der kan nås på enhedens eget subnet, ikke slutdestinationens adresse. PC-Admin pegede sin gateway på Portal-01 selv, så den havde ingen Router til at videresende ekstern trafik. Indstilling af gatewayen til Router-HQ reparerer stien."
+        },
+        "el": {
+            "title": "Η Πύλη που δεν φορτώνει",
+            "story": "Ο χρήστης του PC-Admin προσπαθεί από το πρωί να ανοίξει το Portal-01, αλλά η σελίδα δεν φορτώνεται ποτέ, ανεξάρτητα από το πόσες φορές προσπαθεί ξανά.",
+            "objective": "Επαναφέρετε ένα HTTP GET από το PC-Admin στο Portal-01 ώστε να λάβει απάντηση.",
+            "hints": [
+                "Το πακέτο δεν φεύγει ποτέ από το δικό του τμήμα του PC-Admin — κολλάει ακριβώς στο PC-Admin πριν φτάσει στο Switch-HQ ή Router-HQ.",
+                "Η Προεπιλεγμένη πύλη του PC-Admin έχει ρυθμιστεί στη δική του διεύθυνση του Portal-01 (10.0.11.1), η οποία είναι ένας Server, όχι ένας Router, επομένως το PC-Admin δεν μπορεί να προωθήσει εξερχόμενη κίνηση μέσω αυτής.",
+                "Στο PC-Admin, αλλάξτε την Προεπιλεγμένη πύλη σε 10.0.18.254, που είναι η διεύθυνση του Router-HQ στο τοπικό υποδίκτυο του PC-Admin."
+            ],
+            "explanation": "Μια Προεπιλεγμένη πύλη πρέπει να είναι ένας Router που είναι προσβάσιμος στο δικό του υποδίκτυο της συσκευής, όχι η διεύθυνση του τελικού προορισμού. Το PC-Admin κατέυθυνε την πύλη του προς το ίδιο το Portal-01, επομένως δεν είχε Router για την προώθηση μακρινής κίνησης. Η ρύθμιση της πύλης σε Router-HQ διορθώνει τη διαδρομή."
+        },
+        "et": {
+            "title": "Portaal ei avane",
+            "story": "PC-Admin kasutaja on kogu hommikku püüdnud avada Portal-01, kuid leht ei avane kunagi, ükskõik kui palju nad uuesti proovivad.",
+            "objective": "Taastage HTTP GET kaugjuhtimisühendus PC-Admin seadmest Portal-01-le, et see saaks vastuse.",
+            "hints": [
+                "Pakett ei lahku kunagi PC-Admin enda segmendist – see seisub PC-Admin juures enne Switch-HQ või Router-HQ jõudmist.",
+                "PC-Admin vaikelüüs on seatud Portal-01 enda aadressile (10.0.11.1), mis on Server, mitte Router, seega PC-Admin ei saa väljaminevat liiklust selle kaudu edastada.",
+                "Muutke PC-Admin vaikelüüs 10.0.18.254-ks, mis on Router-HQ aadress PC-Admin enda kohtvõrgus."
+            ],
+            "explanation": "Vaikelüüs peab olema Router, mis on seadme enda alamvõrgus jõutav, mitte lõppsihtkoha aadress. PC-Admin osutus oma lüüsi Portal-01 endale, seega ei olnud tal kaugtranspordi edastamiseks ruuterit. Router-HQ määramine lüüsiks parandab marsruudi."
+        },
+        "eu": {
+            "title": "Portala ez da kargatzen",
+            "story": "PC-Admin erabiltzaileak goizean zehar saiatu du Portal-01 irekitzen, baina orria ez da inoiz kargatzen, zenbat aldiz berriro saiatu arren.",
+            "objective": "Berrezarri HTTP GET bat PC-Admin-etik Portal-01-era, horrela erantzun bat jaso dezan.",
+            "hints": [
+                "Paketea ez da inoiz uzten PC-Admin-en segmentua – gelditzen da PC-Admin-en Switch-HQ edo Router-HQ-ra iritsi baino lehen.",
+                "PC-Admin atebide lehenetsia Portal-01-en helbidean jarrita dago (10.0.11.1), zerbitzaria da, ez Router, beraz PC-Admin ezin du kanpo trafikoa bideratzen.",
+                "Aldatu PC-Admin atebide lehenetsia 10.0.18.254-era, hau da, Router-HQ helbidea PC-Admin-en sarea lokalean."
+            ],
+            "explanation": "Atebide lehenetsia Router baten izan behar da, sarea lokalean iristen den, ez azken helburuaren helbidea. PC-Admin bera Portal-01-en seinalean jarri zen, beraz ez zuen kauetako trafikoa biderat dezan entzumena. Router-HQ lehenetsia jartzeak bide-ina zuzendu."
+        },
+        "fa": {
+            "title": "درگاهی که بارگذاری نمی‌شود",
+            "story": "کاربر PC-Admin از صبح سعی کرده است Portal-01 را باز کند، اما صفحه هرگز بارگذاری نمی‌شود، چه قدر هم دوباره تلاش کنند.",
+            "objective": "بازگردانی HTTP GET از PC-Admin به Portal-01 تا پاسخ دریافت کند.",
+            "hints": [
+                "بسته هرگز از بخش خود PC-Admin خارج نمی‌شود – قبل از رسیدن به Switch-HQ یا Router-HQ در PC-Admin متوقف می‌شود.",
+                "دروازه پیش‌فرض PC-Admin به آدرس خود Portal-01 تنظیم شده است (10.0.11.1)، که یک سرور است نه Router، بنابراین PC-Admin نمی‌تواند ترافیک خروجی را از طریق آن ارسال کند.",
+                "دروازه پیش‌فرض PC-Admin را به 10.0.18.254 تغیر دهید، که آدرس Router-HQ در شبکه محلی PC-Admin است."
+            ],
+            "explanation": "دروازه پیش‌فرض باید یک Router باشد که در شبکه محلی دستگاه قابل دسترس است، نه آدرس مقصد نهایی. PC-Admin دروازه خود را به Portal-01 تنظیم کرد، بنابراین هیچ Router برای ارسال ترافیک دور نداشت. تنظیم دروازه به Router-HQ مسیر را درست می‌کند."
+        },
+        "fi": {
+            "title": "Portaali ei lataudu",
+            "story": "PC-Admin-käyttäjä on yrittänyt koko aamun avata Portal-01-portaalia, mutta sivu ei lataudu koskaan, vaikka kuinka monta kertaa yrittää uudelleen.",
+            "objective": "Palauta HTTP GET yhteys PC-Admin-laitteesta Portal-01-portaliin, jotta se saa vastauksen.",
+            "hints": [
+                "Paketti ei koskaan poistu PC-Admin-laitteen omasta segmentistä – se pysähtyy PC-Admin-laitteessa ennen Switch-HQ- tai Router-HQ-laitteelle saapumista.",
+                "PC-Admin oletusyhdyskäytävä on asetettu Portal-01-portaalin omaan osoitteeseen (10.0.11.1), joka on Server, ei Router, joten PC-Admin ei voi välittää lähtevää liikennettä sen kautta.",
+                "Muuta PC-Admin oletusyhdyskäytävä osoitteeksi 10.0.18.254, joka on Router-HQ osoite PC-Admin-laitteen paikallisessa verkossa."
+            ],
+            "explanation": "Oletusyhdyskäytävän on oltava Router, joka on saavutettavissa laitteen omassa aliverkossa, ei lopullisen määränpään osoite. PC-Admin asetti yhdyskäytävän Portal-01-portaaliin itseensä, joten sillä ei ollut Router-reitittäjää kaukoliikenteen välittämiseen. Router-HQ-reititin yhdyskäytäväksi asettaminen korjaa reitin."
+        },
+        "fil": {
+            "title": "Ang Portal na Hindi Nag-load",
+            "story": "Ang user ng PC-Admin ay nagsisikap buong umaga na buksan ang Portal-01, ngunit ang pahina ay hindi kailanman nag-load, gaano man karami ang muling pagsubok.",
+            "objective": "Ibalik ang HTTP GET mula sa PC-Admin tungo sa Portal-01 upang makatanggap ito ng tugon.",
+            "hints": [
+                "Ang packet ay hindi umalis sa PC-Admin segment – tumitigil ito sa PC-Admin bago umaabot sa Switch-HQ o Router-HQ.",
+                "Ang default gateway ng PC-Admin ay nakatakda sa sariling address ng Portal-01 (10.0.11.1), na Server ito, hindi Router, kaya ang PC-Admin ay hindi makakagpadala ng outbound traffic sa pamamagitan nito.",
+                "Sa PC-Admin, baguhin ang default gateway sa 10.0.18.254, na ang address ng Router-HQ sa local subnet ng PC-Admin."
+            ],
+            "explanation": "Ang default gateway ay dapat na isang Router na maaabot sa sariling subnet ng device, hindi ang address ng final destination. Itinuro ng PC-Admin ang gateway sa Portal-01 mismo, kaya wala itong router upang ipadala ang distant traffic. Ang pagtatakda ng gateway sa Router-HQ ay nagsasaayos ng landas."
+        },
+        "gl": {
+            "title": "O Portal que non carga",
+            "story": "O usuario de PC-Admin leva dende esta mañá tentando abrir Portal-01, pero a páxina nunca carga, non importa cantas veces reintentan.",
+            "objective": "Restaurar un HTTP GET desde PC-Admin ata Portal-01 para que reciba unha resposta.",
+            "hints": [
+                "O paquete nunca sae do seu propio segmento de PC-Admin — atúrase xusto en PC-Admin antes de chegar a Switch-HQ ou Router-HQ.",
+                "A Pasarela predeterminada de PC-Admin está configurada coa propia dirección de Portal-01 (10.0.11.1), que é un Server, non un Router, así que PC-Admin non pode reenviar o tráfico saínte a través dela.",
+                "En PC-Admin, cambia a Pasarela predeterminada a 10.0.18.254, que é a dirección de Router-HQ no subred local de PC-Admin."
+            ],
+            "explanation": "Unha Pasarela predeterminada debe ser un Router accesible no propio subred do dispositivo, non a dirección do destino final. PC-Admin apuntou a súa pasarela cara a Portal-01 mesmo, así que non tiña ningún Router para pasar o tráfico distante. Configurar a pasarela a Router-HQ arregla a ruta."
+        },
+        "gu": {
+            "title": "પોર્ટલ જે લોડ થતું નથી",
+            "story": "PC-Admin ના વપરાશકર્તા આજે સવારથી Portal-01 ખોલવાનો પ્રયાસ કરી રહ્યા છે, પણ પૃષ્ઠ કભી લોડ થતું નથી, ભલે તેઓ કેટલી વાર પુનઃપ્રયાસ કરે.",
+            "objective": "PC-Admin થી Portal-01 સુધી HTTP GET પુનઃસ્થાપિત કરો જેથી તેને પ્રતિક્રિયા મળે.",
+            "hints": [
+                "પેકેટ PC-Admin ના પોતાના સેગમેન્ટ જોડે ક્યારેય બહાર નીકળતું નથી — તે PC-Admin પર જ અટકી જાય છે Switch-HQ અથવા Router-HQ સુધી પહોંચ્યાં પહેલાં.",
+                "PC-Admin ની ડિફૉલ્ટ ગેટવે Portal-01 ના પોતાના સરનામે (10.0.11.1) સેટ કરેલી છે, જે Server છે, Router નથી, તેથી PC-Admin બહારની ટ્રાફિક તેમના દ્વારા આગળ મોકલી શકતો નથી.",
+                "PC-Admin પર, ડિફૉલ્ટ ગેટવે ને 10.0.18.254 માં બદલો, જે PC-Admin ના સ્થાનિક સબનેટ પર Router-HQ નું સરનામું છે."
+            ],
+            "explanation": "ડિફૉલ્ટ ગેટવે એક Router હોવો જોઈએ જે ডિવાઇસ ના પોતાના સબનેટ પર પહોંચી શકાય, અંતિમ ગંતવ્ય નું સરનામું નહીં. PC-Admin એ તેની ગેટવે Portal-01 તરફ ધોરી દીધી, તેથી તેની પાસે દૂરની ટ્રાફિક હેતુ કોઈ Router નહોતો. ગેટવે ને Router-HQ પર સેટ કરવાથી પાથ ઠીક થાય છે."
+        },
+        "he": {
+            "title": "הפורטל שלא נטען",
+            "story": "משתמש ה-PC-Admin מנסה מאז בבוקר להפעיל את Portal-01, אבל הדף אף פעם לא נטען, ללא קשר לכמה פעמים הם מנסים שוב.",
+            "objective": "שחזר HTTP GET מ-PC-Admin ל-Portal-01 כדי שיקבל תגובה.",
+            "hints": [
+                "החבילה אף פעם לא עוזבת את הסגמנט שלה של PC-Admin — היא עוצרת בדיוק ב-PC-Admin לפני שהיא מגיעה ל-Switch-HQ או Router-HQ.",
+                "שער ברירת המחדל של PC-Admin מוגדר לכתובת שלו של Portal-01 (10.0.11.1), שהוא שרת ולא Router, ולכן PC-Admin לא יכול להעביר תעבורה יוצאת דרכו.",
+                "ב-PC-Admin, שנה את שער ברירת המחדל ל-10.0.18.254, שהוא כתובת Router-HQ בתת-רשת המקומית של PC-Admin."
+            ],
+            "explanation": "שער ברירת מחדל חייב להיות ניתב שניתן להגיע אליו בתת-רשת של המכשיר, לא כתובת היעד הסופי. PC-Admin הצביע על שער שלו ל-Portal-01 עצמו, כך שלא היה לו ניתב להעביר תעבורה רחוקה אליו. הגדרת השער ל-Router-HQ מתקנת את הנתיב."
+        },
+        "hr": {
+            "title": "Portal koji se ne učitava",
+            "story": "Korisnik PC-Admin pokušava od jutros otvoriti Portal-01, ali stranica se nikad ne učitava, bez obzira koliko puta pokušaju ponovno.",
+            "objective": "Obnovite HTTP GET od PC-Admin prema Portal-01 kako bi primio odgovor.",
+            "hints": [
+                "Paket nikad ne napušta vlastiti segment PC-Admin — zapinje točno na PC-Admin prije nego što dosegne Switch-HQ ili Router-HQ.",
+                "Zadani pristupnik PC-Admin postavljen je na vlastitu adresu Portal-01 (10.0.11.1), što je Server, a ne Router, pa PC-Admin ne može proslijediti odlazni promet kroz njega.",
+                "Na PC-Admin, promijenite Zadani pristupnik na 10.0.18.254, što je adresa Router-HQ na lokalnoj mreži PC-Admin."
+            ],
+            "explanation": "Zadani pristupnik mora biti Router dostupan na vlastitoj podmreži uređaja, a ne adresa konačne odredišne točke. PC-Admin je usmjerio svoj pristupnik na sam Portal-01, pa je trebao router za prosljeđivanje udaljenog prometa. Postavljanje pristupnika na Router-HQ ispravlja putanju."
+        },
+        "hu": {
+            "title": "A Portal, amely nem töltődik be",
+            "story": "PC-Admin felhasználója ma reggel óta megpróbálja megnyitni a Portal-01-et, de az oldal sosem töltődik be, függetlenül attól, hányszor próbálkoznak újra.",
+            "objective": "Állítsa helyre a HTTP GET kérést PC-Admin-ről a Portal-01 felé, hogy választ kapjon.",
+            "hints": [
+                "A csomag soha nem hagyja el PC-Admin saját szegmensét — közvetlenül a PC-Admin-nél megakad, mielőtt eléri a Switch-HQ vagy Router-HQ.",
+                "A PC-Admin alapértelmezett átjárója a Portal-01 saját címére (10.0.11.1) van beállítva, amely Server, nem Router, ezért a PC-Admin nem tudja a kimenő forgalmat rajta keresztül továbbítani.",
+                "PC-Admin-on módosítsa az Alapértelmezett átjárót 10.0.18.254-re, amely a Router-HQ PC-Admin helyi alhálózatán lévő címe."
+            ],
+            "explanation": "Az alapértelmezett átjárónak egy Router-nek kell lennie, amely az eszköz saját alhálózatán elérhető, nem pedig a végső cél címe. PC-Admin az átjáróját magára a Portal-01-re irányította, ezért nem volt routere a távoli forgalom továbbításához. Az átjáró Router-HQ-ra állítása kijavítja az útvonalat."
+        },
+        "hy": {
+            "title": "Պորտալը չի բեռնվում",
+            "story": "PC-Admin-ի օգտատերը ցանցից վաղ առավոտից փորձում է բացել Portal-01-ը, բայց էջը երբեք չի բեռնվում, անկախ նրանից, թե քանի անգամ են նրանք կրկին փորձել:",
+            "objective": "Վերականգնել HTTP GET요청ը PC-Admin-ից Portal-01-ի, որպեսզի այն պատասխան ստանա:",
+            "hints": [
+                "Փաթեթը երբեք չի լeavագա PC-Admin-ի սեփական հատվածից — այն կանգ է առնում PC-Admin-ի վրա, մինչ Switch-HQ կամ Router-HQ-ն հասնել:",
+                "PC-Admin-ի Լռելյայն դարպասը սահմանված է Portal-01-ի միայն հասցեին (10.0.11.1), որը սերվեր է, ոչ թե երթուղավար, ուստի PC-Admin-ը չի կարող դուրս բերել հեռավոր տրաֆիկ:",
+                "PC-Admin-ում փոխեք Լռելյայն դարպասը 10.0.18.254-ի, որը Router-HQ-ի հասցեն է PC-Admin-ի լոկալ ենթածանցի վրա:"
+            ],
+            "explanation": "Լռելյայն դարպասը պետք է լինի սարքի սեփական ենթածանցում մատչելի երթուղավար, ոչ թե վերջնական նպատակակետի հասցե: PC-Admin-ը իր դարպասը ցույց տվեց Portal-01-ի վրա, ուստի այն չուներ երթուղավար հեռավոր տրաֆիկը փոխանցելու համար: Router-HQ-ին Լռելյայն դարպասը սահմանել միջոցով ուղին շտկվում է:"
+        },
+        "is": {
+            "title": "Gáttinn sem hleðst ekki",
+            "story": "Notandi PC-Admin hefur reynt síðan morguninn að opna Portal-01, en síðan hleðst aldrei, sama hvað marga sinnum þeir prófa aftur.",
+            "objective": "Endurheimta HTTP GET frá PC-Admin til Portal-01 þannig að það fái svar.",
+            "hints": [
+                "Pakkinn fer aldrei út úr PC-Admin's eigin nethluta — hann stoppar rétt við PC-Admin fyrir Switch-HQ eða Router-HQ.",
+                "Sjálfgefin gátt PC-Admin er stillt á heimilisfang Portal-01's (10.0.11.1), sem er Server, ekki Router, svo PC-Admin getur ekki sent burt fjarri umferð.",
+                "Á PC-Admin skal breyta Sjálfgefin gátt í 10.0.18.254, sem er heimilisfang Router-HQ á staðbundnu neti PC-Admin."
+            ],
+            "explanation": "Sjálfgefin gátt verður að vera Router sem er aðgengileg á eigin neti tækisins, ekki heimilisfang endanlegrar áfangastaðar. PC-Admin bentu gátt sína á Portal-01 sjálfa, svo það hafði ekkert Router til að fara með fjarri umferð. Að stilla gáttinn á Router-HQ lagar leiðina."
+        },
+        "ka": {
+            "title": "პორტალი არ იტვირთება",
+            "story": "PC-Admin-ის მომხმარებელი დილიდან ცდილობს Portal-01-ის გახსნას, მაგრამ გვერდი არასდროს იტვირთება, რამდენჯერაც არ ცდილობენ.",
+            "objective": "აღადგინეთ HTTP GET PC-Admin-ისგან Portal-01-მდე, რათა იგი პასუხი მიიღოს.",
+            "hints": [
+                "პაკეტი ვერასდროს ტოვებს PC-Admin-ის საკუთარ სეგმენტს — ის ჩერდება PC-Admin-ზე Switch-HQ ან Router-HQ-მდე ჩამოსვლამდე.",
+                "PC-Admin-ის ნაგულისხმევი შლუზი დაყენებულია Portal-01-ის საკუთარ მისამართზე (10.0.11.1), რომელიც სერვერია, არა მარშრუტიზატორი, ამიტომ PC-Admin-ი არ შეუძლია შორეული ტრაფიკის გაგზავნა.",
+                "PC-Admin-ზე შეცვალეთ ნაგულისხმევი შლუზი 10.0.18.254-ზე, რომელიც Router-HQ-ის მისამართია PC-Admin-ის ადგილობრივ ქსელზე."
+            ],
+            "explanation": "ნაგულისხმევი შლუზი უნდა იყოს მარშრუტიზატორი, რომელიც მოწვევადია მოწყობილობის საკუთარ ქსელზე, და არა საბოლოო დანიშნულების მისამართი. PC-Admin-მა თავის შლუზი Portal-01-ზე შეამოწმა, ამიტომ მას არ ჰქონდა მარშრუტიზატორი შორეული ტრაფიკის გადასაცემად. შლუზის Router-HQ-ზე დაყენება ლიტერატურას აკეთებს."
+        },
+        "kk": {
+            "title": "Портал жүктелмейді",
+            "story": "PC-Admin пайдаланушысы бүгін таңнан Portal-01 ашуға талпынып келеді, бірақ бет ешқашан жүктелмейді, неше рет қайталамасындай.",
+            "objective": "PC-Admin-ден Portal-01-ге HTTP GET сілтемесін қалпына келтіріңіз, сонда ол жауап алсын.",
+            "hints": [
+                "Пакет ешқашан PC-Admin-ның өзінің сегментінен шықпайды — ол PC-Admin-де ғана тұрып қалады, Switch-HQ немесе Router-HQ-ге жетпейде.",
+                "PC-Admin-ның Әдепкі шлюзі Portal-01-ның өз мекенжайына (10.0.11.1) орнатылған, ол маршруттау аппараты емес, сервер, сондықтан PC-Admin ешқашан ұзақ трафикті жібере алмайды.",
+                "PC-Admin-де Әдепкі шлюзін 10.0.18.254-ке өзгертіңіз, бұл Router-HQ-ның PC-Admin-ің жергіліктік сетіндегі мекенжайы."
+            ],
+            "explanation": "Әдепкі шлюз аппараттың өзінің сетінде қол жетімді маршруттау құрылғысы болуы керек, ешқашан соңғы адресаты емес. PC-Admin өзінің шлюзін Portal-01-ке көрсетті, сондықтан оның ұзақ трафикті беру үшін маршруттау құрылғысы жоқ болды. Шлюзді Router-HQ-ге орнату жолды ойластырады."
+        },
+        "km": {
+            "title": "ច្រក​មិនបង្ហាញ",
+            "story": "អ្នកប្រើប្រាស់ PC-Admin បានព្យាយាមចាប់ពីព្រឹក ដែលប្តូលើ Portal-01 ប៉ុន្តែទំព័រមិនធ្វើឱ្យបង្ហាញ ដោយមិនគិតពីចំនួនដង ដែលពួកគេព្យាយាម។",
+            "objective": "ស្ដារលម HTTP GET ពី PC-Admin ទៅ Portal-01 ដែលវាទទួលបានការឆ្លើយ។",
+            "hints": [
+                "ប្រលង មិនដែលចាកចេញពីផ្នែក​ដ៏ធម្មតា PC-Admin ដែលវាបង្អង់ត្រឹមត្រូវនៅ PC-Admin មុនពេលដល់ Switch-HQ ឬ Router-HQ។",
+                "ច្រក​ដើម​របស់ PC-Admin ត្រូវ​បាន​កំណត់​ឱ្យ​ជា​ការ​ដាក់​ពិការ Portal-01 (10.0.11.1) ដែល​ជា​ម៉ាស៊ីន​បម្រើ មិនមែន​ធៀប​របស់​ PC-Admin មិនអាច​ផ្ញើ​ចរាចរ​ដ៏​វិស័យ​បាន។",
+                "នៅលើ PC-Admin ផ្លាស់ប្តូរច្រក​ដើម ទៅ 10.0.18.254 ដែលជាលេខសម្គាល់ Router-HQ នៅលើបណ្ដាញក្នុងស្រុក PC-Admin។"
+            ],
+            "explanation": "ច្រក​ដើម​ត្រូវ​តែ​ជា Router ដែល​អាច​ទាក់ទង​បាន នៅលើបណ្ដាញ​ផ្ទាល់ខ្លួន​របស់​ឧបករណ៍ មិនមែន​លេខសម្គាល់​របស់​គោលដៅ​ចុងក្រោយ​ទេ។ PC-Admin បាន​ចង្អុល​ឧបករណ៍​របស់​វា​ទៅលើ Portal-01 ដោយ​ខ្លួន​ឯង ដូច្នេះ​វា​មិនមាន Router ដើម្បីផ្ញើ​ចរាចរ​ដ៏​ឆ្ងាយ។ ការកំណត់ច្រក​ដើម​ទៅ Router-HQ បង្កើត​ផ្លូវ។"
+        },
+        "kn": {
+            "title": "ಲೋಡ್ ಆಗದ ಪೋರ್ಟಲ್",
+            "story": "PC-Admin ನ ಬಳಕೆದಾರ ಈ ಪ್ರಾತಃಕಾಲದಿಂದ Portal-01 ಅನ್ನು ತೆರೆಯಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದ್ದಾರೆ, ಆದರೆ ಎಂದು ಎಷ್ಟು ಬಾರಿ ಮರುಪ್ರಯತ್ನ ಮಾಡಿದರೂ ಪುಟವು ಲೋಡ್ ಆಗುತ್ತಿಲ್ಲ.",
+            "objective": "PC-Admin ನಿಂದ Portal-01 ಗೆ HTTP GET ಅನ್ನು ಪುನಃಸ್ಥಾಪಿಸಿ ಅದು ಪ್ರತಿಕ್ರಿಯೆ ಪಡೆಯಲು.",
+            "hints": [
+                "ಪ್ಯಾಕೆಟ್ PC-Admin ನ ಸ್ವಂತ ವಿಭಾಗವನ್ನು ಬಿಡುವುದಿಲ್ಲ — ಇದು Switch-HQ ಅಥವಾ Router-HQ ನಲ್ಲಿ ತಲುಪುವ ಮೊದಲೇ PC-Admin ನಲ್ಲಿ ನಿರ್ಬಂಧವಾಗಿದೆ.",
+                "PC-Admin ನ ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ Portal-01 ರ ಸ್ವಂತ ವಿಳಾಸ (10.0.11.1) ಗೆ ಹೊಂದಿಸಲಾಗಿದೆ, ಇದು ಸರ್ವರ್ ಆಗಿದೆ, ರೂಟರ್ ಅಲ್ಲ, ಆದ್ದರಿಂದ PC-Admin ಬಾಹ್ಯ ದಿಷ್ಟಿಯನ್ನು ಮೂಲಕ ಸಾಗಿಸಬಾರದು.",
+                "PC-Admin ನಲ್ಲಿ, ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಅನ್ನು 10.0.18.254 ಗೆ ಬದಲಿಸಿ, ಇದು Router-HQ ನ ವಿಳಾಸ PC-Admin ರ ಸ್ಥಳೀಯ ಸಬ್‌ನೆಟ್‌ನಲ್ಲಿದೆ."
+            ],
+            "explanation": "ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಒಂದು ರೂಟರ್ ಆಗಬೇಕು ಅದು ಸಾಧನದ ಸ್ವಂತ ಸಬ್‌ನೆಟ್‌ನಲ್ಲಿ ತಲುಪಬಹುದಾದ ಆದರೆ ಸರಣಿಗಳು, ಅಂತಿಮ ಲಕ್ಷ್ಯವನ್ನು ಅಲ್ಲ. PC-Admin ತನ್ನ ಗೇಟ್‌ವೇವನ್ನು Portal-01 ಅದೇ ಕಡೆ ತೋರಿಸಿದೆ, ತದ್ದರಿಂದ ದೂರವಾದ ದಿಷ್ಟಿವನ್ನು ಒಪ್ಪಿಸುವ ರೂಟರ್ ಇರಲಿಲ್ಲ. ಗೇಟ್‌ವೇವನ್ನು Router-HQ ಗೆ ಹೊಂದಿಸುವುದು ಮಾರ್ಗವನ್ನು ಸರಿಪಡಿಸುತ್ತದೆ."
+        },
+        "ky": {
+            "title": "Жүктөлбөй турган Portal",
+            "story": "PC-Admin колдонуучусу бүгүн эртең Portal-01 ди ачууга аракет жасап жатат, бирок канча жолу кайраласак да барлык сумма өтпөйт.",
+            "objective": "PC-Admin дан Portal-01 ге HTTP GET жөнөтүмөсүн калыбына келтирип, жооп алуу үчүн.",
+            "hints": [
+                "Пакет PC-Admin өз сегментин бүтүнө салпаса — ал Switch-HQ же Router-HQ га жетпей эле ада болот.",
+                "PC-Admin өндүрөрүнүнүн демейки шлюзу Portal-01 өндүрөрүнүн өз дареси (10.0.11.1) ге коюлган, бул сервер болот, маршруткалагыч эмес, ошондуктан PC-Admin чет мамлекеттик трафикти өткөрө албайт.",
+                "PC-Admin өндүрөрүнүндө демейки шлюзун 10.0.18.254 ке өзгөртүп, бул Router-HQ нин адреси PC-Admin өндүрөрүнүнүн локалдык тармагында."
+            ],
+            "explanation": "Демейки шлюз маршруткалагыч болушу керек ал төзүмдүүнүн өз тармагында жетишилүүчү, акырга жанамасынын адреси эмес. PC-Admin өндүрөрүнүнүн шлюзун Portal-01 өндүрөрүнүнө өзүнө тийгендеди, ошондуктан ал чет мамлекеттик трафикти өткөрүүчү маршруткалагычка ээ болбогон. Шлюзун Router-HQ ке коюу жолду оңдойт."
+        },
+        "lo": {
+            "title": "Portal ທີ່ບໍ່ໂຫຼດ",
+            "story": "ຜູ້ໃຊ້ຂອງ PC-Admin ໄດ້ພະຍາຍາມນັບແຕ່ເຊົ້າວັນນີ້ເພື່ອເປີດ Portal-01, ແຕ່ໜ້າດັ່ງກ່າວບໍ່ໂຫຼດ, ບໍ່ວ່າຈະລອງໃໝ່ກີ່ຄັ້ງກໍ່ຕາມ.",
+            "objective": "ຟື້ນຟູ HTTP GET ຈາກ PC-Admin ໄປຫາ Portal-01 ເພື່ອໃຫ້ໄດ້ຮັບການຕອບສະຫນອງ.",
+            "hints": [
+                "ແພັກເກັດບໍ່ອອກຈາກຂົວເຂດໂຮງແຮມຂອງ PC-Admin ເອງ — ມັນຍຸດຢູ່ PC-Admin ກ່ອນທີ່ຈະຮອດ Switch-HQ ຫຼື Router-HQ.",
+                "Default gateway ຂອງ PC-Admin ຖືກຕັ້ງໃຫ້ເປັນທີ່ຢູ່ຂອງ Portal-01 ເອງ (10.0.11.1), ເຊິ່ງເປັນ Server ບໍ່ແມ່ນ Router, ດັ່ງນັ້ນ PC-Admin ບໍ່ສາມາດສົ່ງລາຄາສາຍໄກໄປມາຜ່ານມັນໄດ້.",
+                "ໃນ PC-Admin, ປ່ຽນ Default gateway ເປັນ 10.0.18.254, ເຊິ່ງເປັນທີ່ຢູ່ຂອງ Router-HQ ໃນສາຍໂຮງແຮມທ້ອງຖິ່ນຂອງ PC-Admin."
+            ],
+            "explanation": "Default gateway ຕ້ອງເປັນ Router ທີ່ສາມາດເຂົ້າເຖິງໄດ້ໃນສາຍໂຮງແຮມຂອງອຸປະກອນ, ບໍ່ແມ່ນທີ່ຢູ່ປາຍທາງສຸດທ້າຍ. PC-Admin ຊີ້ gateway ຂອງມັນໄປຫາ Portal-01 ເອງ, ດັ່ງນັ້ນມັນບໍ່ມີ Router ເພື່ອສົ່ງລາຄາໄກໄປ. ການຕັ້ງ gateway ເປັນ Router-HQ ແກ້ໄຂເສັ້ນທາງ."
+        },
+        "lt": {
+            "title": "Nešaltis, kuris neįsideda",
+            "story": "PC-Admin vartotojas nuo šiol rytą bando atidaryti Portal-01, bet puslapis niekada neįsideda, nesvarbu kiek kartų jis pakartoja.",
+            "objective": "Atkurti HTTP GET iš PC-Admin į Portal-01, kad jis gautų atsakymą.",
+            "hints": [
+                "Paketas niekada neparausta PC-Admin savos atkarpos — jis застревает prie PC-Admin prieš pasiektadamas Switch-HQ arba Router-HQ.",
+                "PC-Admin numatytasis šliuzas nustatytas į Portal-01 adresą (10.0.11.1), kuris yra Serveris, o ne Routeris, todėl PC-Admin negali nusiųsti nutolinto darbą per jį.",
+                "PC-Admin nustatykite numatytąjį šliuzą į 10.0.18.254, kuris yra Router-HQ adresas PC-Admin vietiniame tinkle."
+            ],
+            "explanation": "Numatytasis šliuzas turi būti maršrutas, pasiekiamas įrenginio savame tinkle, o ne galutinio tikslo adresas. PC-Admin nukreipė savo šliuzą į Portal-01, todėl neturėjo maršruto, pagal kurį galėtų perduoti tolimą srautą. Nustatant šliuzą į Router-HQ, kelynas pataisomas."
+        },
+        "lv": {
+            "title": "Portāls, kas neielādējas",
+            "story": "PC-Admin lietotājs no rīta cenšas atvērt Portal-01, bet lapa nekad neielādējas, neatkarīgi no tā, cik reizes viņš mēģina atkārtoti.",
+            "objective": "Atjaunot HTTP GET no PC-Admin uz Portal-01, lai tas saņemtu atbildi.",
+            "hints": [
+                "Pakets nekad neatstāj PC-Admin savienojumu — tas застревает pie PC-Admin, pirms sasniedz Switch-HQ vai Router-HQ.",
+                "PC-Admin noklusējuma vārteja ir iestatīta uz Portal-01 pašas adresi (10.0.11.1), kas ir Serveris, nevis Routeris, tāpēc PC-Admin nevar nosūtīt attālu satiksmi caur to.",
+                "PC-Admin noklusējuma vārteja izmiņ uz 10.0.18.254, kas ir Router-HQ adrese PC-Admin lokālajā tīklā."
+            ],
+            "explanation": "Noklusējuma vārtejām jābūt maršrutētājam, kas ir pieejams ierīces savienojumā, nevis gala adresai. PC-Admin norādīja savu vārteju uz Portal-01, tāpēc tam nebija maršrutētāja, lai nosūtītu tālo traffiku. Vārtejas iestatīšana uz Router-HQ novērš ceļu."
+        },
+        "mk": {
+            "title": "Порталот што не се вчитува",
+            "story": "Корисникот на PC-Admin се обидува од утро да го отвори Portal-01, но страницата никогаш се не вчитува, без разлика колку пати повторува.",
+            "objective": "Обновете HTTP GET од PC-Admin до Portal-01 така што ќе добие одговор.",
+            "hints": [
+                "Пакетот никогаш не го напушта сегментот на PC-Admin — застанува право на PC-Admin пред да стигне до Switch-HQ или Router-HQ.",
+                "Default gateway на PC-Admin е поставен на адресата на Portal-01 (10.0.11.1), што е сервер, а не рутер, па PC-Admin не може да го пренасочи исходниот сообраќај низ него.",
+                "На PC-Admin, променете го Default gateway на 10.0.18.254, што е адресата на Router-HQ на локалната подмрежа на PC-Admin."
+            ],
+            "explanation": "Default gateway мора да биде рутер достижен на подмрежата на уредот, а не адресата на конечната одредница. PC-Admin ја насочил врата кон Portal-01 себеси, па немаше рутер да го префрли далечниот сообраќај. Постављањето на врата кон Router-HQ го поправа патеката."
+        },
+        "ml": {
+            "title": "വെറുതെ ലോഡ് ചെയ്യാത്ത പോർട്ടൽ",
+            "story": "PC-Admin-ന്റെ ഉപയോക്താവ് ഉദ്ദേശിച്ച് Portal-01 തുറക്കാൻ ശ്രമിച്ചു കൊണ്ടിരിക്കുന്നു, എന്നാൽ പേജ് ഒരിക്കലും ലോഡ് ചെയ്യുന്നില്ല, എത്ര തവണ പ്രത്യേകമായി ശ്രമിച്ചാലും.",
+            "objective": "PC-Admin-ൽ നിന്ന് Portal-01-ലേക്കുള്ള HTTP GET പുനഃസ്ഥാപിച്ച് അത് പ്രതികരണം ലഭിക്കാൻ.",
+            "hints": [
+                "പാക്കറ്റ് PC-Admin-ന്റെ സ്വന്തം സെഗ്മെന്ట് വിട്ടയിടില്ല — Switch-HQ അല്ലെങ്കിൽ Router-HQ-ലെത്താതെ PC-Admin-ൽ അതൾ കിടന്നു പോകുന്നു.",
+                "PC-Admin-ന്റെ ഡിഫോൾട്ട് ഗേറ്റ്‌വേ Portal-01-ന്റെ സ്വന്തം വിലാസത്തിലേക്ക് സജ്ജീകരിച്ചിരിക്കുന്നു (10.0.11.1), ഇത് ഒരു Server ആണ്, Router അല്ല, അതിനാൽ PC-Admin ഔട്ട്‌ബൗണ്ട് ട്രാഫിക് അത് വഴി ഫോർവേർഡ് ചെയ്യാൻ കഴിയില്ല.",
+                "PC-Admin-ൽ, ഡിഫോൾട്ട് ഗേറ്റ്‌വേ 10.0.18.254-ലേക്ക് മാറ്റുക, ഇത് PC-Admin-ന്റെ പ്രാദേശിക സബ്നെറ്റിലെ Router-HQ-ന്റെ വിലാസമാണ്."
+            ],
+            "explanation": "ഒരു ഡിഫോൾട്ട് ഗേറ്റ്‌വേ അവസാന ലക്ഷ്യ വിലാസമല്ല, ബറ്റ് ഉപകരണത്തിന്റെ സ്വന്തം സബ്നെറ്റിൽ എത്തിപ്പെടാവുന്ന Router ആയിരിക്കണം. PC-Admin വാതില്‍ Portal-01-നെ തന്നെ നേരോട്ട് നിർദ്ദേശിച്ചു, അതിനാൽ അത് സുദൂര ട്രാഫിക് കൈമാറാൻ ഒരു Router-ഉം ഇല്ലായിരുന്നു. വാതില്‍ Router-HQ-ലേക്ക് സജ്ജീകരിക്കുന്നത് പാത തിരുത്തുന്നു."
+        },
+        "mn": {
+            "title": "Ачаагдаагүй портал",
+            "story": "PC-Admin-ийн хэрэглэгч өглөө нэгэнд эхлэн Portal-01 буцаж нээхийг оролдсоор байгаа боловч хэвлэлийн хуудас хэзээ ч ачаагддаггүй, хичнээн удаа дахин оролдсон ч.",
+            "objective": "PC-Admin-аас Portal-01 рүү HTTP GET сэргээж, хариу авахаар хийнэ.",
+            "hints": [
+                "Пакет PC-Admin-ийн өрсөлдөөч сегмент сайтаас явахгүй — Switch-HQ эсвэл Router-HQ-д хүрэхээс өмнө PC-Admin-д л зогсоод байгаа.",
+                "PC-Admin-ийн Default gateway нь Portal-01-ийн өөрийн хаягтай (10.0.11.1) тохируулагдсан байгаа бөгөөд энэ нь Server бүгд биш Router нь биш, иймээс PC-Admin-д энэ замаар гаралтын үйл ажиллагаа явуулж болохгүй.",
+                "PC-Admin дээр Default gateway-г 10.0.18.254 рүү өөрчилнө, энэ нь PC-Admin-ийн локал сүлжээнээр Router-HQ-ийн хаяг юм."
+            ],
+            "explanation": "Default gateway нь эцсийн очих хаяг биш байхдаа төхөөрөмжийн өөрийн сүлжээнд хүрэх боломжтой Router байх ёстой. PC-Admin-ы хаалганы оорхи Portal-01 рүү нь оруулсан тул сүүлийн сэтгэлүүүлэлт явуулах Router-ь байгүй байлаа. Хаалганы оорхи Router-HQ рүү оруулахад замыг засна."
+        },
+        "mr": {
+            "title": "पोर्टल जो लोड होत नाही",
+            "story": "PC-Admin चे वापरकर्ता सकाळपासून Portal-01 उघडण्याचा प्रयत्न करत आहे, परंतु पृष्ठ कधीही लोड होत नाही, कितीही वेळा पुन्हा प्रयत्न केला तरी.",
+            "objective": "PC-Admin वरून Portal-01 पर्यंत HTTP GET पुनर्संचयित करा जेणे करून तिला प्रतिक्रिया मिळेल.",
+            "hints": [
+                "पॅकेट PC-Admin चा स्वतःचा सेगमेंट कधीच सोडत नाही — Switch-HQ किंवा Router-HQ पर्यंत पोहोचण्यापूर्वी तो PC-Admin मधूनच थांबून जातो.",
+                "PC-Admin चा डिफॉल्ट गेटवे Portal-01 च्या स्वतःच्या पत्त्यावर (10.0.11.1) सेट केलेला आहे, जो एक Server आहे, Router नाही, त्यामुळे PC-Admin बाहेरच्या ट्रॅफिकला त्याद्वारे पाठवू शकत नाही.",
+                "PC-Admin वर, डिफॉल्ट गेटवे 10.0.18.254 वर बदला, जो PC-Admin च्या स्थानिक सबनेटवर Router-HQ चा पत्ता आहे."
+            ],
+            "explanation": "डिफॉल्ट गेटवे डिव्हाइसच्या स्वतःच्या सबनेटवर पोहोचण्यायोग्य Router असला पाहिजे, अंतिम गंतव्य पता नाही. PC-Admin ने त्याचा गेट Portal-01 स्वतःकडे निर्देशित केला, तर त्याला दूर ट्रॅफिकला सामावून देण्यासाठी कोणताही Router नाही होता. गेट Router-HQ वर सेट केल्याने मार्गाचे निराकरण होते."
+        },
+        "ms": {
+            "title": "Portal yang Tidak Memuatkan",
+            "story": "Pengguna PC-Admin telah mencoba sejak pagi untuk membuka Portal-01, tetapi halaman tidak pernah dimuat, berapa pun kali mereka mencuba lagi.",
+            "objective": "Pulihkan HTTP GET dari PC-Admin ke Portal-01 agar menerima respons.",
+            "hints": [
+                "Paket tidak pernah meninggalkan segmen sendiri PC-Admin — ia terhenti tepat di PC-Admin sebelum mencapai Switch-HQ atau Router-HQ.",
+                "Get Laluan Lalai PC-Admin ditetapkan ke alamat Portal-01 sendiri (10.0.11.1), yang merupakan Server, bukan Router, jadi PC-Admin tidak dapat meneruskan lalu lintas keluar melaluinya.",
+                "Di PC-Admin, ubah Get Laluan Lalai menjadi 10.0.18.254, yang merupakan alamat Router-HQ di subnet lokal PC-Admin."
+            ],
+            "explanation": "Get Laluan Lalai mesti berupa Router yang dapat dijangkau di subnet peranti sendiri, bukan alamat destinasi akhir. PC-Admin mengarahkan gatewaynya ke Portal-01 sendiri, jadi ia tidak memiliki router untuk menyampaikan lalu lintas jauh. Menetapkan gateway ke Router-HQ memperbaiki jalurnya."
+        },
+        "my": {
+            "title": "ဖွင့်မည်မဟုတ်သော Portal",
+            "story": "PC-Admin ၏ အသုံးပြုသူသည် ယနေ့ နံနက်ကစ၍ Portal-01 ကို ဖွင့်ရန် ကြိုးစားနေသော်လည်း အခါအားလျော်စွာ ပြန်လည်ကြိုးစားသည်ကိုပင် မည်သည့်အခါ မျက်နှာစာ ဖွင့်မည်မဟုတ်ပါ။",
+            "objective": "PC-Admin မှ Portal-01 သို့ HTTP GET ကို ပြန်လည်ရယူပြီး လက်ခံမှုကို ရယူပါ။",
+            "hints": [
+                "ပက်ကင်သည် PC-Admin၏ကိုယ်ပိုင် အပိုင်းကို မည်သည့်အခါ မထွက်သည်မှ Switch-HQ သို့မဟုတ် Router-HQ သို့မည်သည့်အခါ မရောက်ခင် PC-Admin တွင် ရပ်တန်းသည်။",
+                "PC-Admin ၏ ရိုးရှင်းသော ဆက်တင်သည် Portal-01 ၏ကိုယ်ပိုင် လိပ်စာ (10.0.11.1) သို့ သတ်မှတ်ထားသည်၊ ၎င်းသည် ရောတာ မဟုတ်ဘဲ ဆာဗာတစ်ခုဖြစ်သည်၊ ထို့ကြောင့် PC-Admin သည် အထွက်ရောက်သည့် အသံုးအနှုန်းကို ၎င်းမှတစ်ဆင့် မအလှည့်အပြောင်းလုပ်နိုင်ပါ။",
+                "PC-Admin တွင် ရိုးရှင်းသော ဆက်တင်ကို 10.0.18.254 သို့ ပြောင်းလဲပါ၊ ၎င်းသည် PC-Admin ၏ ကွန်ယက်ပိုင်းခွဲတွင် Router-HQ ၏ လိပ်စာဖြစ်သည်။"
+            ],
+            "explanation": "ရိုးရှင်းသော ဆက်တင်သည် ရောတာဖြစ်ရမည်၊ မည်သည့်အခါ နောက်ဆုံး ရည်မှန်းချက်၏ လိပ်စာမဟုတ်ပါ။ PC-Admin သည် ၎င်း၏ ဆက်တင်ကို Portal-01 ကိုယ်တိုင်တွင် ညွှန်ပြခဲ့သည်၊ ထို့ကြောင့် ၎င်းသည်먼거리ရောက်သည့် အသံုးအနှုန်းကို အလှည့်အပြောင်းလုပ်ရန် ရောတာ မရှိခဲ့ပါ။ ဆက်တင်ကို Router-HQ သို့ သတ်မှတ်ခြင်းသည် လမ်းကြောင်းကို ပြင်ဆင်သည်။"
+        },
+        "ne": {
+            "title": "लोड नहुने पोर्टल",
+            "story": "PC-Admin का प्रयोगकर्ता आज बिहान देखि Portal-01 खोल्ने प्रयास गरिरहेको छ, तर पृष्ठ कहिल्यै लोड हुन्न, चाहे कति पनि पटक पुनः प्रयास गरे पनि।",
+            "objective": "PC-Admin बाट Portal-01 मा HTTP GET पुनर्स्थापित गर्नुहोस् ताकि यसले प्रतिक्रिया पाओस्।",
+            "hints": [
+                "प्याकेट कहिल्यै PC-Admin को आफ्नै सेगमेन्ट छोडेन — यो Switch-HQ वा Router-HQ मा पुग्नुको अगि PC-Admin मा नै रोकिन्छ।",
+                "PC-Admin को डिफल्ट गेटवे Portal-01 को आफ्नै ठेगाना (10.0.11.1) मा सेट गरिएको छ, जो राउटर होइन, सर्भर हो, त्यसैले PC-Admin बाहिरको ट्राफिक यसको माध्यमबाट अग्रसर गर्न सक्दैन।",
+                "PC-Admin मा, डिफल्ट गेटवे लाई 10.0.18.254 मा परिवर्तन गर्नुहोस्, जो PC-Admin को स्थानीय सबनेट मा Router-HQ को ठेगाना हो।"
+            ],
+            "explanation": "डिफल्ट गेटवे राउटर हुनु पर्छ जो डिभाइसको आफ्नै सबनेट मा पहुँचयोग्य छ, अन्तिम गन्तव्य को ठेगाना होइन। PC-Admin ले यसको गेटवे लाई Portal-01 आफैलाई पनि गर्छ, त्यसैले यससँग टाढाको ट्राफिक हस्तान्तरण गर्न राउटर थिएन। गेटवे लाई Router-HQ मा सेट गर्दा पथ ठीक हुन्छ।"
+        },
+        "nl": {
+            "title": "De Portal die niet laadt",
+            "story": "De gebruiker van PC-Admin probeert sinds vanmorgen Portal-01 te openen, maar de pagina laadt nooit, ongeacht hoe vaak hij opnieuw probeert.",
+            "objective": "Herstel een HTTP GET van PC-Admin naar Portal-01 zodat het een antwoord krijgt.",
+            "hints": [
+                "Het pakket verlaat PC-Admin's eigen segment nooit — het blijft steken bij PC-Admin voordat het Switch-HQ of Router-HQ bereikt.",
+                "PC-Admin's Standaardgateway is ingesteld op Portal-01's eigen adres (10.0.11.1), wat een Server is, geen Router, dus PC-Admin kan uitgaand verkeer er niet doorheen sturen.",
+                "Wijzig op PC-Admin de Standaardgateway naar 10.0.18.254, het adres van Router-HQ op PC-Admin's lokale subnet."
+            ],
+            "explanation": "Een Standaardgateway moet een Router zijn die bereikbaar is op het eigen subnet van het apparaat, niet het adres van de uiteindelijke bestemming. PC-Admin wees zijn gateway naar Portal-01 zelf, dus het had geen Router om distant verkeer aan door te geven. Het instellen van de gateway op Router-HQ lost het pad op."
+        },
+        "no": {
+            "title": "Portalen som ikke lastes",
+            "story": "Brukeren av PC-Admin har prøvd siden i morges å åpne Portal-01, men siden lastes aldri, uansett hvor mange ganger de forsøker på nytt.",
+            "objective": "Gjenopprett en HTTP GET fra PC-Admin til Portal-01 slik at det får et svar.",
+            "hints": [
+                "Pakken forlater aldri PC-Admin's eget segment — det stopper ved PC-Admin før det når Switch-HQ eller Router-HQ.",
+                "PC-Admin's Standard gateway er satt til Portal-01's egen adresse (10.0.11.1), som er en Server, ikke en Router, så PC-Admin kan ikke videresende utgående trafikk gjennom det.",
+                "På PC-Admin, endre Standard gateway til 10.0.18.254, som er Router-HQ's adresse på PC-Admin's lokale subnett."
+            ],
+            "explanation": "En Standard gateway må være en Router som kan nås på enhetens eget subnett, ikke adressen til den endelige destinasjonen. PC-Admin pekte gateway-en sin mot Portal-01 selv, så den hadde ingen Router til å overgi fjerntliggende trafikk til. Innstilling av gateway til Router-HQ løser stien."
+        },
+        "or": {
+            "title": "ଲୋଡ ନ ହେଉଥିବା ପୋର୍ଟାଲ",
+            "story": "PC-Admin ର ବ୍ୟବହାରକାରୀ ଆଜ ସକାଳ ଠାରୁ Portal-01 ଖୋଲିବାକୁ ଚେଷ୍ଟା କରିଛନ୍ତି, କିନ୍ତୁ ପୃଷ୍ଠା କଦାପି ଲୋଡ ହୁଏ ନାହିଁ, ଯେତେ ଥର ଆବାର ଚେଷ୍ଟା କଲେ ମଧ୍ୟ।",
+            "objective": "PC-Admin ରୁ Portal-01 କୁ ଏକ HTTP GET ପୁନରୁଦ୍ଧାର କରନ୍ତୁ ଯାହାଦ୍ୱାରା ଏହା ପ୍ରତିକ୍ରିୟା ପାଇପାରେ।",
+            "hints": [
+                "ପ୍ୟାକେଟ PC-Admin ର ନିଜସ୍ব ସେଗମେଣ୍ଟ କଦାପି ଛାଡୁ ନାହିଁ — ଏହା Switch-HQ ବା Router-HQ ରେ ପହଞ୍ଚିବା ପୂର୍ବରୁ PC-Admin ରେ ରୋକି ଯାଏ।",
+                "PC-Admin ର ଡିଫଲ୍ଟ ଗେଟୱେ Portal-01 ର ନିଜସ୍ୱ ଠିକାଣା (10.0.11.1) ରେ ସେଟ ଅଛି, ଯାହା ଏକ ରାଉଟର ନୁହେଁ, ଏକ ସର୍ଭର ଅଛି, ତେଣୁ PC-Admin ଏହା ମାଧ୍ୟମରେ ବାହ୍ୟତ୍ରାଫିକ ଫରୱାର୍ଡ କରିପାରେ ନାହିଁ।",
+                "PC-Admin ରେ, ଡିଫଲ୍ଟ ଗେଟୱେ କୁ 10.0.18.254 ରେ ପରିବର୍ତ୍ତନ କରନ୍ତୁ, ଯାହା PC-Admin ର ସ୍ଥାନୀୟ ସବନେଟରେ Router-HQ ର ଠିକାଣା।"
+            ],
+            "explanation": "ଏକ ଡିଫଲ୍ଟ ଗେଟୱେ ନିଶ୍ଚିତ ଭାବେ ଏକ ରାଉଟର ହେବା ଆବଶ୍ୟକ ଯାହା ଡିଭାଇସର ନିଜସ୍ୱ ସବନେଟରେ ପହଞ୍ଚାଯୋଗ୍ୟ, ଶେଷ ଗନ୍ତବ୍ୟର ଠିକାଣା ନୁହେଁ। PC-Admin ଏହାର ଗେଟୱେ ତାଲିକା Portal-01 ନିଜେ ଆଡକୁ ନିର୍ଦ୍ଦେଶ କଲା, ତେଣୁ ଏହାର ଦୂରବର୍ତ୍ତୀ ଟ୍ରାଫିକ ହାତ ଦେବାର କୌଣସି ରାଉଟର ନେଇ ନଥିଲା। ଗେଟୱେ ରୁ Router-HQ ରେ ସେଟ କରିବା ପଥକୁ ଠିକ କରଦେଇଥାଏ।"
+        },
+        "pa": {
+            "title": "ਪੋਰਟਲ ਜੋ ਲੋਡ ਨਹੀਂ ਹੋਵੇਗਾ",
+            "story": "PC-Admin ਦੇ ਯੂਜ਼ਰ ਨੇ ਅੱਜ ਸਵੇਰ ਤੋਂ Portal-01 ਖੋਲ੍ਹਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹਨ, ਪਰ ਪੰਨਾ ਕਦੇ ਲੋਡ ਨਹੀਂ ਹੁੰਦਾ, ਭਾਵੇਂ ਉਹ ਕਿੰਨੀ ਵੀ ਬਾਰ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰਨ।",
+            "objective": "PC-Admin ਤੋਂ Portal-01 ਤੱਕ ਇਕ HTTP GET ਮੁੜ-ਸਥਾਪਿਤ ਕਰੋ ਤਾਂ ਜੋ ਇਸ ਨੂੰ ਜਵਾਬ ਮਿਲੇ।",
+            "hints": [
+                "ਪੈਕੇਟ ਕਦੇ PC-Admin ਦੇ ਆਪਣੇ ਸੈਗਮੇਂਟ ਤੋਂ ਨਹੀਂ ਜਾਂਦਾ — ਇਹ Switch-HQ ਜਾਂ Router-HQ ਤਕ ਪਹੁੰਚਣ ਤੋਂ ਪਹਿਲਾਂ PC-Admin ਤੇ ਰੁਕ ਜਾਂਦਾ ਹੈ।",
+                "PC-Admin ਦਾ ਡਿਫਾਲਟ ਗੇਟਵੇ Portal-01 ਦੇ ਆਪਣੇ ਪਤੇ (10.0.11.1) ਤੇ ਸੈਟ ਹੈ, ਜੋ ਇਕ Server ਹੈ, Router ਨਹੀਂ, ਇਸ ਲਈ PC-Admin ਆਊਟਬਾਉਂਡ ਟ੍ਰੈਫਿਕ ਨੂੰ ਰੂਟ ਨਹੀਂ ਕਰ ਸਕਦਾ।",
+                "PC-Admin ਤੇ, ਡਿਫਾਲਟ ਗੇਟਵੇ ਨੂੰ 10.0.18.254 ਵਿੱਚ ਬਦਲੋ, ਜੋ Router-HQ ਦਾ ਪਤਾ PC-Admin ਦੇ ਲੋਕਲ ਸਬਨੈਟ ਤੇ ਹੈ।"
+            ],
+            "explanation": "ਡਿਫਾਲਟ ਗੇਟਵੇ ਇਕ Router ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਜੋ ਡਿਵਾਈਸ ਦੇ ਆਪਣੇ ਸਬਨੈਟ ਤੇ ਪਹੁੰਚਯੋਗ ਹੋਵੇ, ਨਾ ਕਿ ਅੰਤਮ ਮੰਜ਼ਿਲ ਦਾ ਪਤਾ। PC-Admin ਨੇ ਆਪਣਾ ਗੇਟਵੇ Portal-01 ਖੁਦ ਦੇ ਤੋਂ ਪੁਆ ਦਿੱਤਾ, ਇਸ ਲਈ ਇਸ ਕੋਲ ਦੂਰ ਦੀ ਟ੍ਰੈਫਿਕ ਲਈ ਕੋਈ Router ਨਹੀਂ ਸੀ। ਗੇਟਵੇ ਨੂੰ Router-HQ ਤੇ ਸੈਟ ਕਰਨਾ ਮਾਰਗ ਠੀਕ ਕਰਦਾ ਹੈ।"
+        },
+        "pl": {
+            "title": "Portal, który się nie ładuje",
+            "story": "Użytkownik PC-Admin próbuje od rana otworzyć Portal-01, ale strona nigdy się nie wczytuje, bez względu na to, ile razy ponowi próbę.",
+            "objective": "Przywróć HTTP GET z PC-Admin do Portal-01, aby otrzymał odpowiedź.",
+            "hints": [
+                "Pakiet nigdy nie opuszcza własnego segmentu PC-Admin — zatrzymuje się przy PC-Admin, zanim dotrze do Switch-HQ lub Router-HQ.",
+                "Brama domyślna PC-Admin jest ustawiona na własny adres Portal-01 (10.0.11.1), czyli Server, nie Router, więc PC-Admin nie może przekierować ruchu wychodzącego przez nią.",
+                "Na PC-Admin zmień bramę domyślną na 10.0.18.254, czyli adres Router-HQ w lokalnej podsieci PC-Admin."
+            ],
+            "explanation": "Brama domyślna musi być Routerem osiągalnym w własnej podsieci urządzenia, nie adresem końcowego przeznaczenia. PC-Admin wskazał swoją bramę na sam Portal-01, więc nie miał Routera, do którego mógłby przekazać ruch odległy. Ustawienie bramy na Router-HQ naprawia trasę."
+        },
+        "pt-PT": {
+            "title": "O Portal Que Não Carrega",
+            "story": "O utilizador de PC-Admin tem tentado desde esta manhã abrir Portal-01, mas a página nunca carrega, não importa quantas vezes tenta novamente.",
+            "objective": "Restaure um HTTP GET de PC-Admin para Portal-01 para que receba uma resposta.",
+            "hints": [
+                "O pacote nunca sai do seu próprio segmento — fica preso em PC-Admin antes de chegar a Switch-HQ ou Router-HQ.",
+                "O gateway predefinido de PC-Admin está configurado para o próprio endereço de Portal-01 (10.0.11.1), que é um Server, não um Router, pelo que PC-Admin não consegue encaminhar o tráfego de saída através dele.",
+                "Em PC-Admin, altere o gateway predefinido para 10.0.18.254, que é o endereço de Router-HQ na sub-rede local de PC-Admin."
+            ],
+            "explanation": "Um gateway predefinido deve ser um Router acessível na própria sub-rede do dispositivo, não o endereço do destino final. PC-Admin apontou o seu gateway para o próprio Portal-01, pelo que não tinha um Router para passar o tráfego distante. Definir o gateway como Router-HQ corrige a rota."
+        },
+        "rm": {
+            "title": "Il portal che na s-charga",
+            "story": "L'utilisader da PC-Admin sa forchecla dapi il matin ad avrir Portal-01, ma la pagina na s-chargia mai, betg impurtant cumbant ils repichan.",
+            "objective": "Restaura ina dumonda HTTP GET da PC-Admin vers Portal-01 per ch'ella receva ina risposta.",
+            "hints": [
+                "Il pachet na quita mai propriul segment da PC-Admin — el s-stoppa avant d'arrivair a Switch-HQ u Router-HQ.",
+                "Il default gateway da PC-Admin è configurà sin a l'indrizz propriul da Portal-01 (10.0.11.1), che è in Server, betg in Router, perquai na po PC-Admin betg transmetter il traffic d'extrada.",
+                "Sin a PC-Admin, schanza il default gateway sin 10.0.18.254, che è l'indrizz da Router-HQ sin la subnet locala da PC-Admin."
+            ],
+            "explanation": "In default gateway deva esser in Router accessibel sin la subnet propriula dal dispositiv, betg l'indrizz dal destinaziun final. PC-Admin ha pointà sia gateway sin il Portal-01 propriul, perquai n'aveva nagina Router per transmetter il traffic da distanza. Configurar il gateway sin Router-HQ corrigia la via."
+        },
+        "ro": {
+            "title": "Portalul care nu se încarcă",
+            "story": "Utilizatorul PC-Admin încearcă de dimineață să deschidă Portal-01, dar pagina nu se încarcă niciodată, indiferent de câte ori reîncearcă.",
+            "objective": "Restaurează o cerere HTTP GET de la PC-Admin la Portal-01 pentru a obține un răspuns.",
+            "hints": [
+                "Pachetul nu pleacă niciodată din propriul segment al PC-Admin — se oprește la PC-Admin înainte de a ajunge la Switch-HQ sau Router-HQ.",
+                "Gateway-ul implicit al PC-Admin este setat la propria adresă Portal-01 (10.0.11.1), care este un Server, nu un Router, deci PC-Admin nu poate transmite traficul de ieșire prin el.",
+                "Pe PC-Admin, schimbă gateway-ul implicit la 10.0.18.254, care este adresa Router-HQ din subrețeaua locală PC-Admin."
+            ],
+            "explanation": "Un gateway implicit trebuie să fie un Router accesibil din propria subrețea a dispozitivului, nu adresa destinației finale. PC-Admin și-a îndreptat gateway-ul către Portal-01 însuși, deci nu avea un Router pentru a transmite traficul distant. Setarea gateway-ului la Router-HQ repară ruta."
+        },
+        "si": {
+            "title": "පෙරතුරු පෝර්ටලය ලොඩ් නොවන්න",
+            "story": "PC-Admin වල පරිශීලකයා අද උදෑසන සිට Portal-01 විවෘත කිරීමට උත්සාහ කර ඇති නමුත් ඔවුන් නැවත නැවත උත්සාහ කළත් පිටුව කිසිවිටෙකත් ලොඩ් නොවේ.",
+            "objective": "PC-Admin සිට Portal-01 වෙත HTTP GET ප්‍රතিස්ථාපනය කරන්න එවිට එය ප්‍රතිසිද්ධිය ලබන්න.",
+            "hints": [
+                "පැකට යනු කිසිවිටෙකත් PC-Admin ගේ සිටම ඉවතට නොයන්න — එය Switch-HQ හෝ Router-HQ ට ළඟා වීමට පෙර PC-Admin එ නැවතී ගිය.",
+                "PC-Admin ගේ පෙරනිමි ගේට්වේ Portal-01 ගේ ඉතිරි ලිපිනය (10.0.11.1) ට සකසා ඇති අතර එය ප්‍රකාශකයෙකු නොවේ බরෙවිට සර්වරයෙකි, එබැවින් PC-Admin එ පිටතට ගිය ගමනාගමනය ඉදිරිපත් කිරීමට නොහැකි.",
+                "PC-Admin වෙත, පෙරනිමි ගේට්වේ 10.0.18.254 වෙත වෙනස් කරන්න, එය Router-HQ ගේ ලිපිනය PC-Admin ගේ ස්ථාන උප ජාලයේ ඇත."
+            ],
+            "explanation": "පෙරනිමි ගේට්වේ එක ප්‍රකාශක විය යුතුය, එය උපකරණයේ ඉතිරි උප ජාලයේ ළඟා කරන ලබන, අවසාන ගමනාන්තය ගේ ලිපිනය නොවේ. PC-Admin එහි ගේට්වේ Portal-01 එහි ඉතිරි දිකට යොමු කළ බැවින් එයට දුරස්ත ගමනාගමනය ඔසවා දිමට ප්‍රකාශකයෙකු සිටින්නේ නැත. ගේට්වේ Router-HQ වෙත සකසා දැමීම මාර්ගය නිවැරදි කරයි."
+        },
+        "sk": {
+            "title": "Portál, ktorý sa nezavrie",
+            "story": "Používateľ PC-Admin sa od začiatku dňa snaží otvoriť Portal-01, ale stránka sa nikdy nenačíta, bez ohľadu na to, koľkokrát sa to skúsi znova.",
+            "objective": "Obnoviť HTTP GET z PC-Admin na Portal-01 aby dostali odpoveď.",
+            "hints": [
+                "Paket nikdy neopustí vlastný segment PC-Admin — zastane sa na PC-Admin ešte skôr, ako dosiahne Switch-HQ alebo Router-HQ.",
+                "Predvolená brána PC-Admin je nastavená na vlastnú adresu Portal-01 (10.0.11.1), čo je Server, nie Router, takže PC-Admin nemôže presúvať odchádzajúcu dopravu cez neho.",
+                "Na PC-Admin zmeňte Predvolená brána na 10.0.18.254, čo je adresa Router-HQ na lokálnej podseti PC-Admin."
+            ],
+            "explanation": "Predvolená brána musí byť Router, ktorý je dosiahnuť na vlastnej podseti zariadenia, nie adresa konečného určenia. PC-Admin nasmerovala svoju bránu na samotný Portal-01, takže nemala Router, aby odoslala vzdialenú dopravu. Nastavenie brány na Router-HQ vyriešuje cestu."
+        },
+        "sl": {
+            "title": "Prehod, ki se ne naladi",
+            "story": "Uporabnik naprave PC-Admin je od začetka dneva poskušal odpreti Portal-01, vendar se stran nikoli ne naloži, ne glede na to, kolikokrat poskusi znova.",
+            "objective": "Obnovite HTTP GET od PC-Admin do Portal-01, tako da dobi odgovor.",
+            "hints": [
+                "Paket nikoli ne zapusti lastnega segmenta PC-Admin — zatakne se na PC-Admin, preden doseže Switch-HQ ali Router-HQ.",
+                "Privzeti prehod PC-Admin je nastavljen na naslov Portal-01 (10.0.11.1), kar je Strežnik, ne Router, zato PC-Admin ne more posredovati izhodnega prometa.",
+                "Na PC-Admin spremenite Privzeti prehod na 10.0.18.254, kar je naslov Router-HQ na lokalnem omrežju PC-Admin."
+            ],
+            "explanation": "Privzeti prehod mora biti Router, dosegljiv v lastnem omrežju naprave, ne naslov končnega cilja. PC-Admin je usmeril svoj prehod na sam Portal-01, zato ni imel Router za prepuščanje oddaljenega prometa. Nastavitev prehoda na Router-HQ popravi pot."
+        },
+        "sq": {
+            "title": "Porta që nuk ngarkohet",
+            "story": "Përdoruesi i PC-Admin ka provuar që në fillim të ditës të hapë Portal-01, por faqja nuk ngarkohet kurrë, pavarësisht sa herë të provojë përsëri.",
+            "objective": "Rivendosni një HTTP GET nga PC-Admin në Portal-01 në mënyrë që të marrë një përgjigje.",
+            "hints": [
+                "Paketa nuk largohet kurrë nga segmenti i vet PC-Admin — ngecet në PC-Admin përpara se të arrijë Switch-HQ ose Router-HQ.",
+                "Porta e paracaktuar e PC-Admin është caktuar në adresën e vet Portal-01 (10.0.11.1), i cili është një Serveri, jo një Router, kështu që PC-Admin nuk mund të përparan trafikun dalës përmes tij.",
+                "Në PC-Admin, ndryshoni Porta e paracaktuar në 10.0.18.254, e cila është adresa e Router-HQ në nënrrjetin lokal të PC-Admin."
+            ],
+            "explanation": "Porta e paracaktuar duhet të jetë Router i arritshëm në nënrrjetin e vet të pajisjes, jo adresa e destinacionit final. PC-Admin përpunoi portën e vet në Portal-01-në vetë, kështu që nuk kishte Router për të kaluar trafikun e largët. Vendosja e portës në Router-HQ rregullon rrugën."
+        },
+        "sr": {
+            "title": "Портал који се не учитава",
+            "story": "Корисник PC-Admin покушава од почетка дана да отвори Portal-01, али страница се никада не учитава, без обзира на то колико пута покуша поново.",
+            "objective": "Обновите HTTP GET са PC-Admin на Portal-01 да би добило одговор.",
+            "hints": [
+                "Пакет никада не напушта сопствени сегмент PC-Admin — застаје на PC-Admin пре него што достигне Switch-HQ или Router-HQ.",
+                "Подразумевани мрежни пролаз PC-Admin је постављен на властиту адресу Portal-01 (10.0.11.1), што је Сервер, а не Маршрутизатор, па PC-Admin не може да предаје одлазни саобраћај кроз њега.",
+                "На PC-Admin, промените Подразумевани мрежни пролаз на 10.0.18.254, што је адреса Router-HQ на локалној подмрежи PC-Admin."
+            ],
+            "explanation": "Подразумевани мрежни пролаз мора бити Маршрутизатор доступан у властитој подмрежи уређаја, а не адреса коначне одредишне тачке. PC-Admin је усмерио своју маршруту на сам Portal-01, па није имао Маршрутизатор за прослеђивање удаљеног саобраћаја. Постављање маршруте на Router-HQ исправља путању."
+        },
+        "sv": {
+            "title": "Portalen som inte läses in",
+            "story": "PC-Admin's användare har försökt sedan i morse att öppna Portal-01, men sidan läses aldrig in, oavsett hur många gånger de försöker igen.",
+            "objective": "Återställ en HTTP GET från PC-Admin till Portal-01 så att den får ett svar.",
+            "hints": [
+                "Paketet lämnar aldrig PC-Admin's eget segment — det stannar precis på PC-Admin innan det når Switch-HQ eller Router-HQ.",
+                "PC-Admin's Standardgateway är inställd på Portal-01's egen adress (10.0.11.1), som är en Server, inte en Router, så PC-Admin kan inte vidarebefordra utgående trafik genom den.",
+                "På PC-Admin, ändra Standardgateway till 10.0.18.254, som är Router-HQ's adress på PC-Admin's lokala nät."
+            ],
+            "explanation": "En Standardgateway måste vara en Router som kan nås på enhetens eget nät, inte den slutliga destinationens adress. PC-Admin pekade sin gateway på Portal-01 själv, så den hade ingen Router att överlämna fjärrtrafik till. Om du ställer in gatewayen på Router-HQ löses vägen."
+        },
+        "sw": {
+            "title": "Lango Ambatanishi Iliyobakia",
+            "story": "Mtumiaji wa PC-Admin amejaribu tangu asubuhi kufungua Portal-01, lakini ukurasa haupakiliki, haba na kubadilijia mara nyingi.",
+            "objective": "Rejezesha HTTP GET kutoka PC-Admin hadi Portal-01 ili iwe na jibu.",
+            "hints": [
+                "Pakiti haiwezi kuondoka kwa sehemu yenyewe ya PC-Admin — inasimama tu kwa PC-Admin kabla ya kufikia Switch-HQ au Router-HQ.",
+                "Lango chaguo-msingi la PC-Admin limewekwa kwa anwani ya Portal-01 (10.0.11.1), ambayo ni Server, si Router, kwa hiyo PC-Admin haiwezi kusambaza trafiki iliyoelekezwa nje.",
+                "Kwenye PC-Admin, badilisha Lango chaguo-msingi kuwa 10.0.18.254, ambayo ni anwani ya Router-HQ kwenye mtandao wa ndani wa PC-Admin."
+            ],
+            "explanation": "Lango chaguo-msingi lazima liwe Router inayoweza kufikiana kwenye mtandao wa jeni wa kifaa, si anwani ya mahali pa mwisho. PC-Admin ilibadilisha lango lake kwa Portal-01 yenyewe, kwa hiyo halikuwa na Router kupigia trafiki mbali. Kuweka lango kwa Router-HQ kunarekebishia njia."
+        },
+        "ta": {
+            "title": "போர்டல் ஆரம்பிக்க மறுக்கும்",
+            "story": "PC-Admin இன் பயனர் இன்று காலை முதல் Portal-01 ஐ திறக்க முயன்றுகொண்டிருக்கிறார், ஆனால் பக்கம் ஒருபோதும் ஆரம்பிக்கவில்லை, எத்தனை முறை மறுபரிசீலனை செய்தாலும் சரியாக வில்லை.",
+            "objective": "PC-Admin இலிருந்து Portal-01 க்கு HTTP GET ஐ மீட்டெடுத்து பதிலை பெறுங்கள்.",
+            "hints": [
+                "பாக்கெட் PC-Admin இன் சொந்த பிரிவை விட்டு செல்லாது — இது Switch-HQ அல்லது Router-HQ க்கு எட்டுவதற்கு முன் PC-Admin இல் நிற்கிறது.",
+                "PC-Admin இன் இயல்புநிலை கேட்வே Portal-01 இன் சொந்த முகவரியில் (10.0.11.1) அமைக்கப்பட்டுள்ளது, இது ஒரு சர்வர், Router அல்ல, எனவே PC-Admin வெளிச்செல்லும் ட்ராஃபிக்கைக் கைமாற்ற முடியாது.",
+                "PC-Admin இல், இயல்புநிலை கேட்வே 10.0.18.254 ஆக மாற்றவும், இது PC-Admin இன் உள்ளூர் நெட்வொர்க்கில் Router-HQ இன் முகவரி ஆகும்."
+            ],
+            "explanation": "இயல்புநிலை கேட்வே என்பது சாதனத்தின் சொந்த சாளரத்தில் அடையக்கூடிய Router ஆக இருக்க வேண்டும், இறுதி இலக்கத்தின் முகவரி அல்ல. PC-Admin அதன் கேட்வேயை Portal-01 இற்கே சுட்டினது, எனவே அதற்கு தொலைதூര ட்ராஃபிக்கைக் கைமாற்ற Router எதுவும் இல்லை. Router-HQ க்கு கேட்வேயை அமைப்பது பாதையைச் சரிசெய்கிறது."
+        },
+        "te": {
+            "title": "పోర్టల్ లోడ్ కానిది",
+            "story": "PC-Admin యొక్క వినియోగదారు ఈ ఉదయం నుండి Portal-01 ను తెరవడానికి ప్రయత్నిస్తున్నారు, కానీ ఎంత సార్లు పునరుద్ధరించినా పేజీ ఎప్పుడూ లోడ్ చేయబడదు.",
+            "objective": "PC-Admin నుండి Portal-01 కు HTTP GET ను పునరుద్ధరించండి, తద్వారా ఇది ప్రతిస్పందన పొందుతుంది.",
+            "hints": [
+                "ప్యాకెట్ PC-Admin యొక్క సొంత సెగ్మెంట్ నుండి బయటకు రాదు — ఇది Switch-HQ లేదా Router-HQ కు చేరుకోవడానికి ముందే PC-Admin వద్ద ఆగిపోతుంది.",
+                "PC-Admin యొక్క డిఫాల్ట్ గేట్‌వే Portal-01 యొక్క సొంత చిరునామాకు (10.0.11.1) సెట్ చేయబడింది, ఇది సర్వర్, రూటర్ కాదు, కాబట్టి PC-Admin బాహ్య ట్రాఫిక్‌ను దాని ద్వారా ఫార్వార్డ్ చేయలేదు.",
+                "PC-Admin లో, డిఫాల్ట్ గేట్‌వేను 10.0.18.254 కు మార్చండి, ఇది PC-Admin యొక్క సానాధ్య సబ్‌నెట్‌పై Router-HQ యొక్క చిరునామా."
+            ],
+            "explanation": "డిఫాల్ట్ గేట్‌వే అనేది పరికరం యొక్క సొంత సానాధ్య సబ్‌నెట్‌పై చేరుకోగలిగిన రూటర్ ఉండాలి, చివరి గమ్యం యొక్క చిరునామా కాదు. PC-Admin దాని గేట్‌వేను Portal-01 వద్దకు సూచించింది, కాబట్టి అది సుదూర ట్రాఫిక్‌ను సమర్పించేందుకు రూటర్ కలిగిలేదు. గేట్‌వేను Router-HQ కు సెట్ చేయడం పథం సరిచేస్తుంది."
+        },
+        "uk": {
+            "title": "Портал, який не завантажується",
+            "story": "Користувач PC-Admin намагається з ранку відкрити Portal-01, але сторінка ніколи не завантажується, незалежно від кількості повторних спроб.",
+            "objective": "Відновіть HTTP GET від PC-Admin до Portal-01, щоб отримати відповідь.",
+            "hints": [
+                "Пакет ніколи не залишає власний сегмент PC-Admin — він зупиняється саме на PC-Admin перед тим, як дійти до Switch-HQ або Router-HQ.",
+                "Шлюз за замовчуванням PC-Admin встановлено на власну адресу Portal-01 (10.0.11.1), яка є сервером, а не маршрутизатором, тому PC-Admin не може пересилати вихідний трафік через нього.",
+                "На PC-Admin змініть шлюз за замовчуванням на 10.0.18.254, яка є адресою Router-HQ у локальній мережі PC-Admin."
+            ],
+            "explanation": "Шлюз за замовчуванням має бути маршрутизатором, доступним у власній мережі пристрою, а не адресою кінцевого призначення. PC-Admin вказав свій шлюз на Portal-01 сам по собі, тому у нього не було маршрутизатора для передачі дальнього трафіку. Встановлення шлюзу на Router-HQ виправляє маршрут."
+        },
+        "ur": {
+            "title": "وہ پورٹل جو لوڈ نہیں ہوگا",
+            "story": "PC-Admin کے صارف نے اس صبح سے Portal-01 کھولنے کی کوشش کی ہے، لیکن صفحہ کبھی لوڈ نہیں ہوتا، چاہے وہ کتنی بھی بار دوبارہ کوشش کریں۔",
+            "objective": "PC-Admin سے Portal-01 تک HTTP GET بحال کریں تاکہ اسے جواب ملے۔",
+            "hints": [
+                "یہ پیکٹ PC-Admin کے اپنے سیگمنٹ سے باہر نہیں نکلتا — یہ Switch-HQ یا Router-HQ تک پہنچنے سے پہلے PC-Admin پر روک جاتا ہے۔",
+                "PC-Admin کا Default Gateway Portal-01 کے اپنے پتے (10.0.11.1) پر سیٹ ہے، جو ایک Server ہے، Router نہیں، اس لیے PC-Admin دور کی ٹریفک کو اس کے ذریعے آگے نہیں بھیج سکتا۔",
+                "PC-Admin پر، Default Gateway کو 10.0.18.254 میں تبدیل کریں، جو Router-HQ کا PC-Admin کے مقامی سب نیٹ پر پتہ ہے۔"
+            ],
+            "explanation": "Default Gateway ایک Router ہونا چاہیے جو ڈیوائس کے اپنے سب نیٹ پر قابلِ رسائی ہو، نہ کہ آخری منزل کا پتہ۔ PC-Admin نے اپنا Gateway خود Portal-01 کی طرف اشارہ کیا، اس لیے اس کے پاس دور کی ٹریفک کو ہاتھ دینے کے لیے کوئی Router نہیں تھا۔ Gateway کو Router-HQ پر سیٹ کرنے سے راستہ ٹھیک ہو جاتا ہے۔"
+        },
+        "am": {
+            "title": "ፖርታሉ ማጫን ያልቻለ",
+            "story": "PC-Admin ተጠቃሚ ከአሁዱ ወንበር Portal-01 ለመክፈት ሞክሯል፣ ነገር ግን ገጹ ምንም ያህል ብታስገባ ሸክሙ አይጫንም።",
+            "objective": "PC-Admin ከ Portal-01 ነገር ዓይነት HTTP GET 복구ማዶ ምላሽ ሰጠህ",
+            "hints": [
+                "ፓኬት PC-Admin ስርሰራውን አላወቀላቸውም — Switch-HQ ወይም Router-HQ ላይ ደርሷ ሳይደርስ PC-Admin ሞቅቶ ዘና ብሎ ተወልቅሞ ነው።",
+                "PC-Admin ነባሪ ጌትዌይ Portal-01 የራስ አድራሻ ወደ 10.0.11.1 ተዘጋጅቷል, ይህም ነገር ምንም ሞዲስ አይደለም ሞደር አይደለም, ስለዚህ PC-Admin መንገዱን ወደ ውጭ ትራፊክ ማስተላለፍ አይችልም።",
+                "PC-Admin ላይ, ነባሪ ጌትዌይ ወደ 10.0.18.254 ይቀይሩ, ይህም Router-HQ ብርሳ ነው PC-Admin ተወያይያዩ ስርስራ ላይ።"
+            ],
+            "explanation": "ነባሪ ጌትዌይ አንድ ሞዲስ ስሜት ራስ ስርሰሩ ላይ ሊደርስ ይገባ ነው, የመጨረሻ መድረሻ አድራሻ አይደለም። PC-Admin ጌትዌይ ወደ Portal-01 ራስ ሲገልፅ, እንደዚህ ርቄ ትራፊክ ለመስጠት ማሳደር ስማ ከለላ ነበር። ጌትዌይ ወደ Router-HQ ከተወሰደ መንገዱን አስተያየት።"
+        },
+        "zu": {
+            "title": "I-Portal Engakayenzi Ukulwaza",
+            "story": "Umsebenzisi we-PC-Admin uzama njengoku ekuseni ukukhula i-Portal-01, kodwa ipheji ayenzanga kho, noma zingaki izikhathi azama kabusha.",
+            "objective": "Buyisela i-HTTP GET esuka ku-PC-Admin iye ku-Portal-01 ukuze ithole impendulo.",
+            "hints": [
+                "Ipakiti ayenzi yayo isegmentini se-PC-Admin - ikhubeka e-PC-Admin ngaphambi kokuthi ifinyelele ku-Switch-HQ noma ku-Router-HQ.",
+                "I-default gateway ye-PC-Admin ihlelelwe kukheli lika-Portal-01 (10.0.11.1), okungumSevers, hayi uRouter, ngakho i-PC-Admin ayikwazi ukudlulisela umthwalo ongembi ngumkhondo womgwebo.",
+                "Ku-PC-Admin, shintshanisa i-default gateway iye ku-10.0.18.254, okuyikheli lika-Router-HQ kusegmentini sendawo ye-PC-Admin."
+            ],
+            "explanation": "I-default gateway kufanele ibe iRouter enokutholwa kusegmentini sedivaysi, hayi ikheli lokugcina lapho uzofika khona. I-PC-Admin yakhomba ikheli layo ku-Portal-01 uqobo, ngakho ayenakho iRouter ukuthi idlulisele umthwalo ongembi. Ukushintsha ikheli ku-Router-HQ kuyalungisa umzila."
+        }
+    }
+}
