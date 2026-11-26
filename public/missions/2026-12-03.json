@@ -1,0 +1,1288 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-12-03",
+    "number": 74,
+    "difficulty": 3,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": false,
+    "requiresProDevices": true,
+    "archetype": "dns_office",
+    "faultIds": [
+        "dns_record_wrong_ip"
+    ],
+    "concepts": [
+        "dns",
+        "a-record"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.24.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.24.254",
+                    "dnsServer": "10.0.13.53",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-2F",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.24.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.13.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-DC",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-dns1": {
+                "id": "dev-dns1",
+                "type": "DNS_SERVER",
+                "name": "DNS-Internal",
+                "x": 80.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-dns1-p0",
+                        "index": 0,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "ipAddress": "10.0.13.53",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p1",
+                        "index": 1,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p2",
+                        "index": 2,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-dns1-p3",
+                        "index": 3,
+                        "deviceId": "dev-dns1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.13.254",
+                    "dnsRecords": [
+                        {
+                            "domain": "files.example.net",
+                            "ip": "10.0.22.1"
+                        }
+                    ]
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 320.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.13.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.13.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-dns1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-dns1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "domain_http",
+                "method": "GET",
+                "path": "/",
+                "body": "",
+                "domain": "files.example.net"
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "ja": {
+            "title": "files.example.net に接続できない",
+            "story": "今朝からPC-Salesで社内ページ「files.example.net」が表示されなくなったと、営業スタッフから報告がありました。オフィスのネットワーク自体はほかに問題がなさそうです。",
+            "objective": "PC-Salesからfiles.example.netへのHTTP GETを成功させてください。",
+            "hints": [
+                "PC-Salesからのリクエストは、DNS-Internalでの名前解決の段階から先に進めていません。ページ自体へのリクエストはまだ行われていないのです。",
+                "DNS-Internalにはfiles.example.netのAレコードがありますが、その参照先はIntranet-01が実際にあるアドレスとは異なります。",
+                "DNS-Internal上で、Aレコード files.example.net → 10.0.22.1 を削除し、files.example.net → 10.0.13.1 を追加してください。"
+            ],
+            "explanation": "名前でのWebアクセスは、まずDNSによる名前解決が必要です。DNSサーバーのAレコードが誤ったIPを指していると、ブラウザは本来のWebサーバーにたどり着くことすらできません。Aレコードがサーバーの実際のアドレスと一致しているか、必ず確認しましょう。"
+        },
+        "zh-CN": {
+            "title": "Files Site 无法访问",
+            "story": "销售部员工报告称，自今天早上起，PC-Sales 上无法加载\"files.example.net\"内网页面，尽管办公室网络其他方面似乎正常。",
+            "objective": "使 PC-Sales 向 files.example.net 发送的 HTTP GET 请求成功。",
+            "hints": [
+                "来自 PC-Sales 的请求在 DNS-Internal 的域名查询步骤中就没有进行下去——页面本身从未被请求。",
+                "DNS-Internal 有一条 files.example.net 的 A 记录，但它指向的地址不是 Intranet-01 实际所在的地方。",
+                "在 DNS-Internal 上，删除 A 记录 files.example.net → 10.0.22.1，并添加 files.example.net → 10.0.13.1。"
+            ],
+            "explanation": "基于名称的网络请求首先需要 DNS 查询。如果 DNS 服务器的 A 记录指向了错误的 IP，浏览器甚至永远无法到达真实的网络服务器。始终检查 A 记录是否与服务器的实际地址匹配。"
+        },
+        "zh-TW": {
+            "title": "Files Site 無法連接",
+            "story": "銷售部員工報告指出，自今天早上起，PC-Sales 上無法加載「files.example.net」內網頁面，儘管辦公室網路其他方面似乎正常。",
+            "objective": "使 PC-Sales 向 files.example.net 發送的 HTTP GET 請求成功。",
+            "hints": [
+                "來自 PC-Sales 的請求在 DNS-Internal 的域名查詢步驟中就沒有進行下去——頁面本身從未被請求。",
+                "DNS-Internal 有一筆 files.example.net 的 A 記錄，但它指向的位址不是 Intranet-01 實際所在的地方。",
+                "在 DNS-Internal 上，刪除 A 記錄 files.example.net → 10.0.22.1，並新增 files.example.net → 10.0.13.1。"
+            ],
+            "explanation": "基於名稱的網路請求首先需要 DNS 查詢。如果 DNS 伺服器的 A 記錄指向了錯誤的 IP，瀏覽器甚至永遠無法連接到真實的網路伺服器。務必檢查 A 記錄是否與伺服器的實際位址相符。"
+        },
+        "ko": {
+            "title": "Files Site 도달 불가",
+            "story": "영업팀 직원들이 오늘 아침부터 PC-Sales에서 \"files.example.net\" 인트라넷 페이지가 로드되지 않는다고 보고했습니다. 사무실 네트워크는 다른 부분은 정상인 것처럼 보입니다.",
+            "objective": "PC-Sales에서 files.example.net으로의 HTTP GET 요청이 성공하도록 만들기.",
+            "hints": [
+                "PC-Sales의 요청이 DNS-Internal의 DNS Server 조회 단계에서 더 진행되지 않습니다. 페이지 자체가 요청되지 않습니다.",
+                "DNS-Internal에는 files.example.net의 A 레코드가 있지만, 그것이 가리키는 주소는 Intranet-01이 실제로 있는 위치가 아닙니다.",
+                "DNS-Internal에서 A 레코드 files.example.net → 10.0.22.1을 삭제하고 files.example.net → 10.0.13.1을 추가합니다."
+            ],
+            "explanation": "이름으로 된 웹 요청은 먼저 DNS Server 조회가 필요합니다. DNS 서버의 A 레코드가 잘못된 IP를 가리키면 브라우저는 실제 웹 서버에 도달하지 못합니다. 항상 A 레코드가 서버의 실제 주소와 일치하는지 확인하세요."
+        },
+        "es": {
+            "title": "Files Site Inaccesible",
+            "story": "El personal de ventas informa que la página intranet \"files.example.net\" ha dejado de cargarse en PC-Sales desde esta mañana, aunque el resto de la red de oficina parece funcionar normalmente.",
+            "objective": "Hacer que una solicitud HTTP GET desde PC-Sales a files.example.net sea exitosa.",
+            "hints": [
+                "La solicitud desde PC-Sales nunca pasa del paso de búsqueda de nombres en DNS-Internal; la página en sí nunca es solicitada.",
+                "DNS-Internal tiene un registro A para files.example.net, pero apunta a una dirección que no es donde Intranet-01 realmente se encuentra.",
+                "En DNS-Internal, elimine el registro A files.example.net → 10.0.22.1 y agregue files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Las solicitudes web por nombre primero necesitan una búsqueda DNS Server. Si el registro A del Servidor DNS apunta a la IP incorrecta, el navegador nunca llega al servidor web real. Siempre verifique que el registro A coincida con la dirección real del servidor."
+        },
+        "pt-BR": {
+            "title": "Files Site Inacessível",
+            "story": "Funcionários de vendas reportam que a página intranet \"files.example.net\" parou de carregar no PC-Sales desde esta manhã, embora o resto da rede do escritório pareça funcionando normalmente.",
+            "objective": "Fazer com que uma solicitação HTTP GET do PC-Sales para files.example.net seja bem-sucedida.",
+            "hints": [
+                "A solicitação do PC-Sales nunca ultrapassa a etapa de consulta de nome no DNS-Internal — a página em si nunca é requisitada.",
+                "DNS-Internal possui um registro A para files.example.net, mas ele aponta para um endereço que não é onde Intranet-01 realmente está.",
+                "No DNS-Internal, remova o registro A files.example.net → 10.0.22.1 e adicione files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Solicitações web por nome precisam primeiro de uma consulta DNS Server. Se o registro A do Servidor DNS apontar para o IP errado, o navegador nunca chega ao servidor web real. Sempre verifique se o registro A corresponde ao endereço real do servidor."
+        },
+        "de": {
+            "title": "Datei-Website nicht erreichbar",
+            "story": "Mitarbeiter aus dem Vertrieb berichten, dass die Intranet-Seite \"files.example.net\" auf PC-Sales seit heute Morgen nicht mehr geladen wird, obwohl das Büronetzwerk ansonsten normal funktioniert.",
+            "objective": "Führen Sie einen HTTP GET von PC-Sales zu files.example.net erfolgreich durch.",
+            "hints": [
+                "Die Anfrage von PC-Sales kommt bei DNS-Internal nicht über den Lookup-Schritt hinaus — die Seite selbst wird nie angefordert.",
+                "DNS-Internal hat einen A-Record für files.example.net, dieser verweist aber auf eine Adresse, unter der Intranet-01 gar nicht zu finden ist.",
+                "Entfernen Sie auf DNS-Internal den A-Record files.example.net → 10.0.22.1 und fügen Sie files.example.net → 10.0.13.1 hinzu."
+            ],
+            "explanation": "Web-Anfragen nach Namen benötigen zunächst eine DNS-Abfrage. Wenn der A-Record des DNS-Servers auf die falsche IP-Adresse verweist, erreicht der Browser nie den echten Web-Server. Prüfen Sie immer, dass der A-Record mit der tatsächlichen Adresse des Servers übereinstimmt."
+        },
+        "fr": {
+            "title": "Site fichiers inaccessible",
+            "story": "Le personnel commercial signale que la page intranet « files.example.net » ne se charge plus sur PC-Sales depuis ce matin, même si le réseau du bureau semble par ailleurs fonctionnel.",
+            "objective": "Réussir une requête HTTP GET depuis PC-Sales vers files.example.net.",
+            "hints": [
+                "La requête de PC-Sales n'arrive jamais à passer l'étape de résolution de nom auprès de DNS-Internal — la page elle-même n'est jamais demandée.",
+                "DNS-Internal dispose d'un enregistrement A pour files.example.net, mais il pointe vers une adresse où Intranet-01 n'est pas situé.",
+                "Sur DNS-Internal, supprimez l'enregistrement A files.example.net → 10.0.22.1 et ajoutez files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Les requêtes web par nom nécessitent d'abord une résolution DNS. Si l'enregistrement A du serveur DNS pointe vers une mauvaise IP, le navigateur n'atteint jamais le vrai serveur web. Vérifiez toujours que l'enregistrement A correspond à l'adresse réelle du serveur."
+        },
+        "hi": {
+            "title": "फाइलें साइट अनुपलब्ध",
+            "story": "बिक्रय कर्मचारी रिपोर्ट करते हैं कि \"files.example.net\" इंट्रानेट पेज आज सुबह से PC-Sales पर लोड नहीं हो रहा है, भले ही कार्यालय नेटवर्क अन्यथा सामान्य लगता है।",
+            "objective": "PC-Sales से files.example.net तक HTTP GET को सफल बनाएं।",
+            "hints": [
+                "PC-Sales से अनुरोध DNS-Internal पर नाम लुकअप चरण को कभी पास नहीं करता — पेज स्वयं कभी अनुरोधित नहीं होता।",
+                "DNS-Internal के पास files.example.net के लिए एक A रिकॉर्ड है, लेकिन यह एक ऐसे पते को इंगित करता है जहाँ Intranet-01 वास्तव में नहीं है।",
+                "DNS-Internal पर, A रिकॉर्ड files.example.net → 10.0.22.1 को हटाएं और files.example.net → 10.0.13.1 जोड़ें।"
+            ],
+            "explanation": "नाम के आधार पर वेब अनुरोधों को पहले DNS लुकअप की आवश्यकता होती है। यदि DNS सर्वर का A रिकॉर्ड गलत IP पर इंगित करता है, तो ब्राउजर वास्तविक वेब सर्वर तक कभी नहीं पहुंचता। हमेशा जांचें कि A रिकॉर्ड सर्वर के वास्तविक पते से मेल खाता है।"
+        },
+        "ru": {
+            "title": "Сайт файлов недоступен",
+            "story": "Сотрудники отдела продаж сообщают, что страница интрасети \"files.example.net\" перестала загружаться на PC-Sales с этого утра, хотя офисная сеть в остальном работает нормально.",
+            "objective": "Выполнить HTTP GET от PC-Sales к files.example.net успешно.",
+            "hints": [
+                "Запрос от PC-Sales никогда не проходит этап разрешения имен на DNS-Internal — сама страница никогда не запрашивается.",
+                "DNS-Internal содержит A-запись для files.example.net, но она указывает на адрес, где Intranet-01 на самом деле не находится.",
+                "На DNS-Internal удалите A-запись files.example.net → 10.0.22.1 и добавьте files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Веб-запросы по имени сначала требуют разрешения DNS. Если A-запись DNS-сервера указывает на неправильный IP, браузер никогда не достигает реальный веб-сервер. Всегда проверяйте, что A-запись соответствует фактическому адресу сервера."
+        },
+        "it": {
+            "title": "Sito file non raggiungibile",
+            "story": "Il personale di vendita segnala che la pagina intranet \"files.example.net\" ha smesso di caricarsi su PC-Sales da questa mattina, anche se il resto della rete aziendale sembra funzionare normalmente.",
+            "objective": "Fare in modo che una richiesta HTTP GET da PC-Sales a files.example.net abbia successo.",
+            "hints": [
+                "La richiesta da PC-Sales non supera mai la fase di ricerca dei nomi presso DNS-Internal — la pagina stessa non viene mai richiesta.",
+                "DNS-Internal contiene un record A per files.example.net, ma punta a un indirizzo in cui Intranet-01 non si trova effettivamente.",
+                "Su DNS-Internal, rimuovere il record A files.example.net → 10.0.22.1 e aggiungere files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Le richieste web per nome richiedono prima una ricerca DNS. Se il record A del Server DNS punta a un indirizzo IP errato, il browser non raggiunge mai il vero Server web. Controlla sempre che il record A corrisponda all'indirizzo effettivo del Server."
+        },
+        "tr": {
+            "title": "Dosya Sitesi Erişilemiyor",
+            "story": "Satış personeli, offis ağının geri kalan kısımları normal görünse de, bu sabahtan beri PC-Sales'te \"files.example.net\" intranet sayfasının yüklenmeyi durdurduğunu bildiriyor.",
+            "objective": "PC-Sales'ten files.example.net'e HTTP GET isteğinin başarılı olmasını sağla.",
+            "hints": [
+                "PC-Sales'ten gelen istek DNS-Internal'da ad arama adımını asla geçmiyor — sayfa hiç istenmemiştir.",
+                "DNS-Internal, files.example.net için bir A kaydı tutuyor, ancak bu kayıt Intranet-01'in gerçekten bulunduğu adresi gösterilmiyor.",
+                "DNS-Internal'da files.example.net → 10.0.22.1 A kaydını kaldır ve files.example.net → 10.0.13.1 ekle."
+            ],
+            "explanation": "Ada göre web istekleri önce DNS araması gerektirir. DNS Sunucusu'nun A kaydı yanlış IP'ye işaret ediyorsa, tarayıcı gerçek Server'a hiçbir zaman ulaşmaz. Her zaman A kaydının Server'ın gerçek adresiyle eşleştiğini doğrula."
+        },
+        "th": {
+            "title": "ไม่สามารถเข้าถึงไซต์ไฟล์",
+            "story": "พนักงานขายรายงานว่าหน้า intranet \"files.example.net\" ไม่สามารถโหลดบน PC-Sales ตั้งแต่เช้านี้ แม้ว่าเครือข่ายสำนักงานอื่นๆ ดูเหมือนว่าปกติ",
+            "objective": "ทำให้คำขอ HTTP GET จาก PC-Sales ไปยัง files.example.net สำเร็จ",
+            "hints": [
+                "คำขอจาก PC-Sales ไม่เคยผ่านขั้นตอนการค้นหาชื่อที่ DNS-Internal — ไม่เคยมีการขอหน้านั้น",
+                "DNS-Internal มีบันทึก A สำหรับ files.example.net แต่มันชี้ไปยังที่อยู่ที่ Intranet-01 ไม่ได้อยู่จริง",
+                "ที่ DNS-Internal ให้ลบบันทึก A files.example.net → 10.0.22.1 และเพิ่ม files.example.net → 10.0.13.1"
+            ],
+            "explanation": "คำขอเว็บตามชื่อต้องการการค้นหา DNS ก่อน หากบันทึก A ของเซิร์ฟเวอร์ DNS ชี้ไปยัง IP ที่ผิด เบราว์เซอร์จะไม่ถึง Server เว็บที่แท้จริงเลย ตรวจสอบเสมอว่าบันทึก A ตรงกับที่อยู่จริงของ Server"
+        },
+        "vi": {
+            "title": "Không thể truy cập trang tệp",
+            "story": "Nhân viên bán hàng báo cáo rằng trang intranet \"files.example.net\" đã ngừng tải trên PC-Sales kể từ sáng nay, mặc dù phần còn lại của mạng văn phòng dường như bình thường.",
+            "objective": "Thực hiện yêu cầu HTTP GET từ PC-Sales đến files.example.net thành công.",
+            "hints": [
+                "Yêu cầu từ PC-Sales không bao giờ vượt qua bước tìm kiếm tên tại DNS-Internal — trang chính nó không bao giờ được yêu cầu.",
+                "DNS-Internal chứa bản ghi A cho files.example.net, nhưng nó trỏ đến một địa chỉ không phải là nơi Intranet-01 thực sự nằm.",
+                "Trên DNS-Internal, hãy xóa bản ghi A files.example.net → 10.0.22.1 và thêm files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Yêu cầu web theo tên trước tiên cần tra cứu DNS. Nếu bản ghi A của Máy chủ DNS trỏ đến một IP sai, trình duyệt sẽ không bao giờ đạt được Server web thực. Luôn kiểm tra xem bản ghi A có khớp với địa chỉ thực của Server hay không."
+        },
+        "af": {
+            "title": "Lêerstelle onbereikbaar",
+            "story": "Verkoopersoneel meld dat die \"files.example.net\" intranetsêl nie meer op PC-Sales laai nie sedert vanoggend, alhoewel die res van die kantoornetwerk normaal voorkom.",
+            "objective": "Maak 'n HTTP GET-versoek van PC-Sales na files.example.net suksesvol.",
+            "hints": [
+                "Die versoek van PC-Sales gaan nooit verby die naamopsoekstap by DNS-Internal nie — die bladsy self word nooit aangevra.",
+                "DNS-Internal hou 'n A-rekord vir files.example.net, maar dit wys na 'n adres waar Intranet-01 nie werklik geleë is nie.",
+                "Verwyder op DNS-Internal die A-rekord files.example.net → 10.0.22.1 en voeg files.example.net → 10.0.13.1 by."
+            ],
+            "explanation": "Webversoeke op naamgrondslag benodig eers 'n DNS-opsoek. As die A-rekord van die DNS Server na die verkeerde IP-adres wys, bereik die blaaier nooit die werklike Server nie. Kontroleer altyd dat die A-rekord ooreenstem met die werklike adres van die Server."
+        },
+        "am": {
+            "title": "Files Site Unreachable",
+            "story": "የSales ሰራተኞች \"files.example.net\" ኢንትራኔት ገጹ ከዚህ ጠዋት ጀምሮ በPC-Sales ላይ ሊጫን ማቆመውን ይዘገብራሉ፣ ምንም እንኳን ሌሎቹ መ办사 네트워크ቀዮች መደበኛ ሆነው ቢታዩም።",
+            "objective": "HTTP GET ከPC-Sales ወደ files.example.net ስኬታማ ያድርጉ።",
+            "hints": [
+                "ከPC-Sales ወደሚሰጥ ጥያቄ በDNS-Internal ላይ ስም ፍለጋ ደረጃ ወደ ሌላ አያልፍም — ገጹ ራሱ በጭራሽ አልተጠየቀም።",
+                "DNS-Internal ለfiles.example.net የA ሪከርድ ይጠበቃል፣ ግን ያመለከተው አድራሻ Intranet-01 በትክክል የሚገኝበት ቦታ አይደለም።",
+                "DNS-Internal ላይ፣ A ሪከርድ files.example.net → 10.0.22.1 ያስወግዱ እና files.example.net → 10.0.13.1 ያክሉ።"
+            ],
+            "explanation": "በስም ማለት ዋቢ ወብ ጥያቄዎች በመጀመሪያ DNS ፍለጋ ሊሠሩ ይገባሉ። DNS ሰርቨሩ ያለው A ሪከርድ ወደ ትክክለኛ IP ያመለከተ ካልሆነ ብራውዘሩ ትክክለኛውን ዌብ ሰርቨር ወደ ሚደርስበት ሪከርድ ሳያልፍ ይቆማል። ሁልጊዜ A ሪከርድ ከሰርቨሩ ትክክለኛ አድራሻ ጋር እንደሚዛመድ ያረጋግጡ።"
+        },
+        "ar": {
+            "title": "موقع الملفات غير قابل للوصول",
+            "story": "يبلغ موظفو المبيعات أن صفحة الإنترانت \"files.example.net\" توقفت عن التحميل على PC-Sales منذ هذا الصباح، على الرغم من أن شبكة المكتب تبدو عادية بخلاف ذلك.",
+            "objective": "اجعل HTTP GET من PC-Sales إلى files.example.net ينجح.",
+            "hints": [
+                "الطلب من PC-Sales لا يتجاوز أبدًا مرحلة البحث عن الاسم في DNS-Internal — لم يتم طلب الصفحة نفسها.",
+                "DNS-Internal يحتفظ بسجل A لـ files.example.net، لكنه يشير إلى عنوان ليس حيث يقع Intranet-01 فعليًا.",
+                "على DNS-Internal، قم بإزالة سجل A files.example.net → 10.0.22.1 وأضف files.example.net → 10.0.13.1."
+            ],
+            "explanation": "طلبات الويب بالاسم تحتاج أولاً إلى بحث DNS. إذا كان سجل A على خادم DNS يشير إلى عنوان IP خاطئ، فإن المتصفح لن يصل أبدًا إلى خادم الويب الفعلي. تحقق دائمًا من أن سجل A يتطابق مع العنوان الفعلي للخادم."
+        },
+        "az": {
+            "title": "Fayllar Saytına Daxil Olmaq Mümkün Deyil",
+            "story": "Satış işçiləri \"files.example.net\" intranet səhifəsinin bu səhər etibarən PC-Sales-də yüklənməyi dayandırdığını bildirirlər, halbuki ofis şəbəkəsinin qalan hissəsi normal görünür.",
+            "objective": "PC-Sales-dən files.example.net-ə HTTP GET sorğusunu uğurlu edin.",
+            "hints": [
+                "PC-Sales-dən gələn sorğu DNS-Internal-də ad axtarışı mərhələsini keçmək olar — səhifənin özü hərəkət edilmir.",
+                "DNS-Internal files.example.net üçün A qeydini saxlayır, ancaq o, Intranet-01-in faktiki yerini göstərməyən ünvana işarə edir.",
+                "DNS-Internal-də A qeydini files.example.net → 10.0.22.1 silin və files.example.net → 10.0.13.1 əlavə edin."
+            ],
+            "explanation": "Ad ilə veb sorğuları əvvəlcə DNS axtarışına ehtiyac duyur. DNS serverin A qeydi yanlış IP-ə işarə edirsə, brauzyer real veb serverə heç vaxt çatmaz. Həmişə A qeydinin serverin faktiki ünvanı ilə uyğun olduğunu yoxlayın."
+        },
+        "be": {
+            "title": "Сайт файлаў недаступны",
+            "story": "Работнікі аддзелу продажаў паведамляюць, што старонка інтранета \"files.example.net\" перастала загружацца на PC-Sales пачынаючы з гэтага ранку, хоць астатняя сеткаў офіса здаецца звычайнай.",
+            "objective": "Зрабіце HTTP GET з PC-Sales на files.example.net ўдалым.",
+            "hints": [
+                "Запыт з PC-Sales ніколі не мінуе стадыю пошуку імён на DNS-Internal — сама старонка ніколі не запытваецца.",
+                "DNS-Internal дзержыць A-запіс для files.example.net, але ён ставіцца на адрас, дзе Intranet-01 насамрэч не знаходзіцца.",
+                "На DNS-Internal выдаліце A-запіс files.example.net → 10.0.22.1 і дадайце files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Вэб-запыты па імені спачатку патрабуюць пошуку DNS. Калі A-запіс на DNS-сервер ставіцца на непатрэбны IP, браўзер ніколі не дасягне рэальнага вэб-сервера. Заўсёды праверце, што A-запіс адпавядае фактычнаму адрасу сервера."
+        },
+        "bg": {
+            "title": "Сайтът на файловете е недостъпен",
+            "story": "Служителите от отдела продажби докладват, че интранет страницата \"files.example.net\" е престанала да се зарежда на PC-Sales от тази сутрин, въпреки че останалата мрежа на офиса изглежда нормална.",
+            "objective": "Направете HTTP GET от PC-Sales до files.example.net успешен.",
+            "hints": [
+                "Заявката от PC-Sales никога не преминава фазата на търсене на имена на DNS-Internal — самата страница никога не се заявява.",
+                "DNS-Internal съдържа A запис за files.example.net, но той сочи към адрес, където Intranet-01 всъщност не се намира.",
+                "На DNS-Internal премахнете A запис files.example.net → 10.0.22.1 и добавете files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Вэб заявки по име първо се нуждаят от DNS търсене. Ако A записът на DNS сървъра сочи към неправилния IP, браузърът никога не достига до реалния вэб сървър. Винаги проверете, че A записът съответства на действителния адрес на сървъра."
+        },
+        "bn": {
+            "title": "ফাইলস সাইট অপ্রাপ্য",
+            "story": "বিক্রয় কর্মীরা জানান যে \"files.example.net\" ইন্ট্রানেট পৃষ্ঠাটি এই সকাল থেকে PC-Sales-এ লোড হওয়া বন্ধ করেছে, যদিও অফিস নেটওয়ার্ক অন্যথায় স্বাভাবিক মনে হচ্ছে।",
+            "objective": "PC-Sales থেকে files.example.net-এ একটি HTTP GET সফল করুন।",
+            "hints": [
+                "PC-Sales থেকে অনুরোধ DNS-Internal-এ নাম অনুসন্ধানের পর্যায়ে কখনও এগিয়ে যায় না — পৃষ্ঠাটি নিজেই কখনও অনুরোধ করা হয় না।",
+                "DNS-Internal-এ files.example.net-এর জন্য একটি A রেকর্ড রয়েছে, কিন্তু এটি এমন একটি ঠিকানা নির্দেশ করে যেখানে Intranet-01 প্রকৃতপক্ষে বাস করে না।",
+                "DNS-Internal-এ, A রেকর্ড files.example.net → 10.0.22.1 সরান এবং files.example.net → 10.0.13.1 যোগ করুন।"
+            ],
+            "explanation": "নাম অনুযায়ী ওয়েব অনুরোধের জন্য প্রথমে একটি DNS অনুসন্ধানের প্রয়োজন। যদি DNS সার্ভারের A রেকর্ড ভুল IP-তে নির্দেশ করে, তবে ব্রাউজার প্রকৃত ওয়েব সার্ভারে কখনও পৌঁছায় না। সর্বদা পরীক্ষা করুন যে A রেকর্ড সার্ভারের প্রকৃত ঠিকানার সাথে মেলে।"
+        },
+        "ca": {
+            "title": "Lloc de fitxers inaccessible",
+            "story": "El personal de vendes informan que la pàgina intranet \"files.example.net\" ha deixat de carregar a PC-Sales des d'aquesta matinada, tot i que la resta de la xarxa de l'oficina sembla normal.",
+            "objective": "Feu que una sol·licitud HTTP GET des de PC-Sales a files.example.net tingui èxit.",
+            "hints": [
+                "La sol·licitud de PC-Sales no va més enllà del pas de búsqueda de noms a DNS-Internal — la pàgina mai no es demana.",
+                "DNS-Internal té un registre A per a files.example.net, però apunta a una adreça on Intranet-01 no es troba realment.",
+                "A DNS-Internal, suprimiu el registre A files.example.net → 10.0.22.1 i afegiu files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Les sol·licituds web per nom necessiten primer una consulta DNS. Si el registre A del servidor DNS apunta a la IP incorrecta, el navegador mai no arriba al servidor web real. Comproveu sempre que el registre A coincideixi amb l'adreça real del servidor."
+        },
+        "cs": {
+            "title": "Lokalita souborů není dostupná",
+            "story": "Prodejní pracovníci hlásí, že stránka intranet \"files.example.net\" přestala načítat na PC-Sales od ranních hodin, i když zbytek podnikové sítě vypadá normálně.",
+            "objective": "Zajistěte, aby byl HTTP GET z PC-Sales na files.example.net úspěšný.",
+            "hints": [
+                "Požadavek z PC-Sales nikdy neprejde fází vyhledávání názvu na DNS-Internal — samotná stránka se nikdy nepožádá.",
+                "DNS-Internal má záznam A pro files.example.net, ale ukazuje na adresu, kde se Intranet-01 ve skutečnosti nenachází.",
+                "Na DNS-Internal odeberte záznam A files.example.net → 10.0.22.1 a přidejte files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Webové požadavky podle názvu nejprve potřebují vyhledávání DNS. Pokud záznam A serveru DNS odkazuje na špatnou IP adresu, prohlížeč nikdy nedosáhne skutečného webového serveru. Vždy zkontrolujte, že záznam A odpovídá skutečné adrese serveru."
+        },
+        "da": {
+            "title": "Filslokation utilgængelig",
+            "story": "Salgspersonalet rapporterer, at intranetstedet \"files.example.net\" har stoppet med at indlæse på PC-Sales siden i morges, selvom resten af kontornetværket virker normalt.",
+            "objective": "Få en HTTP GET fra PC-Sales til files.example.net til at lykkes.",
+            "hints": [
+                "Anmodningen fra PC-Sales går aldrig videre forbi navneopslagstrinnet på DNS-Internal — selve siden anmodes aldrig.",
+                "DNS-Internal har en A-post for files.example.net, men den peger på en adresse, hvor Intranet-01 ikke rent faktisk befinder sig.",
+                "Fjern A-posten files.example.net → 10.0.22.1 på DNS-Internal og tilføj files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Webanmodninger efter navn kræver først en DNS-opslag. Hvis DNS-serverens A-post peger på den forkerte IP-adresse, når browseren aldrig den rigtige webserver. Kontroller altid, at A-posten svarer til serverens faktiske adresse."
+        },
+        "el": {
+            "title": "Ο ιστότοπος αρχείων δεν είναι προσβάσιμος",
+            "story": "Το προσωπικό πωλήσεων αναφέρει ότι η σελίδα ενδοδικτύου \"files.example.net\" έχει σταματήσει να φορτώνεται στο PC-Sales από το πρωί, αν και το υπόλοιπο δίκτυο του γραφείου φαίνεται φυσιολογικό.",
+            "objective": "Κάντε ώστε ένα HTTP GET από το PC-Sales στο files.example.net να επιτύχει.",
+            "hints": [
+                "Το αίτημα από το PC-Sales δεν ξεπερνά ποτέ το στάδιο αναζήτησης ονόματος στο DNS-Internal — η ίδια η σελίδα δεν ζητείται ποτέ.",
+                "Το DNS-Internal διαθέτει ένα εγγραφή A για το files.example.net, αλλά δείχνει σε μια διεύθυνση όπου το Intranet-01 δεν βρίσκεται στην πραγματικότητα.",
+                "Στο DNS-Internal, αφαιρέστε την εγγραφή A files.example.net → 10.0.22.1 και προσθέστε files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Τα αιτήματα ιστού κατά όνομα χρειάζονται πρώτα μια αναζήτηση DNS. Εάν η εγγραφή A του DNS Server δείχνει σε λάθος IP, το πρόγραμμα περιήγησης δεν φτάνει ποτέ στον πραγματικό διακομιστή ιστού. Πάντα ελέγχετε ότι η εγγραφή A ταιριάζει με την πραγματική διεύθυνση του διακομιστή."
+        },
+        "et": {
+            "title": "Failisaidi juurde ligipääs epõnnestus",
+            "story": "Müügimeeskond teatab, et \"files.example.net\" intraneti lehekülg on seitse PC-Sales arvutis selle hommiku jooksul laadimise lõpetanud, kuigi kontorivõrk muidu tundub normaalne.",
+            "objective": "Viige HTTP GET päring arvutist PC-Sales domeeni files.example.net juurde edukalt lõpule.",
+            "hints": [
+                "Päring PC-Salesilt ei jõua DNS-Internal nimelahenduse etappi — lehekülge endale ei taotleta kunagi.",
+                "DNS-Internali juures on A-kirje files.example.net, kuid see osutab aadressile, kus Intranet-01 tegelikult ei asu.",
+                "DNS-Internalis eemaldage A-kirje files.example.net → 10.0.22.1 ja lisage files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Nime järgi tehtavad veebipäringud nõuavad kõigepealt DNS-i otsingut. Kui DNS-serveri A-kirje osutab valele IP-le, ei jõua brauser kunagi päris veebiserverini. Alati kontrollige, et A-kirje vastab serveri tegelikule aadressile."
+        },
+        "eu": {
+            "title": "Failisaren gunea heltzezina",
+            "story": "Saltzako langilea-taldeak diote \"files.example.net\" intranet-orrian itzaltzea gelditu dela PC-Sales ordenagailuan goizez, nahiz eta bulegoko sarea normalak dirudi.",
+            "objective": "HTTP GET bidalketak PC-Salesetatik files.example.net gunera ongi egitea.",
+            "hints": [
+                "PC-Salesetatik datorren bidalkerak ez du DNS-Internal izenak bilatzearen urratsean pasa — orria ez da inoiz eskatzen.",
+                "DNS-Internalean A erregistro bat dago files.example.net-rentzat, baina Intranet-01 bere osoan ez dagoen helbidea du.",
+                "DNS-Internalean, kendu A erregistroa files.example.net → 10.0.22.1 eta gehitu files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Izena emanda egiten diren web-bidalkerek DNS bilaketa behar dute. DNS zerbitzariaren A erregistroak IP okerra seinalatzen badu, arakatzaileak ez du inoiz web-zerbitzari errealera heltzen. Beti begiratu A erregistroa zerbitzariaren helbide egiazkoarekin bat datorren."
+        },
+        "fa": {
+            "title": "سایت فایل‌ها غیرقابل دسترس",
+            "story": "کارکنان فروش گزارش می‌دهند که صفحه درون‌شبکه «files.example.net» از دیروز صبح در PC-Sales بارگذاری نمی‌شود، اگرچه بقیه شبکه اداری عادی به نظر می‌رسد.",
+            "objective": "درخواست HTTP GET از PC-Sales به files.example.net را موفق کنید.",
+            "hints": [
+                "درخواست از PC-Sales هرگز از مرحلۀ جستجوی نام در DNS-Internal عبور نمی‌کند — صفحه اصلی هرگز درخواست نمی‌شود.",
+                "DNS-Internal یک رکورد A برای files.example.net دارد، اما به آدرسی اشاره می‌کند که Intranet-01 در آنجا واقعاً نیست.",
+                "در DNS-Internal، رکورد A را files.example.net → 10.0.22.1 حذف کنید و files.example.net → 10.0.13.1 اضافه کنید."
+            ],
+            "explanation": "درخواست‌های وب بر اساس نام ابتدا نیاز به جستجوی DNS دارند. اگر رکورد A سرور DNS به IP غلط اشاره کند، مرورگر هرگز به وب‌سرور واقعی نمی‌رسد. همیشه بررسی کنید که رکورد A با آدرس واقعی سرور مطابقت داشته باشد."
+        },
+        "fi": {
+            "title": "Tiedostojen sivustolle ei pääsy",
+            "story": "Myyntihenkilöstö kertoo, että \"files.example.net\" intranetsivua ei ole ladattu PC-Sales-tietokoneella tänä aamuna lähtien, vaikka toimiston verkko muutoin näyttää normaalilta.",
+            "objective": "Suorita onnistunut HTTP GET -pyyntö PC-Salesilta files.example.net-osoitteeseen.",
+            "hints": [
+                "Pyyntö PC-Salesilta ei kulje koskaan DNS-Internal nimen hakuvaiheen ohi — itse sivua ei pyydä koskaan.",
+                "DNS-Internalissa on A-tietue files.example.net-osoitteelle, mutta se osoittaa osoitteeseen, jossa Intranet-01 ei todellisuudessa ole.",
+                "Poista DNS-Internalissa A-tietue files.example.net → 10.0.22.1 ja lisää files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Nimen perusteella tehdyt verkkopyynnöt vaativat ensin DNS-haun. Jos DNS-palvelimen A-tietue osoittaa väärään IP-osoitteeseen, selain ei koskaan saavuta todellista verkkosivupalvelinta. Varmista aina, että A-tietue vastaa palvelimen todellista osoitetta."
+        },
+        "fil": {
+            "title": "Walang Access sa Files Site",
+            "story": "Ang sales staff ay nag-ulat na ang \"files.example.net\" intranet page ay tumigil nang mag-load sa PC-Sales simula ngayong umaga, kahit normal pa rin ang office network.",
+            "objective": "Gawing matagumpay ang HTTP GET mula sa PC-Sales papunta sa files.example.net.",
+            "hints": [
+                "Ang request mula sa PC-Sales ay hindi kailanman dumaan sa DNS-Internal name lookup step — ang page mismo ay hindi na ire-request.",
+                "Ang DNS-Internal ay may A record para sa files.example.net, pero ito ay nakatutok sa address kung saan ang Intranet-01 ay hindi tunay na naroroon.",
+                "Sa DNS-Internal, alisin ang A record files.example.net → 10.0.22.1 at magdagdag ng files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Ang mga web request gamit ang pangalan ay nangangailangan muna ng DNS lookup. Kung ang DNS server's A record ay nakatutok sa maling IP, ang browser ay hindi kailanman aabot sa tunay na web server. Palaging suriin na ang A record ay tumutugma sa tunay na address ng server."
+        },
+        "gl": {
+            "title": "Sitio de ficheiros inaccesible",
+            "story": "O persoal de vendas informa que a páxina intranet \"files.example.net\" deixou de cargar en PC-Sales desde esta mañá, aínda que o resto da rede da oficina semella normal.",
+            "objective": "Facer que un HTTP GET desde PC-Sales a files.example.net funcione correctamente.",
+            "hints": [
+                "A solicitude desde PC-Sales nunca pasa da fase de busca de nomes en DNS-Internal — a páxina nunca se solicita.",
+                "DNS-Internal ten un rexistro A para files.example.net, pero apunta a un enderezo que non é onde vive realmente Intranet-01.",
+                "En DNS-Internal, elimina o rexistro A files.example.net → 10.0.22.1 e engade files.example.net → 10.0.13.1."
+            ],
+            "explanation": "As solicitudes web por nome primeiro precisan unha busca en DNS. Se o rexistro A do servidor DNS apunta a un IP incorrecto, o navegador nunca chega ao servidor web real. Sempre comproba que o rexistro A coincida co enderezo real do servidor."
+        },
+        "gu": {
+            "title": "ફાઇલ્સ સાઇટ પૌંછવાથી બહાર",
+            "story": "વેચાણ કર્મચારીઓ અહેવાલ આપે છે કે \"files.example.net\" ઇન્ટ્રાનેટ પૃષ્ઠ આજ સવારથી PC-Sales પર લોડ થવાનું બંધ કર્યું છે, જોકે કાર્યાલય નેટવર્ક અન્યથા સામાન્ય લાગે છે.",
+            "objective": "PC-Sales થી files.example.net તરફ HTTP GET સફળ બને છે.",
+            "hints": [
+                "PC-Sales થી વિનંતી DNS-Internal ખાતે નામ લુકઅપ પગલા પાર કર્યા વિના કોઈપણ સમયે આગળ જતી નથી — પૃષ્ઠ પર કોઈ વિનંતી કર્યાં જતી નથી.",
+                "DNS-Internal પાસે files.example.net માટે A રેકોર્ડ છે, પરંતુ તે એક સરનામું નિર્દેશ કરે છે જે Intranet-01 ખરેખર ક્યાં રહે છે તે સરનામું નથી.",
+                "DNS-Internal પર, A રેકોર્ડ files.example.net → 10.0.22.1 દૂર કરો અને files.example.net → 10.0.13.1 ઉમેરો."
+            ],
+            "explanation": "નામ દ્વારા વેબ વિનંતીઓને પ્રથમ DNS લુકઅપ જરૂર છે. જો DNS સર્વરનો A રેકોર્ડ ખોટા IP નિર્દેશ કરે, તો બ્રાઉজર વાસ્તવિક વેબ સર્વર સુધી પોતે પણ પૌંચતો નથી. હંમેશા તપાસો કે A રેકોર્ડ સર્વરના વાસ્તવિક સરનામા સાથે મેળ ખાય."
+        },
+        "he": {
+            "title": "אתר קבצים בלתי נגיש",
+            "story": "כוח המכירות דיווח שדף האינטראנט \"files.example.net\" הפסיק להטען ב-PC-Sales מהבוקר הזה, למרות ששאר רשת המשרד נראית נורמלית.",
+            "objective": "בצע HTTP GET מ-PC-Sales אל files.example.net בהצלחה.",
+            "hints": [
+                "הבקשה מ-PC-Sales לא עוברת את שלב החיפוש בשם ב-DNS-Internal — הדף עצמו לא מתבקש לעולם.",
+                "ל-DNS-Internal יש רשומת A עבור files.example.net, אך היא מצביעה לכתובת שאינה המקום בו Intranet-01 למעשה נמצא.",
+                "ב-DNS-Internal, הסר את רשומת A files.example.net → 10.0.22.1 והוסף files.example.net → 10.0.13.1."
+            ],
+            "explanation": "בקשות אינטרנט בשם דורשות תחילה חיפוש DNS. אם רשומת ה-A של שרת ה-DNS מצביעה לכתובת IP שגויה, הדפדפן לא מגיע אפילו לשרת האינטרנט האמיתי. בדוק תמיד שרשומת ה-A תואמת את הכתובת בפועל של השרת."
+        },
+        "hr": {
+            "title": "Lokacija datoteka nedostupna",
+            "story": "Prodajni osoblje izvješćuje da se intranet stranica \"files.example.net\" prestala učitavati na PC-Sales od ovoga jutra, iako ostatak uredske mreže izgleda normalno.",
+            "objective": "Uspješno izvršiti HTTP GET sa PC-Sales na files.example.net.",
+            "hints": [
+                "Zahtjev sa PC-Sales nikad ne prođe korak pretraživanja imena na DNS-Internal — sama stranica se nikad ne traži.",
+                "DNS-Internal ima A zapis za files.example.net, ali on pokazuje na adresu gdje se Intranet-01 zapravo ne nalazi.",
+                "Na DNS-Internal, uklonite A zapis files.example.net → 10.0.22.1 i dodajte files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web zahtjevi po imenu prvo trebaju DNS pretraživanje. Ako A zapis DNS servera pokazuje na pogrešnu IP adresu, preglednik nikad ne dosegne pravi web server. Uvijek provjerite da se A zapis poklapa sa stvarnom adresom servera."
+        },
+        "hu": {
+            "title": "Fájlok oldala nem elérhető",
+            "story": "Az értékesítési személyzet azt jelenti, hogy a \"files.example.net\" intranet oldal ma reggel óta nem töltődik be a PC-Sales gépről, holott az iroda többi hálózata normálisnak tűnik.",
+            "objective": "Sikeres HTTP GET végrehajtása a PC-Sales gépről a files.example.net címre.",
+            "hints": [
+                "A PC-Sales gépről érkező kérés soha nem halad át a DNS-Internal névfeloldási lépésén — az oldal magát soha nem kérik le.",
+                "A DNS-Internal gépnek van egy A rekordja a files.example.net-hez, de az egy olyan címre mutat, ahol az Intranet-01 valójában nem található.",
+                "A DNS-Internal gépön távolítsa el az A rekordot files.example.net → 10.0.22.1 és adja hozzá a files.example.net → 10.0.13.1 bejegyzést."
+            ],
+            "explanation": "A neves webes kérések először DNS-feloldást igényelnek. Ha a DNS szerver A rekordja helytelen IP-címre mutat, a böngésző soha nem éri el az igazi webkiszolgálót. Mindig ellenőrizze, hogy az A rekord megegyezik a szerver tényleges címével."
+        },
+        "hy": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "is": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "ka": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "kk": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "km": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "kn": {
+            "title": "ಫೈಲ್‌ಗಳ ಸೈಟ್ ತಲುಪಿಸಿಕೊಳ್ಳಲಾಗುತ್ತಿಲ್ಲ",
+            "story": "ಮಾರಾಟ ಸಿಬ್ಬಂದಿ ವರದಿ ಮಾಡುತ್ತಾರೆ ಎಂದರೆ \"files.example.net\" ಇನ್‌ಟ್ರಾನೆಟ್ ಪುಟ ಇಂದು ಬೆಳಿಗ್ಗೆ ಮೂಲಕ PC-Sales ನಲ್ಲಿ ಲೋಡ್ ಆಗುತ್ತಿಲ್ಲ, ಆದರೆ ಕಛೇರಿ ನೆಟ್‌ವರ್ಕ್ ಅಪರೂಪ ಸಾಮಾನ್ಯವಾಗಿ ಕಾಣುತ್ತಿದೆ.",
+            "objective": "PC-Sales ನಿಂದ files.example.net ಗೆ HTTP GET ಯಶಸ್ವಿ ಮಾಡುತ್ತೇವೆ.",
+            "hints": [
+                "PC-Sales ನಿಂದ ಮನವಿ DNS-Internal ನಲ್ಲಿ ಹೆಸರು ಹುಡುಕುವಿಕೆ ಹೆಜ್ಜೆ ಮೀರಿ ಎಂದಿಗೂ ಹೋಗುತ್ತಿಲ್ಲ — ಪುಟವನ್ನು ಎಂದಿಗೂ ಮನವಿ ಮಾಡಲಾಗುತ್ತಿಲ್ಲ.",
+                "DNS-Internal ನೇ files.example.net ಗಾಗಿ A ರೆಕಾರ್ಡ್ ಹೊಂದಿದೆ, ಆದರೆ ಇದು Intranet-01 ನಿಜವಾಗಿ ವಾಸ ಮಾಡುವ ವಿಳಾಸಕ್ಕೆ ತೋರಿಸುತ್ತಿಲ್ಲ.",
+                "DNS-Internal ನಲ್ಲಿ, A ರೆಕಾರ್ಡ್ files.example.net → 10.0.22.1 ಅನ್ನು ತೆಗೆದುಹಾಕಿ ಮತ್ತು files.example.net → 10.0.13.1 ಸೇರಿಸಿ."
+            ],
+            "explanation": "ಹೆಸರಿನ ಮೂಲಕ ವೆಬ್ ಮನವಿ ಮೊದಲು DNS ಹುಡುಕುವಿಕೆ ಅಗತ್ಯವಾಗಿದೆ. DNS ಸರ್ವರ್ ಅನ್ನ A ರೆಕಾರ್ಡ್ ತಪ್ಪು IP ಗೆ ತೋರಿಸಿದರೆ, ಸಂಚರಣೆ ನಿಜವಾದ ವೆಬ್ ಸರ್ವರ್ ಸೂಚಿಸುತ್ತಿಲ್ಲ. ಎಂದಾಗಿ A ರೆಕಾರ್ಡ್ ಸರ್ವರ್ ಸರಿಯಾದ ವಿಳಾಸ ಹೊಂದಿದೆ ಎಂಬುದನ್ನು ಕೋಣೆ."
+        },
+        "ky": {
+            "title": "Файлдар сайты жеткиликсиз",
+            "story": "Сатуу персоналы \"files.example.net\" интранет-сайты бүгүн эртең сайын PC-Sales өндүк жүктөлүп жатпаса да, офис тармагы сөзүнчө нормалдуу сезилет.",
+            "objective": "PC-Sales ден files.example.net ге HTTP GET суратын ийгиликтүү кылуу.",
+            "hints": [
+                "PC-Sales ден сурот DNS-Internal дөңгөдө ат издөө кадамынан өтпөйт — сайты эч качан сураса чыккан.",
+                "DNS-Internal files.example.net үчүн A жазуусу бар, бирок ал Intranet-01 чындыгында орун алган адреске көрсөтпөйт.",
+                "DNS-Internal де, A жазуусун files.example.net → 10.0.22.1 өчүрүп, files.example.net → 10.0.13.1 ди кошуу."
+            ],
+            "explanation": "Аты менен веб сурот биринчи DNS издөөнү талап кылат. Эгер DNS сервердин A жазуусу туура эмес IP га көрсөтсө, браузер чынын веб серверге жетпейт. Дайымы A жазуусу сервердин чынын адресине дал келгенин текширип сал."
+        },
+        "lo": {
+            "title": "ເວັບໄຊທ໌ຟາຍ ບໍ່ສາມາດເຂົ້າເຖິງໄດ້",
+            "story": "ພະນັກງານຂາຍລາຍງານວ່າໜ້າເວັບ \"files.example.net\" intranet ບໍ່ສາມາດໂຫລດໄດ້ກ່ຽວກັບ PC-Sales ນັບຕັ້ງແຕ່ເຊົ້າວານີ້, ແຕ່ວ່າເຄືອຂ່າຍ office ກໍ່ຫາກເຫມືອນປົກະຕິ.",
+            "objective": "ເຮັດໃຫ້ HTTP GET ຈາກ PC-Sales ໄປຍັງ files.example.net ສຳເລັດ.",
+            "hints": [
+                "ການຮ້ອງຂໍຈາກ PC-Sales ບໍ່ເຄີຍຜ່ານການຄົ້ນຫາຊື່ ຢູ່ DNS-Internal — ໜ້າເວັບເອງບໍ່ເຄີຍໄດ້ຮັບການຮ້ອງຂໍ.",
+                "DNS-Internal ມີບົດບັນທຶກ A ສໍາລັບ files.example.net, ແຕ່ມັນຊີ້ໄປທີ່ທີ່ຢູ່ທີ່ Intranet-01 ບໍ່ໄດ້ຢູ່ຈິງ.",
+                "ກ່ຽວກັບ DNS-Internal, ລຶບບົດບັນທຶກ A files.example.net → 10.0.22.1 ແລະເພີ່ມ files.example.net → 10.0.13.1."
+            ],
+            "explanation": "ການຮ້ອງຂໍເວັບໂດຍຊື່ ກໍາລັງຕ້ອງການ ຕາຕະລາງເສັ້ນທາງ DNS ກ່ອນ. ຖ້າບົດບັນທຶກ A ຂອງ DNS Server ຊີ້ໄປທີ່ IP ທີ່ຜິດ, ເບາະລາວເຊີຍບໍ່ເຄີຍເຂົ້າໄປບັນລົງ web Server ທີ່ແທ້ຈິງ. ກວດເບິ່ງວ່າບົດບັນທຶກ A ກົງກັນກັບທີ່ຢູ່ຂອງ server ຕົວຈິງສະເໝີ."
+        },
+        "lt": {
+            "title": "Failų svetainė nepasiekiama",
+            "story": "Pardavimo personalas praneša, kad \"files.example.net\" intranetinė svetainė šiandien nuo ryto nebenakrauna PC-Sales, nors biuro tinklas kitu atveju atrodytų normalus.",
+            "objective": "Padarykite HTTP GET iš PC-Sales į files.example.net sėkmingą.",
+            "hints": [
+                "Užklausa iš PC-Sales DNS-Internal metu niekada nepereina vardų paieškos žingsnio — jei savyje esama svetainė niekada neprašoma.",
+                "DNS-Internal turi A įrašą files.example.net, tačiau jis rodo į adresą, kur Intranet-01 iš tikrųjų nėra.",
+                "DNS-Internal, pašalinkite A įrašą files.example.net → 10.0.22.1 ir pridėkite files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Žiniatinklio užklausos pagal vardą iš pradžių reikalauja DNS paieškos. Jei DNS serverio A įrašas rodo į netinkamą IP adresą, naršyklė niekada nepasiekia tikrojo žiniatinklio serverio. Visada patikrinkite, kad A įrašas atitinka tikrąjį serverio adresą."
+        },
+        "lv": {
+            "title": "Failu vietne nav pieejama",
+            "story": "Pārdošanas personāls norāda, ka \"files.example.net\" intranetā lapas šodien no rīta netiek ielādētas PC-Sales, kaut arī biroja tīkls citādi izskatās normāls.",
+            "objective": "Padariet HTTP GET no PC-Sales uz files.example.net veiksmīgu.",
+            "hints": [
+                "Pieprasījums no PC-Sales nekad nepāriet pāri Domēna vārda meklēšanas solim DNS-Internal — pati lapā nekad netiek pieprasīta.",
+                "DNS-Internal ir A ieraksts files.example.net, taču tas norāda uz adresi, kur Intranet-01 faktiski neatrodas.",
+                "DNS-Internal noņemiet A ierakstu files.example.net → 10.0.22.1 un pievienojiet files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Tīmekļa pieprasījumi pēc nosaukuma vispirms prasa DNS meklēšanu. Ja DNS servera A ieraksts norāda uz nepareizu IP adresi, pārlūks nekad nepasniedzas pie faktiskā tīmekļa servera. Vienmēr pārbaudiet, ka A ieraksts atbilst servera faktiskajai adresei."
+        },
+        "ml": {
+            "title": "Files Site അപ്രാപ്യം",
+            "story": "വിൽപ്പന സ്റ്റാഫ് റിപ്പോർട്ട് ചെയ്യുന്നത് \"files.example.net\" ഇൻട്രാനെറ്റ് പേജ് ഈ പ്രഭാതം മുതൽ PC-Sales-ൽ ലോഡ് ചെയ്യുന്നത് നിർത്തിയെന്നാണ്, കാര്യാലയ നെറ്റ്‌വർക്ക് സാധാരണമായി പ്രവർത്തിച്ചിരുന്നെങ്കിലും.",
+            "objective": "PC-Sales ൽ നിന്ന് files.example.net ലേക്ക് HTTP GET വിജയകരമാക്കുക.",
+            "hints": [
+                "PC-Sales ൽ നിന്നുള്ള അഭ്യർത്ഥന DNS-Internal-ൽ നാമം തിരയൽ ഘട്ടത്തിൽ കടന്നുപോകുന്നില്ല — പേജ് തന്നെ ഒരിക്കലും അഭ്യർത്ഥിക്കപ്പെടുന്നില്ല.",
+                "DNS-Internal-ൽ files.example.net എന്നതിനായി ഒരു A റെക്കോർഡ് ഉണ്ട്, പക്ഷേ അത് Intranet-01 യഥാർത്ഥത്തിൽ വസിക്കുന്ന അഡ്രസ്സിലേക്ക് ചൂണ്ടിക്കൊണ്ടിരിക്കുന്നില്ല.",
+                "DNS-Internal-ൽ, files.example.net → 10.0.22.1 എന്ന A റെക്കോർഡ് നീക്കം ചെയ്ത് files.example.net → 10.0.13.1 ചേർക്കുക."
+            ],
+            "explanation": "നാമം അനുസരിച്ച് വെബ് അഭ്യർത്ഥനകൾ ആദ്യം DNS തിരയൽ ആവശ്യമാണ്. DNS സെർവറിന്റെ A റെക്കോർഡ് തെറ്റായ IP-ലേക്ക് ചൂണ്ടിക്കൊണ്ടിരുന്നാൽ, ബ്രൗസർ യഥാർത്ഥ വെബ് സെർവറിലെത്തുന്നില്ല. A റെക്കോർഡ് സെർവറിന്റെ യഥാർത്ഥ അഡ്രസ്സുമായി പൊരുത്തപ്പെടുന്നുണ്ടെന്ന് സഹായി നിരിക്ഷണം."
+        },
+        "mn": {
+            "title": "Files Site хүлээн авагдахгүй",
+            "story": "Борлуулалтын ажилтнууд \"files.example.net\" интранет халаамж өнөө өглөөс хойш PC-Sales дээр ачаалал авахаа болиулсан гэж мэдээлэв. Хэдийгээр офисын сүлжээ ямар ч асуудалгүй ажилладаг.",
+            "objective": "PC-Sales-ээс files.example.net-д HTTP GET амжилттай болгох.",
+            "hints": [
+                "PC-Sales-ээс ирэх хүсэлт DNS-Internal дээр нэрийн шинжилгээний үе шатыг хэзээ ч давдаггүй — хуудас өөрөө хэзээ ч хүсэгддэггүй.",
+                "DNS-Internal дээр files.example.net-ийн A бичлэг байгаа боловч энэ нь Intranet-01 үнэндээ байрладаг хаяг руу сөөл чегдээхгүй.",
+                "DNS-Internal дээр files.example.net → 10.0.22.1 A бичлэгийг устгаж files.example.net → 10.0.13.1 нэмэх."
+            ],
+            "explanation": "Нэрийг ашигласан вэб хүсэлтүүдийн хувьд эхлээд DNS шинжилгээ хэрэгтэй. DNS сервер дээрх A бичлэг буруу IP хаяг руу сөөл чегдэхэд хөтөч үнэндээ вэб сервер руу хэзээ ч хүрдэггүй. A бичлэг серверын жинхэнэ хаяагтай тохирч байгаа эсэх үргэлж шалгаж байх."
+        },
+        "mr": {
+            "title": "Files Site अप्राप्य",
+            "story": "विक्रय कर्मचारी अहवाल देतात की \"files.example.net\" इंट्रानेट पृष्ठ आज सकाळपासून PC-Sales वर लोड होणे बंद झाले आहे, जरी कार्यालय नेटवर्क अन्यथा सामान्य दिसत आहे.",
+            "objective": "PC-Sales वरून files.example.net कडे HTTP GET यशस्वी करा.",
+            "hints": [
+                "PC-Sales वरील विनंती DNS-Internal वर नाव शोध चरण पलीकडे कधीही जात नाही — पृष्ठ स्वतःच कधीही विनंती केली जात नाही.",
+                "DNS-Internal मध्ये files.example.net साठी A रेकॉर्ड आहे, परंतु तो Intranet-01 ज्या स्थानी वास्तवात राहतो तिथे नि­र्दেश करत नाही.",
+                "DNS-Internal वर, files.example.net → 10.0.22.1 A रेकॉर्ड काढा आणि files.example.net → 10.0.13.1 जोडा."
+            ],
+            "explanation": "नावानुसार वेब विनंतीला प्रथम DNS शोध आवश्यक आहे. जर DNS सर्व­रचा A रेकॉर्ड चुकीच्या IP वर निर्देश करत असेल तर ब्राउজर वास्तविक वेब सर्व­रवर कधीही पोहोचत नाही. A रेकॉर्ड सर्व­रच्या वास्तविक पत्त्याशी जुळत आहे हे नेहमी तपासा."
+        },
+        "ms": {
+            "title": "Tapak Files Tidak Dapat Dijangkau",
+            "story": "Kakitangan jualan melaporkan bahawa halaman intranet \"files.example.net\" telah berhenti memuatkan pada PC-Sales sejak pagi ini, meskipun rangkaian pejabat sebaliknya nampak normal.",
+            "objective": "Buat HTTP GET daripada PC-Sales ke files.example.net berjaya.",
+            "hints": [
+                "Permintaan daripada PC-Sales tidak pernah melepasi langkah pencarian nama di DNS-Internal — halaman itu sendiri tidak pernah diminta.",
+                "DNS-Internal memegang rekod A untuk files.example.net, tetapi ia menunjuk ke alamat di mana Intranet-01 tidak sebenarnya tinggal.",
+                "Pada DNS-Internal, keluarkan rekod A files.example.net → 10.0.22.1 dan tambahkan files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Permintaan web mengikut nama terlebih dahulu memerlukan pencarian DNS. Jika rekod A pelayan DNS menunjuk ke IP yang salah, penyemak imbas tidak pernah sampai ke pelayan web sebenar. Sentiasa semak bahawa rekod A sepadan dengan alamat sebenar pelayan."
+        },
+        "my": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff တွေက \"files.example.net\" intranet စာမျက်နှာ ကို PC-Sales မှာ ဒီဆန္ဒနေ့ မနက်ကတည်းက load မဖြစ်တော့တဲ့ အကြောင်း ပြောတွေ့ရတယ်။ အဲဒါပေမယ့် office network ကတော့ ပုံမှန်အတိုင်း အလုပ်လုပ်နေတယ်။",
+            "objective": "PC-Sales မှ files.example.net သို့ HTTP GET လုပ်ဆောင်ခွင့်ကို အောင်မြင်စေရန်။",
+            "hints": [
+                "PC-Sales ကနေ request က DNS-Internal မှာ name lookup အဆင့်မှာ ရပ်ပွားနေတယ် — စာမျက်နှာကို တစ်ခြား request မလုပ်တွေ့။",
+                "DNS-Internal မှာ files.example.net အတွက် A record ရှိတယ်။ ဒါပေမယ့် နေရာ သည် Intranet-01 အတည်တကျ ရှိတဲ့ နေရာ မဟုတ်တွေ့။",
+                "DNS-Internal မှာ files.example.net → 10.0.22.1 A record ကို ဖျက်ပြီး files.example.net → 10.0.13.1 ကို ထည့်သွင်းပါ။"
+            ],
+            "explanation": "အဆိုပါ နာမည်အရ web requests ကို ပထမဆုံး DNS lookup လုပ်ရမယ်။ DNS server ရဲ့ A record က အမှားအယွင်း IP သို့ ညွှန်ပြတွေ့ရင် browser ကို web server ကို လုံးဝ မိတ်ဆက်တွေ့။ A record တွေက server အဆင့်တွေ ကြည့်ပါ။"
+        },
+        "ne": {
+            "title": "Files Site Unreachable",
+            "story": "Sales कर्मचारीहरूले रिपोर्ट गरेका छन् कि \"files.example.net\" intranet पृष्ठ आज बिहान यता PC-Sales मा लोड हुन बन्द भएको छ, यद्यपि अफिस नेटवर्क अन्यथा सामान्य देखिन्छ।",
+            "objective": "PC-Sales बाट files.example.net मा HTTP GET सफल बनाउनुहोस्।",
+            "hints": [
+                "PC-Sales बाट आएको अनुरोध DNS-Internal मा नाम खोज चरणमा कहिले पनि आगे बढ्दैन — पृष्ठ नै कहिले पनि अनुरोध गरिंदैन।",
+                "DNS-Internal ले files.example.net को लागि A record राख्छ, तर यो एक ठेगानामा सङ्केत गर्छ जो Intranet-01 वास्तवमा रहेको ठाउँ होइन।",
+                "DNS-Internal मा, files.example.net → 10.0.22.1 A record हटाउनुहोस् र files.example.net → 10.0.13.1 थप्नुहोस्।"
+            ],
+            "explanation": "नामद्वारा वेब अनुरोधहरू पहिले DNS खोज आवश्यकता हुन्छ। यदि DNS सर्भरको A record गलत IP मा सङ्केत गर्छ, ब्राउजर वास्तविक वेब सर्भरमा कहिले पनि पुग्दैन। A record सधैं सर्भरको वास्तविक ठेगानासँग मेल खाएको छ भनी जाँच गर्नुहोस्।"
+        },
+        "nl": {
+            "title": "Files Site Unreachable",
+            "story": "Medewerkers van Sales rapporteren dat de \"files.example.net\" intranetpagina sinds vanochtend niet meer laadt op PC-Sales, hoewel het kantoornetwerk verder normaal lijkt te functioneren.",
+            "objective": "Een HTTP GET van PC-Sales naar files.example.net laten slagen.",
+            "hints": [
+                "Het verzoek van PC-Sales komt niet verder dan de naamszoekstap op DNS-Internal — de pagina zelf wordt nooit aangevraagd.",
+                "DNS-Internal bevat een A-record voor files.example.net, maar dit wijst naar een adres dat niet is waar Intranet-01 werkelijk zich bevindt.",
+                "Verwijder op DNS-Internal het A-record files.example.net → 10.0.22.1 en voeg files.example.net → 10.0.13.1 toe."
+            ],
+            "explanation": "Webaanvragen op naam vereisen eerst een DNS-zoekopdracht. Als het A-record van de DNS-server naar het verkeerde IP-adres verwijst, bereikt de browser zelfs de echte webserver nooit. Controleer altijd of het A-record overeenkomt met het werkelijke adres van de server."
+        },
+        "no": {
+            "title": "Files Site Unreachable",
+            "story": "Salgspersonalet rapporterer at intranettsiden \"files.example.net\" har sluttet å laste på PC-Sales siden i morges, selv om kontornettverket ellers virker normalt.",
+            "objective": "Gjør en HTTP GET fra PC-Sales til files.example.net vellykket.",
+            "hints": [
+                "Forespørselen fra PC-Sales kommer aldri forbi navneslingssteget på DNS-Internal — siden blir aldri forespurt.",
+                "DNS-Internal har en A-record for files.example.net, men den peker til en adresse som ikke er der Intranet-01 faktisk befinner seg.",
+                "Fjern A-posten files.example.net → 10.0.22.1 på DNS-Internal og legg til files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Webforespørsler etter navn trenger først en DNS-oppslag. Hvis DNS-serverens A-record peker til feil IP-adresse, når nettleseren aldri den virkelige webserveren. Kontroller alltid at A-posten samsvarer med serverens faktiske adresse."
+        },
+        "or": {
+            "title": "Files Site Unreachable",
+            "story": "ବିକ୍ରୟ କର୍ମଚାରୀମାନେ ରିପୋର୍ଟ କରିଛନ୍ତି ଯେ \"files.example.net\" ଇନ୍ଟ୍ରାନେଟ ପୃଷ୍ଠା ଆଜ ସକାଳ ଠାରୁ PC-Sales ରେ ଲୋଡ ହେବା ବନ୍ଦ ହୋଇଯାଇଛି, ଯଦିଓ ଅଫିସ ନେଟୱାର୍କ ଅନ୍ୟତ୍ର ସାଧାରଣ ମନେ ହୁଏ।",
+            "objective": "PC-Sales ରୁ files.example.net ଏ HTTP GET ସଫଳ କର।",
+            "hints": [
+                "PC-Sales ରୁ ଆସିବା ଅନୁରୋଧ DNS-Internal ରେ ନାମ ଲୁକଅପ ପର୍ଯ୍ୟାୟରେ ମିଶି ଯାଏ — ପୃଷ୍ଠା ମୋଟେ ଅନୁରୋଧ କରାଯାଏ ନାହିଁ।",
+                "DNS-Internal ଠାରେ files.example.net ପାଇଁ ଏକ A record ରହିଛି, ତେବେ ଏହା ଏକ ଠିକଣାକୁ ନିର୍ଦ୍ଦେଶ କରେ ଯାହା Intranet-01 ବାସ୍ତବରେ ଥିବା ଜାଗା ନୁହେଁ।",
+                "DNS-Internal ରେ, files.example.net → 10.0.22.1 A record ଅପସାରଣ କରନ୍ତୁ ଏବଂ files.example.net → 10.0.13.1 ଯୋଡ଼ନ୍ତୁ।"
+            ],
+            "explanation": "ନାମ ଦ୍ୱାରା ୱେବ ଅନୁରୋଧ ପ୍ରଥମେ DNS ଲୁକଅପ ଆବଶ୍ୟକ ଅଟେ। ଯଦି DNS ସର୍ଭରର A record ଭୁଲ IP କୁ ନିର୍ଦ୍ଦେଶ କରେ, ତେବେ ବ୍ରାଉଜର ପ୍ରକୃତ ୱେବ ସର୍ଭରକୁ କଦାଚିତ ପହଞ୍ଚେ ନାହିଁ। ସର୍ବଦା ଯାଞ୍ଚ କରନ୍ତୁ ଯେ A record ସର୍ଭରର ଆସଲ ଠିକଣା ସହ ମେଳ ଖାଏ।"
+        },
+        "pa": {
+            "title": "ਫਾਈਲਾਂ ਦੀ ਸਾਈਟ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ",
+            "story": "ਵਿਕਰੇਤਾ ਸਟਾਫ ਦੱਸ ਰਹੇ ਹਨ ਕਿ \"files.example.net\" ਇਨਟ੍ਰਾਨੈੱਟ ਪੰਨਾ PC-Sales 'ਤੇ ਅੱਜ ਸਵੇਰ ਤੋਂ ਲੋਡ ਹੋਣਾ ਬੰਦ ਹੋ ਗਿਆ ਹੈ, ਭਾਵੇਂ ਦਫ਼ਤਰ ਦਾ ਅਖੰਡ ਨੈੱਟਵਰਕ ਠੀਕ ਲੱਗ ਰਿਹਾ ਹੈ।",
+            "objective": "PC-Sales ਤੋਂ files.example.net ਤੱਕ HTTP GET ਸਫਲ ਕਰੋ।",
+            "hints": [
+                "PC-Sales ਤੋਂ ਬੇਨਤੀ DNS-Internal 'ਤੇ ਨਾਮ ਖੋਜ ਪੜਾਅ ਤੋਂ ਅੱਗੇ ਨਹੀਂ ਜਾਂਦੀ — ਪੰਨਾ ਖੁਦ ਕਦੇ ਮੰਗਿਆ ਨਹੀਂ ਜਾਂਦਾ।",
+                "DNS-Internal ਕੋਲ files.example.net ਲਈ ਇੱਕ A ਰਿਕਾਰਡ ਹੈ, ਪਰ ਇਹ ਉਸ ਪਤੇ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦਾ ਹੈ ਜੋ Intranet-01 ਅਸਲ ਵਿੱਚ ਜਿੱਥੇ ਹੈ ਉੱਥੇ ਨਹੀਂ ਹੈ।",
+                "DNS-Internal 'ਤੇ, A ਰਿਕਾਰਡ files.example.net → 10.0.22.1 ਹਟਾਓ ਅਤੇ files.example.net → 10.0.13.1 ਜੋੜੋ।"
+            ],
+            "explanation": "ਨਾਮ ਦੁਆਰਾ ਵੈਬ ਬੇਨਤੀਆਂ ਨੂੰ ਪਹਿਲਾਂ DNS ਖੋਜ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। ਜੇ DNS ਸਰਵਰ ਦਾ A ਰਿਕਾਰਡ ਗਲਤ IP ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦਾ ਹੈ, ਤਾਂ ਬ੍ਰਾਊਜ਼ਰ ਅਸਲੀ ਵੈਬ ਸਰਵਰ ਤੱਕ ਪਹੁੰਚ ਹੀ ਨਹੀਂ ਪਾਉਂਦਾ। ਹਮੇਸ਼ਾ ਜਾਂਚ ਕਰੋ ਕਿ A ਰਿਕਾਰਡ ਸਰਵਰ ਦੇ ਅਸਲ ਪਤੇ ਨਾਲ ਮੇਲ ਖਾਂਦਾ ਹੈ।"
+        },
+        "pl": {
+            "title": "Witryna plików niedostępna",
+            "story": "Pracownicy sprzedaży zgłaszają, że strona intranetowa \"files.example.net\" przestała się ładować na PC-Sales od tego ranka, mimo że reszta sieci biurowej wydaje się działać normalnie.",
+            "objective": "Wykonaj HTTP GET z PC-Sales na files.example.net.",
+            "hints": [
+                "Żądanie z PC-Sales nigdy nie przechodzi poza etap wyszukiwania nazwy na DNS-Internal — sama strona nigdy nie jest żądana.",
+                "DNS-Internal posiada rekord A dla files.example.net, ale wskazuje na adres, który nie jest tam, gdzie faktycznie znajduje się Intranet-01.",
+                "Na DNS-Internal usuń rekord A files.example.net → 10.0.22.1 i dodaj files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Żądania internetowe po nazwie wymagają najpierw wyszukiwania DNS. Jeśli rekord A serwera DNS wskazuje na zły adres IP, przeglądarka nigdy nawet nie dotrze do rzeczywistego serwera internetowego. Zawsze sprawdzaj, czy rekord A zgadza się z rzeczywistym adresem serwera."
+        },
+        "rm": {
+            "title": "Pagina da files n'è betg accessibla",
+            "story": "Ils collaborators da la venda rapportajan che la pagina d'intranet \"files.example.net\" n'è pli chargada sin PC-Sales dapi questa matginatga, buca che la rest da la rait da l'uffizi sembrass funcziunar normalmaing.",
+            "objective": "Exequir in HTTP GET da PC-Sales sin files.example.net.",
+            "hints": [
+                "La dumanda da PC-Sales n'arriva mai pasa il pass da la tschertga da numn sin DNS-Internal — la pagina stessa n'è mai dumandada.",
+                "DNS-Internal ha in document A per files.example.net, ma el s'annunzia ad ina adressa che n'è betg là, pur che Intranet-01 realmain es.",
+                "Sin DNS-Internal, elimina il document A files.example.net → 10.0.22.1 e agiunta files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Dumandas da web per numn ston emprender ina tschertga DNS. Sch'il document A da la sera DNS s'annunzia ad in IP sbagliadi, il navigatur n'arriva mai a la sera da web reala. Controllescha adina che il document A correspunda a l'adressa reala da la sera."
+        },
+        "ro": {
+            "title": "Site-ul de fișiere inaccesibil",
+            "story": "Personalul de vânzări raportează că pagina de intranet \"files.example.net\" a încetit să se încarce pe PC-Sales de azi dimineață, deși restul rețelei de birou pare să funcționeze normal.",
+            "objective": "Executați un HTTP GET de pe PC-Sales la files.example.net cu succes.",
+            "hints": [
+                "Cererea de la PC-Sales nu trece niciodată dincolo de etapa de căutare de nume la DNS-Internal — pagina în sine nu este niciodată solicitată.",
+                "DNS-Internal deține un înregistrare A pentru files.example.net, dar aceasta indică o adresă care nu este locul unde Intranet-01 se află de fapt.",
+                "Pe DNS-Internal, eliminați înregistrarea A files.example.net → 10.0.22.1 și adăugați files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Cererile web după nume necesită mai întâi o căutare DNS. Dacă înregistrarea A a serverului DNS indică o adresă IP incorectă, browserul nu ajunge niciodată la serverul web real. Verificați întotdeauna că înregistrarea A corespunde adresei reale a serverului."
+        },
+        "si": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "sk": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "sl": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "sq": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "sr": {
+            "title": "Files Site Unreachable",
+            "story": "Sales staff report that the \"files.example.net\" intranet page has stopped loading on PC-Sales since this morning, even though the office network otherwise seems normal.",
+            "objective": "Make an HTTP GET from PC-Sales to files.example.net succeed.",
+            "hints": [
+                "The request from PC-Sales never gets past the name lookup step at DNS-Internal — the page itself is never requested.",
+                "DNS-Internal holds an A record for files.example.net, but it points to an address that is not where Intranet-01 actually lives.",
+                "On DNS-Internal, remove the A record files.example.net → 10.0.22.1 and add files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Web requests by name first need a DNS lookup. If the DNS server's A record points to the wrong IP, the browser never even reaches the real web server. Always check that the A record matches the server's actual address."
+        },
+        "sv": {
+            "title": "Filwebbplats kan inte nås",
+            "story": "Försäljningspersonalen rapporterar att intranetssidan \"files.example.net\" har slutat att läsas in på PC-Sales sedan denna morgon, trots att kontornätverket annars verkar fungera normalt.",
+            "objective": "Gör så att en HTTP GET från PC-Sales till files.example.net lyckas.",
+            "hints": [
+                "Förfrågan från PC-Sales kommer aldrig förbi namnuppslagningssteget vid DNS-Internal — själva sidan efterfrågas aldrig.",
+                "DNS-Internal innehåller en A-post för files.example.net, men den pekar på en adress där Intranet-01 faktiskt inte befinner sig.",
+                "På DNS-Internal, ta bort A-posten files.example.net → 10.0.22.1 och lägg till files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Webförfrågningar efter namn kräver först en DNS-uppslagning. Om DNS-serverns A-post pekar på fel IP-adress når webbläsaren aldrig den riktiga webbservern. Kontrollera alltid att A-posten motsvarar serverns faktiska adress."
+        },
+        "sw": {
+            "title": "Tovuti ya Faili Haiwezi Kufikia",
+            "story": "Wafanyakazi wa mauzo wanasema kuwa ukurasa wa intranet \"files.example.net\" umehitaji kuwa ukiwa umepakua kwenye PC-Sales tangu asubuhi, ingawa mtandao wa ofisi unakumbe kawaida.",
+            "objective": "Fanya HTTP GET kutoka PC-Sales kwa files.example.net iwe na mafanikio.",
+            "hints": [
+                "Hilo jitihada kutoka PC-Sales hapana kupita hatua ya utafutaji wa jina kwa DNS-Internal — ukurasa yenyewe haunakoshindwa kuulizwa.",
+                "DNS-Internal ina rekodi ya A kwa files.example.net, lakini inaonyesha anwani ambayo Intranet-01 halisi haipo.",
+                "Kwenye DNS-Internal, ondoa rekodi ya A files.example.net → 10.0.22.1 na ongeza files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Mahitaji ya wavuti kwa jina kwanza yanahitaji kutafutwa kwa DNS. Ikiwa rekodi ya A ya seva ya DNS inaonyesha IP sahihi, kivinjari kamwe haikatili seva halisi ya wavuti. Daima angalia kuwa rekodi ya A inakamatia anwani halisi ya seva."
+        },
+        "ta": {
+            "title": "கோப்புகள் தளம் அணுகமுடியாது",
+            "story": "விற்பனை பணியாளர்கள் \"files.example.net\" இன்ட்ரானெட் பக்கம் PC-Sales இல் இன்று காலை முதல் மெல்ல திறக்கத் தொடங்கியிருப்பது குறிப்பிட்டுள்ளனர், இருப்பினும் அலுவலக நெட்வொர்க் வேறுவிதம் சாதாரணமாக தெரிகிறது.",
+            "objective": "PC-Sales இலிருந்து files.example.net க்கு HTTP GET செயலாக்கத்தை வெற்றிகரமாக செய்யவும்.",
+            "hints": [
+                "PC-Sales இலிருந்து வந்த வேண்டுகோள் DNS-Internal இல் பெயர் தேடுதல் படிக்கு அப்பால் செல்வதில்லை — பக்கம் வேறுபோது வேண்டப்படுவதில்லை.",
+                "DNS-Internal இல் files.example.net க்கான A பதிவு உள்ளது, ஆனால் அது Intranet-01 உண்மையில் வசிக்கும் முகவரியை சுட்டிக்காட்டுவதில்லை.",
+                "DNS-Internal இல், files.example.net → 10.0.22.1 A பதிவை நீக்கி files.example.net → 10.0.13.1 ஐச் சேர்க்கவும்."
+            ],
+            "explanation": "பெயரின் மூலம் வலை வேண்டுகோள்கள் முதலில் DNS தேடுதல் தேவைப்படுகிறது. DNS சர்வரின் A பதிவு தவறான IP ஐ சுட்டிக்காட்டினால், உலாவி உண்மையான வலை சர்வரை அடையுமே அடையாது. A பதிவு சர்வரின் உண்மையான முகவரியுடன் பொருந்துகிறதா என்பதை எப்போதும் சரிபார்க்கவும்."
+        },
+        "te": {
+            "title": "ఫైల్‌ల సైట్ చేరుకోలేనిది",
+            "story": "విక్రయ సిబ్బంది \"files.example.net\" ఇంట్రానెట్ పేజీ PC-Sales లో ఈ ఉదయం నుండి లోడ్ చేయడం ఆపివేయబడిందని నివేదించారు, అయితే కార్యాలయ నెట్‌వర్క్ లేకపోతే సాధారణంగా సరిగ్గా ఉంది.",
+            "objective": "PC-Sales నుండి files.example.net కు HTTP GET విజయవంతం చేయండి.",
+            "hints": [
+                "PC-Sales నుండి వచ్చిన అభ్యర్థన DNS-Internal వద్ద పేరు శోధన దశ ద్వారా సాగదు — పేజీ కూడా ఎప్పుడూ అభ్యర్థించబడదు.",
+                "DNS-Internal files.example.net కోసం A రికార్డ్‌ను కలిగి ఉంది, కానీ ఇది Intranet-01 వాస్తవానికి ఉన్న చిరునామాను సూచించదు.",
+                "DNS-Internal లో, files.example.net → 10.0.22.1 A రికార్డ్‌ను తీసివేసి files.example.net → 10.0.13.1 ని జోడించండి."
+            ],
+            "explanation": "పేరు ద్వారా వెబ్ అభ్యర్థనలకు ముందుగా DNS శోధన అవసరం. DNS సర్వర్ యొక్క A రికార్డ్ తప్పు IP కు సూచిస్తే, బ్రౌజర్ నిజమైన వెబ్ సర్వర్ కు చేరుకోదు. A రికార్డ్ సర్వర్ యొక్క సరైన చిరునామకు సరిపోతుందో లేదో ఎల్లప్పుడు తనిఖీ చేయండి."
+        },
+        "uk": {
+            "title": "Сайт файлів недоступний",
+            "story": "Персонал відділу продажів повідомляє, що інтранет-сторінка \"files.example.net\" перестала завантажуватися на PC-Sales з цього ранку, хоча решта мережі офісу, схоже, працює нормально.",
+            "objective": "Забезпечте успішне виконання HTTP GET з PC-Sales на files.example.net.",
+            "hints": [
+                "Запит із PC-Sales ніколи не проходить крок пошуку імені на DNS-Internal — сама сторінка ніколи не запитується.",
+                "DNS-Internal має A запис для files.example.net, але він вказує на адресу, де Intranet-01 насправді не розташований.",
+                "На DNS-Internal видаліть A запис files.example.net → 10.0.22.1 та додайте files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Веб-запити за іменем спочатку потребують пошуку DNS. Якщо A запис DNS сервера вказує на неправильну IP адресу, браузер ніколи не досягне справжнього веб-сервера. Завжди перевіряйте, що A запис відповідає фактичній адресі сервера."
+        },
+        "ur": {
+            "title": "فائلوں والی سائٹ تک رسائی نہیں",
+            "story": "سیلز کے عملہ نے بتایا ہے کہ \"files.example.net\" انٹرنیٹ صفحہ PC-Sales پر صبح سے لوڈ نہیں ہو رہا، اگرچہ دفتر کا نیٹ ورک بہترین لگ رہا ہے۔",
+            "objective": "PC-Sales سے files.example.net کو HTTP GET درخواست کامیاب بنائیں۔",
+            "hints": [
+                "PC-Sales کی درخواست DNS-Internal میں نام کی تلاش کے مرحلے سے آگے نہیں جاتی — صفحہ کبھی درخواست نہیں ہوتا ہے۔",
+                "DNS-Internal کے پاس files.example.net کے لیے A ریکارڈ ہے، لیکن یہ ایک ایسے پتے کی طرف اشارہ کرتا ہے جہاں Intranet-01 اصل میں نہیں ہے۔",
+                "DNS-Internal پر، A ریکارڈ files.example.net → 10.0.22.1 کو ہٹائیں اور files.example.net → 10.0.13.1 شامل کریں۔"
+            ],
+            "explanation": "نام سے وب درخواستوں کو پہلے DNS کی تلاش کی ضرورت ہے۔ اگر DNS Server کا A ریکارڈ غلط IP کی طرف اشارہ کرتا ہے، تو براؤزر اصل ویب Server تک کبھی نہیں پہنچتا۔ ہمیشہ چیک کریں کہ A ریکارڈ Server کے اصل پتے سے میل کھاتا ہے۔"
+        },
+        "zu": {
+            "title": "Isayithi Sefayili Akufinyelwe",
+            "story": "Abasebenzi bentshenziso beshilo ukuthi ikhasi lentanethi \"files.example.net\" akukalukhuleka ku-PC-Sales kusukela nangomusa, nangoba inetwaki yoofisi ingabonakali njengakuyilo.",
+            "objective": "Yenza ukuthi i-HTTP GET kusuka ku-PC-Sales kuya ku-files.example.net yaphumelele.",
+            "hints": [
+                "Isicelo esisuka ku-PC-Sales akukho qha kulelinye elandela isinyatho sokuthola igama ku-DNS-Internal — ikhasi akukacelwa kangako.",
+                "I-DNS-Internal inorekodi ka-A ye-files.example.net, kodwa itholakala ku-akheli elinganele lapho i-Intranet-01 iphila khona.",
+                "Ku-DNS-Internal, susa irekhodi ka-A files.example.net → 10.0.22.1 bese ulongeza files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Izicelo zewesi kuqala zidinga ukuthola kwe-DNS. Uma irekhodi ye-A yoServer yeDNS itholakala ku-akheli elingelilo elilungile, isikhwele aksikaze kufike kuServer yewesi yokweli. Njalo hlola ukuthi irekhodi ye-A ihlanganelanisa neakheli lenkonzo lenye elenele."
+        },
+        "id": {
+            "title": "Situs Files Tidak Terjangkau",
+            "story": "Staf penjualan melaporkan bahwa halaman intranet \"files.example.net\" tidak lagi dimuat di PC-Sales sejak pagi ini, meskipun jaringan kantor sebaliknya tampak normal.",
+            "objective": "Buat HTTP GET dari PC-Sales ke files.example.net berhasil.",
+            "hints": [
+                "Permintaan dari PC-Sales tidak pernah melampaui tahap pencarian nama di DNS-Internal — halaman itu sendiri tidak pernah diminta.",
+                "DNS-Internal memiliki record A untuk files.example.net, tetapi record tersebut menunjuk ke alamat yang bukan tempat Intranet-01 sebenarnya berada.",
+                "Pada DNS-Internal, hapus record A files.example.net → 10.0.22.1 dan tambahkan files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Permintaan web berdasarkan nama pertama memerlukan pencarian DNS. Jika record A Server DNS menunjuk ke IP yang salah, browser tidak pernah mencapai Server web sebenarnya. Selalu periksa bahwa record A cocok dengan alamat sebenarnya dari Server."
+        },
+        "mk": {
+            "title": "Веб-сајтот на фајлови не е достапен",
+            "story": "Персоналот од продажба пријавува дека страницата на интранет \"files.example.net\" престанала да се вчитува на PC-Sales од денеска наутро, иако офис мрежата иначе изгледа нормална.",
+            "objective": "Направи HTTP GET од PC-Sales до files.example.net да успеа.",
+            "hints": [
+                "Барањето од PC-Sales никогаш не поминува покрај фазата на пребарување на името на DNS-Internal — самата страница никогаш не се бара.",
+                "DNS-Internal содржи A запис за files.example.net, но той укажува на адреса каде не живее вистински Intranet-01.",
+                "На DNS-Internal, избриши го A записот files.example.net → 10.0.22.1 и додај files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Веб-барањата по име прво имаат потреба од DNS пребарување. Ако A записот на DNS сервер укажува на погрешна IP адреса, прелистувачот никогаш не стигнува до вистинскиот веб Server. Секогаш проверете дека A записот се совпаѓа со вистинската адреса на Server."
+        },
+        "pt-PT": {
+            "title": "Site de ficheiros inacessível",
+            "story": "O pessoal de vendas reporta que a página de intranet \"files.example.net\" deixou de carregar em PC-Sales desde esta manhã, apesar de a rede do escritório parecer normal.",
+            "objective": "Faça um HTTP GET de PC-Sales para files.example.net com sucesso.",
+            "hints": [
+                "O pedido de PC-Sales nunca ultrapassa a fase de pesquisa de nome em DNS-Internal — a página em si nunca é solicitada.",
+                "DNS-Internal contém um registo A para files.example.net, mas aponta para um endereço que não é onde Intranet-01 realmente está.",
+                "Em DNS-Internal, remova o registo A files.example.net → 10.0.22.1 e adicione files.example.net → 10.0.13.1."
+            ],
+            "explanation": "Pedidos web por nome primeiro necessitam de uma pesquisa DNS. Se o registo A do Servidor DNS apontar para um IP errado, o navegador nunca atinge o Server web real. Verifique sempre que o registo A corresponde ao endereço real do Server."
+        }
+    }
+}
