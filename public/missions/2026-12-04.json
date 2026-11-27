@@ -1,0 +1,1324 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-12-04",
+    "number": 75,
+    "difficulty": 4,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": false,
+    "archetype": "two_sites",
+    "faultIds": [
+        "wrong_next_hop"
+    ],
+    "concepts": [
+        "static-route",
+        "next-hop"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Finance",
+                "x": 200.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.12.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.12.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch1": {
+                "id": "dev-switch1",
+                "type": "L2_SWITCH",
+                "name": "Switch-HQ",
+                "x": 200.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-switch1-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch1-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch1",
+                        "macAddress": "02:00:00:00:02:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-HQ",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.12.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:01",
+                        "ipAddress": "10.0.28.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:03:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.29.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.28.2",
+                            "portIndex": 1
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router2": {
+                "id": "dev-router2",
+                "type": "ROUTER",
+                "name": "Router-Branch",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router2-p0",
+                        "index": 0,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.28.2",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p1",
+                        "index": 1,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:01",
+                        "ipAddress": "10.0.29.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p2",
+                        "index": 2,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p3",
+                        "index": 3,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p4",
+                        "index": 4,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p5",
+                        "index": 5,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p6",
+                        "index": 6,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router2-p7",
+                        "index": 7,
+                        "deviceId": "dev-router2",
+                        "macAddress": "02:00:00:00:04:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [
+                        {
+                            "network": "10.0.12.0",
+                            "mask": "255.255.255.0",
+                            "nextHop": "10.0.28.1",
+                            "portIndex": 5
+                        }
+                    ],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-switch2": {
+                "id": "dev-switch2",
+                "type": "L2_SWITCH",
+                "name": "Switch-Branch",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-switch2-p0",
+                        "index": 0,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p1",
+                        "index": 1,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p2",
+                        "index": 2,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p3",
+                        "index": 3,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p4",
+                        "index": 4,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p5",
+                        "index": 5,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p6",
+                        "index": 6,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-switch2-p7",
+                        "index": 7,
+                        "deviceId": "dev-switch2",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Portal-01",
+                "x": 200.0,
+                "y": 1320.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.29.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.29.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-switch1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-switch1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-switch1-p1",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-switch1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-router1-p1",
+                "targetPortId": "dev-router2-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-router2",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-router2-p1",
+                "targetPortId": "dev-switch2-p0",
+                "sourceDeviceId": "dev-router2",
+                "targetDeviceId": "dev-switch2",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-switch2-p1",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-switch2",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 2
+    },
+    "text": {
+        "en": {
+            "title": "Branch Office Cut Off From HQ Portal",
+            "story": "Staff at the branch office report that Portal-01 never responds when PC-Finance at headquarters tries to open it. The issue has persisted since this morning, no matter who tries.",
+            "objective": "Restore the HTTP connection from PC-Finance to Portal-01.",
+            "hints": [
+                "The reply from Portal-01 never makes it back out through Router-Branch — the return traffic stalls there before reaching PC-Finance.",
+                "Router-Branch has a static route toward the HQ network, but it is bound to the wrong outgoing port, so the next hop can't actually be reached that way and the reply gets dropped.",
+                "On Router-Branch, delete the existing route to 10.0.12.0/255.255.255.0, then add a new static route to 10.0.12.0/255.255.255.0 via 10.0.28.1 on port 0."
+            ],
+            "explanation": "A static route's next hop must be reachable through the port it is actually bound to. Here Router-Branch's route toward HQ pointed at the right next-hop address but the wrong outgoing port, so return traffic was dropped. Always check that a route's port and next hop agree."
+        },
+        "ja": {
+            "title": "支社がHQポータルに接続できない",
+            "story": "支社のスタッフから、本社のPC-FinanceでPortal-01を開こうとしても応答がないと報告がありました。今朝から誰が試しても状況は変わりません。",
+            "objective": "PC-FinanceからPortal-01へのHTTP接続を復旧させる。",
+            "hints": [
+                "Portal-01からの応答がRouter-Branchを通って外に出て行けず、PC-Financeに届く前にそこで止まっています。",
+                "Router-BranchにはHQネットワーク宛ての静的ルートがありますが、誤った出力ポートに紐付けられているため、実際にはその経路で中継先に到達できず、応答が破棄されています。",
+                "Router-Branchで、10.0.12.0/255.255.255.0 への既存のルートを削除し、新しく 10.0.12.0/255.255.255.0 を、中継先(ネクストホップ) 10.0.28.1、ポート0 で追加してください。"
+            ],
+            "explanation": "静的ルートの中継先(ネクストホップ)は、実際に紐付けられているポートを通じて到達可能でなければなりません。今回はRouter-BranchのHQ向けルートが中継先アドレスは正しいものの、出力ポートが誤っていたため、応答トラフィックが破棄されていました。ルートのポートと中継先が一致しているか、必ず確認するようにしましょう。"
+        },
+        "zh-CN": {
+            "title": "分公司无法访问总部 Portal-01",
+            "story": "分公司员工反映，总部的 PC-Finance 无法访问 Portal-01，从今天上午开始就一直无响应。无论谁尝试都是这样。",
+            "objective": "恢复 PC-Finance 到 Portal-01 的 HTTP 连接。",
+            "hints": [
+                "Portal-01 的回复无法通过 Router-Branch 返回——返回流量在那里停止，无法到达 PC-Finance。",
+                "Router-Branch 有一条指向总部网络的静态路由，但绑定到了错误的出站端口，所以下一跳无法通过该方式到达，回复被丢弃。",
+                "在 Router-Branch 上，删除到 10.0.12.0/255.255.255.0 的现有路由，然后添加新的静态路由到 10.0.12.0/255.255.255.0，下一跳 10.0.28.1，端口号 0。"
+            ],
+            "explanation": "静态路由的下一跳必须能通过绑定的端口到达。这里 Router-Branch 的总部路由指向了正确的下一跳地址，但使用了错误的出站端口，导致返回流量被丢弃。始终要检查路由的端口号和下一跳是否匹配。"
+        },
+        "zh-TW": {
+            "title": "分公司無法連線到總部 Portal-01",
+            "story": "分公司員工反映，總部的 PC-Finance 無法連線到 Portal-01，從今天上午開始就一直無回應。無論誰嘗試都是這樣。",
+            "objective": "恢復 PC-Finance 到 Portal-01 的 HTTP 連線。",
+            "hints": [
+                "Portal-01 的回應無法通過 Router-Branch 返回——回傳流量在那裡停止，無法到達 PC-Finance。",
+                "Router-Branch 有一條指向總部網路的靜態路由，但綁定到了錯誤的出站連接埠，所以下一跳無法通過該方式到達，回應被丟棄。",
+                "在 Router-Branch 上，刪除到 10.0.12.0/255.255.255.0 的現有路由，然後新增靜態路由到 10.0.12.0/255.255.255.0，下一跳 10.0.28.1，連接埠號 0。"
+            ],
+            "explanation": "靜態路由的下一跳必須能通過綁定的連接埠到達。這裡 Router-Branch 的總部路由指向了正確的下一跳位址，但使用了錯誤的出站連接埠，導致回傳流量被丟棄。始終要檢查路由的連接埠號和下一跳是否相符。"
+        },
+        "ko": {
+            "title": "지점 사무실에서 본사 Portal-01 접속 불가",
+            "story": "지점 사무실 직원들이 본사의 PC-Finance에서 Portal-01에 접속할 수 없다고 보고했습니다. 오늘 아침부터 계속 응답이 없습니다. 누가 시도하든 같은 문제가 발생합니다.",
+            "objective": "PC-Finance에서 Portal-01로의 HTTP 연결 복구",
+            "hints": [
+                "Portal-01의 응답이 Router-Branch를 통해 반환되지 않습니다. 반환 트래픽이 거기서 정지하여 PC-Finance에 도달하지 못합니다.",
+                "Router-Branch에는 본사 네트워크로 향하는 정적 라우트가 있지만, 잘못된 아웃바운드 포트에 바인딩되어 있어서 다음 홉을 실제로 도달할 수 없고 응답이 삭제됩니다.",
+                "Router-Branch에서 10.0.12.0/255.255.255.0로의 기존 라우트를 삭제한 후, 포트 0을 통해 10.0.28.1의 다음 홉으로 10.0.12.0/255.255.255.0로의 새로운 정적 라우트를 추가하십시오."
+            ],
+            "explanation": "정적 라우트의 다음 홉은 바인딩된 포트를 통해 도달 가능해야 합니다. 여기서 Router-Branch의 본사 라우트는 올바른 다음 홉 주소를 가리키지만 잘못된 아웃바운드 포트를 사용하여 반환 트래픽이 삭제됩니다. 항상 라우트의 포트 번호와 다음 홉이 일치하는지 확인하세요."
+        },
+        "es": {
+            "title": "Oficina Sucursal Desconectada del Portal HQ",
+            "story": "El personal de la oficina sucursal reporta que Portal-01 nunca responde cuando PC-Finance en la sede central intenta abrirlo. El problema persiste desde esta mañana, sin importar quién lo intente.",
+            "objective": "Restaurar la conexión HTTP desde PC-Finance a Portal-01.",
+            "hints": [
+                "La respuesta de Portal-01 nunca sale a través de Router-Branch — el tráfico de retorno se detiene allí antes de llegar a PC-Finance.",
+                "Router-Branch tiene una ruta estática hacia la red HQ, pero está vinculada al puerto saliente incorrecto, por lo que el siguiente salto en realidad no se puede alcanzar de esa manera y la respuesta se descarta.",
+                "En Router-Branch, elimine la ruta existente a 10.0.12.0/255.255.255.0, luego agregue una nueva ruta estática a 10.0.12.0/255.255.255.0 vía 10.0.28.1 en puerto 0."
+            ],
+            "explanation": "El siguiente salto de una ruta estática debe ser alcanzable a través del puerto al que está vinculado. Aquí la ruta de Router-Branch hacia HQ apuntaba a la dirección del siguiente salto correcta pero al puerto saliente incorrecto, por lo que el tráfico de retorno fue descartado. Siempre verifique que el puerto y el siguiente salto de una ruta sean compatibles."
+        },
+        "pt-BR": {
+            "title": "Escritório da Filial Desconectado do Portal da Matriz",
+            "story": "A equipe do escritório da filial relata que Portal-01 nunca responde quando PC-Finance na matriz tenta abri-lo. O problema persiste desde esta manhã, independentemente de quem tente.",
+            "objective": "Restaurar a conexão HTTP de PC-Finance para Portal-01.",
+            "hints": [
+                "A resposta de Portal-01 nunca sai através de Router-Branch — o tráfego de retorno fica preso lá antes de chegar a PC-Finance.",
+                "Router-Branch tem uma rota estática em direção à rede da matriz, mas está vinculada à porta de saída errada, então o próximo salto não pode ser realmente alcançado dessa forma e a resposta é descartada.",
+                "Em Router-Branch, delete a rota existente para 10.0.12.0/255.255.255.0 e adicione uma nova rota estática para 10.0.12.0/255.255.255.0 via 10.0.28.1 na porta 0."
+            ],
+            "explanation": "O próximo salto de uma rota estática deve ser alcançável através da porta à qual está vinculado. Aqui a rota de Router-Branch em direção à matriz apontava para o endereço do próximo salto correto, mas para a porta de saída errada, por isso o tráfego de retorno foi descartado. Sempre verifique se a porta e o próximo salto de uma rota são compatíveis."
+        },
+        "de": {
+            "title": "Filiale von HQ-Portal abgeschnitten",
+            "story": "Mitarbeiter in der Filiale berichten, dass Portal-01 nie antwortet, wenn PC-Finance in der Zentrale versucht, es zu öffnen. Das Problem besteht seit heute Morgen, unabhängig davon, wer es versucht.",
+            "objective": "Stellen Sie die HTTP-Verbindung von PC-Finance zu Portal-01 wieder her.",
+            "hints": [
+                "Die Antwort von Portal-01 kommt nie durch Router-Branch hinaus – der Rückverkehr staut sich dort, bevor er PC-Finance erreicht.",
+                "Router-Branch hat eine statische Route zum HQ-Netzwerk, diese ist aber an die falsche ausgehende Portnummer gebunden, daher kann der Nächste Hop auf diese Weise nicht erreicht werden und die Antwort wird verworfen.",
+                "Löschen Sie auf Router-Branch die vorhandene Route zu 10.0.12.0/255.255.255.0, und fügen Sie dann eine neue statische Route zu 10.0.12.0/255.255.255.0 über den Nächsten Hop 10.0.28.1 auf Portnummer 0 hinzu."
+            ],
+            "explanation": "Der Nächste Hop einer statischen Route muss über die Portnummer erreichbar sein, an die sie gebunden ist. Hier zeigte Router-Branchs Route zur Zentrale auf die richtige Nächster-Hop-Adresse, aber auf die falsche ausgehende Portnummer, daher wurde der Rückverkehr verworfen. Überprüfen Sie immer, dass die Portnummer und der Nächste Hop einer Route übereinstimmen."
+        },
+        "fr": {
+            "title": "Bureau succursale coupé du portail du siège",
+            "story": "Le personnel du bureau succursale signale que Portal-01 ne répond jamais quand PC-Finance au siège essaie de l'ouvrir. Le problème persiste depuis ce matin, peu importe qui essaie.",
+            "objective": "Restaurez la connexion HTTP de PC-Finance vers Portal-01.",
+            "hints": [
+                "La réponse de Portal-01 ne sort jamais par Router-Branch — le trafic de retour s'arrête là avant d'atteindre PC-Finance.",
+                "Router-Branch dispose d'une route statique vers le réseau du siège, mais elle est liée au mauvais numéro de port sortant, donc le saut suivant ne peut pas réellement être atteint de cette manière et la réponse est abandonnée.",
+                "Sur Router-Branch, supprimez la route existante vers 10.0.12.0/255.255.255.0, puis ajoutez une nouvelle route statique vers 10.0.12.0/255.255.255.0 via le saut suivant 10.0.28.1 sur le numéro de port 0."
+            ],
+            "explanation": "Le saut suivant d'une route statique doit être accessible via le numéro de port auquel elle est effectivement liée. Ici, la route du siège de Router-Branch pointait vers la bonne adresse de saut suivant, mais vers le mauvais numéro de port sortant, donc le trafic de retour a été abandonné. Vérifiez toujours que le numéro de port et le saut suivant d'une route correspondent."
+        },
+        "hi": {
+            "title": "शाखा कार्यालय मुख्यालय पोर्टल से कट ऑफ है",
+            "story": "शाखा कार्यालय के कर्मचारी रिपोर्ट करते हैं कि जब मुख्यालय में PC-Finance Portal-01 को खोलने का प्रयास करता है तो यह कभी जवाब नहीं देता। यह समस्या आज सुबह से बनी हुई है, चाहे कोई भी प्रयास करे।",
+            "objective": "PC-Finance से Portal-01 तक का HTTP कनेक्शन पुनः स्थापित करें।",
+            "hints": [
+                "Portal-01 का जवाब कभी Router-Branch से बाहर नहीं निकलता — रिटर्न ट्रैफिक वहीं अटक जाता है और PC-Finance तक नहीं पहुंचता।",
+                "Router-Branch के पास मुख्यालय नेटवर्क की ओर एक स्थिर रूट है, लेकिन यह गलत आउटगोइंग पोर्ट नंबर से जुड़ा है, इसलिए अगला हॉप इस तरीके से वास्तव में नहीं पहुंचा जा सकता और जवाब हटा दिया जाता है।",
+                "Router-Branch पर, 10.0.12.0/255.255.255.0 के लिए मौजूदा रूट को हटाएं, फिर पोर्ट नंबर 0 पर अगला हॉप 10.0.28.1 के माध्यम से 10.0.12.0/255.255.255.0 के लिए एक नया स्थिर रूट जोड़ें।"
+            ],
+            "explanation": "एक स्थिर रूट का अगला हॉप उस पोर्ट नंबर के माध्यम से पहुंचने योग्य होना चाहिए जिससे वह वास्तव में जुड़ा है। यहां Router-Branch का मुख्यालय की ओर का रूट सही अगला हॉप पता निर्दिष्ट कर रहा था लेकिन गलत आउटगोइंग पोर्ट नंबर की ओर, इसलिए रिटर्न ट्रैफिक हटा दिया गया। हमेशा जांचें कि रूट का पोर्ट नंबर और अगला हॉप मेल खाते हों।"
+        },
+        "id": {
+            "title": "Kantor Cabang Terputus dari Portal Kantor Pusat",
+            "story": "Staf di kantor cabang melaporkan bahwa Portal-01 tidak pernah merespons ketika PC-Finance di kantor pusat mencoba membukanya. Masalah ini berlangsung sejak pagi ini, terlepas dari siapa yang mencoba.",
+            "objective": "Pulihkan koneksi HTTP dari PC-Finance ke Portal-01.",
+            "hints": [
+                "Balasan dari Portal-01 tidak pernah keluar melalui Router-Branch — lalu lintas kembali macet di sana sebelum mencapai PC-Finance.",
+                "Router-Branch memiliki rute statis menuju jaringan kantor pusat, tetapi terikat pada nomor port keluar yang salah, jadi hop berikutnya tidak dapat benar-benar dijangkau dengan cara itu dan balasan dijatuhkan.",
+                "Di Router-Branch, hapus rute yang ada ke 10.0.12.0/255.255.255.0, kemudian tambahkan rute statis baru ke 10.0.12.0/255.255.255.0 melalui hop berikutnya 10.0.28.1 pada nomor port 0."
+            ],
+            "explanation": "Hop berikutnya dari rute statis harus dapat dijangkau melalui nomor port tempatnya benar-benar terikat. Di sini rute kantor pusat Router-Branch menunjuk ke alamat hop berikutnya yang benar tetapi nomor port keluar yang salah, sehingga lalu lintas kembali dijatuhkan. Selalu periksa bahwa nomor port dan hop berikutnya rute sesuai."
+        },
+        "ru": {
+            "title": "Филиал отрезан от портала головного офиса",
+            "story": "Сотрудники филиала сообщают, что Portal-01 никогда не отвечает, когда PC-Finance в головном офисе пытается его открыть. Проблема возникла с утра, независимо от того, кто пытается.",
+            "objective": "Восстановите HTTP-соединение от PC-Finance к Portal-01.",
+            "hints": [
+                "Ответ от Portal-01 никогда не проходит через Router-Branch — возвратный трафик застревает там, прежде чем достичь PC-Finance.",
+                "Router-Branch имеет статический маршрут в сеть головного офиса, но он привязан к неправильному исходящему номеру порта, поэтому следующий узел фактически недостижим таким образом, и ответ отбрасывается.",
+                "На Router-Branch удалите существующий маршрут к 10.0.12.0/255.255.255.0, затем добавьте новый статический маршрут к 10.0.12.0/255.255.255.0 через следующий узел 10.0.28.1 на номер порта 0."
+            ],
+            "explanation": "Следующий узел статического маршрута должен быть достижим через номер порта, к которому он фактически привязан. Здесь маршрут Router-Branch к головному офису указывал на правильный адрес следующего узла, но на неправильный исходящий номер порта, поэтому возвратный трафик был отброшен. Всегда проверяйте соответствие номера порта и следующего узла маршрута."
+        },
+        "it": {
+            "title": "Filiale Staccata dal Portale HQ",
+            "story": "Il personale della filiale segnala che Portal-01 non risponde mai quando PC-Finance della sede centrale tenta di aprirlo. Il problema persiste da questa mattina, indipendentemente da chi prova.",
+            "objective": "Ripristinare la connessione HTTP da PC-Finance a Portal-01.",
+            "hints": [
+                "La risposta da Portal-01 non esce mai attraverso Router-Branch — il traffico di ritorno si blocca lì prima di raggiungere PC-Finance.",
+                "Router-Branch ha un percorso statico verso la rete HQ, ma è legato al Numero porta sbagliato, quindi il NeXt hop non può essere effettivamente raggiunto in questo modo e la risposta viene scartata.",
+                "Su Router-Branch, elimina il percorso esistente a 10.0.12.0/255.255.255.0, quindi aggiungi un nuovo percorso statico a 10.0.12.0/255.255.255.0 con NeXt hop 10.0.28.1 sulla porta 0."
+            ],
+            "explanation": "Il next hop di un percorso statico deve essere raggiungibile attraverso il Numero porta a cui è effettivamente legato. Qui il percorso di Router-Branch verso HQ puntava all'indirizzo next-hop corretto ma al Numero porta sbagliato, quindi il traffico di ritorno è stato scartato. Controlla sempre che il Numero porta e il next hop di un percorso siano coerenti."
+        },
+        "tr": {
+            "title": "Şube Ofisi HQ Portalından Kesildi",
+            "story": "Şube ofisindeki personel, merkezdeki PC-Finance Portal-01'i açmaya çalıştığında asla yanıt vermediğini bildiriyor. Sorun bu sabahtan beri devam ediyor; bu durumun nedeni kim olursa olsun.",
+            "objective": "PC-Finance'ten Portal-01'e HTTP bağlantısını geri yükle.",
+            "hints": [
+                "Portal-01'den gelen yanıt Router-Branch'ten çıkamıyor — dönüş trafiği PC-Finance'e ulaşmadan orada durmuyor.",
+                "Router-Branch'in HQ ağına giden bir statik rotası var, ancak yanlış giden Port numarasına bağlı, bu nedenle Sonraki sıçrama bu şekilde gerçekten ulaşılamaz ve yanıt atılır.",
+                "Router-Branch'te, 10.0.12.0/255.255.255.0'e mevcut rotayı sil, ardından 10.0.12.0/255.255.255.0'e Sonraki sıçrama 10.0.28.1 ile port 0 üzerinden yeni bir statik rota ekle."
+            ],
+            "explanation": "Bir statik rotanın Sonraki sıçraması, bağlı olduğu Port numarasından ulaşılabilir olmalıdır. Burada Router-Branch'in HQ'ya giden rotası doğru Sonraki sıçrama adresini gösteriyordu ancak yanlış giden Port numarasını gösteriyordu, bu nedenle dönüş trafiği atıldı. Her zaman bir rotanın Port numarası ve Sonraki sıçramasının uyumlu olup olmadığını kontrol et."
+        },
+        "th": {
+            "title": "สาขาถูกตัดจากพอร์ทัล HQ",
+            "story": "เจ้าหน้าที่สาขารายงานว่า Portal-01 ไม่ตอบสนองเมื่อ PC-Finance ที่สำนักงานใหญ่พยายามเปิดใช้งาน ปัญหานี้ยังคงเกิดขึ้นตั้งแต่เช้านี้ไม่ว่าใครจะลองใช้ก็ตาม",
+            "objective": "กู้คืนการเชื่อมต่อ HTTP จาก PC-Finance ไปยัง Portal-01",
+            "hints": [
+                "การตอบกลับจาก Portal-01 ไม่สามารถออกได้ผ่าน Router-Branch — ทราฟิกกลับจะค้างอยู่ก่อนถึง PC-Finance",
+                "Router-Branch มีเส้นทางคงที่ไปยังเครือข่าย HQ แต่ถูกผูกไว้กับหมายเลขพอร์ตที่ผิด ดังนั้น ฮ็อปถัดไป จึงไม่สามารถเข้าถึงได้ และการตอบกลับจะถูกทิ้ง",
+                "บน Router-Branch ให้ลบเส้นทางที่มีอยู่ไปยัง 10.0.12.0/255.255.255.0 จากนั้นเพิ่มเส้นทางคงที่ใหม่ไปยัง 10.0.12.0/255.255.255.0 โดยใช้ ฮ็อปถัดไป 10.0.28.1 บนพอร์ต 0"
+            ],
+            "explanation": "ฮ็อปถัดไปของเส้นทางคงที่จะต้องเข้าถึงได้ผ่านหมายเลขพอร์ตที่ผูกไว้ ที่นี่เส้นทางของ Router-Branch ไปยัง HQ ชี้ไปยังที่อยู่ ฮ็อปถัดไป ที่ถูกต้อง แต่หมายเลขพอร์ต ที่ผิด ดังนั้นทราฟิกการตอบกลับจึงถูกทิ้ง ตรวจสอบเสมอว่า หมายเลขพอร์ต และ ฮ็อปถัดไป ของเส้นทางตรงกันหรือไม่"
+        },
+        "vi": {
+            "title": "Chi nhánh Bị Cắt Đứt Khỏi Portal HQ",
+            "story": "Nhân viên chi nhánh báo cáo rằng Portal-01 không bao giờ phản hồi khi PC-Finance tại trụ sở chính cố gắng mở nó. Vấn đề vẫn tồn tại kể từ sáng nay, không quan trọng ai cố gắng.",
+            "objective": "Khôi phục kết nối HTTP từ PC-Finance đến Portal-01.",
+            "hints": [
+                "Phản hồi từ Portal-01 không bao giờ thoát được qua Router-Branch — lưu lượng truy cập trở về bị tắc tại đây trước khi tới PC-Finance.",
+                "Router-Branch có tuyến tĩnh đến mạng HQ, nhưng được liên kết với Số cổng sai, do đó Hop tiếp theo không thể thực sự được tiếp cận bằng cách đó và phản hồi bị loại bỏ.",
+                "Trên Router-Branch, hãy xóa tuyến hiện có đến 10.0.12.0/255.255.255.0, sau đó thêm tuyến tĩnh mới đến 10.0.12.0/255.255.255.0 với Hop tiếp theo 10.0.28.1 trên cổng 0."
+            ],
+            "explanation": "Hop tiếp theo của tuyến tĩnh phải có thể tiếp cận được thông qua Số cổng mà nó thực sự được liên kết. Ở đây tuyến của Router-Branch đến HQ chỉ đến địa chỉ Hop tiếp theo đúng nhưng Số cổng sai, do đó lưu lượng truy cập trở về bị loại bỏ. Luôn kiểm tra xem Số cổng và Hop tiếp theo của tuyến có phù hợp không."
+        },
+        "af": {
+            "title": "Tak Afgesny van HQ-portaal",
+            "story": "Personeel by die vertakking meld dat Portal-01 nooit reageer wanneer PC-Finance by die hoofkantoor probeer om dit oop te maak. Die probleem hou sedert vanoggend aan, ongeag wie probeer.",
+            "objective": "Herstel die HTTP-verbinding van PC-Finance na Portal-01.",
+            "hints": [
+                "Die antwoord van Portal-01 kom nooit deur Router-Branch uit nie — die teruglugverkeer bly daar vas voordat dit PC-Finance bereik.",
+                "Router-Branch het 'n statiese roete na die HQ-netwerk, maar dit is aan die verkeerde Poortnommer gekoppel, dus kan die Volgende hop nie werklik op dié manier bereik word nie en word die antwoord verwyder.",
+                "Verwyder op Router-Branch die bestaande roete na 10.0.12.0/255.255.255.0, en voeg dan 'n nuwe statiese roete na 10.0.12.0/255.255.255.0 toe met Volgende hop 10.0.28.1 op poort 0."
+            ],
+            "explanation": "Die Volgende hop van 'n statiese roete moet bereikbaar wees deur die Poortnommer waaraan dit werklik gekoppel is. Hier het Router-Branch se roete na HQ na die regte Volgende hop-adres gewys, maar die verkeerde Poortnommer, dus is die teruglugverkeer verwyder. Kontroleer altyd dat die Poortnommer en Volgende hop van 'n roete in ooreenstemming is."
+        },
+        "am": {
+            "title": "የቅርንጫፍ ቢሮ ከHQ Portal ተቋረጠ",
+            "story": "በቅርንጫፉ ቢሮ ውስጥ ያሉ ሰራተኞች PC-Finance በዋነኛው ቤት ቅርስ Portal-01 ሲፈጥሩ ምንም ምላሽ የማይመጣ መሆኑን ይነግሩ። ይህ ችግር ከዛሬ ጀምሮ ቀጥሏል፣ ማንም ብሞክር።",
+            "objective": "ከPC-Finance ወደ Portal-01 HTTP ግንኙነት ወደ ሥራ ተመልሰው ያዋቅሩ።",
+            "hints": [
+                "ከPortal-01 የሚመጣው ምላሽ በRouter-Branch በኩል ወጪ አይደለም — የመመለስ ትራፊክ ወደ PC-Finance ሳይደርስ እዚያ ይቆማል።",
+                "Router-Branch ወደ HQ ネットワーク static route አለበት፣ ግን ወደ ስህተት ወደሚወጣ ፖርት ታስር አለበት፣ ስለሆነም ቀጣይ ሆፕ በዚያ መንገድ ሊደርስ አይችልም እና ምላሹ ይወድቃል።",
+                "Router-Branch ላይ ወደ 10.0.12.0/255.255.255.0 ያለውን ነባር route ሰርዝ፣ ከዚያም ወደ 10.0.12.0/255.255.255.0 ያለ ሌላ static route ቀጣይ ሆፕ 10.0.28.1 በpport 0 አክል።"
+            ],
+            "explanation": "ሌላ route ቀጣይ ሆፕ ወደሚሰሩበት ፖርት ሊደርስ ይገባል። እዚህ Router-Branch ወደ HQ ያለው route ወደ ትክክለኛ ቀጣይ ሆፕ አድራሻ ነገር ግን ስህተት ወደሚወጣ ፖርት ይጠቁማል፣ ስለሆነም የመመለስ ትራፊክ ተወድቋል። Route ፖርት እና ቀጣይ ሆፕ መስማማት መሆናቸውን ሁልጊዜ ይፈትሹ።"
+        },
+        "ar": {
+            "title": "مكتب الفرع قطع عن بوابة المقر",
+            "story": "يبلغ الموظفون في مكتب الفرع أن Portal-01 لا يستجيب أبدًا عندما يحاول PC-Finance في المقر فتحه. استمرت المشكلة منذ هذا الصباح، بغض النظر عمن يحاول.",
+            "objective": "استعيد اتصال HTTP من PC-Finance إلى Portal-01.",
+            "hints": [
+                "الرد من Portal-01 لا يخرج أبدًا عبر Router-Branch — حركة العودة تتوقف هناك قبل الوصول إلى PC-Finance.",
+                "لدى Router-Branch مسار ثابت نحو شبكة المقر، لكنه مرتبط بمنفذ الخروج الخاطئ، لذا لا يمكن الوصول إلى القفزة التالية بهذه الطريقة والرد يتم حذفه.",
+                "على Router-Branch، احذف المسار الموجود إلى 10.0.12.0/255.255.255.0، ثم أضف مسارًا ثابتًا جديدًا إلى 10.0.12.0/255.255.255.0 عبر 10.0.28.1 على المنفذ 0."
+            ],
+            "explanation": "يجب أن تكون القفزة التالية للمسار الثابت قابلة للوصول عبر المنفذ المرتبط به فعليًا. هنا كان مسار Router-Branch نحو المقر يشير إلى عنوان القفزة التالية الصحيح لكن المنفذ الخارج الخاطئ، لذا تم حذف حركة العودة. تحقق دائمًا من أن منفذ المسار والقفزة التالية يتطابقان."
+        },
+        "az": {
+            "title": "Filial Ofis HQ Portal-dan Qoparılıb",
+            "story": "Filial ofisdəki işçilər PC-Finance-dən headquarters-da Portal-01-i açmağa çalışdıqda Portal-01-dən heç vaxt cavab almadığını bildirirlər. Problem bu sabahdan bəri davam edir, kim çalışsa da.",
+            "objective": "PC-Finance-dən Portal-01-ə HTTP əlaqəsini bərpa edin.",
+            "hints": [
+                "Portal-01-dən gələn cavab Router-Branch vasitəsilə heç vaxt çıxmır — qayıdış trafiki PC-Finance-ə çatmamışdan əvvəl orada dayanır.",
+                "Router-Branch-də HQ şəbəkəsinə doğru statik marşrut var, lakin yanlış çıxış portuna bağlıdır, buna görə də növbəti keçid bu şəkildə əlçatmaz və cavab atılır.",
+                "Router-Branch-də 10.0.12.0/255.255.255.0-ə olan mövcud marşrutu silin, sonra 10.0.12.0/255.255.255.0-ə yeni statik marşrut əlavə edin, növbəti keçid 10.0.28.1, port 0-da."
+            ],
+            "explanation": "Statik marşrutun növbəti keçidi onun bağlı olduğu port vasitəsilə əlçatan olmalıdır. Burada Router-Branch-ın HQ-ya doğru marşrutu düzgün növbəti keçid ünvanına işarə etdi, lakin yanlış çıxış portuna, buna görə də qayıdış trafiki atıldı. Marşrutun portunun və növbəti keçidin uyğun olduğunu həmişə yoxlayın."
+        },
+        "be": {
+            "title": "Філіял адрэзаны ад Портала HQ",
+            "story": "Работнікі філіяла паведамляюць, што Portal-01 ніколі не адказвае, калі PC-Finance з штаб-квартыры пяняцца адкрыць яго. Прабема тычыцца з утра, незалежна ад таго, хто спрабуе.",
+            "objective": "Аднавіце HTTP-злучэнне ад PC-Finance да Portal-01.",
+            "hints": [
+                "Адказ ад Portal-01 ніколі не выходзіць праз Router-Branch — зваротны трафік спыняецца там, перш чым дасягнуць PC-Finance.",
+                "Router-Branch мае статычны маршрут да сеткі HQ, але ён прывязаны да неправільнага порта выхаду, таму наступны пераход неможна дасягнуць такім чынам і адказ губіцца.",
+                "На Router-Branch выдаліце існуючы маршрут да 10.0.12.0/255.255.255.0, потым дабавіце новы статычны маршрут да 10.0.12.0/255.255.255.0 з наступным пераходам 10.0.28.1 на порце 0."
+            ],
+            "explanation": "Наступны пераход статычнага маршруту павінен быць дасяжны праз порт, да якога ён факцічна прывязаны. Тут маршрут Router-Branch да HQ указваў на правільны адрас наступнага перахода, але на неправільны порт выхаду, таму зваротны трафік быў губены. Заўсёды праверайце, што порт маршруту і наступны пераход супадаюць."
+        },
+        "bg": {
+            "title": "Филиалният офис е отрязан от Портала на HQ",
+            "story": "Служителите в филиалния офис съобщават, че Portal-01 никога не отговаря, когато PC-Finance в управление опита да го отвори. Проблемът се появи днес сутринта, независимо кой се опита.",
+            "objective": "Възстановете HTTP връзката от PC-Finance към Portal-01.",
+            "hints": [
+                "Отговорът от Portal-01 никога не излиза през Router-Branch — обратният трафик спира там, преди да достигне PC-Finance.",
+                "Router-Branch има статичен маршрут към мрежата на HQ, но е свързан с неправилния изходящ порт, така че следващият преход не може да се достигне по този начин и отговорът се пропуска.",
+                "На Router-Branch изтрийте съществуващия маршрут към 10.0.12.0/255.255.255.0, след това добавете нов статичен маршрут към 10.0.12.0/255.255.255.0 със следващ преход 10.0.28.1 на порт 0."
+            ],
+            "explanation": "Следващият преход на статичен маршрут трябва да е достижим през порта, към който е действително свързан. Тук маршрутът на Router-Branch към HQ сочеше към правилния адрес на следващия преход, но към неправилния изходящ порт, затова обратният трафик бе пропуснат. Винаги проверявайте дали портът на маршрута и следващия преход съвпадат."
+        },
+        "bn": {
+            "title": "শাখা অফিস HQ পোর্টাল থেকে বিচ্ছিন্ন",
+            "story": "শাখা অফিসের কর্মীরা রিপোর্ট করেছেন যে Portal-01 কখনও সাড়া দেয় না যখন সদর দফতরের PC-Finance এটি খোলার চেষ্টা করে। সমস্যাটি আজ সকাল থেকে চলছে, যে কেউ চেষ্টা করুক না কেন।",
+            "objective": "PC-Finance থেকে Portal-01 এ HTTP সংযোগ পুনরুদ্ধার করুন।",
+            "hints": [
+                "Portal-01 থেকে রিপ্লাই কখনও Router-Branch এর মাধ্যমে বেরিয়ে আসে না — রিটার্ন ট্রাফিক সেখানেই থেমে যায় এবং PC-Finance এ পৌঁছায় না।",
+                "Router-Branch এ HQ নেটওয়ার্কের দিকে একটি স্ট্যাটিক রুট রয়েছে, কিন্তু এটি ভুল আউটগোয়িং পোর্টে বাঁধা, তাই নেক্সট হপ সেভাবে আসলে পৌঁছানো যায় না এবং রিপ্লাই ড্রপ হয়।",
+                "Router-Branch এ, 10.0.12.0/255.255.255.0 এর বিদ্যমান রুট মুছুন, তারপর 10.0.12.0/255.255.255.0 এর জন্য একটি নতুন স্ট্যাটিক রুট 10.0.28.1 এ নেক্সট হপ এবং পোর্ট 0 দিয়ে যোগ করুন।"
+            ],
+            "explanation": "একটি স্ট্যাটিক রুটের নেক্সট হপ অবশ্যই সেই পোর্টের মাধ্যমে পৌঁছানো যায় যেখানে এটি আসলে বাঁধা আছে। এখানে Router-Branch এর HQ এর দিকের রুট সঠিক নেক্সট হপ ঠিকানা নির্দেশ করছিল কিন্তু ভুল আউটগোয়িং পোর্ট, তাই রিটার্ন ট্রাফিক ড্রপ হয়েছিল। সবসময় চেক করুন যে একটি রুটের পোর্ট এবং নেক্সট হপ একে অপরের সাথে মিলে যায়।"
+        },
+        "ca": {
+            "title": "Oficina de sucursal desconnectada del portal de la seu",
+            "story": "El personal de la sucursal informa que Portal-01 mai respon quan PC-Finance a la seu intenta obrir-lo. El problema persisteix des d'aquest matí, sigui qui sigui qui ho intenti.",
+            "objective": "Restaurar la connexió HTTP des de PC-Finance a Portal-01.",
+            "hints": [
+                "La resposta de Portal-01 mai surt per Router-Branch — el tràfic de retorn s'atura allà sense arribar a PC-Finance.",
+                "Router-Branch té una ruta estàtica cap a la xarxa de la seu, però està vinculada al port de sortida incorrecte, per la qual cosa el Salt següent en realitat no es pot arribar d'aquesta manera i la resposta es descarta.",
+                "A Router-Branch, suprimiu la ruta existent a 10.0.12.0/255.255.255.0, després afegiu una nova ruta estàtica a 10.0.12.0/255.255.255.0 via 10.0.28.1 al port 0."
+            ],
+            "explanation": "El Salt següent d'una ruta estàtica ha de ser accessible a través del port al qual està vinculada. Aquí la ruta de Router-Branch cap a la seu apuntava a l'adreça Salt següent correcta però al port de sortida incorrecte, per la qual cosa el tràfic de retorn es va descartar. Comproveu sempre que el port i el Salt següent d'una ruta coincideixin."
+        },
+        "cs": {
+            "title": "Pobočka odpojená od hlavního portálu",
+            "story": "Zaměstnanci pobočky hlásí, že Portal-01 nikdy neodpovídá, když se PC-Finance v centrále pokusí jej otevřít. Problém přetrvává od dnešního rána, bez ohledu na to, kdo se o to pokusí.",
+            "objective": "Obnovte připojení HTTP z PC-Finance na Portal-01.",
+            "hints": [
+                "Odpověď z Portal-01 nikdy nevyjde ven přes Router-Branch — vratný provoz se tam zastaví, aniž by dosáhl PC-Finance.",
+                "Router-Branch má statickou trasu směrem k síti centrály, ale je vázána na nesprávný odchozí port, takže Další skok tak vlastně není dosažitelný a odpověď se zahodí.",
+                "V Router-Branch odstraňte stávající trasu do 10.0.12.0/255.255.255.0, pak přidejte novou statickou trasu do 10.0.12.0/255.255.255.0 přes 10.0.28.1 na portu 0."
+            ],
+            "explanation": "Další skok statické trasy musí být dosažitelný přes port, ke kterému je skutečně vázán. Zde trasa Router-Branch ke centrále ukazovala na správnou adresu Dalšího skoku, ale na nesprávný odchozí port, takže vratný provoz byl zahozen. Vždy zkontrolujte, že se port a Další skok trasy shodují."
+        },
+        "da": {
+            "title": "Filialkontor afbrudt fra HQ-portal",
+            "story": "Personalet på filialen rapporterer, at Portal-01 aldrig svarer, når PC-Finance på hovedkontoret forsøger at åbne det. Problemet er vedvarende siden i morges, uanset hvem der prøver.",
+            "objective": "Gendan HTTP-forbindelsen fra PC-Finance til Portal-01.",
+            "hints": [
+                "Svaret fra Portal-01 kommer aldrig ud gennem Router-Branch — returtrafikken stopper der uden at nå PC-Finance.",
+                "Router-Branch har en statisk rute mod HQ-netværket, men den er bundet til den forkerte udgående port, så næste hop kan faktisk ikke nås på den måde, og svaret bliver droppet.",
+                "Slet den eksisterende rute til 10.0.12.0/255.255.255.0 på Router-Branch, tilføj derefter en ny statisk rute til 10.0.12.0/255.255.255.0 via 10.0.28.1 på port 0."
+            ],
+            "explanation": "En statisk rutes næste hop skal være tilgængelig gennem den port, den faktisk er bundet til. Her peg Router-Branchs rute mod HQ på den rigtige næste hop-adresse, men den forkerte udgående port, så returtrafikken blev droppet. Kontroller altid, at en rutes port og næste hop stemmer overens."
+        },
+        "el": {
+            "title": "Υποκατάστημα αποκομμένο από πύλη έδρας",
+            "story": "Το προσωπικό του υποκαταστήματος αναφέρει ότι το Portal-01 δεν ανταποκρίνεται ποτέ όταν το PC-Finance της έδρας προσπαθεί να το ανοίξει. Το πρόβλημα παραμένει από το πρωί, ανεξάρτητα ποιος προσπαθεί.",
+            "objective": "Επαναφέρετε τη σύνδεση HTTP από PC-Finance στο Portal-01.",
+            "hints": [
+                "Η απάντηση από το Portal-01 δεν βγαίνει ποτέ μέσω του Router-Branch — η κίνηση επιστροφής σταματά εκεί χωρίς να φτάσει στο PC-Finance.",
+                "Το Router-Branch έχει μια στατική διαδρομή προς το δίκτυο της έδρας, αλλά είναι δεμένη στη λάθος εξερχόμενη θύρα, οπότε το Επόμενο βήμα δεν είναι πραγματικά προσιτό με αυτόν τον τρόπο και η απάντηση απορρίπτεται.",
+                "Στο Router-Branch, διαγράψτε την υπάρχουσα διαδρομή προς 10.0.12.0/255.255.255.0, στη συνέχεια προσθέστε μια νέα στατική διαδρομή προς 10.0.12.0/255.255.255.0 μέσω 10.0.28.1 στη θύρα 0."
+            ],
+            "explanation": "Το Επόμενο βήμα μιας στατικής διαδρομής πρέπει να είναι προσιτό μέσω της θύρας στην οποία είναι πραγματικά δεμένο. Εδώ η διαδρομή του Router-Branch προς την έδρα έδειχνε τη σωστή διεύθυνση Επόμενου βήματος αλλά τη λάθος εξερχόμενη θύρα, έτσι η κίνηση επιστροφής απορρίφθηκε. Ελέγχετε πάντα ότι η θύρα και το Επόμενο βήμα μιας διαδρομής συμφωνούν."
+        },
+        "et": {
+            "title": "Filiaalkontor ühendus HQ portaaliga katkestatud",
+            "story": "Filiaalkontoris töötavad inimesed teatavad, et Portal-01 ei reageeri kunagi, kui PC-Finance peakontoris püüab seda avada. Probleem on kestnud juba hommikust saadik, olenemata sellest, kes proovib.",
+            "objective": "Taastada HTTP ühendus PC-Finance'ilt Portal-01-le.",
+            "hints": [
+                "Portal-01 vastus ei jõua kunagi Router-Branch'i kaudu tagasi välja — tagaliiklus seisub seal enne PC-Finance'i jõudmist.",
+                "Router-Branch'il on staatiline marsruut HQ võrgu suunas, kuid see on seotud vale väljamineva pordinummeriga, nii et järgmine hüpe ei ole selliselt tegelikult saavutatav ja vastus kukutatakse ära.",
+                "Kustutage Router-Branch'is olemasolev marsruut võrgu 10.0.12.0/255.255.255.0 poole, seejärel lisage uus staatiline marsruut võrgu 10.0.12.0/255.255.255.0 poole järgmise hüppena 10.0.28.1, pordinumber 0."
+            ],
+            "explanation": "Staatilise marsruudi järgmine hüpe peab olema saavutatav pordinumbri kaudu, millega see on seotud. Siin osutus Router-Branch'i marsruut HQ suunas õigele järgmisele hüppele, kuid vale väljaminevale pordinumbrile, mistõttu tagaliiklus kukutati ära. Alati kontrollige, et marsruudi pordinumber ja järgmine hüpe klapivad."
+        },
+        "eu": {
+            "title": "Atalen bulegoa HQ portaaletik ebolatuta",
+            "story": "Adarreko bulegoan lanean ari diren enpleguak adierazi dute Portal-01-ek ez duela sekula erantzuten PC-Finance etxebizitzaren bulegotik irekitzen saiatzen denean. Arazoa goizean hasita iraun du, nork saiatu dezan ere.",
+            "objective": "Berrezarri HTTP konexioa PC-Finance-tik Portal-01-ra.",
+            "hints": [
+                "Portal-01-en erantzuna ez da inoiz ateratzen Router-Branch-en bidez — itzulera-trafiko hori geldituta dago PC-Finance-ra iritsi baino lehen.",
+                "Router-Branch-ek HQ sarera bideratze-taula statikoa dauka, baina gaizki dagoen atakaren zenbakira lotuta dago, beraz hurrengoa jauzia ez da benetako moduan eskuragarri eta erantzuna bota egiten du.",
+                "Router-Branch-ean, ezabatu dagoen 10.0.12.0/255.255.255.0 bideratze-taula, ondoren gehitu bideratze-taula berria 10.0.12.0/255.255.255.0-ra 10.0.28.1-en bidez atakaren zenbakian 0."
+            ],
+            "explanation": "Bideratze-taula statiko bateko hurrengo jauzia eskuragarri egon behar du hartzen den atakaren zenbakian. Hemen Router-Branch-eko bideratze-taulak HQ-ra zuzenki zegoen hurrengoa jauzia baina gaizko atakaren zenbakia, beraz itzulera-trafiko hori bota egin zen. Ziurtatu beti bideratze-taula eta hurrengo jauziak bat datozzela."
+        },
+        "fa": {
+            "title": "قطع اتصال دفتر شاخه از پورتال مرکزی",
+            "story": "کارمندان دفتر شاخه گزارش می‌دهند که Portal-01 هرگز پاسخ نمی‌دهد وقتی PC-Finance در مرکز سعی می‌کند آن را باز کند. این مشکل از صبح امروز ادامه دارد، مهم نیست چه کسی تلاش کند.",
+            "objective": "اتصال HTTP را از PC-Finance به Portal-01 بازیابی کنید.",
+            "hints": [
+                "پاسخ Portal-01 هرگز از طریق Router-Branch بیرون نمی‌رود — ترافیک برگشتی در آنجا متوقف می‌شود قبل از اینکه به PC-Finance برسد.",
+                "Router-Branch یک مسیر ثابت به سمت شبکه مرکزی دارد، اما به شماره پورت خروجی اشتباهی متصل است، بنابراین هاپ بعدی از این طریق واقعاً قابل دسترسی نیست و پاسخ حذف می‌شود.",
+                "Router-Branch در مسیر موجود به 10.0.12.0/255.255.255.0 را حذف کنید، سپس یک مسیر ثابت جدید به 10.0.12.0/255.255.255.0 از طریق 10.0.28.1 با شماره پورت 0 اضافه کنید."
+            ],
+            "explanation": "هاپ بعدی یک مسیر ثابت باید از طریق پورتی که به آن متصل است قابل دسترسی باشد. در اینجا مسیر Router-Branch به سمت مرکز به آدرس هاپ بعدی صحیح اشاره می‌کرد اما به شماره پورت خروجی غلط، بنابراین ترافیک برگشتی حذف شد. همیشه بررسی کنید که پورت و هاپ بعدی یک مسیر با هم مطابقت دارند."
+        },
+        "fi": {
+            "title": "Sivukonttori yhteys HQ-portaaliin katkaistu",
+            "story": "Sivukonttorissa työskentelevät henkilöt raportoivat, että Portal-01 ei koskaan vastaa, kun PC-Finance pääkonttorissa yrittää avata sen. Ongelma on jatkunut tänä aamuna lähtien riippumatta siitä, kuka yrittää.",
+            "objective": "Palauta HTTP-yhteys PC-Finance'sta Portal-01:een.",
+            "hints": [
+                "Portal-01:n vastaus ei koskaan pääse ulos Router-Branch:in kautta — palautusliikenne pysähtyy siihen ennen kuin se saavuttaa PC-Finance:n.",
+                "Router-Branch:ssa on staattinen reitti HQ-verkkoa kohti, mutta se on sidottu väärään lähtevään porttinumeroon, joten seuraava hyppy ei ole sillä tavalla todella saavutettavissa ja vastaus heitetään pois.",
+                "Poista Router-Branch:issa olemassa oleva reitti kohteeseen 10.0.12.0/255.255.255.0, lisää sitten uusi staattinen reitti kohteeseen 10.0.12.0/255.255.255.0 seuraavaksi hypyksi 10.0.28.1 porttinumerolla 0."
+            ],
+            "explanation": "Staattisen reitin seuraava hyppy on oltava saavutettavissa sen porttinumeron kautta, johon se on sidottu. Tässä Router-Branch:in reitti HQ:ta kohti osoitti oikeaan seuraavaan hyppyyn, mutta väärään lähtevään porttinumeroon, joten palautusliikenne heitetään pois. Tarkista aina, että reitin porttinumero ja seuraava hyppy vastaavat toisiaan."
+        },
+        "fil": {
+            "title": "Sangay na Opisina Pinutol mula sa HQ Portal",
+            "story": "Ang mga tauhan sa sangay na opisina ay nag-ulat na ang Portal-01 ay hindi kailanman tumutugon kapag sinisikap ng PC-Finance sa pangunahing opisina na buksan ito. Ang isyu ay patuloy simula ngayong umaga, anuman ang sinusubukan.",
+            "objective": "Ibalik ang HTTP na koneksyon mula sa PC-Finance hanggang Portal-01.",
+            "hints": [
+                "Ang tugon mula sa Portal-01 ay hindi kailanman umaalis sa pamamagitan ng Router-Branch — ang pabalik na trapiko ay tumitigil doon bago umabot sa PC-Finance.",
+                "Ang Router-Branch ay may static route patungo sa HQ network, ngunit ito ay nakadikit sa maling outgoing port number, kaya ang susunod na hop ay hindi tunay na maaabot sa ganitong paraan at ang tugon ay tinatanggal.",
+                "Sa Router-Branch, burahin ang umiiral na route sa 10.0.12.0/255.255.255.0, pagkatapos ay magdagdag ng bagong static route sa 10.0.12.0/255.255.255.0 sa pamamagitan ng 10.0.28.1 sa port number 0."
+            ],
+            "explanation": "Ang susunod na hop ng static route ay dapat maabot sa pamamagitan ng port na ito ay aktwal na nakadikit. Dito ang route ng Router-Branch tungo sa HQ ay nakaturo sa tamang susunod na hop ngunit sa maling outgoing port number, kaya ang pabalik na trapiko ay tinatanggal. Laging suriin na ang port at susunod na hop ng route ay tumutugma."
+        },
+        "gl": {
+            "title": "Oficina de Rama Desconectada do Portal da Sede",
+            "story": "O persoal da oficina de rama informa que Portal-01 nunca responde cando PC-Finance na sede intenta abrila. O problema persiste desde esta mañá, non importa quen o intente.",
+            "objective": "Restaurar a conexión HTTP desde PC-Finance ata Portal-01.",
+            "hints": [
+                "A resposta de Portal-01 nunca consegue saír a través de Router-Branch — o tráfico de retorno detense alí antes de chegar a PC-Finance.",
+                "Router-Branch ten unha ruta estática cara á rede da sede, pero está vinculada ao porto de saída incorrecto, polo que o seguinte salto non pode ser alcanzado desa forma e a resposta é descartada.",
+                "En Router-Branch, elimina a ruta existente a 10.0.12.0/255.255.255.0, logo engade unha nova ruta estática a 10.0.12.0/255.255.255.0 vía 10.0.28.1 no porto 0."
+            ],
+            "explanation": "O seguinte salto dunha ruta estática debe ser alcanzable a través do porto ao que está vinculada. Aquí a ruta de Router-Branch cara á sede apuntaba ao enderezo de seguinte salto correcto pero ao porto de saída incorrecto, polo que o tráfico de retorno foi descartado. Sempre comproba que o porto e o seguinte salto dunha ruta coincidan."
+        },
+        "gu": {
+            "title": "શાખા કાર્યાલય HQ પોર્ટલ માંથી કાપવામાં આવ્યો",
+            "story": "શાખા કાર્યાલયમાં કર્મચારીઓ અહેવાલ આપે છે કે જ્યારે મુખ્ય કાર્યાલયમાં PC-Finance Portal-01 ખોલવાનો પ્રયાસ કરે છે ત્યારે તે ક્યારેય પ્રતિક્રિયા આપતું નથી. આ સમસ્યા આજ સવારથી ચાલુ છે, તે ગમે તે કોશિશ કરે.",
+            "objective": "PC-Finance થી Portal-01 સુધી HTTP જોડાણ પુનઃસ્થાપિત કરો.",
+            "hints": [
+                "Portal-01 નું પ્રતિક્રિયા Router-Branch દ્વારા બહાર નીકળી જતું નથી — પરત ટ્રાફિક PC-Finance સુધી પહોંચતાં પહેલા ત્યાં અટકી જાય છે.",
+                "Router-Branch પાસે HQ નેટવર્ક તરફ સ્ટેટિક રૂટ છે, પણ તે ખોટા આઉટગોઇંગ પોર્ટ સાથે બંધાયેલું છે, તેથી નેક્સ્ટ હોપ તે રીતે વાસ્તવમાં પહોંચી શકાતું નથી અને પ્રતિક્રિયા છોડી દેવામાં આવે છે.",
+                "Router-Branch પર, 10.0.12.0/255.255.255.0 માટે હાલનો રૂટ હટાવો, પછી 10.0.12.0/255.255.255.0 માટે નવો સ્ટેટિક રૂટ ઉમેરો નેક્સ્ટ હોપ 10.0.28.1 પોર્ટ 0 પર."
+            ],
+            "explanation": "સ્ટેટિક રૂટનો નેક્સ્ટ હોપ તે પોર્ટ દ્વારા પહોંચી શકાયો હોવો જોઈએ જે તેનો ઉપયોગ કરી રહ્યો છે. અહીં Router-Branch નો HQ તરફનો રૂટ સાચા નેક્સ્ટ હોપ સરનામાં તરફ ધ્યાન આપતો હતો પણ ખોટા આઉટગોઇંગ પોર્ટ તરફ, તેથી પરત ટ્રાફિક છોડી દેવામાં આવ્યો હતો. હંમેશા તપાસ કરો કે રૂટનો પોર્ટ અને નેક્સ્ટ હોપ સમાન છે."
+        },
+        "he": {
+            "title": "סניף חתוך משער ההטל",
+            "story": "הצוות בסניף מדווח שמערכת Portal-01 לא מגיבה כאשר PC-Finance במטה מנסה לפתוח אותה. הבעיה נמשכת מהבוקר, לא משנה מי מנסה.",
+            "objective": "שחזר את חיבור ה־HTTP מ־PC-Finance ל־Portal-01.",
+            "hints": [
+                "התשובה מ־Portal-01 לא יוצאת דרך Router-Branch — התעבורה חוזרת תקועה שם לפני שהיא מגיעה ל־PC-Finance.",
+                "ל־Router-Branch יש מסלול סטטי לעבר רשת המטה, אך הוא קשור ליציאה היוצאת הלא נכונה, ולכן לא ניתן להגיע אל הקפיצה הבאה בדרך זו ותשובתו תושלך.",
+                "ב־Router-Branch, מחק את המסלול הקיים ל־10.0.12.0/255.255.255.0, ואז הוסף מסלול סטטי חדש ל־10.0.12.0/255.255.255.0 דרך 10.0.28.1 ביציאה 0."
+            ],
+            "explanation": "הקפיצה הבאה של מסלול סטטי חייבת להיות נגישה דרך היציאה שלה קשורה בפועל. כאן המסלול של Router-Branch לעבר המטה הצביע על כתובת הקפיצה הבאה נכונה אך יציאה יוצאת שגויה, ולכן תעבורת ההחזר נזרקה. בדוק תמיד שיציאה והקפיצה הבאה של מסלול תואמות."
+        },
+        "hr": {
+            "title": "Podružnica Odspojena od Portala Glavnog Ureda",
+            "story": "Zaposleni u podružnici izvještavaju da Portal-01 nikada ne odgovara kada PC-Finance u glavnom uredu pokušava da ga otvori. Problem se javlja od jutros, bez obzira tko pokušava.",
+            "objective": "Obnovite HTTP konekciju od PC-Finance-a do Portal-01.",
+            "hints": [
+                "Odgovor od Portal-01 nikada ne izlazi kroz Router-Branch — povratni promet se zaustavlja tamo prije nego što dosegne PC-Finance.",
+                "Router-Branch ima statičku rutu prema mreži glavnog ureda, ali je vezana na pogrešan izlazni port, pa se sljedeći skok ne može zapravo dostići tom rutom i odgovor se odbacuje.",
+                "Na Router-Branch, obrišite postojeću rutu do 10.0.12.0/255.255.255.0, zatim dodajte novu statičku rutu do 10.0.12.0/255.255.255.0 preko 10.0.28.1 na portu 0."
+            ],
+            "explanation": "Sljedeći skok statičke rute mora biti dostižan kroz port na koji je zapravo vezana. Ovdje je ruta Router-Branch prema glavnom uredu pokazivala na točnu adresu sljedećeg skoka ali na pogrešan izlazni port, pa je povratni promet odbijen. Uvijek provjerite da port i sljedeći skok rute odgovaraju."
+        },
+        "hu": {
+            "title": "Fiók Leválasztva a Főiroda Portáljáról",
+            "story": "A fiók személyzete azt jelenti, hogy a Portal-01 soha nem válaszol, amikor a PC-Finance a főirodában megpróbálja megnyitni. A probléma ma reggel óta fennáll, bárki is próbálja.",
+            "objective": "Állítsa vissza a HTTP-kapcsolatot a PC-Finance-ből a Portal-01-be.",
+            "hints": [
+                "A Portal-01-ből érkező válasz soha nem jut ki a Router-Branch-en — a visszafelé irányuló forgalom ott megakad, mielőtt eléri a PC-Finance-et.",
+                "A Router-Branch-nek van egy statikus útvonala a főiroda hálózata felé, de a rossz kimenő porthoz van kötve, így a következő ugrás ily módon valójában nem elérhető, és a válasz eldobódik.",
+                "A Router-Branch-en törölje az útvonalat a 10.0.12.0/255.255.255.0 felé, majd adjon hozzá egy új statikus útvonalat a 10.0.12.0/255.255.255.0 felé a 10.0.28.1 következő ugrásból a 0 portban."
+            ],
+            "explanation": "Az statikus útvonal következő ugrásának el kell érhetőnek lennie az azon port keresztül, amelyhez ténylegesen van kötve. Itt a Router-Branch útvonala a főiroda felé a helyes következő ugrás-címre mutatott, de a rossz kimenő portra, így a visszafelé irányuló forgalom el lett dobva. Mindig ellenőrizze, hogy az útvonal portja és a következő ugrása megegyezik-e."
+        },
+        "hy": {
+            "title": "Մասնաճյուղի գրասենյակը անջատված HQ Portal-ից",
+            "story": "Մասնաճյուղի գրասենյակի անձնակցերը հաղորդում են, որ Portal-01-ը երբեք չի պատասխանում, երբ PC-Finance-ը գլխավոր գրասենյակից փորձում է այն բացել: Խնդիրը շարունակվել է այս առավոտից, անկախ նրանից, թե ով է փորձում:",
+            "objective": "Վերականգնել HTTP կապը PC-Finance-ից Portal-01-ին:",
+            "hints": [
+                "Portal-01-ից պատասխանը երբեք չի դուրս գալիս Router-Branch-ից — հետադարձ շարժատրաֆիկը այնտեղ ընդհատվում է, մինչ PC-Finance-ի հասնելը:",
+                "Router-Branch-ն ունի ստատիկ երթուղ HQ ցանցի ուղղությամբ, բայց այն կապված է սխալ ելքային պորտի հետ, այն պատճառով հաջորդ հանգույցը չի կարող իրականում հասանելի լինել այդ տարբերակով և պատասխանը դեն է նետվում:",
+                "Router-Branch-ում ջնջեք գոյություն ունեցող ստատիկ երթուղը 10.0.12.0/255.255.255.0-ի համար, այնուհետև ավելացրեք նոր ստատիկ երթուղ 10.0.12.0/255.255.255.0-ի համար հաջորդ հանգույց 10.0.28.1-ի միջոցով 0 պորտի վրա:"
+            ],
+            "explanation": "Ստատիկ երթուղի հաջորդ հանգույցը պետք է հասանելի լինի այն պորտի միջոցով, որին այն փաստորեն կապված է: Այստեղ Router-Branch-ի երթուղ HQ-ի ուղղությամբ ուղղված էր ճիշտ հաջորդ հանգույցի հասցեին, բայց սխալ ելքային պորտի վրա, այն պատճառով հետադարձ շարժատրաֆիկը դեն էր նետվում: Միշտ ստուգեք, որ երթուղի պորտը և հաջորդ հանգույցը համաձայն են:"
+        },
+        "is": {
+            "title": "Útibúið sniðið af frá HQ Portal",
+            "story": "Starfsmenn útibúsins segja að Portal-01 svarar aldrei þegar PC-Finance hjá höfuðstöðvum reynir að opna það. Vandamálið hefur varað síðan í morgun, óháð því hverjir reyna.",
+            "objective": "Endurkoma HTTP tengingu frá PC-Finance til Portal-01.",
+            "hints": [
+                "Svarið frá Portal-01 kemst aldrei út um Router-Branch — endurgenginn umferð stöðvast þar áður en PC-Finance nær honum.",
+                "Router-Branch hefur kyrrstæða leið til HQ netsins, en hún er bundin við ranga útfara tengja, svo næsta hopp getur ekki í raun náðst á þann hátt og svarið er fellt.",
+                "Á Router-Branch skaltu eyða fyrirliggjandi kyrrstæðu leiðinni til 10.0.12.0/255.255.255.0, síðan bæta við nýrri kyrrstæðu leið til 10.0.12.0/255.255.255.0 um næsta hopp 10.0.28.1 á portnúmeri 0."
+            ],
+            "explanation": "Næsta hopp kyrrstæðrar leiðar verður að vera aðgengilegt um tengið sem hún er í raun bundin við. Hér beindi leið Router-Branch til HQ á rétta næsta hoppa vistfangi en rangan útfara tengja, þannig að endurgenginn umferð var felld. Athugaðu alltaf að leið tengi og næsti hopp eru sammála."
+        },
+        "ka": {
+            "title": "ფილიალი გათიშულია HQ Portal-დან",
+            "story": "ფილიალის თანამშრომლებმა ანგარიშებენ, რომ Portal-01 არასოდეს პასუხობს, როდესაც PC-Finance საიდან-საითკენ ცდილობს მის გახსნას. პრობლემა გამეორებულია დილიდან, მიუხედავად იმისა, ვინ ცდილობს.",
+            "objective": "აღდგინეთ HTTP კავშირი PC-Finance-ისგან Portal-01-მდე.",
+            "hints": [
+                "Portal-01-დან პასუხი არასოდეს გამოდის Router-Branch-ის მეშვეობით — საპასუხო ტრაფიკი იქ ჩერდება, სანამ PC-Finance-მდე მოაღწევს.",
+                "Router-Branch-ს აქვს სტატიკური მარშრუტი HQ ქსელის მიმართულებით, მაგრამ ის დაკავშირებულია არასწორ გამომავალი პორტთან, ამიტომ შემდეგი ჰოპი ფაქტობრივად ამ გზით მიუღწეველია და პასუხი უკმეთდება.",
+                "Router-Branch-ზე წაშალეთ არსებული მარშრუტი 10.0.12.0/255.255.255.0-მდე, შემდეგ დაამატეთ ახალი სტატიკური მარშრუტი 10.0.12.0/255.255.255.0-მდე შემდეგი ჰოპი 10.0.28.1-ის მეშვეობით პორტი 0-ზე."
+            ],
+            "explanation": "სტატიკური მარშრუტის შემდეგი ჰოპი უნდა იყოს ხელმისაწვდომი იმ პორტის საშუალებით, რომელსაც ის ფაქტობრივად დაკავშირებულია. აქ Router-Branch-ის მარშრუტი HQ-ის მიმართულებით მიუთითებდა სწორ შემდეგი ჰოპის მისამართზე, მაგრამ არასწორ გამომავალ პორტზე, ამიტომ საპასუხო ტრაფიკი უკმეთდებოდა. ყოველთვის შეამოწმეთ, რომ მარშრუტის პორტი და შემდეგი ჰოპი თანხმობაშია."
+        },
+        "km": {
+            "title": "សាខាកាត់ដាច់ពី HQ Portal",
+            "story": "និយោជិតក្នុងសាខាបានរាយការណ៍ថា Portal-01 មិនដែលឆ្លើយឡើយ នៅពេលដែល PC-Finance មកពីរដ្ឋាភិបាលកណ្តាលព្យាយាមបើកវា។ បញ្ហាបានឈានមកដល់ដោយគ្មានការផ្លាស់ប្តូរ ដោយមិនគិតពេលណាលេីង។",
+            "objective": "ស្ដារលក្ខខណ្ឌ HTTP ពី PC-Finance ទៅ Portal-01។",
+            "hints": [
+                "ការឆ្លើយឡើងលេីង Portal-01 មិនដែលចេញមកទេ ឆ្លងកាត់ Router-Branch — ដឹកជញ្ជូនលើកលែងមកឆ្លាយបែងចែកឈប់នៅលើកលែងមកយើង PC-Finance ឈានដល់។",
+                "Router-Branch មាន ឡើងផ្លូវស្ថានីយ៍ ដៃលើ HQ បណ្ដាញ ប៉ុន្តែលេីង ស្ថាបនាកសាលេីងលើសិលាអ្វីក្រៅដែលចេញលេីង ដូច្នេះលេីងខាងមុខ ហូប មិនបាននឹង ឈានដល់បានលក្ខណ៍ ដែលលេីងផ្លូវ ហើយលេីង ឆ្លើយលេីងចាប់ផ្តើម។",
+                "នៅលើ Router-Branch លុបលេីង ដែលមាននៅលើផ្លូវស្ថានីយ៍ទៅ 10.0.12.0/255.255.255.0 ហើយបន្ទាប់មក បន្ថែមលេីង ឡើងផ្លូវស្ថានីយ៍ទៅ 10.0.12.0/255.255.255.0 ឆ្លងកាត់ 10.0.28.1 លើលេខច្រក 0។"
+            ],
+            "explanation": "លេីងខាងមុខ ហូប នៃលេីង ឡើងផ្លូវស្ថានីយ៍ ត្រូវតែអាចដល់បានឆ្លងកាត់លេីង ច្រក ដែលលេីងលេីងប្រាកដ។ នៅលើលេីងនេះ Router-Branch នៃលេីងផ្លូវទៅលេីង HQ ចង្អុលលេីង អាសយដ្ឋាននៃលេីងខាងមុខ ហូប ប៉ុន្តែលេីង ច្រកចេញខុស ដូច្នេះដឹកជញ្ជូនលើកលែងមកឆ្លាយលេីងលុប។ ដកឈរ ពិនិត្យមើលថាលេីងផ្លូវច្រក និងលេីងខាងមុខ ហូប ឆ្លុះគ្នា។"
+        },
+        "kn": {
+            "title": "ಶಾಖೆ ಕಛೇರಿ HQ Portal ಇಂದ ಕಟ್‌ಆಫ್",
+            "story": "ಶಾಖೆ ಕಛೇರಿಯ ಸಿಬ್ಬಂದಿ ವರದಿ ಮಾಡುತ್ತಾರೆ ಎತ್ತರದಲ್ಲಿ ಇರುವ PC-Finance ರಿಂದ Portal-01 ಅನ್ನು ತೆರೆಯಲು ಪ್ರಯತ್ನಿಸಿದಾಗ ಪ್ರತಿಕ್ರಿಯೆ ನೀಡುವುದಿಲ್ಲ. ಸಮಸ್ಯೆ ಇಂದಿನ ಬೆಳಿಗ್ಗೆಯಿಂದ ಮುಂದುವರಿದಿದೆ, ಯಾರು ಪ್ರಯತ್ನಿಸಿದರೂ.",
+            "objective": "PC-Finance ನಿಂದ Portal-01 ಗೆ HTTP ಸಂಪರ್ಕವನ್ನು ಮರುಸ್ಥಾಪಿಸಿ.",
+            "hints": [
+                "Portal-01 ಇಂದ ಪ್ರತಿಕ್ರಿಯೆ Router-Branch ಇಂದ ಹೊರಹೋಗುತ್ತದೆ ಹಿಂತಿರುಗುತ್ತಿಲ್ಲ — ರಿಟರ್ನ ಟ್ರಾಫಿಕ್ PC-Finance ಅನ್ನು ತಲುಪುವ ಮೊದಲು ಅಲ್ಲಿ ನಿಧಾನವಾಗಿದೆ.",
+                "Router-Branch ಕ್ಕೆ HQ ನೆಟ್‌ವರ್ಕ್‌ನ ಕಡೆಗೆ ಸ್ಟಾಟಿಕ್ ರೂಟ್ ಇದೆ, ಆದರೆ ಇದು ತಪ್ಪು ಔಟ್‌ಗೋಯಿಂಗ್ ಪೋರ್ಟ್ ಸಂಖ್ಯೆಗೆ ಬೌಂಡ್ ಆಗಿದೆ, ಆದ್ದರಿಂದ ನೆಕ್ಸ್ಟ್ ಹಾಪ್ ಅನ್ನು ನಿಜವಾಗಿ ತಲುಪಲಾಗುವುದಿಲ್ಲ ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆ ಡ್ರಾಪ್ ಆಗುತ್ತದೆ.",
+                "Router-Branch ರಲ್ಲಿ, 10.0.12.0/255.255.255.0 ಕ್ಕೆ ಇರುವ ರೂಟ್ ಅನ್ನು ಡಿಲೀಟ್ ಮಾಡಿ, ನಂತರ 10.0.12.0/255.255.255.0 ನೆಕ್ಸ್ಟ್ ಹಾಪ್ 10.0.28.1, ಪೋರ್ಟ್ ಸಂಖ್ಯೆ 0 ನೊಂದಿಗೆ ಸ್ಟಾಟಿಕ್ ರೂಟ್ ಸೇರಿಸಿ."
+            ],
+            "explanation": "ಸ್ಟಾಟಿಕ್ ರೂಟ್‌ನ ನೆಕ್ಸ್ಟ್ ಹಾಪ್ ಅನ್ನು ಅದು ನಿಜವಾಗಿ ಬೌಂಡ್ ಆಗಿರುವ ಪೋರ್ಟ್ ಸಂಖ್ಯೆ ಮೂಲಕ ತಲುಪಬಹುದಾಗಿರಬೇಕು. ಇಲ್ಲಿ Router-Branch ನ HQ ಕಡೆಗೆ ರೂಟ್ ಸರಿಯಾದ ನೆಕ್ಸ್ಟ್ ಹಾಪ್ ಅಡ್ರೆಸ್ ಅನ್ನು ಸೂಚಿಸುತ್ತದೆ ಆದರೆ ತಪ್ಪು ಔಟ್‌ಗೋಯಿಂಗ್ ಪೋರ್ಟ್ ಸಂಖ್ಯೆ, ಆದ್ದರಿಂದ ರಿಟರ್ನ ಟ್ರಾಫಿಕ್ ಡ್ರಾಪ್ ಆಗುತ್ತದೆ. ಸಂಪೂರ್ಣವಾಗಿ ಪರಿಶೀಲಿಸಿ ರೂಟ್‌ನ ಪೋರ್ಟ್ ಸಂಖ್ಯೆ ಮತ್ತು ನೆಕ್ಸ್ಟ್ ಹಾಪ್ ಒಪ್ಪುತ್ತವೆ ನೀವು."
+        },
+        "lo": {
+            "title": "ສາຂາຫ້ອງການຕັດໃຕ່ຈາກ HQ Portal",
+            "story": "ເຈົ້າໜ້າທີ່ຂອງສາຂາຫ້ອງການລາຍງານວ່າ Portal-01 ບໍ່ເຄີຍຕອບສະຫນອງໃນເວລາທີ່ PC-Finance ຢູ່ສາຍงານໃຈກາງພະຍາຍາມເປີດ. ບັນຫາດັ່ງກ່າວໄດ້ດໍາເນີນມາຕັ້ງແຕ່ເຊົ້າວານນີ້ ບໍ່ວ່າໃຜຈະພະຍາຍາມກໍ່ຕາມ.",
+            "objective": "ຟື້ນຟູການເຊື່ອມຕໍ່ HTTP ຈາກ PC-Finance ໄປຫາ Portal-01.",
+            "hints": [
+                "ການຕອບກັບຄືນຈາກ Portal-01 ບໍ່ເຄີຍອອກມາຜ່ານ Router-Branch — ການຫຼາກລົບກັນກັບພວກກັບໄປ ຢຸດຢູ່ທີ່ນັ້ນກ່ອນທີ່ຈະຮອດ PC-Finance.",
+                "Router-Branch ມີເສັ້ນທາງຄົງທີ່ໄປຫາເຄືອຂ່າຍ HQ ແຕ່ມັນຖືກຜູກມັດກັບພອດອອກທີ່ຜິດ ດັ່ງນັ້ນຈຸດໜ້າທີ່ຈະຫາກໍ່ບໍ່ສາມາດຫາກໍ່ໄດ້ແລະຄໍາຕອບຈະຖືກລຸດ.",
+                "ໃນ Router-Branch ລຶບເສັ້ນທາງທີ່ມີຢູ່ກ່ອນໄປຫາ 10.0.12.0/255.255.255.0 ແລ້ວເພີ່ມເສັ້ນທາງຄົງທີ່ໃໝ່ໄປຫາ 10.0.12.0/255.255.255.0 ໂດຍກະໂຫຼກ 10.0.28.1 ໃນພອດ 0."
+            ],
+            "explanation": "ຈຸດໜ້າທີ່ຂອງເສັ້ນທາງຄົງທີ່ຕ້ອງສາມາດເຂົ້າເຖິງໄດ້ຜ່ານພອດທີ່ມັນຖືກຜູກມັດຢູ່ດາຊ່ວງໃນຕົວຈິງ. ໃນທີ່ນີ້ເສັ້ນທາງຂອງ Router-Branch ໄປຫາ HQ ຊີ້ໃຫ້ເห็ນທີ່ຢູ່ຈຸດໜ້າທີ່ທີ່ຖືກຕ້ອງ ແຕ່ພອດອອກທີ່ຜິດ ດັ່ງນັ້ນການຕອບກັບໃຫມ່ຈະຖືກລຸດ. ກວດກາສະເຫມີວ່າເສັ້ນທາງ, ພອດ ແລະຈຸດໜ້າທີ່ຂອງມັນສອດຄ່ອງກັນ."
+        },
+        "lt": {
+            "title": "Skyrių Raštinė Atkirsta nuo HQ Portal",
+            "story": "Skyraus raštinės personalas praneša, kad Portal-01 niekada neatsako, kai buveine esantis PC-Finance bandytu jį atidaryti. Problema tęsiasi nuo šio ryto, nepaisant to, kas bandytų.",
+            "objective": "Atkurti HTTP ryšį iš PC-Finance į Portal-01.",
+            "hints": [
+                "Atsakymas iš Portal-01 niekada neprasiskverbia per Router-Branch — grąžintinis srautas sustingsta ten prieš pasiekdamas PC-Finance.",
+                "Router-Branch turi Маршрутų lentelę link HQ tinklo, bet jis susietas su neteisingu išeinančiu prievadu, todėl kitas šuolis iš tikrųjų nepasiekiamas tuo keliu ir atsakymas numetamas.",
+                "Router-Branch pašalinkite esamą маршрутų link 10.0.12.0/255.255.255.0, tada pridėkite naują статик маршрут į 10.0.12.0/255.255.255.0 per kitas šuolis 10.0.28.1 2 prievade 0."
+            ],
+            "explanation": "Статик маршрут's kitas šuolis turi būti pasiekiamas per prievadą, prie kurio jis iš tikrųjų susietas. Čia Router-Branch 'o маршрут į HQ žymėjo teisingą kito šuolio adresą, bet klaidingą išeinantį prievadą, todėl grąžintinis srautas buvo numettas. Visada patikrinkite, ar маршрут's prievadas ir kitas šuolis sutinka."
+        },
+        "lv": {
+            "title": "Filiāle Nogriezta no HQ Portal",
+            "story": "Filiāles personāls ziņo, ka Portal-01 nekad neatbild, kad mājsēde esošais PC-Finance mēģina to atvērt. Problēma pastāv kopš šorīta, neatkarīgi no tā, kurš mēģina.",
+            "objective": "Atjaunot HTTP savienojumu no PC-Finance uz Portal-01.",
+            "hints": [
+                "Atbilde no Portal-01 nekad neizgāzas caur Router-Branch — atgriešanās trafiks bremzējas tur, pirms sasniegt PC-Finance.",
+                "Router-Branch ir statisks маршрутs uz HQ tīklu, bet tas ir saistīts ar nepareizu izejošo portu, tāpēc nākamais lēciens faktiski nav sasniedzams tādā veidā un atbilde tiek atmesta.",
+                "Router-Branch izdzēsiet esošo маршруту uz 10.0.12.0/255.255.255.0, pēc tam pievienojiet jaunu statisko маршруту uz 10.0.12.0/255.255.255.0 caur nākamais lēciens 10.0.28.1 portā 0."
+            ],
+            "explanation": "Statiska маршрута nākamais lēciens ir jāsasniedzams caur portu, uz kuru tas faktiski ir saistīts. Šeit Router-Branch 'a маршрuts uz HQ norādīja uz pareizu nākamā lēciena adresi, bet nepareizu izejošo portu, tāpēc atgriešanās trafiks tika atmests. Vienmēr pārbaudiet, vai маршрута ports un nākamais lēciens ir vienā līnijā."
+        },
+        "mk": {
+            "title": "Филијала одсечена од HQ Portal",
+            "story": "Вработените во филијалата пријавуваат дека Portal-01 никогаш не одговара кога PC-Finance од седиштето се обидува да го отвори. Проблемот постои од утро, без разлика кој се обидува.",
+            "objective": "Восстановете го HTTP врската од PC-Finance до Portal-01.",
+            "hints": [
+                "Одговорот од Portal-01 никогаш не излегува низ Router-Branch — враќачкиот сообраќај застанува таму пред да стигне до PC-Finance.",
+                "Router-Branch има статичка рута кон HQ мрежата, но е поврзана на погрешниот излезен порт, така што следниот скок всушност не може да биде достигнат на тој начин и одговорот се отфрла.",
+                "На Router-Branch, избришете ја постојната рута до 10.0.12.0/255.255.255.0, потоа додајте нова статичка рута до 10.0.12.0/255.255.255.0 со Следен скок 10.0.28.1, Број на порта 0."
+            ],
+            "explanation": "Следниот скок на статичката рута мора да биде достижен преку портот на кој е всушност поврзана. Овде рутата на Router-Branch кон HQ покажувала на правилната адреса на следниот скок, но на погрешниот излезен порт, така што враќачкиот сообраќај бил отфрлен. Секогаш проверете дали портот и следниот скок на рутата се согласуваат."
+        },
+        "mn": {
+            "title": "Салбар офис HQ портал эвдсэн",
+            "story": "Салбар офисын ажилтнууд Portal-01 нь төв офисын PC-Finance нээхийг оролдохоор байхад хариу өгдөггүй гэж мэдээлэв. Өнөө өглөөнөөс эхлэн, хэн ч оролдсон байхаас үл хамааран энэ асуудал үргэлжилдэг.",
+            "objective": "PC-Finance-ээс Portal-01 рүүх HTTP холбоог сэргээх.",
+            "hints": [
+                "Portal-01-ийн хариулт Router-Branch-ээс хэзээ ч гарч хэрэхгүй — эргэж ирэх нь PC-Finance хүрэхээс өмнө тоглоомын талбайд зогсдог.",
+                "Router-Branch нь HQ сүлжээ рүүх статик маршруттай боловч буруу гадаад портод холбогдсон тул дараачийн скок тэр замаар бодит байдаа хүрч чадахгүй гэтэл хариулт хаягдана.",
+                "Router-Branch дээр 10.0.12.0/255.255.255.0 рүүх одоо байгаа маршрутыг устгасны дараа 10.0.28.1-ийн Портын дугаар 0 дараа скоп 10.0.12.0/255.255.255.0 рүүх шинэ статик маршрут нэмнэ."
+            ],
+            "explanation": "Статик маршрутын дараачийн скоп үүнд холбогдсон портоор хүрч авах ёстой. Энд Router-Branch-ын HQ рүүх маршрут зөв дараачийн скопын хаягийг зааж байсан боловч буруу гадаад портод зааж байсан тул эргэж ирэх сообщение хаягдсан. Маршрутын порт ба дараачийн скопыг үргэлж тохирч байгаа эсэхийг шалгаж байх хэрэгтэй."
+        },
+        "ms": {
+            "title": "Pejabat Cawangan Putus Daripada Portal HQ",
+            "story": "Kakitangan di pejabat cawangan melaporkan bahawa Portal-01 tidak pernah menjawab apabila PC-Finance di ibu pejabat cuba membukanya. Isu ini telah berterusan sejak pagi tadi, tidak kira siapa yang mencuba.",
+            "objective": "Pulihkan sambungan HTTP dari PC-Finance ke Portal-01.",
+            "hints": [
+                "Jawapan daripada Portal-01 tidak pernah keluar melalui Router-Branch — trafik balik terhenti di sana sebelum mencapai PC-Finance.",
+                "Router-Branch mempunyai laluan statik ke arah rangkaian HQ, tetapi ia terikat pada port keluar yang salah, oleh itu lompatan seterusnya tidak sebenarnya dapat dicapai dengan cara itu dan jawapan dibuang.",
+                "Pada Router-Branch, padamkan laluan sedia ada ke 10.0.12.0/255.255.255.0, kemudian tambahkan laluan statik baharu ke 10.0.12.0/255.255.255.0 dengan lompatan seterusnya 10.0.28.1, nombor port 0."
+            ],
+            "explanation": "Lompatan seterusnya laluan statik mesti boleh dicapai melalui port yang sebenarnya terikat dengannya. Di sini laluan Router-Branch ke arah HQ menunjuk ke alamat lompatan seterusnya yang betul tetapi port keluar yang salah, jadi trafik balik telah dibuang. Sentiasa semak bahawa port dan lompatan seterusnya laluan bersetuju."
+        },
+        "my": {
+            "title": "အဆheadquartersဆင့်ကနေ Branch Office ကို လမ်းဆက်တူတူ ပြတ်တောင်း",
+            "story": "အဆုံးရုံးရှိ PC-Finance ကနေ Portal-01 ကို ဖွင့်ကြည့်ချင်ရင် Portal-01 မှ ည်အခြဝင်မရှိပါ။ ယခုစမ်းသည့်နံနက်မှ ဒီ ပြဿနာ ဆက်လက်ရှိနေပြီး အဘယ်သူကြိုက်ပြန်လည်ကြည့်ရှုစမ်းသည့်အခါ မည်သည့်အခါမျှ မြင်ရစ်ပါ။",
+            "objective": "PC-Finance မှ Portal-01 သို့ HTTP ချိတ်ဆက်မှုကို ပြန်လည်ရယူထားပါ။",
+            "hints": [
+                "Portal-01 မှ အလိုက်အလျာ Router-Branch အပြင်ဘက်ကြောင့် အလွှားအလွှားရွေ့လျားဆက်နွယ်သည့်အခါ ရုံးတူတူ ကြည့်ရှုမှုကို PC-Finance ချိတ်ဆက်သည့်တစ်ခြား အချို့ပြသာ်သည့် အနက်အသာမှ မည်သည့်အခါမျှ မြည်းစလီ့ကြည့်ရှုမြင်ရစ်ပါ။",
+                "Router-Branch ပေါ်တွင် အသုံးအနှုန်းဆိုင်ရာ ရုံးတူတူ ကွန်ရက်သို့ လမ်းစဉ်ချုပ်တည်ဆောင်းပြီး ကြည့်ရှုမှုကို အရုပ်အစုံ Port သည့်အခါ မည်သည့်ကြိုက်အဆုံးရုံးတည်ဆောင်းမျိုးမျ အသုံးအနှုန်းထုံးတည်ဆောင်းမည့်အခါ မည်သည့်အခါမျှ မြင်ရစ်ပါ။",
+                "Router-Branch ပေါ်တွင် 10.0.12.0/255.255.255.0 သို့ သက်ရှိသည့် လမ်းစဉ်သည့်အခါ ဖျက်သိမ်းခြင်းပြီးနောက် 10.0.12.0/255.255.255.0 သို့ 10.0.28.1 လမ်းခွင့်ကြည့်ရှုမှုကို Port 0 ပေါ်တွင် ပြန်လည်ရယူထားပါ။"
+            ],
+            "explanation": "Static route ၏ next hop သည် အဆုံးရုံးတည်ဆောင်းမည့်အခါ သက်ရှိမည့်အခါ မည်သည့်အခါမျှ မြင်ရစ်ပါ။ အဆုံးရုံးတည်ဆောင်းမည့်အခါ Router-Branch ၏ လမ်းစဉ်သည့်အခါ အသုံးအနှုန်းထုံးတည်ဆောင်းမည့်အခါ မည်သည့်အခါမျှ မြင်ရစ်ပါ။ မည်သည့်အခါမျှ မြင်ရစ်ပါ။ လမ်းစဉ်ချုပ်တည်ဆောင်းမည့်အခါ မည်သည့်အခါမျှ မြင်ရစ်ပါ။"
+        },
+        "ne": {
+            "title": "शाखा कार्यालय मुख्य कार्यालय पोर्टल से काट दिया गया",
+            "story": "शाखा कार्यालयमा कर्मचारीहरूले रिपोर्ट गरेका छन् कि मुख्य कार्यालयमा भएको PC-Finance ले Portal-01 खोल्न खोज्दा यसले कहिले पनि जवाफ दिँदैन। यो समस्या आज बिहान देखि जारी छ, कसले पनि कोसिश गरोस् न गरोस्।",
+            "objective": "PC-Finance बाट Portal-01 सम्मको HTTP जडान पुनःस्थापन गर्नुहोस्।",
+            "hints": [
+                "Portal-01 बाट जवाफ Router-Branch को बाहिरी तर्फ कहिले पनि पुग्दैन — फिर्ता ट्राफिक त्यहाँ रुकिन्छ र PC-Finance सम्म पुग्दैन।",
+                "Router-Branch को मुख्य कार्यालय नेटवर्कमा स्थिर मार्ग छ, तर यो गलत आउटगोइङ पोर्टसँग बाँधिएको छ, त्यसैले नेक्स्ट हप त्यस तरिकाले पुग्न सक्दैन र जवाफ हराइन्छ।",
+                "Router-Branch मा, 10.0.12.0/255.255.255.0 को अवस्थित मार्ग मेटाउनुहोस्, त्यसपछि नेक्स्ट हप 10.0.28.1, पोर्ट 0 को साथ 10.0.12.0/255.255.255.0 को नयाँ स्थिर मार्ग जोडनुहोस्।"
+            ],
+            "explanation": "स्थिर मार्गको नेक्स्ट हप यससँग बाँधिएको पोर्टको माध्यमबाट पुग्न सक्नुपर्छ। यहाँ Router-Branch को मुख्य कार्यालयतर्फको मार्ग सही नेक्स्ट हप ठिकानामा बुझाएको थियो तर गलत आउटगोइङ पोर्टमा, त्यसैले फिर्ता ट्राफिक हराइएको थियो। सधैँ जाँच गर्नुहोस् कि मार्गको पोर्ट र नेक्स्ट हप सहमत छन्।"
+        },
+        "nl": {
+            "title": "Filiaal losgekoppeld van HQ-portaal",
+            "story": "Personeelleden op het filiaal melden dat Portal-01 nooit reageert wanneer PC-Finance op het hoofdkantoor probeert deze te openen. Het probleem duurt voort sinds vanochtend, ongeacht wie het probeert.",
+            "objective": "Herstel de HTTP-verbinding van PC-Finance naar Portal-01.",
+            "hints": [
+                "Het antwoord van Portal-01 bereikt nooit de buitenkant van Router-Branch — het retourverkeer stagneert daar voordat het PC-Finance bereikt.",
+                "Router-Branch heeft een statische route naar het HQ-netwerk, maar deze is gekoppeld aan de verkeerde uitgaande poort, dus de volgende hop kan op die manier niet bereikt worden en het antwoord wordt verwijderd.",
+                "Verwijder op Router-Branch de bestaande route naar 10.0.12.0/255.255.255.0, voeg vervolgens een nieuwe statische route naar 10.0.12.0/255.255.255.0 via 10.0.28.1 op poort 0 toe."
+            ],
+            "explanation": "De volgende hop van een statische route moet bereikbaar zijn via de poort waaraan deze is gekoppeld. Hier wees de route van Router-Branch naar HQ naar het juiste volgende hopaddres, maar naar de verkeerde uitgaande poort, dus werd retourverkeer verwijderd. Controleer altijd of de poort en volgende hop van een route overeenkomen."
+        },
+        "no": {
+            "title": "Filial avskåret fra HQ-portal",
+            "story": "Ansatte på filialen rapporterer at Portal-01 aldri svarer når PC-Finance på hovedkontoret prøver å åpne den. Problemet har vedvart siden i morges, uansett hvem som prøver.",
+            "objective": "Gjenopprett HTTP-forbindelsen fra PC-Finance til Portal-01.",
+            "hints": [
+                "Svaret fra Portal-01 kommer aldri ut gjennom Router-Branch — returtransitten stopper der før den når PC-Finance.",
+                "Router-Branch har en statisk rute mot HQ-nettverket, men den er bundet til feil utgående port, så neste hopp kan ikke faktisk nås på den måten og svaret slippes.",
+                "På Router-Branch sletter du den eksisterende ruten til 10.0.12.0/255.255.255.0, deretter legger du til en ny statisk rute til 10.0.12.0/255.255.255.0 via 10.0.28.1 på port 0."
+            ],
+            "explanation": "En statisk rutes neste hopp må være nåbar gjennom porten den faktisk er bundet til. Her pekte Router-Branch sin rute mot HQ på riktig neste hopaddresse men feil utgående port, så returtransitten ble sluppet. Sjekk alltid at en rutes port og neste hopp stemmer."
+        },
+        "or": {
+            "title": "ଶାଖା କାର୍ଯ୍ୟାଳୟ HQ ପୋର୍ଟାଲ ରୁ କଟ ଅଫ",
+            "story": "ଶାଖା କାର୍ଯ୍ୟାଳୟରେ କର୍ମଚାରୀମାନେ ରିପୋର୍ଟ କରିଛନ୍ତି ଯେ ମୁଖ୍ୟ ସଦର ଦଫତରର PC-Finance ଏଟିକୁ ଖୋଲିବାକୁ ଚେଷ୍ଟା କଲେ Portal-01 କଦାଚ ସାଁସ ଦେଇ ନଥାଏ। ଆଜ ସକାଳ ଠାରୁ ଏହି ସମସ୍ୟା ରହିଆସିଛି, ଯେ କେହି ଚେଷ୍ଟା କଲେ ନଥାଏ।",
+            "objective": "PC-Finance ରୁ Portal-01 ପର୍ଯ୍ୟନ୍ତ HTTP ସଂଯୋଗ ପୁନରୁଦ୍ଧାର କରନ୍ତୁ।",
+            "hints": [
+                "Portal-01 ରୁ ଉତ୍ତର Router-Branch ମାଧ୍ୟମରେ ବାହାରକୁ କଦାଚ ଆସେ ନାହିଁ — ରିଟର୍ନ ଟ୍ରାଫିକ PC-Finance ରେ ପହଂଚିବା ମୁଁ ସେଠାରେ ଆଟକାଯାଏ।",
+                "Router-Branch ର HQ ନେଟୱର୍କ ତରଫରେ ଏକ ସ୍ଥିର ମାର୍ଗ ଅଛି, କିନ୍ତୁ ଏହା ଭୁଲ ଆଉଟଗୋଇଙ୍ଗ ପୋର୍ଟ ସହିତ ବନ୍ଧିଆ, ତେଣୁ ନେକ୍ସଟ ହପ ସେହି ଉପାୟରେ ପ୍ରକୃତରେ ପହଂଚିହେବ ନାହିଁ ଏବଂ ଉତ୍ତର ଫୋପାଡି ଦିଆଯାଏ।",
+                "Router-Branch ରେ, 10.0.12.0/255.255.255.0 ର ବିଦ୍ୟମାନ ମାର୍ଗ ଏକ ନିର୍ଦ୍ଦେଶନା ମୁଦ୍ରା ଏବଂ ତାପରେ 10.0.12.0/255.255.255.0 ର ଏକ ନୂତନ ସ୍ଥିର ମାର୍ଗ ନେକ୍ସଟ ହପ 10.0.28.1, ପୋର୍ଟ 0 ରେ ଯୋଗ କରନ୍ତୁ।"
+            ],
+            "explanation": "ଏକ ସ୍ଥିର ମାର୍ଗର ନେକ୍ସଟ ହପ ଏହାସହ ବନ୍ଧିଆ ପୋର୍ଟ ମାଧ୍ୟମରେ ପହଂଚିହେବା ଆବଶ୍ୟକ। ଏଠାରେ Router-Branch ର HQ ତରଫର ମାର୍ଗ ସଠିକ ନେକ୍ସଟ ହପ ଠିକଣାକୁ ନେଇଯାଇଥିଲା କିନ୍ତୁ ଭୁଲ ଆଉଟଗୋଇଙ୍ଗ ପୋର୍ଟକୁ, ତେଣୁ ରିଟର୍ନ ଟ୍ରାଫିକ ଫେଳି ଦିଆଯାଇଥିଲା। ସର୍ବଦା ଯାଞ୍ଚ କରନ୍ତୁ ଯେ ଏକ ମାର୍ଗର ପୋର୍ଟ ଏବଂ ନେକ୍ସଟ ହପ ସହମତ।"
+        },
+        "pl": {
+            "title": "Oddział Odcięty od Portalu Centrali",
+            "story": "Pracownicy w oddziale zgłaszają, że Portal-01 nigdy nie odpowiada, gdy PC-Finance w centrali próbuje go otworzyć. Problem utrzymuje się od tego ranka, niezależnie od tego, kto próbuje.",
+            "objective": "Przywróć połączenie HTTP z PC-Finance do Portal-01.",
+            "hints": [
+                "Odpowiedź od Portal-01 nigdy nie wychodzi z Router-Branch — ruch zwrotny zatrzymuje się tam przed osiągnięciem PC-Finance.",
+                "Router-Branch ma trasę statyczną do sieci centrali, ale jest powiązana z niewłaściwym portem wyjściowym, więc następny skok w ten sposób w ogóle nie może być osiągnięty i odpowiedź jest odrzucana.",
+                "Na Router-Branch usuń istniejącą trasę do 10.0.12.0/255.255.255.0, a następnie dodaj nową trasę statyczną do 10.0.12.0/255.255.255.0 poprzez 10.0.28.1 na porcie 0."
+            ],
+            "explanation": "Następny skok trasy statycznej musi być osiągalny poprzez port, do którego faktycznie jest powiązany. Tutaj trasa Router-Branch do centrali wskazywała na prawidłowy adres następnego skoku, ale na niewłaściwym porcie wyjściowym, więc ruch zwrotny został odrzucony. Zawsze upewniaj się, że port i następny skok trasy się zgadzają."
+        },
+        "pt-PT": {
+            "title": "Filial Desligada do Portal da Sede",
+            "story": "A equipa da filial relata que Portal-01 nunca responde quando PC-Finance na sede tenta abri-la. O problema persiste desde esta manhã, independentemente de quem tentar.",
+            "objective": "Restaure a ligação HTTP de PC-Finance para Portal-01.",
+            "hints": [
+                "A resposta do Portal-01 nunca sai pelo Router-Branch — o tráfego de retorno fica preso ali antes de chegar a PC-Finance.",
+                "Router-Branch tem uma rota estática para a rede da sede, mas está vinculada à porta de saída errada, portanto o próximo salto não pode ser alcançado dessa forma e a resposta é descartada.",
+                "No Router-Branch, delete a rota existente para 10.0.12.0/255.255.255.0 e adicione uma nova rota estática para 10.0.12.0/255.255.255.0 através de 10.0.28.1 na porta 0."
+            ],
+            "explanation": "O próximo salto de uma rota estática deve ser alcançável através da porta à qual está realmente vinculado. Aqui a rota do Router-Branch para a sede apontava para o endereço correto do próximo salto, mas na porta de saída errada, por isso o tráfego de retorno foi descartado. Sempre verifique se a porta e o próximo salto de uma rota coincidem."
+        },
+        "rm": {
+            "title": "Subsidiala Scheva da Portal da Chasa Principala",
+            "story": "Il persunal da la subsidiala rapporta che Portal-01 mai respunda cura che PC-Finance a la chasa principala emprova d'avrir quella. Il problem persista dapi stumaun, nua che saja tgi che emprova.",
+            "objective": "Restaura la connexiun HTTP da PC-Finance a Portal-01.",
+            "hints": [
+                "La respuesta da Portal-01 mai surtir ordavart Router-Branch — il traffic da retur s'aresta là avant d'arrivar a PC-Finance.",
+                "Router-Branch ha ina ruta statica viers la rait da la chasa principala, ma ella es connexa cun in numer da port nonfitg, dareina il proxim sault na po betg vegnir ragì da questa maniera e la respuesta vegn destruida.",
+                "A Router-Branch, stgaiva la ruta existenta a 10.0.12.0/255.255.255.0, daspö agiuntscha ina nova ruta statica a 10.0.12.0/255.255.255.0 via 10.0.28.1 sin il port 0."
+            ],
+            "explanation": "Il proxim sault d'ina ruta statica sto vegnir ragibl via il port sin il qual el es fixà. Qua la ruta da Router-Branch viers la chasa principala pointava vers l'adressa giusta dals proxim salts, ma sin il port da sorta nonfitg, perquai il traffic da retur vegn destruì. Controllescha adina che il port e il proxim sault d'ina ruta s'accordain."
+        },
+        "ro": {
+            "title": "Filiala Deconectată de Portalul Sediului",
+            "story": "Personalul din filiala raportează că Portal-01 nu răspunde niciodată când PC-Finance din sediu încearcă să o deschidă. Problema persistă din această dimineață, indiferent cine încearcă.",
+            "objective": "Restaurați conexiunea HTTP de la PC-Finance la Portal-01.",
+            "hints": [
+                "Răspunsul de la Portal-01 nu iese niciodată din Router-Branch — traficul de retur se oprește acolo înainte de a ajunge la PC-Finance.",
+                "Router-Branch are o rută statică către rețeaua sediului, dar este legată de portul de ieșire greșit, deci următorul salt nu poate fi atins în acest mod și răspunsul este eliminat.",
+                "Pe Router-Branch, ștergeți ruta existentă către 10.0.12.0/255.255.255.0, apoi adăugați o nouă rută statică către 10.0.12.0/255.255.255.0 prin 10.0.28.1 pe portul 0."
+            ],
+            "explanation": "Următorul salt al unei rute statice trebuie să fie accesibil prin portul cu care este de fapt legat. Aici ruta Router-Branch către sediu indica adresa corectă a următorului salt, dar pe portul de ieșire greșit, deci traficul de retur a fost eliminat. Verificați întotdeauna că portul și următorul salt al unei rute sunt de acord."
+        },
+        "si": {
+            "title": "සිටුවෙන ඉතිරි කාර්යාලය HQ Portal සිට විසන්න",
+            "story": "සිටුවෙන කාර්යාලයේ සේවය දරන්නෝ වාර්තා කරන්නේ මූලස්ථානයේ PC-Finance එය විවෘත කිරීමට උත්සාහ කරන විට Portal-01 කිසිවිට ප්‍රතිචාර නොදෙන බවයි. ඉඳින් උදෑසරේ සිට මෙම ගැටලුව ඉටිපත්ව ඇති අතර, කවුද උත්සාහ කර ඇතත් එයින් ශ්‍රී ලංකාවෙන් නැත.",
+            "objective": "PC-Finance සිට Portal-01 වෙත HTTP සংයෝගය සෙවීම.",
+            "hints": [
+                "Portal-01 සිට නිපදවන උත්තරය කිසිවිට Router-Branch හරහා පිටතට නොපිටතට නොපිටතට නොගිහින්, ප්‍රතිලෝම ගමනාගමනය PC-Finance ට පැමිණෙමින් ඉතිරි තබාගෙන ඇත.",
+                "Router-Branch සතුව HQ ජාලය කෙරෙහි ස්ථිතික ලමිනා තිබිඩු නමුත් එය වෙනස් පිටතට බිම්බට ගැටිසී ඇති අතර, එම ආකාරයෙන් ඊළඟ හොප් සැබවින්ම සැබුවින්ම ළඟා විය හැකි නැත සහ උත්තරය ඉවතලනු ලබයි.",
+                "Router-Branch සඳහා, 10.0.12.0/255.255.255.0 ඇතුළුගත සංස්කරණ සිතියම මකන්න, එවිට නව ස්ථිතික ලමිනා 10.0.12.0/255.255.255.0 දක්වා 10.0.28.1 හරහා පෝට් 0 කිහිප සඳහා එක්කර දමන්න."
+            ],
+            "explanation": "ස්ථිතික ලමිනා සඳහා ඊළඟ හොප් එය ගැටිසී ඇති පෝට් හරහා ළඟා විය හැකි විය යුතුය. මෙහිදී Router-Branch ගේ සංස්කරණ සිතියම HQ ට නිවැරදි ඊළඟ හොප් ලිපිනය වුද නමුත් වෙනස් පිටතට බිම්බට ගැටිසී ඇති අතර, ප්‍රතිලෝම ගමනාගමනය ඉවතලනු ලබයි. සඳහා සඳහා පෝට් සහ ඊළඟ හොප් එකඟ බවට නිතරම පරීක්ෂා කරන්න."
+        },
+        "sk": {
+            "title": "Pobočka bez spojenia s HQ portálom",
+            "story": "Zamestnanci v pobočke hlásia, že Portal-01 nikdy neodpovie, keď PC-Finance z ústredne pokúsi otvoriť. Problém trvá od dneška ráno, bez ohľadu na to, kto sa pokúsi.",
+            "objective": "Obnovte HTTP spojenie z PC-Finance na Portal-01.",
+            "hints": [
+                "Odpoveď z Portal-01 sa nikdy nedostane von cez Router-Branch — spätný prenos sa tam zastaví pred dosiahnutím PC-Finance.",
+                "Router-Branch má statickú Smerovacia tabuľka smerujúcu k HQ sieti, ale je viazaná na nesprávny výstupný port, takže Ďalší skok sa týmto spôsobom nemôže skutočne dosiahnuť a odpoveď sa zahadzuje.",
+                "Na Router-Branch odstráňte existujúcu trasu na 10.0.12.0/255.255.255.0, potom pridajte novú statickú trasu na 10.0.12.0/255.255.255.0 cez 10.0.28.1 na porte 0."
+            ],
+            "explanation": "Ďalší skok statickej trasy musí byť dosiahnuteľný cez port, na ktorý je skutočne viazaný. Tu smerovala trasa Router-Branch smerom k HQ na správnu adresu Ďalšího skoku, ale na nesprávny výstupný port, takže spätný prenos bol zahadzovaný. Vždy skontrolujte, či sa port trasy a Ďalší skok zhodujú."
+        },
+        "sl": {
+            "title": "Podružnica odrezana od HQ portala",
+            "story": "Zaposleni na podružnici poročajo, da Portal-01 nikoli ne odgovori, ko se PC-Finance iz sedeža poskusa povezati. Težava traja od danes zjutraj, ne glede na to, kdo se poskusa.",
+            "objective": "Obnoví HTTP povezavo iz PC-Finance na Portal-01.",
+            "hints": [
+                "Odgovor iz Portal-01 se nikoli ne vrne skozi Router-Branch — povratni promet se tam ustavi, preden doseže PC-Finance.",
+                "Router-Branch ima statično Usmerjevalno tablo proti HQ omrežju, vendar je vezana na napačna vrata, zato Naslednjega skoka dejansko ni mogoče doseči na ta način in se odgovor zavrže.",
+                "Na Router-Branch izbrišite obstoječo pot na 10.0.12.0/255.255.255.0, nato dodajte novo statično pot na 10.0.12.0/255.255.255.0 prek 10.0.28.1 na vratih 0."
+            ],
+            "explanation": "Naslednji skok statične poti mora biti dosegljiv prek vrat, na katera je dejansko vezana. Tu je pot Router-Branch proti HQ kazala na pravi naslov Naslednjega skoka, vendar na napačna vrata za odhodne podatke, zato je povratni promet zavržen. Vedno preverite, da se vrata poti in Naslednji skok ujemata."
+        },
+        "sq": {
+            "title": "Zyrja e degës ndërprerë nga portali i zyres kryesore",
+            "story": "Punonjësit në zyrën e degës raportohen se Portal-01 asnjëherë nuk përgjigjet kur PC-Finance në zyren kryesore përpiqet ta hapë atë. Problemi ka vazhduar që këtë mëngjes, pavarësisht kush përpiqet.",
+            "objective": "Rivendosni lidhjen HTTP nga PC-Finance në Portal-01.",
+            "hints": [
+                "Përgjigja nga Portal-01 kurrë nuk del përmes Router-Branch — trafiku i kthimit ngecet atje përpara se të arrijë PC-Finance.",
+                "Router-Branch ka një Tabela e rrugëzimit statike drejt rrjetit HQ, por është i lidhur me portin e gabuar të daljes, kështu që Hapi tjetër nuk mund të arrijë në të vërtetë në këtë mënyrë dhe përgjigja hidhet.",
+                "Në Router-Branch, fshini rrugën ekzistuese drejt 10.0.12.0/255.255.255.0, më pas shtoni një Tabela e rrugëzimit statike të re në 10.0.12.0/255.255.255.0 përmes 10.0.28.1 në portin 0."
+            ],
+            "explanation": "Hapi tjetër i një Tabela e rrugëzimit statike duhet të jetë i arritshëm përmes portit me të cilin është i lidhur në të vërtetë. Këtu ruta e Router-Branch drejt HQ tregonte adresën e duhur të Hapit tjetër por portin e gabuar të daljes, kështu që trafiku i kthimit u hodh. Gjithmonë kontrolloni që porti i rrugës dhe Hapi tjetër bien dakord."
+        },
+        "sr": {
+            "title": "Филијала откачена од портала главне канцеларије",
+            "story": "Запослени у филијали извештавају да Portal-01 никада не одговори када PC-Finance из главне канцеларије покуша да га отвори. Проблем траје од јутра, без обзира ко покуша.",
+            "objective": "Обновите HTTP конекцију од PC-Finance ка Portal-01.",
+            "hints": [
+                "Одговор од Portal-01 никада не прође кроз Router-Branch — повратни саобраћај застане тамо пре него што стигне до PC-Finance.",
+                "Router-Branch има статичку Табела рутирања ка HQ мрежи, али је везана на погрешан излазни порт, тако да Следећи скок заправо не може бити достигнут на тај начин и одговор се одбацује.",
+                "На Router-Branch обришите постојећу руту ка 10.0.12.0/255.255.255.0, затим додајте нову статичку руту ка 10.0.12.0/255.255.255.0 преко 10.0.28.1 на порту 0."
+            ],
+            "explanation": "Следећи скок статичке руте мора бити достижан кроз порт на који је заправо везан. Овде је рута Router-Branch ка HQ указивала на исправну адресу Следећег скока али на погрешан излазни порт, тако да је повратни саобраћај одбачен. Увек проверите да се порт руте и Следећи скок поклапају."
+        },
+        "sv": {
+            "title": "Filialkontoret avstängt från HQ Portal",
+            "story": "Personal på filialkontoret rapporterar att Portal-01 aldrig svarar när PC-Finance på huvudkontoret försöker öppna den. Problemet har pågått sedan denna morgon, oavsett vem som försöker.",
+            "objective": "Återställ HTTP-anslutningen från PC-Finance till Portal-01.",
+            "hints": [
+                "Svaret från Portal-01 kommer aldrig ut genom Router-Branch — returtrafiken stannar där innan den når PC-Finance.",
+                "Router-Branch har en statisk väg mot HQ-nätverket, men den är bunden till fel utgående port, så nästa hopp kan inte faktiskt nås på det sättet och svaret släpps.",
+                "På Router-Branch, ta bort den befintliga vägen till 10.0.12.0/255.255.255.0, lägg sedan till en ny statisk väg till 10.0.12.0/255.255.255.0 via 10.0.28.1 på port 0."
+            ],
+            "explanation": "En statisk vägs nästa hopp måste kunna nås genom den port den faktiskt är bunden till. Här pekade Router-Branch väg mot HQ på rätt nästa hopp-adress men fel utgående port, så returtrafiken släpptes. Kontrollera alltid att en vägs port och nästa hopp överensstämmer."
+        },
+        "sw": {
+            "title": "Ofisi ya Tawi Iliyokatwa Kutoka Portal ya HQ",
+            "story": "Wafanyakazi katika ofisi ya tawi wanaripoti kuwa Portal-01 haiibu kamwe wakati PC-Finance katika kanthi kuu inajaribu kuifungua. Tatizo hili limekuwa kwa sababu hii asubuhi, haijalipuka ni nani anayejaribu.",
+            "objective": "Rejesha muunganisho wa HTTP kutoka PC-Finance hadi Portal-01.",
+            "hints": [
+                "Jibu kutoka Portal-01 halilii kuvuma kwa njia ya Router-Branch — trafiki ya kurudi inasimama hapo kabla ya kufikia PC-Finance.",
+                "Router-Branch ina njia tuli inayoelekea mtandao wa HQ, lakini imeambatanishwa kwa port ambayo si sahihi, kwa hivyo hop inayofuata haiwezi kufikika kwa njia hiyo na jibu litavunjwa.",
+                "Kwenye Router-Branch, futa njia iliyopo kuelekea 10.0.12.0/255.255.255.0, kisha ongeza njia mpya tuli kuelekea 10.0.12.0/255.255.255.0 kupitia 10.0.28.1 kwenye port 0."
+            ],
+            "explanation": "Hop inayofuata ya njia tuli lazima iweze kufikika kupitia port ambayo imeambatanishwa. Hapa njia ya Router-Branch inayoelekea HQ ilibadilisha kuwa sahihi kwa hop inayofuata lakini haipo port tafauti, kwa hivyo trafiki ya kurudi ilivunjwa. Daima angalia kuwa port na hop inayofuata ya njia zinakubaliana."
+        },
+        "ta": {
+            "title": "கிளை அலுவலகம் HQ Portal இலிருந்து துண்டிக்கப்பட்டுள்ளது",
+            "story": "கிளை அலுவலகத்தில் உள்ள பணியாளர்கள் Portal-01 பதிலளிக்கவே இல்லை என்று தெரிவிக்கின்றனர், PC-Finance தலைமையகத்திலிருந்து அதைத் திறக்க முயலும் போது. இந்த சிக்கல் இந்த காலை முதல் நீடித்து வருகிறது, யாரு முயன்றாலும் பரவாயில்லை.",
+            "objective": "PC-Finance இலிருந்து Portal-01 க்கு HTTP இணைப்பை மீட்டெடுக்கவும்.",
+            "hints": [
+                "Portal-01 இலிருந்து பதிலிப்பு Router-Branch ஆக திரும்பி வெளிவர முடியாது — திரும்ப வரும் ট্রஃபிக் அங்கே நிற்கிறது PC-Finance க்கு அடைய முன்.",
+                "Router-Branch க்கு HQ நெட்வொர்க்குக்கான ஸ்டேடி ரூட் உள்ளது, ஆனால் அது தவறான வெளிச்செல் போர்டுக்கு பிணைக்கப்பட்டுள்ளது, எனவே அடுத்த ஹாப் உண்மையில் அந்த வழியில் அடைய முடியாது மற்றும் பதிலிப்பு விடுபடுகிறது.",
+                "Router-Branch இல், 10.0.12.0/255.255.255.0 க்கு உள்ள ரூட்டை நீக்கவும், பிறகு 10.0.12.0/255.255.255.0 க்கு ஒரு புதிய ஸ்டேடி ரூட் போர்ட் 0 இல் 10.0.28.1 வழியாக சேர்க்கவும்."
+            ],
+            "explanation": "ஸ்டேடி ரூட்டின் அடுத்த ஹாப் அது உண்மையில் பிணைக்கப்பட்ட போர்டு வழியாக அடைய முடியும் வேண்டும். இங்கே Router-Branch ன் ரூட் HQ க்கு சரியான அடுத்த ஹாப் முகவரியை சுட்டிக்காட்டினாலும் தவறான வெளிச்செல் போர்ட்டை, எனவே திரும்ப வரும் ட்ரஃபிக் விடுபடுகிறது. ஒரு ரூட்டின் போர்ட் மற்றும் அடுத்த ஹாப் ஒப்புக்கொள்ளுகிறதா என்பதை எப்போதும் சரிபார்க்கவும்."
+        },
+        "te": {
+            "title": "శాఖ కార్యాలయం HQ పోర్టల్ నుండి కట్ చేయబడింది",
+            "story": "శాఖ కార్యాలయంలో సిబ్బంది Portal-01 ఎన్నడూ ప్రతిస్పందించకుందని నివేదిస్తారు, PC-Finance ప్రధాన కార్యాలయం నుండి దానిని తెరవడానికి ప్రయత్నించినప్పుడు. ఈ సమస్య ఈ ఉదయం నుండి నిలిచిపోయింది, ఎవరు ప్రయత్నించినా సరే.",
+            "objective": "PC-Finance నుండి Portal-01 కు HTTP కనెక్షన్‌ను పునరుద్ధరించండి.",
+            "hints": [
+                "Portal-01 నుండి సమాధానం Router-Branch ద్వారా బయటకు రాలేదు — తిరిగి రాసే ట్రాఫిక్ అక్కడ ఆగిపోయింది PC-Finance కు చేరుకోకముందే.",
+                "Router-Branch కు HQ నెట్‌వర్క్ వైపు స్థిర మార్గం ఉంది, కానీ అది తప్పు బయటకు వెళ్ళే పోర్టుకు బంధించబడింది, కాబట్టి నెక్స్ట్ హాప్ ఆ విధంగా నిజంగా చేరుకోలేదు మరియు సమాధానం విసర్జించబడుతుంది.",
+                "Router-Branch పై, 10.0.12.0/255.255.255.0 కు ఉన్న బాటను తీసివేయండి, ఆపై 10.0.12.0/255.255.255.0 కు పోర్ట్ 0 పై 10.0.28.1 ద్వారా కొత్త స్థిర మార్గాన్ని జోడించండి."
+            ],
+            "explanation": "స్థిర మార్గం యొక్క నెక్స్ట్ హాప్ దానిని నిజంగా బంధించిన పోర్టు ద్వారా చేరుకోగలిగి ఉండాలి. ఇక్కడ Router-Branch యొక్క HQ వైపు మార్గం సరైన నెక్స్ట్ హాప్ చిరునామాను సూచించిన తర్వాత తప్పు బయటకు వెళ్ళే పోర్టుకు, తిరిగి రాసే ట్రాఫిక్ విసర్జించబడుతుంది. మార్గం యొక్క పోర్టు మరియు నెక్స్ట్ హాప్ ఒక్కసారిగా ఉన్నాయో లేదో ఎల్లప్పుడూ తనిఖీ చేయండి."
+        },
+        "uk": {
+            "title": "Філіальний офіс відрізаний від портала штаб-квартири",
+            "story": "Персонал філіального офісу повідомляє, що Portal-01 ніколи не відповідає, коли PC-Finance з головного офісу намагається його відкрити. Проблема зберігається з цього ранку, незалежно від того, хто намагається.",
+            "objective": "Відновіть HTTP-з'єднання від PC-Finance до Portal-01.",
+            "hints": [
+                "Відповідь від Portal-01 ніколи не виходить через Router-Branch — зворотний трафік застряває там, перш ніж досягти PC-Finance.",
+                "Router-Branch має статичний маршрут до мережі штаб-квартири, але він прив'язаний до неправильного вихідного порту, тому наступний перехід насправді не може бути досягнутий таким чином, і відповідь відкидається.",
+                "На Router-Branch видаліть існуючий маршрут до 10.0.12.0/255.255.255.0, потім додайте новий статичний маршрут до 10.0.12.0/255.255.255.0 через 10.0.28.1 на порту 0."
+            ],
+            "explanation": "Наступний перехід статичного маршруту має бути досяжний через порт, до якого він насправді прив'язаний. Тут маршрут Router-Branch до штаб-квартири вказував на правильну адресу наступного переходу, але на неправильний вихідний порт, тому зворотний трафік був відкинутий. Завжди перевіряйте, що порт маршруту та наступний перехід узгоджуються."
+        },
+        "ur": {
+            "title": "ہیڈ کوارٹرز پورٹل سے برانچ آفس کاٹا ہوا",
+            "story": "برانچ آفس میں عملہ رپورٹ کر رہے ہیں کہ جب ہیڈ کوارٹرز میں PC-Finance کوشش کرتا ہے تو Portal-01 کبھی جواب نہیں دیتا۔ یہ مسئلہ صبح سے برقرار ہے، چاہے کوئی بھی کوشش کرے۔",
+            "objective": "PC-Finance سے Portal-01 تک HTTP کنکشن بحال کریں۔",
+            "hints": [
+                "Portal-01 سے جواب Router-Branch کے ذریعے واپس نہیں آتا — واپسی ٹریفک وہاں رکی ہوئی ہے اور PC-Finance تک نہیں پہنچتی۔",
+                "Router-Branch کے پاس HQ نیٹ ورک کی طرف ایک static route ہے، لیکن یہ غلط پورٹ سے جڑا ہوا ہے، اس لیے نیکسٹ ہاپ تک نہیں پہنچا جا سکتا اور جواب حذف کر دیا جاتا ہے۔",
+                "Router-Branch پر، 10.0.12.0/255.255.255.0 کے موجودہ route کو حذف کریں، پھر 10.0.12.0/255.255.255.0 کے لیے ایک نیا static route شامل کریں، نیکسٹ ہاپ 10.0.28.1، پورٹ نمبر 0 پر۔"
+            ],
+            "explanation": "ایک static route کے نیکسٹ ہاپ کو اس پورٹ کے ذریعے رسائی میں ہونا چاہیے جس سے وہ جڑا ہوا ہے۔ یہاں Router-Branch کا HQ کی طرف route صحیح نیکسٹ ہاپ ایڈریس پر تھا لیکن غلط outgoing پورٹ پر، اس لیے واپسی ٹریفک حذف کر دیا گیا۔ ہمیشہ چیک کریں کہ route کا پورٹ اور نیکسٹ ہاپ ایک دوسرے سے متفق ہیں۔"
+        },
+        "zu": {
+            "title": "Ofisi Yamabalazi Ikhishwe Ku-HQ Portal",
+            "story": "Abasebenzi eofisini yamabalazi babelulela ukuthi u-Portal-01 akagcwalise kaningi lapho i-PC-Finance ehlabathi likhulu izama ukubukhula. Le nkinga ibhaliwe kusukela ngomuso, noma ubani ozama.",
+            "objective": "Buyisela ukuxhumana kwe-HTTP u-PC-Finance ku-Portal-01.",
+            "hints": [
+                "Impendulo evela ku-Portal-01 ayiphindi ikhiphe nge-Router-Branch — amatraffic okubuyela avumiwe lapho ngaphambi kokuba kufinyelele ku-PC-Finance.",
+                "I-Router-Branch ine-static route konetwekhi ye-HQ, kodwa ixhomeke ku-port engalungile, ngoko nge-next hop ayikwazi ukufika ngale ndlela futhi impendulo iyalahlekelwa.",
+                "Ku-Router-Branch, susa umzila we-static esikhoyo we-10.0.12.0/255.255.255.0, bese wengeza umzila we-static omusha ku-10.0.12.0/255.255.255.0 nge-next hop 10.0.28.1 ku-port 0."
+            ],
+            "explanation": "Umzila we-static we-next hop kufanele ukuthi ufinyeleke nge-port lapho kuxhomeke khona. Lapha umzila we-Router-Branch owe-HQ wabheke ku-akheli ye-next hop efanele kodwa ku-port engalungile, ngoko amatraffic okubuyela ayalahlekelwa. Njalo hlola ukuthi umzila kanye ne-next hop bayavumelana."
+        },
+        "kk": {
+            "title": "Филиал ресепшені HQ Portal-ден ажырады",
+            "story": "Филиалдағы қызметкерлер Portal-01-ге ешқашан жауап бермейтінін хабарлайды, өйткені штаб-квартирадағы PC-Finance оны ашуға тырысады. Бұл мәселе бүгін таңнан бері сақталып тұрған, бәріне қарамастан.",
+            "objective": "PC-Finance-тен Portal-01-ге арналған HTTP байланысын қалпына келтіріңіз.",
+            "hints": [
+                "Portal-01-ден келген жауап Router-Branch арқылы шығып жібермейді — қайтарылған трафик сонда тоқталып қалады, PC-Finance-ке жетпей.",
+                "Router-Branch-та HQ желісіне арналған статикалық маршрут бар, бірақ ол дұрыс емес шығыс портына байланысты, сондықтан келесі хоп сол тәсілмен іс жүзінде қол жетпейді және жауап тастапқы болады.",
+                "Router-Branch-та 10.0.12.0/255.255.255.0 орындағы бар маршрутты өшіріңіз, содан кейін 10.0.12.0/255.255.255.0 орындағы жаңа статикалық маршрутты 10.0.28.1 келесі хоп арқылы 0 портында қосыңыз."
+            ],
+            "explanation": "Статикалық маршрутттың келесі хопы оның байланысты болған портты арқылы қол жетпетін болуы керек. Мұнда Router-Branch-та HQ-ға арналған маршрут дұрыс келесі хоп адресін, бірақ дұрыс емес шығыс портын көрсеткен, сондықтан қайтарылған трафик тастапқы болды. Әрқашан маршруттың портын және келесі хопын қарастырыңыз."
+        },
+        "ky": {
+            "title": "Филиал HQ Portal-дан ажыратылды",
+            "story": "Филиалдагы кызматкерлер Portal-01-дин эч качан жооп бермейтүүнү айтып жатышат, штаб-квартирадагы PC-Finance аны ачууга аракет кылганда. Бул көйгөй бүгүн таңынан бери тизек берип жатат, бир да ким болбосун.",
+            "objective": "PC-Finance ден Portal-01 ге чейин HTTP байланышын калыбына келтиргиле.",
+            "hints": [
+                "Portal-01 ден келген жооп Router-Branch аркылуу чыккы барбайт — кайта трафик ошол жерде чилтип калат, PC-Finance ге жеткен эмес.",
+                "Router-Branch та HQ тармагына карай статикалык маршрут бар, бирок ал туура эмес чыгуу портуна байланган, ошол эле болсо кийинки түйүн ошол жолу менен чын жүзүндө жетүүгө болбойт жана жооп таштанып калат.",
+                "Router-Branch та 10.0.12.0/255.255.255.0 ге барган бар маршрутту өч, андан кийин 10.0.12.0/255.255.255.0 ге жаңы статикалык маршрутту 10.0.28.1 кийинки түйүн аркылуу 0 портто кош."
+            ],
+            "explanation": "Статикалык маршруттун кийинки түйүнү ал байланган портун аркылуу жетүүгө болуш керек. Бул жердеги Router-Branch та HQ га карай маршрут туура кийинки түйүн дарегин, бирок туура эмес чыгуу портун коргүш, ошол эле болсо кайта трафик таштанып калды. Дайыма маршруттун портун жана кийинки түйүнү текшерип кулгуле."
+        },
+        "ml": {
+            "title": "ബ്രാഞ്ച് ഓഫീസ് HQ Portal-ൽ നിന്ന് വിച്ഛേദിച്ചു",
+            "story": "ബ്രാഞ്ച് ഓഫീസിലെ ജീവനക്കാർ പറയുന്നതായത് PC-Finance ബേസ്ഡ് ഹെഡ്കോ്വാർടേഴ്സ് വിലാസം Portal-01 തുറക്കാൻ ശ്രമിച്ചാൽ അത് ഒരിക്കലും പ്രതികരിക്കാറില്ല. ഈ പ്രശ്നം ഇന്നലെ പ്രാതഃകാലം മുതൽ നിലനിൽക്കുന്നു, ആരായാലും നിരസിക്കും.",
+            "objective": "PC-Finance ൽ നിന്ന് Portal-01 ലേക്കുള്ള HTTP കണക്ഷൻ പുനരുദ്ധരിക്കുക.",
+            "hints": [
+                "Portal-01 ൽ നിന്നുള്ള പ്രതികരണം Router-Branch ൽ നിന്ന് പോയി അഭിലഷിതമായ വിധത്തിൽ പറ്റുന്നില്ല — വിപരീത ട്രാഫിക് അവിടെ തെറ്റായ സ്ഥിതിയിൽ കെട്ടിതരിയുന്നു, PC-Finance എത്തിപ്പെടാതെ.",
+                "Router-Branch ൽ HQ നെറ്റ്‌വർക്കിലേക്ക് സ്ഥിരമായ ആരോഹണ പാത ഉണ്ടെങ്കിലും ഇത് തെറ്റായ ഔട്ട്‌ഗോയിംഗ് പോർട്ടിലേക്ക് ബന്ധിതരായിരിക്കുന്നു, അതിനാൽ നെക്സ്റ്റ് ഹോപ്പ് വാസ്തവത്തിൽ പൌഁছിപ്പിക്കാനാകില്ല ആ വഴിയിലും പ്രതികരണം പരിത്യക്തമാകുന്നു.",
+                "Router-Branch ൽ, 10.0.12.0/255.255.255.0 പരിധിയിലേക്കുള്ള നിലവിലെ ആരോഹണ പാത ഇരുത്തിയ ശേഷം, 10.0.12.0/255.255.255.0 പരിധിയിലേക്കുള്ള പുതിയ സ്ഥിരമായ ആരോഹണ പാത നെക്സ്റ്റ് ഹോപ്പ് 10.0.28.1 ന് പോർട്ട് 0 ൽ ചേർക്കുക."
+            ],
+            "explanation": "സ്ഥിരമായ ആരോഹണ പാതയുടെ നെക്സ്റ്റ് ഹോപ്പ് അത് നിയോഗീകരിച്ച പോർട്ടിലൂടെ എത്തിപ്പെടേണ്ടതായിരിക്കും. ഇവിടെ Router-Branch ന്റെ HQ നെറ്റ്‌വർക്കിലേക്കുള്ള ആരോഹണ പാത ശരിയായ നെക്സ്റ്റ് ഹോപ്പ് വിലാസം പരാമർശിച്ചെങ്കിലും തെറ്റായ ഔട്ട്‌ഗോയിംഗ് പോർട്ടിലെയ്, അതിനാൽ വിപരീത ട്രാഫിക്ക് വെടിച്ചിട്ടപ്പോലെ അകലത്തായി. എപ്പോഴും ആരോഹണ പാതയുടെ പോർട്ടും നെക്സ്റ്റ് ഹോപ്പും പരിശോധിച്ച് നോക്കുക."
+        },
+        "mr": {
+            "title": "शाखा कार्यालय HQ Portal पासून अलग झाले",
+            "story": "शाखा कार्यालयातील कर्मचारी अहवाल देतात की जेव्हा मुख्यालयातील PC-Finance Portal-01 उघडायचा प्रयत्न करतो तेव्हा तो कधीही प्रतिक्रिया देत नाही. ही समस्या आज सकाळपासून कायम आहे, कोणी कितीही करो.",
+            "objective": "PC-Finance पासून Portal-01 पर्यंत HTTP कनेक्शन पुनर्संचित करा.",
+            "hints": [
+                "Portal-01 कडून मिळालेली प्रतिक्रिया Router-Branch मधून बाहेर पडली नाही — परत येणारा ट्रॅफिक तेथे अडकून राहतो, PC-Finance पर्यंत पोहोचत नाही.",
+                "Router-Branch वर HQ नेटवर्कसाठी स्थिर मार्ग आहे, परंतु तो चुकीच्या आउटगोइंग पोर्टला बांधलेला आहे, त्यामुळे नेक्स्ट हॉप त्या मार्गाने वास्तविकरित्या पोहोचू शकत नाही आणि प्रतिक्रिया हरवून जाते.",
+                "Router-Branch वर, 10.0.12.0/255.255.255.0 साठीचा विद्यमान मार्ग हटवा, त्यानंतर 10.0.12.0/255.255.255.0 साठी नवीन स्थिर मार्ग नेक्स्ट हॉप 10.0.28.1 सह पोर्ट 0 वर जोडा."
+            ],
+            "explanation": "स्थिर मार्गाचा नेक्स्ट हॉप त्या बंधलेल्या पोर्टद्वारे पोहोचता येईल हे आवश्यक आहे. येथे Router-Branch चा HQ साठीचा मार्ग योग्य नेक्स्ट हॉप पत्त्याला, परंतु चुकीच्या आउटगोइंग पोर्टला निर्दिष्ट करतो, त्यामुळे परत येणारा ट्रॅफिक हरवून जाणे शक्य होते. नेहमी मार्गाचा पोर्ट आणि नेक्स्ट हॉप तपासून पाहा."
+        },
+        "pa": {
+            "title": "ਸ਼ਾਖਾ ਦਫ਼ਤਰ HQ Portal ਤੋਂ ਕੱਟ ਗਿਆ",
+            "story": "ਸ਼ਾਖਾ ਦਫ਼ਤਰ ਦੇ ਕਰਮਚਾਰੀ ਰਿਪੋਰਟ ਕਰਦੇ ਹਨ ਕਿ Portal-01 ਕਦੀ ਜਵਾਬ ਨਹੀਂ ਦਿੰਦਾ ਜਦੋਂ ਹੈੱਡਕੁਆਰਟਰ ਦਾ PC-Finance ਇਸ ਨੂੰ ਖੋਲ੍ਹਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦਾ ਹੈ। ਇਹ ਮਸਲਾ ਅੱਜ ਸਵੇਰੇ ਤੋਂ ਲਿਆਂਦਾ ਹੈ, ਕੋਈ ਵੀ ਪ੍ਰਯਾਸ ਕਰੋ।",
+            "objective": "PC-Finance ਤੋਂ Portal-01 ਤੱਕ HTTP ਕੁਨੈਕਸ਼ਨ ਮੁੜ ਸਥਾਪਿਤ ਕਰੋ।",
+            "hints": [
+                "Portal-01 ਤੋਂ ਜਵਾਬ Router-Branch ਦੁਆਰਾ ਬਾਹਰ ਨਹੀਂ ਜਾਂਦਾ — ਵਾਪਸੀ ਟਰੈਫਿਕ ਉੱਥੇ ਫਸ ਜਾਂਦਾ ਹੈ, PC-Finance ਤੱਕ ਨਹੀਂ ਪੁੱਜਦਾ।",
+                "Router-Branch ਉੱਤੇ HQ ਨੈੱਟਵਰਕ ਲਈ ਸਥਿਰ ਮਾਰਗ ਹੈ, ਪਰ ਇਹ ਗਲਤ ਆਉਟਗੋਇੰਗ ਪੋਰਟ ਨਾਲ ਜੁੜਿਆ ਹੈ, ਇਸ ਲਈ ਨੈਕਸਟ ਹੌਪ ਅਸਲ ਵਿੱਚ ਉਸ ਤਰੀਕੇ ਨਾਲ ਪਹੁੰਚਣਯੋਗ ਨਹੀਂ ਹੋ ਸਕਦਾ ਅਤੇ ਜਵਾਬ ਮੁੜ ਮੁੜ ਝੱਲ ਜਾਂਦਾ ਹੈ।",
+                "Router-Branch ਉੱਤੇ, 10.0.12.0/255.255.255.0 ਲਈ ਮਸੌਦਾ ਮਾਰਗ ਹਟਾਓ, ਫਿਰ 10.0.12.0/255.255.255.0 ਲਈ ਨਵਾਂ ਸਥਿਰ ਮਾਰਗ ਨੈਕਸਟ ਹੌਪ 10.0.28.1 ਦੇ ਨਾਲ ਪੋਰਟ 0 ਉੱਤੇ ਜੋੜੋ।"
+            ],
+            "explanation": "ਸਥਿਰ ਮਾਰਗ ਦਾ ਨੈਕਸਟ ਹੌਪ ਉਸ ਪੋਰਟ ਦੁਆਰਾ ਪਹੁੰਚਣਯੋਗ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਜਿਸ ਨਾਲ ਇਹ ਜੁੜਿਆ ਹੈ। ਇੱਥੇ Router-Branch ਦਾ HQ ਵੱਲ ਮਾਰਗ ਸਹੀ ਨੈਕਸਟ ਹੌਪ ਪਤਾ ਦਿਆ ਪਰ ਗਲਤ ਆਉਟਗੋਇੰਗ ਪੋਰਟ ਦਿਖਾਇਆ, ਇਸ ਲਈ ਵਾਪਸੀ ਟਰੈਫਿਕ ਮੁੜ ਮੁੜ ਖੋਜ ਗਿਆ। ਹਮੇਸ਼ਾ ਮਾਰਗ ਦੇ ਪੋਰਟ ਅਤੇ ਨੈਕਸਟ ਹੌਪ ਦੀ ਜਾਂਚ ਕਰੋ।"
+        }
+    }
+}
