@@ -1,0 +1,1338 @@
+{
+    "schemaVersion": 1,
+    "id": "2026-12-05",
+    "number": 76,
+    "difficulty": 5,
+    "track": "basic",
+    "origin": "official",
+    "author": "Fuji Bit",
+    "realisticMode": true,
+    "requiresProDevices": true,
+    "archetype": "vlan_floor",
+    "faultIds": [
+        "vlan_mismatch"
+    ],
+    "concepts": [
+        "vlan"
+    ],
+    "topology": {
+        "devices": {
+            "dev-client1": {
+                "id": "dev-client1",
+                "type": "CLIENT",
+                "name": "PC-Lab",
+                "x": 80.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client1-p0",
+                        "index": 0,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:00",
+                        "ipAddress": "10.0.17.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p1",
+                        "index": 1,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p2",
+                        "index": 2,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client1-p3",
+                        "index": 3,
+                        "deviceId": "dev-client1",
+                        "macAddress": "02:00:00:00:01:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.17.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client2": {
+                "id": "dev-client2",
+                "type": "CLIENT",
+                "name": "PC-Design",
+                "x": 320.0,
+                "y": 120.0,
+                "ports": [
+                    {
+                        "id": "dev-client2-p0",
+                        "index": 0,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:00",
+                        "ipAddress": "10.0.17.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p1",
+                        "index": 1,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p2",
+                        "index": 2,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client2-p3",
+                        "index": 3,
+                        "deviceId": "dev-client2",
+                        "macAddress": "02:00:00:00:02:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.17.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client3": {
+                "id": "dev-client3",
+                "type": "CLIENT",
+                "name": "PC-Admin",
+                "x": 80.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client3-p0",
+                        "index": 0,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:00",
+                        "ipAddress": "10.0.7.11",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p1",
+                        "index": 1,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p2",
+                        "index": 2,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client3-p3",
+                        "index": 3,
+                        "deviceId": "dev-client3",
+                        "macAddress": "02:00:00:00:03:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-client4": {
+                "id": "dev-client4",
+                "type": "CLIENT",
+                "name": "PC-Sales",
+                "x": 320.0,
+                "y": 360.0,
+                "ports": [
+                    {
+                        "id": "dev-client4-p0",
+                        "index": 0,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:00",
+                        "ipAddress": "10.0.7.12",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p1",
+                        "index": 1,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p2",
+                        "index": 2,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-client4-p3",
+                        "index": 3,
+                        "deviceId": "dev-client4",
+                        "macAddress": "02:00:00:00:04:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.7.254",
+                    "dnsRecords": []
+                }
+            },
+            "dev-vlan1": {
+                "id": "dev-vlan1",
+                "type": "VLAN_SWITCH",
+                "name": "VLAN-Switch-1F",
+                "x": 200.0,
+                "y": 600.0,
+                "ports": [
+                    {
+                        "id": "dev-vlan1-p0",
+                        "index": 0,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:00",
+                        "connectedLinkId": "link-1",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p1",
+                        "index": 1,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:01",
+                        "connectedLinkId": "link-2",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p2",
+                        "index": 2,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:02",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p3",
+                        "index": 3,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:03",
+                        "connectedLinkId": "link-3",
+                        "vlanId": 30
+                    },
+                    {
+                        "id": "dev-vlan1-p4",
+                        "index": 4,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:04",
+                        "connectedLinkId": "link-4",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p5",
+                        "index": 5,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:05",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 20
+                    },
+                    {
+                        "id": "dev-vlan1-p6",
+                        "index": 6,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:06",
+                        "vlanId": 10
+                    },
+                    {
+                        "id": "dev-vlan1-p7",
+                        "index": 7,
+                        "deviceId": "dev-vlan1",
+                        "macAddress": "02:00:00:00:05:07",
+                        "vlanId": 20
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-router1": {
+                "id": "dev-router1",
+                "type": "ROUTER",
+                "name": "Router-Main",
+                "x": 200.0,
+                "y": 840.0,
+                "ports": [
+                    {
+                        "id": "dev-router1-p0",
+                        "index": 0,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:00",
+                        "ipAddress": "10.0.17.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-5",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p1",
+                        "index": 1,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:01",
+                        "ipAddress": "10.0.7.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-6",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p2",
+                        "index": 2,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:02",
+                        "ipAddress": "10.0.16.254",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p3",
+                        "index": 3,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:03",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p4",
+                        "index": 4,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:04",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p5",
+                        "index": 5,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:05",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p6",
+                        "index": 6,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:06",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-router1-p7",
+                        "index": 7,
+                        "deviceId": "dev-router1",
+                        "macAddress": "02:00:00:00:06:07",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "dnsRecords": []
+                }
+            },
+            "dev-server1": {
+                "id": "dev-server1",
+                "type": "SERVER",
+                "name": "Intranet-01",
+                "x": 200.0,
+                "y": 1080.0,
+                "ports": [
+                    {
+                        "id": "dev-server1-p0",
+                        "index": 0,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:00",
+                        "ipAddress": "10.0.16.1",
+                        "subnetMask": "255.255.255.0",
+                        "connectedLinkId": "link-7",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p1",
+                        "index": 1,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:01",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p2",
+                        "index": 2,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:02",
+                        "vlanId": 0
+                    },
+                    {
+                        "id": "dev-server1-p3",
+                        "index": 3,
+                        "deviceId": "dev-server1",
+                        "macAddress": "02:00:00:00:07:03",
+                        "vlanId": 0
+                    }
+                ],
+                "config": {
+                    "routingTable": [],
+                    "aclRules": [],
+                    "lbAlgorithm": "ROUND_ROBIN",
+                    "natRules": [],
+                    "defaultGateway": "10.0.16.254",
+                    "dnsRecords": []
+                }
+            }
+        },
+        "links": {
+            "link-1": {
+                "id": "link-1",
+                "sourcePortId": "dev-client1-p0",
+                "targetPortId": "dev-vlan1-p0",
+                "sourceDeviceId": "dev-client1",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-2": {
+                "id": "link-2",
+                "sourcePortId": "dev-client2-p0",
+                "targetPortId": "dev-vlan1-p1",
+                "sourceDeviceId": "dev-client2",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-3": {
+                "id": "link-3",
+                "sourcePortId": "dev-client3-p0",
+                "targetPortId": "dev-vlan1-p3",
+                "sourceDeviceId": "dev-client3",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-4": {
+                "id": "link-4",
+                "sourcePortId": "dev-client4-p0",
+                "targetPortId": "dev-vlan1-p4",
+                "sourceDeviceId": "dev-client4",
+                "targetDeviceId": "dev-vlan1",
+                "latencyMs": 500
+            },
+            "link-5": {
+                "id": "link-5",
+                "sourcePortId": "dev-vlan1-p2",
+                "targetPortId": "dev-router1-p0",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-6": {
+                "id": "link-6",
+                "sourcePortId": "dev-vlan1-p5",
+                "targetPortId": "dev-router1-p1",
+                "sourceDeviceId": "dev-vlan1",
+                "targetDeviceId": "dev-router1",
+                "latencyMs": 500
+            },
+            "link-7": {
+                "id": "link-7",
+                "sourcePortId": "dev-router1-p2",
+                "targetPortId": "dev-server1-p0",
+                "sourceDeviceId": "dev-router1",
+                "targetDeviceId": "dev-server1",
+                "latencyMs": 500
+            }
+        }
+    },
+    "checks": [
+        {
+            "id": "c1",
+            "kind": "send",
+            "sourceDeviceId": "dev-client1",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "http",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        },
+        {
+            "id": "c2",
+            "kind": "send",
+            "sourceDeviceId": "dev-client3",
+            "targetDeviceId": "dev-server1",
+            "payload": {
+                "type": "icmp",
+                "method": "GET",
+                "path": "/",
+                "body": ""
+            },
+            "expect": "success"
+        }
+    ],
+    "rules": {
+        "lockedDeviceIds": [
+            "dev-server1",
+            "dev-router1"
+        ],
+        "forbid": [
+            "add_device",
+            "remove_device",
+            "add_link",
+            "remove_link"
+        ]
+    },
+    "par": {
+        "changes": 1
+    },
+    "text": {
+        "en": {
+            "title": "Admin Can't Reach the Intranet",
+            "story": "Since this morning, the admin desk reports that PC-Admin cannot open the company intranet server, even though nothing changed on their end. Other staff say their own access seems fine.",
+            "objective": "Restore ICMP ping connectivity from PC-Admin to Intranet-01.",
+            "hints": [
+                "The ping from PC-Admin never gets past VLAN-Switch-1F on its way to Router-Main.",
+                "That switch port carrying PC-Admin's traffic belongs to a VLAN with no member ports leading toward the router, so the gateway can never be reached.",
+                "On VLAN-Switch-1F, set the port connected to PC-Admin (port 3) to VLAN 20."
+            ],
+            "explanation": "Switch ports must belong to the VLAN that actually contains a path to the gateway. A port assigned to the wrong VLAN isolates its device from the router even though cabling and IP settings look correct, so ARP for the gateway times out and nothing beyond the switch is reachable."
+        },
+        "ja": {
+            "title": "管理者がイントラネットに接続できない",
+            "story": "今朝から、管理デスクのPC-Adminが社内イントラネットサーバーに接続できないと報告がありました。こちら側では何も変更していないとのことです。他のスタッフの接続には問題がないようです。",
+            "objective": "PC-AdminからIntranet-01へのICMP ping疎通を復旧させてください。",
+            "hints": [
+                "PC-Adminからのpingは、Router-Mainへ向かう途中のVLAN-Switch-1Fを越えられていません。",
+                "PC-Adminの通信が通るスイッチポートは、ルーターへの経路を持たないVLANに属しているため、デフォルトゲートウェイに到達できません。",
+                "VLAN-Switch-1Fで、PC-Adminが接続されているポート(ポート3)をVLAN 20に設定してください。"
+            ],
+            "explanation": "スイッチのポートは、実際にゲートウェイへの経路を持つVLANに所属している必要があります。ポートが誤ったVLANに割り当てられていると、配線やIP設定が正しく見えても、その機器はルーターから隔離されてしまいます。その結果、ゲートウェイへのARPがタイムアウトし、スイッチより先には何も到達できなくなります。"
+        },
+        "zh-CN": {
+            "title": "管理员无法访问内网",
+            "story": "从今早开始，管理员反映 PC-Admin 无法打开公司内网服务器，尽管他们那边没有做任何改动。但其他员工说他们的访问似乎正常。",
+            "objective": "恢复从 PC-Admin 到 Intranet-01 的 ICMP ping 连接。",
+            "hints": [
+                "从 PC-Admin 发出的 ping 在前往 Router-Main 的路上从未通过 VLAN-Switch-1F。",
+                "该交换机上承载 PC-Admin 通信的端口属于一个没有指向路由器的成员端口的 VLAN，因此无法到达网关。",
+                "在 VLAN-Switch-1F 上，将连接到 PC-Admin 的端口（端口 3）设置为 VLAN 20。"
+            ],
+            "explanation": "交换机端口必须属于实际包含指向网关路径的 VLAN。分配到错误 VLAN 的端口会使其设备与路由器隔离，即使布线和 IP 设置看起来正确，网关的 ARP 也会超时，交换机之外的任何东西都无法访问。"
+        },
+        "zh-TW": {
+            "title": "管理員無法存取內網",
+            "story": "從今早開始，管理員反映 PC-Admin 無法開啟公司內網伺服器，儘管他們那邊沒有做任何改動。但其他員工說他們的存取似乎正常。",
+            "objective": "恢復從 PC-Admin 到 Intranet-01 的 ICMP ping 連線。",
+            "hints": [
+                "從 PC-Admin 發出的 ping 在前往 Router-Main 的路上從未通過 VLAN-Switch-1F。",
+                "該交換機上承載 PC-Admin 通信的連接埠屬於一個沒有指向路由器的成員連接埠的 VLAN，因此無法到達預設閘道。",
+                "在 VLAN-Switch-1F 上，將連接到 PC-Admin 的連接埠（連接埠 3）設定為 VLAN 20。"
+            ],
+            "explanation": "交換機連接埠必須屬於實際包含指向預設閘道路徑的 VLAN。分配到錯誤 VLAN 的連接埠會使其裝置與 Router 隔離，即使佈線和 IP 設定看起來正確，預設閘道的 ARP 也會逾時，交換機之外的任何東西都無法存取。"
+        },
+        "ko": {
+            "title": "관리자가 인트라넷에 접근할 수 없음",
+            "story": "오늘 아침부터 관리자는 PC-Admin으로 회사 인트라넷 서버에 접속할 수 없다고 보고하고 있습니다. 그들 쪽에서는 아무런 변경이 없었음에도 불구하고 말입니다. 다른 직원들은 자신들의 접속이 정상이라고 말합니다.",
+            "objective": "PC-Admin에서 Intranet-01으로의 ICMP ping 연결을 복구합니다.",
+            "hints": [
+                "PC-Admin에서 보낸 ping은 Router-Main으로 가는 과정에서 VLAN-Switch-1F를 통과하지 못합니다.",
+                "해당 스위치에서 PC-Admin의 트래픽을 전달하는 포트는 라우터로 향하는 멤버 포트가 없는 VLAN에 속하므로 기본 게이트웨이에 도달할 수 없습니다.",
+                "VLAN-Switch-1F에서 PC-Admin에 연결된 포트(포트 3)를 VLAN 20으로 설정합니다."
+            ],
+            "explanation": "스위치 포트는 실제로 기본 게이트웨이로의 경로를 포함하는 VLAN에 속해야 합니다. 잘못된 VLAN에 할당된 포트는 케이블 연결 및 IP 설정이 올바르더라도 해당 장치를 Router와 격리시키므로 기본 게이트웨이에 대한 ARP가 타임아웃되고 스위치 너머의 모든 것에 도달할 수 없습니다."
+        },
+        "es": {
+            "title": "Admin no puede acceder a la intranet",
+            "story": "Desde esta mañana, el escritorio de administración reporta que PC-Admin no puede abrir el servidor de intranet de la empresa, aunque nada cambió de su parte. Otros empleados dicen que su acceso parece estar bien.",
+            "objective": "Restaurar la conectividad ICMP ping desde PC-Admin hacia Intranet-01.",
+            "hints": [
+                "El ping desde PC-Admin nunca atraviesa VLAN-Switch-1F en su camino hacia Router-Main.",
+                "El puerto del switch que lleva el tráfico de PC-Admin pertenece a una VLAN sin puertos miembro que conduzcan al router, por lo que nunca se puede alcanzar el gateway.",
+                "En VLAN-Switch-1F, establece el puerto conectado a PC-Admin (puerto 3) en VLAN 20."
+            ],
+            "explanation": "Los puertos del switch deben pertenecer a la VLAN que realmente contiene una ruta hacia el gateway. Un puerto asignado a la VLAN incorrecta aísla su dispositivo del router aunque el cableado y la configuración IP se vean correctas, por lo que el ARP al gateway agota el tiempo de espera y nada más allá del switch es accesible."
+        },
+        "pt-BR": {
+            "title": "Admin não consegue acessar a intranet",
+            "story": "Desde esta manhã, a mesa de administração relata que PC-Admin não consegue abrir o servidor de intranet da empresa, apesar de nada ter mudado de sua parte. Outros funcionários dizem que seu acesso parece estar funcionando normalmente.",
+            "objective": "Restaurar a conectividade ICMP ping de PC-Admin para Intranet-01.",
+            "hints": [
+                "O ping de PC-Admin nunca passa por VLAN-Switch-1F a caminho de Router-Main.",
+                "A porta do switch que carrega o tráfego de PC-Admin pertence a uma VLAN sem portas-membro que levem ao router, portanto o gateway nunca pode ser alcançado.",
+                "Em VLAN-Switch-1F, defina a porta conectada a PC-Admin (porta 3) como VLAN 20."
+            ],
+            "explanation": "As portas do switch devem pertencer à VLAN que realmente contém um caminho para o gateway. Uma porta atribuída à VLAN incorreta isola seu dispositivo do router mesmo que a fiação e as configurações de IP pareçam corretas, portanto o ARP para o gateway expira e nada além do switch fica acessível."
+        },
+        "de": {
+            "title": "Admin kann Intranet nicht erreichen",
+            "story": "Seit heute Morgen meldet der Admin-Schreibtisch, dass PC-Admin die Intranet-Server der Firma nicht öffnen kann, obwohl auf ihrer Seite nichts geändert wurde. Andere Mitarbeiter sagen, ihr Zugriff funktioniert einwandfrei.",
+            "objective": "ICMP-Ping-Verbindung von PC-Admin zu Intranet-01 wiederherstellen.",
+            "hints": [
+                "Der Ping von PC-Admin kommt über VLAN-Switch-1F auf dem Weg zu Router-Main nicht hinaus.",
+                "Der Switch-Port, der den Traffic von PC-Admin trägt, gehört zu einem VLAN ohne Member-Ports zum Router, daher kann das Standard-Gateway nie erreicht werden.",
+                "Stellen Sie auf VLAN-Switch-1F den Port für PC-Admin (Port 3) auf VLAN 20 ein."
+            ],
+            "explanation": "Switch-Ports müssen zu dem VLAN gehören, das tatsächlich einen Pfad zum Standard-Gateway enthält. Ein Port, der einem falschen VLAN zugeordnet ist, isoliert sein Gerät vom Router, obwohl Verkabelung und IP-Einstellungen korrekt aussehen. So läuft ARP für das Standard-Gateway ab, und nichts über den Switch hinaus ist erreichbar."
+        },
+        "fr": {
+            "title": "L'admin ne peut pas accéder à l'Intranet",
+            "story": "Depuis ce matin, le poste admin signale que PC-Admin ne peut pas ouvrir le serveur intranet de l'entreprise, bien que rien n'ait changé de son côté. Les autres employés disent que leur accès fonctionne bien.",
+            "objective": "Restaurer la connectivité ICMP ping de PC-Admin vers Intranet-01.",
+            "hints": [
+                "Le ping en provenance de PC-Admin ne dépasse jamais VLAN-Switch-1F en route vers Router-Main.",
+                "Le port du commutateur transportant le trafic de PC-Admin appartient à un VLAN sans ports membres menant vers le routeur, la Passerelle par défaut ne peut donc jamais être atteinte.",
+                "Sur VLAN-Switch-1F, configurez le port connecté à PC-Admin (port 3) sur VLAN 20."
+            ],
+            "explanation": "Les ports du commutateur doivent appartenir au VLAN qui contient réellement un chemin vers la Passerelle par défaut. Un port assigné au mauvais VLAN isole son appareil du routeur même si le câblage et les paramètres IP semblent corrects. L'ARP pour la Passerelle par défaut expire donc et rien au-delà du commutateur n'est accessible."
+        },
+        "hi": {
+            "title": "एडमिन इंट्रानेट तक नहीं पहुंच सकता",
+            "story": "आज सुबह से, एडमिन डेस्क की रिपोर्ट है कि PC-Admin कंपनी के इंट्रानेट सर्वर को नहीं खोल सकता, भले ही उनकी ओर से कुछ नहीं बदला है। अन्य कर्मचारी कहते हैं कि उनकी पहुंच ठीक है।",
+            "objective": "PC-Admin से Intranet-01 तक ICMP ping कनेक्टिविटी को पुनः स्थापित करें।",
+            "hints": [
+                "PC-Admin से ping कभी भी Router-Main की ओर जाते समय VLAN-Switch-1F से आगे नहीं जाता।",
+                "PC-Admin की ट्रैफिक ले जाने वाली स्विच पोर्ट एक ऐसे VLAN की है जिसमें रूटर की ओर कोई मेंबर पोर्ट नहीं है, इसलिए डिफ़ॉल्ट गेटवे कभी नहीं पहुंचा जा सकता।",
+                "VLAN-Switch-1F पर, PC-Admin से जुड़ी पोर्ट (पोर्ट 3) को VLAN 20 पर सेट करें।"
+            ],
+            "explanation": "स्विच पोर्ट उस VLAN से संबंधित होने चाहिए जिसमें वास्तव में डिफ़ॉल्ट गेटवे का मार्ग है। गलत VLAN को असाइन की गई पोर्ट अपने डिवाइस को रूटर से अलग कर देती है, भले ही केबलिंग और IP सेटिंग्स सही दिखें। इसलिए डिफ़ॉल्ट गेटवे के लिए ARP समय समाप्त हो जाता है और स्विच से आगे कुछ भी पहुंचा नहीं जा सकता।"
+        },
+        "id": {
+            "title": "Admin Tidak Bisa Mengakses Intranet",
+            "story": "Sejak pagi ini, meja admin melaporkan bahwa PC-Admin tidak dapat membuka server intranet perusahaan, meskipun tidak ada yang berubah di pihak mereka. Staf lain mengatakan akses mereka tampak baik-baik saja.",
+            "objective": "Pulihkan konektivitas ICMP ping dari PC-Admin ke Intranet-01.",
+            "hints": [
+                "Ping dari PC-Admin tidak pernah melampaui VLAN-Switch-1F dalam perjalanan ke Router-Main.",
+                "Port switch yang membawa traffic PC-Admin termasuk dalam VLAN tanpa port anggota yang menuju router, sehingga Gateway Default tidak pernah dapat dicapai.",
+                "Di VLAN-Switch-1F, atur port yang terhubung ke PC-Admin (port 3) ke VLAN 20."
+            ],
+            "explanation": "Port switch harus termasuk dalam VLAN yang benar-benar memiliki jalur ke Gateway Default. Port yang ditetapkan ke VLAN yang salah mengisolasi perangkatnya dari router meskipun kabel dan pengaturan IP terlihat benar. Oleh karena itu ARP untuk Gateway Default habis masa berlakunya dan tidak ada yang dapat dijangkau di luar switch."
+        },
+        "ru": {
+            "title": "Администратор не может получить доступ к Интранету",
+            "story": "С этого утра администратор сообщает, что PC-Admin не может открыть корпоративный сервер интранета, хотя с их стороны ничего не изменилось. Другие сотрудники говорят, что их доступ работает нормально.",
+            "objective": "Восстановить ICMP ping подключение от PC-Admin к Intranet-01.",
+            "hints": [
+                "Ping от PC-Admin никогда не проходит дальше VLAN-Switch-1F по пути к Router-Main.",
+                "Порт коммутатора, по которому передается трафик PC-Admin, принадлежит VLAN без портов-членов, ведущих к маршрутизатору, поэтому Шлюз по умолчанию никогда не может быть достигнут.",
+                "На VLAN-Switch-1F установите для порта, подключенного к PC-Admin (порт 3), значение VLAN 20."
+            ],
+            "explanation": "Порты коммутатора должны принадлежать VLAN, который действительно содержит путь к Шлюзу по умолчанию. Порт, назначенный неправильной VLAN, изолирует его устройство от маршрутизатора, даже если кабель и параметры IP выглядят правильно. Таким образом, ARP для Шлюза по умолчанию истекает, и ничто за пределами коммутатора не доступно."
+        },
+        "it": {
+            "title": "L'Admin Non Riesce a Raggiungere l'Intranet",
+            "story": "Da questa mattina, la scrivania dell'amministratore segnala che PC-Admin non riesce ad aprire il server intranet aziendale, anche se dalla loro parte non è cambiato nulla. Gli altri dipendenti dicono che il loro accesso sembra funzionare correttamente.",
+            "objective": "Ripristinare la connettività ICMP ping da PC-Admin a Intranet-01.",
+            "hints": [
+                "Il ping da PC-Admin non riesce mai a superare VLAN-Switch-1F sulla strada verso Router-Main.",
+                "La porta dello switch che trasporta il traffico di PC-Admin appartiene a una VLAN senza porte membro che conducono al router, quindi il Gateway predefinito non può mai essere raggiunto.",
+                "Su VLAN-Switch-1F, impostare la porta collegata a PC-Admin (porta 3) su VLAN 20."
+            ],
+            "explanation": "Le porte dello switch devono appartenere alla VLAN che contiene effettivamente un percorso verso il gateway. Una porta assegnata alla VLAN sbagliata isola il dispositivo dal router anche se il cablaggio e le impostazioni IP sembrano corretti, quindi l'ARP per il gateway scade e nulla oltre lo switch è raggiungibile."
+        },
+        "tr": {
+            "title": "Admin Router'a Erişemiyor",
+            "story": "Bu sabahtan beri yönetici masası, kendi taraflarında hiçbir şey değişmemesine rağmen PC-Admin'in şirket intranet sunucusuna erişemediğini bildirmiştir. Diğer personel, kendi erişimlerinin iyi göründüğünü söylüyor.",
+            "objective": "PC-Admin'den Intranet-01'e ICMP ping bağlantısını geri yükleyin.",
+            "hints": [
+                "PC-Admin'den gelen ping, Router-Main'e giden yolda hiçbir zaman VLAN-Switch-1F'yi geçemez.",
+                "PC-Admin'in trafiğini taşıyan switch portu, router'a doğru giden üye portları olmayan bir VLAN'a aittir, bu nedenle Varsayılan ağ geçidine hiçbir zaman ulaşılamaz.",
+                "VLAN-Switch-1F üzerinde, PC-Admin'e bağlı olan portu (port 3) VLAN 20'ye ayarlayın."
+            ],
+            "explanation": "Switch portları, gateway'e giden bir yolu içeren VLAN'a ait olmalıdır. Yanlış VLAN'a atanan bir port, kablolama ve IP ayarları doğru görünse bile cihazı router'dan izole eder, bu nedenle gateway için ARP zaman aşımına uğrar ve switch'in ötesinde hiçbir şey erişilemez."
+        },
+        "th": {
+            "title": "ผู้ดูแลระบบไม่สามารถเข้าถึง Intranet",
+            "story": "ตั้งแต่เช้านี้ เจ้าหน้าที่ผู้ดูแลระบบรายงานว่า PC-Admin ไม่สามารถเปิดเซิร์ฟเวอร์อินทราเน็ตของบริษัท แม้ว่าในส่วนของพวกเขาไม่มีการเปลี่ยนแปลงใด ๆ พนักงานคนอื่นบอกว่าการเข้าถึงของพวกเขาดูเหมือนว่ามีปัญหา",
+            "objective": "คืนสถานะการเชื่อมต่อ ICMP ping จาก PC-Admin ไปยัง Intranet-01",
+            "hints": [
+                "ping จาก PC-Admin ไม่เคยผ่าน VLAN-Switch-1F ในเส้นทางไปยัง Router-Main",
+                "พอร์ตของสวิตช์ที่ส่งข้อมูลของ PC-Admin อยู่ใน VLAN ที่ไม่มีพอร์ตสมาชิกเข้าหา Router ดังนั้น เกตเวย์เริ่มต้นจึงไม่สามารถเข้าถึงได้",
+                "บน VLAN-Switch-1F ตั้งค่าพอร์ตที่เชื่อมต่อกับ PC-Admin (พอร์ต 3) เป็น VLAN 20"
+            ],
+            "explanation": "พอร์ตของสวิตช์ต้องอยู่ใน VLAN ที่มีเส้นทางไปยังเกตเวย์เริ่มต้น พอร์ตที่กำหนดให้กับ VLAN ที่ผิดจะแยกอุปกรณ์ของมันออกจาก Router แม้ว่าการเดินสายและการตั้งค่า IP จะดูถูกต้อง ดังนั้น ARP สำหรับเกตเวย์เริ่มต้นจึงหมดเวลา และไม่มีอะไรเกินกว่าสวิตช์ที่สามารถเข้าถึงได้"
+        },
+        "vi": {
+            "title": "Admin Không Thể Truy Cập Intranet",
+            "story": "Kể từ sáng nay, bàn quản trị viên báo cáo rằng PC-Admin không thể mở máy chủ Intranet của công ty, mặc dù bên phía họ không có gì thay đổi. Nhân viên khác cho biết quyền truy cập của họ dường như vẫn ổn.",
+            "objective": "Khôi phục kết nối ping ICMP từ PC-Admin đến Intranet-01.",
+            "hints": [
+                "Ping từ PC-Admin không bao giờ vượt qua VLAN-Switch-1F trên đường đến Router-Main.",
+                "Cổng switch chuyên chở lưu lượng PC-Admin thuộc VLAN không có cổng thành viên dẫn đến bộ định tuyến, vì vậy không bao giờ có thể tiếp cận Cổng mặc định.",
+                "Trên VLAN-Switch-1F, hãy đặt cổng kết nối với PC-Admin (cổng 3) thành VLAN 20."
+            ],
+            "explanation": "Các cổng switch phải thuộc VLAN thực sự chứa đường dẫn đến Cổng mặc định. Một cổng được gán cho VLAN sai sẽ cô lập thiết bị của nó khỏi bộ định tuyến ngay cả khi cáp và cài đặt IP có vẻ chính xác, do đó ARP cho Cổng mặc định hết thời gian chờ và không có gì vượt qua switch có thể truy cập được."
+        },
+        "af": {
+            "title": "Admin Kan nie die Intranet Bereik nie",
+            "story": "Sedert vanoggend rapporteer die administratorskantoor dat PC-Admin nie die maatskappyse intranetbediener kan oopmaak nie, alhoewel niks aan hul kant verander het nie. Ander personeel sê dat hulle eie toegang goed blyk te wees.",
+            "objective": "Herstel ICMP-verbinding van PC-Admin na Intranet-01.",
+            "hints": [
+                "Die ping van PC-Admin kom nooit verby VLAN-Switch-1F op sy weg na Router-Main nie.",
+                "Die skakelaarpoort wat PC-Admin se verkeer dra, behoort tot 'n VLAN met geen lidmaatskapspoort wat na die router lei nie, dus kan die Verstek-gateway nooit bereik word nie.",
+                "Op VLAN-Switch-1F, stel die poort wat aan PC-Admin gekoppel is (poort 3) in op VLAN 20."
+            ],
+            "explanation": "Skakelaarpoorte moet tot die VLAN behoort wat werklik 'n pad na die Verstek-gateway bevat. 'n Poort wat aan die verkeerde VLAN toegewys is, isoleer sy toestel van die router, selfs al lyk die bedrading en IP-instellings korrek, dus tyd PC-Admin-out vir die Verstek-gateway en niks verder as die skakelaar is bereikbaar nie."
+        },
+        "am": {
+            "title": "አስተዳዳሪ ወደ Intranet-01 ሊደርስ አይችልም",
+            "story": "ከዛ ጀምሮ አሁን ዉስጥ፣ ያለ ምንም ለውጥ በክፍላቸው ውስጥ ሲሆን፣ PC-Admin ሶፍትዌር ኩባንያውን የውስጣዊ ሰርቨር ሊከፍት አልቻለም። ሌሎች ሠራተኞች የንብረታቸው መዳረሻ ጥሩ ይመስላል።",
+            "objective": "ICMP ping connectivity ወደ Intranet-01 ወደ PC-Admin ወደ መልሰ ማስገኘት።",
+            "hints": [
+                "ከPC-Admin ሚጡ ping ወደ Router-Main ሞልቅ VLAN-Switch-1F አያለፍ ወይ።",
+                "የPC-Admin ትራቲክ ተሸከም ሶስቲ ወደ ብዙ ወደ መብራት ወደ Router ወደ ተመራመረ አላቻ ወደ VLAN ።",
+                "On VLAN-Switch-1F, set the port connected to PC-Admin (port 3) to VLAN 20."
+            ],
+            "explanation": "Switch ports must belong to the VLAN that actually contains a path to the gateway. A port assigned to the wrong VLAN isolates its device from the router even though cabling and IP settings look correct, so ARP for the gateway times out and nothing beyond the switch is reachable."
+        },
+        "ar": {
+            "title": "المسؤول لا يستطيع الوصول إلى Intranet-01",
+            "story": "منذ هذا الصباح، يبلغ مكتب المسؤول أن PC-Admin لا يستطيع فتح خادم Intranet-01 الداخلي للشركة، حتى وإن لم يتغير شيء من طرفهم. يقول الموظفون الآخرون أن وصولهم يبدو بخير.",
+            "objective": "استعادة اتصال ICMP ping من PC-Admin إلى Intranet-01.",
+            "hints": [
+                "لا تتجاوز عملية ping من PC-Admin أبداً VLAN-Switch-1F في طريقها إلى Router-Main.",
+                "منفذ المحول الذي يحمل حركة PC-Admin ينتمي إلى VLAN بدون منافذ عضو تؤدي نحو الموجه، لذلك لا يمكن الوصول إلى البوابة أبداً.",
+                "على VLAN-Switch-1F، قم بتعيين المنفذ المتصل بـ PC-Admin (المنفذ 3) إلى VLAN 20."
+            ],
+            "explanation": "يجب أن تنتمي منافذ المحول إلى VLAN التي تحتوي فعلاً على مسار إلى البوابة الافتراضية. يعزل المنفذ المعين إلى VLAN خاطئ جهازه عن الموجه حتى وإن بدت الكابلات وإعدادات IP صحيحة، لذلك ينتهي وقت انتظار ARP للبوابة وليس هناك أي شيء خارج المحول قابل للوصول."
+        },
+        "az": {
+            "title": "Admin Intranet-01-ə çata bilmir",
+            "story": "Bu səhərdən bəri admin masası rapora edir ki, PC-Admin şirkətin Intranet-01 serverinə girə bilmir, baxmayaraq ki, onların tərəfində heç nə dəyişməyib. Digər işçilər deyirlər ki, onların əlçatışlığı normaldır.",
+            "objective": "PC-Admin-dən Intranet-01-ə ICMP ping bağlantısını bərpa edin.",
+            "hints": [
+                "PC-Admin-dan gələn ping heç vaxt Router-Main yolu ilə VLAN-Switch-1F-i keçmir.",
+                "PC-Admin trafiki daşıyan switch portunda üzvü portlar olmayan VLAN-a aiddir, buna görə də şlüzə heç vaxt çata bilinmir.",
+                "VLAN-Switch-1F-də PC-Admin-a bağlı portu (port 3) VLAN 20-yə təyin edin."
+            ],
+            "explanation": "Switch portları əslində şlüzə gedən yolu olan VLAN-a mənsub olmalıdır. Yanlış VLAN-a təyin edilmiş port, kabel və IP tənzimləmələri düzgün görünsə də, cihazını routerindən təcrid edir, buna görə də şlüz üçün ARP vaxtı bitir və switçdən kənarda heç nə əlçatılı deyil."
+        },
+        "be": {
+            "title": "Адміністратор не можа дасягнуць Intranet-01",
+            "story": "З раніцы адміністратыўны стол паведамляе, што PC-Admin не можа адкрыць ўнутраны сервер Intranet-01 кампаніі, нават хоць нічога не змяніўся з іх боку. Іншыя сотрудніцы кажуць, што іх доступ падаецца нармальным.",
+            "objective": "Восстановіць ICMP ping злучэнне ад PC-Admin да Intranet-01.",
+            "hints": [
+                "Ping ад PC-Admin ніколі не прыйсьцё мімо VLAN-Switch-1F у напрамку да Router-Main.",
+                "Порт switch-а, які прыносіць трафік PC-Admin, адносіцца да VLAN без портаў, якія вядуць да маршрутызатара, таму шлюз ніколі не можа быць дасягнуты.",
+                "На VLAN-Switch-1F устаўце порт, злучаны з PC-Admin (порт 3), на VLAN 20."
+            ],
+            "explanation": "Порты switch павінны адноситься да VLAN, які рэальна ўтрымлівае шлях да шлюза па змаўчанні. Порт, прызначаны да неправільнага VLAN, ізалюе сваё прыстасаванне ад маршрутызатара, нават хоць кабелі і параметры IP выглядаюць правільны, таму ARP для шлюза па змаўчанні перастае trabayati, і нішто за switch-ам не даступна."
+        },
+        "bg": {
+            "title": "Администраторът не може да достигне Intranet-01",
+            "story": "От тази сутрин администраторският офис съобщава, че PC-Admin не може да отвори вътрешния сервер Intranet-01 на компанията, въпреки че нищо не се е променило от тяхна страна. Други служители казват, че техният достъп изглежда добре.",
+            "objective": "Възстановете ICMP ping свързаност от PC-Admin до Intranet-01.",
+            "hints": [
+                "Ping-ът от PC-Admin никога не преминава VLAN-Switch-1F по пътя си към Router-Main.",
+                "Портът на превключвателя, който носи трафика на PC-Admin, принадлежи към VLAN без портове, водещи към маршрутизатора, поради което шлюзът никога не може да бъде достигнат.",
+                "На VLAN-Switch-1F задайте портът, свързан с PC-Admin (порт 3), на VLAN 20."
+            ],
+            "explanation": "Портовете на превключвателя трябва да принадлежат към VLAN, който действително съдържа път към шлюза по подразбиране. Порт, присвоен на неправилния VLAN, изолира своето устройство от маршрутизатора, дори и кабелите и IP настройките да изглеждат правилни, така че ARP за шлюза по подразбиране изтече и нищо отвъд превключвателя не е достъпно."
+        },
+        "bn": {
+            "title": "অ্যাডমিন ইন্ট্রানেটে পৌঁছাতে পারছে না",
+            "story": "আজকের সকাল থেকে, অ্যাডমিন ডেস্ক রিপোর্ট করছে যে PC-Admin কোম্পানির ইন্ট্রানেট সার্ভার খুলতে পারছে না, যদিও তাদের দিক থেকে কোনো কিছু পরিবর্তন হয়নি। অন্যান্য কর্মীরা বলছে তাদের নিজস্ব অ্যাক্সেস ঠিক আছে।",
+            "objective": "PC-Admin থেকে Intranet-01-এ ICMP পিং সংযোগ পুনরুদ্ধার করুন।",
+            "hints": [
+                "PC-Admin থেকে পিং কখনও VLAN-Switch-1F অতিক্রম করে না Router-Main-এর দিকে যাওয়ার সময়।",
+                "সেই সুইচ পোর্টটি যা PC-Admin-এর ট্রাফিক বহন করে তা এমন একটি VLAN-এর অন্তর্গত যার রাউটারের দিকে কোনো সদস্য পোর্ট নেই, তাই গেটওয়ে কখনও পৌঁছানো যায় না।",
+                "VLAN-Switch-1F-এ, PC-Admin-এর সাথে সংযুক্ত পোর্ট (পোর্ট 3) কে VLAN 20-এ সেট করুন।"
+            ],
+            "explanation": "সুইচ পোর্টগুলি সেই VLAN-এর অন্তর্গত হতে হবে যার কাছে গেটওয়ের দিকে একটি প্রকৃত পথ আছে। ভুল VLAN-এ নির্ধারিত একটি পোর্ট তার ডিভাইসকে রাউটার থেকে বিচ্ছিন্ন করে দেয় যদিও ক্যাবলিং এবং IP সেটিংস সঠিক মনে হয়, তাই গেটওয়ের জন্য ARP সময়সীমা শেষ হয়ে যায় এবং সুইচের বাইরে কিছুই পৌঁছানো যায় না।"
+        },
+        "ca": {
+            "title": "L'admin no pot arribar a la intranet",
+            "story": "Des d'aquesta matinada, la taula d'admin informa que PC-Admin no pot obrir el servidor d'intranet de l'empresa, ainda que res hagi canviat per part seva. Altres treballadors diuen que el seu accés sembla bé.",
+            "objective": "Restaura la connectivitat ICMP ping de PC-Admin a Intranet-01.",
+            "hints": [
+                "El ping de PC-Admin mai passa per VLAN-Switch-1F en direcció a Router-Main.",
+                "El port del commutador que porta el tràfic de PC-Admin pertany a una VLAN sense ports de membres cap al router, per la qual cosa la Passarel·la per defecte mai es pot assolir.",
+                "A VLAN-Switch-1F, estableix el port connectat a PC-Admin (port 3) a VLAN 20."
+            ],
+            "explanation": "Els ports del commutador han de pertànyer a la VLAN que realment conté un camí cap a la Passarel·la per defecte. Un port assignat a la VLAN incorrecta aïlla el seu dispositiu del router, encara que el cablejat i la configuració IP semblin correctes, per la qual cosa l'ARP per a la Passarel·la per defecte s'espera i res més enllà del commutador és accessible."
+        },
+        "cs": {
+            "title": "Admin se nemůže připojit k intranetu",
+            "story": "Od dneška ráno hlásí správce, že PC-Admin nemůže otevřít intranetový server společnosti, přestože se na jejich straně nic nezměnilo. Ostatní zaměstnanci říkají, že jejich přístup funguje.",
+            "objective": "Obnovte ICMP ping připojení z PC-Admin na Intranet-01.",
+            "hints": [
+                "Ping z PC-Admin nikdy neprojde VLAN-Switch-1F směrem k Router-Main.",
+                "Port přepínače, který nese provoz PC-Admin, patří do VLAN bez portů vedoucích k routeru, takže Výchozí brána nikdy nemůže být dosažena.",
+                "Na VLAN-Switch-1F nastavte port připojený k PC-Admin (port 3) na VLAN 20."
+            ],
+            "explanation": "Porty přepínače musí patřit do VLAN, která opravdu obsahuje cestu k Výchozí bráně. Port přiřazený ke špatné VLAN izoluje své zařízení od routeru, i když kabeláž a nastavení IP vypadají správně, takže ARP pro Výchozí bránu vyprší a nic za přepínačem není dosažitelné."
+        },
+        "da": {
+            "title": "Admin kan ikke nå intranetten",
+            "story": "Siden i morges rapporterer administratorbordet, at PC-Admin ikke kan åbne virksomhedens intranetserver, selvom intet er ændret på deres siden. Andre medarbejdere siger, at deres egen adgang virker fint.",
+            "objective": "Gendan ICMP ping-forbindelsen fra PC-Admin til Intranet-01.",
+            "hints": [
+                "Ping fra PC-Admin kommer aldrig forbi VLAN-Switch-1F på vej til Router-Main.",
+                "Den switchport, der bærer PC-Admin's trafik, tilhører et VLAN uden medlemsporte, der fører mod routeren, så Standardgateway kan aldrig nås.",
+                "På VLAN-Switch-1F skal du indstille den port, der er forbundet med PC-Admin (port 3), til VLAN 20."
+            ],
+            "explanation": "Switchporte skal tilhøre det VLAN, der faktisk indeholder en sti til Standardgateway. En port, der er tildelt til det forkerte VLAN, isolerer enheden fra routeren, selvom kabler og IP-indstillinger ser korrekte ud, så ARP for Standardgateway timeout, og intet bag switchen er nåeligt."
+        },
+        "el": {
+            "title": "Ο διαχειριστής δεν μπορεί να φτάσει το intranet",
+            "story": "Από το πρωί, το τμήμα διαχείρισης αναφέρει ότι το PC-Admin δεν μπορεί να ανοίξει το διακομιστή intranet της εταιρείας, παρόλο που τίποτα δεν άλλαξε από την πλευρά τους. Άλλοι υπάλληλοι λένε ότι η δική τους πρόσβαση φαίνεται ότι λειτουργεί.",
+            "objective": "Επαναφορά της ICMP ping σύνδεσης από PC-Admin σε Intranet-01.",
+            "hints": [
+                "Το ping από PC-Admin δεν φτάνει ποτέ πέρα από το VLAN-Switch-1F στο δρόμο του προς το Router-Main.",
+                "Η θύρα διακόπτη που μεταφέρει την κίνηση του PC-Admin ανήκει σε ένα VLAN χωρίς θύρες μελών που να οδηγούν προς τον маршрутизатор, οπότε η Προεπιλεγμένη πύλη δεν μπορεί ποτέ να φταθεί.",
+                "Στο VLAN-Switch-1F, ορίστε τη θύρα που συνδέεται με το PC-Admin (θύρα 3) στο VLAN 20."
+            ],
+            "explanation": "Οι θύρες διακόπτη πρέπει να ανήκουν στο VLAN που περιέχει πραγματικά μια διαδρομή προς την Προεπιλεγμένη πύλη. Μια θύρα που έχει εκχωρηθεί σε λάθος VLAN απομονώνει τη συσκευή της από τον маршрутизатор, ακόμα και αν τα καλώδια και οι ρυθμίσεις IP φαίνονται σωστά, επομένως το ARP για την Προεπιλεγμένη πύλη λήγει και τίποτα πέρα από τον διακόπτη δεν είναι προσβάσιμο."
+        },
+        "et": {
+            "title": "Admin ei pääse intranetile",
+            "story": "Alates homme hommikust teatab admin laud, et PC-Admin ei pääse avama ettevõtte intranetiserveri, kuigi nende poolel midagi ei muutunud. Muud töötajad ütlevad, et nende juurdepääs näib olevat hästi.",
+            "objective": "Taastada ICMP ping'i ühendus PC-Admin-ilt Intranet-01-le.",
+            "hints": [
+                "Ping PC-Admin-ilt ei jõua kunagi VLAN-Switch-1F-st edasi teele Router-Main-i juurde.",
+                "See lüliporti kandev PC-Admin-i liiklus kuulub VLAN-ile, millel pole ükski liikmepordid, mis viibiks ruuteri poole, nii et vaikelüüsi ei saavutata kunagi.",
+                "Seadistage VLAN-Switch-1F-l PC-Admin-iga ühendatud port (port 3) VLAN-iga 20."
+            ],
+            "explanation": "Lüliportide peab kuuluma VLAN-ile, mis tegelikult sisaldab teed vaikelüüsini. Vale VLAN-ile määratud port eraldab selle seadme ruuterist, kuigi kaablid ja IP-seaded näevad õiged välja, nii et vaikelüüsi ARP aegumine välja ja miski ruuteri teiselt poolt ei ole saavutatav."
+        },
+        "eu": {
+            "title": "Admina ezin du intranetari heldu",
+            "story": "Goizean, admin-maulak aditzera ematen du PC-Admin ezin duela enpresakoaren intranet-zerbitzaria ireki, nahiz eta beren aldean ez den ezer aldatu. Beste enpleguak dute beren sarbidea ongi dagoela.",
+            "objective": "Berrizartu ICMP ping konexioa PC-Admin-etik Intranet-01-era.",
+            "hints": [
+                "Ping PC-Admin-etik ez da VLAN-Switch-1F-tik igaro Router-Main-era bidean.",
+                "Ateak portua PC-Admin-en trafikoa garraiatu, VLAN batera dagokio, zenbat gabe kide portuak ruterorako bidean, beraz atebide-lehenetsia inoiz ez dugu lortuko.",
+                "VLAN-Switch-1F-n, ezarri PC-Admin-era konektatu portua (3. portua) VLAN 20-ra."
+            ],
+            "explanation": "Txanterrako portuak benetako bidea duten VLAN-a dute bete behar atebide-lehenetsiara. Oker VLAN-ari emaniko portua bere gailua kaablak eta IP-ezarpenak ondo badira ere ruteretik isolatzen duen artean, beraz atebide-lehenetsiaren ARP agortzen eta ezer ez da ez dago ruterraren beste aldetik.."
+        },
+        "fa": {
+            "title": "مدیر نمی‌تواند به اینترانت دسترسی پیدا کند",
+            "story": "از صبح امروز، میز مدیری گزارش می‌دهد که PC-Admin نمی‌تواند سرور اینترانت شرکت را باز کند، حتی اگر چیزی از سمت آنها تغییر نکرده است. سایر کارکنان می‌گویند دسترسی خود آنها خوب به نظر می‌رسد.",
+            "objective": "اتصال ICMP ping را از PC-Admin به Intranet-01 بازیابی کنید.",
+            "hints": [
+                "ping از PC-Admin هرگز از VLAN-Switch-1F فراتر نمی‌رود در راه به Router-Main.",
+                "پورت سوئیچی که ترافیک PC-Admin را حمل می‌کند متعلق به VLAN است که هیچ پورت عضو ندارد که به سمت روتر رفتگو کند، بنابراین دروازه پیش‌فرض هرگز قابل دسترسی نیست.",
+                "روی VLAN-Switch-1F، پورت متصل به PC-Admin (پورت 3) را به VLAN 20 تنظیم کنید."
+            ],
+            "explanation": "پورت‌های سوئیچ باید متعلق به VLAN باشند که واقعاً مسیری به دروازه پیش‌فرض دارد. پورتی که به VLAN اشتباهی اختصاص داده شده است، حتی اگرچه کابل‌ها و تنظیمات IP صحیح به نظر برسند، دستگاه را از روتر جدا می‌کند، بنابراین ARP برای دروازه پیش‌فرض منقضی می‌شود و چیزی از آن سوی سوئیچ قابل دسترسی نیست."
+        },
+        "fi": {
+            "title": "Pääkäyttäjä ei pääse intranetin",
+            "story": "Tänä aamuna hallintopöytä ilmoittaa, että PC-Admin ei voi avata yrityksen intranetin palvelinta, vaikka heidän puolellaan mikään ei ole muuttunut. Muut työntekijät sanovat, että heidän pääsynsä näyttää toimivan.",
+            "objective": "Palauta ICMP-ping-yhteys PC-Admin-lta Intranet-01-lle.",
+            "hints": [
+                "Ping PC-Admin-lta ei koskaan pääse VLAN-Switch-1F-ltä eteenpäin Router-Main-ille.",
+                "Se L2 Switch portti, joka kuljettaa PC-Admin-n liikennettä, kuuluu VLAN-iin, jolla ei ole mitään jäsenportteja, jotka johtavat reitittimen suuntaan, joten oletusyhdyskäytävää ei koskaan saavuteta.",
+                "Aseta VLAN-Switch-1F-llä PC-Admin-iin kytketty portti (portti 3) VLAN 20:ään."
+            ],
+            "explanation": "Kytkimen porttien on kuuluttava VLAN-iin, joka todella sisältää polun oletusyhdyskäytävään. Väärään VLAN-iin määritetty portti eristää sen laitteen reitittimestä vaikka kaapelit ja IP-asetukset näyttävät oikealta, joten oletusyhdyskäytävän ARP-kysely aikakatkeaa ja mikään kytkimen toisella puolella ei ole saavutettavissa."
+        },
+        "fil": {
+            "title": "Admin Hindi Nakakaabot sa Intranet",
+            "story": "Mula ngayong umaga, ang admin desk ay nag-ulat na PC-Admin ay hindi makabukas ng intranet server ng kumpanya, kahit walang nagbago sa kanilang dulo. Sinasabi ng ibang staff na ang kanilang access ay ok.",
+            "objective": "Ibalik ang ICMP ping connectivity mula PC-Admin tungo sa Intranet-01.",
+            "hints": [
+                "Ang ping mula PC-Admin ay hindi kailanman nakalusot sa VLAN-Switch-1F papunta sa Router-Main.",
+                "Ang port ng switch na nagdadala ng PC-Admin traffic ay nabibilang sa VLAN na walang member ports na tumutulong sa router, kaya ang gateway ay hindi kailanman maaabot.",
+                "Sa VLAN-Switch-1F, itakda ang port na konektado sa PC-Admin (port 3) sa VLAN 20."
+            ],
+            "explanation": "Ang mga port ng switch ay dapat lumilipat sa VLAN na may aktwal na landas sa gateway. Ang port na itinakda sa maling VLAN ay naghihiwalay sa device nito mula sa router kahit maganda ang cables at IP settings, kaya ang ARP para sa gateway ay nag-timeout at walang makukuhang device sa kabilang lado ng switch."
+        },
+        "gl": {
+            "title": "O admin non pode acceder á Intranet",
+            "story": "Desde esta mañá, a mesa de administración informa que PC-Admin non pode abrir o servidor intranet da empresa, aunque nada cambió do seu lado. Outros traballadores din que o seu acceso parece estar ben.",
+            "objective": "Restaurar a conectividade de ping ICMP desde PC-Admin ata Intranet-01.",
+            "hints": [
+                "O ping desde PC-Admin nunca pasa de VLAN-Switch-1F cara Router-Main.",
+                "O porto dese switch que transporta o tráfico de PC-Admin pertence a un VLAN sen portos membros cara o router, polo que a Pasarela predeterminada nunca se pode alcanzar.",
+                "En VLAN-Switch-1F, establece o porto conectado a PC-Admin (porto 3) no VLAN 20."
+            ],
+            "explanation": "Os portos do switch deben pertencer ao VLAN que realmente contén un camiño cara a pasarela. Un porto asignado a un VLAN incorrecto illúa o seu dispositivo do router aínda que o cableado e as configuracións IP parecen correctas, polo que a búsqueda ARP da pasarela agota o tempo límite e nada alén do switch é alcanzable."
+        },
+        "gu": {
+            "title": "Admin ઇન્ટ્રાનેટ સુધી પહોંચી શકતા નથી",
+            "story": "આજ સવારથી, જાહેરાત ડેસ્ક અહેવાલ આપે છે કે PC-Admin કંપનીના ઇન્ટ્રાનેટ સર્વર ખોલી શકતું નથી, જો કે તેમના છેડે કંઈ બદલાયું નથી. અન્ય કર્મચારીઓ કહે છે કે તેમની પોતાની પહોંચ ઠીક લાગે છે.",
+            "objective": "PC-Admin થી Intranet-01 સુધી ICMP ping કનેક્ટિવિટી પુનઃસ્થાપિત કરો.",
+            "hints": [
+                "PC-Admin થી ping ક્યારેય VLAN-Switch-1F પાસે Router-Main તરફ જતું નથી.",
+                "તે સ્વીચ પોર્ટ જે PC-Admin ટ્રાફિક વહન કરે છે તે એવા VLAN ને સંબંધિત છે જેમાં રાઉટર તરફ કોઈ સભ્ય પોર્ટ નથી, તેથી ડિફૉલ્ટ ગેટવે ક્યારેય પહોંચી શકાતું નથી.",
+                "VLAN-Switch-1F પર, PC-Admin (પોર્ટ 3) સાથે જોડાયેલ પોર્ટને VLAN 20 પર સેટ કરો."
+            ],
+            "explanation": "સ્વીચ પોર્ટ તે VLAN ને સંબંધિત હોવા જોઈએ જે વાસ્તવમાં ગેટવે તરફ પાથ ધરાવે છે. ખોટા VLAN ને સોંપાયેલ પોર્ટ તેના ઉપકરણને રાઉટર થી અલગ કરે છે ભલે કેબલિંગ અને IP સેટિંગ્સ સાચી લાગે છે, તેથી ગેટવે માટે ARP સમય સમાપ્ત થાય છે અને સ્વીચ વિના કંઈ પણ પહોંચી શકાતું નથી."
+        },
+        "he": {
+            "title": "ההנהלה לא יכולה להגיע לאינטראנט",
+            "story": "מאז הבוקר, שולחן ההנהלה דיווח כי PC-Admin לא יכול להיכנס לשרת האינטראנט של החברה, למרות שלא היה שום שינוי מצידם. עובדים אחרים אומרים שהגישה שלהם נראית בסדר.",
+            "objective": "שחזר את קישוריות ה-ICMP ping מ-PC-Admin ל-Intranet-01.",
+            "hints": [
+                "ה-ping מ-PC-Admin לעולם לא עובר ל-VLAN-Switch-1F בדרכו ל-Router-Main.",
+                "יציאת ה-switch שמעבירה את תעבורת PC-Admin שייכת ל-VLAN ללא יציאות חבר המובילות לכיוון הנתב, לכן לא ניתן להגיע אל השער ברירת המחדל.",
+                "ב-VLAN-Switch-1F, הגדר את היציאה המחוברת ל-PC-Admin (יציאה 3) ל-VLAN 20."
+            ],
+            "explanation": "יציאות ה-switch חייבות להשתייך ל-VLAN שבו יש בפועל נתיב לשער. יציאה שהוקצתה ל-VLAN שגוי מבודדת את המכשיר שלה מהנתב למרות שחיווט והגדרות IP נראים נכונים, כך שתשאול ARP לשער פוקע ותשובה וכל דבר מעבר לה-switch אינו נגיש."
+        },
+        "hr": {
+            "title": "Admin ne može doći do intranetа",
+            "story": "Od jutros, servis administratora izvještava da PC-Admin ne može otvoriti intranetni poslužitelj tvrtke, iako se s njihove strane ništa nije promijenilo. Ostali zaposlenici kažu da im je pristup u redu.",
+            "objective": "Vratite ICMP ping konekciju od PC-Admin do Intranet-01.",
+            "hints": [
+                "Ping od PC-Admin nikad ne prođe dalje od VLAN-Switch-1F prema Router-Main.",
+                "Priključak tog prekidača koji prenosi promet PC-Admin pripada VLAN-u bez članova portova prema usmjerivaču, tako da se zadani pristupnik nikad ne može dosegnuti.",
+                "Na VLAN-Switch-1F, postavite priključak spojen na PC-Admin (priključak 3) na VLAN 20."
+            ],
+            "explanation": "Priključci prekidača moraju pripadati VLAN-u koji stvarno sadrži put do pristupnika. Priključak dodijeljen pogrešnom VLAN-u odvaja svoj uređaj od usmjerivača čak i ako kabliranje i postavke IP-a izgledaju ispravno, tako da ARP za pristupnika istekne i ništa izvan prekidača nije dostižno."
+        },
+        "hu": {
+            "title": "Az admin nem tud elérni az intranetet",
+            "story": "Ma reggel óta az adminisztráció azt jelenti, hogy PC-Admin nem tudja megnyitni a vállalati intranet szervert, annak ellenére, hogy az ő végén semmi nem változott. Más dolgozók azt mondják, hogy az ő hozzáférésük rendben van.",
+            "objective": "Állítsa vissza az ICMP ping kapcsolatot PC-Admin-tól Intranet-01-ig.",
+            "hints": [
+                "A PC-Admin-ról érkező ping soha nem megy túl a VLAN-Switch-1F-en a Router-Main felé.",
+                "Az a switch port, amely a PC-Admin forgalmát szállítja, olyan VLAN-hoz tartozik, amelynek nincsenek tagtagjai portok az útválasztó felé, ezért az alapértelmezett átjáró soha nem érhető el.",
+                "A VLAN-Switch-1F-en állítsa a PC-Admin-hoz csatlakoztatott port (3-as port) VLAN 20-ra."
+            ],
+            "explanation": "A switch portoknak ahhoz a VLAN-hoz kell tartozniuk, amely valójában utat tartalmaz az átjáróhoz. Az egy helytelen VLAN-hoz rendelt port izolál egy eszközt az útválasztótól, még akkor is, ha a kábelezés és az IP beállítások helyesnek tűnnek, így az átjáróra vonatkozó ARP időtúllépés lép fel, és a switch-en túl semmi sem érhető el."
+        },
+        "hy": {
+            "title": "Ադմինը չի կարող հասնել Intranet-01-ին",
+            "story": "Այսօր առավոտից ադմինիստրատորի սեղանից հաղորդում են, որ PC-Admin-ը չի կարող բացել ընկերության intranet սերվերը, չնայած նրանց կողմից ոչ մի փոփոխություն չկա: Այլ աշխատակցիցս ասում են, որ նրանց մուտքը նորմալ երևում է:",
+            "objective": "Վերականգնել ICMP ping կապը PC-Admin-ից Intranet-01 ի:",
+            "hints": [
+                "PC-Admin-ից ping-ը երբեք չի անցնում VLAN-Switch-1F-ի միջով Router-Main ի ճանապարհին:",
+                "Այն switch պորտը, որը կրում է PC-Admin-ի տրաֆիկը, պատկանում է VLAN-ի, որը չունի անդամ պորտեր, որոնք հանգեցնում են դեպի router, այստեղ դարպասը երբեք հասնել չի կարող:",
+                "VLAN-Switch-1F-ի վրա, սահմանել PC-Admin-ին միացված պորտը (port 3) VLAN 20-ի:"
+            ],
+            "explanation": "Switch պորտերը պետք է պատկանեն այն VLAN-ին, որն իրականում դարպասի ճանապարհ ունի: Սխալ VLAN-ին նկարված պորտը մեկուսացնում է իր սարքերը router-ից, չնայած մալուխներն ու IP կարգավորումները ճիշտ երևում են, այստեղ դարպասի ARP ժամանակ ծախսվում է, ու switch-ից վեր ինչ-ինչ հասնել չի կարող:"
+        },
+        "is": {
+            "title": "Kerfi Admin getur ekki náð á intranetið",
+            "story": "Síðan í morgun segir stjórnandi borðið að PC-Admin geti ekki opnað Intranet-01 hjá fyrirtækinu, jafnvel þó að engin breyting hafi átt sér stað fyrir þeirra hönd. Aðir starfsmenn segja að þeirri eigin aðgengi virðist sanngjarnt.",
+            "objective": "Endurheimta ICMP ping samband frá PC-Admin til Intranet-01.",
+            "hints": [
+                "Ping-ið frá PC-Admin fer aldrei fram hjá VLAN-Switch-1F á leiðinni til Router-Main.",
+                "Sá switch-tengill sem ber PC-Admin-umferð tilheyrir VLAN með engar meðlimstengsl sem leiða til routersins, þannig að sjálfgefin gátt er aldrei hægt að ná.",
+                "Á VLAN-Switch-1F, stilltu tengliðinn sem tengist PC-Admin (port 3) á VLAN 20."
+            ],
+            "explanation": "Switch-tenglar verða að tilheyra VLAN sem inniheldur í raun slóð að gáttinni. Tengill sem er úthlutað rangri VLAN einangrar tæki sitt frá routerinum þó að snúrar og IP-stillingar líti réttar út, þannig að ARP fyrir gáttina fer fram með tímamun og ekkert fyrir utan switch er nálægt."
+        },
+        "ka": {
+            "title": "ადმინი Intranet-01-ს ვერ ღწვდება",
+            "story": "დღეს დილიდან ადმინიანი რეგისტრირებული აზ, რომ PC-Admin ვერ ხსნის კომპანიის Intranet-01 სერვერს, მიუხედავად იმისა, რომ მათ მხრიდან არაფერი შეიცვალა. სხვა თანამშრომლებმა თქვეს, რომ მათი წვდომა ნორმალური გამოჩნდება.",
+            "objective": "აღადგინეთ ICMP ping კავშირი PC-Admin-ից Intranet-01-მდე.",
+            "hints": [
+                "PC-Admin-ის ping-ი არ გვერდის VLAN-Switch-1F-ს Router-Main-ის მიმართულებით.",
+                "switch პორტი, რომელიც PC-Admin-ის ტრაფიკს ატარებს, მიეკუთვნება VLAN-ს, რომელსაც აქვს არა წევრი პორტები, რომლებიც მიმართულია Router-ისკენ, ამიტომ შლუზი არასოდეს შეიძლება მიღწეულ იქნას.",
+                "VLAN-Switch-1F-ზე, დააყენეთ პორტი, რომელიც დაკავშირებულია PC-Admin-ს (port 3) VLAN 20-ზე."
+            ],
+            "explanation": "switch პორტები უნდა მიეკუთვნებოდნენ VLAN-ს, რომელიც რეალურად შებს გზას შლუზამდე. პორტი, რომელიც აღნიშნულია არასწორი VLAN-ზე, იზოლირებს მის მოწყობილობას Router-ს, მიუხედავად იმისა, რომ გაყვანილობა და IP პარამეტრები სწორი გამოიყურება, ამიტომ ARP შლუზისთვის ამოწურულ ხდება და შეცვლის მიღმა ყველაფერი მიუწვდომელი რჩება."
+        },
+        "kk": {
+            "title": "Администратор Intranet-01-ге қол жеткізе алмайды",
+            "story": "Бүгін таңертең администраторлар стол PC-Admin-ның компанияның Intranet-01 сервері ашыла алмайтынын хабарлайды, сонымен қатар олардың жағынан ешқандай өзгеріс болмады. Басқа қызметкерлер өздерінің қол жеткіздігі жалпыға сәйкес келеді деп айтады.",
+            "objective": "PC-Admin-ан Intranet-01-ге дейін ICMP ping байланысын қалпына келтіріңіз.",
+            "hints": [
+                "PC-Admin-дан ping Router-Main-ге бағытталған жолда VLAN-Switch-1F-дың ішінде өтпейді.",
+                "PC-Admin-ның трафигін тасыйтын switch портысы Router-ге бағытталған мүше портысы жоқ VLAN-ға тиесілі, сондықтан әдепкі шлюзге ешқашан қол жеткізе алмайсыз.",
+                "VLAN-Switch-1F-де PC-Admin-ға қосылған портты (port 3) VLAN 20-ге орнатыңыз."
+            ],
+            "explanation": "Switch портыларының шынайы түрде шлюзге орын дағдысы бар VLAN-ға тиесілі болуы керек. Дұрыс емес VLAN-ға тағайындалған порт өзінің құрылғысын Router-дан оқшау қалдырады, сонымен қатар сымдар мен IP параметрлері дұрыс болса да, шлюз үшін ARP ұзақты болып табылады және switch-тан қайтадан барлығы қол жеткімсіз қалады."
+        },
+        "km": {
+            "title": "អ្នកគ្រប់គ្រង មិនអាច ឈានដល់ Intranet-01",
+            "story": "ចាប់ពីព្រឹក ថ្ងៃនេះ ការិយាល័យ បង្ហាញថា PC-Admin មិនអាច បើក សូត្រ Intranet-01 របស់ក្រុមហ៊ុន ទោះបីជាមិនមាន ការផ្លាស់ប្តូរ ពីឆ្វេងមិនទេ។ បុគ្គលិក ផ្សេង ទៀត និយាយថា ការ ដ្ឋាន ឯករបស់ពួកគេ ហាក់ដូចជា ល្អ។",
+            "objective": "ស្ដារ ការតភ្ជាប់ ICMP ping ពី PC-Admin ទៅ Intranet-01។",
+            "hints": [
+                "Ping ពី PC-Admin មិនដែល ឈានដល់ VLAN-Switch-1F នៅលើផ្លូវ ឈានដល់ Router-Main។",
+                "ច្រក switch ដែល ដឹក ចរាចរណ៍ PC-Admin ជាកម្មសិດ VLAN ដែលមិនមាន ច្រក សមាជិក ដែលនាំឱ្យរង្វិល ដូច្នេះ ច្រក ដោះស្រាយ មិនអាច ឈានដល់ បានទេ។",
+                "នៅលើ VLAN-Switch-1F ដាក់ ច្រក ដែលតភ្ជាប់ ទៅ PC-Admin (port 3) ទៅ VLAN 20។"
+            ],
+            "explanation": "ច្រក switch ត្រូវតែ ជាកម្មសិដ្ឋ VLAN ដែលពិតប្រាកដ មាន ផ្លូវ ឈានដល់ ច្រក។ ច្រក ដែលផ្តល់ដល់ VLAN មិនត្រឹមត្រូវ បង្កើតឱ្យមាន ឧបករណ៍របស់វា ឯកឯង ពី Router ទោះបីជា ខ្សែ ឧបករណ៍ និង IP ការកំណត់ ដូចជា ត្រូវ ក៏ដោយ ដូច្នេះ ARP សម្រាប់ ច្រក មាន ពេលវេលា ហើយ ឧបករណ៍ ដែលលើសពី switch ដែលមិនអាច ឈានដល់ បាន។"
+        },
+        "kn": {
+            "title": "ನಿರ್ವಾಹಕ ಇಂಟ್ರಾನೆಟ್ ಅನ್ನು ತಲುಪಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ",
+            "story": "ಇಂದು ಬೆಳಿಗ್ಗೆಯಿಂದ, ನಿರ್ವಾಹಕ ಡೆಸ್ಕ್ ವರದಿ ಮಾಡಿದೆ ಎಂದರೆ PC-Admin ಕಂಪನಿಯ ಇಂಟ್ರಾನೆಟ್ ಸರ್ವರ್‌ನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ, ಆದರೂ ಅವರ ತುದಿಯಲ್ಲಿ ಯಾವುದೇ ಬದಲಾವಣೆ ಆಗುವುದಿಲ್ಲ. ಇತರ ಸಿಬ್ಬಂದಿರು ತಮ್ಮ ಸ್ವಂತ ಪ್ರವೇಶ ಸರಿಯಾಗಿದೆ ಎಂದು ಹೇಳುತ್ತಾರೆ.",
+            "objective": "PC-Admin ನಿಂದ Intranet-01 ಗೆ ICMP ping ಸಂಪರ್ಕವನ್ನು ಪುನಃಸ್ಥಾಪಿಸಿ.",
+            "hints": [
+                "PC-Admin ನಿಂದ ping ವು Router-Main ಗೆ ಹೋಗುವ ಮಾರ್ಗದಲ್ಲಿ VLAN-Switch-1F ಅನ್ನು ಎಂದಿಗೂ ಮೀರುತ್ತಿಲ್ಲ.",
+                "ಆ ಸ್ವಿಚ್ ಪೋರ್ಟ್ PC-Admin ಟ್ರಾಫಿಕ್ ಅನ್ನು ಒಯ್ಯುತ್ತಿದೆ ಅದು VLAN ಕ್ಕೆ ಸೇರಿದೆ ಅಲ್ಲಿ ರೂಟರ್ ಕಡೆಗೆ ಯಾವುದೇ ಸದಸ್ಯ ಪೋರ್ಟ್‌ಗಳು ಇಲ್ಲ, ಆದ್ದರಿಂದ ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಅನ್ನು ಎಂದಿಗೂ ತಲುಪಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ.",
+                "VLAN-Switch-1F ಪರ, PC-Admin ಗೆ ಸಂಪರ್ಕಿತ ಪೋರ್ಟ್ (ಪೋರ್ಟ್ 3) ಅನ್ನು VLAN 20 ಗೆ ಹೊಂದಿಸಿ."
+            ],
+            "explanation": "ಸ್ವಿಚ್ ಪೋರ್ಟ್‌ಗಳು ಸರಿಯಾದ VLAN ಕ್ಕೆ ಸೇರಿದೆ ಅದು ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇಗೆ ಮಾರ್ಗ ಹೊಂದಿದೆ. ಪೋರ್ಟ್ ತಪ್ಪು VLAN ಕ್ಕೆ ನಿಯೋಜಿಸಲಾಗಿದೆ ಅದು ರೂಟರ್ ನಿಂದ ತನ್ನ ಸಾಧನ ಅನ್ನು ಬೇರ್ಪಡಿಸುತ್ತದೆ ಆದರೂ ಕೇಬಲಿಂಗ್ ಮತ್ತು IP ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಸರಿಯಾಗಿ ಕಾಣುತ್ತವೆ, ಆದ್ದರಿಂದ ಡೀಫಾಲ್ಟ್ ಗೇಟ್‌ವೇ ಗೆ ARP ಸಮಯ ಕೆಟ್ಟುಕೊಳ್ಳುತ್ತದೆ ಮತ್ತು ಸ್ವಿಚ್ ನ ಮೀರೆ ಯಾವುದೇ ವಿಷಯ ಸುಲಭ ಆಗುವುದಿಲ್ಲ."
+        },
+        "ky": {
+            "title": " Администратор интранетке жете албай жатат",
+            "story": "Бүгүн эртең менен администратор столу PC-Admin компаниялык интранет серверине кире алабай жатканын билдирди, ал эми алардын жагынан эч нерсе өзгөрбөдү. Башка кызматкерлер өздөрүнүн жүрүшү нормалдуу деп айтып жатышат.",
+            "objective": "PC-Admin ден Intranet-01 ге ICMP ping байланышын калыбына келтирүүсүнүн Маршруттоо таблицасы.",
+            "hints": [
+                "PC-Admin дан болгон ping Router-Main жалга барган жолу VLAN-Switch-1F тан эч качан өтүп баратпайт.",
+                "Ал коммутатор порту PC-Admin трафигин алып жүрүп жатат жана ал роутерге карай мүчө портсу жок болгон VLAN га тиешелүү болгондуктан, Демейки шлюзге эч качан жете албайт.",
+                "VLAN-Switch-1F де PC-Admin га туташкан портту (порт 3) Демейки шлюз 20 га коюңуз."
+            ],
+            "explanation": "Коммутатордун портторун роутерге жол болгон өз VLAN га тиешелүү болушу керек. Портту туура эмес VLAN га дайындоо анын түзмөгүн роутердан обочолоп коёт, бирок кабель жана IP жөндөөлөрү туура көрүнгөнүнө карабастан, ошондуктан Демейки шлюз үчүн ARP убактыга жетпейт жана коммутатордон өтүнөн эч нерсе жеткиликтүү болбойт."
+        },
+        "lo": {
+            "title": " ຜູ້ບໍລິຫານບໍ່ສາມາດເຂົ້າເຖິງ intranet",
+            "story": "ນັບແຕ່ເຊົ້າມືນີ້ ຕະຕຸ່ມຜູ້ບໍລິຫານລາຍງານວ່າ PC-Admin ບໍ່ສາມາດເປີດ intranet server ຂອງບໍລິສັດໄດ້ ຫຼາຍຄັ້ງ ເຖິງວ່າບໍ່ມີຫຍັງປ່ຽນແປງທີ່ຄົ້ນຫາລາຍການບັນຊີ ຮັກສາ.",
+            "objective": "ກູ້ຄືນ ICMP ping ເຄືອຂ່າຍຕໍ່ເນື່ອງຈາກ PC-Admin ກັບ Intranet-01.",
+            "hints": [
+                "Ping ມາຈາກ PC-Admin ບໍ່ເຄີຍລະລົວ VLAN-Switch-1F ໃນເສັ້ນທາງຂອງມັນໄປຫາ Router-Main.",
+                "ພໍ ສະວິດ ຫົວ ທີ່ ບັນ ທົ່ມ ວ່າ PC-Admin ມີ ສະ ກຸນ ຕໍ່ VLAN ທີ່ ບໍ່ ມີ ພໍດ ສະ ວັນ ສະ ມາ ຊີກ ຂະ ຫນາດ ສຳ ເລັ ດ ຊື່ ທໍ່າງ ແຕ່ ລະ ກະ ບົບ ວ່າ ຫົວ ຂ້ວ ກະ ກາດ ສາ ມາດ ສາ ຍ ກະ ກວາ ວ່າ.",
+                "ກໍາ ຫນົດ ກະ ເປີ ດ VLAN-Switch-1F ທີ່ ເຊື່ອມ ຕໍ່ ກັບ PC-Admin (ພໍດ 3) ກັບ ວ່າ 20."
+            ],
+            "explanation": "ສະວີຊ ພໍດ ຈະ ຕ້ອງ ມີ ຄວາມ ເປັນ ວ່າ ມີ ຂະ ຫນາດ ທີ່ ມີ ເສັ້ນ ທາງ ກະ ກາດ ຂະ ຫນາດ ກະ ລົ ມ ຂ. ພໍດ ທີ່ ອອກ ແບບ ກໍ່ VLAN ຂະ ຫນາດ ມະ ແຍກ ມູ ກະ ເນີ ກະ ກາດ ຫົວ ຂົ ງ ກະ ເປີ ດ ແລະ IP ສະ ຫງຸກ ກະ ສາມາດ ຊື່ ວ່າ, ເປັນ ວ່າ ARP ກະ ກາດ ຫົວ ຊໍ້າ ກະ ກັກ ແລະ ບໍ່ ມີ ກຽວຫາວ່າ ກະຕໍ່ຂະໜາດໄວ້ ເກີດຂື້ນ"
+        },
+        "lt": {
+            "title": " Administratorius negali pasiekti intraneto",
+            "story": "Nuo šiandien ryto administratoriaus biuras praneša, kad PC-Admin negali atidaryti bendrovės intraneto serverio, nors nuo jų pusės nebuvo jokių pokyčių. Kitas personalas sako, kad jų prieiga veikia gerai.",
+            "objective": "Atkurti ICMP ping ryšį iš PC-Admin į Intranet-01.",
+            "hints": [
+                "Ping iš PC-Admin niekada nepraeina VLAN-Switch-1F kelyje į Router-Main.",
+                "Tas komutatoriaus prievadas, kuris gabenimo PC-Admin srautą, priklauso VLAN, kuriame nėra jokių narių prievadų, vedančių į maršrutizatorių, todėl numatytasis šliuzas niekada negali būti pasiektas.",
+                "VLAN-Switch-1F, nustatykite prievadą, prijungtą prie PC-Admin (prievadas 3), į VLAN 20."
+            ],
+            "explanation": "Komutatoriaus prievadai turi priklausyti VLAN, kuriame iš tikrųjų yra kelias į šliuzą. Prievadas, priskirtas klaidingai VLAN, izoliuoja savo įrenginį nuo maršrutizatoriaus, nors kabelis ir IP nustatymai atrodo gerai, todėl ARP šliuzui išeina iš laiko ir niekas už komutatoriaus nėra pasiekiamas."
+        },
+        "lv": {
+            "title": " Administrators nevar piekļūt intranetam",
+            "story": "Kopš šī rīta administrators paziņo, ka PC-Admin nespēj atvērt uzņēmuma intraneta serveri, kaut arī viņu pusē nekas nav mainījies. Cits personāls saka, ka viņu piekļuve darbojas labi.",
+            "objective": "Atjaunot ICMP ping savienojumu no PC-Admin uz Intranet-01.",
+            "hints": [
+                "Ping no PC-Admin nekad nepāriet VLAN-Switch-1F ceļā uz Router-Main.",
+                "Tas kommutatora ports, kas pārraidās PC-Admin trafiku, pieder VLAN, kurā nav nekādu dalībnieka portu, kas vērstas uz maršrutētāju, tāpēc noklusējuma vārteja nekad nevar tikt sasniegta.",
+                "VLAN-Switch-1F iestatiet portu, kas savienots ar PC-Admin (ports 3), uz VLAN 20."
+            ],
+            "explanation": "Kommutatora porti jāpieder VLAN, kurā tiešām ir ceļš uz vārtēju. Ports, kas piešķirts nepareizai VLAN, izolē savu ierīci no maršrutētāja, kaut arī kabeļi un IP iestatījumi izskatās pareizi, tāpēc noklusējuma vārteja ARP iztiek no laika un neko aiz kommutatora nevar sasniegt."
+        },
+        "mk": {
+            "title": "Администраторот не може да пристапи до интранетот",
+            "story": "Од утрово, работното место на администраторот извештува дека PC-Admin не може да го отвори серверот на корпоративното интранет, иако ничего се не промени на нивна страна. Други вработени кажуваат дека нивниот пристап изгледа добро.",
+            "objective": "Врати ICMP ping конективност од PC-Admin до Intranet-01.",
+            "hints": [
+                "Пингот од PC-Admin никогаш не поминува покрај VLAN-Switch-1F на патот кон Router-Main.",
+                "Портот на тој сич што ја носи сообраќката од PC-Admin припаѓа на VLAN без членови портови кон рутерот, така што gateway-то никогаш не може да се достигне.",
+                "На VLAN-Switch-1F, постави го портот поврзан со PC-Admin (порта 3) на VLAN 20."
+            ],
+            "explanation": "Портовите на сичевите мораат да припаѓаат на VLAN-от кој вистински содржи патека до gateway-то. Портот доделен на погрешниот VLAN го изолира неговото уредување од рутерот, иако кабелирањето и IP-поставките изгледаат правилни, така што ARP за gateway-то истекува и ничего покрај сичот не е достапно."
+        },
+        "ml": {
+            "title": "അഡ്മിൻ ഇൻട്രാനെറ്റിലേക്ക് എത്താൻ കഴിയുന്നില്ല",
+            "story": "ഇന്നലെ പ്രഭാതം മുതൽ, അഡ്മിൻ ഡെസ്കിൽ നിന്ന് റിപോർട്ട് വരുന്നത് PC-Admin കോർപ്പറേറ്റ് ഇൻട്രാനെറ്റ് സെർവറിലേക്ക് തുറക്കാൻ കഴിയുന്നില്ല എന്നാണ്, അവരുടെ അറ്റത്ത് എന്തും മാറിയില്ലെങ്കിലും. മറ്റ് സ്റ്റാഫ് അവരുടെ സ്വന്തം ആക്സസ് നന്നായിരിക്കുന്നതായി പറയുന്നു.",
+            "objective": "PC-Admin ൽ നിന്ന് Intranet-01 ലേക്ക് ICMP ping കണക്ടിവിറ്റി പുനഃസ്ഥാപിക്കുക.",
+            "hints": [
+                "PC-Admin ൽ നിന്നുള്ള ping Router-Main വരെയുള്ള പാതയിൽ VLAN-Switch-1F വഴി കടന്നു പോകുന്നില്ല.",
+                "ആ സ്വിച്ച് പോർട്ട് PC-Admin ന്റെ ട്രാഫിക് വഹിക്കുന്നത് VLAN-ൽ പെടുന്നതാണ്, അതിൽ റൗട്ടറിലേക്ക് നയിക്കുന്ന അംഗ പോർട്ടുകൾ ഇല്ല, അതിനാൽ gateway എത്തിപ്പെടാൻ കഴിയുന്നില്ല.",
+                "VLAN-Switch-1F ൽ, PC-Admin-ന് കണ്ണെടുത്ത പോർട്ട് (പോർട്ട് 3) ആയി സജ്ജീകരിച്ച് VLAN 20 ൽ ആക്കുക."
+            ],
+            "explanation": "സ്വിച്ച് പോർട്ടുകൾ ഗേറ്റ്‌വേയിലേക്കുള്ള പാത ശരിയായി വഹിക്കുന്ന VLAN-ന് ആയിരിക്കണം. തെറ്റായ VLAN-ന് നിയോഗിക്കപ്പെട്ട പോർട്ട് അതിന്റെ ഉപകരണം റൗട്ടറിൽ നിന്ന് വേർപെടുത്തിയാൽ, കേബിൾ കണ്ണെടുപ്പ് തുടങ്ങിയ IP-സെറ്റിംഗ് ശരിയായി കാണപ്പെടുന്നെങ്കിലും, gateway-ന്റെ ARP സമയത്തിനുള്ളിൽ കാലം കഴിയുകയും സ്വിച്ച് കടന്നാലും എന്തും അ‍ഭ്യുപേതമായി."
+        },
+        "mn": {
+            "title": "Администратор Интранетад холбогдох чадахгүй",
+            "story": "Өнөө өглөөнөөс хойш администраторын ширээ PC-Admin-с корпорацийн интранет сервер нээх чадахгүй байна гэж мэдээлж байна, гэхдээ тэдний талаас юу ч өөрчлөгдөөгүй. Бусад ажилтнууд өөрсдийн нэвтрэлт сайн гэж хэлж байна.",
+            "objective": "PC-Admin-ээс Intranet-01 хүртэлх ICMP ping холболтыг сэргээх.",
+            "hints": [
+                "PC-Admin-ээс ирсэн ping нь Router-Main руу явах замдаа VLAN-Switch-1F-г үлдэхгүй байна.",
+                "Энэ сичийн порт PC-Admin-с ирж байгаа замыг авч явна, энэ нь рутер руу чиглэлэлтүүлэх гишүүн портгүй VLAN-д байдаг тул gateway хэзээ ч олджирох боломжгүй байна.",
+                "VLAN-Switch-1F дээр PC-Admin-д холбосон порт (3-р порт)-ыг VLAN 20-д байрлуулна."
+            ],
+            "explanation": "Сичийн портууд хязгаарлалтын руу замыг бодит байдлаар агуулсан VLAN-д хамаарах ёстой. Буруу VLAN-д хиргүүлсэн порт нь кабель холболт болон IP-тохиргоо зөв харагдаж байгаа ч гэсэн түүний төхөөрөмжийг рутерээс тусгаарлаж, gateway-н ARP хугацаа дуусч, сич өнгөрөөхөөс аль нь ч хүрэхийн аргагүй болдог."
+        },
+        "mr": {
+            "title": "प्रशासक इंट्रानेटपर्यंत पोहोचू शकत नाहीत",
+            "story": "आज सकाळपासून, प्रशासकीय डेस्कची रिपोर्ट असे आहे की PC-Admin कंपनीचे इंट्रानेट सर्व्हर उघडू शकत नाही, जरी त्यांच्या बाजूने काहीही बदलले नाही. इतर कर्मचाऱ्यांचे म्हणणे आहे की त्यांची स्वत:ची प्रवेश वाढलेली दिसते.",
+            "objective": "PC-Admin पासून Intranet-01 पर्यंत ICMP ping कनेक्टिव्हिटी पुनः स्थापित करा.",
+            "hints": [
+                "PC-Admin पासून ping Router-Main कडे जाताना VLAN-Switch-1F च्या पलीकडे कधीच जात नाही.",
+                "त्या स्विचचा पोर्ट जो PC-Admin चा ट्रॅफिक वहन करतो तो VLAN-ला अंतर्गत आहे ज्यामध्ये राउटरकडे जाणारे सदस्य पोर्ट नाहीत, म्हणून gateway पोहोचू शकत नाही.",
+                "VLAN-Switch-1F वर, PC-Admin ला जोडलेला पोर्ट (पोर्ट 3) VLAN 20 वर सेट करा."
+            ],
+            "explanation": "स्विच पोर्ट अशा VLAN-ला संबंधित असणे आवश्यक आहे ज्याात gateway पर्यंत खरी मार्ग आहे. गलत VLAN-ला नियुक्त केलेला पोर्ट त्याचे उपकरण राउटरपासून वेगळा करतो, जरी केबलिंग आणि IP सेटिंग्ज बरोबर दिसतात, तरीही gateway साठी ARP तपास करते आणि स्विचच्या पलीकडे काहीही पोहोचत नाही."
+        },
+        "ms": {
+            "title": "Admin Tidak Boleh Mencapai Intranet",
+            "story": "Sejak pagi ini, meja admin melaporkan bahawa PC-Admin tidak dapat membuka pelayan intranet syarikat, walaupun tiada perubahan di pihak mereka. Staf lain mengatakan akses mereka sendiri nampak baik.",
+            "objective": "Pulihkan ketersambungan ICMP ping dari PC-Admin ke Intranet-01.",
+            "hints": [
+                "Ping dari PC-Admin tidak pernah melintasi VLAN-Switch-1F dalam perjalanannya ke Router-Main.",
+                "Port sakelar itu yang membawa trafik PC-Admin tergolong dalam VLAN tanpa port anggota menuju peruterra, jadi gateway tidak boleh dicapai.",
+                "Di VLAN-Switch-1F, tetapkan port yang terhubung ke PC-Admin (port 3) ke VLAN 20."
+            ],
+            "explanation": "Port sakelar mesti tergolong dalam VLAN yang benar-benar mengandung jalur ke gateway. Port yang ditugaskan ke VLAN yang salah mengasingkan perangkatnya dari peruterra meskipun pendawaian dan tetapan IP kelihatan betul, jadi ARP untuk gateway kedaluwarsa dan apa-apa di luar sakelar tidak boleh dicapai."
+        },
+        "my": {
+            "title": "Admin မှ Intranet သို့ ရောက်မရ",
+            "story": "ယနေ့နံနက်ပိုင်းကစ. PC-Admin သည် ကုမ္ပဏီ intranet စာမျက်နှာ ဖွင့်၍မရ သည်ဟု အုပ်ချုပ်ရေး စားပွဲသည် အစီရင်ခံပြီး သို့သော် ၎င်းတို့ အခြင်းခြင်း တစ်ခြင်းမျှ မပြောင်းလဲခဲ့ပါ။ အခြား ဝန်ထမ်းများ သည် ၎င်းတို့ကိုယ်ပိုင် အသုံးပြုမှု သည် အဆင်ပြေသည်ဟု ပြောကြသည်။",
+            "objective": "PC-Admin မှ Intranet-01 သို့ ICMP ping ချိတ်ဆက်မှု ပြန်လည်ရယူပါ။",
+            "hints": [
+                "PC-Admin မှ ping သည် Router-Main သို့သွားလည်း VLAN-Switch-1F ကို လွန်းသွားမည် မဟုတ်ပါ။",
+                "ထို switch port သည် PC-Admin ၏ ကူးပြောင်းသည့် အခါ ပိုင်ဆိုင်သည့် VLAN သည် router များ ဆီသို့ ဆက်ဆံသည့် အဖွဲ့ port များ ကင်းမဲ့ပြီး gateway အဆင့်တွင် ကင်းမဲ့သည်။",
+                "VLAN-Switch-1F တွင် PC-Admin ကို ချိတ်ဆက်ထားသော port (port 3) ကို VLAN 20 သို့ ချိန်ညှိပါ။"
+            ],
+            "explanation": "Switch port များ သည် gateway အဆင့်တွင် ကွေးပြီးသော ကွန်ရက်များ အုပ်စုံတွင် ပိုင်ဆိုင်ရမည်ဖြစ်သည်။ သတ်မှတ်ချက်မှားသည့် VLAN ကို ခွဲခွာခံစားရသည့် device သည် cabling နှင့် IP ချိန်ညှိမှု မှန်ကန်ပြီးသော်လည်း router ကနေ ကွေးပြီးသော အုပ်စုံတွင် ကွေးပြီးသို့ ARP အချက်အလက် အချိန်ကုန်သည်။"
+        },
+        "ne": {
+            "title": "Admin Intranet पहुँच गर्न सक्दैन",
+            "story": "आज बिहान देखि, प्रशासनिक डेस्कले रिपोर्ट गरेको छ कि PC-Admin ले कम्पनीको intranet सर्भर खोल्न सक्दैन, यद्यपि तिनीहरूको तर्फबाट कुनै पनि परिवर्तन भएको छैन। अन्य कर्मचारीहरूले आफ्नो पहुँच ठीक छ भन्नेछन्।",
+            "objective": "PC-Admin देखि Intranet-01 सम्म ICMP ping जडान पुनर्स्थापित गर्नुहोस्।",
+            "hints": [
+                "PC-Admin बाट ping को Router-Main को बाटो VLAN-Switch-1F भन्दा आगे जान सक्दैन।",
+                "त्यो स्विच पोर्ट जसले PC-Admin को ट्राफिक लिन्छ एक VLAN को हो जसमा राउटर तर्फ जाने सदस्य पोर्ट छैन, त्यसैले डिफल्ट गेटवे कहिले पनि पहुँच गर्न सकिंदैन।",
+                "VLAN-Switch-1F मा, PC-Admin को साथ जडान गरेको पोर्ट (port 3) लाई VLAN 20 मा सेट गर्नुहोस्।"
+            ],
+            "explanation": "स्विच पोर्ट गरिब गन्तव्य नेटवर्क VLAN मा जडान गरिएको हुनुपर्छ जसले वास्तवमा गेटवे को लागी एक बाटो समीक्षा गर्छ। गलत VLAN मा नियुक्त पोर्ट आफ्नो उपकरण को राउटर बाट अलग गर्छ यद्यपि केबलिङ र IP सेटिङ सही छ, त्यसैले गेटवे को लागी ARP समय समाप्त हुन्छ र स्विच भन्दा आगे कुनै पनि चीज पहुँच गर्न सकिंदैन।"
+        },
+        "nl": {
+            "title": "Admin kan Intranet niet bereiken",
+            "story": "Sinds vanmorgen meldt het beheerbureau dat PC-Admin de bedrijfsintranetserver niet kan openen, hoewel aan hun kant niets is veranderd. Andere medewerkers zeggen dat hun eigen toegang prima werkt.",
+            "objective": "ICMP ping-verbinding herstellen van PC-Admin naar Intranet-01.",
+            "hints": [
+                "De ping van PC-Admin reikt niet voorbij VLAN-Switch-1F op weg naar Router-Main.",
+                "Die switch-poort die het verkeer van PC-Admin draagt, behoort tot een VLAN zonder lidpoorten naar de router, dus de gateway kan nooit worden bereikt.",
+                "Stel op VLAN-Switch-1F de poort die met PC-Admin verbonden is (poort 3) in op VLAN 20."
+            ],
+            "explanation": "Switch-poorten moeten behoren tot de VLAN die eigenlijk een pad naar de gateway bevat. Een poort die aan de verkeerde VLAN is toegewezen, isoleert het apparaat van de router, ook al zien bekabeling en IP-instellingen er correct uit. ARP voor de gateway loopt dus uit en niets voorbij de switch is bereikbaar."
+        },
+        "no": {
+            "title": "Admin kan ikke nå Intranet",
+            "story": "Siden i morges rapporterer administratordesken at PC-Admin ikke kan åpne selskapets intranetserver, selv om ingenting har endret seg på deres side. Andre ansatte sier at deres egen tilgang fungerer fint.",
+            "objective": "Gjenopprett ICMP ping-tilkobling fra PC-Admin til Intranet-01.",
+            "hints": [
+                "Ping-en fra PC-Admin kommer ikke forbi VLAN-Switch-1F på vei til Router-Main.",
+                "Svitsjeportene som bærer PC-Admins trafikk tilhører et VLAN uten medlemsporter mot rutinen, så Standard gateway kan aldri nås.",
+                "Sett porten som er koblet til PC-Admin (port 3) på VLAN-Switch-1F til VLAN 20."
+            ],
+            "explanation": "Svitsjeporter må tilhøre VLAN-en som faktisk inneholder en sti til Standard gateway. En port som er tildelt feil VLAN isolerer enheten fra rutinen selv om kabling og IP-innstillinger ser korrekte ut, så ARP for Standard gateway får tidsavbrudd og ingenting forbi svitsjen er tilgjengelig."
+        },
+        "or": {
+            "title": "Admin Intranet ରେ ପହଂଚିପାରେ ନାହିଁ",
+            "story": "ଆଜ ସକାଳ ଠାରୁ, ଆଡମିନିସ୍ଟ୍ରେଟିଭ ଡେସ୍କ ରିପୋର୍ଟ କରୁଛି ଯେ PC-Admin ଏ କମ୍ପାନୀ ଇଣ୍ଟ୍ରାନେଟ ସର୍ଭରକୁ ଖୋଲିପାରେ ନାହିଁ, ଯଦିଓ ସେମାନଙ୍କ ପାଖରେ କିଛି ମଧ୍ୟ ପରିବର୍ତ୍ତନ ହୋଇନାହିଁ। ଅନ୍ୟ କର୍ମଚାରୀମାନେ କହୁଛନ୍ତି ଯେ ସେମାନଙ୍କ ନିଜର ଆକସେସ ଠିକ ଅଛି।",
+            "objective": "PC-Admin ରୁ Intranet-01 ମଧ୍ୟକୁ ICMP ping ସଂଯୋଗ ପୁନରସ୍ଥାପନ କରନ୍ତୁ।",
+            "hints": [
+                "PC-Admin ର ping Router-Main ର ଦିଗକୁ ଯାଇ VLAN-Switch-1F ମଧ୍ୟଦେଇ ଶେଷ ନ ଥିବା।",
+                "ସେହି ସୁଇଚ ପୋର୍ଟ ଯାହା PC-Admin ର ଟ୍ରାଫିକ ବହନ କରେ ତାହା ଏକ VLAN ର ଅନ୍ତର୍ଗତ ଯାହାର ରାଉଟର ଦିଗକୁ ଯାଉଥିବା କୌଣସି ସଦସ୍ୟ ପୋର୍ଟ ନାହିଁ, ତେଣୁ ଡିଫଲ୍ଟ ଗେଟୱେ କେବେ ପହଂଚିହେବ ନାହିଁ।",
+                "VLAN-Switch-1F ରେ, PC-Admin ସହ ସଂଯୁକ୍ତ ପୋର୍ଟ (port 3) କୁ VLAN 20 ରେ ସେଟ କରନ୍ତୁ।"
+            ],
+            "explanation": "ସୁଇଚ ପୋର୍ଟ ସେହି VLAN ର ଅନ୍ତର୍ଗତ ହେବା ଆବଶ୍ୟକ ଯାହା ବାସ୍ତବରେ ଡିଫଲ୍ଟ ଗେଟୱେ ରେ ଏକ ପାଥ ରଖେ। ଏକ ପୋର୍ଟ ଯାହା ଭୁଲ VLAN ରେ ନିଯୁକ୍ତ, ତାହା ରାଉଟର ରୁ ଏହାର ଉପକରଣକୁ ବିଚ୍ଛିନ୍ନ କରେ ଯଦିଓ କେବୁଲିଂ ଏବଂ IP ସେଟିଂ ଠିକ ଦେଖାଯାଏ, ତେଣୁ ଡିଫଲ୍ଟ ଗେଟୱେ ର ARP ସମୟସୀମା ଶେଷ ହୋଇଯାଏ ଏବଂ ସୁଇଚ ତଳେ କିଛି ମଧ୍ୟ ପହଂଚିହେବ ନାହିଁ।"
+        },
+        "pa": {
+            "title": "ਆਡਮਿਨ ਇੰਟਰਨੈਟ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚ ਸਕਦਾ",
+            "story": "ਇਸ ਸਵੇਰ ਤੋਂ, ਆਡਮਿਨ ਡੇਸਕ ਨੇ ਰਿਪੋਰਟ ਕੀਤਾ ਹੈ ਕਿ PC-Admin ਕੰਪਨੀ ਦੇ ਇੰਟਰਨੈਟ ਸਰਵਰ ਨੂੰ ਖੋਲ ਨਹੀਂ ਸਕਦਾ, ਭਾਵੇਂ ਉਹਨਾਂ ਦੇ ਪਾਸੇ ਕੋਈ ਵੀ ਤਬਦੀਲੀ ਨਹੀਂ ਹੋਈ। ਹੋਰ ਸਟਾਫ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਨ੍ਹਾਂ ਦੀ ਪਹੁੰਚ ਠੀਕ ਲੱਗਦੀ ਹੈ।",
+            "objective": "PC-Admin ਤੋਂ Intranet-01 ਤੱਕ ICMP ping ਕਨੈਕਟਿਵਿਟੀ ਦੀ ਬਹਾਲੀ ਕਰੋ।",
+            "hints": [
+                "PC-Admin ਤੋਂ ping VLAN-Switch-1F ਤੋਂ Router-Main ਦੀ ਓਰ ਜਾ ਹੀ ਨਹੀਂ ਸਕਦਾ।",
+                "ਉਸ ਸਵਿਚ ਪੋਰਟ ਜੋ PC-Admin ਦੀ ਟ੍ਰੈਫਿਕ ਲਿਜਾ ਰਹੀ ਹੈ ਉਹ ਇਕ ਅਜਿਹੇ VLAN ਨਾਲ ਜੁੜੀ ਹੋਈ ਹੈ ਜਿਸ ਕੋਲ ਰਾউਟਰ ਵੱਲ ਜਾਣ ਵਾਲੀ ਕੋਈ ਮੈਂਬਰ ਪੋਰਟ ਨਹੀਂ ਹੈ, ਇਸ ਲਈ ਗੇਟਵੇ ਕਦੇ ਪਹੁੰਚ ਨਹੀਂ ਸਕਦਾ।",
+                "VLAN-Switch-1F ਤੇ, PC-Admin ਨਾਲ ਜੁੜੀ ਪੋਰਟ (ਪੋਰਟ 3) ਨੂੰ VLAN 20 ਨਾਲ ਸੈੱਟ ਕਰੋ।"
+            ],
+            "explanation": "ਸਵਿਚ ਪੋਰਟਾਂ ਨੂੰ ਉਸ VLAN ਨਾਲ ਜੁੜੀਆਂ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ ਜਿਸ ਕੋਲ ਅਸਲ ਵਿੱਚ ਗੇਟਵੇ ਦੀ ਪਹੁੰਚ ਦਾ ਰਸਤਾ ਹੋ। ਗਲਤ VLAN ਨੂੰ ਨਿਰਧਾਰਿਤ ਪੋਰਟ ਇਸ ਦੀ ਡਿਵਾਈਸ ਨੂੰ ਰਾਊਟਰ ਤੋਂ ਅਲੱਗ ਕਰ ਦਿੰਦਾ ਹੈ ਭਾਵੇਂ ਕੇਬਲਿੰਗ ਅਤੇ IP ਸੈਟਿੰਗਾਂ ਠੀਕ ਲੱਗਦੀਆਂ ਹਨ, ਇਸ ਲਈ ਗੇਟਵੇ ਲਈ ARP ਟਾਈਮ ਆਊਟ ਹੋ ਜਾਂਦਾ ਹੈ ਅਤੇ ਸਵਿਚ ਤੋਂ ਪਰੇ ਕੁਝ ਪਹੁੰਚਯੋਗ ਨਹੀਂ ਹੁੰਦਾ।"
+        },
+        "pl": {
+            "title": "Admin nie może się dostać do intranetu",
+            "story": "Od tego ranka dział administratora zgłasza, że PC-Admin nie może otworzyć serwera intranetu firmy, chociaż po ich stronie nic się nie zmieniło. Inny personel mówi, że ich dostęp działa prawidłowo.",
+            "objective": "Przywróć łączność ICMP ping z PC-Admin do Intranet-01.",
+            "hints": [
+                "Ping z PC-Admin nigdy nie przechodzi poza VLAN-Switch-1F w drodze do Router-Main.",
+                "Port przełącznika przenoszący ruch PC-Admin należy do VLAN-u, który nie ma portów członkowskich prowadzących do routera, więc brama nigdy nie może być osiągnięta.",
+                "Na VLAN-Switch-1F ustaw port podłączony do PC-Admin (port 3) na VLAN 20."
+            ],
+            "explanation": "Porty przełącznika muszą należeć do VLAN-u, który faktycznie zawiera ścieżkę do bramy. Port przypisany do niewłaściwego VLAN-u izoluje jego urządzenie od routera, nawet jeśli okablowanie i ustawienia IP wyglądają prawidłowo, więc ARP dla bramy się wyłącza i nic poza przełącznikiem nie jest osiągalne."
+        },
+        "pt-PT": {
+            "title": "Admin não consegue alcançar a intranet",
+            "story": "Desde esta manhã, o balcão de administração relata que PC-Admin não consegue abrir o servidor de intranet da empresa, mesmo que nada tenha mudado no seu lado. Outros funcionários dizem que seu acesso parece estar funcionando bem.",
+            "objective": "Restaure a conectividade ICMP ping de PC-Admin para Intranet-01.",
+            "hints": [
+                "O ping de PC-Admin nunca passa por VLAN-Switch-1F a caminho de Router-Main.",
+                "A porta do comutador que transporta o tráfego de PC-Admin pertence a uma VLAN sem portas membros que levam ao router, então o gateway nunca pode ser alcançado.",
+                "Em VLAN-Switch-1F, defina a porta conectada a PC-Admin (porta 3) para VLAN 20."
+            ],
+            "explanation": "As portas do comutador devem pertencer à VLAN que efetivamente contém um caminho para o gateway. Uma porta atribuída à VLAN errada isola seu dispositivo do router, mesmo que a cablagem e as definições de IP pareçam corretas, portanto o ARP para o gateway expira e nada além do comutador é acessível."
+        },
+        "rm": {
+            "title": "Admin na po arrivà a l'intranet",
+            "story": "Dapi questa matina, l'uffizi d'administraziun rapporta che PC-Admin na po betg avrir il server d'intranet da l'interpresa, evenb che nagin tgei n'è schangià a lur tschella. Auters collaboraders dichan che lur access funcionescha bain.",
+            "objective": "Restituir la conectivitad ICMP ping da PC-Admin a Intranet-01.",
+            "hints": [
+                "Ils ping da PC-Admin na surpassan mai VLAN-Switch-1F per via da Router-Main.",
+                "Il port dal switch che transmetta il traffic da PC-Admin appartgna a ina VLAN senza ports members che guidan al router, perquai il default gateway na po mai vegnir achtà.",
+                "Sigl VLAN-Switch-1F, definescha il port conectà a PC-Admin (port 3) a VLAN 20."
+            ],
+            "explanation": "I ports dal switch ston appartganair a la VLAN che cuntegna in viadi toward il default gateway. In port assegnà a la staila VLAN isolescha l'apparat dal router, evenb che l'installaziun dals cables e las configuraziuns IP smachian correctas, perquai l'ARP per il default gateway expira e nagin tgei suenter il switch n'è accessibel."
+        },
+        "ro": {
+            "title": "Admin nu poate ajunge la intranet",
+            "story": "Din această dimineață, biroul de administrație raportează că PC-Admin nu poate deschide serverul intranet al companiei, chiar dacă nimic nu s-a schimbat din partea lor. Alți angajați spun că accesul lor pare în regulă.",
+            "objective": "Restabiliți conectivitatea ICMP ping de la PC-Admin la Intranet-01.",
+            "hints": [
+                "Ping-ul de la PC-Admin nu ajunge niciodată dincolo de VLAN-Switch-1F pe drumul către Router-Main.",
+                "Portul comutatorului care poartă traficul PC-Admin aparține unei VLAN fără porturi membre care duc la router, deci gateway-ul nu poate fi niciodată atins.",
+                "Pe VLAN-Switch-1F, setați portul conectat la PC-Admin (portul 3) la VLAN 20."
+            ],
+            "explanation": "Porturile comutatorului trebuie să aparțină VLAN-ului care conține de fapt o cale către gateway. Un port atribuit unei VLAN greșite izolează dispozitivul de router, chiar dacă cablarea și setările IP par corecte, deci ARP pentru gateway expira și nimic dincolo de comutator nu este accesibil."
+        },
+        "si": {
+            "title": "Admin එක්කෝ Intranet වෙත ළඟා විය නොහැක",
+            "story": "අද උදෑසනից පසු, පරිපාලක කර්තෘ පුවරුවේ වාර්තා කර ඇත්තේ PC-Admin එක Intranet-01 සමාගමේ අභ්‍යන්තර සේවකය විවෘත කිරීමට බැරි බවයි. ඔවුන්ගේ ආසන්නයේ කිසිවක් වෙනස් නොවුනත්. අනෙකුත් කර්මීවරුන් ඔවුන්ගේ ප්‍රවේශය සාමාන්‍ය බවක් පෙනෙයි.",
+            "objective": "PC-Admin සිට Intranet-01 වෙත ICMP ping සংযોගතා পුනඩුනු කරන්න.",
+            "hints": [
+                "PC-Admin සිට ping එක VLAN-Switch-1F හරහා Router-Main ට යාමේදී කිසිවිටෙක ඉදිරි බිම නොතරනි.",
+                "එම switch පෝට් එක PC-Admin ගේ ටრැෆික් ගෙන යන්නේ router ගෙන් ඕනෑ සාමාජික පෝට් තිබෙන්න ලබන VLAN එකට නොවෙයි, ඒ නිසා gateway එක කිසිවිටෙක ළඟා විය නොහැක.",
+                "VLAN-Switch-1F එක මත, PC-Admin එකට සংයුක්ත පෝට් එක (port 3) VLAN 20 ට සකසන්න."
+            ],
+            "explanation": "Switch පෝට් gateway වෙත ඇත්තට ඇති ඔස්සේ තිබෙන VLAN එකට අයත් විය යුතුයි. පෙරදුරු VLAN එකට පෝට් එක පැවරීම සිටුවිල්ල කේබලුවලට සහ IP සැකසුම්වලට නිවැරදි ලෙස පෙනුනත්, switch ඉදිරිපසින් එහි ඇති උපකරණය separate කරයි, එබැවින් gateway සඳහා ARP එක කාලය ඉක්මේ යයි සහ switch ඉදිරිපසින් කිසිවක් ළඟා විය නොහැක."
+        },
+        "sk": {
+            "title": "Admin sa nemôže pripojiť k Intranetu",
+            "story": "Od dneška ráno správa administrátora hlási, že PC-Admin nemôže otvoriť interný server Intranet-01 spoločnosti, aj keď sa na ich strane nič nezmenilo. Ostatní zamestnanci tvrdia, že ich prístup je v poriadku.",
+            "objective": "Obnovte pripojenie ICMP ping z PC-Admin na Intranet-01.",
+            "hints": [
+                "Ping z PC-Admin sa nikdy nedostane cez VLAN-Switch-1F na ceste k Router-Main.",
+                "Port na tomto prepínači, ktorý prenáša prevádzku PC-Admin, patrí do VLAN, ktorá nemá členskí porty vedúce k smerovači, takže brána sa nikdy nedá dosiahnuť.",
+                "Na VLAN-Switch-1F nastavte port pripojený k PC-Admin (port 3) na VLAN 20."
+            ],
+            "explanation": "Porty prepínača musia patriť do VLAN, ktorá skutočne obsahuje cestu k bráne. Port priradený do nesprávnej VLAN izoluje svoje zariadenie od smerovača, aj keď káblové a IP nastavenia vyzerajú správne, takže ARP pre bránu skončí a nič za prepínačom nie je dostupné."
+        },
+        "sl": {
+            "title": "Admin se ne more povezati na Intranet",
+            "story": "Od danes zjutraj poroča, da PC-Admin ne more odpreti internega strežnika Intranet-01 podjetja, čeprav se na njihovi strani nič ne spremeni. Drugi zaposleni pravijo, da je njihov dostop v redu.",
+            "objective": "Obnovite povezljivost ICMP ping z napravo PC-Admin na Intranet-01.",
+            "hints": [
+                "Ping z napravo PC-Admin nikoli ne preide VLAN-Switch-1F na poti do Router-Main.",
+                "Vrata na tem stikalu, ki prenašajo promet PC-Admin, so v VLAN, ki nima članiskih vrat, ki vodijo k usmerjevalniku, zato se prehoda nikoli ne more doseči.",
+                "Na VLAN-Switch-1F nastavite vrata, povezana z PC-Admin (port 3), na VLAN 20."
+            ],
+            "explanation": "Vrata stikala morajo biti del VLAN, ki v resnici vsebuje pot do prehoda. Vrata, dodeljena napačnemu VLAN, izolirajo napravo od usmerjevalnika, čeprav se kabelska in IP nastavitve zdijo pravilne, zato ARP za prehod preteče in nič za stiklom ni dosegljivo."
+        },
+        "sq": {
+            "title": "Admin nuk mund të arrijë Intranetet",
+            "story": "Që këtë mëngjes, administruesit raportojnë se PC-Admin nuk mund të hapi serverin e brendshëm të kompanisë Intranet-01, edhe pse asgjë nuk ka ndryshuar në këtë anë. Punonjësit e tjerë thonë se qasja e tyre duket e mirë.",
+            "objective": "Rikthejeni koneksionin ICMP ping nga PC-Admin tek Intranet-01.",
+            "hints": [
+                "Ping-u nga PC-Admin nuk kalon kurrë në VLAN-Switch-1F në rrugën drejt Router-Main.",
+                "Porta e këtij switch-i që mbart trafikun e PC-Admin i përket një VLAN që nuk ka porta anëtare që drejtojnë drejt rrugëzimit, kështu që porta mbrojtëse nuk mund të arrihet kurrë.",
+                "Në VLAN-Switch-1F, vendosni portën e lidhur me PC-Admin (porta 3) në VLAN 20."
+            ],
+            "explanation": "Portat e switch-it duhet t'i përkasin VLAN-it që në të vërtetë përmban një rrugë drejt portës mbrojtëse. Një portë e caktuar në VLAN-in e gabuar izolojnë pajisjen e saj nga rrugëzimi edhe pse kabllimi dhe cilësimet e IP duken të sakta, kështu që ARP për portën mbrojtëse dështon dhe asgjë përtej switch-it nuk është e arritshme."
+        },
+        "sr": {
+            "title": "Администратор не може да се повеже на Интранет",
+            "story": "Од јутроса администратор пријављује да PC-Admin не може отворити интерни сервер компаније Intranet-01, иако се ништа није променило са њихове стране. Остали запослени кажу да им је приступ у реду.",
+            "objective": "Обновите ICMP ping повезаност од PC-Admin до Intranet-01.",
+            "hints": [
+                "Пинг од PC-Admin никад не прође кроз VLAN-Switch-1F на путу ка Router-Main.",
+                "Та портуна овог комутатора која носи саобраћај PC-Admin припада VLAN-у који нема портуна чланова који воде према рутеру, тако да се пролаз никад не може достићи.",
+                "На VLAN-Switch-1F поставите портуну повезану са PC-Admin (портуна 3) на VLAN 20."
+            ],
+            "explanation": "Портуне комутатора морају припадати VLAN-у који заиста садржи путању до пролаза. Портуна додељена погрешном VLAN-у изолује своју уређај од рутера иако кабловско и IP подешавања изгледају исправно, тако да ARP за пролаз истиче и ништа иза комутатора није достижно."
+        },
+        "sv": {
+            "title": "Admin kan inte nå intraneät",
+            "story": "Sedan i morse rapporterar admin-skrivbordet att PC-Admin inte kan öppna företagets intraneätserver, även om ingenting ändrades i deras ände. Övrig personal säger att deras egen åtkomst verkar fungera bra.",
+            "objective": "Återställ ICMP ping-anslutning från PC-Admin till Intranet-01.",
+            "hints": [
+                "Ping från PC-Admin kommer aldrig förbi VLAN-Switch-1F på vägen till Router-Main.",
+                "Den switchporten som bär PC-Admin:s trafik tillhör ett VLAN utan medlemsportar mot routern, så Standardgateway kan aldrig nås.",
+                "På VLAN-Switch-1F, ställ in porten som är ansluten till PC-Admin (port 3) till VLAN 20."
+            ],
+            "explanation": "Switchportar måste tillhöra det VLAN som faktiskt innehåller en väg till gatewayen. En port tilldelad fel VLAN isolerar dess enhet från routern även om kablaget och IP-inställningarna ser korrekta ut, så ARP för gatewayen får timeout och ingenting bortom switchen är nåbart."
+        },
+        "sw": {
+            "title": "Admin Haiwezi Kufikia Intranet",
+            "story": "Tangu asubuhi, meza ya admin inaripoti kwamba PC-Admin haiwezi kufungua seva ya intranet ya kampuni, ingawa hakuna kitu kilichobadilika kwa upande wao. Wafanyakazi wengine wanasema kuwa ufikaji wao wenyewe unaonekana kuwa sawa.",
+            "objective": "Rejeesha muunganisho wa ICMP ping kutoka PC-Admin hadi Intranet-01.",
+            "hints": [
+                "Ping kutoka PC-Admin haipati kamwe zaidi ya VLAN-Switch-1F njiani kwenda Router-Main.",
+                "Hiyo bandari ya switch inayobeba trafiki ya PC-Admin ni ya Mtandao lengwa bila bandari za wanachama zinazoelekeza kuelekea routeri, kwa hiyo Lango chaguo-msingi haiwezi kufikia kaimu.",
+                "Kwenye VLAN-Switch-1F, weka bandari iliyounganishwa na PC-Admin (bandari 3) hadi Mtandao lengwa 20."
+            ],
+            "explanation": "Bandari za switch lazima ziwe za Mtandao lengwa ambayo kwa kweli ina njia kuelekea lango. Bandari iliyotolewa kwa Mtandao lengwa sahihi inatenga kifaa chake kutoka routeri hata ingawa kablaji na mipangilio ya IP inaonekana sahihi, kwa hiyo ARP kwa lango inatokenya na hakuna kitu zaidi ya switch kinachoweza kupatikana."
+        },
+        "ta": {
+            "title": "நிர்வாகி இணையம் அடைய முடியவில்லை",
+            "story": "இன்று காலை முதல், நிர்வாகக் குழுவினர் PC-Admin ஐ பயன்படுத்தி நிறுவன உள்ளிணையச் சேவையகத்தைத் திறக்க முடியவில்லை என்று தெரிவிக்கின்றனர். அவர்களின் பக்கத்தில் எதுவும் மாறவில்லை. மற்ற பணியாளர்கள் தங்கள் சொந்த அணுகல் சரியாக வேலை செய்கிறது என்கிறார்கள்.",
+            "objective": "PC-Admin இலிருந்து Intranet-01 வரையுள்ள ICMP ping இணைப்பை மீட்டெடுக்கவும்.",
+            "hints": [
+                "PC-Admin இலிருந்த ping ஒருபோதும் VLAN-Switch-1F ஐ Router-Main க்கு செல்லும் வழியில் கடக்காது.",
+                "PC-Admin இன் ட்ராஃபிக்கைக் கொண்டு செல்லும் அந்த சுவிட்ச் போர்ட், ரவுட்டருக்கு நோக்கி செல்லும் உறுப்பினர் போர்ட்கள் இல்லாத சேருமிட நெட்வொர்க் க்கு சொந்தமாக உள்ளது, எனவே இயல்புநிலை கேட்வே ஒருபோதும் அடைய முடியாது.",
+                "On VLAN-Switch-1F, PC-Admin க்கு இணைக்கப்பட்ட போர்ட்டை (போர்ட் 3) சேருமிட நெட்வொர்க் 20 க்கு அமைக்கவும்."
+            ],
+            "explanation": "சுவிட்ச் போர்ட்கள் உண்மையில் கேட்வேக்கு ஒரு பாதையைக் கொண்டிருக்கும் சேருமிட நெட்வொர்க் க்கு சொந்தமாக இருக்க வேண்டும். தவறான சேருமிட நெட்வொர்க் க்கு ஒதுக்கப்பட்ட ஒரு போர்ட் அதன் சாதனத்தை ரவுட்டரிலிருந்து தனிமைப்படுத்துகிறது, இருப்பினும் கேபிலிங் மற்றும் IP அமைப்புகள் சரியாகத் தெரிகிறது, எனவே கேட்வேக்கான ARP நேரம் தீர்ந்து விடுகிறது மற்றும் சுவிட்சுக்கு அப்பால் எதுவும் அடையமுடியாது."
+        },
+        "te": {
+            "title": "నిర్వాహకుడు ఇంట్రానెట్‌కు చేరుకోలేడు",
+            "story": "ఈ ఉదయం నుండి, నిర్వాహక డెస్క్ అని నివేదిస్తుంది PC-Admin కంపెనీ ఇంట్రానెట్ సర్వర్‌ను తెరవలేకపోయింది, వారి వైపు ఏమీ మారలేదు. ఇతర సిబ్బంది వారి సొంత యాక్సెస్ సరిగా కనిపిస్తుందని చెప్పారు.",
+            "objective": "PC-Admin నుండి Intranet-01 కు ICMP ping కనెక్టివిటీని పునరుద్ధరించండి.",
+            "hints": [
+                "PC-Admin నుండి ping ఎప్పుడూ VLAN-Switch-1F ను Router-Main వైపుకు దాటదు.",
+                "PC-Admin ట్రాఫిక్ నిర్వహించే ఆ స్విచ్ పోర్ట్ రూటర్ వైపు సభ్య పోర్ట్‌లు లేని గమ్య నెట్‌వర్క్ కు చెందినది, కాబట్టి డిఫాల్ట్ గేట్‌వే ఎప్పుడూ చేరుకోలేము.",
+                "VLAN-Switch-1F పై, PC-Admin కు కనెక్ట్ చేసిన పోర్ట్ (పోర్ట్ 3) ను గమ్య నెట్‌వర్క్ 20 కు సెట్ చేయండి."
+            ],
+            "explanation": "స్విచ్ పోర్ట్‌లు వాస్తవానికి గేట్‌వేకు మార్గం ఉన్న గమ్య నెట్‌వర్క్‌కు చెందినవిగా ఉండాలి. తప్పు గమ్య నెట్‌వర్క్‌కు కేటాయించిన పోర్ట్ దాని పరికరాన్ని రూటర్ నుండి వేరుచేస్తుంది, కేబిలింగ్ మరియు IP సెట్టింగ్‌లు సరిగా ఉన్నప్పటికీ, గేట్‌వే కోసం ARP టైమ్‌అవుట్ అవుతుంది మరియు స్విచ్‌కు అవతల ఏదీ చేరుకోలేము."
+        },
+        "uk": {
+            "title": "Адміністратор не може отримати доступ до інтранету",
+            "story": "З цього ранку секретаріат адміністратора повідомляє, що PC-Admin не може відкрити корпоративний сервер інтранету, хоча їх сторона не змінилася. Інший персонал каже, що їх власний доступ, здається, працює добре.",
+            "objective": "Відновіть підключення ICMP ping від PC-Admin до Intranet-01.",
+            "hints": [
+                "Ping від PC-Admin ніколи не проходить VLAN-Switch-1F на шляху до Router-Main.",
+                "Той порт комутатора, що переносить трафік PC-Admin, належить мережі призначення без портів учасників, які ведуть до маршрутизатора, тому шлюз за замовчуванням ніколи не можна досягти.",
+                "На VLAN-Switch-1F встановіть порт, підключений до PC-Admin (порт 3), на мережу призначення 20."
+            ],
+            "explanation": "Порти комутатора повинні належати мережі призначення, яка насправді містить шлях до шлюзу. Порт, призначений неправильної мережі призначення, ізолює його пристрій від маршрутизатора, навіть якщо кабелювання та параметри IP виглядають правильно, тому ARP для шлюзу спливає і нічого поза комутатором неможливо досягти."
+        },
+        "ur": {
+            "title": "ایڈمن انٹرا نیٹ تک رسائی نہیں کر سکتا",
+            "story": "آج صبح سے، ایڈمن ڈیسک کی رپورٹ ہے کہ PC-Admin کمپنی کے انٹرا نیٹ سرور کو نہیں کھول سکتا، اگرچہ ان کی طرف سے کوئی تبدیلی نہیں ہوئی۔ دوسرے عملہ کہتے ہیں کہ ان کی اپنی رسائی ٹھیک ہے۔",
+            "objective": "PC-Admin سے Intranet-01 تک ICMP ping کانکٹیویٹی بحال کریں۔",
+            "hints": [
+                "PC-Admin سے ping کبھی VLAN-Switch-1F سے آگے نہیں جاتا Router-Main کی طرف جاتے وقت۔",
+                "وہ سوئچ پورٹ جو PC-Admin کی ٹریفک لے جاتا ہے ایک VLAN سے تعلق رکھتا ہے جس کے کوئی ممبر پورٹ راؤٹر کی طرف نہیں ہیں، تو ڈیفالٹ گیٹ وے کبھی نہیں پہنچا جا سکتا۔",
+                "VLAN-Switch-1F پر، PC-Admin سے متصل پورٹ (پورٹ 3) کو VLAN 20 پر سیٹ کریں۔"
+            ],
+            "explanation": "سوئچ پورٹس کو اس VLAN سے تعلق رکھنا چاہیے جس میں اصل میں گیٹ وے تک ایک راستہ ہو۔ کسی غلط VLAN کو منسلک کردہ پورٹ نے اپنے ڈیوائس کو راؤٹر سے الگ کر دیتا ہے اگرچہ کیبلنگ اور IP کی ترتیبات صحیح لگتی ہیں، تو گیٹ وے کے لیے ARP ٹائم آؤٹ ہو جاتا ہے اور سوئچ سے آگے کوئی چیز رسائی میں نہیں ہے۔"
+        },
+        "zu": {
+            "title": "I-Admin Ayikwazi Ukufinyelela kwi-Intranet",
+            "story": "Kusukela ngamahlwa, abasebenzi bo-admin badela ukuthi i-PC-Admin ayikwazi ukuvula iseva ye-intranet yenkampani, napakho komunye nokho akukho ushintsho kulomhlangano wabo. Abanye ababaleki bathi ukufinyelela kwabo kwabantu yabo kubunjalo.",
+            "objective": "Buyisela ukunxibelelaniswa kwe-ICMP ping ukusuka ku-PC-Admin kuya ku-Intranet-01.",
+            "hints": [
+                "I-ping evela ku-PC-Admin ayikaze iyade ngaphezu kwe-VLAN-Switch-1F indlela yayo ukuya ku-Router-Main.",
+                "Lesonto leswitshi elilethe umsebenzelo we-PC-Admin lilungele i-VLAN engenamapothi amalungu akhombela umshini we-router, ngakho i-default gateway ayikaze iyafikelwe.",
+                "Ku-VLAN-Switch-1F, setha iphothi elixhumene ne-PC-Admin (iphothi 3) kuya ku-VLAN 20."
+            ],
+            "explanation": "Amaphothi eswitshi kufanele alinganisele i-VLAN eyenziwe ngu-gateway indlela. Iphothi elinganiswe kwi-VLAN engeyiyo liyahlukanisa idivaysi yalo kumshini we-router napakho ukuthi i-cabling kanye nokuhlungwa kwe-IP kubukeka kufanele, ngakho i-ARP ye-gateway isikhathi se-iphasi linqaba futhi akukho enkonkoni yeswitshi ekubalulekile."
+        }
+    }
+}
